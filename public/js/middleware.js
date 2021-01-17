@@ -1,3 +1,5 @@
+"use strict"
+
 import { allLinks, topButton } from './main.js';
 
 
@@ -60,4 +62,4 @@ const element_isIn_viewPort = (element) => {
     );
 }
 
-export { prevent_default, move_to_top_of_page, go_to_top, element_isIn_viewPort };
+export { prevent_default, move_to_top_of_page, go_to_top };
