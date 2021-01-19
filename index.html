@@ -19,18 +19,24 @@
     <!-- Font awesome custom hosting -->
     <link rel="stylesheet" href="./public/font_awesome/css/all.min.css">
     <!--====CSS script ====-->
-    <link rel="stylesheet" href="/public/styles/styles.css">
+    <link rel="stylesheet" href="./public/styles/styles.css">
     <!-- ====Customer JS script==== -->
     <script type="module" src="./public/js/main.js" defer></script>
 </head>
 
-<body>
+<body id="home">
+    <!-- ===Spinner==== -->
+    <div id="spinner" class="spinner-borderm" style="width: 7rem; height: 7rem; color: rgb(248, 247, 247);" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <!-- ===spinner==== -->
+
     <!-- == navbar== -->
     <header class="header">
         <!-- nav -->
-        <nav class="nav bd-grid hide">
+        <nav id="navbar" class="nav bd-grid">
             <!-- menu-togge -->
-            <div id="nav-toggle" class="nav_toggle">
+            <div id="menu_open_icon" class="nav_toggle">
                 <i class="fas fa-bars"></i>
             </div>
             <!-- menu-togge -->
@@ -41,26 +47,26 @@
                 </a>
             </div>
             <!-- menu-logo -->
-            <div class="nav_menu" id="nav-menu">
-                <!-- close menu -->
-                <div id="nav-close" class="nav_close">
-                    <i class="fas fa-times"></i>
-                </div>
-                <!-- close menu -->
+            <!-- close menu -->
+            <div id="menu_close_icon" class="nav_close">
+                <i class="fas fa-times"></i>
+            </div>
+            <!-- close menu -->
+            <div class="nav_menu">
                 <!-- menu links -->
-                <ul class="nav_list card_shadow">
-                    <li class="nav_item animated fadeInLeft"><a href="#home" class="nav_link active"><i class="fas fa-home"></i>Home</a></li>
-                    <li class="nav_item animated fadeInLeft"><a href="#skills" class="nav_link "><i class="far fa-id-badge"></i> Skills</a></li>
-                    <li class="nav_item animated fadeInLeft"><a href="#about" class="nav_link "><i class="fas fa-id-card-alt"></i>About</a></li>
-                    <li class="nav_item animated fadeInLeft"><a href="#projectInMind" class="nav_link "><i class="fas fa-dolly"></i>projects</a></li>
-                    <li class="nav_item animated fadeInLeft"><a href="#services" class="nav_link "><i class="fas fa-business-time"></i>Services</a></li>
-                    <li class="nav_item animated fadeInLeft"><a href="#contact" class="nav_link "><i class="far fa-envelope"></i>Contact</a></li>
+                <ul id="navContainer" class="nav_list">
+                    <li class="nav_item animated fadeInLeft"><a href="#home" class="nav_link stick"><i class="fas fa-home"></i><strong>home</strong> </a></li>
+                    <li class="nav_item animated fadeInLeft"><a href="#skills" class="nav_link "><i class="far fa-id-badge"></i> <strong> skills</strong> </a></li>
+                    <li class="nav_item animated fadeInLeft"><a href="#about" class="nav_link "><i class="fas fa-id-card-alt"></i><strong>about</strong> </a></li>
+                    <li class="nav_item animated fadeInLeft"><a href="#projects" class="nav_link "><i class="fas fa-dolly"></i><strong>projects</strong> </a></li>
+                    <li class="nav_item animated fadeInLeft"><a href="#services" class="nav_link "><i class="fas fa-business-time"></i><strong>services</strong> </a></li>
+                    <li class="nav_item animated fadeInLeft"><a href="#contact" class="nav_link "><i class="far fa-envelope"></i><strong>contact</strong> </a></li>
                 </ul>
-                <!-- menu links -->
+                <!-- menu links  -->
             </div>
         </nav>
         <!-- end of nav -->
-        <div id="home" class="banner">
+        <div class="banner">
             <h2 class="animated slideInLeft slow">Raymond Baguma</h2>
             <h1 class="animated slideInRight slow">Front-end developer<br/><br> and designer</h1>
             <a href="#" class="btn banner-btn animated slideInUp delay">explore</a>
@@ -87,16 +93,16 @@
                 <i class="fab fa-html5 glass_text"></i>            
             </span>
             <h4 class="skill-title">HTML</h4>
-            <p class="skill-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, sunt.</p>
+            <p class="skill-text">Hypertext Markup for development of websites, web pages and web based applications.</p>
         </article>
         <!-- end of skill -->
         <!-- skill -->
-        <article class="skill  ">
+        <article class="skill ">
             <span class="skill-icon">
                 <i class="fab fa-html5 glass_text"></i>            
             </span>
             <h4 class="skill-title">CSS</h4>
-            <p class="skill-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, sunt.</p>
+            <p class="skill-text">Impliment responsive highly scalable web designs using <code>@media</code> queries and standard animations.</p>
         </article>
         <!-- end of skill -->
         <!-- skill -->
@@ -104,7 +110,7 @@
             <span class="skill-icon">
                 <i class="fab fa-js-square glass_text"></i>
             </span>
-            <h4 class="skill-title">javascript</h4>
+            <h4 class="skill-title">Javascript</h4>
             <p class="skill-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, sunt.</p>
         </article>
         <!-- end of skill -->
@@ -113,7 +119,7 @@
             <span class="skill-icon">
                 <i class="fab fa-node-js glass_text"></i>
             </span>
-            <h4 class="skill-title">NodeJS</h4>
+            <h4 class="skill-title">Node.JS</h4>
             <p class="skill-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, sunt.</p>
         </article>
         <!-- end of skill -->
@@ -122,7 +128,7 @@
             <span class="skill-icon">
                 <i class="fab fa-react glass_text"></i>
             </span>
-            <h4 class="skill-title">React Library</h4>
+            <h4 class="skill-title">Vue.JS</h4>
             <p class="skill-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, sunt.</p>
         </article>
         <!-- end of skill -->
@@ -191,14 +197,10 @@
 
             <!-- about info -->
             <article class="about-info">
-                <!-- section title -->
-
-                <!-- section title -->
-
                 <!-- section text -->
-                <p class="about-text" data-aos="fade-in">Hello there, Welcome! I'm Raymond, and I'm a Front-end developer. </p>
-                <p class="about-text" data-aos="fade-in">I'm passionate about creating front-end and feature reach user website degins maximize new technological advancements meeting trending web development standards</p>
-                <a href="about.html" class="btn">learn more</a>
+                <p class="about-text" data-aos="fade-in">Hello there, Welcome! I'm Raymond, and I'm a Front-end developer. I'm passionate about creating front-end and feature reach user website designs maximize new technological advancements meeting trending web development standards</p>
+                <p class="about-text" data-aos="fade-in">There is a lot i could tell you right now but i will not bore you. just yet. Enjoy the experience When you are done, and are willing to know a bit about what i can do, go to my products page</p>
+                <a href="#" class="btn">learn more</a>
         </div>
         </article>
         </div>
@@ -208,12 +210,12 @@
 
     <!-- ==== projects=== -->
     <!-- ======================project in mind ======================= -->
-    <section id="projectInMind" class="project-in-mind">
+    <section id="projects" class="project-in-mind">
         <div id="proj_in_mind_mainpage" class="text-center hoverable p-4 card_shadow_2 animated">
             <!-- Grid row -->
-            <div class="row">
+            <div class="row cont">
                 <!-- Grid column -->
-                <div class="col-md-4 offset-md-1 mx-3 my-3">
+                <div class="col-md-4 offset-md-1 mx-3 my-3 ">
                     <!-- Featured image -->
                     <div class="view overlay proj_in_mind" data-aos="fade-up">
                         <img src="./public/img/more/space3.jpeg" class="img-fluid" alt="">
@@ -222,8 +224,8 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-7 text-md-left ml-14 mt-5 in-mind-info">
-                    <a href="#!" class="black-text" data-aos="fade-up">
+                <div class="col-md-7 text-md-left ml-14 mt-5 in-mind-info conta2">
+                    <a href="#!" class="" data-aos="fade-up">
                         <h6 class="h6 pb-1 text_3D_paragraph"><i class="far fa-grin pr-2"></i> Still here, great!</h6>
                     </a>
                     <h4 class="h4 mb-4" data-aos="fade-up"> You have a project in your mind?</h4>
@@ -262,7 +264,7 @@
                 <div class="service-info" data-aos="fade-up">
                     <h4 class="glass_text">Planning</h4>
                     <p>If you have a business idea lets talk about it and bring it to life</p>
-                    <a href="products.htmp" class="btn service-btn">read more</a>
+                    <a href="#" class="btn service-btn">read more</a>
                 </div>
             </article>
             <!-- card -->
@@ -279,9 +281,9 @@
                 </div>
                 <!-- service info -->
                 <div class="service-info" data-aos="fade-up">
-                    <h4 class="glass_text">Develpment</h4>
+                    <h4 class="glass_text">Development</h4>
                     <p>Frontend designs, development and data-base intergrations</p>
-                    <a href="products.htmp" class="btn service-btn">read more</a>
+                    <a href="#" class="btn service-btn">read more</a>
                 </div>
             </article>
             <!-- card -->
@@ -300,7 +302,7 @@
                 <div class="service-info" data-aos="fade-up">
                     <h4 class="glass_text">Production</h4>
                     <p>Project deployment cloud intergrations and follow up</p>
-                    <a href="products.htmp" class="btn service-btn">read more</a>
+                    <a href="#" class="btn service-btn">read more</a>
                 </div>
             </article>
             <!-- card -->
@@ -359,7 +361,7 @@
                         <!-- inputs -->
                         <input type="text" placeholder="your name" class="form-control" name="name" />
                         <input type="email" placeholder="your email" class="form-control" name="email" />
-                        <textarea name="message" class="form-control" id="message" placeholder="your message" rows="5"></textarea>
+                        <textarea name="message" class="form-control" id="message" placeholder="your message" rows="7"></textarea>
                     </div>
                     <button type="submit" class="btn submit-btn">submit here</button>
                 </form>
@@ -370,7 +372,7 @@
     <div class="content-divider"></div>
     <!-- =========== contact form -->
 
-    <footer class="text-center footer">
+    <footer class="text-center footer ">
         <!-- Grid container -->
         <div class="container p-5">
             <!--Grid row-->
@@ -420,8 +422,8 @@
             </div>
         </div>
         <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            © 2020 All rights reserved:&emsp;
+        <div class="text-center p-3 footer-bottom" style="background-color: rgba(0, 0, 0, 0.2)">
+            &copy; <strong class="copyrightYear">year placeholder</strong> All rights reserved:&emsp;
             <a class="text-white" href="https://www.raybags.com"></a>
         </div>
         <!-- Copyright -->
@@ -432,6 +434,8 @@
     <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js "></script>
     <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js "></script>
     <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js "></script>
+
+    <!-- animation plugin -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 

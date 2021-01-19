@@ -1,0 +1,17 @@
+{
+    "workbench.sideBar.location": "right",
+    "workbench.tree.indent": 9,
+    "workbench.editor.closeOnFileDelete": true,
+    "workbench.editor.labelFormat": "long",
+    "screencastMode.fontSize": 55,
+    "cSpell.ignoreWords": [
+        "blassy",
+        "in",
+        "javascripts",
+        "jquery",
+        "mainpage",
+        "mind",
+        "proj",
+        "scrollspy"
+    ]
+}
