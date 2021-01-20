@@ -5,8 +5,11 @@ import {
     nav_container,
     menu_bugger_icon,
     close_menu_icon,
+    logo_btn,
+    cookie_accept_bunner,
+    cookie_accept_bunner_icon,
 } from "./main.js";
-
+// top button visibility handler.
 const show_hide_top_button = (element) => {
     element = topButton;
     let window_height = document.body.scrollTop;
@@ -22,6 +25,7 @@ const show_hide_top_button = (element) => {
     }
 };
 
+// back to top handler
 function go_to_top() {
     document.body.addEventListener(
         "scroll",
@@ -50,21 +54,24 @@ const move_to_top_of_page = () => {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     });
+    logo_btn.addEventListener("click", () => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    });
 };
 
 // Detect element in viewPort helper function
-
-const element_isIn_viewPort = (element) => {
-    const element_position = element.getBoundingClientRect();
-    return (
-        element_position.top >= 0 &&
-        element_position.left >= 0 &&
-        element_position.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-        element_position.right <=
-        (window.innerWidth || document.documentElement.clientWidth)
-    );
-};
+// const element_isIn_viewPort = (element) => {
+//     const element_position = element.getBoundingClientRect();
+//     return (
+//         element_position.top >= 0 &&
+//         element_position.left >= 0 &&
+//         element_position.bottom <=
+//         (window.innerHeight || document.documentElement.clientHeight) &&
+//         element_position.right <=
+//         (window.innerWidth || document.documentElement.clientWidth)
+//     );
+// };
 
 // Open menu handler
 const openMenu = function(e) {
@@ -106,6 +113,28 @@ const copyRightYear = function(element) {
     element.textContent = current_year;
 };
 
+// cookie banner and cookie accepted banner handler.
+function cookie_accepted() {
+    window.addEventListener("cookieAlertAccept", function() {
+        console.log("cookies accepted");
+
+        $(cookie_accept_bunner).addClass("slideInDown");
+        $(cookie_accept_bunner).removeClass("hide");
+        $(document).ready(function() {
+            $(cookie_accept_bunner_icon).click(function() {
+                $(cookie_accept_bunner).slideUp();
+                $(cookie_accept_bunner).removeClass("slideInDown");
+                setTimeout(() => $(cookie_accept_bunner).addClass("hide"), 1000);
+            });
+        });
+    });
+}
+// const remove_cookie_accepred_banner = (banner) => {
+//     cookie_accept_bunner_icon.addEventListener('click', () => {
+//       banner.classList
+//   });
+// };
+
 export {
     move_to_top_of_page,
     go_to_top,
@@ -113,4 +142,5 @@ export {
     closeMenu,
     closeMenuWithLink,
     copyRightYear,
+    cookie_accepted,
 };

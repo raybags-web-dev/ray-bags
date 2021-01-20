@@ -11,10 +11,16 @@
     <link rel="icon" type="image/png" style="border-radius: 50px;" sizes="32x32" href="/public/img/more/logo.png">
     <title>raybags.com | web-dev</title>
 
+    <!-- ====Font awesome CDN==== -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
     <!-- ======Material Design Bootstrap CDN  -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- cookiealert styles CDN link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
 
     <!-- Font awesome custom hosting -->
     <link rel="stylesheet" href="./public/font_awesome/css/all.min.css">
@@ -42,7 +48,7 @@
             <!-- menu-togge -->
             <!-- menu-logo -->
             <div class="logo_name">
-                <a href="#" class="nav_logo">
+                <a id="logo_containers" href="#home" class="nav_logo">
                     <img src="./public/img/more/logo.png" alt="company-logo">
                 </a>
             </div>
@@ -78,6 +84,15 @@
     <!-- == navbar== -->
     <!-- divider -->
     <div class="content-divider"></div>
+
+    <!-- =========alert box====== -->
+    <div class="alert_box_accepted animated hide">
+        <span id="close" class="closebtn"><i class="fas fa-times"></i></span>
+        <p>
+            We take your privacy seriously and thank you for your trust. &emsp; <q class="cookie_sentence">Now, click me away on the right.</q>
+        </p>
+    </div>
+    <!-- =========alert box====== -->
 
     <!-- ==Skills section=== -->
     <section id="skills" class="skills clearfix">
@@ -371,6 +386,21 @@
     <!-- divider -->
     <div class="content-divider"></div>
     <!-- =========== contact form -->
+    <!-- ===================cookie================== -->
+    <!--Cookie-Alert -->
+    <div id="cookie_container" class="alert text-center cookiealert" role="alert">
+        <div class="cookie_para">
+            <p><b>Do you like cookies? I hope you do</b> We use cookies to ensure you get the best experience on our website.</p>
+        </div>
+        <div class="cookie_buttons">
+            <a id="cookie_link_more" class="btn-sm" href="https://cookiesandyou.com/" target="_blank">Learn more</a>
+            <button id="cookie_btnn" type="button" class="  btn-sm acceptcookies">I accept</button>
+        </div>
+
+    </div>
+
+
+    <!-- ===================cookie==================== -->
 
     <footer class="text-center footer ">
         <!-- Grid container -->
@@ -434,6 +464,8 @@
     <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js "></script>
     <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js "></script>
     <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js "></script>
+    <!-- cookie alert CDN script -->
+    <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
 
     <!-- animation plugin -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

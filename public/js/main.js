@@ -6,6 +6,7 @@ import {
     closeMenu,
     closeMenuWithLink,
     copyRightYear,
+    cookie_accepted,
 } from "./middleware.js";
 import { init_anime, animateName, click_btn } from "./animations.js";
 
@@ -17,7 +18,12 @@ const project_in_mind_image = document.querySelector(".proj_in_mind");
 const project_in_mind_container = document.querySelector(
     "#proj_in_mind_mainpage"
 );
+const cookie_accept_bunner = document.querySelector(".alert_box_accepted");
+const cookie_btn = document.getElementById('cookie_btnn');
+const cookie_accept_bunner_icon = document.getElementById('close')
+
 const copyright_container = document.querySelector(".copyrightYear");
+const logo_btn = document.getElementById("logo_containers");
 
 const spinnerIcon = document.querySelector("#spinner");
 const nav_container = document.querySelector(".nav");
@@ -33,8 +39,19 @@ export {
     nav_container,
     menu_bugger_icon,
     close_menu_icon,
+    cookie_accept_bunner,
+    cookie_btn,
+    cookie_accept_bunner_icon,
+    logo_btn
 };
 
+// cookie accepeted handler
+cookie_accepted();
+// close menu when user clicks anywhere on the page
+document.addEventListener("click", closeMenu, true);
+// close menu when logo button is clicked.
+logo_btn.addEventListener("click", closeMenu, true);
+// open menu when bugger menu icon is clicked
 menu_bugger_icon.addEventListener("click", openMenu, false);
 // close menu handler
 close_menu_icon.addEventListener("click", closeMenu, false);
@@ -60,6 +77,9 @@ move_to_top_of_page();
 go_to_top();
 // update copyright year handler
 copyRightYear(copyright_container);
+
+
+
 
 // scroll spy======================needs work============================
 function scrollSpy() {
