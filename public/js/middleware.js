@@ -61,17 +61,17 @@ const move_to_top_of_page = () => {
 };
 
 // Detect element in viewPort helper function
-// const element_isIn_viewPort = (element) => {
-//     const element_position = element.getBoundingClientRect();
-//     return (
-//         element_position.top >= 0 &&
-//         element_position.left >= 0 &&
-//         element_position.bottom <=
-//         (window.innerHeight || document.documentElement.clientHeight) &&
-//         element_position.right <=
-//         (window.innerWidth || document.documentElement.clientWidth)
-//     );
-// };
+const element_isIn_viewPort = (element) => {
+    const element_position = element.getBoundingClientRect();
+    return (
+        element_position.top >= 0 &&
+        element_position.left >= 0 &&
+        element_position.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+        element_position.right <=
+        (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
 
 // Open menu handler
 const openMenu = function(e) {
@@ -86,15 +86,12 @@ const openMenu = function(e) {
 };
 
 // close menu handler
-const closeMenu = function(e) {
-    e.preventDefault();
-
+const closeMenu = function() {
     menu_bugger_icon.classList.remove("hide");
     close_menu_icon.classList.add("hide");
 
     nav_container.style.left = "-100%";
     nav_container.style.transition = ".8s";
-
     console.log("menu closed");
 };
 // remove menu by clicking any link handler.
@@ -129,11 +126,6 @@ function cookie_accepted() {
         });
     });
 }
-// const remove_cookie_accepred_banner = (banner) => {
-//     cookie_accept_bunner_icon.addEventListener('click', () => {
-//       banner.classList
-//   });
-// };
 
 export {
     move_to_top_of_page,
@@ -143,4 +135,5 @@ export {
     closeMenuWithLink,
     copyRightYear,
     cookie_accepted,
+    element_isIn_viewPort,
 };

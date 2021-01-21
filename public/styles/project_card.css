@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-font: 'Catamaran', sans-serif;
+    --transition: .5s;
+    --clr-primary: #63130c;
+    --glass-text-shadow: 1px 3px 1 #969696, 1px 8px 5px #aba8a8;
+    --clr-white: #ffffff;
+}
+
+.hide {
+    display: none;
+}
+
+.hide2 {
+    visibility: hidden;
+}
+
+.card-main-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+    padding-bottom: 1rem;
+    border-radius: .4rem;
+    margin-top: 3rem;
+    box-shadow: none;
+    overflow-x: hidden;
+}
+
+.card-list {
+    display: flex;
+    padding: 2rem;
+    overflow-x: scroll;
+    grid-gap: 10px;
+    grid-template-columns: repeat(6, calc(50% - 40px));
+    grid-template-rows: minmax(150px, 1fr);
+}
+
+.card-list::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.card-list::-webkit-scrollbar-thumb {
+    background: #690210;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px hsla(0 0%, 100%, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
+}
+
+.card-list::-webkit-scrollbar-track {
+    background: linear-gradient(90deg, #201c20, #201c29 1px, #17141d 0, #17141d);
+}
+
+.card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    height: 350px;
+    width: 400px;
+    min-width: 250px;
+    padding: 1.5rem;
+    transition: .4s;
+    cursor: pointer;
+    border-radius: .4rem;
+    background: #fffeff;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+    box-shadow: -2rem 0 3rem #000;
+}
+
+.card:hover {
+    transform: translateY(-1rem);
+    transition: .4s;
+    transform: scale(1.1);
+}
+
+.card:hover~.card {
+    transform: translateX(1.1rem);
+    filter: blur(2px);
+}
+
+.card:not(:first-child) {
+    margin-left: -1rem;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    width: 4%;
+    height: 4%;
+    top: 1%;
+    padding: .5rem;
+    border-radius: 50%;
+    transition: .4s;
+    background: #f80505;
+    opacity: .5;
+    visibility: hidden;
+    transform: translateX(-1rem);
+    backdrop-filter: blur(20%);
+    box-shadow: 0 325px 2px rgba(245, 242, 242, 0.5);
+}
+
+.card:hover::after {
+    visibility: visible;
+    transition: .4s;
+}
+
+.card:hover::before {
+    width: 0%;
+    backdrop-filter: blur(100px);
+    box-shadow: -2rem 0 3rem #000;
+    background: rgb(235, 96, 86)
+}
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    -webkit-box-shadow: inset 1px 0px 12px 4px rgba(0, 0, 0, 0.59);
+    box-shadow: inset 1px 0px 12px 4px rgba(0, 0, 0, 0.59);
+}
+
+.card-author {
+    flex: 1;
+    position: relative;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    align-items: center;
+    -webkit-box-shadow: inset 1px 0px 12px 4px #000000;
+    box-shadow: inset 1px 0px 12px 4px #000000;
+}
+
+.author-avator img {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    transition: .4s;
+    border: .4rem solid rgb(37, 36, 36);
+    border-radius: 50%;
+    margin: 16px 10px;
+}
+
+.author-name-prefix {
+    font-style: normal;
+    font-weight: 700;
+    color: #7a7a8c;
+    user-select: none;
+}
+
+.author-avator:hover img {
+    position: relative;
+    filter: grayscale(0%);
+    border: .4rem solid rgb(63, 47, 47);
+    transition: .4s;
+    margin-right: 1rem;
+    transition: var(--transition);
+}
+
+.card-header p:hover {
+    background: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+    text-shadow: none;
+    transition: var(--transition);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card-header p {
+    flex: 1;
+    color: var(--clr-white);
+    font-size: large;
+}
+
+.card-header h3 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--clr-primary);
+    text-shadow: var(--glass-text-shadow);
+    flex: 1;
+}
+
+.dragging {
+    opacity: 0;
+}

@@ -24,8 +24,10 @@
 
     <!-- Font awesome custom hosting -->
     <link rel="stylesheet" href="./public/font_awesome/css/all.min.css">
-    <!--====CSS script ====-->
+    <!--==== custom CSS ====-->
     <link rel="stylesheet" href="./public/styles/styles.css">
+    <!-- === projects card styles -->
+    <link rel="stylesheet" href="./public/styles/project_card.css">
     <!-- ====Customer JS script==== -->
     <script type="module" src="./public/js/main.js" defer></script>
 </head>
@@ -103,7 +105,7 @@
         </div>
         <!-- section title -->
         <!-- skill -->
-        <article class="skill">
+        <article class="skill" data-aos="fade-right">
             <span class="skill-icon">
                 <i class="fab fa-html5 glass_text"></i>            
             </span>
@@ -112,7 +114,7 @@
         </article>
         <!-- end of skill -->
         <!-- skill -->
-        <article class="skill ">
+        <article class="skill" data-aos="zoom-in">
             <span class="skill-icon">
                 <i class="fab fa-html5 glass_text"></i>            
             </span>
@@ -121,7 +123,7 @@
         </article>
         <!-- end of skill -->
         <!-- skill -->
-        <article class="skill  ">
+        <article class="skill" data-aos="fade-left">
             <span class="skill-icon">
                 <i class="fab fa-js-square glass_text"></i>
             </span>
@@ -130,7 +132,7 @@
         </article>
         <!-- end of skill -->
         <!-- skill -->
-        <article class="skill  ">
+        <article class="skill" data-aos="fade-right">
             <span class="skill-icon">
                 <i class="fab fa-node-js glass_text"></i>
             </span>
@@ -139,7 +141,7 @@
         </article>
         <!-- end of skill -->
         <!-- skill -->
-        <article class="skill  ">
+        <article class="skill" data-aos="zoom-in">
             <span class="skill-icon">
                 <i class="fab fa-react glass_text"></i>
             </span>
@@ -148,7 +150,7 @@
         </article>
         <!-- end of skill -->
         <!-- skill -->
-        <article class="skill  ">
+        <article class="skill  " data-aos="fade-left">
             <span class="skill-icon">
                 <i class="fas fa-braille glass_text"></i>
             </span>
@@ -157,7 +159,7 @@
         </article>
         <!-- end of skill -->
         <!-- skill -->
-        <article class="skill  ">
+        <article class="skill" data-aos="fade-left">
             <span class="skill-icon">
                 <i class="fab fa-asymmetrik glass_text"></i>
             </span>
@@ -166,7 +168,7 @@
         </article>
         <!-- end of skill -->
         <!-- skill -->
-        <article class="skill">
+        <article class="skill" data-aos="fade-right">
             <span class="skill-icon">
                 <i class="fab fa-bootstrap glass_text"></i>
             </span>
@@ -183,7 +185,7 @@
         <div class="section-center clearfix">
             <!-- about img -->
             <article class="about-img">
-                <div class="about-picture-container">
+                <div class="about-picture-container" data-aos="zoom-in">
                     <img src="./public/img/profile_img/profile_1.jpg" alt="profile picture" class="about-picture">
                 </div>
                 <!-- === letter animation === -->
@@ -215,9 +217,8 @@
                 <!-- section text -->
                 <p class="about-text" data-aos="fade-in">Hello there, Welcome! I'm Raymond, and I'm a Front-end developer. I'm passionate about creating front-end and feature reach user website designs maximize new technological advancements meeting trending web development standards</p>
                 <p class="about-text" data-aos="fade-in">There is a lot i could tell you right now but i will not bore you. just yet. Enjoy the experience When you are done, and are willing to know a bit about what i can do, go to my products page</p>
-                <a href="#" class="btn">learn more</a>
-        </div>
-        </article>
+                <a href="#" class="btn aboutMe_btn">learn more</a>
+            </article>
         </div>
     </section>
     <!-- divider -->
@@ -230,24 +231,171 @@
             <!-- Grid row -->
             <div class="row cont">
                 <!-- Grid column -->
-                <div class="col-md-4 offset-md-1 mx-3 my-3 ">
+                <div class="col-md-4 offset-md-1 mx-3 my-3 inner-img-container">
                     <!-- Featured image -->
                     <div class="view overlay proj_in_mind" data-aos="fade-up">
-                        <img src="./public/img/more/space3.jpeg" class="img-fluid" alt="">
+                        <img src="./public/img/more/space3.jpeg" class="img-fluid" alt="project image">
                         <a>
                             <div class="mask rgba-white-slight"></div>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-7 text-md-left ml-14 mt-5 in-mind-info conta2">
-                    <a href="#!" class="" data-aos="fade-up">
-                        <h6 class="h6 pb-1 text_3D_paragraph"><i class="far fa-grin pr-2"></i> Still here, great!</h6>
-                    </a>
+
                     <h4 class="h4 mb-4" data-aos="fade-up"> You have a project in your mind?</h4>
                     <p class="font-weight-normal" data-aos="fade-up">Based on your preferences, anything is possible. You've been thinking about it, that business idea, <br> well, lets share it. Based on what you want, we can build your presence <br>in the digital world.</p>
                     <p class="font-weight-normal" data-aos="fade-up">All you have to do is drop me an email down below. <br> Well dont allow me to hold you here, go ahead scroll down. </p>
                     <a id="myModalBtn" class="btn project_btn">Read more</a>
                 </div>
+            </div>
+        </div>
+
+        <div class="card-main-container">
+            <div class="card-list">
+                <article class="card catain animated" draggable="true" data-aos="fade-up">
+                    <header class="card-header">
+                        <p>Sample work for this particluar </p>
+                        <h3> project</h3>
+                        <div class="card-author">
+                            <a href="" class="author-avator" href="#">
+                                <img src="./public/img/jane_holdsworth_morris.jpg" alt="#img">
+                            </a>
+                            <div class="author-name">
+                                <p class="names">Denis </p>
+                            </div>
+                        </div>
+                    </header>
+                </article>
+
+                <article class="card catain animated" draggable="true" data-aos="fade-up">
+                    <header class="card-header">
+                        <p>Sample work for this particluar </p>
+                        <h3> project</h3>
+                        <div class="card-author">
+                            <a href="" class="author-avator" href="#">
+                                <img src="./public/img/jane_holdsworth_morris.jpg" alt="#img">
+                            </a>
+                            <div class="author-name">
+                                <p class="names">Denis </p>
+                            </div>
+                        </div>
+                    </header>
+                </article>
+                <article class="card catain animated" draggable="true" data-aos="fade-up">
+                    <header class="card-header">
+                        <p>See you Mr. Italian stallion-Rocky</p>
+                        <h3project</h3>
+                            <div class="card-author">
+                                <a href="" class="author-avator" href="#">
+                                    <img src="./public/img/lucio_versaggi.jpg" alt="#img">
+                                </a>
+                                <div class="author-name">
+                                    <p class="names">Jake </p>
+                                </div>
+                            </div>
+                    </header>
+                </article>
+                <article class="card catain animated" draggable="true" data-aos="fade-up">
+                    <header class="card-header">
+                        <p>Sample work for this particluar </p>
+                        <h3> project</h3>
+                        <div class="card-author">
+                            <a href="" class="author-avator" href="#">
+                                <img src="./public/img/maria_Giuseppina.jpg" alt="#img">
+                            </a>
+                            <div class="author-name">
+                                <p class="names"> Lorrie</p>
+                            </div>
+                        </div>
+                    </header>
+                </article>
+                <article class="card catain animated" draggable="true" data-aos="fade-up">
+                    <header class="card-header">
+                        <p>Sample work for this particluar </p>
+                        <h3> project</h3>
+                        <div class="card-author">
+                            <a href="" class="author-avator" href="#">
+                                <img src="./public/img/michael_pasieka.jpg" alt="-">
+                            </a>
+                            <div class="author-name">
+                                <p class="names">Mukisa </p>
+                            </div>
+                        </div>
+                    </header>
+                </article>
+            </div>
+            <!-- ---------------------section divide---------  -->
+            <div class="card-list">
+                <article class="card catain animated" draggable="true" data-aos="fade-up">
+                    <header class="card-header">
+                        <p>Sample work for this particluar </p>
+                        <h3> project</h3>
+                        <div class="card-author">
+                            <a href="" class="author-avator" href="#">
+                                <img src="./public/img/philipp_hasper.jpg" alt="-">
+                            </a>
+                            <div class="author-name">
+                                <p class="names">Janis </p>
+                            </div>
+                        </div>
+                    </header>
+                </article>
+                <article class="card catain animated" draggable="true" data-aos="fade-up">
+                    <header class="card-header">
+                        <p>Sample work for this particluar </p>
+                        <h3> project</h3>
+                        <div class="card-author">
+                            <a href="" class="author-avator" href="#">
+                                <img src="./public/img/pietro_gambino.jpg" alt="-">
+                            </a>
+                            <div class="author-name">
+                                <p class="names">Patrick </p>
+                            </div>
+                        </div>
+                    </header>
+                </article>
+                <article class="card catain animated" draggable="true" data-aos="fade-up">
+                    <header class="card-header">
+                        <p>Sample work for this particluar </p>
+                        <h3> project</h3>
+                        <div class="card-author">
+                            <a href="" class="author-avator" href="#">
+                                <img src="./public/img/profile_1.jpg" alt="-">
+                            </a>
+                            <div class="author-name">
+                                <p class="names"> Nana</p>
+                            </div>
+                        </div>
+                    </header>
+                </article>
+                <article class="card catain animated" draggable="true" data-aos="fade-up">
+                    <header class="card-header">
+                        <p>Sample work for this particluar </p>
+                        <h3> project</h3>
+                        <div class="card-author">
+                            <a href="" class="author-avator" href="#">
+                                <img src="./public/img/robin_aron.jpg" alt="-">
+                            </a>
+                            <div class="author-name">
+                                <p class="names">Robinson </p>
+                            </div>
+                        </div>
+                    </header>
+                </article>
+                <article class="card catain animated" draggable="true" data-aos="fade-up">
+                    <header class="card-header">
+                        <p>Sample work for this particluar </p>
+                        <h3> project</h3>
+                        <div class="card-author">
+                            <a href="" class="author-avator" href="#">
+                                <img src="./public/img/sandra_de_dios.jpg" alt="-">
+                            </a>
+                            <div class="author-name">
+                                <p class="names">Jolanda </p>
+                            </div>
+                        </div>
+                    </header>
+                </article>
             </div>
         </div>
     </section>
@@ -269,7 +417,7 @@
                 <!-- img container -->
                 <div class="service-img-container">
                     <!-- img -->
-                    <img src="./public/img/more/img2.jpg" class="service-img" alt="img serice">
+                    <img src="./public/img/more/sky1.jpg" class="service-img" alt="img serice">
                     <!-- icon -->
                     <span class="service-icon">
                         <i class="fas fa-home fa-fw"></i>
@@ -288,7 +436,7 @@
                 <!-- img container -->
                 <div class="service-img-container">
                     <!-- img -->
-                    <img src="./public/img/more/img1.jpg" class="service-img" alt="img serice">
+                    <img src="./public/img/more/sky.jpeg" class="service-img" alt="img serice">
                     <!-- icon -->
                     <span class="service-icon">
                         <i class="fas fa-bowling-ball"></i>
@@ -307,7 +455,7 @@
                 <!-- img container -->
                 <div class="service-img-container">
                     <!-- img -->
-                    <img src="./public/img/product_imgs/cat.jpeg" class="service-img" alt="img serice">
+                    <img src="./public/img/more/sky3.jpeg" class="service-img" alt="img serice">
                     <!-- icon -->
                     <span class="service-icon">
                         <i class="fas fa-cog"></i>

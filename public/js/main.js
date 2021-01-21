@@ -7,6 +7,7 @@ import {
     closeMenuWithLink,
     copyRightYear,
     cookie_accepted,
+    element_isIn_viewPort,
 } from "./middleware.js";
 import { init_anime, animateName, click_btn } from "./animations.js";
 
@@ -19,8 +20,8 @@ const project_in_mind_container = document.querySelector(
     "#proj_in_mind_mainpage"
 );
 const cookie_accept_bunner = document.querySelector(".alert_box_accepted");
-const cookie_btn = document.getElementById('cookie_btnn');
-const cookie_accept_bunner_icon = document.getElementById('close')
+const cookie_btn = document.getElementById("cookie_btnn");
+const cookie_accept_bunner_icon = document.getElementById("close");
 
 const copyright_container = document.querySelector(".copyrightYear");
 const logo_btn = document.getElementById("logo_containers");
@@ -30,6 +31,7 @@ const nav_container = document.querySelector(".nav");
 const menu_bugger_icon = document.getElementById("menu_open_icon");
 const close_menu_icon = document.getElementById("menu_close_icon");
 const all_links = document.querySelectorAll(".nav_link");
+const allSections = document.querySelectorAll("section");
 
 export {
     allLinks,
@@ -42,10 +44,9 @@ export {
     cookie_accept_bunner,
     cookie_btn,
     cookie_accept_bunner_icon,
-    logo_btn
+    logo_btn,
 };
 
-// cookie accepeted handler
 cookie_accepted();
 // close menu when user clicks anywhere on the page
 document.addEventListener("click", closeMenu, true);
@@ -78,48 +79,4 @@ go_to_top();
 // update copyright year handler
 copyRightYear(copyright_container);
 
-
-
-
 // scroll spy======================needs work============================
-function scrollSpy() {
-    let sections = $("section");
-    let current;
-
-    sections.each(function() {
-        let elementId = $(this).attr("id");
-
-        if ($(elementId).offset().top <= $(window).scrollTop()) {
-            current = elementId;
-        }
-    });
-
-    // for (let i = 0; i < sections.length; i++) {
-
-    // }
-
-    $(".nav_list a[href='#" + current + "']").addClass("stick");
-    $(".nav_list a")
-        .not("a[href='#" + current + "']")
-        .removeClass("stick");
-}
-
-// smooth scrolling navigation
-$(".nav_list a").click(function() {
-    let target = $(this).attr("href");
-    $("body, html").animate({
-            scrollTop: $(target).offset().top,
-        },
-        300
-    );
-    return false;
-});
-
-//scrollSpy call
-$(document).ready(function() {
-    scrollSpy();
-});
-
-$(window).scroll(function() {
-    scrollSpy();
-});

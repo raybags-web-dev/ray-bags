@@ -4,12 +4,12 @@ import {} from "./middleware.js";
 
 const init_anime = () => AOS.init();
 
+
+// animate name in about section handler
 const animateName = () => {
     $(window).scroll(function() {
         let top_of_element = $(image_with_name_to_animate).offset().top;
-        let bottom_of_element =
-            $(image_with_name_to_animate).offset().top +
-            $(image_with_name_to_animate).outerHeight();
+        let bottom_of_element = $(image_with_name_to_animate).offset().top + $(image_with_name_to_animate).outerHeight();
         let bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
         let top_of_screen = $(window).scrollTop();
 
@@ -26,11 +26,12 @@ const animateName = () => {
     });
 };
 
+// animate element in view port
 const click_btn = (elementInViewPort, targetElemenet) => {
     $(window).scroll(function() {
         let top_of_element = $(elementInViewPort).offset().top;
-        let bottom_of_element =
-            $(elementInViewPort).offset().top + $(elementInViewPort).outerHeight();
+        let bottom_of_element = $(elementInViewPort).offset().top + $(elementInViewPort).outerHeight();
+
         let bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
         let top_of_screen = $(window).scrollTop();
 
