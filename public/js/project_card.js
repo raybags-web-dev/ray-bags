@@ -1,12 +1,12 @@
 "use strict";
 
-const img_links = document.querySelectorAll("a");
-const draggables = document.querySelectorAll("article");
-const constainers = document.querySelectorAll(".card-list");
+
+import { img_links, draggables, constainers } from "./main.js";
 
 // remove link default behaviour on images
 img_links.forEach((link) => {
     link.addEventListener("click", (e) => {
+        console.log('its called')
         e.preventDefault();
     });
 });
@@ -20,6 +20,7 @@ draggables.forEach((draggable) => {
     //drag stops
     draggable.addEventListener("dragend", () => {
         draggable.classList.remove("dragging");
+        console.log('its working')
     });
 });
 

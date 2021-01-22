@@ -82,7 +82,6 @@ const openMenu = function(e) {
 
     nav_container.style.left = "0";
     nav_container.style.transition = ".8s";
-    console.log("menu open");
 };
 
 // close menu handler
@@ -92,7 +91,6 @@ const closeMenu = function() {
 
     nav_container.style.left = "-100%";
     nav_container.style.transition = ".8s";
-    console.log("menu closed");
 };
 // remove menu by clicking any link handler.
 const closeMenuWithLink = function() {
