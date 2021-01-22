@@ -2553,6 +2553,7 @@ Services
         width: 100%;
         left: 0;
         transition: .2s;
+        cursor: col-resize;
     }
     .about-picture-container:hover::after {
         width: 100%;
@@ -2568,16 +2569,16 @@ Services
     .name-animation .second-set,
     .name-animation {
         display: flex;
-        flex-grow: inherit;
         justify-content: space-between;
         align-items: stretch;
-        bottom: 20% !important;
+        top: 1%;
     }
     .first-set,
     .second-set {
+        flex: 1;
         position: relative;
         font-size: 2rem;
-        left: 25% !important;
+        left: 25%;
         text-transform: capitalize;
         font-family: var(--name-animate);
     }

@@ -76,7 +76,7 @@
 }
 
 .card:hover {
-    transform: translateY(-1rem);
+    transform: translateY(-1.5rem) !important;
     transition: .4s;
     transform: scale(1.1);
 }
