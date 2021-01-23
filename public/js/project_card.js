@@ -40,7 +40,7 @@ constainers.forEach((container) => {
     });
 });
 
-//determin mouse position to drop above elemnt below
+//determin mouse position to drop above element below
 function getDragAfterElement(container, y) {
     const draggableElements = [
         ...container.querySelectorAll(".draggable:not(.dragging)"),

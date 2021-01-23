@@ -1520,6 +1520,23 @@ Services
     color: white;
 }
 
+.valid-feedback {
+    color: green;
+    text-shadow: none !important;
+    font-size: 20px;
+    opacity: .7;
+    padding: .5rem;
+    background: transparent;
+    backdrop-filter: blur(100px);
+}
+
+.invalid-feedback {
+    color: red;
+    text-shadow: none !important;
+    font-size: 20px;
+    opacity: .7;
+}
+
 
 /* ======================name animation============== */
 

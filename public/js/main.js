@@ -25,9 +25,9 @@ const cookie_accept_bunner_icon = document.getElementById("close");
 const copyright_container = document.querySelector(".copyrightYear");
 const logo_btn = document.getElementById("logo_containers");
 
-const img_links = document.querySelectorAll(".author-avator");
-const draggables = document.querySelectorAll(".card");
-const constainers = document.querySelectorAll(".card-list");
+// const img_links = document.querySelectorAll(".author-avator");
+// const draggables = document.querySelectorAll(".card");
+// const constainers = document.querySelectorAll(".card-list");
 
 const spinnerIcon = document.querySelector("#spinner");
 const nav_container = document.querySelector(".nav");
@@ -47,9 +47,9 @@ export {
     cookie_btn,
     cookie_accept_bunner_icon,
     logo_btn,
-    img_links,
-    draggables,
-    constainers,
+    // img_links,
+    // draggables,
+    // constainers,
 };
 
 cookie_accepted();

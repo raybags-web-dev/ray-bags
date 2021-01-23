@@ -408,7 +408,7 @@
     <div class="content-divider "></div>
     <!-- ------------------------------------------------------------------------------------------------------- -->
     <!-- ==== Services === -->
-    <section id="services " class="services ">
+    <section id="services" class="services">
         <!-- section title -->
         <div class="section-title services-title " data-aos="fade-up ">
             <h3>what I offer</h3>
@@ -479,7 +479,7 @@
     <div class="content-divider "></div>
     <!-- ==== Services === -->
     <!-- =========== contact form -->
-    <section id="contact " class="contact ">
+    <section id="contact" class="contact">
         <div class="section-center contact-main-container clearfix ">
             <!-- contact info -->
             <article class="contact-info ">
@@ -523,13 +523,32 @@
             <!-- contact form -->
             <article class="contact-form ">
                 <h3>contact me</h3>
-                <form action="https://formspree.io/f/xdopblog " method="POST ">
+                <!-- <form action="https://formspree.io/f/xdopblog " method="POST ">
                     <div class="form-group ">
-                        <!-- inputs -->
                         <input type="text " placeholder="your name " class="form-control " name="name " />
                         <input type="email " placeholder="your email " class="form-control " name="_replyto " />
                         <textarea name="message " class="form-control " id="message " placeholder="your message " rows="7 "></textarea>
                     </div>
+                    <button type="submit " class="btn submit-btn " value="Send ">submit here</button>
+                </form> -->
+                <form action="https://formspree.io/f/xdopblog" class="was-validated" method="POST ">
+                    <div class="form-group">
+                        <!-- inputs -->
+                        <input type="text " placeholder="your name" class="form-control" name="name" required/>
+                        <div class="valid-feedback">awesome.</div>
+                        <div class="invalid-feedback">field required.</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email " placeholder="Enter email" class="form-control " name="_replyto" required />
+                        <div class="valid-feedback">awesome.</div>
+                        <div class="invalid-feedback">email required.</div>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message " class="form-control" placeholder="your message " rows="7 "></textarea>
+                        <div class="valid-feedback">awesome.</div>
+                        <div class="invalid-feedback">type something to send.</div>
+                    </div>
+
                     <button type="submit " class="btn submit-btn " value="Send ">submit here</button>
                 </form>
             </article>
