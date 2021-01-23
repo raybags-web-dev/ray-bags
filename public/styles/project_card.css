@@ -27,7 +27,7 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/void.jpeg") center/cover no-repeat fixed;
     padding-bottom: 1rem;
     border-radius: .4rem;
     margin-top: 3rem;
@@ -70,8 +70,7 @@
     transition: .4s;
     cursor: pointer;
     border-radius: .4rem;
-    background: #fffeff;
-    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/about2.jpg") center/cover no-repeat fixed;
     box-shadow: -2rem 0 3rem #000;
 }
 
@@ -127,15 +126,6 @@
     -webkit-box-shadow: inset 1px 0px 12px 4px rgba(0, 0, 0, 0.59);
     box-shadow: inset 1px 0px 12px 4px rgba(2, 2, 2, 0.59);
     border-radius: .4rem !important;
-}
-
-
-/* green header for js toggling */
-
-.cardGreen {
-    -webkit-box-shadow: -1px 1px 15px 0px rgba(12, 224, 31, 0.48);
-    box-shadow: -1px 1px 15px 0px rgba(12, 224, 31, 0.48);
-    transition: .4s;
 }
 
 .card-author {

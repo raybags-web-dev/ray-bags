@@ -19,7 +19,6 @@ const dragDrop = (imageLinks, projectCardsToDrag, cardContainers) => {
         //drag stops
         draggable.addEventListener("dragend", () => {
             draggable.classList.remove("dragging");
-            draggable.classList.remove("cardGreen");
 
         });
     });

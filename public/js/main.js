@@ -83,5 +83,3 @@ move_to_top_of_page();
 go_to_top();
 // update copyright year handler
 copyRightYear(copyright_container);
-
-// scroll spy======================needs work============================

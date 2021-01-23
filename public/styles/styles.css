@@ -562,7 +562,7 @@ p {
 
 .header {
     min-height: 100vh;
-    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/img3.jpg") center/cover no-repeat fixed;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature2.jpeg") center/cover no-repeat fixed;
     position: relative;
     overflow: hidden;
 }
@@ -604,7 +604,7 @@ fieldset {
 }
 
 fieldset legend {
-    color: white;
+    color: transparent;
 }
 
 .banner::before {
@@ -833,9 +833,6 @@ fieldset legend {
 }
 
 
-/* =================================================================================================== */
-
-
 /* ===Content divider=== */
 
 .content-divider {
@@ -844,7 +841,7 @@ fieldset legend {
     -webkit-box-shadow: 0px 9px 12px 0px rgba(0, 0, 0, 0.79);
     box-shadow: 0px 9px 12px 0px rgba(0, 0, 0, 0.79);
     z-index: 4;
-    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature8.jpeg") center/cover no-repeat fixed;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature2.jpeg") center/cover no-repeat fixed;
 }
 
 
@@ -1109,7 +1106,7 @@ h3 {
 /* === product === */
 
 .project-in-mind {
-    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/void.jpeg") center/cover no-repeat fixed;
     -webkit-box-shadow: 0px 20px 0px -10px #FFFFFF, 0px -20px 0px -10px #FFFFFF, 20px 0px 0px -10px #FFFFFF, -20px 0px 0px -10px #FFFFFF, 0px 0px 0px 10px #fdfbfb, inset 2px 3px 14px -2px rgba(0, 0, 0, 0.18);
     box-shadow: 0px 20px 0px -10px #FFFFFF, 0px -20px 0px -10px #FFFFFF, 20px 0px 0px -10px #FFFFFF, -20px 0px 0px -10px #FFFFFF, 0px 0px 0px 10px #fdfdfd, inset 2px 3px 14px -2px rgba(0, 0, 0, 0.18);
 }
@@ -1251,7 +1248,7 @@ Services
 
 .services {
     min-height: 100vh;
-    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/img3.jpg") center/cover no-repeat fixed;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/_img1.jpeg") center/cover no-repeat fixed;
     position: relative;
     overflow: hidden;
     -webkit-box-shadow: inset 0px 1px 15px 2px #000000;
@@ -1265,10 +1262,10 @@ Services
 }
 
 .service-card {
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/_img1.jpeg") center/cover no-repeat fixed;
     position: relative;
     margin: 2rem 0;
     border-radius: var(--radius);
-    background: var(--clr-gray-10);
     transition: var(--transition);
     -webkit-box-shadow: 9px 9px 7px -4px rgba(0, 0, 0, 0.67);
     box-shadow: 9px 9px 7px -4px rgba(0, 0, 0, 0.67);
@@ -1348,7 +1345,7 @@ Services
 
 .service-card {
     padding: 20px;
-    border: 15px ridge white;
+    border: 15px ridge rgb(78, 32, 32);
     border-radius: 40px 40px 40px 40px;
     backdrop-filter: blur(100%);
     overflow: hidden;
@@ -1386,9 +1383,9 @@ Services
 
 .contact {
     min-height: 100vh;
-    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/glass2.jpeg") center/cover no-repeat fixed;
-    position: relative;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
     overflow: hidden;
+    background-color: none;
     background-color: none;
     -webkit-box-shadow: inset 0px 1px 15px 2px #000000;
     box-shadow: inset 0px 1px 15px 2px #000000;
@@ -1761,7 +1758,6 @@ Services
     /* Services*/
     .services {
         min-height: 70vh;
-        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/img3.jpg") center/cover no-repeat fixed;
         position: relative;
         overflow: hidden;
         padding: 5%;
@@ -1771,15 +1767,21 @@ Services
         text-align: center;
     }
     .service-card {
+        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/_img2.jpeg") center/cover no-repeat fixed;
         position: relative;
+        padding: 20px;
         margin: 1rem auto;
-        width: 70%;
+        width: 50%;
         height: 65vh !important;
+        backdrop-filter: blur(100%);
         border-radius: var(--radius);
         background: var(--clr-gray-10);
         transition: var(--transition);
+        overflow: hidden;
         -webkit-box-shadow: 9px 9px 7px -4px rgba(0, 0, 0, 0.67);
         box-shadow: 9px 9px 7px -4px rgba(0, 0, 0, 0.67);
+        -webkit-box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
+        box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
     }
     .service-card:hover {
         transform: scale(1.02);
@@ -1806,10 +1808,6 @@ Services
         object-fit: cover;
         filter: grayscale(100%);
         transition: var(--transition);
-    }
-    .service-info {
-        text-align: center;
-        padding: 3rem auto
     }
     .service-info P {
         max-width: 20rem;
@@ -1842,21 +1840,17 @@ Services
     }
     .center {
         margin: 0 1rem 0 1rem;
-    }
-    .service-card {
-        padding: 20px;
-        border: 15px ridge white !important;
-        border-radius: 10px 10px 10px 10px;
-        backdrop-filter: blur(100%);
-        overflow: hidden;
-        -webkit-box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
-        box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
+        display: flex;
     }
     .service-img-container {
         position: relative;
+        flex: 1 !important;
     }
     .service-info {
+        text-align: center;
+        padding: 3rem auto;
         padding-top: 3rem;
+        flex: 1 !important;
     }
     .service-icon {
         display: flex;
@@ -2050,7 +2044,6 @@ Services
     /* Services*/
     .services {
         min-height: 70vh;
-        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/img3.jpg") center/cover no-repeat fixed;
         position: relative;
         overflow: hidden;
         padding: 5%;
@@ -2060,14 +2053,22 @@ Services
         text-align: center;
     }
     .service-card {
+        display: flex;
+        flex-direction: column;
         position: relative;
+        padding: 20px;
         margin: 2rem auto;
         height: 70vh !important;
         border-radius: var(--radius);
-        background: var(--clr-gray-10);
+        overflow: hidden;
+        border: 15px ridge rgb(97, 15, 15) !important;
         transition: var(--transition);
+        backdrop-filter: blur(100%);
+        background: linear-gradient(rgb(0, 0, 0, .6), rgb(0, 0, 0, .6)), url("/public/img/more/_img1.jpeg") center/cover no-repeat fixed;
         -webkit-box-shadow: 9px 9px 7px -4px rgba(0, 0, 0, 0.67);
         box-shadow: 9px 9px 7px -4px rgba(0, 0, 0, 0.67);
+        -webkit-box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
+        box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
     }
     .service-card:hover {
         transform: scale(1.02);
@@ -2128,23 +2129,13 @@ Services
     .service-btn:hover {
         text-shadow: 0px 1px 0px rgba(30, 30, 30, 0.8);
     }
-    .center {
-        margin: 0 1rem 0 1rem;
-    }
-    .service-card {
-        padding: 20px;
-        border: 15px ridge white !important;
-        border-radius: 10px 10px 10px 10px;
-        backdrop-filter: blur(100%);
-        overflow: hidden;
-        -webkit-box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
-        box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
-    }
     .service-img-container {
         position: relative;
+        flex: 1;
     }
     .service-info {
         padding-top: 3rem;
+        flex: 1;
     }
     .service-icon {
         display: flex;
@@ -2167,6 +2158,13 @@ Services
         visibility: none;
     }
     /* ====================name animation============== */
+    .contact {
+        min-height: 100vh;
+        min-width: 100;
+        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+        overflow: hidden;
+        background-color: none;
+    }
 }
 
 @media screen and (min-width:991px) {
@@ -2408,6 +2406,13 @@ Services
         }
     }
     /* ====================name animation============== */
+    .contact {
+        min-height: 100vh;
+        min-width: 100;
+        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+        overflow: hidden;
+        background-color: none;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -2533,6 +2538,13 @@ Services
         visibility: none;
     }
     /* ====================name animation============== */
+    .contact {
+        min-height: 100vh;
+        min-width: 100;
+        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+        overflow: hidden;
+        background-color: none;
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -2934,7 +2946,7 @@ Services
         display: grid;
         min-height: 1008px;
         min-width: 1000px;
-        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/void.jpeg") center/cover no-repeat fixed;
     }
     .in-mind-info {
         flex: 1;
@@ -2971,7 +2983,7 @@ Services
     /* Services*/
     .services {
         min-height: 100vh;
-        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/img3.jpg") center/cover no-repeat fixed;
+        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/_img1.jpeg") center/cover no-repeat fixed;
         position: relative;
         overflow: hidden;
         padding: 5%;
@@ -2987,10 +2999,14 @@ Services
         margin: 1rem 0;
         margin-right: 1.5rem;
         border-radius: var(--radius);
-        background: var(--clr-gray-10);
         transition: var(--transition);
         -webkit-box-shadow: 9px 9px 7px -4px rgba(0, 0, 0, 0.67);
         box-shadow: 9px 9px 7px -4px rgba(0, 0, 0, 0.67);
+        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/void.jpeg") center/cover no-repeat fixed;
+        position: relative;
+        overflow: hidden;
+        -webkit-box-shadow: inset 0px 1px 15px 2px #000000;
+        box-shadow: inset 0px 1px 15px 2px #000000;
     }
     .service-card>div {
         flex: 1;
@@ -2998,6 +3014,7 @@ Services
     .service-card:hover {
         transform: scale(1.02);
         cursor: context-menu;
+        transition: var(--transition);
         -webkit-box-shadow: 1px 4px 9px 4px rgba(0, 0, 0, 0.85);
         box-shadow: 1px 4px 9px 2px rgba(0, 0, 0, 0.85);
     }
@@ -3052,6 +3069,8 @@ Services
     }
     .service-btn:hover {
         text-shadow: 0px 1px 0px rgba(30, 30, 30, 0.8);
+        transition: var(--transition);
+        background: transparent;
     }
     .center {
         margin: 0 1rem 0 1rem;
@@ -3079,7 +3098,7 @@ Services
     .contact {
         min-height: 100vh;
         min-width: 100;
-        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
         overflow: hidden;
         background-color: none;
     }
