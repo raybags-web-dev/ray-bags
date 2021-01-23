@@ -1,5 +1,5 @@
 {
-    "workbench.sideBar.location": "right",
+    "workbench.sideBar.location": "left",
     "workbench.tree.indent": 9,
     "workbench.editor.closeOnFileDelete": true,
     "workbench.editor.labelFormat": "long",
