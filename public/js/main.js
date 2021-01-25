@@ -7,6 +7,7 @@ import {
     closeMenuWithLink,
     copyRightYear,
     cookie_accepted,
+    handelSendMessageBTN,
 } from "./middleware.js";
 import { init_anime, animateName, click_btn } from "./animations.js";
 import { dragDrop } from "./cards.js";
@@ -19,6 +20,12 @@ const project_in_mind_image = document.querySelector(".proj_in_mind");
 const project_in_mind_container = document.querySelector(
     "#proj_in_mind_mainpage"
 );
+const section = document.querySelectorAll('section');
+
+const form = document.getElementById("submintForm");
+const textBox = document.getElementById("text_message");
+const sendMessageBtn = document.getElementById("submit_btn");
+
 const cookie_accept_bunner = document.querySelector(".alert_box_accepted");
 const cookie_btn = document.getElementById("cookie_btnn");
 const cookie_accept_bunner_icon = document.getElementById("close");
@@ -50,6 +57,12 @@ export {
     logo_btn,
 };
 
+// handle send message button
+document.addEventListener(
+    "scroll",
+    handelSendMessageBTN(form, textBox, sendMessageBtn),
+    false
+);
 // handle projects card and dragging
 dragDrop(img_links, draggables, constainers);
 cookie_accepted();
@@ -83,3 +96,5 @@ move_to_top_of_page();
 go_to_top();
 // update copyright year handler
 copyRightYear(copyright_container);
+
+//=====scrollSpy function============

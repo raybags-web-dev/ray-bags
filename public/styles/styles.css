@@ -41,7 +41,7 @@ body {
     line-height: 1.5;
     font-size: 1rem;
     user-select: none;
-    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature2.jpeg") center/cover no-repeat fixed;
 }
 
 html,
@@ -109,6 +109,11 @@ body::-webkit-scrollbar-thumb {
     transition: var(--transition);
 }
 
+.btn_deactivate {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 a {
     text-decoration: none;
 }
@@ -153,11 +158,16 @@ p {
 
 #spinner {
     position: absolute;
-    justify-self: center;
-    left: 35%;
-    top: 20%;
-    color: var(--clr-white);
-    z-index: 9999;
+    align-self: center;
+    margin: 10rem auto;
+    top: 0;
+    left: 20%;
+    text-align: center;
+    font-size: larger;
+    color: transparent !important;
+    z-index: 999;
+    -webkit-box-shadow: inset 10px 0px 30px 20px rgba(245, 128, 128, 0.55);
+    box-shadow: inset 10px 0px 30px 20px rgba(247, 148, 148, 0.55);
 }
 
 
@@ -2201,6 +2211,20 @@ Services
         overflow: hidden;
         background-color: none;
     }
+    /* spinner */
+    #spinner {
+        position: absolute;
+        align-self: center;
+        margin: 10rem auto;
+        top: 0;
+        left: 44%;
+        text-align: center;
+        font-size: larger;
+        color: transparent !important;
+        z-index: 999;
+        -webkit-box-shadow: inset 10px 0px 30px 20px rgba(245, 128, 128, 0.55);
+        box-shadow: inset 10px 0px 30px 20px rgba(247, 148, 148, 0.55);
+    }
 }
 
 @media screen and (min-width:991px) {
@@ -3158,6 +3182,7 @@ Services
     }
     .form {
         display: flex;
+        position: relative;
     }
     .form-group {
         display: flex;
@@ -3182,6 +3207,21 @@ Services
         backdrop-filter: blur(100px);
         border: .2rem solid transparent;
         border-radius: .3rem;
+    }
+    .form::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -20%;
+        height: 100%;
+        width: 100%;
+        opacity: .7;
+        z-index: 106;
+        transition: var(--transition);
+        background: red;
+        /* backdrop-filter: blur(50px); */
+        -webkit-box-shadow: -1px 0px 13px 6px rgba(0, 0, 0, 0.43);
+        box-shadow: -1px 0px 13px 6px rgba(0, 0, 0, 0.43);
     }
     /* footer big screens */
     .footer {

@@ -1,5 +1,4 @@
 "use strict";
-
 import {
     topButton,
     nav_container,
@@ -9,6 +8,7 @@ import {
     cookie_accept_bunner,
     cookie_accept_bunner_icon,
 } from "./main.js";
+
 // top button visibility handler.
 const show_hide_top_button = (element) => {
     element = topButton;
@@ -34,9 +34,11 @@ function go_to_top() {
         },
         true
     );
+
     window.addEventListener("scroll", () => {
         show_hide_top_button();
     });
+
     document.body.addEventListener(
         "load",
         () => {
@@ -44,6 +46,7 @@ function go_to_top() {
         },
         true
     );
+
     window.addEventListener("load", () => {
         show_hide_top_button();
     });
@@ -125,6 +128,34 @@ function cookie_accepted() {
     });
 }
 
+// handle button activation on send for the form
+class BTN {
+    contructor() {}
+
+    deactivateBtn(_btn) {
+        _btn.classList.add("btn_deactivate");
+    }
+
+    activateBtn(_btn) {
+        _btn.classList.remove("btn_deactivate");
+    }
+}
+const _BTN = new BTN();
+
+const handelSendMessageBTN = (form, textBox, sendMessageBtn) => {
+    if (element_isIn_viewPort(form) || textBox.value == "") {
+        _BTN.deactivateBtn(sendMessageBtn);
+
+        textBox.addEventListener("change", () => {
+            if (textBox.value != "" || textBox.value.length >= 0) {
+                _BTN.activateBtn(sendMessageBtn);
+            }
+        });
+    }
+};
+
+// apply active class of links when scrolling page
+
 export {
     move_to_top_of_page,
     go_to_top,
@@ -133,5 +164,5 @@ export {
     closeMenuWithLink,
     copyRightYear,
     cookie_accepted,
-    element_isIn_viewPort,
+    handelSendMessageBTN,
 };

@@ -30,11 +30,7 @@
 </head>
 
 <body id="home">
-    <!-- ===Spinner==== -->
-    <div id="spinner" class="spinner-borderm" style="width: 7rem; height: 7rem; color: rgb(248, 247, 247);" role="status">
-        <span class="sr-only">Loading...</span>
-    </div>
-    <!-- ===spinner==== -->
+
 
     <!-- == navbar== -->
     <header class="header">
@@ -70,6 +66,11 @@
                 <!-- menu links  -->
             </div>
         </nav>
+        <!-- ===Spinner==== -->
+        <div id="spinner" class="spinner-border" style="width: 13rem; height: 13rem; color: rgb(248, 247, 247);" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <!-- ===spinner==== -->
         <!-- end of nav -->
         <div class="banner">
             <h2 class="animated slideInLeft slow">Raymond Baguma</h2>
@@ -520,7 +521,7 @@
             <!-- contact form -->
             <article class="contact-form ">
                 <h3>contact me</h3>
-                <form action="https://formspree.io/f/xdopblog" class="was-validated" method="POST">
+                <form id="submintForm" action="https://formspree.io/f/xdopblog" class="was-validated" method="POST">
                     <div class="form-group">
                         <!-- inputs -->
                         <input type="text " placeholder="your name" class="form-control" name="name" required/>
@@ -533,12 +534,11 @@
                         <div class="invalid-feedback">email required.</div>
                     </div>
                     <div class="form-group">
-                        <textarea name="message " class="form-control" placeholder="your message " rows="7 "></textarea>
+                        <textarea id="text_message" class="form-control" placeholder="your message " rows="7 " name="message " required></textarea>
                         <div class="valid-feedback">awesome.</div>
-                        <div class="invalid-feedback">type something to send.</div>
+                        <div class="invalid-feedback">message is required.</div>
                     </div>
-
-                    <button type="submit " class="btn submit-btn " value="Send ">submit here</button>
+                    <button id="submit_btn" type="submit " class="btn submit-btn " value="Send">submit here</button>
                 </form>
             </article>
         </div>
