@@ -41,7 +41,7 @@ body {
     line-height: 1.5;
     font-size: 1rem;
     user-select: none;
-    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature2.jpeg") center/cover no-repeat fixed;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/dark1.jpeg") center/cover no-repeat fixed;
 }
 
 html,
@@ -166,8 +166,8 @@ p {
     font-size: larger;
     color: transparent !important;
     z-index: 999;
-    -webkit-box-shadow: inset 10px 0px 30px 20px rgba(245, 128, 128, 0.55);
-    box-shadow: inset 10px 0px 30px 20px rgba(247, 148, 148, 0.55);
+    -webkit-box-shadow: inset 1px 0px 2px 2px rgba(245, 128, 128, 0.55);
+    box-shadow: inset 1px 0px 2px 2px rgba(247, 148, 148, 0.55);
 }
 
 
@@ -654,7 +654,6 @@ fieldset legend {
     position: absolute;
     height: 100%;
     width: 2%;
-    /* left: -10%; */
     left: -1000%;
     top: 0%;
     border-radius: var(--radius);
@@ -828,7 +827,6 @@ fieldset legend {
 
 .banner-btn:hover::before,
 .banner-btn:hover::after {
-    /* width: 18.5%; */
     width: 50%;
     z-index: -1;
     background: inherit;
@@ -840,12 +838,14 @@ fieldset legend {
     padding: 1rem;
     border-radius: .4rem;
     backdrop-filter: blur(100px);
+    cursor: pointer;
     animation-name: blassy;
     animation-fill-mode: backwards;
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
     transition: var(--transition);
+    border: 1px solid transparent;
     animation-timing-function: ease-in-out;
     -webkit-box-shadow: inset -2px 0px 18px 6px rgba(0, 0, 0, 0.59);
     box-shadow: inset -2px 0px 18px 6px rgba(0, 0, 0, 0.59);
@@ -853,7 +853,7 @@ fieldset legend {
 
 @keyframes blassy {
     25% {
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(0px);
         -webkit-box-shadow: inset -2px 0px 24px 6px rgba(0, 0, 0, 0.59);
         box-shadow: inset -2px 0px 24px 6px rgba(0, 0, 0, 0.59);
         transition: var(--transition);
@@ -865,17 +865,28 @@ fieldset legend {
         transition: var(--transition);
     }
     75% {
-        backdrop-filter: blur(80px);
+        backdrop-filter: blur(200px);
         -webkit-box-shadow: inset -2px 0px 24px 6px rgba(0, 0, 0, 0.65);
         box-shadow: inset -2px 0px 24px 6px rgba(0, 0, 0, 0.65);
         transition: var(--transition);
     }
     100% {
-        backdrop-filter: blur(100px);
+        backdrop-filter: blur(0px);
         -webkit-box-shadow: inset 2px -1px 26px 14px rgba(0, 0, 0, 0.19);
         box-shadow: inset 2px -1px 26px 14px rgba(0, 0, 0, 0.19);
         transition: var(--transition);
     }
+}
+
+.banner:hover {
+    transition: var(--transition);
+    box-shadow: inset none;
+    background: transparent;
+    background: transparent;
+    border: 1px solid transparent;
+    backdrop-filter: blur(0px);
+    opacity: 1;
+    animation-play-state: paused;
 }
 
 
@@ -887,7 +898,7 @@ fieldset legend {
     -webkit-box-shadow: 0px 9px 12px 0px rgba(0, 0, 0, 0.79);
     box-shadow: 0px 9px 12px 0px rgba(0, 0, 0, 0.79);
     z-index: 4;
-    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature2.jpeg") center/cover no-repeat fixed;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/dark1.jpeg") center/cover no-repeat fixed;
 }
 
 
@@ -1152,7 +1163,7 @@ h3 {
 /* === product === */
 
 .project-in-mind {
-    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/void.jpeg") center/cover no-repeat fixed;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/dark1.jpeg") center/cover no-repeat fixed;
     -webkit-box-shadow: 0px 20px 0px -10px #FFFFFF, 0px -20px 0px -10px #FFFFFF, 20px 0px 0px -10px #FFFFFF, -20px 0px 0px -10px #FFFFFF, 0px 0px 0px 10px #fdfbfb, inset 2px 3px 14px -2px rgba(0, 0, 0, 0.18);
     box-shadow: 0px 20px 0px -10px #FFFFFF, 0px -20px 0px -10px #FFFFFF, 20px 0px 0px -10px #FFFFFF, -20px 0px 0px -10px #FFFFFF, 0px 0px 0px 10px #fdfdfd, inset 2px 3px 14px -2px rgba(0, 0, 0, 0.18);
 }
@@ -1188,25 +1199,30 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 1rem auto;
+    margin: 2 auto;
     text-align: left;
     line-height: 1.9rem;
     font-family: Georgia, serif;
     font-size: 20px;
     letter-spacing: 3px;
+    padding: .8rem .9rem;
     word-spacing: 2px;
     color: #000000;
+    border-radius: .5rem;
     font-weight: normal;
     text-decoration: none;
     font-variant: normal;
     text-transform: none;
+    -webkit-box-shadow: inset 20px 1px 6px -13px rgba(114, 9, 9, 0.81);
+    box-shadow: inset 20px 1px 6px -13px rgba(95, 5, 5, 0.81);
 }
 
 .in-mind-info p::first-letter {
     font-size: 40px;
-    padding-right: .5rem;
+    padding-right: .3rem;
     font-family: var(--ff-secondary);
     font-weight: 500;
+    text-transform: capitalize;
     text-shadow: 0 3px 5px #4d0606;
     color: white;
 }
@@ -1232,15 +1248,19 @@ h3 {
     z-index: 0;
     border-radius: .5rem;
     padding-top: .3rem;
-    background: transparent;
     backdrop-filter: blur(200px);
     -webkit-box-shadow: inset 1px 0px 20px 3px rgba(0, 0, 0, 0.68);
     box-shadow: inset 1px 0px 20px 3px rgba(0, 0, 0, 0.68);
+    -webkit-box-shadow: inset 20px 1px 6px -13px rgba(114, 9, 9, 0.81);
+    box-shadow: inset 20px 1px 6px -13px rgba(95, 5, 5, 0.81);
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/nature2.jpeg") center/cover no-repeat fixed;
 }
 
 .in-mind-info:hover::before {
-    transition: var(--transition);
-    width: 1%;
+    transition: .9s;
+    width: 0;
+    height: 0;
+    filter: grayscale(100%);
 }
 
 .in-mind-info p {
@@ -1265,7 +1285,8 @@ h3 {
     position: relative;
     border: .5rem solid transparent;
     border-radius: .5rem;
-    width: 100%;
+    min-width: 48;
+    margin-top: 3rem;
     transition: var(--transition);
     -webkit-box-shadow: -1px 4px 18px 3px #000000;
     box-shadow: -1px 4px 18px 3px #000000;
@@ -2222,8 +2243,8 @@ Services
         font-size: larger;
         color: transparent !important;
         z-index: 999;
-        -webkit-box-shadow: inset 10px 0px 30px 20px rgba(245, 128, 128, 0.55);
-        box-shadow: inset 10px 0px 30px 20px rgba(247, 148, 148, 0.55);
+        -webkit-box-shadow: inset 1px 0px 2px 2px rgba(245, 128, 128, 0.55);
+        box-shadow: inset 1px 0px 2px 2px rgba(247, 148, 148, 0.55);
     }
 }
 
@@ -2914,12 +2935,13 @@ Services
     .skill-title {
         font-size: 25px;
         padding: .5rem;
-        color: #FFFFFF;
+        color: #6d1010;
         font-weight: 700;
         opacity: .8;
-        background: #6b6666;
-        text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
-        text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+        text-shadow: 1px 3px 0 #969696, 0px 1px 0px #aba8a8;
+        text-shadow: 1px 3px 0 #969696, 0px 1px 0px #aba8a8;
+        -webkit-box-shadow: inset 2px 0px 14px 2px rgba(8, 8, 8, 0.81);
+        box-shadow: inset 2px 0px 14px 2px rgba(2, 2, 2, 0.81);
     }
     .skill-text {
         display: block;
@@ -3006,7 +3028,7 @@ Services
         display: grid;
         min-height: 1008px;
         min-width: 1000px;
-        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/void.jpeg") center/cover no-repeat fixed;
+        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/dark1.jpeg") center/cover no-repeat fixed;
     }
     .in-mind-info {
         flex: 1;
@@ -3043,7 +3065,7 @@ Services
     /* Services*/
     .services {
         min-height: 100vh;
-        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/_img1.jpeg") center/cover no-repeat fixed;
+        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/dark1.jpeg") center/cover no-repeat fixed;
         position: relative;
         overflow: hidden;
         padding: 5%;
@@ -3062,7 +3084,7 @@ Services
         transition: var(--transition);
         -webkit-box-shadow: 9px 9px 7px -4px rgba(0, 0, 0, 0.67);
         box-shadow: 9px 9px 7px -4px rgba(0, 0, 0, 0.67);
-        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/void.jpeg") center/cover no-repeat fixed;
+        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/dark1.jpeg") center/cover no-repeat fixed;
         position: relative;
         overflow: hidden;
         -webkit-box-shadow: inset 0px 1px 15px 2px #000000;
@@ -3128,9 +3150,9 @@ Services
         box-shadow: 0px 4px 7px 8px rgba(0, 0, 0, 0.37);
     }
     .service-btn:hover {
-        text-shadow: 0px 1px 0px rgba(30, 30, 30, 0.8);
         transition: var(--transition);
         background: transparent;
+        color: var(--clr-white);
     }
     .center {
         margin: 0 1rem 0 1rem;
@@ -3231,9 +3253,11 @@ Services
     }
     .footer-name h5,
     .footer-link-header h5 {
-        color: #ac0909;
+        color: #dababa;
         font-weight: 800;
-        text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.63);
+        opacity: .7;
+        text-shadow: 1px 3px 0 #969696, 0px 1px 0px #aba8a8;
+        text-shadow: 1px 3px 0 #969696, 0px 1px 0px #aba8a8;
     }
     .footer-name {
         position: relative;
@@ -3247,7 +3271,8 @@ Services
         font-weight: 600;
         opacity: .6;
         font-size: 20px;
-        text-shadow: 0 3px 2px #474747, 2px 2px 2px rgba(206, 89, 55, 0);
+        text-shadow: 1px 3px 0 #969696, 0px 1px 0px #aba8a8;
+        text-shadow: 1px 3px 0 #969696, 0px 1px 0px #aba8a8;
     }
     .footer_link {
         position: relative;
@@ -3283,7 +3308,8 @@ Services
         position: relative;
         bottom: 0;
         color: #f7f2f2;
-        text-shadow: 0 0 0 #969696, 1px 1px 5px #aba8a8;
+        text-shadow: 1px 3px 0 #969696, 0px 1px 0px #aba8a8;
+        text-shadow: 1px 3px 0 #969696, 0px 1px 0px #aba8a8;
     }
     .footer-bottom {
         font-size: 20px;

@@ -27,7 +27,7 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/void.jpeg") center/cover no-repeat fixed;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/dark1.jpeg") center/cover no-repeat fixed;
     padding-bottom: 1rem;
     border-radius: .4rem;
     margin-top: 3rem;
@@ -70,14 +70,17 @@
     transition: .4s;
     cursor: pointer;
     border-radius: .4rem;
-    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/about2.jpg") center/cover no-repeat fixed;
-    box-shadow: -2rem 0 3rem #000;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/dark1.jpeg") center/cover no-repeat fixed;
+    -webkit-box-shadow: inset 1px 0px 25px 15px rgba(0, 0, 0, 0.79);
+    box-shadow: inset 1px 0px 25px 15px rgba(0, 0, 0, 0.79);
 }
 
 .card:hover {
     transform: translateY(-1.5rem) !important;
     transition: .4s;
     transform: scale(1.1);
+    -webkit-box-shadow: inset 20px 1px 6px -13px rgba(114, 9, 9, 0.81);
+    box-shadow: inset 20px 1px 6px -13px rgba(95, 5, 5, 0.81);
 }
 
 .card:hover~.card {
@@ -86,7 +89,7 @@
 }
 
 .card:not(:first-child) {
-    margin-left: -1rem;
+    margin-left: -3rem;
 }
 
 .card::after {
@@ -98,8 +101,8 @@
     padding: .5rem;
     border-radius: 50%;
     transition: .4s;
-    background: #f80505;
-    opacity: .5;
+    background: #f2f5f2;
+    opacity: .3;
     visibility: hidden;
     transform: translateX(-1rem);
     backdrop-filter: blur(20%);
@@ -136,6 +139,8 @@
     align-items: center;
     -webkit-box-shadow: inset 1px 0px 12px 4px #000000;
     box-shadow: inset 1px 0px 12px 4px #000000;
+    -webkit-box-shadow: inset 20px 1px 6px -13px rgba(114, 9, 9, 0.81);
+    box-shadow: inset 20px 1px 6px -13px rgba(95, 5, 5, 0.81);
 }
 
 .author-avator img {
@@ -174,16 +179,18 @@
 }
 
 .card-header p {
+    text-align: center;
     flex: 1;
     color: var(--clr-white);
     font-size: large;
 }
 
 .card-header h3 {
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
     font-weight: 600;
-    color: var(--clr-primary);
+    color: var(--clr-white);
+    opacity: .7;
     text-shadow: var(--glass-text-shadow);
     flex: 1;
 }
