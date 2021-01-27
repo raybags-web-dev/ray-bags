@@ -76,6 +76,39 @@ const element_isIn_viewPort = (element) => {
     );
 };
 
+// lady load images helper function.
+
+const lazyLoadImages = (all_images) => {
+    document.addEventListener("DOMContentLoaded", () => {
+        let lazyloadImages = all_images,
+            lazyloadThrottleTimeout;
+
+        const lazyload = () => {
+            if (lazyloadThrottleTimeout) {
+                clearTimeout(lazyloadThrottleTimeout);
+            }
+
+            lazyloadThrottleTimeout = setTimeout(() => {
+                lazyloadImages.forEach((img) => {
+                    if (element_isIn_viewPort(img)) {
+                        img.src = img.dataset.src;
+                        img.classList.remove("lazy");
+                    }
+                });
+
+                if (lazyloadImages.length == 0) {
+                    document.removeEventListener("scroll", lazyload);
+                    window.removeEventListener("resize", lazyload);
+                    window.removeEventListener("orientationChange", lazyload);
+                }
+            }, 20);
+        };
+        document.addEventListener("scroll", lazyload);
+        window.addEventListener("resize", lazyload);
+        window.addEventListener("orientationChange", lazyload);
+    });
+};
+
 // Open menu handler
 const openMenu = function(e) {
     e.preventDefault();
@@ -165,4 +198,5 @@ export {
     copyRightYear,
     cookie_accepted,
     handelSendMessageBTN,
+    lazyLoadImages,
 };

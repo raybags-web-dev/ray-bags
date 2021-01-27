@@ -617,32 +617,40 @@ p {
 }
 
 .banner h2 {
+    margin: 1rem auto;
     padding: 1rem;
     font-family: var(--ff-secondary);
-    line-height: 2.3rem;
-    color: var(--clr-primary);
-    font-weight: 600;
-    text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15), 2px 2px 2px rgba(206, 89, 55, 0);
+    line-height: 2rem;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    background: linear-gradient(45deg, #874da2 20%, #c43a30 100%);
+    text-shadow: none;
+    transition: var(--transition);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .banner h1 {
     position: relative;
     color: var(--clr-white);
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 600;
+    line-height: 2rem;
+    font-size: 25px;
     background: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
     text-shadow: none;
     padding-top: 1rem;
     transition: var(--transition);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 4px 0px 0px #fcf9f9, 2px 2px 2px rgba(5, 5, 5, 0);
 }
 
 fieldset {
     position: relative;
     color: transparent;
     z-index: 300;
-    padding: 4rem;
+    padding: 5rem;
 }
 
 fieldset legend {
@@ -765,14 +773,7 @@ fieldset legend {
     padding-right: .5rem;
     font-weight: bold;
     font-size: 3rem;
-    text-shadow: 3px 5px 2px #474747;
-}
-
-.banner h2 te .banner h1 {
-    text-transform: uppercase;
-    color: var(--clr-white);
-    margin-top: 1.25rem;
-    margin-bottom: 2rem;
+    text-shadow: 3px 5px 2px #fcfafa;
 }
 
 .banner-btn {
@@ -3318,4 +3319,9 @@ Services
         color: rgb(247, 246, 246);
         font-family: var(--ff-primary);
     }
+}
+
+
+}
+
 }

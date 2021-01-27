@@ -8,6 +8,7 @@ import {
     copyRightYear,
     cookie_accepted,
     handelSendMessageBTN,
+    lazyLoadImages,
 } from "./middleware.js";
 import { init_anime, animateName, click_btn } from "./animations.js";
 import { dragDrop } from "./cards.js";
@@ -20,8 +21,6 @@ const project_in_mind_image = document.querySelector(".proj_in_mind");
 const project_in_mind_container = document.querySelector(
     "#proj_in_mind_mainpage"
 );
-const section = document.querySelectorAll('section');
-
 const form = document.getElementById("submintForm");
 const textBox = document.getElementById("text_message");
 const sendMessageBtn = document.getElementById("submit_btn");
@@ -42,6 +41,7 @@ const nav_container = document.querySelector(".nav");
 const menu_bugger_icon = document.getElementById("menu_open_icon");
 const close_menu_icon = document.getElementById("menu_close_icon");
 const all_links = document.querySelectorAll(".nav_link");
+const all_images = document.querySelectorAll("img.lazy");
 
 export {
     allLinks,
@@ -56,6 +56,9 @@ export {
     cookie_accept_bunner_icon,
     logo_btn,
 };
+
+// lazy load images
+lazyLoadImages(all_images);
 
 // handle send message button
 document.addEventListener(
