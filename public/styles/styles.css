@@ -504,9 +504,6 @@ p {
 /* ==========lean more and accept  cookie button psudo elements ======= */
 
 
-/* =================cookie================= */
-
-
 /* mobile styles */
 
 .btn {
@@ -620,7 +617,7 @@ p {
     margin: 1rem auto;
     padding: 1rem;
     font-family: var(--ff-secondary);
-    line-height: 2rem;
+    line-height: 2.3rem;
     font-size: 2.5rem;
     letter-spacing: 2px;
     font-weight: 700;
@@ -951,13 +948,14 @@ fieldset legend {
     color: var(--clr-primary);
     font-family: var(--ff-secondary);
     margin: 0 auto;
+    text-shadow: 1px 3px 1px #524a4a, 2px 2px 2px rgba(252, 250, 249, 0);
 }
 
 .section-skills-title-container h2 {
     color: var(--clr-primary);
     font-family: var(--ff-primary);
     font-weight: 500;
-    text-shadow: 1px 13px 5px #aba8a8, 2px 2px 2px rgba(206, 89, 55, 0);
+    text-shadow: 1px 3px 1px #050505, 2px 2px 2px rgba(32, 30, 29, 0);
     margin: 0 auto;
 }
 
@@ -1315,6 +1313,9 @@ Services
 */
 
 .services {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-height: 100vh;
     background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/_img1.jpeg") center/cover no-repeat fixed;
     position: relative;
@@ -1327,6 +1328,7 @@ Services
     margin-top: 4rem;
     margin-bottom: -1rem;
     text-align: center;
+    text-shadow: 1px 3px 1px #6e6969, 2px 2px 2px rgba(32, 30, 29, 0);
 }
 
 .service-card {
@@ -1371,11 +1373,14 @@ Services
 }
 
 .service-info {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     padding-right: 3rem 1rem 2.5rem 1rem;
 }
 
 .service-info P {
+    flex: 1;
     max-width: 20rem;
     color: var(--clr-gray-5);
     margin: 0 auto;
@@ -1417,6 +1422,7 @@ Services
     border-radius: 40px 40px 40px 40px;
     backdrop-filter: blur(100%);
     overflow: hidden;
+    transition: var(--transition);
     -webkit-box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
     box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
 }
@@ -3319,9 +3325,4 @@ Services
         color: rgb(247, 246, 246);
         font-family: var(--ff-primary);
     }
-}
-
-
-}
-
 }

@@ -7,8 +7,14 @@ import {
     logo_btn,
     cookie_accept_bunner,
     cookie_accept_bunner_icon,
+    spinnerIcon,
 } from "./main.js";
 
+// spinner show on load
+$(window).on("load", () => {
+    $(spinnerIcon).fadeOut("slow");
+    console.log(" Loaded successfully");
+});
 // top button visibility handler.
 const show_hide_top_button = (element) => {
     element = topButton;
@@ -64,7 +70,7 @@ const move_to_top_of_page = () => {
 };
 
 // Detect element in viewPort helper function
-const element_isIn_viewPort = (element) => {
+function element_isIn_viewPort(element) {
     const element_position = element.getBoundingClientRect();
     return (
         element_position.top >= 0 &&
@@ -74,7 +80,7 @@ const element_isIn_viewPort = (element) => {
         element_position.right <=
         (window.innerWidth || document.documentElement.clientWidth)
     );
-};
+}
 
 // lady load images helper function.
 
@@ -161,34 +167,12 @@ function cookie_accepted() {
     });
 }
 
-// handle button activation on send for the form
-class BTN {
-    contructor() {}
-
-    deactivateBtn(_btn) {
-        _btn.classList.add("btn_deactivate");
-    }
-
-    activateBtn(_btn) {
-        _btn.classList.remove("btn_deactivate");
-    }
-}
-const _BTN = new BTN();
-
-const handelSendMessageBTN = (form, textBox, sendMessageBtn) => {
-    if (element_isIn_viewPort(form) || textBox.value == "") {
-        _BTN.deactivateBtn(sendMessageBtn);
-
-        textBox.addEventListener("change", () => {
-            if (textBox.value != "" || textBox.value.length >= 0) {
-                _BTN.activateBtn(sendMessageBtn);
-            }
-        });
-    }
+// close menu by clicking any link.
+const closeMenuWithLinkClicks = (links) => {
+    links.forEach((link) => {
+        link.addEventListener("click", closeMenuWithLink, false);
+    });
 };
-
-// apply active class of links when scrolling page
-
 export {
     move_to_top_of_page,
     go_to_top,
@@ -197,6 +181,6 @@ export {
     closeMenuWithLink,
     copyRightYear,
     cookie_accepted,
-    handelSendMessageBTN,
     lazyLoadImages,
+    closeMenuWithLinkClicks,
 };

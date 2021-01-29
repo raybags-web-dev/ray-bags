@@ -4,10 +4,9 @@ import {
     go_to_top,
     openMenu,
     closeMenu,
-    closeMenuWithLink,
+    closeMenuWithLinkClicks,
     copyRightYear,
     cookie_accepted,
-    handelSendMessageBTN,
     lazyLoadImages,
 } from "./middleware.js";
 import { init_anime, animateName, click_btn } from "./animations.js";
@@ -21,9 +20,6 @@ const project_in_mind_image = document.querySelector(".proj_in_mind");
 const project_in_mind_container = document.querySelector(
     "#proj_in_mind_mainpage"
 );
-const form = document.getElementById("submintForm");
-const textBox = document.getElementById("text_message");
-const sendMessageBtn = document.getElementById("submit_btn");
 
 const cookie_accept_bunner = document.querySelector(".alert_box_accepted");
 const cookie_btn = document.getElementById("cookie_btnn");
@@ -55,19 +51,16 @@ export {
     cookie_btn,
     cookie_accept_bunner_icon,
     logo_btn,
+    spinnerIcon,
 };
 
+// close side menu with any  menu click handler
+closeMenuWithLinkClicks(all_links);
 // lazy load images
 lazyLoadImages(all_images);
-
-// handle send message button
-document.addEventListener(
-    "scroll",
-    handelSendMessageBTN(form, textBox, sendMessageBtn),
-    false
-);
 // handle projects card and dragging
 dragDrop(img_links, draggables, constainers);
+// accept cookies
 cookie_accepted();
 // close menu when user clicks anywhere on the page
 document.addEventListener("click", closeMenu, true);
@@ -77,21 +70,10 @@ logo_btn.addEventListener("click", closeMenu, true);
 menu_bugger_icon.addEventListener("click", openMenu, false);
 // close menu handler
 close_menu_icon.addEventListener("click", closeMenu, false);
-// close menu by clicking any link.
-all_links.forEach((link) => {
-    link.addEventListener("click", closeMenuWithLink, false);
-});
-
-// spinner show on load
-$(window).on("load", () => {
-    $(spinnerIcon).fadeOut("slow");
-    console.log("All resources loaded successfully");
-});
 // still needs work. Making the image element scale when in view port
 click_btn(project_in_mind_container, project_in_mind_image);
 // role-in name in about section handler
 animateName();
-
 // initialize animation from oas
 init_anime();
 // top button handler.
@@ -99,5 +81,3 @@ move_to_top_of_page();
 go_to_top();
 // update copyright year handler
 copyRightYear(copyright_container);
-
-//=====scrollSpy function============

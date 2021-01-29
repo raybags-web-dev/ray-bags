@@ -27,11 +27,15 @@
     <!-- === projects card styles -->
     <link rel="stylesheet" href="./public/styles/project_card.css">
 
+
 </head>
 
 <body id="home">
-
-
+    <!-- Vue js component -->
+    <div id="root" @mousemove="onMouseMove">
+        <div :style="styleOne"></div>
+        <div :style="styleTwo"></div>
+    </div>
     <!-- == navbar== -->
     <header class="header">
         <!-- nav -->
@@ -464,9 +468,9 @@
                     </span>
                 </div>
                 <!-- service info -->
-                <div class="service-info " data-aos="fade-up ">
+                <div class="service-info " data-aos="fade-up">
                     <h4 class="glass_text ">Production</h4>
-                    <p>Finaly after you approve the final product we deploy your website to the cloud where ann your potential customers can see it. Have you always dreamed of a successful online business, now is the time. Lets get in touch.</p>
+                    <p>After your inspection, the final product is deploy your website to the cloud where ann your potential customers can see it. Have you always dreamed of a successful online business, now is the time. Lets get in touch.</p>
                     <a href="# " class="btn service-btn ">read more</a>
                 </div>
             </article>
@@ -521,22 +525,22 @@
             <!-- contact form -->
             <article class="contact-form ">
                 <h3>contact me</h3>
-                <form id="submintForm" action="https://formspree.io/f/xdopblog" class="was-validated" method="POST">
+                <form id="submintForm" name="contact" method="POST" netlify class="was-validated">
                     <div class="form-group">
                         <!-- inputs -->
                         <input type="text " placeholder="your name" class="form-control" name="name" required/>
                         <div class="valid-feedback">awesome.</div>
-                        <div class="invalid-feedback">field required. </div>
+                        <div class="invalid-feedback">name required.</div>
                     </div>
                     <div class="form-group">
-                        <input type="email " placeholder="Enter email" class="form-control" name="_replyto" required />
+                        <input type="email " placeholder="Enter email" class="form-control" name="email" required />
                         <div class="valid-feedback">awesome.</div>
                         <div class="invalid-feedback">email required.</div>
                     </div>
                     <div class="form-group">
                         <textarea id="text_message" class="form-control" placeholder="your message " rows="7 " name="message " required></textarea>
                         <div class="valid-feedback">awesome.</div>
-                        <div class="invalid-feedback">message is required.</div>
+                        <div class="invalid-feedback">message required.</div>
                     </div>
                     <button id="submit_btn" type="submit " class="btn submit-btn " value="Send">submit here</button>
                 </form>
@@ -631,6 +635,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js "></script>
     <!-- ====Customer JS script==== -->
     <script type="module" src="./public/js/main.js"></script>
+
 </body>
 
 </html>
