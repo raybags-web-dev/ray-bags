@@ -25,17 +25,12 @@
     <!--==== custom CSS ====-->
     <link rel="stylesheet" href="./public/styles/styles.css">
     <!-- === projects card styles -->
-    <link rel="stylesheet" href="./public/styles/project_card.css">
+    <link rel="stylesheet" href="./public/styles/cards.css">
 
 
 </head>
 
 <body id="home">
-    <!-- Vue js component -->
-    <div id="root" @mousemove="onMouseMove">
-        <div :style="styleOne"></div>
-        <div :style="styleTwo"></div>
-    </div>
     <!-- == navbar== -->
     <header class="header">
         <!-- nav -->
@@ -83,12 +78,15 @@
                     Front-end developer<br/><br/>Designer
                 </h1>
             </fieldset>
-            <a href="#" class="btn banner-btn animated slideInUp delay">explore</a>
+            <a href="#skills" class="btn banner-btn animated slideInUp delay">explore</a>
         </div>
     </header>
+    <!-- ===top button=== -->
     <a id="myBtn" class="btn animated" title="top">
-        <p class="up-text">up</p>
+        <p class="up-text"><i class="fas fa-chevron-up"></i></p>
     </a>
+    <!-- ===top button=== -->
+
     <!-- == navbar== -->
     <!-- divider -->
     <div class="content-divider"></div>
@@ -250,8 +248,8 @@
 
                     <h4 class="h4 mb-4" data-aos="fade-up"> You have a project in your mind?</h4>
                     <p class="font-weight-normal" data-aos="fade-up">Based on your preferences, anything is possible. If you can imagine it, I can build it.<br> Based on what you want, we can build your presence <br>in the digital world.</p>
-                    <p class="font-weight-normal" data-aos="fade-up">All you have to do is get in touch down below via email or a call. <br> Well dont allow me to hold you here, go ahead scroll down. </p>
-                    <a id="myModalBtn" class="btn project_btn">Read more</a>
+                    <p class="font-weight-normal" data-aos="fade-up">All you have to do is get in touch down below via email or a call. <br> I'll do my best to get back to you preferably within 24hours. You can access the portfolio page through the button below.</p>
+                    <a id="myModalBtn" href="public/html/products.html" target="_blank" class="btn project_btn">Products</a>
                 </div>
             </div>
         </div>
