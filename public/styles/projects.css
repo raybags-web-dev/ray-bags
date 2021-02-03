@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text&display=swap");
+
+/* ========Variables====== */
+
+:root {
+  /* glass */
+  --glass-background: blur(100px);
+  /* fonts */
+  --ff-primary: "Catamaran", sans-serif;
+  --ff-secondary: "Grand Hotel", cursive;
+  --name-animate: "Big Shoulders Stencil Text", cursive;
+  /* glass text */
+  --glass-text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+  /* colors */
+  --clr-primary: #63130c;
+  --clr-secondary: #a73f35;
+  --clr-white: #ffffff;
+  --clr-dark: #17141d;
+  /* transition delay */
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  /* background */
+  --background-browns: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-primary);
+  color: var(--clr-dark);
+  line-height: 1.5;
+  font-size: 1rem;
+  user-select: none;
+  background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+    url("/public/img/more/_img2.jpeg") center/cover no-repeat fixed;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 1rem;
+  border: 2px solid rgb(77, 47, 47);
+  background: rgb(77, 2, 2);
+  border-radius: 0;
+}
+
+body::-webkit-scrollbar-button {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  color: rgb(70, 9, 7);
+  cursor: pointer;
+  background-color: rgb(77, 2, 2);
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(41, 0, 0);
+  outline: 10px solid transparent;
+  box-shadow: inset 0 12px rgba(5, 5, 5, 0.4);
+}
+
+body::-webkit-scrollbar-track-piece {
+  color: transparent;
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  position: relative;
+  border: 0.5rem solid var(--clr-primary);
+  height: 10%;
+  border-radius: var(--radius);
+}
+
+.glass_text {
+  font-size: 30px;
+  padding: 0.5rem;
+  color: #ffffff;
+  text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+}
+
+.bd-grid {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.moveButton {
+  transform: scale(1.1);
+  transition: linear 0.7s;
+}
+
+.hide {
+  visibility: hidden;
+  display: none;
+  transition: var(--transition);
+}
+
+.btn_deactivate {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25rem;
+  margin-bottom: 0.75;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+.btn-disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}

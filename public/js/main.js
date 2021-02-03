@@ -1,24 +1,27 @@
 "use strict";
 import {
-    move_to_top_of_page,
-    go_to_top,
-    openMenu,
-    closeMenu,
-    closeMenuWithLinkClicks,
-    copyRightYear,
-    cookie_accepted,
-    lazyLoadImages,
+  move_to_top_of_page,
+  go_to_top,
+  openMenu,
+  closeMenu,
+  closeMenuWithLinkClicks,
+  copyRightYear,
+  cookie_accepted,
+  lazyLoadImages,
+  applyActiveClassOnCLick,
+  element_isIn_viewPort,
 } from "./middleware.js";
 import { init_anime, animateName, click_btn } from "./animations.js";
 import { dragDrop } from "./cards.js";
 
+const allSections = document.querySelectorAll("section");
 const allLinks = document.querySelectorAll("a");
 const topButton = document.getElementById("myBtn");
 const image_with_name_to_animate = document.querySelector(".about-img");
 const name_container = document.querySelector(".name-animation");
 const project_in_mind_image = document.querySelector(".proj_in_mind");
 const project_in_mind_container = document.querySelector(
-    "#proj_in_mind_mainpage"
+  "#proj_in_mind_mainpage"
 );
 
 const cookie_accept_bunner = document.querySelector(".alert_box_accepted");
@@ -40,20 +43,22 @@ const all_links = document.querySelectorAll(".nav_link");
 const all_images = document.querySelectorAll("img.lazy");
 
 export {
-    allLinks,
-    topButton,
-    image_with_name_to_animate,
-    name_container,
-    nav_container,
-    menu_bugger_icon,
-    close_menu_icon,
-    cookie_accept_bunner,
-    cookie_btn,
-    cookie_accept_bunner_icon,
-    logo_btn,
-    spinnerIcon,
+  allLinks,
+  topButton,
+  image_with_name_to_animate,
+  name_container,
+  nav_container,
+  menu_bugger_icon,
+  close_menu_icon,
+  cookie_accept_bunner,
+  cookie_btn,
+  cookie_accept_bunner_icon,
+  logo_btn,
+  spinnerIcon,
 };
 
+// Apply active class on menu link click handler.
+applyActiveClassOnCLick();
 // close side menu with any  menu click handler
 closeMenuWithLinkClicks(all_links);
 // lazy load images
@@ -81,3 +86,5 @@ move_to_top_of_page();
 go_to_top();
 // update copyright year handler
 copyRightYear(copyright_container);
+
+// //scrollSpy function

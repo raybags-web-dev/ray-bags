@@ -3,7 +3,7 @@
     "workbench.tree.indent": 9,
     "workbench.editor.closeOnFileDelete": true,
     "workbench.editor.labelFormat": "long",
-    "screencastMode.fontSize": 55,
+    "screencastMode.fontSize": 60,
     "cSpell.ignoreWords": [
         "blassy",
         "in",
