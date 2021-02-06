@@ -27,7 +27,7 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/dark1.jpeg") center/cover no-repeat fixed;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/about2.jpg") center/cover no-repeat fixed;
     padding-bottom: 1rem;
     border-radius: .4rem;
     margin-top: 3rem;
