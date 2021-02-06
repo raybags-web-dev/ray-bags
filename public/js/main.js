@@ -11,7 +11,7 @@ import {
     applyActiveClassOnCLick,
     element_isIn_viewPort,
 } from "./middleware.js";
-import { init_anime, animateName, click_btn } from "./animations.js";
+import { animateName, click_btn } from "./animations.js";
 import { dragDrop } from "./cards.js";
 
 const allSections = document.querySelectorAll("section");
@@ -79,8 +79,6 @@ close_menu_icon.addEventListener("click", closeMenu, false);
 click_btn(project_in_mind_container, project_in_mind_image);
 // role-in name in about section handler
 animateName();
-// initialize animation from oas
-init_anime();
 // top button handler.
 move_to_top_of_page();
 go_to_top();

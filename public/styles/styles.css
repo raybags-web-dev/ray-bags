@@ -254,10 +254,10 @@ p {
 }
 
 .nav_link:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
     backdrop-filter: blur(100px);
-    -webkit-box-shadow: inset 0px 1px 8px 8px #5e5b5bd8;
-    box-shadow: inset 10px 1px 8px 8px #5e5b5bd8;
+    -webkit-box-shadow: inset 0px -2px 0px 0px #f15656d8;
+    box-shadow: inset 0px -2px 0px 0px #f15656d8;
 }
 
 .nav_link :not(.fab) {
@@ -307,10 +307,6 @@ p {
     box-shadow: -18px 0px 10px 0px #000000;
 }
 
-.nav_list li .nav_link:hover {
-    background-image: linear-gradient(to right, #434343 0%, black 100%);
-}
-
 .nav_close {
     position: absolute;
     top: 0%;
@@ -339,7 +335,7 @@ p {
 }
 
 .nav_toggle .fas {
-    text-shadow: 2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c;
+    text-shadow: 0px 0px 0 #606660, 0px 0px 0 #fcfbfb;
 }
 
 .nav_toggle {
@@ -374,7 +370,7 @@ p {
 }
 
 .nav_toggle:hover {
-    color: var(--clr-green);
+    color: var(--clr-white);
     transition: 0.5s;
 }
 
@@ -391,6 +387,7 @@ p {
     display: flex;
     position: fixed;
     padding: 1rem;
+    /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
     display: block;
     top: 0%;
     width: 100vw;
@@ -911,10 +908,8 @@ fieldset legend {
 .content-divider {
     height: 0.5rem;
     backdrop-filter: blur(100px);
-    -webkit-box-shadow: 0px 9px 12px 0px rgba(0, 0, 0, 0.79);
-    box-shadow: 0px 9px 12px 0px rgba(0, 0, 0, 0.79);
     z-index: 4;
-    background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)), url("/public/img/more/dark1.jpeg") center/cover no-repeat fixed;
+    background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)), url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
 }
 
 
@@ -934,7 +929,6 @@ fieldset legend {
     margin: 1.5rem;
     border-radius: 0.4rem;
     transition: var(--transition);
-    background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)), url("/public/img/more/about2.jpg") center/cover no-repeat fixed;
     -moz-box-shadow: inset 0 0 10px #000000;
     -webkit-box-shadow: inset 0 0 10px #000000;
     box-shadow: inset 0 0 10px #000000;
@@ -1262,7 +1256,6 @@ h3 {
     box-shadow: inset 1px 0px 20px 3px rgba(0, 0, 0, 0.68);
     -webkit-box-shadow: inset 20px 1px 6px -13px rgba(114, 9, 9, 0.81);
     box-shadow: inset 20px 1px 6px -13px rgba(95, 5, 5, 0.81);
-    background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)), url("/public/img/more/nature2.jpeg") center/cover no-repeat fixed;
 }
 
 .in-mind-info::after {
@@ -1505,15 +1498,13 @@ Services
     color: #ffffff;
     color: #ffffff;
     padding: 0 0.5rem 0 0.5rem;
-    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
-    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+    opacity: .8;
 }
 
 .contact-form h3 {
     font-weight: 500;
     padding-top: 1rem;
-    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
-    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+    opacity: .6;
 }
 
 .contact-main-container {
@@ -1529,6 +1520,7 @@ Services
     text-transform: lowercase;
     line-height: 2rem;
     font-weight: 400;
+    user-select: text;
     -moz-user-select: text;
     -webkit-user-select: text;
 }
@@ -1537,9 +1529,9 @@ Services
     font-size: 25px;
     padding: 0.5rem;
     font-weight: 500;
-    color: #201616;
-    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
-    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+    opacity: .5;
+    color: #fffbfb;
+    text-shadow: 1px 0px 0 #020202, 1px 0px 5px #050505;
 }
 
 .contact-item h4:nth-child(1) {
@@ -1555,12 +1547,14 @@ Services
 .form-control::placeholder {
     font-family: var(--ff-primary);
     color: var(--clr-primary);
+    text-align: center;
     text-transform: lowercase;
     letter-spacing: var(--spacing);
 }
 
 .form-control:focus-within {
     backdrop-filter: blur(100px);
+    transition: .3s;
     -webkit-box-shadow: inset 1px -1px 10px 4px rgba(0, 0, 0, 0.26);
     box-shadow: inset 1px -1px 10px 4px rgba(0, 0, 0, 0.26);
     backdrop-filter: blur(100px);
@@ -1601,10 +1595,9 @@ Services
     box-shadow: inset -1px 1px 6px 5px rgba(45, 185, 103, 0.48);
     backdrop-filter: blur(100px);
     transition: var(--transition);
-    color: white;
-    color: #ffffff;
+    color: rgb(7, 6, 6);
     background: #ffffff;
-    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+    text-shadow: 0px 1px 0 #969696, 1px 10px 4px #aba8a8;
 }
 
 .submit-btn::before {
@@ -1677,7 +1670,7 @@ Services
     font-weight: 600;
     opacity: 0.6;
     font-size: 20px;
-    text-shadow: 0 3px 2px #474747, 2px 2px 2px rgba(206, 89, 55, 0);
+    text-shadow: 0 0px 2px #474747, 2px 2px 2px rgba(206, 89, 55, 0);
 }
 
 .footer_link {
@@ -2965,12 +2958,19 @@ Services
         box-shadow: inset 0px 1px 15px 2px #000000;
     }
     .skill {
-        box-shadow: none;
         width: 30%;
         height: 17rem;
+        /* ----------------------- */
+        color: transparent;
+        background: #666666;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        text-shadow: none;
         transition: var(--transition);
-        background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/about2.jpg") center/cover no-repeat fixed;
-        box-shadow: -1px 0px 6px 6px #413f3f;
+        -webkit-box-shadow: inset -1px -1px 10px 6px rgba(2, 2, 2, 0.96);
+        box-shadow: inset -1px -10px 10px 1px rgba(2, 2, 2, 0.96);
+        backdrop-filter: blur(20px);
     }
     .section-skills-title-container {
         transform: translate(-6%);
@@ -2984,7 +2984,7 @@ Services
         text-shadow: 1px 3px 0 #969696, 0px 1px 0px #aba8a8;
         text-shadow: 1px 3px 0 #969696, 0px 1px 0px #aba8a8;
         -webkit-box-shadow: inset 2px 0px 14px 2px rgba(8, 8, 8, 0.81);
-        box-shadow: inset 2px 0px 14px 2px rgba(2, 2, 2, 0.81);
+        box-shadow: inset 0px 0px 30px 0px rgba(2, 2, 2, 0.81);
     }
     .skill-text {
         display: block;
@@ -2992,21 +2992,6 @@ Services
         font-weight: 600;
         opacity: 0.6;
         color: rgb(248, 244, 244);
-    }
-    .skill:hover {
-        -moz-box-shadow: inset 0 0 10px #000000;
-        -webkit-box-shadow: inset 0 0 10px #000000;
-        box-shadow: inset 0 0 10px #000000;
-        color: transparent;
-        background: #666666;
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        background-clip: text;
-        text-shadow: none;
-        transition: var(--transition);
-        -webkit-box-shadow: inset -1px -1px 10px 6px rgba(2, 2, 2, 0.96);
-        box-shadow: inset -1px -1px 10px 6px rgba(2, 2, 2, 0.96);
-        backdrop-filter: blur(50px);
     }
     .about-text {
         position: relative;
@@ -3216,7 +3201,7 @@ Services
     .contact {
         min-height: 100vh;
         min-width: 100;
-        background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)), url("/public/img/more/about2.jpg") center/cover no-repeat fixed;
+        background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)), url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
         overflow: hidden;
         background-color: none;
     }

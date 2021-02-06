@@ -27,9 +27,8 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/about2.jpg") center/cover no-repeat fixed;
+    background: linear-gradient(rgba(158, 69, 69, 0.4), rgba(3, 3, 3, 0.4));
     padding-bottom: 1rem;
-    border-radius: .4rem;
     margin-top: 3rem;
     box-shadow: none;
     overflow-x: hidden;
@@ -41,22 +40,21 @@
     overflow-x: scroll;
     grid-gap: 10px;
     grid-template-columns: repeat(6, calc(50% - 40px));
-    grid-template-rows: minmax(150px, 1fr);
+    grid-template-rows: min-max(150px, 1fr);
 }
 
 .card-list::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 5px;
+    height: 5px;
 }
 
 .card-list::-webkit-scrollbar-thumb {
-    background: #690210;
-    border-radius: 10px;
-    box-shadow: inset 2px 2px 2px hsla(0 0%, 100%, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
+    background: #615455;
+    border-radius: 1px;
 }
 
 .card-list::-webkit-scrollbar-track {
-    background: linear-gradient(90deg, #201c20, #201c29 1px, #17141d 0, #17141d);
+    background: transparent;
 }
 
 .card {
@@ -64,61 +62,64 @@
     position: relative;
     flex-direction: column;
     height: 350px;
-    width: 400px;
+    width: 350px;
     min-width: 250px;
     padding: 1.5rem;
     transition: .4s;
     cursor: pointer;
     border-radius: .4rem;
-    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/more/dark1.jpeg") center/cover no-repeat fixed;
+    background: transparent;
     -webkit-box-shadow: inset 1px 0px 25px 15px rgba(0, 0, 0, 0.79);
-    box-shadow: inset 1px 0px 25px 15px rgba(0, 0, 0, 0.79);
+    box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.79);
 }
 
 .card:hover {
-    transform: translateY(-1.5rem) !important;
+    /* transform: translateY(-1.5rem) !important; */
     transition: .4s;
+    transform: scale(1.05);
+    -webkit-box-shadow: inset 20px 1px 6px 0px rgba(114, 9, 9, 0.81);
+    box-shadow: inset 0px 2px 0px -5px rgba(95, 5, 5, 0.81);
+}
+
+.card:active {
     transform: scale(1.1);
-    -webkit-box-shadow: inset 20px 1px 6px -13px rgba(114, 9, 9, 0.81);
-    box-shadow: inset 20px 1px 6px -13px rgba(95, 5, 5, 0.81);
 }
 
 .card:hover~.card {
-    transform: translateX(1.1rem);
-    filter: blur(2px);
+    transform: translateY(1.2rem);
+    filter: grayscale(100%);
 }
 
 .card:not(:first-child) {
     margin-left: -3rem;
 }
 
-.card::after {
+.card::before {
     content: '';
     position: absolute;
-    width: 4%;
-    height: 4%;
-    top: 1%;
-    padding: .5rem;
-    border-radius: 50%;
+    width: 28%;
+    height: 1%;
+    top: 42%;
+    left: 40%;
+    border-radius: .5rem;
     transition: .4s;
     background: #f2f5f2;
     opacity: .3;
-    visibility: hidden;
     transform: translateX(-1rem);
     backdrop-filter: blur(20%);
-    box-shadow: 0 325px 2px rgba(245, 242, 242, 0.5);
-}
-
-.card:hover::after {
-    visibility: visible;
-    transition: .4s;
+    box-shadow: 0 5px 10px rgba(245, 242, 242, 0.5);
 }
 
 .card:hover::before {
-    width: 0%;
+    visibility: visible;
+    transition: .4s;
+    width: 50%;
+    height: 1%;
+    top: 6%;
+    left: 30%;
+    filter: grayscale(100%);
     backdrop-filter: blur(100px);
-    box-shadow: -2rem 0 3rem #000;
-    background: rgb(235, 96, 86)
+    box-shadow: 0 300px 1px rgba(245, 242, 242, 0.5);
 }
 
 .card-header {
@@ -139,8 +140,8 @@
     align-items: center;
     -webkit-box-shadow: inset 1px 0px 12px 4px #000000;
     box-shadow: inset 1px 0px 12px 4px #000000;
-    -webkit-box-shadow: inset 20px 1px 6px -13px rgba(114, 9, 9, 0.81);
-    box-shadow: inset 20px 1px 6px -13px rgba(95, 5, 5, 0.81);
+    -webkit-box-shadow: inset 20px 1px 6px 0px rgba(114, 9, 9, 0.81);
+    box-shadow: inset 13px 1px 6px -13px rgba(95, 5, 5, 0.81);
 }
 
 .author-avator img {
@@ -148,7 +149,7 @@
     width: 60px;
     height: 60px;
     transition: .4s;
-    border: .4rem solid rgb(37, 36, 36);
+    border: .4rem solid transparent;
     border-radius: 50%;
     margin: 16px 10px;
 }
@@ -163,14 +164,14 @@
 .author-avator:hover img {
     position: relative;
     filter: grayscale(0%);
-    border: .4rem solid rgb(63, 47, 47);
+    border: .4rem solid rgb(149, 89, 89);
     transition: .4s;
     margin-right: 1rem;
     transition: var(--transition);
 }
 
 .card-header p:hover {
-    background: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+    background: linear-gradient(45deg, #f8f5fa 50%, #c43a30 100%);
     text-shadow: none;
     transition: var(--transition);
     background-clip: text;
@@ -188,6 +189,7 @@
 .card-header h3 {
     font-size: 25px;
     text-align: center;
+    letter-spacing: 3px;
     font-weight: 600;
     color: var(--clr-white);
     opacity: .7;
@@ -196,5 +198,6 @@
 }
 
 .dragging {
-    opacity: 0;
+    opacity: .2;
+    background: green;
 }

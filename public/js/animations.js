@@ -2,9 +2,6 @@
 import { image_with_name_to_animate, name_container } from "./main.js";
 import {} from "./middleware.js";
 
-const init_anime = () => AOS.init();
-
-
 // animate name in about section handler
 const animateName = () => {
     $(window).scroll(function() {
@@ -40,4 +37,4 @@ const click_btn = (elementInViewPort, targetElemenet) => {
     });
 };
 
-export { init_anime, animateName, click_btn };
+export { animateName, click_btn };

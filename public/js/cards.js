@@ -13,7 +13,6 @@ const dragDrop = (imageLinks, projectCardsToDrag, cardContainers) => {
         //drag starts
         draggable.addEventListener("dragstart", () => {
             draggable.classList.add("dragging");
-            draggable.classList.add("cardGreen");
         });
 
         //drag stops
