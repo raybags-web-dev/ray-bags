@@ -9,12 +9,10 @@ import {
     cookie_accepted,
     lazyLoadImages,
     applyActiveClassOnCLick,
-    element_isIn_viewPort,
 } from "./middleware.js";
 import { animateName, click_btn } from "./animations.js";
 import { dragDrop } from "./cards.js";
 
-const allSections = document.querySelectorAll("section");
 const allLinks = document.querySelectorAll("a");
 const topButton = document.getElementById("myBtn");
 const image_with_name_to_animate = document.querySelector(".about-img");

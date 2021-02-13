@@ -27,20 +27,27 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    background: linear-gradient(rgba(158, 69, 69, 0.4), rgba(3, 3, 3, 0.4));
+    background: rgb(1, 1, 1);
+    background: linear-gradient(24deg, rgb(32, 59, 75) 74%, rgb(13, 54, 54) 100%, rgb(12, 56, 83) 75%);
     padding-bottom: 1rem;
     margin-top: 3rem;
     box-shadow: none;
     overflow-x: hidden;
 }
 
+@media screen and (min-width: 1679px) {
+    .card-list {
+        margin: auto;
+    }
+}
+
 .card-list {
     display: flex;
-    padding: 2rem;
     overflow-x: scroll;
-    grid-gap: 10px;
+    overflow-y: hidden;
+    grid-gap: 2rem;
     grid-template-columns: repeat(6, calc(50% - 40px));
-    grid-template-rows: min-max(150px, 1fr);
+    grid-template-rows: repeat(150px, 1fr);
 }
 
 .card-list::-webkit-scrollbar {
@@ -54,7 +61,7 @@
 }
 
 .card-list::-webkit-scrollbar-track {
-    background: transparent;
+    background: rgb(90, 79, 79);
 }
 
 .card {
