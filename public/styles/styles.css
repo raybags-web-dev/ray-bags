@@ -41,7 +41,7 @@ body {
     line-height: 1.5;
     font-size: 1rem;
     user-select: none;
-    background: var(--background-dark)
+    background: var(--background-dark);
 }
 
 html,
@@ -90,7 +90,6 @@ body::-webkit-scrollbar-thumb {
     font-size: 30px;
     padding: 0.5rem;
     color: #ffffff;
-    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
 }
 
 .bd-grid {
@@ -168,7 +167,7 @@ p {
     z-index: 999;
     -webkit-box-shadow: inset 1px 0px 2px 2px rgba(245, 128, 128, 0.55);
     box-shadow: inset 1px 0px 2px 2px rgba(247, 148, 148, 0.55);
-    background: var(--background-dark)
+    background: var(--background-dark);
 }
 
 
@@ -873,7 +872,8 @@ fieldset legend {
 
 .skills {
     cursor: move;
-    background: var(--background-dark) -webkit-box-shadow: inset 0px 1px 15px 2px #000000;
+    background: var(--background-dark);
+    -webkit-box-shadow: inset 0px 1px 15px 2px #000000;
     box-shadow: inset 0px 1px 15px 2px #000000;
     overflow: hidden;
 }
@@ -961,7 +961,8 @@ fieldset legend {
 }
 
 .about-section {
-    background: var(--background-dark) position: relative;
+    background: var(--background-dark);
+    position: relative;
     overflow: hidden;
     display: flex;
 }
@@ -1132,7 +1133,8 @@ h3 {
 /* === product === */
 
 .project-in-mind {
-    background: var(--background-dark) -webkit-box-shadow: 0px 20px 0px -10px #ffffff, 0px -20px 0px -10px #ffffff, 20px 0px 0px -10px #ffffff, -20px 0px 0px -10px #ffffff, 0px 0px 0px 10px #fdfbfb, inset 2px 3px 14px -2px rgba(0, 0, 0, 0.18);
+    background: var(--background-dark);
+    -webkit-box-shadow: 0px 20px 0px -10px #ffffff, 0px -20px 0px -10px #ffffff, 20px 0px 0px -10px #ffffff, -20px 0px 0px -10px #ffffff, 0px 0px 0px 10px #fdfbfb, inset 2px 3px 14px -2px rgba(0, 0, 0, 0.18);
     box-shadow: 0px 20px 0px -10px #ffffff, 0px -20px 0px -10px #ffffff, 20px 0px 0px -10px #ffffff, -20px 0px 0px -10px #ffffff, 0px 0px 0px 10px #fdfdfd, inset 2px 3px 14px -2px rgba(0, 0, 0, 0.18);
 }
 
@@ -1230,7 +1232,7 @@ h3 {
     -webkit-box-shadow: inset 2px 1px 6px -13px rgba(15, 37, 51, 1);
     box-shadow: inset 2px 1px 6px -13px rgba(15, 37, 51, 1);
     border-right: 1rem solid rgb(15, 37, 51, 1);
-    background: var(--background-dark)
+    background: var(--background-dark);
 }
 
 .in-mind-info:hover::before,
@@ -1300,7 +1302,8 @@ Services
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
-    background: var(--background-dark) position: relative;
+    background: var(--background-dark);
+    position: relative;
     overflow: hidden;
     -webkit-box-shadow: inset 0px 1px 15px 2px #000000;
     box-shadow: inset 0px 1px 15px 2px #000000;
@@ -1381,7 +1384,7 @@ Services
     -moz-border-radius: 0.375rem;
     border-radius: 0.375rem;
     outline: none;
-    background: var(--background-dark)
+    background: var(--background-dark);
 }
 
 .service-btn:hover {
@@ -1439,7 +1442,9 @@ Services
 
 .contact {
     min-height: 100vh;
-    background: var(--background-dark) overflow: hidden;
+    min-width: 95vw;
+    background: var(--background-dark);
+    overflow: hidden;
     background-color: none;
     background-color: none;
     -webkit-box-shadow: inset 0px 1px 15px 2px #000000;
@@ -1813,7 +1818,7 @@ Services
     /* Services*/
     .services {
         min-height: 100vh;
-        background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)), url("/public/img/more/dark1.jpeg") center/cover no-repeat fixed;
+        background: var(--background-dark);
         position: relative;
         overflow: hidden;
         padding: 5%;
@@ -2116,17 +2121,13 @@ Services
         flex-direction: column;
         position: relative;
         padding: 20px;
-        margin: 2rem auto;
         height: 70vh !important;
         border-radius: var(--radius);
         overflow: hidden;
-        border: 15px ridge rgb(97, 15, 15) !important;
+        border: 15px ridge rgb(97, 15, 15);
         transition: var(--transition);
         backdrop-filter: blur(100%);
-        background-image: linear-gradient(to right, #434343 0%, black 100%);
-        -webkit-box-shadow: 9px 9px 7px -4px rgba(0, 0, 0, 0.67);
-        box-shadow: 9px 9px 7px -4px rgba(0, 0, 0, 0.67);
-        -webkit-box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
+        background: var(--background-dark);
         box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
     }
     .service-card:hover {
@@ -2164,6 +2165,7 @@ Services
         color: var(--clr-white);
         margin: auto;
         opacity: 0.7;
+        opacity: .7 !important;
         padding-top: 1rem;
     }
     .service-btn {
@@ -2178,13 +2180,13 @@ Services
         border-radius: 0.375rem;
         outline: none;
         background: rgb(64, 20, 20);
-        background-image: linear-gradient(to right, #434343 0%, black 100%);
+        background: var(--background-dark);
         -webkit-box-shadow: 0px 2px 1px rgba(50, 50, 50, 0.75);
         -moz-box-shadow: 0px 2px 1px rgba(50, 50, 50, 0.75);
         box-shadow: 0px 2px 1px rgba(50, 50, 50, 0.75);
     }
     .service-btn:hover {
-        text-shadow: 0px 1px 0px rgba(30, 30, 30, 0.8);
+        text-shadow: 300px 1px 0px rgba(255, 253, 253, 0.8) !important;
     }
     .service-img-container {
         position: relative;
@@ -2201,7 +2203,7 @@ Services
         bottom: 0;
         font-size: 2rem;
         color: var(--clr-primary);
-        background: var(--clr-gray-5);
+        background: var(--clr-dark);
         padding: 0.5rem;
         border-radius: 50%;
         transform: translate(-50%, 50%);
@@ -2217,8 +2219,8 @@ Services
     /* ====================name animation============== */
     .contact {
         min-height: 100vh;
-        min-width: 100;
-        background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)), url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+        min-width: 95vw;
+        background: var(--background-dark);
         overflow: hidden;
         background-color: none;
     }
@@ -2285,7 +2287,7 @@ Services
         margin-left: 12%;
         margin-top: 13%;
     }
-    /* ======================name animation============== */
+    /* about animation  name */
     .name-animation .first-set,
     .name-animation .second-set,
     .name-animation {
@@ -2479,14 +2481,14 @@ Services
     /* ====================name animation============== */
     .contact {
         min-height: 100vh;
-        min-width: 100;
-        background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)), url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+        min-width: 95vw;
+        background: var(--background-dark);
         overflow: hidden;
         background-color: none;
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 994px) {
     .skill:hover {
         transform: scale(1.05);
         transition: var(--transition);
@@ -2524,7 +2526,7 @@ Services
         margin: 0.8rem;
     }
     .about-section {
-        background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)), url("/public/img/more/space1.jpeg") center/cover no-repeat fixed;
+        background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)), url("/public/img/more/about2.jpg") center/cover no-repeat fixed;
         position: relative;
         overflow: hidden;
     }
@@ -2611,14 +2613,14 @@ Services
     /* ====================name animation============== */
     .contact {
         min-height: 100vh;
-        min-width: 100;
-        background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)), url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+        min-width: 95vw;
+        background: var(--background-dark);
         overflow: hidden;
         background-color: none;
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1204px) {
     .nav {
         background: transparent;
         display: grid;
@@ -2633,7 +2635,8 @@ Services
     }
     .about-section {
         min-height: 100vh;
-        background: var(--background-dark) position: relative;
+        background: var(--background-dark);
+        position: relative;
         overflow: hidden;
         -webkit-box-shadow: inset 0px 1px 15px 2px #000000;
         box-shadow: inset 0px 1px 15px 2px #000000;
@@ -2909,7 +2912,8 @@ Services
         padding-left: 10%;
         min-height: 100vh;
         padding-bottom: 3rem;
-        background: var(--background-dark) -webkit-box-shadow: inset 0px 1px 15px 2px #000000;
+        background: linear-gradient(rgb(0, 0, 0, .5), rgb(0, 0, 0, .5)), url("/public/img/more/about2.jpg") center/cover no-repeat fixed;
+        -webkit-box-shadow: inset 0px 1px 15px 2px #000000;
         box-shadow: inset 0px 1px 15px 2px #000000;
     }
     .skill {
@@ -2981,7 +2985,8 @@ Services
         transition: var(--transition);
         font-size: 0.9rem;
         border: 3px solid transparent;
-        background: var(--background-dark) border-radius: var(--radius);
+        background: var(--background-dark);
+        border-radius: var(--radius);
         cursor: pointer;
         -webkit-box-shadow: 7px 10px 11px -2px rgba(0, 0, 0, 0.71);
         box-shadow: 7px 10px 11px -2px rgba(0, 0, 0, 0.71);
@@ -3012,7 +3017,7 @@ Services
         display: grid;
         min-height: 1008px;
         min-width: 1000px;
-        background: var(--background-dark)
+        background: linear-gradient(rgb(0, 0, 0, .5), rgb(0, 0, 0, .5)), url("/public/img/more/about2.jpg") center/cover no-repeat fixed;
     }
     .in-mind-info {
         flex: 1;
@@ -3044,12 +3049,22 @@ Services
         -webkit-box-shadow: inset 1px -1px 10px 4px rgba(0, 0, 0, 0.26);
         box-shadow: inset 1px -1px 10px 4px rgba(0, 0, 0, 0.26);
         backdrop-filter: blur(100px);
+        color: white;
         opacity: 0.3;
+    }
+    /* projetcs buttons container  */
+    .project-bt-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: -8rem;
+        flex-shrink: unset;
     }
     /* Services*/
     .services {
         min-height: 100vh;
-        background: var(--background-dark) position: relative;
+        background: var(--background-dark);
+        position: relative;
         overflow: hidden;
         padding: 5%;
     }
@@ -3072,7 +3087,7 @@ Services
         -webkit-box-shadow: inset 0px 1px 15px 2px #000000;
         box-shadow: inset 0px 1px 15px 2px #000000;
         background: rgb(15, 37, 51);
-        background: var(--background-dark)
+        background: var(--background-dark);
     }
     .service-card>div {
         flex: 1;
@@ -3156,8 +3171,9 @@ Services
     /* contacts styles */
     .contact {
         min-height: 100vh;
-        min-width: 100;
-        background: var(--background-dark) overflow: hidden;
+        min-width: 95vw;
+        background: var(--background-dark);
+        overflow: hidden !important;
         background-color: none;
     }
     .contact-info {

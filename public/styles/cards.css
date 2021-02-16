@@ -205,6 +205,8 @@
 }
 
 .dragging {
-    opacity: .2;
-    background: green;
+    opacity: .1;
+    border: transparent;
+    filter: grayscale(100%);
+    background: linear-gradient(rgba(58, 34, 34, 0.5), rgba(73, 46, 46, 0.5)), url("/public/img/more/computer_2.jpeg") center/cover no-repeat fixed;
 }
