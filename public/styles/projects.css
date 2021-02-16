@@ -41,7 +41,8 @@
     --full-heigh: 100vh;
     --full-width: 100vw
     /* inner box- shadow */
-    --redInerBoxShadow: inset 0px 10px 5px 5px #723636;
+    ;
+    --redInerBoxShadow: inset 0px 10px 5px 5px #723636
 }
 
 *,
@@ -57,7 +58,11 @@ body {
     color: var(--clr-dark);
     line-height: 1.5;
     font-size: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
+    -o-object-fit: cover;
     object-fit: cover;
     scroll-behavior: smooth;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/public/img/more/_img2.jpeg") center/cover no-repeat fixed;
@@ -241,7 +246,6 @@ nav {
     border-radius: 50%;
     color: var(--clr-white);
     cursor: pointer !important;
-    -webkit-box-shadow: inset 0px -1px 11px 2px rgba(3, 3, 3, 0.53);
     box-shadow: inset 0px -1px 11px 2px rgba(8, 8, 8, 0.53);
 }
 
@@ -284,6 +288,15 @@ nav {
     animation: pulse infinite alternate forwards 1s;
 }
 
+@-webkit-keyframes pulse {
+    from {
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
 @keyframes pulse {
     from {
         transform: scale(1.1);
@@ -321,9 +334,9 @@ nav {
     bottom: 100%;
     z-index: 100;
     padding-top: 5rem;
+    -webkit-backdrop-filter: blur(100px);
     backdrop-filter: blur(100px);
     transition: var(--transition);
-    -webkit-box-shadow: inset 1px 8px 9px -8px #FFFBFA;
     box-shadow: inset 1px 8px 9px -8px #020202;
 }
 
@@ -333,6 +346,7 @@ nav {
     font-size: 25px;
     opacity: .8;
     border: transparent;
+    -webkit-clip-path: inset(0% round 0%);
     clip-path: inset(0% round 0%);
     text-transform: capitalize;
 }
@@ -341,16 +355,30 @@ nav {
 /* clip fadein class */
 
 .fadeInLinks {
+    -webkit-clip-path: inset(0% round 0%);
     clip-path: inset(0% round 0%);
     -webkit-animation: cliping infinite alternate-reverse ease-in-out 1s;
     animation: cliping 1 alternate-reverse ease-in-out 1s;
 }
 
-@keyframes cliping {
+@-webkit-keyframes cliping {
     from {
+        -webkit-clip-path: inset(0% round 0%);
         clip-path: inset(0% round 0%);
     }
     to {
+        -webkit-clip-path: inset(50% round 50%);
+        clip-path: inset(50% round 50%);
+    }
+}
+
+@keyframes cliping {
+    from {
+        -webkit-clip-path: inset(0% round 0%);
+        clip-path: inset(0% round 0%);
+    }
+    to {
+        -webkit-clip-path: inset(50% round 50%);
         clip-path: inset(50% round 50%);
     }
 }
@@ -387,6 +415,7 @@ nav {
     font-size: 1.8rem;
     margin: 2rem;
     padding: .5rem;
+    -webkit-clip-path: inset(0% round 0%);
     clip-path: inset(0% round 0%);
     -webkit-animation: cliping infinite alternate-reverse ease-in-out 1s;
     animation: cliping 1 alternate-reverse ease-in-out 1s;
@@ -417,13 +446,14 @@ nav {
     border-radius: var(--radius);
     -webkit-animation: coloring infinite backwards alternate-reverse 1s;
     animation: coloring infinite backwards alternate-reverse 1s;
+    -webkit-backdrop-filter: var(--blurredBG);
     backdrop-filter: var(--blurredBG);
     transition: var(--transition);
-    -webkit-box-shadow: inset 1px 0px 13px 5px #000000;
     box-shadow: inset 1px 0px 13px 5px #000000;
 }
 
 .project-link:hover {
+    -webkit-backdrop-filter: blur(100px);
     backdrop-filter: blur(100px);
     color: rgb(20, 255, 20);
     font-style: italic;
@@ -444,6 +474,7 @@ nav {
     cursor: pointer;
     padding: .3rem;
     background: transparent;
+    -webkit-backdrop-filter: var(--blurredBG);
     backdrop-filter: var(--blurredBG);
     font-size: 1.9rem;
     margin: .8rem 1rem;
@@ -470,13 +501,12 @@ nav {
     border: 5px solid transparent;
     background: linear-gradient(rgb(0, 0, 0, .5), rgb(0, 0, 0, .5));
     border-radius: var(--radius);
-    -webkit-box-shadow: 1px 8px 9px -3px rgba(0, 0, 0, 0.53);
     box-shadow: 1px 8px 9px -3px rgba(0, 0, 0, 0.53);
-    -webkit-box-shadow: inset 1px 0px 13px 5px #000000;
     box-shadow: inset 0px 1px 13px 0px #fdfafa;
 }
 
 .item:active {
+    -webkit-backdrop-filter: grayscale(100%);
     backdrop-filter: grayscale(100%);
 }
 
@@ -497,6 +527,7 @@ nav {
     padding: 1rem;
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgb(0, 0, 0, .5));
     border-radius: var(--radius);
+    -webkit-backdrop-filter: var(--blurredBG);
     backdrop-filter: var(--blurredBG);
 }
 
@@ -526,6 +557,7 @@ nav {
         cursor: pointer;
         padding: .3rem;
         background: transparent;
+        -webkit-backdrop-filter: var(--blurredBG);
         backdrop-filter: var(--blurredBG);
         font-size: 1.9rem;
         margin: 1rem 1rem 0 1rem;
@@ -547,6 +579,7 @@ nav {
         line-height: 4rem;
         padding: 1rem;
         border-radius: var(--radius);
+        -webkit-backdrop-filter: var(--blurredBG);
         backdrop-filter: var(--blurredBG);
         background: linear-gradient(rgba(138, 7, 7, 0.5), rgba(129, 15, 15, 0.5));
     }
@@ -574,9 +607,9 @@ nav {
         border-radius: var(--radius);
         -webkit-animation: coloring infinite backwards alternate-reverse 1s;
         animation: coloring infinite backwards alternate-reverse 1s;
+        -webkit-backdrop-filter: var(--blurredBG);
         backdrop-filter: var(--blurredBG);
         transition: var(--transition);
-        -webkit-box-shadow: inset 1px 0px 13px 5px #000000;
         box-shadow: inset 1px 0px 13px 5px #000000;
     }
 }
@@ -605,6 +638,7 @@ nav {
         padding: 1rem;
         background: linear-gradient(rgba(255, 255, 255, 0.5), rgb(0, 0, 0, .5));
         border-radius: var(--radius);
+        -webkit-backdrop-filter: var(--blurredBG);
         backdrop-filter: var(--blurredBG);
     }
 }
@@ -625,6 +659,7 @@ nav {
         cursor: pointer;
         padding: .3rem;
         background: transparent;
+        -webkit-backdrop-filter: var(--blurredBG);
         backdrop-filter: var(--blurredBG);
         font-size: 1.9rem;
         border-radius: var(--radius);
@@ -645,6 +680,7 @@ nav {
         padding: 1rem;
         background: linear-gradient(rgba(255, 255, 255, 0.5), rgb(0, 0, 0, .5));
         border-radius: var(--radius);
+        -webkit-backdrop-filter: var(--blurredBG);
         backdrop-filter: var(--blurredBG);
     }
 }
@@ -665,6 +701,7 @@ nav {
         padding: 1rem;
         background: linear-gradient(rgba(255, 255, 255, 0.5), rgb(0, 0, 0, .5));
         border-radius: var(--radius);
+        -webkit-backdrop-filter: var(--blurredBG);
         backdrop-filter: var(--blurredBG);
     }
 }

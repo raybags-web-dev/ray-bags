@@ -76,7 +76,6 @@
     cursor: pointer;
     border-radius: .4rem;
     background: transparent;
-    -webkit-box-shadow: inset 1px 0px 25px 15px rgba(0, 0, 0, 0.79);
     box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.79);
 }
 
@@ -84,7 +83,6 @@
     /* transform: translateY(-1.5rem) !important; */
     transition: .4s;
     transform: scale(1.05);
-    -webkit-box-shadow: inset 20px 1px 6px 0px rgba(114, 9, 9, 0.81);
     box-shadow: inset 0px 2px 0px -5px rgba(95, 5, 5, 0.81);
 }
 
@@ -94,6 +92,7 @@
 
 .card:hover~.card {
     transform: translateY(1.2rem);
+    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
 
@@ -113,6 +112,7 @@
     background: #f2f5f2;
     opacity: .3;
     transform: translateX(-1rem);
+    -webkit-backdrop-filter: blur(20%);
     backdrop-filter: blur(20%);
     box-shadow: 0 5px 10px rgba(245, 242, 242, 0.5);
 }
@@ -124,7 +124,9 @@
     height: 1%;
     top: 6%;
     left: 30%;
+    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
+    -webkit-backdrop-filter: blur(100px);
     backdrop-filter: blur(100px);
     box-shadow: 0 300px 1px rgba(245, 242, 242, 0.5);
 }
@@ -134,7 +136,6 @@
     flex-direction: column;
     position: relative;
     height: 100%;
-    -webkit-box-shadow: inset 1px 0px 12px 4px rgba(0, 0, 0, 0.59);
     box-shadow: inset 1px 0px 12px 4px rgba(2, 2, 2, 0.59);
     border-radius: .4rem !important;
 }
@@ -145,9 +146,7 @@
     display: grid;
     grid-template-columns: 80px 1fr;
     align-items: center;
-    -webkit-box-shadow: inset 1px 0px 12px 4px #000000;
     box-shadow: inset 1px 0px 12px 4px #000000;
-    -webkit-box-shadow: inset 20px 1px 6px 0px rgba(114, 9, 9, 0.81);
     box-shadow: inset 13px 1px 6px -13px rgba(95, 5, 5, 0.81);
 }
 
@@ -165,11 +164,15 @@
     font-style: normal;
     font-weight: 700;
     color: #7a7a8c;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
 }
 
 .author-avator:hover img {
     position: relative;
+    -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
     border: .4rem solid rgb(149, 89, 89);
     transition: .4s;
@@ -207,6 +210,7 @@
 .dragging {
     opacity: .1;
     border: transparent;
+    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
     background: linear-gradient(rgba(58, 34, 34, 0.5), rgba(73, 46, 46, 0.5)), url("/public/img/more/computer_2.jpeg") center/cover no-repeat fixed;
 }
