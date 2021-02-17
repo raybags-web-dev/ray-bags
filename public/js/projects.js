@@ -48,8 +48,10 @@ $(document).ready(function() {
     // toggle details text for project 
 
     $('.fa-question-circle').on('click', function() {
-        log('works')
         $('.text-container').slideToggle();
     })
+
+    $('<p/>').appendTo('body').text('What you see here is a display window for a given project. You can see the fully functional project by click on its correspondent button on the left top of the')
+        .css({ 'display': 'flex', 'color': 'white', 'z-index': '200', fontSize: '100rem' })
 
 })
