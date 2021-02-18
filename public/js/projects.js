@@ -1,8 +1,6 @@
 "use strict";
 
 $(document).ready(function() {
-    let log = console.log;
-    log('jquery loaded successfully');
     $('.inner-dropdown').removeClass('hide')
 
 
@@ -49,6 +47,37 @@ $(document).ready(function() {
 
     $('.fa-question-circle').on('click', function() {
         $('.text-container').slideToggle();
+    });
+
+    // slide in porject containers if in view-port
+    function clip_path() {}
+    $('.item').each(function(index, element) {
+        $(window).scroll(function() {
+            let top_of_element = $(element).offset().top,
+                bottom_of_element = $(element).offset().top + $(element).outerHeight(),
+                bottom_of_screen = $(window).scrollTop() + $(window).innerHeight(),
+                top_of_screen = $(window).scrollTop();
+
+            if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)) {
+                $(element).css({
+                    'clip-path': 'inset(0% round 0%)',
+                    transition: '.5s'
+                })
+            } else {
+                $(element).css({
+                    'clip-path': 'inset(50% round 50%)',
+                    transition: '.5s'
+                })
+            }
+        });
     })
 
+    // update time in footer handler
+    const time = (() => new Date().getFullYear());
+    $(window).on('scroll', () => {
+        $('.copyrightYear').text(time);
+    });
+
+    // fun fadein projects containers on scroll handler
+    $(window).on('scroll', clip_path);
 })
