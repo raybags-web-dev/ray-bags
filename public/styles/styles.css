@@ -1223,6 +1223,7 @@ h3 {
 }
 
 .project_btn {
+    color: var(--clr-white);
     display: flex;
     justify-content: center;
     align-self: center;
@@ -1329,15 +1330,17 @@ h3 {
 .project_btn {
     border-radius: var(--radius);
     color: var(--clr-primary);
-    border: 2px solid var(--clr-primary);
-    width: 30%;
+    border: 3px solid var(--clr-primary);
+    width: 40%;
     padding: 0.4rem;
+    color: var(--clr-white);
 }
 
-.project_btn:hover {
-    color: var(--ff-primary) !important;
+
+/* .project_btn:hover {
+    color: var(--clr-primary) !important;
     border: 0.1rem solid var(--clr-primary);
-}
+} */
 
 .proj_in_mind {
     position: relative;

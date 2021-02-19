@@ -723,6 +723,34 @@ nav {
     }
 }
 
+
+/* ==============project image backgrounds======== */
+
+.faceTime {
+    transition: 1s;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("/public/img/projects/face_time.png") center/cover no-repeat fixed
+}
+
+.faceTime:hover {
+    border: 20rem solid transparent;
+    backdrop-filter: blur(100rem) grayscale(100%) contrast(100px);
+    background: linear-gradient(rgba(71, 46, 46, 0.4), rgba(223, 7, 7, 0.4)), url("/public/img/projects/face_time.png") center/cover no-repeat fixed
+}
+
+.typeFast {
+    transition: 1s;
+    background: linear-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .4)), url("") center/cover no-repeat fixed
+}
+
+.typeFast:hover {
+    border: 20rem solid transparent;
+    backdrop-filter: blur(100rem) grayscale(100%) contrast(100px);
+    background: linear-gradient(rgba(71, 46, 46, 0.4), rgba(223, 7, 7, 0.4)), url("") center/cover no-repeat fixed
+}
+
+
+/* ==============project image backgrounds======== */
+
 @media screen and (max-width: 768px) {
     .item {
         min-width: 95vw;
