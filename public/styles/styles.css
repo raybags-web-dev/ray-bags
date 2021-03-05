@@ -19,15 +19,16 @@
   --clr-gray-10: #f1f5f8;
   --clr-white: #fff;
   --clr-dark: #17141d;
+  --clr-red: #f1030f;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
   /* background  prefference*/
   --background-dark: linear-gradient(
     24deg,
-    rgba(15, 37, 51, 1) 74%,
+    rgba(15, 37, 51, 1) 100%,
     rgba(13, 14, 14, 1) 100%,
-    rgba(15, 37, 51, 1) 75%
+    rgba(15, 37, 51, 1) 100%
   );
 }
 
@@ -633,11 +634,11 @@ p {
 
 .header {
   min-height: 100vh;
-  background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
   position: relative;
   -webkit-animation: circle_intro 1 linear 1s;
-  animation: circle_intro 1 linear 1s;
+  animation: circle_intro 1 linear 0.1s;
   overflow: hidden;
 }
 
@@ -671,6 +672,10 @@ p {
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   transform: translate(-50%, -50%);
 }
 
@@ -819,11 +824,13 @@ fieldset legend {
 
 .banner-btn {
   position: relative;
-  outline: none;
   font-size: 1rem;
   background: transparent;
   border-radius: 0.3rem;
   padding: 1rem 1.75rem;
+  border-radius: 0 !important;
+  outline: 1px solid var(--clr-white);
+  outline-offset: 10px;
   box-shadow: inset 0px 8px 10px -4px rgba(0, 0, 0, 0.76);
 }
 
@@ -831,6 +838,14 @@ fieldset legend {
   background: inherit;
   transition: 0.2s;
   color: var(--clr-white);
+  border-radius: var(--radius);
+  outline: 1px solid var(--clr-white);
+  outline-offset: -10px;
+  text-shadow: none;
+  letter-spacing: 10px;
+  transition: var(--transition);
+  color: var(--clr-red);
+  background: rgb(53, 51, 51);
   border-radius: var(--radius);
 }
 
@@ -936,21 +951,25 @@ fieldset legend {
   -webkit-backdrop-filter: blur(100px);
   backdrop-filter: blur(100px);
   z-index: 4;
-  background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-    url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+  background: var(--clr-dark);
 }
 
 /* ======= SKills styles */
 
-.skills {
-  cursor: move;
-  background: var(--background-dark);
-  box-shadow: inset 0px 1px 15px 2px #000000;
+.all-skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-basis: auto;
+  margin: auto;
+  padding: 0;
+  cursor: pointer;
   overflow: hidden;
 }
 
 .skill {
-  padding: 2.5rem 0;
+  padding: 2rem 0;
   text-align: center;
   margin: 1.5rem;
   border-radius: 0.4rem;
@@ -976,18 +995,20 @@ fieldset legend {
 
 .section-skills-title-container {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  flex-wrap: wrap;
   align-content: center;
+  text-align: center;
   padding-top: 1.8rem;
-  margin-bottom: 2rem;
+  margin: auto;
 }
 
 .section-skills-title-container h3 {
   color: var(--clr-primary);
   font-family: var(--ff-secondary);
   margin: 0 auto;
-  opacity: 0.7;
+  opacity: 0.9;
+  text-align: center;
   text-shadow: 1px 3px 1px #524a4a, 2px 2px 2px rgba(252, 250, 249, 0);
 }
 
@@ -997,6 +1018,7 @@ fieldset legend {
   font-weight: 500;
   text-shadow: 1px 3px 1px #050505, 2px 2px 2px rgba(32, 30, 29, 0);
   margin: 0 auto;
+  padding-bottom: 1rem;
 }
 
 .skill-title {
@@ -1018,8 +1040,6 @@ fieldset legend {
   text-shadow: none;
   transition: var(--transition);
   box-shadow: inset -1px -1px 10px 1px rgba(2, 2, 2, 0.96);
-  -webkit-backdrop-filter: blur(50px);
-  backdrop-filter: blur(50px);
 }
 
 .skill:hover .skill-icon {
@@ -1027,8 +1047,13 @@ fieldset legend {
   text-shadow: 0px 4px 10px rgb(0, 0, 0, 0.6);
 }
 
+/* about section styles */
 .about-section {
-  background: var(--background-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+    url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed !important;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -1198,7 +1223,8 @@ h3 {
 /* === product === */
 
 .project-in-mind {
-  background: var(--background-dark);
+  background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+    url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
   box-shadow: 0px 20px 0px -10px #ffffff, 0px -20px 0px -10px #ffffff,
     20px 0px 0px -10px #ffffff, -20px 0px 0px -10px #ffffff,
     0px 0px 0px 10px #fdfdfd, inset 2px 3px 14px -2px rgba(0, 0, 0, 0.18);
@@ -1210,6 +1236,10 @@ h3 {
   border-radius: var(--radius);
 }
 
+.project-bt-container {
+  display: flex;
+  justify-content: space-around;
+}
 .project_btn {
   color: var(--clr-white);
   display: flex;
@@ -1276,37 +1306,32 @@ h3 {
   padding-top: 0.3rem;
   -webkit-backdrop-filter: blur(200px);
   backdrop-filter: blur(200px);
-  box-shadow: inset 1px 0px 20px 3px rgba(0, 0, 0, 0.68);
-  box-shadow: inset 2px 1px 6px -13px rgba(15, 37, 51, 1);
 }
 
 .in-mind-info::after {
   content: "";
   position: absolute;
   height: 100%;
-  width: 5%;
-  top: -2px;
+  width: 100%;
+  top: 0px;
   transition: var(--transition);
-  right: -2px;
+  right: 0;
   z-index: 0;
   border-radius: 0 0.5rem 0.5rem 0;
   padding-top: 0.3rem;
   box-shadow: inset 1px 0px 20px 3px rgba(0, 0, 0, 0.68);
-  box-shadow: inset 2px 1px 6px -13px rgba(15, 37, 51, 1);
-  border-right: 1rem solid rgb(15, 37, 51, 1);
-  background: var(--background-dark);
+  background: transparent;
 }
 
 .in-mind-info:hover::before,
 .in-mind-info:hover::after {
-  transition: 0.9s;
-  width: 0;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
 
 .in-mind-info:hover::after {
-  border-radius: 0;
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
   border-top-width: 2rem;
 }
 
@@ -1323,11 +1348,6 @@ h3 {
   padding: 0.4rem;
   color: var(--clr-white);
 }
-
-/* .project_btn:hover {
-    color: var(--clr-primary) !important;
-    border: 0.1rem solid var(--clr-primary);
-} */
 
 .proj_in_mind {
   position: relative;
@@ -1364,7 +1384,8 @@ Services
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
-  background: var(--background-dark);
+  background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+    url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
   position: relative;
   overflow: hidden;
   box-shadow: inset 0px 1px 15px 2px #000000;
@@ -1473,7 +1494,8 @@ Services
   overflow: hidden;
   transition: var(--transition);
   box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
-  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+    url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
 }
 
 .service-img-container {
@@ -1505,7 +1527,8 @@ Services
 .contact {
   min-height: 100vh;
   min-width: 95vw;
-  background: var(--background-dark);
+  background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+    url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
   overflow: hidden;
   background-color: none;
   background-color: none;
@@ -1835,9 +1858,6 @@ Services
   .skill {
     float: left;
   }
-  .skills {
-    padding-left: 20%;
-  }
   .skill {
     width: 40%;
     margin: 1rem auto;
@@ -1853,22 +1873,14 @@ Services
     text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
     text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
   }
-  .about-section {
-    background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/space1.jpeg") center/cover no-repeat fixed;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-  }
-  .about-img,
-  .about-info {
-    display: block;
-    width: 50%;
-  }
+
   .about-picture-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    left: 10%;
-    width: 70%;
+    min-width: 70%;
+    margin: auto;
     box-shadow: 0px 1px 16px 7px #fdfafb;
     box-shadow: inset 0px 1px 12px 0px rgba(255, 252, 253, 0.85);
   }
@@ -1894,7 +1906,6 @@ Services
     z-index: 3;
     transition: 0.5s;
     box-shadow: inset 0px 1px 12px 0px rgba(255, 252, 253, 0.85);
-    background-image: linear-gradient(to right, #434343 0%, black 100%);
   }
   .about-picture-container:hover::before {
     bottom: 0;
@@ -1913,8 +1924,21 @@ Services
     backdrop-filter: blur(200px);
     transition: all linear 0.3s;
   }
-  .about-info {
-    padding-left: 1rem;
+  .about-info .inner-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+
+  .aboutMe_btn {
+    border-radius: 0px;
+    box-shadow: none;
+    box-shadow: inset none;
+  }
+  .aboutMe_btn:hover {
+    border-bottom: 2px solid var(--clr-white);
+    transition: 0.5s;
   }
   .about-text {
     font-weight: 500;
@@ -1939,7 +1963,8 @@ Services
   /* Services*/
   .services {
     min-height: 100vh;
-    background: var(--background-dark);
+    background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
     position: relative;
     overflow: hidden;
     padding: 5%;
@@ -2166,9 +2191,7 @@ Services
     border: 3px solid var(--clr-white);
     padding: 0.3rem;
   }
-  .skills {
-    padding-left: 20%;
-  }
+
   .skill {
     width: 40%;
     margin: 1rem auto;
@@ -2178,15 +2201,7 @@ Services
     transform: scale(1.05);
     transition: var(--transition);
   }
-  .section-skills-title-container {
-    transform: translate(-6%);
-  }
-  .about-section {
-    background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/space1.jpeg") center/cover no-repeat fixed;
-    position: relative;
-    overflow: hidden;
-  }
+
   .about-img,
   .about-info {
     float: left;
@@ -2246,7 +2261,8 @@ Services
     transition: var(--transition);
     -webkit-backdrop-filter: blur(100%);
     backdrop-filter: blur(100%);
-    background: var(--background-dark);
+    background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
     box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
   }
   .service-card:hover {
@@ -2299,7 +2315,7 @@ Services
     border-radius: 0.375rem;
     outline: none;
     background: rgb(64, 20, 20);
-    background: var(--background-dark);
+    background: transparent;
     box-shadow: 0px 2px 1px rgba(50, 50, 50, 0.75);
   }
   .service-btn:hover {
@@ -2337,16 +2353,14 @@ Services
   .contact {
     min-height: 100vh;
     min-width: 95vw;
-    background: var(--background-dark);
+    background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
     overflow: hidden;
     background-color: none;
   }
 }
 
 @media screen and (min-width: 991px) {
-  .skills {
-    padding-left: 2%;
-  }
   .skill {
     width: 30%;
     margin: 1rem auto;
@@ -2673,7 +2687,6 @@ Services
   .contact {
     min-height: 100vh;
     min-width: 95vw;
-    background: var(--background-dark);
     overflow: hidden;
     background-color: none;
   }
@@ -2716,17 +2729,7 @@ Services
     width: 30%;
     margin: 0.8rem;
   }
-  .about-section {
-    background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/about2.jpg") center/cover no-repeat fixed;
-    position: relative;
-    overflow: hidden;
-  }
-  .about-img,
-  .about-info {
-    float: left;
-    width: 50%;
-  }
+
   .about-picture-container {
     position: relative;
     top: 9%;
@@ -2803,7 +2806,7 @@ Services
   .contact {
     min-height: 100vh;
     min-width: 95vw;
-    background: var(--background-dark);
+    background: inherit;
     overflow: hidden;
     background-color: none;
   }
@@ -2823,35 +2826,51 @@ Services
   }
   .about-section {
     min-height: 100vh;
-    background: var(--background-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
     overflow: hidden;
     box-shadow: inset 0px 1px 15px 2px #000000;
+    background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
   }
-  .section-center .about-img {
+  .section-center {
     display: flex;
-    flex-direction: column;
-    position: relative;
-    left: -9%;
-    transform: translate(-2%);
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    min-width: 100%;
+    min-height: 100%;
+    margin: 5rem auto;
   }
-  .section-center .about-info {
-    position: relative;
-    right: -15%;
+  .about-img {
+    min-height: 70vh;
+    -o-object-fit: fill;
+       object-fit: fill;
   }
-  .about-picture {
-    width: 100%;
-    height: 100%;
-  }
+
   .about-picture-container {
-    position: relative;
-    top: 10%;
-    min-width: 25vw;
-    min-height: 50vh;
-    z-index: 10;
-    box-shadow: 0px 1px 16px 7px #fdfafb;
-    box-shadow: inset 0px 1px 12px 0px rgba(255, 252, 253, 0.85);
+    min-width: 70%;
   }
+  .about-info {
+    display: flex;
+    flex-direction: row;
+    padding-right: 2rem;
+  }
+  .about-info p {
+    line-height: 3rem;
+  }
+  .inner-text {
+    display: flex;
+    gap: 1.8rem;
+  }
+  .project-bt-container {
+    display: flex;
+    justify-content: space-around !important;
+  }
+
   .about-picture-container::before {
     content: "";
     position: absolute;
@@ -2896,11 +2915,21 @@ Services
     transition: all linear 0.3s;
   }
   /* ======================name animation============== */
+  .name-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    min-width: 50%;
+    text-align: center;
+    margin-right: 14rem;
+  }
   .name-animation .first-set,
   .name-animation .second-set,
   .name-animation {
     display: flex;
     justify-content: space-between;
+    text-align: center;
     align-items: stretch;
     top: 1%;
   }
@@ -2909,7 +2938,6 @@ Services
     flex: 1;
     position: relative;
     font-size: 2rem;
-    left: 25%;
     text-transform: capitalize;
     font-family: var(--name-animate);
   }
@@ -3178,15 +3206,8 @@ Services
   }
   /* ====================name animation============== */
   .skills {
-    padding-left: 8% !important;
-  }
-  .skills {
-    padding-left: 10%;
-    min-height: 100vh;
-    padding-bottom: 3rem;
-    background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-      url("/public/img/more/about2.jpg") center/cover no-repeat fixed;
-    box-shadow: inset 0px 1px 15px 2px #000000;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed !important;
   }
   .skill {
     width: 30%;
@@ -3201,9 +3222,6 @@ Services
     box-shadow: inset -1px -10px 10px 1px rgba(2, 2, 2, 0.96);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
-  }
-  .section-skills-title-container {
-    transform: translate(-6%);
   }
   .skill-title {
     font-size: 25px;
@@ -3270,14 +3288,19 @@ Services
     -webkit-backdrop-filter: blur(100px);
     backdrop-filter: blur(100px);
   }
+
   .aboutMe_btn {
-    float: left;
     background: transparent !important;
-    border-radius: var(--radius);
+    border-radius: 0px;
+
+    outline: 1px solid rgb(240, 6, 6);
     box-shadow: inset 1px 0px 13px 3px rgba(0, 0, 0, 0.6);
   }
   .aboutMe_btn:hover {
     color: var(--clr-primary);
+    outline: 1px solid var(--clr-white);
+    outline-offset: 6px !important;
+    color: var(--clr-gray-10);
   }
   /* project styles  */
   #proj_in_mind_mainpage:hover {
@@ -3292,6 +3315,14 @@ Services
   }
   .in-mind-info {
     flex: 1;
+    transition: outline-offset 0.4s linear;
+    outline: 2px solid var(--clr-primary);
+    outline-offset: 1rem;
+  }
+  .in-mind-info:hover {
+    outline-offset: 2rem;
+    -webkit-backdrop-filter: grayscale(50%);
+    backdrop-filter: grayscale(50%);
   }
   .in-mind-info p {
     width: 70%;
@@ -3312,28 +3343,26 @@ Services
     border: 3px solid transparent;
     border-radius: var(--radius);
     cursor: pointer;
+    z-index: 100;
     box-shadow: inset 1px 0px 13px 3px rgba(0, 0, 0, 0.6);
   }
   .project_btn:hover {
     box-shadow: none;
     border-bottom: 3px solid white !important;
     border-top: 3px solid white !important;
-
     background: transparent;
     color: rgb(238, 229, 229);
   }
   /* projetcs buttons container  */
   .project-bt-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: -8rem;
-    flex-shrink: unset;
+    position: relative;
+    transform: translate(-19%, 20%);
   }
   /* Services*/
   .services {
     min-height: 100vh;
-    background: var(--background-dark);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
     position: relative;
     overflow: hidden;
     padding: 5%;
@@ -3354,8 +3383,8 @@ Services
     position: relative;
     overflow: hidden;
     box-shadow: inset 0px 1px 15px 2px #000000;
-    background: rgb(15, 37, 51);
-    background: var(--background-dark);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
   }
   .service-card > div {
     flex: 1;
@@ -3370,11 +3399,6 @@ Services
     color: var(--clr-white);
     transition: var(--transition);
     background: inherit;
-    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
-      0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
-      0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
-      0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
-      0 20px 20px rgba(0, 0, 0, 0.15), 2px 2px 3px rgba(255, 255, 255, 0.44);
   }
   .service-img {
     height: 17rem;
@@ -3431,18 +3455,20 @@ Services
     left: 50%;
     bottom: 0;
     font-size: 2rem;
-    color: var(--clr-primary);
-    background: var(--clr-gray-5);
+    color: var(--clr-red);
+    background: transparent;
     padding: 0.5rem;
     border-radius: 50%;
     transform: translate(-50%, 50%);
+    transition: var(--transition);
     border: 0.4rem solid var(--clr-gray-10);
   }
   /* contacts styles */
   .contact {
     min-height: 100vh;
     min-width: 95vw;
-    background: var(--background-dark);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
     overflow: hidden !important;
     background-color: none;
   }
@@ -3509,13 +3535,8 @@ Services
   /* footer big screens */
   .footer {
     height: 100%;
-    background: rgb(15, 37, 51);
-    background: linear-gradient(
-      214deg,
-      rgba(15, 37, 51, 1) 74%,
-      rgba(13, 14, 14, 1) 74%,
-      rgba(15, 37, 51, 1) 75%
-    );
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed !important;
   }
   .footer-name h5,
   .footer-link-header h5 {
