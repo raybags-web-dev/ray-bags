@@ -673,9 +673,9 @@ p {
   top: 50%;
   left: 50%;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   transform: translate(-50%, -50%);
 }
 
@@ -955,7 +955,10 @@ fieldset legend {
 }
 
 /* ======= SKills styles */
-
+.skills {
+  background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+    url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+}
 .all-skills {
   display: flex;
   justify-content: center;
@@ -1462,9 +1465,8 @@ Services
   font-weight: 400;
   margin-top: 1.25rem;
   text-shadow: 0px -1px 0px rgba(30, 30, 30, 0.8);
-  border-radius: 0.375rem;
   outline: none;
-  background: var(--background-dark);
+  background: transparent;
 }
 
 .service-btn:hover {
@@ -1523,16 +1525,36 @@ Services
 /* contact styles */
 
 /* ============================================== */
-
 .contact {
   min-height: 100vh;
   min-width: 95vw;
-  background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
     url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
-  overflow: hidden;
+  overflow: hidden !important;
   background-color: none;
-  background-color: none;
-  box-shadow: inset 0px 1px 15px 2px #000000;
+}
+
+.contact-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: ce;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: auto 1rem;
+  align-items: center;
+  min-height: auto;
+}
+
+/* ====== */
+.contact-main-container > *:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+  flex: 1 1 100%;
+  min-width: 330px;
+}
+.contact-main-container > *:nth-child(1) {
+  flex: 1 1 100%;
 }
 
 .contact-form,
@@ -1549,14 +1571,7 @@ Services
   opacity: 0.6;
 }
 
-.contact-main-container {
-  min-height: 100vh;
-}
-
-.contact-item {
-  margin-bottom: 1rem;
-}
-
+/* ==================================================== */
 .contact-item .contact-text {
   letter-spacing: 1px;
   text-transform: lowercase;
@@ -1732,13 +1747,8 @@ Services
 
 .footer {
   height: 100%;
-  background: rgb(15, 37, 51);
-  background: linear-gradient(
-    214deg,
-    rgba(15, 37, 51, 1) 74%,
-    rgba(13, 14, 14, 1) 74%,
-    rgba(15, 37, 51, 1) 75%
-  );
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+    url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
 }
 
 .footer-name h5,
@@ -1984,7 +1994,8 @@ Services
     border-radius: 2rem;
     transition: var(--transition);
     box-shadow: 9px 9px 7px -4px rgba(0, 0, 0, 0.67);
-    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
     position: relative;
     overflow: hidden;
     box-shadow: inset 0px 1px 15px 2px #000000;
@@ -2045,9 +2056,8 @@ Services
     font-weight: 400;
     margin-top: 1.25rem;
     text-shadow: 0px -1px 0px rgba(30, 30, 30, 0.8);
-    border-radius: 0.375rem;
     outline: none;
-    background: rgb(64, 20, 20);
+    margin: auto;
     box-shadow: 0px 4px 7px 8px rgba(0, 0, 0, 0.37);
   }
   .service-btn:hover {
@@ -2224,17 +2234,6 @@ Services
     font-style: italic;
     text-shadow: 2px 2px 0px #ffffff, 5px 4px 0px rgba(0, 0, 0, 0.15);
   }
-  .contact-form,
-  .contact-info {
-    margin-top: 15%;
-    float: left;
-    height: 70%;
-    width: 50%;
-  }
-  .contact-info {
-    display: block;
-    flex-wrap: wrap;
-  }
   .contact-item {
     padding: 1rem;
   }
@@ -2314,7 +2313,6 @@ Services
     text-shadow: 0px -1px 0px rgba(30, 30, 30, 0.8);
     border-radius: 0.375rem;
     outline: none;
-    background: rgb(64, 20, 20);
     background: transparent;
     box-shadow: 0px 2px 1px rgba(50, 50, 50, 0.75);
   }
@@ -2350,14 +2348,6 @@ Services
     visibility: none;
   }
   /* ====================name animation============== */
-  .contact {
-    min-height: 100vh;
-    min-width: 95vw;
-    background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
-    overflow: hidden;
-    background-color: none;
-  }
 }
 
 @media screen and (min-width: 991px) {
@@ -2389,21 +2379,7 @@ Services
     position: relative;
     margin-left: 0%;
   }
-  /* contacts */
-  .contact-info {
-    margin-top: 13%;
-  }
-  .contact-item {
-    padding-bottom: 10%;
-  }
-  .contact-form {
-    transition: var(--transition);
-    width: 100%;
-    height: 70%;
-    margin-right: -2%;
-    margin-left: 12%;
-    margin-top: 13%;
-  }
+
   /* about animation  name */
   .name-animation .first-set,
   .name-animation .second-set,
@@ -2684,12 +2660,6 @@ Services
     }
   }
   /* ====================name animation============== */
-  .contact {
-    min-height: 100vh;
-    min-width: 95vw;
-    overflow: hidden;
-    background-color: none;
-  }
 }
 
 @media screen and (min-width: 994px) {
@@ -2706,20 +2676,7 @@ Services
     width: 30%;
     margin-right: 3.333%;
   }
-  .contact-info {
-    margin-top: 13%;
-  }
-  .contact-item {
-    padding-bottom: 10%;
-  }
-  .contact-form {
-    transition: var(--transition);
-    width: 100%;
-    height: 70%;
-    margin-right: -2%;
-    margin-left: 12%;
-    margin-top: 13%;
-  }
+
   /* section */
   .section-center {
     width: 92vw;
@@ -2806,7 +2763,8 @@ Services
   .contact {
     min-height: 100vh;
     min-width: 95vw;
-    background: inherit;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
     overflow: hidden;
     background-color: none;
   }
@@ -2824,6 +2782,67 @@ Services
     z-index: 200 !important;
     box-shadow: inset 0px -1px 9px 6px rgba(0, 0, 0, 0.95);
   }
+  .banner {
+    padding: 10rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 3rem solid transparent;
+    -webkit-clip-path: inset(0% round 0%);
+    clip-path: inset(0% round 0%);
+    transition: all 0.4s;
+    -webkit-animation: glassyy 1 alternate-reverse ease-in-out 2s;
+    animation: glassyy 1 alternate-reverse ease-in-out 4s;
+    box-shadow: inset -2px 0px 18px 6px rgba(0, 0, 0, 0.59);
+  }
+  .banner:hover {
+    border: none;
+    padding: 8rem;
+    background: transparent;
+    outline: 3px solid var(--clr-primary);
+    outline-offset: -80px;
+    border-radius: 0px;
+    -webkit-backdrop-filter: grayscale(500%);
+            backdrop-filter: grayscale(500%);
+    border: 2px solid var(--clr-primary);
+    background: transparent;
+  }
+  .banner:hover:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    left: 0%;
+    top: 0%;
+    opacity: 0.2;
+    z-index: inherit;
+    background: transparent;
+    -webkit-animation: animate_divider 1 forwards ease-in-out 2s;
+    animation: animate_divider 1 forwards ease-in-out 2s;
+  }
+
+  .banner:hover::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 10%;
+    right: 0%;
+    top: 0%;
+    z-index: inherit;
+    opacity: 0.2;
+    background: transparent;
+    -webkit-animation: pulse 1 forwards ease-in-out 2s;
+    animation: pulse 1 forwards ease-in-out 2s;
+  }
+  .banner:active {
+    border: none;
+    padding: 5rem;
+    transition: 0.2s;
+    outline: 3px solid var(--clr-red);
+    border: 3px solid var(--clr-primary);
+    background: transparent;
+    outline-offset: -40px;
+  }
+
   .about-section {
     min-height: 100vh;
     display: flex;
@@ -2848,7 +2867,7 @@ Services
   .about-img {
     min-height: 70vh;
     -o-object-fit: fill;
-       object-fit: fill;
+    object-fit: fill;
   }
 
   .about-picture-container {
@@ -3465,45 +3484,26 @@ Services
   }
   /* contacts styles */
   .contact {
-    min-height: 100vh;
+    min-height: 80vh;
     min-width: 95vw;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
       url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
     overflow: hidden !important;
     background-color: none;
   }
-  .contact-info {
-    margin-top: 13%;
-  }
-  .contact-item {
-    padding-bottom: 0%;
-    min-height: 20vh;
-  }
-  .contact-form {
+
+  .contact-main-container {
     display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-    min-height: 30rem;
-    margin-right: -10%;
-    margin-left: 17%;
-    margin-top: 13%;
-    transition: var(--transition);
+    justify-content: space-around;
+    flex-wrap: nowrap;
+
+    gap: 1rem;
+    flex-basis: auto;
   }
-  .form {
-    display: flex;
-    position: relative;
+  .contact-main-container > * {
+    flex-basis: 100%;
   }
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  .form-group input {
-    flex: 1;
-  }
-  .form-group textarea {
-    flex: 1;
-  }
+
   form .submit-btn {
     position: relative;
     flex: 1;
@@ -3529,7 +3529,6 @@ Services
     z-index: 106;
     transition: var(--transition);
     background: red;
-    /* backdrop-filter: blur(50px); */
     box-shadow: -1px 0px 13px 6px rgba(0, 0, 0, 0.43);
   }
   /* footer big screens */
