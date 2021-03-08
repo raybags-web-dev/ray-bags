@@ -329,6 +329,7 @@ p {
 }
 
 .nav_toggle .fas {
+  color: var(--clr-white);
   text-shadow: 0px 0px 0 #606660, 0px 0px 0 #fcfbfb;
 }
 
@@ -379,14 +380,13 @@ p {
   }
 }
 
-.nav_toggle:hover {
-  color: var(--clr-white);
-  transition: 0.5s;
+.nav_toggle .fa-bars:hover {
+  color: var(--clr-green) !important;
 }
 
 .nav_toggle:active {
   color: var(--clr-white);
-  transition: 9s;
+  transition: 0.5s;
   transform: scale(1.1);
 }
 
@@ -1130,13 +1130,11 @@ h3 {
 
 .aboutMe_btn {
   display: block;
-  background: transparent;
   border-radius: var(--radius);
   box-shadow: inset 1px 0px 13px 3px rgba(0, 0, 0, 0.6);
 }
 
 .about-picture-container {
-  position: relative;
   background-image: var(--background-browns);
   max-width: 20rem;
   overflow: hidden;
@@ -1212,17 +1210,12 @@ h3 {
   transform: scale(1.2);
   border-radius: 0.4rem;
 }
-
 .name-animation {
   display: flex;
-  position: absolute;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
 }
-
-.about-text {
-  max-width: 26rem;
-  color: var(--clr-primary);
-}
-
 /* === product === */
 
 .project-in-mind {
@@ -1427,6 +1420,8 @@ Services
   height: 17rem;
   -o-object-fit: cover;
   object-fit: cover;
+  outline: 1px solid transparent;
+  outline-offset: 0;
   transition: var(--transition);
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
@@ -1439,6 +1434,8 @@ Services
   overflow: hidden;
   -o-object-fit: cover;
   object-fit: cover;
+  outline: 1px solid var(--clr-white);
+  outline-offset: -4rem;
   transition: var(--transition);
 }
 
@@ -1536,6 +1533,7 @@ Services
 
 .contact-main-container {
   display: flex;
+  
   justify-content: center;
   align-items: ce;
   flex-wrap: wrap;
@@ -1569,9 +1567,9 @@ Services
   font-weight: 500;
   padding-top: 1rem;
   opacity: 0.6;
+  
 }
 
-/* ==================================================== */
 .contact-item .contact-text {
   letter-spacing: 1px;
   text-transform: lowercase;
@@ -1581,6 +1579,7 @@ Services
   user-select: text;
   -moz-user-select: text;
   -webkit-user-select: text;
+  
 }
 
 .contact-title {
@@ -1600,6 +1599,7 @@ Services
   margin-bottom: 1rem;
   letter-spacing: var(--spacing);
   text-transform: lowercase;
+  opacity: .8;
 }
 
 .form-control::-webkit-input-placeholder {
@@ -2381,23 +2381,21 @@ Services
   }
 
   /* about animation  name */
-  .name-animation .first-set,
+  /* .name-animation .first-set,
   .name-animation .second-set,
   .name-animation {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    bottom: 10%;
-  }
-  .first-set,
+  } */
+  /* .first-set,
   .second-set {
     position: relative;
     font-size: 2rem;
-    left: 15%;
     text-transform: capitalize;
     font-family: var(--name-animate);
-  }
-  .first-set {
+  } */
+  /* .first-set {
     color: var(--clr-white);
     letter-spacing: 3px;
     opacity: 0.7;
@@ -2407,7 +2405,7 @@ Services
     color: var(--clr-primary);
     letter-spacing: 3px;
     text-shadow: 1px 13px 5px #aba8a8, 2px 2px 2px rgba(206, 89, 55, 0);
-  }
+  } */
   .first-set .letter1,
   .letter2,
   .letter3,
@@ -2735,8 +2733,17 @@ Services
     backdrop-filter: blur(200px);
     transition: all linear 0.3s;
   }
-  .about-info {
-    padding-left: 2rem;
+  .about-info > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .about-info .project-bt-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    padding: 1rem;
   }
   .about-text {
     font-weight: 500;
@@ -2783,7 +2790,7 @@ Services
     box-shadow: inset 0px -1px 9px 6px rgba(0, 0, 0, 0.95);
   }
   .banner {
-    padding: 10rem;
+    padding: 6rem;
     border-radius: 0.4rem;
     cursor: pointer;
     border: 3rem solid transparent;
@@ -2802,7 +2809,7 @@ Services
     outline-offset: -80px;
     border-radius: 0px;
     -webkit-backdrop-filter: grayscale(500%);
-            backdrop-filter: grayscale(500%);
+    backdrop-filter: grayscale(500%);
     border: 2px solid var(--clr-primary);
     background: transparent;
   }
@@ -2857,37 +2864,59 @@ Services
   }
   .section-center {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    gap: 1rem;
+    flex-basis: 100%;
+    margin-top: 4rem;
     align-items: center;
-    padding: 2rem 0;
-    min-width: 100%;
-    min-height: 100%;
-    margin: 5rem auto;
+    min-width: 100vw;
   }
   .about-img {
+    position: sticky;
     min-height: 70vh;
+    flex: 1 1 50%;
+    float: left;
     -o-object-fit: fill;
     object-fit: fill;
   }
 
   .about-picture-container {
     min-width: 70%;
+    margin-right: 100% !important;
   }
   .about-info {
-    display: flex;
-    flex-direction: row;
-    padding-right: 2rem;
+    display: block;
+    flex-direction: column;
+    flex-basis: auto;
+    min-height: 80vh;
+    margin-right: 2%;
   }
-  .about-info p {
-    line-height: 3rem;
-  }
+
   .inner-text {
-    display: flex;
     gap: 1.8rem;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    flex-grow: 1;
+  }
+  .inner-text .about-text:nth-child(1) {
+    padding: 2rem;
+    min-width: 381px;
+    margin: auto;
+    line-height: 3rem;
+    height: 60vh;
+  }
+  .inner-text .about-text:nth-child(2) {
+    padding: 2rem;
+    min-width: 381px;
+    margin: auto;
+    line-height: 3rem;
+    height: 60vh;
   }
   .project-bt-container {
     display: flex;
     justify-content: space-around !important;
+    align-items: center;
   }
 
   .about-picture-container::before {
@@ -2936,26 +2965,16 @@ Services
   /* ======================name animation============== */
   .name-animation {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10%;
-    min-width: 50%;
-    text-align: center;
-    margin-right: 14rem;
   }
   .name-animation .first-set,
   .name-animation .second-set,
   .name-animation {
     display: flex;
-    justify-content: space-between;
-    text-align: center;
-    align-items: stretch;
+
     top: 1%;
   }
   .first-set,
   .second-set {
-    flex: 1;
-    position: relative;
     font-size: 2rem;
     text-transform: capitalize;
     font-family: var(--name-animate);
@@ -2981,7 +3000,6 @@ Services
   .letter7 {
     position: relative;
     transition: 0.5s;
-    padding-left: 0.3rem;
   }
   .letter1 {
     position: relative;
@@ -3372,11 +3390,7 @@ Services
     background: transparent;
     color: rgb(238, 229, 229);
   }
-  /* projetcs buttons container  */
-  .project-bt-container {
-    position: relative;
-    transform: translate(-19%, 20%);
-  }
+
   /* Services*/
   .services {
     min-height: 100vh;

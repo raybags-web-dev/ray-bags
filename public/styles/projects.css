@@ -691,8 +691,6 @@ nav {
   transition: 1s;
   -o-object-fit: fill;
   object-fit: fill;
-  background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-    url("/public/img/projects/face_time.png") center/cover no-repeat;
 }
 
 .faceTime:hover {
@@ -705,8 +703,6 @@ nav {
   transition: 1s;
   -o-object-fit: fill;
   object-fit: fill;
-  background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-    url("/public/img/projects/face_time.png") center/cover no-repeat;
 }
 
 .typeFast:hover {
