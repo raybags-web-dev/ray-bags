@@ -80,12 +80,12 @@
   transition: 0.4s;
   cursor: pointer;
   border-radius: 0.4rem;
+  transition: var(--transition);
   background: transparent;
   box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.79);
 }
 
 .card:hover {
-  /* transform: translateY(-1.5rem) !important; */
   transition: 0.4s;
   transform: scale(1.05);
   box-shadow: inset 0px 2px 0px -5px rgba(95, 5, 5, 0.81);
@@ -135,6 +135,12 @@
   backdrop-filter: blur(100px);
   box-shadow: 0 300px 1px rgba(245, 242, 242, 0.5);
 }
+.card:hover img {
+  transform: scale(1.1);
+  transition: var(--transition);
+  -o-object-fit: fill;
+     object-fit: fill;
+}
 
 .card-header {
   display: flex;
@@ -155,7 +161,7 @@
   box-shadow: inset 13px 1px 6px -13px rgba(95, 5, 5, 0.81);
 }
 
-.author-avator img {
+.inner-img-container img {
   position: relative;
   width: 60px;
   height: 60px;
@@ -179,8 +185,6 @@
   position: relative;
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
-  border: 0.4rem solid rgb(149, 89, 89);
-  transition: 0.4s;
   margin-right: 1rem;
   transition: var(--transition);
 }
