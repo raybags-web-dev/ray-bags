@@ -178,6 +178,7 @@ const closeMenuWithLinkClicks = (links) => {
     link.addEventListener("click", closeMenuWithLink, false);
   });
 };
+
 export {
   move_to_top_of_page,
   go_to_top,
