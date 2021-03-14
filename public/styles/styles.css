@@ -642,14 +642,14 @@ p {
   min-width: 100%;
   min-height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .mainpageImage img {
   background: center/cover no-repeat fixed;
   height: 100%;
   width: 100%;
-  -webkit-filter: brightness(60%);
-          filter: brightness(60%);
+  -webkit-filter: brightness(100%);
+  filter: brightness(100%);
   -webkit-animation: zoominEffect 20s infinite alternate linear;
   animation: zoominEffect 20s infinite alternate linear;
   background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5));
@@ -783,12 +783,12 @@ fieldset legend {
   content: "";
   position: absolute;
   height: 100%;
-  width: 0%;
+  width: 100%;
   left: 0%;
   top: 0%;
   opacity: 0.2;
   z-index: inherit;
-  background: rgb(209, 15, 15);
+  background: rgb(3, 3, 3);
   -webkit-animation: animate_divider 1 forwards ease-in-out 2s;
   animation: animate_divider 1 forwards ease-in-out 2s;
 }
@@ -797,12 +797,12 @@ fieldset legend {
   content: "";
   position: absolute;
   height: 100%;
-  width: 10%;
+  width: 100%;
   right: 0%;
   top: 0%;
   z-index: inherit;
   opacity: 0.2;
-  background: rgb(209, 15, 15);
+  background: rgb(3, 3, 3);
   -webkit-animation: pulse 1 forwards ease-in-out 2s;
   animation: pulse 1 forwards ease-in-out 2s;
 }
