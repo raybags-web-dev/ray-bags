@@ -55,15 +55,15 @@ export {
 };
 
 // Apply active class on menu link click handler.
-applyActiveClassOnCLick();
+applyActiveClassOnCLick?.();
 // close side menu with any  menu click handler
-closeMenuWithLinkClicks(all_links);
+closeMenuWithLinkClicks?.(all_links);
 // lazy load images
-lazyLoadImages(all_images);
+lazyLoadImages?.(all_images);
 // handle projects card and dragging
 dragDrop(img_links, draggables, constainers);
 // accept cookies
-cookie_accepted();
+cookie_accepted?.();
 // close menu when user clicks anywhere on the page
 document.addEventListener("click", closeMenu, true);
 // close menu when logo button is clicked.
@@ -75,11 +75,11 @@ close_menu_icon.addEventListener("click", closeMenu, false);
 // still needs work. Making the image element scale when in view port
 click_btn(project_in_mind_container, project_in_mind_image);
 // role-in name in about section handler
-animateName();
+animateName?.();
 // top button handler.
 move_to_top_of_page();
 go_to_top();
 // update copyright year handler
-copyRightYear(copyright_container);
+copyRightYear?.(copyright_container);
 // Parallax scroll effect
-$(window).scroll(() => parallax());
+$(window).scroll(() => parallax?.());

@@ -10,7 +10,8 @@ import {
 } from "./main.js";
 
 // logger message
-const logger = (message) => console.log(`%c ${message}`, "color: green;");
+const logger = (message) =>
+  console.log(`%c logger output: ${message}`, "color: green;");
 
 // apply sctive class on menu link click
 function applyActiveClassOnCLick() {
@@ -25,6 +26,7 @@ $(window).on("load", () => {
   $(".banner").css({
     background: `linear-gradient(rgb(0,0,0,.5), rgb(0,0,0,.5)), url("") center/cover no-repeat fixed`,
   });
+  logger("resources loaded successfully");
 });
 // top button visibility handler.
 const show_hide_top_button = (element) => {
@@ -186,7 +188,6 @@ const closeMenuWithLinkClicks = (links) => {
 function parallax() {
   let scroll = $(window).scrollTop();
   let screenHeight = $(window).height();
-  logger($(".parallax").length);
 
   $(".parallax").each(function () {
     console.log();
