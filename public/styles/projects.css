@@ -64,7 +64,7 @@ body {
   object-fit: cover;
   scroll-behavior: smooth;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+    url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
 }
 
 html,

@@ -9,6 +9,9 @@ import {
   cookie_accept_bunner_icon,
 } from "./main.js";
 
+// logger message
+const logger = (message) => console.log(`%c ${message}`, "color: green;");
+
 // apply sctive class on menu link click
 function applyActiveClassOnCLick() {
   $(".nav_list .nav_item a").on("click", function () {
@@ -89,7 +92,6 @@ function element_isIn_viewPort(element) {
       (window.innerWidth || document.documentElement.clientWidth)
   );
 }
-
 // lady load images helper function.
 
 const lazyLoadImages = (all_images) => {
@@ -179,6 +181,32 @@ const closeMenuWithLinkClicks = (links) => {
   });
 };
 
+// Paralax effect
+
+function parallax() {
+  let scroll = $(window).scrollTop();
+  let screenHeight = $(window).height();
+  logger($(".parallax").length);
+
+  $(".parallax").each(function () {
+    console.log();
+    let offset = $(this).offset().top;
+    let distanceFromBottom = offset - scroll - screenHeight;
+
+    if (offset > screenHeight && offset) {
+      $(this).css(
+        "background-position",
+        "center " + distanceFromBottom * 0.5 + "px"
+      );
+    } else {
+      $(this).css({
+        "background-position": "center" + -scroll * 0.5 + "px",
+        "object-filt": "cover",
+      });
+    }
+  });
+}
+
 export {
   move_to_top_of_page,
   go_to_top,
@@ -191,4 +219,5 @@ export {
   closeMenuWithLinkClicks,
   applyActiveClassOnCLick,
   element_isIn_viewPort,
+  parallax,
 };

@@ -9,6 +9,7 @@ import {
   cookie_accepted,
   lazyLoadImages,
   applyActiveClassOnCLick,
+  parallax,
 } from "./middleware.js";
 import { animateName, click_btn } from "./animations.js";
 import { dragDrop } from "./cards.js";
@@ -80,4 +81,5 @@ move_to_top_of_page();
 go_to_top();
 // update copyright year handler
 copyRightYear(copyright_container);
-// //scrollSpy function
+// Parallax scroll effect
+$(window).scroll(() => parallax());

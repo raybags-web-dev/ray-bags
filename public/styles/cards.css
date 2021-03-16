@@ -29,7 +29,7 @@
   flex-direction: column;
   background: rgb(1, 1, 1);
   background: linear-gradient(rgba(85, 72, 72, 0.5), rgba(75, 63, 63, 0.5)),
-    url("../img/more/nature5.jpeg") center/cover no-repeat fixed;
+    url("../img/more/nature1.jpeg") center/cover no-repeat fixed;
   padding-bottom: 1rem;
   margin-top: 3rem;
   box-shadow: none;
@@ -139,7 +139,7 @@
   transform: scale(1.1);
   transition: var(--transition);
   -o-object-fit: fill;
-     object-fit: fill;
+  object-fit: fill;
 }
 
 .card-header {

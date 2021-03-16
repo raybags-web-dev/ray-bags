@@ -32,6 +32,7 @@
   );
 }
 
+*,
 *::before,
 *::after {
   margin: 0;
@@ -61,6 +62,8 @@ body {
 body,
 html {
   scroll-behavior: smooth;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+    url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed !important;
 }
 
 body::-webkit-scrollbar {
@@ -399,19 +402,14 @@ p {
   display: block;
   top: 0%;
   width: 100vw;
+  font-weight: 500;
   left: 0%;
   z-index: 100;
-  color: white;
+  color: rgb(250, 164, 164);
   z-index: 1000;
   margin-bottom: 15px;
   align-items: center;
   box-shadow: inset 0px 2px 5px 4px rgba(0, 0, 0, 0.48);
-  background: linear-gradient(
-    2deg,
-    rgb(33, 51, 61) 100%,
-    rgba(13, 14, 14, 1) 100%,
-    rgb(10, 33, 48) 75%
-  );
   -webkit-backdrop-filter: var(--glass-background);
   backdrop-filter: var(--glass-background);
   box-shadow: inset 6px -13px 12px -4px rgba(0, 0, 0, 0.51);
@@ -459,12 +457,6 @@ p {
   -webkit-backdrop-filter: var(--glass-background);
   backdrop-filter: var(--glass-background);
   box-shadow: inset 0px 2px 5px 4px rgba(0, 0, 0, 0.48);
-  background: linear-gradient(
-    240deg,
-    rgba(15, 37, 51, 1) 100%,
-    rgba(13, 14, 14, 1) 100%,
-    rgb(9, 53, 80) 75%
-  );
 }
 
 /* ==========lean more and accept  cookie button psudo elements  */
@@ -475,11 +467,12 @@ p {
 }
 
 .cookie_para p {
-  color: rgb(253, 250, 250);
+  color: rgb(248, 137, 137);
   font-size: 15px;
   letter-spacing: 2px;
   line-height: 1.5rem;
-  opacity: 0.7;
+  opacity: 09;
+  font-weight: 500;
 }
 
 .cookie_buttons a {
@@ -488,8 +481,10 @@ p {
   transition: var(--transition);
   color: var(--clr-white);
   background: transparent;
+  color: rgb(251, 160, 160);
+
   opacity: 0.7;
-  box-shadow: inset 0px 2px 5px 4px rgba(245, 240, 240, 0.48);
+  outline: 1px solid white;
 }
 
 .cookie_buttons button {
@@ -645,7 +640,8 @@ p {
   object-fit: cover;
 }
 .mainpageImage img {
-  background: center/cover no-repeat fixed;
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
+    center/cover no-repeat fixed darken;
   height: 100%;
   width: 100%;
   -webkit-filter: brightness(100%);
@@ -1004,7 +1000,7 @@ fieldset legend {
 /* ======= SKills styles */
 .skills {
   background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-    url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+    url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
 }
 .all-skills {
   display: flex;
@@ -1205,7 +1201,7 @@ h3 {
 }
 
 .about-picture-container {
-  background-image: var(--background-browns);
+  background-image: var(--clr-white);
   max-width: 20rem;
   overflow: hidden;
   border: 0.2rem solid transparent;
@@ -1214,8 +1210,8 @@ h3 {
   cursor: pointer;
   opacity: 0.8;
   transition: all 0.5s;
-  outline: 20px solid var(--clr-primary);
-  outline-offset: 0.5rem;
+  outline: 20px solid var(--clr-gray-10);
+  outline-offset: 0.3rem;
   -webkit-backdrop-filter: blur(100px);
   backdrop-filter: blur(100px);
   -webkit-clip-path: circle(50%);
@@ -1265,7 +1261,7 @@ h3 {
 
 .project-in-mind {
   background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-    url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+    url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
   box-shadow: 0px 20px 0px -10px #ffffff, 0px -20px 0px -10px #ffffff,
     20px 0px 0px -10px #ffffff, -20px 0px 0px -10px #ffffff,
     0px 0px 0px 10px #fdfdfd, inset 2px 3px 14px -2px rgba(0, 0, 0, 0.18);
@@ -1443,7 +1439,7 @@ Services
   justify-content: space-between;
   min-height: 100vh;
   background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-    url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+    url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
   position: relative;
   overflow: hidden;
   box-shadow: inset 0px 1px 15px 2px #000000;
@@ -1555,8 +1551,9 @@ Services
   overflow: hidden;
   transition: var(--transition);
   box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
+  background-blend-mode: soft-light;
   background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-    url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+    url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
 }
 
 .service-img-container {
@@ -1588,7 +1585,7 @@ Services
   min-height: 100vh;
   min-width: 95vw;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-    url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+    url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
   overflow: hidden !important;
   background-color: none;
 }
@@ -1807,6 +1804,7 @@ Services
 
 .footer {
   height: 100%;
+  background-blend-mode: multiply;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
     url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
 }
@@ -1987,8 +1985,9 @@ Services
   /* Services*/
   .services {
     min-height: 100vh;
+    background-blend-mode: multiply;
     background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+      url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
     position: relative;
     overflow: hidden;
     padding: 5%;
@@ -2009,7 +2008,7 @@ Services
     transition: var(--transition);
     box-shadow: 9px 9px 7px -4px rgba(0, 0, 0, 0.67);
     background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+      url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
     position: relative;
     overflow: hidden;
     box-shadow: inset 0px 1px 15px 2px #000000;
@@ -2246,7 +2245,7 @@ Services
     -webkit-backdrop-filter: blur(100%);
     backdrop-filter: blur(100%);
     background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+      url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
     box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
   }
   .service-card:hover {
@@ -2654,8 +2653,7 @@ Services
     position: relative;
     top: 9%;
     width: 70%;
-    box-shadow: 0px 1px 16px 7px #fdfafb;
-    box-shadow: inset 0px 1px 12px 0px rgba(255, 252, 253, 0.85);
+    box-shadow: inset 0px 1px 50px 0px rgba(255, 252, 253, 0.85);
   }
   .about-info > * {
     display: flex;
@@ -2695,7 +2693,7 @@ Services
     min-height: 100vh;
     min-width: 95vw;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+      url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
     overflow: hidden;
     background-color: none;
   }
@@ -2784,7 +2782,7 @@ Services
     overflow: hidden;
     box-shadow: inset 0px 1px 15px 2px #000000;
     background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+      url("/public/img/more/nature1.jpeg") center/cover no-repeat darken fixed;
   }
   .section-center {
     display: flex;
@@ -3123,7 +3121,7 @@ Services
   /* ====================name animation============== */
   .skills {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed !important;
+      url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed !important;
   }
   .skill {
     width: 30%;
@@ -3241,7 +3239,7 @@ Services
     min-height: 1008px;
     min-width: 1000px;
     background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-      url("/public/img/more/about2.jpg") center/cover no-repeat fixed;
+      url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
   }
   .in-mind-info {
     flex: 1;
@@ -3298,9 +3296,12 @@ Services
 
   /* Services*/
   .services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+      url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
     position: relative;
     overflow: hidden;
     padding: 5%;
@@ -3321,8 +3322,6 @@ Services
     position: relative;
     overflow: hidden;
     box-shadow: inset 0px 1px 15px 2px #000000;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
   }
   .service-card > div {
     flex: 1;
@@ -3406,7 +3405,7 @@ Services
     min-height: 80vh;
     min-width: 95vw;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+      url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
     overflow: hidden !important;
     background-color: none;
   }
@@ -3453,8 +3452,6 @@ Services
   /* footer big screens */
   .footer {
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed !important;
   }
   .footer-name h5,
   .footer-link-header h5 {
