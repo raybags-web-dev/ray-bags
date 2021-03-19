@@ -1,0 +1,28 @@
+{
+  "name": "ray-bags",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack-dev-server",
+    "build-prod": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raybags-web-dev/ray-bags.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raybags-web-dev/ray-bags/issues"
+  },
+  "homepage": "https://github.com/raybags-web-dev/ray-bags#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "webpack": "^5.26.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}

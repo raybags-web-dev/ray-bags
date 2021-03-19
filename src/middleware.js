@@ -13,6 +13,18 @@ import {
 const logger = (message) =>
   console.log(`%c logger output: ${message}`, "color: green;");
 
+// spinner show on load
+$(window).on("load", () => {
+  logger("resources loaded successfully");
+  setTimeout(function () {
+    $(".banner").toggleClass("playaround").css({
+      width: "80%",
+      transition: ".6s",
+      "backdrop-filter": "blur(4px)",
+    });
+  }, 3000);
+});
+
 // apply sctive class on menu link click
 function applyActiveClassOnCLick() {
   $(".nav_list .nav_item a").on("click", function () {
@@ -21,13 +33,6 @@ function applyActiveClassOnCLick() {
   });
 }
 
-// spinner show on load
-$(window).on("load", () => {
-  $(".banner").css({
-    background: `linear-gradient(rgb(0,0,0,.5), rgb(0,0,0,.5)), url("") center/cover no-repeat fixed`,
-  });
-  logger("resources loaded successfully");
-});
 // top button visibility handler.
 const show_hide_top_button = (element) => {
   element = topButton;
@@ -94,6 +99,7 @@ function element_isIn_viewPort(element) {
       (window.innerWidth || document.documentElement.clientWidth)
   );
 }
+
 // lady load images helper function.
 
 const lazyLoadImages = (all_images) => {
@@ -195,13 +201,12 @@ function parallax() {
     let distanceFromBottom = offset - scroll - screenHeight;
 
     if (offset > screenHeight && offset) {
-      $(this).css(
-        "background-position",
-        "center " + distanceFromBottom * 0.5 + "px"
-      );
+      $(this).css({
+        "background-position": "center " + distanceFromBottom * 0.5 + "px",
+      });
     } else {
       $(this).css({
-        "background-position": "center" + -scroll * 0.5 + "px",
+        "background-position": "center" - scroll * 0.5 + "px",
         "object-filt": "cover",
       });
     }

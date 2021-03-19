@@ -63,7 +63,7 @@ body,
 html {
   scroll-behavior: smooth;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-    url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed !important;
+    url("/public/img/more/desert.jpeg") center/cover no-repeat fixed !important;
 }
 
 body::-webkit-scrollbar {
@@ -720,9 +720,17 @@ p {
   -ms-user-select: none;
   user-select: none;
   transform: translate(-50%, -50%);
+  transition: var(--transition);
 }
 
 .banner h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  flex: 1 1 100%;
+  gap: 1rem;
   margin: 1rem auto;
   padding: 1rem;
   font-family: var(--ff-secondary);
@@ -730,6 +738,7 @@ p {
   font-size: 2.5rem;
   letter-spacing: 2px;
   font-weight: 700;
+  transform: translateZ(100px);
   background: linear-gradient(45deg, #c75d4f 20%, #f8f6f6 100%);
   text-shadow: none;
   transition: var(--transition);
@@ -743,18 +752,20 @@ p {
   padding-right: 0.5rem;
   font-weight: bold;
   font-size: 3rem;
-  opacity: 0.7;
-  text-shadow: 1px 2px 1px #faf6f6;
+  opacity: 1;
+  text-shadow: 1px 2px 1px #a03926;
 }
 
 .banner h1 {
+  flex-basis: auto;
   position: relative;
   color: var(--clr-white);
   font-weight: 600;
   line-height: 1.5rem;
-  font-size: 25px;
+  font-size: 20px;
   text-shadow: none;
   padding-top: 1rem;
+  transform: translateZ(100px);
   transition: var(--transition);
   background: linear-gradient(45deg, #c75d4f 20%, #f8f6f6 100%);
   text-shadow: none;
@@ -768,7 +779,7 @@ fieldset {
   position: relative;
   color: transparent;
   z-index: 300;
-  padding: 5rem;
+  padding: 2rem;
 }
 
 fieldset legend {
@@ -999,8 +1010,8 @@ fieldset legend {
 
 /* ======= SKills styles */
 .skills {
-  background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-    url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+    url("/public/img/more/desert.jpeg") center/cover no-repeat fixed !important;
 }
 .all-skills {
   display: flex;
@@ -1101,6 +1112,8 @@ fieldset legend {
   position: relative;
   overflow: hidden;
   display: flex;
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
+    url("/public/img/more/desert.jpeg") bottom no-repeat fixed;
 }
 
 .about-img,
@@ -1261,7 +1274,7 @@ h3 {
 
 .project-in-mind {
   background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-    url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+    url("/public/img/more/desert.jpeg") center/cover no-repeat fixed;
   box-shadow: 0px 20px 0px -10px #ffffff, 0px -20px 0px -10px #ffffff,
     20px 0px 0px -10px #ffffff, -20px 0px 0px -10px #ffffff,
     0px 0px 0px 10px #fdfdfd, inset 2px 3px 14px -2px rgba(0, 0, 0, 0.18);
@@ -1439,7 +1452,7 @@ Services
   justify-content: space-between;
   min-height: 100vh;
   background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-    url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+    url("/public/img/more/desert.jpeg") center/cover no-repeat fixed;
   position: relative;
   overflow: hidden;
   box-shadow: inset 0px 1px 15px 2px #000000;
@@ -1553,7 +1566,7 @@ Services
   box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
   background-blend-mode: soft-light;
   background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-    url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+    url("/public/img/more/desert.jpeg") center/cover no-repeat fixed;
 }
 
 .service-img-container {
@@ -1585,7 +1598,7 @@ Services
   min-height: 100vh;
   min-width: 95vw;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-    url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+    url("/public/img/more/desert.jpeg") center no-repeat fixed;
   overflow: hidden !important;
   background-color: none;
 }
@@ -1806,7 +1819,7 @@ Services
   height: 100%;
   background-blend-mode: multiply;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-    url("/public/img/more/nature5.jpeg") center/cover no-repeat fixed;
+    url("/public/img/more/nature5.jpeg") top no-repeat fixed;
 }
 
 .footer-name h5,
@@ -1987,7 +2000,7 @@ Services
     min-height: 100vh;
     background-blend-mode: multiply;
     background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+      url("/public/img/more/desert.jpeg") center/cover no-repeat fixed;
     position: relative;
     overflow: hidden;
     padding: 5%;
@@ -2008,7 +2021,7 @@ Services
     transition: var(--transition);
     box-shadow: 9px 9px 7px -4px rgba(0, 0, 0, 0.67);
     background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+      url("/public/img/more/desert.jpeg") center/cover no-repeat fixed;
     position: relative;
     overflow: hidden;
     box-shadow: inset 0px 1px 15px 2px #000000;
@@ -2244,8 +2257,8 @@ Services
     transition: var(--transition);
     -webkit-backdrop-filter: blur(100%);
     backdrop-filter: blur(100%);
-    background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+    background: linear-gradient(rgba(124, 53, 53, 0.4), rgba(0, 0, 0, 0.4)),
+      url("") center/cover no-repeat fixed;
     box-shadow: inset -1px 0px 18px 3px rgba(0, 0, 0, 0.39);
   }
   .service-card:hover {
@@ -2693,7 +2706,7 @@ Services
     min-height: 100vh;
     min-width: 95vw;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+      url("/public/img/more/desert.jpeg") center/cover no-repeat fixed;
     overflow: hidden;
     background-color: none;
   }
@@ -2711,6 +2724,7 @@ Services
     z-index: 200 !important;
     box-shadow: inset 0px -1px 9px 6px rgba(0, 0, 0, 0.95);
   }
+
   .banner {
     padding: 6rem;
     border-radius: 0.4rem;
@@ -2719,6 +2733,7 @@ Services
     -webkit-clip-path: inset(0% round 0%);
     clip-path: inset(0% round 0%);
     transition: all 0.4s;
+    transform-style: preserve-3d;
     -webkit-animation: glassyy 1 alternate-reverse ease-in-out 2s;
     animation: glassyy 1 alternate-reverse ease-in-out 4s;
     box-shadow: inset -2px 0px 18px 6px rgba(0, 0, 0, 0.59);
@@ -2734,6 +2749,7 @@ Services
     backdrop-filter: grayscale(500%);
     border: 2px solid var(--clr-primary);
     background: transparent;
+    transform: translateZ(0.5turn);
   }
   .banner:hover:before {
     content: "";
@@ -2762,6 +2778,60 @@ Services
     -webkit-animation: pulse 1 forwards ease-in-out 2s;
     animation: pulse 1 forwards ease-in-out 2s;
   }
+  /* dynamically applied class for banner */
+  .playaround {
+    border: none;
+    padding: 8rem;
+    background: transparent;
+    outline: 3px solid var(--clr-primary);
+    outline-offset: -80px;
+    border-radius: 0px;
+    -webkit-backdrop-filter: grayscale(500%);
+    backdrop-filter: grayscale(500%);
+    border: 2px solid var(--clr-primary);
+    background: transparent;
+    transform: translateZ(0.5turn);
+    transition: var(--transition);
+  }
+  .playaround:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    left: 0%;
+    top: 0%;
+    opacity: 0.2;
+    z-index: inherit;
+    background: transparent;
+    transition: var(--transition);
+    -webkit-filter: blur(100px);
+    filter: blur(100px);
+    -webkit-animation: animate_divider 1 forwards ease-in-out 2s;
+    animation: animate_divider 1 forwards ease-in-out 2s;
+  }
+
+  .playaround::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 10%;
+    right: 0%;
+    top: 0%;
+    z-index: inherit;
+    opacity: 0.2;
+    background: transparent;
+    transition: var(--transition);
+    -webkit-filter: blur(100px);
+    filter: blur(100px);
+    -webkit-animation: pulse 1 forwards ease-in-out 2s;
+    animation: pulse 1 forwards ease-in-out 2s;
+  }
+  .playaround:active {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+  /* dynamically applied class for banner */
+
   .banner:active {
     border: none;
     padding: 5rem;
@@ -2782,7 +2852,7 @@ Services
     overflow: hidden;
     box-shadow: inset 0px 1px 15px 2px #000000;
     background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature1.jpeg") center/cover no-repeat darken fixed;
+      url("/public/img/more/desert.jpeg") center/cover no-repeat darken fixed;
   }
   .section-center {
     display: flex;
@@ -3121,7 +3191,7 @@ Services
   /* ====================name animation============== */
   .skills {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed !important;
+      url("/public/img/more/desert.jpeg") center/cover no-repeat fixed !important;
   }
   .skill {
     width: 30%;
@@ -3239,7 +3309,7 @@ Services
     min-height: 1008px;
     min-width: 1000px;
     background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-      url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+      url("/public/img/more/desert.jpeg") center/cover no-repeat fixed;
   }
   .in-mind-info {
     flex: 1;
@@ -3301,7 +3371,7 @@ Services
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+      url("/public/img/more/desert.jpeg") center no-repeat fixed;
     position: relative;
     overflow: hidden;
     padding: 5%;
@@ -3405,7 +3475,7 @@ Services
     min-height: 80vh;
     min-width: 95vw;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
-      url("/public/img/more/nature1.jpeg") center/cover no-repeat fixed;
+      url("/public/img/more/desert.jpeg") bottom no-repeat fixed;
     overflow: hidden !important;
     background-color: none;
   }

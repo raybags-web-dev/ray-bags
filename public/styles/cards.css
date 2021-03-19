@@ -28,8 +28,8 @@
   position: relative;
   flex-direction: column;
   background: rgb(1, 1, 1);
-  background: linear-gradient(rgba(85, 72, 72, 0.5), rgba(75, 63, 63, 0.5)),
-    url("../img/more/nature1.jpeg") center/cover no-repeat fixed;
+  background: linear-gradient(rgba(5, 5, 5, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/more/desert.jpeg") center/cover no-repeat fixed;
   padding-bottom: 1rem;
   margin-top: 3rem;
   box-shadow: none;
@@ -221,6 +221,6 @@
   border: transparent;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-  background: linear-gradient(rgba(58, 34, 34, 0.5), rgba(73, 46, 46, 0.5)),
-    url("/public/img/more/computer_2.jpeg") center/cover no-repeat fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/public/img/more/desert.jpeg") bottom;
 }
