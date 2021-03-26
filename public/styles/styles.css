@@ -739,7 +739,7 @@ p {
   letter-spacing: 2px;
   font-weight: 700;
   transform: translateZ(100px);
-  background: linear-gradient(45deg, #c75d4f 20%, #f8f6f6 100%);
+  background: linear-gradient(60deg, #ffffff 30%, #f10000 100%);
   text-shadow: none;
   transition: var(--transition);
   -webkit-background-clip: text;
@@ -748,7 +748,7 @@ p {
 }
 
 .banner h2::first-letter {
-  color: #310f0f;
+  color: #581c1c;
   padding-right: 0.5rem;
   font-weight: bold;
   font-size: 3rem;
@@ -882,7 +882,7 @@ fieldset legend {
   background: transparent;
   border-radius: 0.3rem;
   padding: 1rem 1.75rem;
-  border-radius: 0 !important;
+  border-radius: 0;
   outline: 1px solid var(--clr-white);
   outline-offset: 10px;
   box-shadow: inset 0px 8px 10px -4px rgba(0, 0, 0, 0.76);
@@ -991,11 +991,11 @@ fieldset legend {
 }
 
 .banner:hover {
-  transition: var(--transition);
   box-shadow: inset none;
   background: transparent;
   background: transparent;
   border: 1px solid transparent;
+  filter: grayscale(100%);
 }
 
 /* ===Content divider=== */
@@ -2784,11 +2784,11 @@ Services
     padding: 8rem;
     background: transparent;
     outline: 3px solid var(--clr-primary);
-    outline-offset: -80px;
+    outline-offset: 10px;
     border-radius: 0px;
     -webkit-backdrop-filter: grayscale(500%);
     backdrop-filter: grayscale(500%);
-    border: 2px solid var(--clr-primary);
+    border-radius: 0.3rem;
     background: transparent;
     transform: translateZ(0.5turn);
     transition: var(--transition);
@@ -2836,8 +2836,8 @@ Services
     border: none;
     padding: 5rem;
     transition: 0.2s;
-    outline: 3px solid var(--clr-red);
-    border: 3px solid var(--clr-primary);
+    outline: 3px solid transparent;
+    border: 3px solid transparent;
     background: transparent;
     outline-offset: -40px;
   }
