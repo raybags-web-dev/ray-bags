@@ -248,6 +248,10 @@ p {
   box-shadow: inset 0px 0px 13px 4px #000000;
 }
 
+.icon-set{
+  background-color: red;
+}
+
 .btn {
   text-transform: uppercase;
   background: var(--clr-grey-1);
