@@ -1,8 +1,5 @@
 "use strict";
-import { topBTN, navLogo } from "./app.js";
-
-// Animation initialization
-const aosAnimation = () => AOS.init();
+import { topBTN } from "./app.js";
 
 // coppyright year handler
 const copyRightYear = function (element) {
@@ -53,28 +50,4 @@ function go_to_top() {
   });
 }
 
-const move_to_top_of_page = () => {
-  topBTN.addEventListener("click", () => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  });
-  navLogo.addEventListener("click", () => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  });
-};
-
-// Detect element in viewPort helper function
-function element_isIn_viewPort(element) {
-  const element_position = element.getBoundingClientRect();
-  return (
-    element_position.top >= 0 &&
-    element_position.left >= 0 &&
-    element_position.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    element_position.right <=
-      (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-export { copyRightYear, go_to_top, move_to_top_of_page, aosAnimation };
+export { copyRightYear, go_to_top };

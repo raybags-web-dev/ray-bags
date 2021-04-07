@@ -1,10 +1,7 @@
+"use strict";
+
 import { AllJqueryLogin } from "./jQuery.js";
-import {
-  aosAnimation,
-  copyRightYear,
-  go_to_top,
-  move_to_top_of_page,
-} from "./helpers.js";
+import { copyRightYear, go_to_top } from "./helpers.js";
 
 const navbar = document.querySelector("#nav");
 const navBtn = document.querySelector("#nav-btn");
@@ -19,8 +16,8 @@ export { topBTN, navLogo };
 // All Jquery
 AllJqueryLogin();
 // AOS animation
-aosAnimation();
-// add fixed class to navbar
+AOS.init(); 
+
 window.addEventListener("scroll", function () {
   if (window.pageYOffset > 80) {
     navbar.classList.add("navbar-fixed");
@@ -28,7 +25,6 @@ window.addEventListener("scroll", function () {
     navbar.classList.remove("navbar-fixed");
   }
 });
-
 // show sidebar
 navBtn.addEventListener("click", function () {
   sidebar.classList.add("show-sidebar");
@@ -40,4 +36,3 @@ closeBtn.addEventListener("click", function () {
 copyRightYear(date);
 // show hide top btn
 go_to_top();
-move_to_top_of_page();
