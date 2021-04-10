@@ -198,6 +198,7 @@ p {
   align-items: center;
   background: transparent;
   -webkit-backdrop-filter: blur(100px);
+  color: var(--clr-white);
   backdrop-filter: blur(100px);
   box-shadow: inset 0px 2px 5px 4px rgba(0, 0, 0, 0.48);
 }
@@ -210,7 +211,7 @@ p {
 }
 
 .cookie_para p {
-  color: rgb(206, 111, 111);
+  color: rgb(173, 156, 156);
   font-size: 15px;
   letter-spacing: 2px;
   line-height: 1.5rem;
@@ -226,7 +227,6 @@ p {
   background: transparent;
   color: rgb(238, 57, 2);
   opacity: 0.7;
-  outline: 1px solid white;
 }
 
 .cookie_buttons button {
@@ -235,20 +235,17 @@ p {
   transition: var(--transition);
   color: var(--clr-white);
   background: transparent;
-  opacity: 0.7;
-  outline: 1px solid white;
+  opacity: 1;
 }
 
 .cookie_buttons button:hover {
   transition: 0.5s;
-  box-shadow: inset 0px 0px 13px 4px #000000;
 }
 .acceptcookies {
   color: rgb(206, 111, 111) !important;
 }
 .cookie_buttons a:hover {
-  color: greenyellow;
-  box-shadow: inset 0px 0px 13px 4px #000000;
+  color: var(--clr-white);
 }
 
 .icon-set {
@@ -272,10 +269,10 @@ p {
   outline-offset: 5px;
 }
 .btn:hover {
-  transition: 0.5s;
   color: var(--clr-primary-1);
-  background: var(--clr-primary-7);
-  outline-offset: -6px;
+  background: var(--main-bg-image1);
+  outline-offset: -2px;
+  transition: var(--transition);
 }
 /* section */
 .section {
@@ -436,6 +433,8 @@ Sidebar
   -webkit-backdrop-filter: var(--backdrop-light);
   backdrop-filter: var(--backdrop-light);
   z-index: 999;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/team3.jpg") bottom/cover no-repeat fixed;
 }
 .sidebar-links {
   display: flex;
@@ -556,7 +555,7 @@ Hero
   outline: 1px solid var(--clr-white);
   outline-offset: 10px;
   background: var(--clr-white);
-  color: black;
+  color: black !important;
 }
 
 .hero-btn::before {
@@ -776,23 +775,30 @@ Services
 ===============
 */
 /* bg-grey in globals */
+#services {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/nature2.jpeg") center/cover no-repeat fixed;
+}
 .service {
-  background: var(--clr-white);
   padding: 3rem 1.5rem;
   margin-bottom: 2rem;
   border-radius: var(--radius);
   text-align: center;
-  transition: var(--transition);
   box-shadow: var(--light-shadow);
-  color: var(--clr-grey-4);
+  color: var(--clr-white);
+  transition: var(--transition);
+  -webkit-backdrop-filter: var(--backdrop-heavy);
+  backdrop-filter: var(--backdrop-heavy);
+  background: var(--clr-grey-1);
 }
+
 .section-title h2 {
   color: var(--clr-grey-4);
 }
 .service-icon {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: var(--clr-grey-4);
+  color: var(--clr-white);
 }
 .service .underline {
   width: 3rem;
@@ -801,13 +807,17 @@ Services
 }
 .service p {
   transition: var(--transition);
+  color: var(--clr-white);
+  opacity: 0.6;
 }
 .service:hover {
-  background: var(--clr-primary-4);
+  background: unset;
   color: var(--clr-white);
+  transition: var(--transition);
 }
 .service:hover p {
   color: var(--clr-white);
+  background: transparent;
 }
 .service:hover .underline {
   background: var(--clr-white);
@@ -1015,12 +1025,16 @@ Skills
     column-gap: 2rem;
   }
 }
+.section-title h2 {
+  color: var(--clr-white);
+}
 .skills {
-  background: var(--clr-primary-10);
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
+    url("/images/nature2.jpeg") center/cover no-repeat fixed;
 }
 .skills h3 {
   margin: 1.5rem 0;
-  color: var(--clr-primary-1);
+  color: var(--clr-white);
 }
 .skill {
   margin-bottom: 1.25rem;
@@ -1028,7 +1042,7 @@ Skills
 .skill p {
   margin-bottom: 0.5rem;
   text-transform: capitalize;
-  color: var(--clr-primary-1);
+  color: var(--clr-white);
 }
 .skill-container {
   background: var(--clr-white);
@@ -1041,7 +1055,7 @@ Skills
   position: absolute;
   top: 0;
   left: 0;
-  background: var(--clr-primary-4);
+  background: var(--clc-green);
   height: 100%;
   width: 85%;
   border-radius: var(--radius);
@@ -1133,6 +1147,8 @@ Blog
 */
 .blog {
   background: var(--clr-grey-8);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/team1.jpg") top/cover no-repeat fixed;
 }
 .card {
   height: 27rem;
