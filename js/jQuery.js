@@ -1,6 +1,6 @@
 "use strict";
 
-// General function.
+// General jQuery function.
 function AllJqueryLogin() {
   $(document).ready(() => {
     console.log("Jquery is loaded");
@@ -25,6 +25,43 @@ function AllJqueryLogin() {
       bottom_of_screen > top_of_element && top_of_screen < bottom_of_element
         ? $(".hero-photo").addClass("oulineClass")
         : $(".hero-photo").removeClass("oulineClass");
+    });
+
+    // toggle nav slide in out on scroll
+    $(window).on("scroll", function () {
+      if ($(window).scrollTop() >= 20) {
+        $("#nav").slideDown("1000", function () {
+          $(this).addClass("navbar-fixed").css({
+            top: "1%",
+            opacity: ".5",
+          });
+
+          $(".nav-logo").animate({
+            opacity: "1",
+            "z-index": "-8",
+          });
+
+          $(".nav-header").css({
+            "box-shadow": "unset",
+          });
+        });
+      } else {
+        $("#nav").fadeIn("1000", function () {
+          $(this).css({
+            top: "0%",
+            "backdrop-filter": "blur(100px)",
+            opacity: "1",
+          });
+
+          $(".nav-logo").animate({
+            opacity: "1",
+          });
+
+          $(".nav-header").css({
+            "box-shadow": "inherit",
+          });
+        });
+      }
     });
 
     // handle Smooth scrolling helper
