@@ -27,6 +27,7 @@ Variables
   --clr-primary-3: hsl(43, 72%, 37%);
   --clr-primary-4: hsl(7, 64%, 22%);
   --clr-primary-5: hsl(42, 78%, 60%);
+  --clc-green: hsl(120, 100%, 25%);
   /* lighter shades of primary color */
   --clr-primary-6: hsl(43, 89%, 70%);
   --clr-primary-7: hsl(43, 90%, 76%);
@@ -424,8 +425,9 @@ Sidebar
   display: grid;
   place-items: center;
   transition: var(--transition);
-  /* add later */
   transform: translateX(-100%);
+  -webkit-backdrop-filter: var(--backdrop-heavy);
+  backdrop-filter: var(--backdrop-heavy);
 }
 /* toggle sidebar */
 .show-sidebar {
@@ -477,7 +479,7 @@ Sidebar
   left: -200%;
   z-index: -1;
   opacity: 0.2;
-  background: red;
+  background: var(--clc-green);
   transition: var(--transition);
 }
 .sidebar-links a:hover::after {
@@ -486,7 +488,7 @@ Sidebar
 }
 
 .sidebar-links a:hover {
-  color: var(--clr-primary-5);
+  color: var(--clc-green);
 }
 .social-icons {
   display: grid;

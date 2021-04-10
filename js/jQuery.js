@@ -4,6 +4,7 @@
 function AllJqueryLogin() {
   $(document).ready(() => {
     console.log("Jquery is loaded");
+    $("#myBtn").removeClass("hide");
 
     // handle side meny removal.
     const removeMenu = () => {
@@ -91,9 +92,9 @@ function AllJqueryLogin() {
     // hide show top button on scroll
     function showHideTopBtn() {
       if ($(window).scrollTop() > 400) {
-        $("#myBtn").css({ right: "1%", transition: "1s" });
+        $("#myBtn").css({ right: "0%", transition: "1000ms" });
       } else {
-        $("#myBtn").css({ right: "-20%", transition: "1s" });
+        $("#myBtn").css({ right: "-20%", transition: "1000ms" });
       }
     }
 
@@ -106,6 +107,10 @@ function AllJqueryLogin() {
     });
     $(window).on("orientationChange", () => {
       removeMenu(), showHideTopBtn();
+    });
+    $(window).on("load", () => {
+      console.log("it works");
+      showHideTopBtn();
     });
   });
 }
