@@ -88,10 +88,25 @@ function AllJqueryLogin() {
       $("body, html").animate({ scrollTop: $(target).offset().top }, 500);
     });
 
+    // hide show top button on scroll
+    function showHideTopBtn() {
+      if ($(window).scrollTop() > 400) {
+        $("#myBtn").css({ right: "1%", transition: "1s" });
+      } else {
+        $("#myBtn").css({ right: "-20%", transition: "1s" });
+      }
+    }
+
     // run functions on scroll, resize and screenorientation
-    $(document).on("scroll", removeMenu);
-    $(window).on("resize", removeMenu);
-    $(window).on("orientationChange", removeMenu);
+    $(document).on("scroll", () => {
+      removeMenu(), showHideTopBtn();
+    });
+    $(window).on("resize", () => {
+      removeMenu(), showHideTopBtn();
+    });
+    $(window).on("orientationChange", () => {
+      removeMenu(), showHideTopBtn();
+    });
   });
 }
 export { AllJqueryLogin };

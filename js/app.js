@@ -3,7 +3,6 @@
 import { AllJqueryLogin } from "./jQuery.js";
 import {
   copyRightYear,
-  go_to_top,
   handleInnerScroll,
   openNavBar,
   closeNavBar,
@@ -35,12 +34,10 @@ export { topBTN, navLogo };
 AllJqueryLogin();
 // AOS animation
 AOS.init();
-
 // show sidebar
 openNavBar(navBtn, sidebar);
 // close sidebar
 closeNavBar(closeBtn, sidebar);
-
 // smooth scrolling to contact section
 handleInnerScroll(contactBtn, contactSection);
 // smooth scrolling about me
@@ -51,5 +48,3 @@ handleInnerScroll(skillsBTN, skillsContainer);
 handleInnerScroll(btnInVideo, contactSectionFromVideoSection);
 // set year
 copyRightYear(date);
-// show hide top btn
-go_to_top();
