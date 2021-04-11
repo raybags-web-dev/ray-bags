@@ -537,6 +537,7 @@ Sidebar
   color: #e66b6b;
 }
 
+
 /*
 =============== 
 Hero
@@ -1541,6 +1542,10 @@ Products Page
   color: white;
   padding: 0.6rem;
   text-shadow: 3px 5px 2px #474747, 2px -3px 2px #ffffff;
+}
+
+.sidebar-inner .social-icons{
+  margin-top: -1.5rem;
 }
 /*  footer icon styles*/
 
