@@ -30,16 +30,11 @@ function AllJqueryLogin() {
 
     // toggle nav slide in out on scroll
     $(window).on("scroll", function () {
-      if ($(window).scrollTop() >= 20) {
+      if ($(window).scrollTop() >= 300) {
         $("#nav").slideDown("1000", function () {
           $(this).addClass("navbar-fixed").css({
-            top: "1%",
-            opacity: ".5",
-          });
-
-          $(".nav-logo").animate({
-            opacity: "1",
-            "z-index": "-8",
+            top: "0%",
+            background: `linear-gradient(rgb(0,0,0,.5),rgb(0,0,0,.5)), url("/images/nature2.jpeg") center/cover no-repeat fixed`,
           });
 
           $(".nav-header").css({
@@ -49,13 +44,7 @@ function AllJqueryLogin() {
       } else {
         $("#nav").fadeIn("1000", function () {
           $(this).css({
-            top: "0%",
-            "backdrop-filter": "blur(100px)",
-            opacity: "1",
-          });
-
-          $(".nav-logo").animate({
-            opacity: "1",
+            top: "3%",
           });
 
           $(".nav-header").css({

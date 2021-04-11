@@ -136,7 +136,7 @@ img:not(.nav-logo) {
 .nav-logo {
   width: 50px;
   border: 2px solid var(--clr-primary-1);
-  background: var(--clr-grey-1);
+  background: transparent;
   border-radius: 50%;
   padding: 1px;
   cursor: pointer;
@@ -150,8 +150,6 @@ img:not(.nav-logo) {
 }
 .nav-header:active .nav-logo {
   transform: scale(1.2);
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
 }
 
 h1,
@@ -343,8 +341,6 @@ Navbar
   display: grid;
   align-items: center;
   transition: var(--transition);
-  -webkit-backdrop-filter: var(--backdrop-heavy);
-  backdrop-filter: var(--backdrop-heavy);
   z-index: 100;
 }
 .nav-center {
@@ -370,7 +366,7 @@ Navbar
 }
 @media screen and (min-width: 768px) {
   .nav {
-    background: var(--clr-grey-1);
+    background: transparent;
   }
   .nav-btn {
     display: none;
@@ -421,10 +417,10 @@ Navbar
   left: 0;
   width: 100%;
   transition: var(--transition);
-  background: var(--clr-grey-1);
+  background: transparent;
   z-index: 100;
   box-shadow: var(--dark-shadow);
-  -webkit-backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: var(--backdrop-heavy);
   backdrop-filter: var(--backdrop-heavy);
   transition: var(--transition);
 }
@@ -554,13 +550,19 @@ Hero
   display: none;
 }
 .hero {
-  background: var(--clr-grey-1);
+  min-height: 100vh;
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
+    url("/images/nature2.jpeg") center/cover no-repeat fixed;
 }
 .hero-center {
   min-height: calc(100vh - 5rem);
   display: grid;
   place-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5%;
 }
+
 .hero-info h4 {
   color: var(--clr-grey-7);
 }
@@ -576,8 +578,8 @@ Hero
 .hero-btn:hover {
   outline: 1px solid var(--clr-white);
   outline-offset: 10px;
-  background: var(--clr-white);
-  color: black !important;
+  background: rgb(133, 6, 6);
+  color: var(--clr-white);
 }
 
 .hero-btn::before {
@@ -717,7 +719,7 @@ Hero
   filter: grayscale(0%);
   transition: var(--transition);
   outline: 0px solid var(--clr-white);
-  outline-offset: -2rem;
+  outline-offset: 0rem;
   -webkit-animation: outline-effect 4 alternate-reverse backwards 0.5s;
   animation: outline-effect 4 alternate-reverse backwards 0.5s;
 }
@@ -1337,14 +1339,10 @@ Products Page
   font-size: 16px;
   outline: none;
   z-index: 200;
-  color: var(--clr-grey-4);
+  color: var(--clr-white);
   cursor: pointer;
   padding: 15px;
   border-radius: 50%;
-}
-.btn-container .btnn {
-  outline: none;
-  z-index: 200;
 }
 
 .inner-container .btnn {
@@ -1362,6 +1360,8 @@ Products Page
   color: var(--text-color);
   letter-spacing: 2px;
   transition: 0.5s;
+  background: #360906;
+  border: 1px solid transparent;
 }
 
 .btn-container {
@@ -1384,74 +1384,75 @@ Products Page
   top: 0%;
   left: 0;
   width: 100%;
+  height: 100%;
   border-radius: 50%;
 }
 
 .pulsing::before {
   content: "";
   font-family: "Times New Roman", Times, serif;
-  border: 2px solid rgb(247, 123, 123);
+  border: 1.8px solid rgb(255, 255, 255);
   height: 100%;
   width: 100%;
-  z-index: -1;
-  -webkit-animation: pulse infinite 2s forwards ease-in;
-  animation: pulse infinite 2s forwards ease-in;
+  z-index: -5;
+  -webkit-animation: pulse infinite 2s forwards ease-in-out;
+  animation: pulse infinite 1s forwards ease-in-out;
 }
 .pulsing::after {
   content: "";
   font-family: "Times New Roman", Times, serif;
-  border: 2px solid rgb(247, 123, 123);
+  border: 3px solid rgb(255, 255, 255);
   height: 100%;
   width: 100%;
-  z-index: -2;
+  z-index: -5;
   -webkit-animation: pulse2 infinite 2s forwards ease-in-out;
-  animation: pulse2 infinite 2s forwards ease-in-out;
+  animation: pulse2 infinite 1s forwards ease-in-out;
 }
 
 @-webkit-keyframes pulse {
   0% {
-    transform: scale(0.8);
-    opacity: 0.2;
+    transform: scale(0.3);
+    opacity: 0.3;
   }
 
   100% {
-    transform: scale(1.4);
+    transform: scale(1.5);
     opacity: 0;
   }
 }
 
 @keyframes pulse {
   0% {
-    transform: scale(0.8);
-    opacity: 0.2;
+    transform: scale(0.3);
+    opacity: 0.3;
   }
 
   100% {
-    transform: scale(1.4);
+    transform: scale(1.5);
     opacity: 0;
   }
 }
 
 @-webkit-keyframes pulse2 {
   0% {
-    transform: scale(0.5);
-    opacity: 0.5;
+    transform: scale(0.4);
+    opacity: 0.3;
   }
 
   100% {
-    transform: scale(1.9);
+    transform: scale(1.7);
     opacity: 0;
   }
 }
 
 @keyframes pulse2 {
   0% {
-    transform: scale(0.5);
-    opacity: 0.5;
+    transform: scale(0.4);
+    opacity: 0.3;
   }
 
   100% {
-    transform: scale(1.9);
+    transform: scale(1.7);
     opacity: 0;
   }
 }
@@ -1462,15 +1463,23 @@ Products Page
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
-
-.pulsing:active {
-  transform: scale(1.1);
-  transition: unset;
+.pulsing:hover:before,
+.pulsing:hover:after {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 }
 
+.pulsing:active {
+  transform: scale(0.8);
+  transition: unset;
+}
+.pulsing .fas {
+  transition: var(--transition);
+}
 .pulsing:hover .fas {
   transform: rotateY(180deg);
   transition: var(--transition);
+  color: var(--clc-green);
 }
 
 /* ===================================================== */
