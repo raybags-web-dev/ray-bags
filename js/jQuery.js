@@ -52,12 +52,24 @@ function AllJqueryLogin() {
           });
         });
       }
+
+      // active class switcher on scroll (Scroll spy)
+      let scrollBarLocation = $(this).scrollTop();
+      let scrollLinks = $(".achor-link");
+
+      scrollLinks.each(function () {
+        let sectionOffset = $(this.hash).offset().top - 70;
+        if (sectionOffset <= scrollBarLocation) {
+          $(this).parent().addClass("active");
+          $(this).parent().siblings().removeClass("active");
+        }
+      });
     });
 
     // handle Smooth scrolling helper
     function handlePageScroll() {
       let target = $(this).attr("href");
-      $("body, html").animate({ scrollTop: $(target).offset().top }, 500);
+      $("body, html").animate({ scrollTop: $(target).offset().top }, 1000);
       return false;
     }
 
@@ -68,14 +80,14 @@ function AllJqueryLogin() {
 
     // smooth scrolling with back to top btn handler
     $("#myBtn").on("click", function () {
-      let target = $("body");
-      $("body, html").animate({ scrollTop: $(target).offset().top }, 500);
+      let target = $("body, html");
+      $("body, html").animate({ scrollTop: $(target).offset().top }, 1200);
     });
 
     // smooth scrolling with logo image handler
     $(".nav-logo").on("click", function () {
-      let target = $("body");
-      $("body, html").animate({ scrollTop: $(target).offset().top }, 500);
+      let target = $("body, html");
+      $("body, html").animate({ scrollTop: $(target).offset().top }, 1000);
     });
 
     // hide show top button on scroll
@@ -98,7 +110,6 @@ function AllJqueryLogin() {
       removeMenu(), showHideTopBtn();
     });
     $(window).on("load", () => {
-      console.log("it works");
       showHideTopBtn();
     });
   });
