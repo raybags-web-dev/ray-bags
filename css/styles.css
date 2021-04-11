@@ -1185,10 +1185,9 @@ Blog
   height: 27rem;
   position: relative;
   perspective: 1500px;
-  -webkit-backdrop-filter: var(--backdrop-heavy);
-  backdrop-filter: var(--backdrop-heavy);
   transform-style: preserve-3d;
   background: transparent;
+  overflow: hidden;
 }
 .card-side {
   transition: all 2s linear;
@@ -1211,8 +1210,33 @@ Blog
   background: var(--clr-primary-1);
   transform: rotateY(180deg);
   display: grid;
+  color: var(--clr-white);
   place-items: center;
   transform-style: preserve-3d;
+}
+.card-back .card-back-info {
+  color: var(--clr-white);
+  margin: auto;
+  padding: 1rem;
+  font-style: italic;
+  opacity: 0.8;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform: var(--level-one);
+  backface-visibility: hidden;
+}
+.card-back-info::first-letter {
+  font-size: 1.2rem;
+  background: transparentf;
+  text-transform: capitalize;
+  text-decoration: wavy rgb(255, 255, 255) 0.2rem;
+  font-family: "Courier New", Courier, monospace;
+  padding: 0.3rem;
+  border-radius: 5%;
+  box-shadow: inset 2px 0px 1px rgb(0, 0, 0, 0.5);
+}
+.card:hover .card-back-info {
+  transform: var(--level-one);
 }
 .card:hover {
   transform: translateZ(5rem);
