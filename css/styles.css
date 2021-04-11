@@ -1529,10 +1529,22 @@ Products Page
   text-transform: uppercase;
 }
 
+.foIcon .fab {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  transition: var(--transition);
+  font-size: 30px;
+  text-decoration: none;
+  margin: 0.5rem auto;
+  color: white;
+  padding: 0.6rem;
+  text-shadow: 3px 5px 2px #474747, 2px -3px 2px #ffffff;
+}
 /*  footer icon styles*/
 
-.footer_link .fab,
-.foIcon .fab {
+.footer_link .fab {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
