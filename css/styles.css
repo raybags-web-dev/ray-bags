@@ -66,6 +66,10 @@ Variables
   --btn-shadow: 1px 3px 1px rgb(0, 0, 0, 0.5);
   /* max-width */
   --max-width: 1170px;
+  /* 3d transform levels */
+  --level-one: translateZ(3rem);
+  --level-two: translateZ(6rem);
+  --level-three: translateZ(9rem);
 }
 /*
 =============== 
@@ -1171,6 +1175,8 @@ Blog
 ===============
 */
 .blog {
+  justify-content: center;
+  align-items: center;
   background: var(--clr-grey-8);
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/images/team1.jpg") top/cover no-repeat fixed;
@@ -1181,6 +1187,7 @@ Blog
   perspective: 1500px;
   -webkit-backdrop-filter: var(--backdrop-heavy);
   backdrop-filter: var(--backdrop-heavy);
+  transform-style: preserve-3d;
   background: transparent;
 }
 .card-side {
@@ -1198,12 +1205,18 @@ Blog
 }
 .card-front {
   background: var(--clr-white);
+  transform-style: preserve-3d;
 }
 .card-back {
   background: var(--clr-primary-1);
   transform: rotateY(180deg);
   display: grid;
   place-items: center;
+  transform-style: preserve-3d;
+}
+.card:hover {
+  transform: translateZ(5rem);
+  transform-style: preserve-3d;
 }
 .card:hover .card-front {
   transform: rotateY(-180deg);
@@ -1214,18 +1227,35 @@ Blog
 /* rest of the styles */
 .card-info {
   padding: 1rem 1.5rem;
+  transform-style: preserve-3d;
+  transform: translateZ(1rem);
+}
+.card-info h4 {
+  color: var(--clr-primary-4);
 }
 .card-front img {
   height: 13rem;
   -o-object-fit: cover;
   object-fit: cover;
+  transform-style: preserve-3d;
+  transform: translateZ(1rem);
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
+}
+
+.card:hover img,
+.card-info {
+  transform: var(--level-one);
+  box-shadow: 2px 0px 14px rgb(0, 0, 0, 0.5);
+}
+.card-info h4 {
+  transform: var(--level-two);
 }
 .card-footer {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
+  transform-style: preserve-3d;
 }
 .card-footer img {
   width: 2rem;
@@ -1233,6 +1263,7 @@ Blog
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: 50%;
+  transform-style: preserve-3d;
 }
 .card-footer p {
   margin-bottom: 0;
@@ -1240,6 +1271,7 @@ Blog
   justify-self: end;
   color: var(--clr-primary-4);
   font-size: 0.85rem;
+  transform-style: preserve-3d;
 }
 .blog-center {
   display: grid;
@@ -1258,6 +1290,7 @@ Blog
   text-transform: uppercase;
   color: var(--clr-primary-5);
   transition: var(--transition);
+  transform-style: preserve-3d;
 }
 .page-info a:hover {
   color: var(--clr-primary-1);
@@ -1522,7 +1555,6 @@ Products Page
   word-spacing: 2px;
   color: var(--clr-white);
   font-weight: 600;
-  text-shadow: 3px 3px 2px #474747, 0px 9px 2px #b60606;
   font-style: normal;
   font-variant: normal;
   text-transform: uppercase;
