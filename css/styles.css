@@ -1522,8 +1522,7 @@ Products Page
   word-spacing: 2px;
   color: var(--clr-white);
   font-weight: 600;
-  -webkit-text-decoration: overline solid rgb(68, 68, 68);
-  text-decoration: overline solid rgb(68, 68, 68);
+  text-shadow: 3px 3px 2px #474747, 0px 9px 2px #b60606;
   font-style: normal;
   font-variant: normal;
   text-transform: uppercase;
@@ -1540,7 +1539,7 @@ Products Page
   margin: 0.5rem auto;
   color: white;
   padding: 0.6rem;
-  text-shadow: 3px 5px 2px #474747, 2px -3px 2px #ffffff;
+  text-shadow: 3px 3px 2px #474747, 0px 9px 2px #b60606;
 }
 
 .sidebar-inner .social-icons {
