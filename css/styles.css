@@ -536,6 +536,7 @@ Sidebar
 .close-btn:hover {
   color: #e66b6b;
 }
+
 /*
 =============== 
 Hero
@@ -1530,7 +1531,8 @@ Products Page
 
 /*  footer icon styles*/
 
-.footer_link .fab {
+.footer_link .fab,
+.si .foIcon {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
