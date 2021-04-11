@@ -1532,7 +1532,7 @@ Products Page
 /*  footer icon styles*/
 
 .footer_link .fab,
-.si .foIcon {
+.foIcon .fab {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
