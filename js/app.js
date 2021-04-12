@@ -1,6 +1,6 @@
 "use strict";
 
-import { AllJqueryLogin } from "./jQuery.js";
+import { all_jQuery_functionality } from "./jQuery.js";
 import {
   copyRightYear,
   handleInnerScroll,
@@ -30,8 +30,6 @@ const contactSectionFromVideoSection = document.querySelector(".contact");
 
 export { topBTN, navLogo };
 
-// All Jquery
-AllJqueryLogin();
 // AOS animation
 AOS.init();
 // show sidebar
@@ -48,3 +46,5 @@ handleInnerScroll(skillsBTN, skillsContainer);
 handleInnerScroll(btnInVideo, contactSectionFromVideoSection);
 // set year
 copyRightYear(date);
+// All Jquery
+all_jQuery_functionality();

@@ -1,9 +1,19 @@
 "use strict";
+// logger function
+function logger(results) {
+  if (!results) {
+    results == `__`;
+  }
+  let object = {results};
+  console.log('logger')
+  console.table(object);
+}
 
 // General jQuery function.
-function AllJqueryLogin() {
+function all_jQuery_functionality() {
   $(document).ready(() => {
-    console.log("Jquery is loaded");
+    logger("All resources loaded");
+
     $("#myBtn").removeClass("hide");
 
     // handle side meny removal.
@@ -14,7 +24,6 @@ function AllJqueryLogin() {
         });
       });
     };
-
     // in viewport functiuon
     $(window).on("scroll", function () {
       let top_of_element = $(".hero-photo").offset().top;
@@ -27,7 +36,6 @@ function AllJqueryLogin() {
         ? $(".hero-photo").addClass("oulineClass")
         : $(".hero-photo").removeClass("oulineClass");
     });
-
     // toggle nav slide in out on scroll
     $(window).on("scroll", function () {
       if ($(window).scrollTop() >= 300) {
@@ -52,7 +60,6 @@ function AllJqueryLogin() {
           });
         });
       }
-
       // active class switcher on scroll (Scroll spy)
       let scrollBarLocation = $(this).scrollTop();
       let scrollLinks = $(".achor-link");
@@ -65,7 +72,6 @@ function AllJqueryLogin() {
         }
       });
     });
-
     // handle Smooth scrolling helper
     function handlePageScroll() {
       let target = $(this).attr("href");
@@ -98,7 +104,6 @@ function AllJqueryLogin() {
         $("#myBtn").css({ right: "-20%", transition: "1000ms" });
       }
     }
-
     // run functions on scroll, resize and screenorientation
     $(document).on("scroll", () => {
       removeMenu(), showHideTopBtn();
@@ -114,4 +119,4 @@ function AllJqueryLogin() {
     });
   });
 }
-export { AllJqueryLogin };
+export { all_jQuery_functionality };
