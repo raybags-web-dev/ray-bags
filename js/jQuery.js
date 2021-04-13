@@ -1,19 +1,8 @@
 "use strict";
-// logger function
-function logger(results) {
-  if (!results) {
-    results == `__`;
-  }
-  let object = { results };
-  console.log("logger");
-  console.table(object);
-}
 
 // General jQuery function.
 function all_jQuery_functionality() {
   $(document).ready(() => {
-    logger("All resources loaded");
-
     $("#myBtn").removeClass("hide");
 
     // handle side meny removal.
@@ -25,7 +14,7 @@ function all_jQuery_functionality() {
       });
     };
     // in viewport functiuon
-    $(window).on("scroll", function () {
+    $(window).on("scroll", () => {
       let top_of_element = $(".hero-photo").offset().top;
       let bottom_of_element =
         $(".hero-photo").offset().top + $(".hero-photo").outerHeight();
@@ -36,6 +25,116 @@ function all_jQuery_functionality() {
         ? $(".hero-photo").addClass("oulineClass")
         : $(".hero-photo").removeClass("oulineClass");
     });
+
+    // handle skills level animation
+    function do_stuff_while_in_viewport(
+      element,
+      item,
+      width,
+      delay,
+      percentile,
+      left
+    ) {
+      if (
+        !element ||
+        element == undefined ||
+        width == undefined ||
+        delay == undefined ||
+        percentile == undefined ||
+        left == undefined
+      )
+        return;
+
+      $(window).on("scroll", () => {
+        let top_of_element = $(element).offset().top;
+        let bottom_of_element =
+          $(element).offset().top + $(element).outerHeight();
+        let bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+        let top_of_screen = $(window).scrollTop();
+
+        // in view port
+        if (
+          bottom_of_screen > top_of_element &&
+          top_of_screen < bottom_of_element
+        ) {
+          // slidein percentage
+          $(percentile).css({
+            left: left,
+            opacity: "1",
+            transition: "1s",
+          });
+          // animate skill bar
+          $(item).css({
+            width: width,
+            opacity: "1",
+            transition: delay,
+          });
+        } else {
+          // slideout percentage
+          $(percentile).css({
+            left: "1%",
+            opacity: "0",
+            transition: "1s",
+          });
+          // remove skill bar
+          $(item).css({
+            width: "0",
+            opacity: "0",
+            transition: delay,
+          });
+        }
+      });
+    }
+
+    do_stuff_while_in_viewport(
+      $(".skills"),
+      $(".value-50"),
+      "50%",
+      "2.5s",
+      $(".skill-text-50"),
+      "50%"
+    );
+    do_stuff_while_in_viewport(
+      $(".skills"),
+      $(".value-80"),
+      "80%",
+      "3s",
+      $(".skill-text-80"),
+      "80%"
+    );
+    do_stuff_while_in_viewport(
+      $(".skills"),
+      $(".value-85"),
+      "85%",
+      "3.8s",
+      $(".skill-text-85"),
+      "85%"
+    );
+    do_stuff_while_in_viewport(
+      $(".skills"),
+      $(".value-70"),
+      "70%",
+      "2.5s",
+      $(".skill-text-70"),
+      "70%"
+    );
+    do_stuff_while_in_viewport(
+      $(".skills"),
+      $(".value-75"),
+      "75%",
+      "2.8s",
+      $(".skill-text-75"),
+      "75%"
+    );
+    do_stuff_while_in_viewport(
+      $(".skills"),
+      $(".value-90"),
+      "90%",
+      "4s",
+      $(".skill-text-90"),
+      "90%"
+    );
+
     // toggle nav slide in out on scroll
     $(window).on("scroll", function () {
       if ($(window).scrollTop() >= 200) {
