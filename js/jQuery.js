@@ -4,8 +4,8 @@ function logger(results) {
   if (!results) {
     results == `__`;
   }
-  let object = {results};
-  console.log('logger')
+  let object = { results };
+  console.log("logger");
   console.table(object);
 }
 
@@ -38,11 +38,10 @@ function all_jQuery_functionality() {
     });
     // toggle nav slide in out on scroll
     $(window).on("scroll", function () {
-      if ($(window).scrollTop() >= 300) {
+      if ($(window).scrollTop() >= 200) {
         $("#nav").slideDown("1000", function () {
           $(this).addClass("navbar-fixed").css({
             top: "0%",
-            background: `linear-gradient(rgb(0,0,0,.5),rgb(0,0,0,.5)), url("/images/nature2.jpeg") center/cover no-repeat fixed`,
           });
 
           $(".nav-header").css({
