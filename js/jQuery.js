@@ -33,7 +33,8 @@ function all_jQuery_functionality() {
       width,
       delay,
       percentile,
-      left
+      left,
+      percentile_limit
     ) {
       if (
         !element ||
@@ -41,7 +42,7 @@ function all_jQuery_functionality() {
         width == undefined ||
         delay == undefined ||
         percentile == undefined ||
-        left == undefined
+        (left == undefined) | (percentile_limit == undefined)
       )
         return;
 
@@ -57,6 +58,13 @@ function all_jQuery_functionality() {
           bottom_of_screen > top_of_element &&
           top_of_screen < bottom_of_element
         ) {
+          // Increment percentage count
+
+          for (let count = 1; count <= percentile_limit; count++) {
+            $(percentile)
+              .text(count + "%")
+              .addClass("animate-percentage");
+          }
           // slidein percentage
           $(percentile).css({
             left: left,
@@ -94,7 +102,8 @@ function all_jQuery_functionality() {
       "50%",
       "2.5s",
       $(".skill-text-50"),
-      "50%"
+      "50%",
+      50
     );
     do_stuff_while_in_viewport(
       $(".skills"),
@@ -102,7 +111,8 @@ function all_jQuery_functionality() {
       "80%",
       "3s",
       $(".skill-text-80"),
-      "80%"
+      "80%",
+      80
     );
     do_stuff_while_in_viewport(
       $(".skills"),
@@ -110,7 +120,8 @@ function all_jQuery_functionality() {
       "85%",
       "3.8s",
       $(".skill-text-85"),
-      "85%"
+      "85%",
+      85
     );
     do_stuff_while_in_viewport(
       $(".skills"),
@@ -118,7 +129,8 @@ function all_jQuery_functionality() {
       "70%",
       "2.5s",
       $(".skill-text-70"),
-      "70%"
+      "70%",
+      70
     );
     do_stuff_while_in_viewport(
       $(".skills"),
@@ -126,7 +138,8 @@ function all_jQuery_functionality() {
       "75%",
       "2.8s",
       $(".skill-text-75"),
-      "75%"
+      "75%",
+      75
     );
     do_stuff_while_in_viewport(
       $(".skills"),
@@ -134,7 +147,8 @@ function all_jQuery_functionality() {
       "90%",
       "4s",
       $(".skill-text-90"),
-      "90%"
+      "90%",
+      90
     );
     // parallax effect handler for all background images on site
     function parallax(image1, image2, image3) {

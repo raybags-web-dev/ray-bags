@@ -1172,23 +1172,23 @@ Skills
   transform: translateX(-50%);
 }
 .skill-text-50 {
-  left: 50%;
+  left: 1%;
 }
 .skill-text-70 {
-  left: 70%;
+  left: 1%;
 }
 .skill-text-75 {
-  left: 75%;
+  left: 1%;
 }
 .skill-text-80 {
   left: 0%;
 }
 .skill-text-85 {
-  left: 85%;
+  left: 1%;
   color: transparent;
 }
 .skill-text-90 {
-  left: 90%;
+  left: 1%;
 }
 
 /*
@@ -1907,4 +1907,17 @@ Products Page
   text-shadow: none !important;
   font-size: 20px;
   opacity: 0.7;
+}
+
+.animate-percentage {
+  font-size: 15px;
+  color: white;
+  border-radius: 50%;
+  padding: 0.4rem;
+  margin-top: -1.6%;
+  transform: translateZ(2rem);
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
+  box-shadow: inset 5px 0px 10px 6px rgba(255, 36, 111, 0.64);
+  transition: var(--transition);
 }
