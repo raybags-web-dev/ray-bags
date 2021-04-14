@@ -1389,6 +1389,8 @@ Blog
   grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   gap: 3rem;
   place-self: center;
+  justify-content: center;
+  align-items: center;
 }
 /* ==================================================================== */
 .single-page {
