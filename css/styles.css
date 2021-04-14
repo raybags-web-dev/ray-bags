@@ -1387,9 +1387,10 @@ Blog
 .blog-center {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-  gap: 3rem 1rem;
+  gap: 3rem;
+  place-self: center;
 }
-
+/* ==================================================================== */
 .single-page {
   background: var(--clr-primary-10);
   min-height: calc(100vh - 5rem - 198px);

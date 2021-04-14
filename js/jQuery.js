@@ -57,11 +57,16 @@ function all_jQuery_functionality() {
           bottom_of_screen > top_of_element &&
           top_of_screen < bottom_of_element
         ) {
+          // increase percentile number
+          // let initaileValue = $(".skill-text-85").text();
+          // console.log(initaileValue)
+          
           // slidein percentage
           $(percentile).css({
             left: left,
             opacity: "1",
             transition: "1s",
+            color: "#FFFFFF",
           });
           // animate skill bar
           $(item).css({
@@ -75,6 +80,7 @@ function all_jQuery_functionality() {
             left: "1%",
             opacity: "0",
             transition: "1s",
+            color: "red",
           });
           // remove skill bar
           $(item).css({
