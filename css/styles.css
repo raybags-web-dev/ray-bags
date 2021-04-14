@@ -580,7 +580,6 @@ Hero
 }
 .hero_background {
   background-blend-mode: difference;
-
   background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
     url("/images/nature2.jpeg") center/cover no-repeat fixed;
 }
@@ -703,9 +702,12 @@ Hero
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 0.25rem solid var(--clr-primary-5);
     top: 2rem;
-    right: -2rem;
+    right: -3rem;
+    background-blend-mode: lighten;
+    background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
+      url("/images/nature2.jpeg") center/cover repeat fixed;
+    backdrop-filter: var(--backdrop-heavy);
     transition: var(--transition);
     border-radius: var(--radius);
   }
@@ -715,7 +717,6 @@ Hero
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 0.25rem solid var(--clr-primary-5);
     top: 0rem;
     right: 0rem;
     left: 0;
@@ -1261,8 +1262,8 @@ Blog
   background: var(--clr-grey-8);
 }
 .teminalial_image {
-  background-blend-mode: color;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-blend-mode: darken;
+  background: linear-gradient(rgba(21, 26, 71, 0.5), rgba(14, 21, 39, 0.5)),
     url("/images/team1.jpg") top/cover no-repeat fixed;
 }
 .card {

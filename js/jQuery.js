@@ -2,7 +2,7 @@
 
 // General jQuery function.
 function all_jQuery_functionality() {
-  $(document).ready(() => {
+  $(document).ready(function () {
     $("#myBtn").removeClass("hide");
 
     // handle side meny removal.
@@ -57,10 +57,7 @@ function all_jQuery_functionality() {
           bottom_of_screen > top_of_element &&
           top_of_screen < bottom_of_element
         ) {
-          // increase percentile number
-          // let initaileValue = $(".skill-text-85").text();
-          // console.log(initaileValue)
-          
+
           // slidein percentage
           $(percentile).css({
             left: left,
@@ -140,10 +137,32 @@ function all_jQuery_functionality() {
       $(".skill-text-90"),
       "90%"
     );
+    // parallax effect handler for all background images on site
+    function parallax(image1, image2, image3) {
+      if (
+        !image1 ||
+        image1 == undefined ||
+        !image2 ||
+        image2 == undefined ||
+        !image3 ||
+        image3 == undefined
+      )
+        return;
+      let wScroll = $(window).scrollTop();
+      $(image1).css({
+        "background-position": `center ${wScroll * 0.07}px`,
+      });
+      $(image2).css({
+        "background-position": `center ${wScroll * 0.07}px`,
+      });
+      $(image3).css({
+        "background-position": `center ${wScroll * 0.07}px`,
+      });
+    }
 
     // toggle nav slide in out on scroll
     $(window).on("scroll", function () {
-      if ($(window).scrollTop() >= 200) {
+      if ($(window).scrollTop() >= 100) {
         $("#nav").slideDown("1000", function () {
           $(this).addClass("navbar-fixed").css({
             top: "0%",
@@ -156,7 +175,7 @@ function all_jQuery_functionality() {
       } else {
         $("#nav").fadeIn("1000", function () {
           $(this).css({
-            top: "3%",
+            top: "2%",
           });
 
           $(".nav-header").css({
@@ -209,15 +228,27 @@ function all_jQuery_functionality() {
       }
     }
     // run functions on scroll, resize and screenorientation
+    // functions running on document scroll
     $(document).on("scroll", () => {
       removeMenu(), showHideTopBtn();
     });
+    // functions running on window scroll
+    $(window).on("scroll", () => {
+      parallax(
+        $(".hero_background"),
+        $(".services_background"),
+        $(".teminalial_image")
+      );
+    });
+    // functions running on window resize
     $(window).on("resize", () => {
       removeMenu(), showHideTopBtn();
     });
+    // functions running on window orientationChange
     $(window).on("orientationChange", () => {
       removeMenu(), showHideTopBtn();
     });
+    // functions running on window load
     $(window).on("load", () => {
       showHideTopBtn();
     });
