@@ -707,6 +707,7 @@ Hero
     background-blend-mode: lighten;
     background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
       url("/images/nature2.jpeg") center/cover repeat fixed;
+    -webkit-backdrop-filter: var(--backdrop-heavy);
     backdrop-filter: var(--backdrop-heavy);
     transition: var(--transition);
     border-radius: var(--radius);

@@ -57,7 +57,6 @@ function all_jQuery_functionality() {
           bottom_of_screen > top_of_element &&
           top_of_screen < bottom_of_element
         ) {
-
           // slidein percentage
           $(percentile).css({
             left: left,
@@ -156,7 +155,7 @@ function all_jQuery_functionality() {
         "background-position": `center ${wScroll * 0.07}px`,
       });
       $(image3).css({
-        "background-position": `center ${wScroll * 0.07}px`,
+        "background-position": `center ${wScroll * 0.01}px`,
       });
     }
 
