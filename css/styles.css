@@ -109,9 +109,11 @@ html {
   transition: var(--transition);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--thumbBG);
-  box-shadow: 0 -100vh 0 100vh var(--shadow), 0 0 15px 5px rgb(0, 0, 0);
+  box-shadow: 0px -100vh 0 100vh var(--shadow), 0 0 15px 5px rgb(0, 0, 0);
+  background-color: darkgrey;
+  transition: var(--transition);
 }
+
 body {
   scrollbar-width: thin;
   scrollbar-color: var(--thumbBG) var(--scrollbarBG);
@@ -1169,13 +1171,11 @@ Skills
   font-size: 15px;
   color: white;
   padding: 0.1rem;
-  margin-top: -.8%;
-  border-radius: .2rem;
+  margin-top: -0.8%;
+  border-radius: 0.2rem;
   transition: var(--transition);
 }
-.animate-percentage::before
-
-.skill-text {
+.animate-percentage::before .skill-text {
   position: absolute;
   top: -2rem;
   left: 60%;
@@ -1918,4 +1918,3 @@ Products Page
   font-size: 20px;
   opacity: 0.7;
 }
-
