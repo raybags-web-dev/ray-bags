@@ -1165,6 +1165,19 @@ Skills
 }
 
 /* skill text */
+.animate-percentage {
+  font-size: 15px;
+  color: white;
+  border-radius: 50%;
+  padding: 0.4rem;
+  margin-top: -1.6%;
+  transform: translateZ(2rem);
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
+  box-shadow: inset 5px 0px 10px 6px rgba(255, 36, 111, 0.64);
+  transition: var(--transition);
+}
+
 .skill-text {
   position: absolute;
   top: -2rem;
@@ -1181,7 +1194,7 @@ Skills
   left: 1%;
 }
 .skill-text-80 {
-  left: 0%;
+  left: 1%;
 }
 .skill-text-85 {
   left: 1%;
@@ -1909,15 +1922,3 @@ Products Page
   opacity: 0.7;
 }
 
-.animate-percentage {
-  font-size: 15px;
-  color: white;
-  border-radius: 50%;
-  padding: 0.4rem;
-  margin-top: -1.6%;
-  transform: translateZ(2rem);
-  -webkit-backdrop-filter: blur(100px);
-  backdrop-filter: blur(100px);
-  box-shadow: inset 5px 0px 10px 6px rgba(255, 36, 111, 0.64);
-  transition: var(--transition);
-}

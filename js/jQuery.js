@@ -28,7 +28,6 @@ function all_jQuery_functionality() {
 
     // handle skills level animation
     function do_stuff_while_in_viewport(
-      element,
       item,
       width,
       delay,
@@ -37,8 +36,6 @@ function all_jQuery_functionality() {
       percentile_limit
     ) {
       if (
-        !element ||
-        element == undefined ||
         width == undefined ||
         delay == undefined ||
         percentile == undefined ||
@@ -46,10 +43,10 @@ function all_jQuery_functionality() {
       )
         return;
 
-      $(window).on("scroll", () => {
-        let top_of_element = $(element).offset().top;
+      $(window).on("scroll", function () {
+        let top_of_element = $(".skills").offset().top;
         let bottom_of_element =
-          $(element).offset().top + $(element).outerHeight();
+          $(".skills").offset().top + $(".skills").outerHeight();
         let bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
         let top_of_screen = $(window).scrollTop();
 
@@ -58,13 +55,33 @@ function all_jQuery_functionality() {
           bottom_of_screen > top_of_element &&
           top_of_screen < bottom_of_element
         ) {
-          // Increment percentage count
+          // incremenet skill percentage value when in viewport
+          let percentage_value = $(percentile);
+          let value = percentile_limit;
 
-          for (let count = 1; count <= percentile_limit; count++) {
-            $(percentile)
-              .text(count + "%")
-              .addClass("animate-percentage");
-          }
+          $({ percentage: 0 })
+            .stop(true)
+            .animate(
+              { percentage: value },
+              {
+                duration: 2000,
+                easing: "easeOutExpo",
+                step: function () {
+                  let percentageVal = Math.round(this.percentage * 10) / 10;
+                  percentage_value.text(percentageVal + "%");
+                },
+              }
+            )
+            .promise()
+            .done(() => {
+              // hard set the value after animation is done to be
+              // sure the value is correct
+              percentage_value
+                .text(Math.floor(value) + "%")
+                .css({ "font-style": "italic" });
+              $(".animate-percentage").css({ background: "green" });
+            });
+
           // slidein percentage
           $(percentile).css({
             left: left,
@@ -97,7 +114,6 @@ function all_jQuery_functionality() {
     }
 
     do_stuff_while_in_viewport(
-      $(".skills"),
       $(".value-50"),
       "50%",
       "2.5s",
@@ -106,7 +122,6 @@ function all_jQuery_functionality() {
       50
     );
     do_stuff_while_in_viewport(
-      $(".skills"),
       $(".value-80"),
       "80%",
       "3s",
@@ -115,7 +130,6 @@ function all_jQuery_functionality() {
       80
     );
     do_stuff_while_in_viewport(
-      $(".skills"),
       $(".value-85"),
       "85%",
       "3.8s",
@@ -124,7 +138,6 @@ function all_jQuery_functionality() {
       85
     );
     do_stuff_while_in_viewport(
-      $(".skills"),
       $(".value-70"),
       "70%",
       "2.5s",
@@ -133,7 +146,6 @@ function all_jQuery_functionality() {
       70
     );
     do_stuff_while_in_viewport(
-      $(".skills"),
       $(".value-75"),
       "75%",
       "2.8s",
@@ -142,7 +154,6 @@ function all_jQuery_functionality() {
       75
     );
     do_stuff_while_in_viewport(
-      $(".skills"),
       $(".value-90"),
       "90%",
       "4s",
