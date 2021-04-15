@@ -13,7 +13,8 @@ function all_jQuery_functionality() {
         });
       });
     };
-    // in viewport functiuon
+
+    // in viewport function for animating hero profile pic
     $(window).on("scroll", () => {
       let top_of_element = $(".hero-photo").offset().top;
       let bottom_of_element =
@@ -68,7 +69,10 @@ function all_jQuery_functionality() {
                 easing: "easeOutExpo",
                 step: function () {
                   let percentageVal = Math.round(this.percentage * 10) / 10;
-                  percentage_value.text(percentageVal + "%");
+                  percentage_value
+                    .text(percentageVal + "%")
+                    .addClass("animate-percentage")
+                    .css({ color: "black", opacity: ".5" });
                 },
               }
             )
@@ -79,7 +83,11 @@ function all_jQuery_functionality() {
               percentage_value
                 .text(Math.floor(value) + "%")
                 .css({ "font-style": "italic" });
-              $(".animate-percentage").css({ background: "green" });
+              $(".animate-percentage").css({
+                background: "green",
+                color: "white",
+                opacity: ".7",
+              });
             });
 
           // slidein percentage
@@ -158,7 +166,7 @@ function all_jQuery_functionality() {
       "90%",
       "4s",
       $(".skill-text-90"),
-      "90%",
+      "85%",
       90
     );
     // parallax effect handler for all background images on site

@@ -1142,7 +1142,6 @@ Skills
   background: var(--clc-green);
   height: 100%;
   width: 2%;
-  border-radius: var(--radius);
 }
 /* skill values */
 .value-50 {
@@ -1166,17 +1165,15 @@ Skills
 
 /* skill text */
 .animate-percentage {
+  position: absolute;
   font-size: 15px;
   color: white;
-  border-radius: 50%;
-  padding: 0.4rem;
-  margin-top: -1.6%;
-  transform: translateZ(2rem);
-  -webkit-backdrop-filter: blur(100px);
-  backdrop-filter: blur(100px);
-  box-shadow: inset 5px 0px 10px 6px rgba(255, 36, 111, 0.64);
+  padding: 0.1rem;
+  margin-top: -.8%;
+  border-radius: .2rem;
   transition: var(--transition);
 }
+.animate-percentage::before
 
 .skill-text {
   position: absolute;
