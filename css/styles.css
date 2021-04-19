@@ -12,20 +12,12 @@ Variables
 */
 
 :root {
-  --main-bg-image1: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-  --mian-bg-image2: radial-gradient(
-    circle 248px at center,
-    #16d9e3 0%,
-    #30c7ec 47%,
-    #46aef7 100%
-  );
+  /* black background */
+  --black-bg-image: linear-gradient(to right, #200909 100%, black 100%);
   /* scroll track and thumb colors */
   --shadow: #1f3746;
   --scrollbarBG: rgb(255, 0, 0);
   --thumbBG: #1d1b35;
-
-  --main-bg-image3: linear-gradient(to right, #434343 0%, black 100%);
-  --main-gb-nav: linear-gradient(15deg, #13547a 0%, #206b62 100%);
   /* dark shades of primary color*/
   --clr-primary-1: hsl(7, 64%, 22%);
   --clr-primary-2: hsl(43, 77%, 27%);
@@ -45,7 +37,7 @@ Variables
   --clr-grey-3: hsl(209, 34%, 30%);
   --clr-grey-4: hsl(209, 28%, 39%);
   /* grey used for paragraphs */
-  --clr-grey-5: hsl(210, 22%, 49%);
+  /* --clr-grey-5: hsl(210, 22%, 49%); */
   --clr-grey-6: hsl(209, 23%, 60%);
   --clr-grey-7: hsl(211, 27%, 70%);
   --clr-grey-8: hsl(210, 31%, 80%);
@@ -67,9 +59,9 @@ Variables
   /* max-width */
   --max-width: 1170px;
   /* 3d transform levels */
-  --level-one: translateZ(3rem);
-  --level-two: translateZ(6rem);
-  --level-three: translateZ(9rem);
+  --level-one: translateZ(2rem);
+  --level-two: translateZ(3rem);
+  --level-three: translateZ(4rem);
 }
 /*
 =============== 
@@ -86,7 +78,7 @@ Global Styles
 }
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-grey-1);
+  background-image: var(--black-bg-image);
   color: var(--clr-white);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -111,6 +103,7 @@ html {
 ::-webkit-scrollbar-thumb {
   box-shadow: 0px -100vh 0 100vh var(--shadow), 0 0 15px 5px rgb(0, 0, 0);
   background-color: darkgrey;
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
@@ -148,7 +141,7 @@ img:not(.nav-logo) {
   padding: 1px;
   cursor: pointer;
   transform-style: preserve-3d;
-  transform: var(--level-two);
+  transform: var(--level-one);
 }
 
 .nav-logo:hover {
@@ -382,11 +375,12 @@ Navbar
   }
   .nav-links {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     justify-items: center;
-    -moz-column-gap: 2rem;
-    column-gap: 2rem;
+    -moz-column-gap: 1.1rem;
+    column-gap: 0.1rem;
     justify-self: end;
+    margin-left: 12%;
   }
   .nav-links a {
     text-transform: capitalize;
@@ -865,7 +859,7 @@ Services
   transition: var(--transition);
   -webkit-backdrop-filter: var(--backdrop-heavy);
   backdrop-filter: var(--backdrop-heavy);
-  background: var(--clr-grey-1);
+  background: var(--black-bg-image);
 }
 
 .section-title h2 {
@@ -1361,9 +1355,12 @@ Blog
   -o-object-fit: cover;
   object-fit: cover;
   transform-style: preserve-3d;
-  transform: translateZ(1rem);
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
+}
+.card-info p {
+  color: var(--clr-grey-1);
+  transform: var(--level-one);
 }
 
 .card:hover img,
@@ -1372,7 +1369,7 @@ Blog
   box-shadow: 2px 0px 14px rgb(0, 0, 0, 0.5);
 }
 .card-info h4 {
-  transform: var(--level-two);
+  transform: var(--level-one);
 }
 .card-footer {
   display: grid;
@@ -1651,7 +1648,7 @@ Products Page
   justify-content: space-between;
   margin: auto;
   background-blend-mode: multiply;
-  background: var(--clr-grey-1);
+  background: var(--black-bg-image);
 }
 
 .footer-name h5,
@@ -1774,11 +1771,10 @@ Products Page
   font-size: 20px;
   letter-spacing: 5px;
   text-align: center;
-  color: rgb(247, 246, 246);
   font-family: var(--ff-primary);
 }
 
-/* ABout text  */
+/* About text  */
 .page-info {
   display: flex;
   flex-direction: column;
@@ -1790,7 +1786,7 @@ Products Page
 
 .page-info p {
   flex: 1 1 100%;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   min-width: 300px;
   min-height: 65vh;
 }
