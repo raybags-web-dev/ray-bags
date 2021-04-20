@@ -35,11 +35,12 @@
  
      <!-- AOS animation lib cdn -->
      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
      <!-- cookiealert styles CDN link -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
     <!-- css -->
-    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- <link rel="stylesheet" href="./css/styles.css" /> -->
+    <link rel="stylesheet" href="./build/bundle.css"/>
+
   </head>
   <body>
     <!-- navbar -->
@@ -80,7 +81,7 @@
     <div id="myBtn">
       <div class="inner-container">
         <div class="btn-container">
-          <button class="btnn pulsing"><i class="fas fa-chevron-up"></i></button>
+          <button class="btnn pulsing"><ihow class="fas fa-chevron-up"></ihow to ></button>
         </div>
       </div>
     </div>
@@ -395,92 +396,10 @@
         <p class="video-text">
           You've made it this fur, great! Feel free to reachout out.
         </p>
-        <a id="inVideoBTN_Contact" class="btn">contact me</a>
+        <a id="inVideoBTN_Contact" href="https://contact-ray.netlify.app/" target="_blank" class="btn">contact me</a>
       </div>
     </section>
 
-    
-        <!-- =========== contact form -->
-        <section class="section-center  contact">
-          <div class="section-center contact-container">
-              <!-- contact info -->
-              <article class="contact-info">
-                  <!-- contact item -->
-                  <div class="contact-item">
-                    <h4 class="contact-title">
-                        <span class="contact-icon">
-                            <i class="fas fa-location-arrow"></i>
-                        </span> Location:
-                    </h4>
-                    <h4 class="contact-text">
-                        Netherlands.
-                    </h4>
-                </div>
-                  <!-- contact item -->
-                  <div class="contact-item">
-                      <h4 class="contact-title ">
-                          <span class="contact-icon ">
-                              <i class="fas fa-envelope-open-text "></i>
-                          </span> email: 
-                      </h4>
-                      <h4 class="contact-text ">
-                          baguma.github@gmail.com
-                      </h4>
-                  </div>
-                  <!-- contact item -->
-                  <!-- contact item -->
-                  <!-- ===================== -->
-                  <div class="contact-item ">
-                    <h4 class="contact-title ">
-                        <span class="contact-icon ">
-                            <i class="fas fa-address-book"></i>
-                        </span> address: 
-                    </h4>
-                    <h4 class="contact-text ">
-                        Amsterdam Noord
-                    </h4>
-                </div>
-                  <!-- ======================== -->
-                  
-                  <div class="contact-item ">
-                      <h4 class="contact-title ">
-                        <span class="contact-icon ">
-                            <i class="fas fa-phone "></i>
-                        </span> phone:
-                    </h4>
-                    <h4 class="contact-text ">
-                      + 31 636 329 234
-                  </h4>
-                  </div>
-                  <!-- contact item -->
-              </article>
-              <!-- contact form -->
-              <article class="contact-form ">
-                  <h3>contact me</h3>
-                  <form id="submintForm" name="contact" method="POST" data-netlify="true" class="was-validated">
-                      <div class="form-group">
-                          <!-- inputs -->
-                          <input type="text " placeholder="your name" class="form-control" name="name" required/>
-                          <div class="valid-feedback">awesome.</div>
-                          <div class="invalid-feedback">name required.</div>
-                      </div>
-                      <div class="form-group">
-                          <input type="email " placeholder="Enter email" class="form-control" name="email" required />
-                          <div class="valid-feedback">awesome.</div>
-                          <div class="invalid-feedback">email required.</div>
-                      </div>
-                      <div class="form-group">
-                          <textarea id="text_message" class="form-control" placeholder="your message " rows="10" name="message " required></textarea>
-                          <div class="valid-feedback">awesome.</div>
-                          <div class="invalid-feedback">message required.</div>
-                      </div>
-                      <button id="submit_btn" type="submit" class="btn submit-btn" disabled value="Send">submit here</button>
-                  </form>
-              </article>
-          </div>
-      </section>
-    <!-- ================Contact form ================ -->
-    <!-- end of connect -->
     <!-- skills -->
     <section id="skills" class="section skills skills_background">
       <!-- section title -->
@@ -883,6 +802,6 @@
     <!-- AOS animation -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <!-- custom js -->
-    <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./build/bundle.js"></script>
   </body>
 </html>

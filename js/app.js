@@ -1,12 +1,12 @@
 "use strict";
 
-import { all_jQuery_functionality } from "./jQuery.js";
 import {
+  all_jQuery_functionality,
   copyRightYear,
   handleInnerScroll,
   openNavBar,
   closeNavBar,
-} from "./helpers.js";
+} from "./jQuery.js";
 
 const navBtn = document.querySelector("#nav-btn");
 const closeBtn = document.querySelector("#close-btn");
@@ -47,4 +47,4 @@ handleInnerScroll(btnInVideo, contactSectionFromVideoSection);
 // set year
 copyRightYear(date);
 // All Jquery
-all_jQuery_functionality();
+// all_jQuery_functionality();
