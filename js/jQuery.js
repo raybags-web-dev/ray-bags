@@ -43,12 +43,19 @@ function closeNavBar(closeNavBTN, nav) {
     nav.classList.remove("show-sidebar");
   });
 }
-// ============vanilla JS ==================
+// ============ vanilla JS ==================
 
 // General jQuery function.
 function all_jQuery_functionality() {
   $(document).ready(function () {
     $("#myBtn").removeClass("hide");
+
+    // Onload clear screen.
+
+    $(".whole_body").animate({
+      opacity: "1",
+    }, 6000);
+
 
     // handle side meny removal.
     const removeMenu = () => {

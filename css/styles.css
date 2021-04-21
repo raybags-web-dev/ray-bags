@@ -14,6 +14,8 @@ Variables
 :root {
   /* black background */
   --black-bg-image: linear-gradient(to right, #200909 100%, black 100%);
+  --colored-bg-image: linear-gradient(to right, #201eb4 0%, #9c2c03 100%);
+
   /* scroll track and thumb colors */
   --shadow: #1f3746;
   --scrollbarBG: rgb(255, 0, 0);
@@ -88,6 +90,11 @@ body {
   user-select: none;
   overflow-x: hidden;
 }
+.whole_body {
+  opacity: 0;
+  background-image: var(--colored-bg-image);
+}
+
 html {
   overflow-x: hidden;
 }
@@ -620,7 +627,7 @@ Hero
   transition: var(--transition);
   z-index: -1;
   background-image: linear-gradient(rgba(250, 18, 18, 0.5), rgb(0, 0, 0, 0.5));
-  animation: slide-gb-white-crl infinite alternate-reverse forwards 3s;
+  animation: slide-gb-white-crl infinite alternate-reverse forwards 2s;
 }
 .hero-btn:hover:before {
   -webkit-animation-play-state: paused;
@@ -629,58 +636,51 @@ Hero
 
 @-webkit-keyframes slide-gb-white-crl {
   0% {
-    transform: scale(1.2);
-    opacity: 1;
-    z-index: -1;
+    transform: scale(1.1);
   }
   50% {
-    transform: scale(1.2);
-    opacity: 0.5;
-    z-index: -1;
-    background-image: linear-gradient(
-      rgba(250, 18, 18, 0.5),
-      rgba(255, 255, 255, 0.5)
-    );
+    transform: scale(2.2);
   }
   75% {
     transform: scale(1.1);
-    opacity: unset;
-    z-index: -1;
   }
   100% {
     transform: scale(1.1);
-    opacity: 0.1;
   }
 }
 
 @keyframes slide-gb-white-crl {
   0% {
-    transform: scale(1.2);
-    opacity: 1;
-    z-index: -1;
+    transform: scale(1.1);
   }
   50% {
-    transform: scale(1.2);
-    opacity: 1;
-    z-index: -1;
+    transform: scale(2.2);
   }
   75% {
     transform: scale(1.1);
-    opacity: 1;
-    z-index: -1;
   }
   100% {
     transform: scale(1.1);
-    opacity: 0.1;
   }
 }
+
 .about-info a {
   margin-right: 1rem;
+  outline: 1px solid var(--clr-white);
+  outline-offset: 6px;
+}
+.aboutMeBTN {
+  margin-right: 1rem;
+  outline: 1px solid var(--clr-white);
+  outline-offset: 6px;
+  background: var(--clr-white);
+  color: var(--clr-primary-1) !important;
+  outline-offset: 6px;
 }
 .about-info a:hover {
   color: var(--clr-primary-1) !important;
   outline: 1px solid var(--clr-white);
-  outline-offset: 6px;
+  outline-offset: 7px;
 }
 
 @media screen and (min-width: 992px) {
@@ -854,12 +854,12 @@ Services
   margin-bottom: 2rem;
   border-radius: var(--radius);
   text-align: center;
-  box-shadow: var(--light-shadow);
   color: var(--clr-white);
   transition: var(--transition);
   -webkit-backdrop-filter: var(--backdrop-heavy);
   backdrop-filter: var(--backdrop-heavy);
-  background: var(--black-bg-image);
+  background: var(--colored-bg-image);
+  box-shadow: 5px 5px 5px 1px #000000;
 }
 
 .section-title h2 {
@@ -925,6 +925,7 @@ Projects
   background: var(--clr-primary-4);
   border-radius: var(--radius);
   margin-bottom: 2rem;
+  box-shadow: -5px 5px 15px 1px #000000;
 }
 .project-info {
   text-align: center;
@@ -1061,13 +1062,20 @@ Connect
   color: var(--clr-white);
 }
 .video-banner {
-  background: transparent;
   -webkit-backdrop-filter: var(--backdrop-heavy);
   backdrop-filter: var(--backdrop-heavy);
   padding: 3rem 5rem 5rem 5rem;
   text-align: center;
   border-radius: 0.5rem;
-  box-shadow: var(--dark-shadow);
+  transition: var(--transition);
+  box-shadow: 5px 5px 20px 1px #000000;
+  background-image: var(--colored-bg-image);
+}
+
+.video-banner:hover {
+  transition: var(--transition);
+  -webkit-filter: grayscale(40%);
+          filter: grayscale(40%);
 }
 .video-banner a {
   -webkit-backdrop-filter: var(--backdrop-heavy);
@@ -1298,7 +1306,7 @@ Blog
   transform-style: preserve-3d;
 }
 .card-back {
-  background: var(--clr-primary-1);
+  background-image: var(--colored-bg-image);
   transform: rotateY(180deg);
   display: grid;
   color: var(--clr-white);
@@ -1790,3 +1798,5 @@ Products Page
   min-width: 300px;
   min-height: 65vh;
 }
+
+/* Onload catain */

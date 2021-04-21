@@ -47,4 +47,4 @@ handleInnerScroll(btnInVideo, contactSectionFromVideoSection);
 // set year
 copyRightYear(date);
 // All Jquery
-// all_jQuery_functionality();
+all_jQuery_functionality();
