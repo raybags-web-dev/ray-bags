@@ -6,12 +6,12 @@
 
 .blob {
   position: absolute;
-  top: -5%;
-  left: -8%;
-  fill: #741717;
-  width: 50vmax;
+  top: -25%;
+  left: -18%;
+  fill: #ffffffad;
+  width: 70vmax;
   z-index: -0.1;
-  opacity: 0.9;
+  opacity: 0.7;
   animation: move 9s linear alternate-reverse infinite;
   transform-origin: 50% 50%;
 }
@@ -22,8 +22,7 @@ svg .dark-shadow {
   backdrop-filter: var(--blur-effect);
 }
 
-.blob:hover,
-svg:hover {
+.dark-shadow:hover {
   -webkit-animation-play-state: paused !important;
   animation-play-state: paused !important;
 }
@@ -42,12 +41,12 @@ svg:hover {
 
 @keyframes move {
   0% {
-    transform: scale(1, 0.4) translate(10vw, 6vh) rotate(50deg);
+    transform: scale(1, 0.4) translate(20vw, 6vh) rotate(50deg);
     opacity: 0.3;
   }
 
   100% {
-    transform: scale(0.8, 0.5) translate(10vw, 20vh) rotate(360deg);
+    transform: scale(0.8, 0.5) translate(1vw, 10vh)  rotate(360deg);
     opacity: 0.7;
   }
 }
@@ -55,14 +54,14 @@ svg:hover {
 @media screen and (max-width: 1449px) {
   .blob {
     position: absolute;
-    top: 5%;
-    left: -18%;
-    fill: #af1a00ad;
-    width: 60vmax;
+    top: -15%;
+    left: -15%;
+    fill: #a39f9fad;
+    width: 80vmax;
     z-index: -0.1;
     opacity: 0.9;
     animation: move 9s linear alternate-reverse infinite;
-    transform-origin: 50% 50%;
+    transform-origin: 40% 50%;
   }
 
   @-webkit-keyframes move {
@@ -92,14 +91,14 @@ svg:hover {
 @media screen and (max-width: 1168px) {
   .blob {
     position: absolute;
-    top: 5%;
-    left: -18%;
-    fill: #ffffffad;
-    width: 70vmax;
+    top: -15%;
+    left: -15%;
+    fill: #a39f9fad;
+    width: 90vmax;
     z-index: -0.1;
     opacity: 0.9;
     animation: move 9s linear alternate-reverse infinite;
-    transform-origin: 50% 50%;
+    transform-origin: 40% 50%;
   }
 
   @-webkit-keyframes move {
@@ -131,10 +130,10 @@ svg:hover {
     position: absolute;
     top: -10%;
     left: -5%;
-    fill: #4b4747ad;
+    fill: #074e88ad;
     width: 100vmax;
     z-index: -0.1;
-    opacity: 0.9;
+    opacity: 0.5;
     animation: move 9s linear alternate-reverse infinite;
     transform-origin: 50% 50%;
   }

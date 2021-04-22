@@ -14,7 +14,8 @@ Variables
 :root {
   /* black background */
   --black-bg-image: linear-gradient(to right, #200909 100%, black 100%);
-  --colored-bg-image: linear-gradient(to right, #201eb4 0%, #9c2c03 100%);
+  --colored-bg-image: linear-gradient(to right, #000000 0%, #000000 100%);
+  /* --colored-bg-image: linear-gradient(60deg, #29323c 0%, #485563 100%); */
 
   /* scroll track and thumb colors */
   --shadow: #1f3746;
@@ -446,7 +447,6 @@ Navbar
   left: 0;
   width: 100%;
   transition: var(--transition);
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5));
   z-index: 100;
   box-shadow: var(--dark-shadow);
   -webkit-backdrop-filter: var(--backdrop-heavy);
@@ -480,7 +480,7 @@ Sidebar
   -webkit-backdrop-filter: var(--backdrop-light);
   backdrop-filter: var(--backdrop-light);
   z-index: 999;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(66, 23, 23, 0.5)),
     url("/images/team3.jpg") bottom/cover no-repeat fixed;
 }
 .sidebar-links {
@@ -584,7 +584,7 @@ Hero
 }
 .hero_background {
   background-blend-mode: difference;
-  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(28, 6, 153, 0.5), rgba(71, 29, 29, 0.5)),
     url("/images/nature2.jpeg") center/cover no-repeat fixed;
 }
 .hero-center {
@@ -711,8 +711,8 @@ Hero
     top: 2rem;
     right: -3rem;
     background-blend-mode: lighten;
-    background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-      url("/images/nature2.jpeg") center/cover repeat fixed;
+    background: linear-gradient(rgba(28, 6, 153, 0.5), rgba(71, 29, 29, 0.5)),
+      url("/images/nature2.jpeg") center/cover no-repeat fixed;
     -webkit-backdrop-filter: var(--backdrop-heavy);
     backdrop-filter: var(--backdrop-heavy);
     transition: var(--transition);
