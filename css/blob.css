@@ -6,8 +6,8 @@
 
 .blob {
   position: absolute;
-  top: 0%;
-  left: -5%;
+  top: -5%;
+  left: -8%;
   fill: #741717;
   width: 50vmax;
   z-index: -0.1;
@@ -243,9 +243,9 @@ svg:hover {
   }
   .blob {
     position: absolute;
-    top: 0%;
+    top: 15%;
     left: -15%;
-    fill: #2e1212ad;
+    fill: #a70000ad;
     min-height: 100vh;
     z-index: -0.1;
     opacity: 0.9;
@@ -273,13 +273,10 @@ svg:hover {
       all: unset;
     }
   }
-  svg .light-shadow {
-    -webkit-filter: unset;
-    filter: unset;
-  }
-
   svg .dark-shadow {
-    -webkit-filter: unset;
-    filter: unset;
+    -webkit-filter: drop-shadow(1px 3px 3px rgb(0, 0, 0));
+    filter: drop-shadow(1px 3px 3px rgb(0, 0, 0));
+    -webkit-backdrop-filter: var(--blur-effect);
+    backdrop-filter: var(--blur-effect);
   }
 }
