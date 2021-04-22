@@ -282,7 +282,7 @@ function all_jQuery_functionality() {
     // handle Smooth scrolling helper
     function handlePageScroll() {
       let target = $(this).attr("href");
-      $("body, html").animate({ scrollTop: $(target).offset().top }, 1000);
+      $("body, html").animate({ scrollTop: $(target).offset().top }, 1500);
       return false;
     }
 
@@ -294,13 +294,13 @@ function all_jQuery_functionality() {
     // smooth scrolling with back to top btn handler
     $("#myBtn").on("click", function () {
       let target = $("body, html");
-      $("body, html").animate({ scrollTop: $(target).offset().top }, 1200);
+      $("body, html").animate({ scrollTop: $(target).offset().top }, 1500);
     });
 
     // smooth scrolling with logo image handler
     $(".nav-logo").on("click", function () {
       let target = $("body, html");
-      $("body, html").animate({ scrollTop: $(target).offset().top }, 1000);
+      $("body, html").animate({ scrollTop: $(target).offset().top }, 1500);
     });
 
     // hide show top button on scroll

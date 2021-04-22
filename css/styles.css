@@ -27,6 +27,7 @@ Variables
   --clr-primary-4: hsl(7, 64%, 22%);
   --clr-primary-5: hsl(42, 78%, 60%);
   --clc-green: hsl(120, 100%, 25%);
+  --clr-red: #ff0000;
   /* lighter shades of primary color */
   --clr-primary-6: hsl(43, 89%, 70%);
   --clr-primary-7: hsl(43, 90%, 76%);
@@ -294,7 +295,7 @@ p {
   border: 2px solid transparent;
   cursor: pointer;
   box-shadow: var(--btn-shadow);
-  outline: 1px solid var(--clr-grey-4);
+  outline: 1px solid var(--clr-white);
   outline-offset: 5px;
 }
 .btn:hover {
@@ -596,7 +597,14 @@ Hero
 }
 
 .hero-info h4 {
-  color: var(--clr-grey-7);
+  color: var(--clr-white);
+  font-style: italic;
+  transition: var(--transition);
+}
+.hero-info h1 {
+  display: flex;
+  flex-wrap: wrap;
+  text-shadow: 1px 3px 0 #969696, 1px 10px 5px #aba8a8;
 }
 .hero-icons {
   justify-items: start;
@@ -606,6 +614,8 @@ Hero
   position: relative;
   margin-top: 1.25rem;
   box-shadow: var(--btn-shadow);
+  outline: 1px solid var(--clr-red);
+  outline-offset: 5px;
 }
 .hero-btn:hover {
   outline: 1px solid var(--clr-white);
@@ -1075,7 +1085,7 @@ Connect
 .video-banner:hover {
   transition: var(--transition);
   -webkit-filter: grayscale(40%);
-          filter: grayscale(40%);
+  filter: grayscale(40%);
 }
 .video-banner a {
   -webkit-backdrop-filter: var(--backdrop-heavy);
@@ -1798,5 +1808,3 @@ Products Page
   min-width: 300px;
   min-height: 65vh;
 }
-
-/* Onload catain */
