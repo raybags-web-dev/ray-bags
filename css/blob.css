@@ -8,12 +8,12 @@
   position: absolute;
   top: -25%;
   left: -18%;
-  fill: #ffffffad;
-  width: 70vmax;
+  fill: #5d0f0fad;
+  width: 75vmax;
   z-index: -0.1;
   opacity: 0.7;
-  animation: move 9s linear alternate-reverse infinite;
   transform-origin: 50% 50%;
+  transform: scale(0.8, 0.4) translate(10vw, 0vh) rotate(200deg);
 }
 svg .dark-shadow {
   -webkit-filter: drop-shadow(1px 3px 3px rgb(0, 0, 0));
@@ -27,104 +27,34 @@ svg .dark-shadow {
   animation-play-state: paused !important;
 }
 
-@-webkit-keyframes move {
-  0% {
-    transform: scale(1, 0.4) translate(10vw, 6vh) rotate(50deg);
-    opacity: 0.3;
-  }
-
-  100% {
-    transform: scale(0.8, 0.5) translate(10vw, 20vh) rotate(360deg);
-    opacity: 0.7;
-  }
-}
-
-@keyframes move {
-  0% {
-    transform: scale(1, 0.4) translate(20vw, 6vh) rotate(50deg);
-    opacity: 0.3;
-  }
-
-  100% {
-    transform: scale(0.8, 0.5) translate(1vw, 10vh) rotate(360deg);
-    opacity: 0.7;
-  }
-}
-
 @media screen and (max-width: 1449px) {
   .blob {
     position: absolute;
-    top: -15%;
+    top: -10%;
     left: -15%;
     fill: #a39f9fad;
     width: 80vmax;
     z-index: -0.1;
     opacity: 0.9;
-    animation: move 9s linear alternate-reverse infinite;
-    transform-origin: 40% 50%;
-  }
-
-  @-webkit-keyframes move {
-    0% {
-      transform: scale(1, 0.4) translate(10vw, 0vh) rotate(50deg);
-      opacity: 0.3;
-    }
-
-    100% {
-      transform: scale(0.8, 0.5) translate(10vw, 20vh) rotate(360deg);
-      opacity: 0.7;
-    }
-  }
-
-  @keyframes move {
-    0% {
-      transform: scale(1, 0.4) translate(10vw, 0vh) rotate(50deg);
-      opacity: 0.3;
-    }
-
-    100% {
-      transform: scale(0.8, 0.5) translate(10vw, 20vh) rotate(360deg);
-      opacity: 0.7;
-    }
+    transform: scale(0.7, 0.5) translate(10vw, 0vh) rotate(200deg);
+    transform-origin: 50% 50%;
   }
 }
+
 @media screen and (max-width: 1168px) {
   .blob {
     position: absolute;
     top: -15%;
     left: -15%;
-    fill: #a39f9fad;
-    width: 90vmax;
+    fill: #223e5ead;
+    width: 95vmax;
     z-index: -0.1;
     opacity: 0.9;
-    animation: move 9s linear alternate-reverse infinite;
-    transform-origin: 40% 50%;
-  }
-
-  @-webkit-keyframes move {
-    0% {
-      transform: scale(1, 0.4) translate(1vw, 0vh) rotate(50deg);
-      opacity: 0.3;
-    }
-
-    100% {
-      transform: scale(0.8, 0.5) translate(1vw, 20vh) rotate(360deg);
-      opacity: 0.8;
-    }
-  }
-
-  @keyframes move {
-    0% {
-      transform: scale(1, 0.4) translate(1vw, 0vh) rotate(50deg);
-      opacity: 0.3;
-    }
-
-    100% {
-      transform: scale(0.8, 0.5) translate(1vw, 20vh) rotate(360deg);
-      opacity: 0.8;
-    }
+    transform-origin: 50% 50%;
+    transform: scale(1, 0.6) translate(1vw, 20vh) rotate(220deg);
   }
 }
+
 @media screen and (max-width: 991px) {
   .blob {
     position: absolute;
@@ -134,34 +64,10 @@ svg .dark-shadow {
     width: 100vmax;
     z-index: -0.1;
     opacity: 0.5;
-    animation: move 9s linear alternate-reverse infinite;
     transform-origin: 50% 50%;
   }
-
-  @-webkit-keyframes move {
-    0% {
-      transform: scale(1, 0.4) translate(0vw, 10vh) rotate(30deg);
-      opacity: 0.3;
-    }
-
-    100% {
-      transform: scale(0.8, 0.6) translate(0vw, 0vh) rotate(360deg);
-      opacity: 0.8;
-    }
-  }
-
-  @keyframes move {
-    0% {
-      transform: scale(1, 0.4) translate(0vw, 10vh) rotate(30deg);
-      opacity: 0.3;
-    }
-
-    100% {
-      transform: scale(0.8, 0.6) translate(0vw, 0vh) rotate(360deg);
-      opacity: 0.8;
-    }
-  }
 }
+
 @media screen and (max-width: 769px) {
   .blob {
     position: absolute;
@@ -171,107 +77,41 @@ svg .dark-shadow {
     width: 80vmax;
     z-index: -0.1;
     opacity: 0.9;
-    animation: move 9s linear alternate-reverse infinite;
     transform-origin: 50% 50%;
-  }
-
-  @-webkit-keyframes move {
-    0% {
-      transform: scale(1, 0.4) translate(0vw, 0vh) rotate(30deg);
-      opacity: 0.3;
-    }
-
-    100% {
-      transform: scale(0.8, 0.6) translate(0vw, 0vh) rotate(360deg);
-      opacity: 0.8;
-    }
-  }
-
-  @keyframes move {
-    0% {
-      transform: scale(1, 0.4) translate(0vw, 0vh) rotate(30deg);
-      opacity: 0.3;
-    }
-
-    100% {
-      transform: scale(0.8, 0.6) translate(0vw, 0vh) rotate(360deg);
-      opacity: 0.8;
-    }
+    transform: scale(0.8, 0.8) translate(0vw, 0vh) rotate(360deg);
   }
 }
+
 @media screen and (max-width: 769px) {
   .blob {
     position: absolute;
     top: 10%;
-    left: -5%;
+    left: -20%;
     fill: #4b4747ad;
-    width: 80vmax;
+    width: 85vmax;
     z-index: -0.1;
     opacity: 0.9;
-    animation: move 9s linear alternate-reverse infinite;
+    transform: scale(0.8, 0.8) translate(0vw, 0vh) rotate(360deg);
     transform-origin: 50% 50%;
   }
-
-  @-webkit-keyframes move {
-    0% {
-      transform: scale(1, 0.4) translate(0vw, 0vh) rotate(30deg);
-      opacity: 0.3;
-    }
-
-    100% {
-      transform: scale(0.8, 0.6) translate(0vw, 0vh) rotate(360deg);
-      opacity: 0.8;
-    }
-  }
-
-  @keyframes move {
-    0% {
-      transform: scale(1, 0.4) translate(0vw, 0vh) rotate(30deg);
-      opacity: 0.3;
-    }
-
-    100% {
-      transform: scale(0.8, 0.6) translate(0vw, 0vh) rotate(360deg);
-      opacity: 0.8;
-    }
-  }
 }
+
 @media screen and (max-width: 520px) {
   .hero_background {
     background: none;
   }
   .blob {
     position: absolute;
-    top: 15%;
-    left: -15%;
-    fill: #a70000ad;
+    top: 0%;
+    left: -30%;
+    fill: #626060ad;
     min-height: 100vh;
     z-index: -0.1;
     opacity: 0.9;
-    animation: move 9s linear alternate-reverse 1;
     transform-origin: 50% 50%;
-    background-image: var(--colored-bg-image);
+    transform: scale(0.9, 0.8) translate(0vw, 10vh) rotate(250deg);
   }
 
-  @-webkit-keyframes move {
-    0% {
-      all: unset;
-    }
-
-    100% {
-      all: unset;
-    }
-  }
-
-  @keyframes move {
-    0% {
-      all: unset;
-    }
-
-    100% {
-      all: unset;
-    }
-  }
   svg .dark-shadow {
     -webkit-filter: drop-shadow(1px 3px 3px rgb(0, 0, 0));
     filter: drop-shadow(1px 3px 3px rgb(0, 0, 0));

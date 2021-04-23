@@ -19,8 +19,9 @@ Variables
 
   /* scroll track and thumb colors */
   --shadow: #1f3746;
-  --scrollbarBG: rgb(255, 0, 0);
+  --scrollbarBG: rgb(44, 13, 13);
   --thumbBG: #1d1b35;
+  --thumb-bg: rgb(128, 80, 80);
   /* dark shades of primary color*/
   --clr-primary-1: hsl(7, 64%, 22%);
   --clr-primary-2: hsl(43, 77%, 27%);
@@ -110,14 +111,14 @@ html {
   transition: var(--transition);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
+  background-color: var(--thumb-bg);
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
 body {
   scrollbar-width: thin;
-  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  scrollbar-color: var(--thumb-bg) var(--scrollbarBG);
 }
 ul {
   list-style-type: none;
@@ -582,8 +583,7 @@ Hero
   min-height: 100vh;
 }
 .hero_background {
-  background-blend-mode: difference;
-  background: linear-gradient(var(--main-black-bg), var(--main-black-bg)),
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
     url("/images/nature2.jpeg") center/cover no-repeat fixed;
 }
 .hero-center {
