@@ -14,8 +14,8 @@ Variables
 :root {
   /* black background */
   --black-bg-image: linear-gradient(to right, #200909 100%, black 100%);
-  --colored-bg-image: linear-gradient(to right, #000000 0%, #000000 100%);
-  /* --colored-bg-image: linear-gradient(60deg, #29323c 0%, #485563 100%); */
+  --colored-bg-image: linear-gradient(to right, #a03737 0%, #2926c7 100%);
+  --main-black-bg: #1d1b1b;
 
   /* scroll track and thumb colors */
   --shadow: #1f3746;
@@ -94,7 +94,7 @@ body {
 }
 .whole_body {
   opacity: 0;
-  background-image: var(--colored-bg-image);
+  background: var(--main-black-bg);
 }
 
 html {
@@ -110,7 +110,6 @@ html {
   transition: var(--transition);
 }
 ::-webkit-scrollbar-thumb {
-  box-shadow: 0px -100vh 0 100vh var(--shadow), 0 0 15px 5px rgb(0, 0, 0);
   background-color: darkgrey;
   -webkit-transition: var(--transition);
   transition: var(--transition);
@@ -584,7 +583,7 @@ Hero
 }
 .hero_background {
   background-blend-mode: difference;
-  background: linear-gradient(rgba(28, 6, 153, 0.5), rgba(71, 29, 29, 0.5)),
+  background: linear-gradient(var(--main-black-bg), var(--main-black-bg)),
     url("/images/nature2.jpeg") center/cover no-repeat fixed;
 }
 .hero-center {
@@ -613,8 +612,9 @@ Hero
 .hero-btn {
   position: relative;
   margin-top: 1.25rem;
+  width: 230px;
   box-shadow: var(--btn-shadow);
-  outline: 1px solid var(--clr-red);
+  outline: 1px solid var(--clr-white);
   outline-offset: 5px;
 }
 .hero-btn:hover {
@@ -636,7 +636,6 @@ Hero
   left: 0;
   transition: var(--transition);
   z-index: -1;
-  background-image: linear-gradient(rgba(250, 18, 18, 0.5), rgb(0, 0, 0, 0.5));
   animation: slide-gb-white-crl infinite alternate-reverse forwards 2s;
 }
 .hero-btn:hover:before {
@@ -711,8 +710,7 @@ Hero
     top: 2rem;
     right: -3rem;
     background-blend-mode: lighten;
-    background: linear-gradient(rgba(28, 6, 153, 0.5), rgba(71, 29, 29, 0.5)),
-      url("/images/nature2.jpeg") center/cover no-repeat fixed;
+    background: linear-gradient(rgba(28, 6, 153, 0.5), rgba(71, 29, 29, 0.5));
     -webkit-backdrop-filter: var(--backdrop-heavy);
     backdrop-filter: var(--backdrop-heavy);
     transition: var(--transition);
@@ -868,7 +866,7 @@ Services
   transition: var(--transition);
   -webkit-backdrop-filter: var(--backdrop-heavy);
   backdrop-filter: var(--backdrop-heavy);
-  background: var(--colored-bg-image);
+  background: var(--main-black-bg);
   box-shadow: 5px 5px 5px 1px #000000;
 }
 
@@ -1079,13 +1077,15 @@ Connect
   border-radius: 0.5rem;
   transition: var(--transition);
   box-shadow: 5px 5px 20px 1px #000000;
-  background-image: var(--colored-bg-image);
+  background: var(--main-black-bg);
+  outline: 2px solid transparent;
+  outline-offset: 0;
 }
 
 .video-banner:hover {
   transition: var(--transition);
-  -webkit-filter: grayscale(40%);
-  filter: grayscale(40%);
+  outline: 2px solid var(--clr-white);
+  outline-offset: -2rem;
 }
 .video-banner a {
   -webkit-backdrop-filter: var(--backdrop-heavy);
@@ -1127,8 +1127,7 @@ Skills
 
 .skills_background {
   background-blend-mode: color;
-  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-    url("/images/nature2.jpeg") center/cover no-repeat fixed;
+  background: var(--main-black-bg);
 }
 .skills h3 {
   margin: 1.5rem 0;
@@ -1285,8 +1284,9 @@ Blog
   background: var(--clr-grey-8);
 }
 .teminalial_image {
-  background-blend-mode: darken;
-  background: linear-gradient(rgba(21, 26, 71, 0.5), rgba(14, 21, 39, 0.5)),
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/images/team1.jpg") top/cover no-repeat fixed;
 }
 .card {
@@ -1316,7 +1316,6 @@ Blog
   transform-style: preserve-3d;
 }
 .card-back {
-  background-image: var(--colored-bg-image);
   transform: rotateY(180deg);
   display: grid;
   color: var(--clr-white);
@@ -1375,6 +1374,8 @@ Blog
   transform-style: preserve-3d;
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
+  -webkit-filter: contrast(100%);
+  filter: contrast(100%);
 }
 .card-info p {
   color: var(--clr-grey-1);
@@ -1514,7 +1515,7 @@ Products Page
   font-size: 16px;
   outline: none;
   z-index: 200;
-  color: var(--clr-white);
+  color: var(--main-black-bg);
   cursor: pointer;
   padding: 15px;
   border-radius: 50%;
@@ -1535,8 +1536,9 @@ Products Page
   color: var(--text-color);
   letter-spacing: 2px;
   transition: 0.5s;
-  background: #360906;
+  background: var(--clr-white);
   border: 1px solid transparent;
+  box-shadow: inset 2px 2px 13px var(--main-black-bg);
 }
 
 .btn-container {
@@ -1566,7 +1568,7 @@ Products Page
 .pulsing::before {
   content: "";
   font-family: "Times New Roman", Times, serif;
-  border: 1.8px solid rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
   height: 100%;
   width: 100%;
   z-index: -5;
@@ -1576,7 +1578,7 @@ Products Page
 .pulsing::after {
   content: "";
   font-family: "Times New Roman", Times, serif;
-  border: 3px solid rgb(255, 255, 255);
+  border: 7px solid rgb(255, 255, 255);
   height: 100%;
   width: 100%;
   z-index: -5;
@@ -1599,7 +1601,7 @@ Products Page
 @keyframes pulse {
   0% {
     transform: scale(0.3);
-    opacity: 0.3;
+    opacity: 1;
   }
 
   100% {
@@ -1623,7 +1625,7 @@ Products Page
 @keyframes pulse2 {
   0% {
     transform: scale(0.4);
-    opacity: 0.3;
+    opacity: 0.7;
   }
 
   100% {
@@ -1654,7 +1656,6 @@ Products Page
 .pulsing:hover .fas {
   transform: rotateY(180deg);
   transition: var(--transition);
-  color: var(--clc-green);
 }
 
 /* ===================================================== */
@@ -1666,7 +1667,7 @@ Products Page
   justify-content: space-between;
   margin: auto;
   background-blend-mode: multiply;
-  background: var(--black-bg-image);
+  background: var(--main-black-bg);
 }
 
 .footer-name h5,
