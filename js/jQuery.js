@@ -50,12 +50,20 @@ function all_jQuery_functionality() {
   $(document).ready(function () {
     $("#myBtn").removeClass("hide");
 
+    $("#nav").slideDown("1000", function () {
+      $(this).addClass("navbar-fixed").css({
+        top: "0%",
+      });
+    });
+
     // Onload clear screen.
 
-    $(".whole_body").animate({
-      opacity: "1",
-    }, 6000);
-
+    $(".whole_body").css(
+      {
+        filter: "unset",
+      },
+      6000
+    );
 
     // handle side meny removal.
     const removeMenu = () => {

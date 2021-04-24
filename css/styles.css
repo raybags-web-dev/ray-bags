@@ -94,8 +94,8 @@ body {
   overflow-x: hidden;
 }
 .whole_body {
-  opacity: 0;
-  background: var(--main-black-bg);
+  -webkit-filter: blur(100px);
+  filter: blur(100px);
 }
 
 html {
@@ -619,56 +619,7 @@ Hero
   outline: 1px solid var(--clr-white);
   outline-offset: 10px;
   background: var(--clr-white);
-  color: var(--main-black-bg);
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
-}
-
-.hero-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  transition: var(--transition);
-  z-index: -1;
-  animation: slide-gb-white-crl infinite alternate-reverse forwards 2s;
-}
-.hero-btn:hover:before {
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
-}
-
-@-webkit-keyframes slide-gb-white-crl {
-  0% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(2.2);
-  }
-  75% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
-@keyframes slide-gb-white-crl {
-  0% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(2.2);
-  }
-  75% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1.1);
-  }
+  color: var(--main-black-bg) !important;
 }
 
 .about-info a {
@@ -1806,6 +1757,15 @@ Products Page
   font-size: 1.7rem;
   min-width: 300px;
   min-height: 65vh;
+}
+/* hero btn placement on small screen. */
+@media screen and (max-width: 574px) {
+  .hero-info .hero-btn {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, 70%);
+  }
 }
 @media screen and (max-width: 600px) {
   .about-info a {
