@@ -618,8 +618,8 @@ Hero
 .hero-btn:hover {
   outline: 1px solid var(--clr-white);
   outline-offset: 10px;
-  background: rgb(133, 6, 6);
-  color: var(--clr-white);
+  background: var(--clr-white);
+  color: var(--main-black-bg);
   -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
