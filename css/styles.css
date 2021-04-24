@@ -449,9 +449,7 @@ Navbar
   transition: var(--transition);
   z-index: 100;
   box-shadow: var(--dark-shadow);
-  -webkit-backdrop-filter: var(--backdrop-heavy);
-  backdrop-filter: var(--backdrop-heavy);
-  transition: var(--transition);
+  background: var(--main-black-bg);
 }
 /*
 =============== 
@@ -1808,4 +1806,11 @@ Products Page
   font-size: 1.7rem;
   min-width: 300px;
   min-height: 65vh;
+}
+@media screen and (max-width: 600px) {
+  .about-info a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
