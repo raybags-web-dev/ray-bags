@@ -83,7 +83,7 @@ Global Styles
 }
 body {
   font-family: var(--ff-secondary);
-  background-image: var(--black-bg-image);
+  background: var(--main-black-bg);
   color: var(--clr-white);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -584,6 +584,7 @@ Hero
   background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
     url("/images/nature2.jpeg") center/cover no-repeat fixed;
 }
+
 .hero-center {
   min-height: calc(100vh - 5rem);
   display: grid;
@@ -659,7 +660,7 @@ Hero
     top: 2rem;
     right: -3rem;
     background-blend-mode: lighten;
-    background: linear-gradient(rgba(28, 6, 153, 0.5), rgba(71, 29, 29, 0.5));
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(65, 7, 7, 0.5));
     -webkit-backdrop-filter: var(--backdrop-heavy);
     backdrop-filter: var(--backdrop-heavy);
     transition: var(--transition);
@@ -708,6 +709,7 @@ Hero
   outline: 0px solid var(--clr-white);
   transition: var(--transition);
 }
+
 .hero-photo:hover {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
@@ -1306,6 +1308,8 @@ Blog
 }
 .card:hover .card-back {
   transform: rotateY(0);
+  background: var(--main-black-bg);
+  filter: grayscale(0%) !important;
 }
 /* rest of the styles */
 .card-info {
