@@ -43,9 +43,7 @@ function closeNavBar(closeNavBTN, nav) {
     nav.classList.remove("show-sidebar");
   });
 }
-// ============ vanilla JS ==================
-
-// General jQuery function.
+// General jQuery handler.
 function all_jQuery_functionality() {
   $(document).ready(function () {
     $("#myBtn").removeClass("hide");
@@ -319,10 +317,19 @@ function all_jQuery_functionality() {
         $("#myBtn").css({ right: "-20%", transition: "1000ms" });
       }
     }
+
+    // hide show scroll down  arrow on scroll
+    function showHideDownArrow() {
+      if ($(window).scrollTop() <= 100) {
+        $("#down_arrow").removeClass("hide");
+      } else {
+        $("#down_arrow").addClass("hide");
+      }
+    }
     // run functions on scroll, resize and screenorientation
     // functions running on document scroll
     $(document).on("scroll", () => {
-      removeMenu(), showHideTopBtn();
+      removeMenu(), showHideTopBtn(), showHideDownArrow();
     });
     // functions running on window scroll
     $(window).on("scroll", () => {
@@ -334,11 +341,11 @@ function all_jQuery_functionality() {
     });
     // functions running on window resize
     $(window).on("resize", () => {
-      removeMenu(), showHideTopBtn();
+      removeMenu(), showHideTopBtn(), showHideDownArrow();
     });
     // functions running on window orientationChange
     $(window).on("orientationChange", () => {
-      removeMenu(), showHideTopBtn();
+      removeMenu(), showHideTopBtn(), showHideDownArrow();
     });
     // functions running on window load
     $(window).on("load", () => {
