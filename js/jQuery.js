@@ -299,13 +299,8 @@ function all_jQuery_functionality() {
 
     // smooth scrolling with back to top btn handler
     $("#myBtn").on("click", function () {
-      $("#top_button").slideUp();
-
-      setInterval(() => {
-        $("#top_button").slideDown();
-      }, 3000);
       let target = $("body, html");
-      $("body, html").animate({ scrollTop: $(target).offset().top }, 1500);
+      $("body, html").animate({ scrollTop: $(target).offset().top }, 1800);
     });
 
     // smooth scrolling with logo image handler

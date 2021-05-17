@@ -605,7 +605,7 @@ Hero
   align-items: center;
   font-size: 1.8rem;
   padding: 0.7rem;
-  bottom: 9%;
+  bottom: 11%;
   color: var(--clr-red);
   transition: var(--transition);
   transform: translate(10%, 100%);
@@ -632,20 +632,20 @@ Hero
     opacity: 0.7;
   }
   25% {
-    top: 50px;
+    top: 60px;
     opacity: 0.3;
   }
   50% {
-    top: 50px;
+    top: 60px;
     opacity: 0.3;
   }
   75% {
-    top: 50px;
+    top: 60px;
     opacity: 0.1;
     color: transparent;
   }
   100% {
-    top: 50px;
+    top: 60px;
     opacity: 0.1;
     color: transparent;
   }
@@ -657,20 +657,20 @@ Hero
     opacity: 0.7;
   }
   25% {
-    top: 50px;
+    top: 60px;
     opacity: 0.3;
   }
   50% {
-    top: 50px;
+    top: 60px;
     opacity: 0.3;
   }
   75% {
-    top: 50px;
+    top: 60px;
     opacity: 0.1;
     color: transparent;
   }
   100% {
-    top: 50px;
+    top: 60px;
     opacity: 0.1;
     color: transparent;
   }
@@ -1052,6 +1052,23 @@ Projects
   .project-4 {
     grid-area: d;
   }
+  .arrows-container {
+    position: absolute;
+    display: flex;
+    width: 30px;
+    height: 60px;
+    background: transparent;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    padding: 0.7rem;
+    bottom: 8%;
+    color: var(--clr-red);
+    transition: var(--transition);
+    transform: translate(10%, 100%);
+    overflow: hidden;
+  }
 }
 .in-line-contact {
   text-decoration: underline;
@@ -1154,6 +1171,23 @@ Skills
     grid-template-columns: 1fr 1fr;
     -moz-column-gap: 2rem;
     column-gap: 2rem;
+  }
+  .arrows-container {
+    position: absolute;
+    display: flex;
+    width: 30px;
+    height: 60px;
+    background: transparent;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    padding: 0.7rem;
+    bottom: 8%;
+    color: var(--clr-red);
+    transition: var(--transition);
+    transform: translate(10%, 100%);
+    overflow: hidden;
   }
 }
 .section-title h2 {
@@ -1714,13 +1748,7 @@ Products Page
   transition: var(--transition);
 }
 
-.slide-in-top-arrow {
-  transform: translate(10%, -100%) !important;
-  opacity: 0.1 !important;
-  transition: var(--transition);
-}
-
-/* ===================================================== */
+/* ================== Footer  ======================== */
 
 .footer {
   height: 100%;
