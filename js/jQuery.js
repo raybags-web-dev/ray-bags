@@ -19,7 +19,7 @@ function handleInnerScroll(targetBTN, targetSection) {
 
     // Scroll certain amounts from current position
     window.scrollBy({
-      top: 100, // could be negative value
+      top: 100,
       left: 0,
       behavior: "smooth",
     });
@@ -63,7 +63,7 @@ function all_jQuery_functionality() {
       6000
     );
 
-    // handle side meny removal.
+    // handle side nav removal.
     const removeMenu = () => {
       $(".sidebar-links a").each(function () {
         $(this).on("click", function () {
@@ -299,6 +299,11 @@ function all_jQuery_functionality() {
 
     // smooth scrolling with back to top btn handler
     $("#myBtn").on("click", function () {
+      $("#top_button").slideUp();
+
+      setInterval(() => {
+        $("#top_button").slideDown();
+      }, 3000);
       let target = $("body, html");
       $("body, html").animate({ scrollTop: $(target).offset().top }, 1500);
     });
@@ -322,8 +327,10 @@ function all_jQuery_functionality() {
     function showHideDownArrow() {
       if ($(window).scrollTop() <= 100) {
         $("#down_arrow").removeClass("hide");
+        $("#down_arrow2").removeClass("hide");
       } else {
         $("#down_arrow").addClass("hide");
+        $("#down_arrow2").addClass("hide");
       }
     }
     // run functions on scroll, resize and screenorientation

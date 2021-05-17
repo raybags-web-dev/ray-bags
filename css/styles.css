@@ -607,12 +607,18 @@ Hero
   padding: 0.7rem;
   bottom: 9%;
   color: var(--clr-red);
-  opacity: 0.7;
   transition: var(--transition);
   transform: translate(10%, 100%);
   overflow: hidden;
 }
 .arrow1 {
+  position: relative;
+  top: 10px;
+  transition: var(--transition);
+  -webkit-animation: moveDown2 infinite linear forwards 1s;
+  animation: moveDown2 infinite linear forwards 1s;
+}
+.arrow2 {
   position: relative;
   top: 10px;
   transition: var(--transition);
@@ -1604,8 +1610,8 @@ Products Page
   height: 100%;
   width: 100%;
   z-index: -5;
-  -webkit-animation: pulse infinite 2s forwards ease-in-out;
-  animation: pulse infinite 1s forwards ease-in-out;
+  -webkit-animation: pulse infinite 3s forwards ease-in-out;
+  animation: pulse infinite 3s forwards ease-in-out;
 }
 .pulsing::after {
   content: "";
@@ -1614,14 +1620,18 @@ Products Page
   height: 100%;
   width: 100%;
   z-index: -5;
-  -webkit-animation: pulse2 infinite 2s forwards ease-in-out;
-  animation: pulse2 infinite 1s forwards ease-in-out;
+  -webkit-animation: pulse2 infinite 3s forwards ease-in-out;
+  animation: pulse2 infinite 3s forwards ease-in-out;
 }
 
 @-webkit-keyframes pulse {
   0% {
     transform: scale(0.3);
     opacity: 0.3;
+  }
+  50% {
+    transform: scale(0.3);
+    opacity: 0;
   }
 
   100% {
@@ -1635,6 +1645,10 @@ Products Page
     transform: scale(0.3);
     opacity: 1;
   }
+  50% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
 
   100% {
     transform: scale(1.5);
@@ -1647,6 +1661,10 @@ Products Page
     transform: scale(0.4);
     opacity: 0.3;
   }
+  50% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
 
   100% {
     transform: scale(1.7);
@@ -1656,6 +1674,10 @@ Products Page
 
 @keyframes pulse2 {
   0% {
+    transform: scale(0.4);
+    opacity: 0.7;
+  }
+  50% {
     transform: scale(0.4);
     opacity: 0.7;
   }
@@ -1683,10 +1705,18 @@ Products Page
   transition: unset;
 }
 .pulsing .fas {
+  transform: translate(10%, 0%);
   transition: var(--transition);
+  opacity: 1;
 }
 .pulsing:hover .fas {
-  transform: rotateY(180deg);
+  color: var(--main-black-bg);
+  transition: var(--transition);
+}
+
+.slide-in-top-arrow {
+  transform: translate(10%, -100%) !important;
+  opacity: 0.1 !important;
   transition: var(--transition);
 }
 
