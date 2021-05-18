@@ -614,7 +614,14 @@ Hero
   transform-style: preserve-3d;
   transition: var(--transition);
   transform: rotateY(360deg);
+  -webkit-animation: rotateScene infinite var(--rotateSpeed) alternate paused;
   animation: rotateScene infinite var(--rotateSpeed) alternate paused;
+}
+@-webkit-keyframes rotateScene {
+  to {
+    transform: rotateY(360deg);
+    border-radius: 50%;
+  }
 }
 @keyframes rotateScene {
   to {
