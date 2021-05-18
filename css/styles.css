@@ -67,6 +67,7 @@ Variables
   --level-one: translateZ(2rem);
   --level-two: translateZ(3rem);
   --level-three: translateZ(4rem);
+  --rotateSpeed: 25s;
 }
 /*
 =============== 
@@ -116,10 +117,6 @@ html {
   transition: var(--transition);
 }
 
-body {
-  scrollbar-width: thin;
-  scrollbar-color: var(--thumb-bg) var(--scrollbarBG);
-}
 ul {
   list-style-type: none;
 }
@@ -579,10 +576,43 @@ Hero
 }
 .hero {
   min-height: 100vh;
+  perspective: 10em;
+  perspective-origin: 50% calc(50% - 2em);
 }
 .hero_background {
   background-origin: padding-box;
   background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5));
+}
+/* 3D floor */
+.scene {
+  position: absolute;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -2;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.502) 100%);
+}
+
+.floor {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(#0000, #000 60%),
+    repeating-conic-gradient(
+      from 45deg,
+      #111 0deg 90deg,
+      #00000080 90deg 180deg
+    );
+  z-index: -1;
+  background-size: 100%, 1em 1em;
+  transform: translate(0%, 0%) rotateX(90deg);
+  transform-style: preserve-3d;
+  transition: var(--transition);
+  transform: rotateY(235deg);
 }
 
 .hero-center {

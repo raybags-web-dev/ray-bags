@@ -323,9 +323,16 @@ function all_jQuery_functionality() {
       if ($(window).scrollTop() <= 100) {
         $("#down_arrow").removeClass("hide");
         $("#down_arrow2").removeClass("hide");
+        // move 3D background on scroll
+        $(".floor").css({
+          transform: "rotateY(235deg)",
+          "background-size": "100%, 3em 3em",
+        });
       } else {
         $("#down_arrow").addClass("hide");
         $("#down_arrow2").addClass("hide");
+        // move 3D background on scroll
+        $(".floor").css({ transform: "rotateX(180deg)" });
       }
     }
     // run functions on scroll, resize and screenorientation
