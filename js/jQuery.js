@@ -327,12 +327,19 @@ function all_jQuery_functionality() {
         $(".floor").css({
           transform: "rotateY(235deg)",
           "background-size": "100%, 3em 3em",
+          "animation-play-state": "paused",
+          transition: ".6s",
         });
+        $(".scene").css({ top: "0%" });
       } else {
         $("#down_arrow").addClass("hide");
         $("#down_arrow2").addClass("hide");
         // move 3D background on scroll
-        $(".floor").css({ transform: "rotateX(180deg)" });
+        $(".floor").css({
+          "animation-play-state": "running",
+          transition: ".6s",
+        });
+        $(".scene").css({ top: "-9%" });
       }
     }
     // run functions on scroll, resize and screenorientation
