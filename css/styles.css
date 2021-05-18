@@ -123,6 +123,14 @@ ul {
 a {
   text-decoration: none;
 }
+.hyperMeLink {
+  all: unset !important;
+  color: var(--clr-red);
+  cursor: pointer !important;
+}
+.hyperMeLink:hover {
+  color: blue;
+}
 img:not(.nav-logo) {
   width: 100%;
   display: block;
@@ -764,6 +772,22 @@ Hero
   background: var(--clr-white);
   color: var(--clr-primary-1) !important;
   outline-offset: 6px;
+}
+.flash-abtMe {
+  background: transparent;
+  color: var(--clr-white) !important;
+  animation: flashAbtME 3 linear 0.3s;
+}
+
+@keyframes flashAbtME {
+  0% {
+    background: #000000;
+    color: #ffffff !important;
+  }
+  100% {
+    background: #ffffff;
+    color: #000000 !important;
+  }
 }
 .about-info a:hover {
   color: var(--clr-primary-1) !important;

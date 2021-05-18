@@ -54,6 +54,16 @@ function all_jQuery_functionality() {
       });
     });
 
+    // flash skill button link handler
+
+    $(".hyperMeLink").on("click", function (e) {
+      e.preventDefault();
+      $("#mySkills").addClass("flash-abtMe");
+      setTimeout(() => {
+        $("#mySkills").removeClass("flash-abtMe");
+      }, 1000);
+    });
+
     // Onload clear screen.
 
     $(".whole_body").css(
