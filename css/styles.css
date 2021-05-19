@@ -1534,15 +1534,23 @@ Blog
 .card-info h4 {
   color: var(--clr-primary-4);
 }
-.card-front img {
-  height: 13rem;
+.card-front .testimonial_individual_image {
+  height: 10rem;
+  width: 10rem;
+  margin: auto;
   -o-object-fit: cover;
   object-fit: cover;
+  padding: 0.5rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+  border: 0.1rem solid transparent;
+  background: linear-gradient(rgba(51, 51, 51, 0.5), rgba(65, 59, 59, 0.5));
+  box-shadow: inset 3px -4px 1px rgba(247, 9, 9, 0.5);
   transform-style: preserve-3d;
-  border-top-left-radius: var(--radius);
-  border-top-right-radius: var(--radius);
   -webkit-filter: contrast(100%);
   filter: contrast(100%);
+  border-radius: 50%;
+  transition: var(--transition);
 }
 .card-info p {
   color: var(--clr-white);
