@@ -479,9 +479,9 @@ Sidebar
 /* toggle sidebar */
 .show-sidebar {
   transform: translateX(0);
-  background: transparent;
+  /* background: transparent; */
   -webkit-backdrop-filter: var(--backdrop-light);
-  backdrop-filter: var(--backdrop-light);
+  backdrop-filter: var(--backdrop-heavy) !important;
   z-index: 999;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
@@ -493,10 +493,10 @@ Sidebar
   height: 90vh;
   width: 70vw;
   overflow: hidden;
-  padding: 0.8rem;
-  /* min-width: 270px; */
+  /* padding: 0.8rem;
+  min-width: 270px;
   border-radius: 4rem !important;
-  box-shadow: inset 0 0 14px rgba(179, 117, 117, 0.5);
+  box-shadow: inset 0 0 14px rgba(179, 117, 117, 0.5); */
 }
 .sidebar-links a {
   position: relative;
@@ -1938,7 +1938,7 @@ Blog
 @media screen and (max-width: 574px) {
   .hero-info .hero-btn {
     position: absolute;
-    top: 70%;
+    top: 70% !important;
     left: 50%;
     transform: translate(-50%, 70%);
   }
