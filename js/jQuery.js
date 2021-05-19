@@ -1,5 +1,6 @@
 "use strict";
 // =======vanilla JS ==========
+
 // coppyright year handler
 const copyRightYear = function (element) {
   const current_year = new Date().getFullYear();
@@ -31,13 +32,13 @@ function handleInnerScroll(targetBTN, targetSection) {
   });
 }
 
-// Open nav bar handler
+// Open navbar handler
 function openNavBar(openNavBTN, nav) {
   openNavBTN.addEventListener("click", function () {
     nav.classList.add("show-sidebar");
   });
 }
-// Open nav bar handler
+// close navbar handler
 function closeNavBar(closeNavBTN, nav) {
   closeNavBTN.addEventListener("click", function () {
     nav.classList.remove("show-sidebar");
@@ -54,8 +55,16 @@ function all_jQuery_functionality() {
       });
     });
 
-    // Onload clear screen.
+    // flash skill button link handler
+    $(".hyperMeLink").on("click", function (e) {
+      e.preventDefault();
+      $("#mySkills").addClass("flash-abtMe");
+      setTimeout(() => {
+        $("#mySkills").removeClass("flash-abtMe");
+      }, 1000);
+    });
 
+    // Onload clear screen.
     $(".whole_body").css(
       {
         filter: "unset",
@@ -63,7 +72,7 @@ function all_jQuery_functionality() {
       6000
     );
 
-    // handle side nav removal.
+    // handle side nav removal if individual nav links are clicked.
     const removeMenu = () => {
       $(".sidebar-links a").each(function () {
         $(this).on("click", function () {
