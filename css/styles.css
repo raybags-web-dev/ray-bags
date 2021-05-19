@@ -483,8 +483,7 @@ Sidebar
   -webkit-backdrop-filter: var(--backdrop-light);
   backdrop-filter: var(--backdrop-light);
   z-index: 999;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(66, 23, 23, 0.5)),
-    url("/images/team3.jpg") bottom/cover no-repeat fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 .sidebar-links {
   display: flex;
@@ -494,16 +493,23 @@ Sidebar
   height: 90vh;
   width: 70vw;
   overflow: hidden;
+  padding: 0.8rem;
+  min-width: 270px;
+  border-radius: 4rem !important;
+  box-shadow: inset 0 0 14px rgba(179, 117, 117, 0.5);
 }
 .sidebar-links a {
   position: relative;
   font-size: 2rem;
+  min-width: 100%;
   text-transform: capitalize;
   transition: var(--transition);
   color: var(--clr-grey-4);
   letter-spacing: var(--spacing);
   display: inline-block;
   margin-bottom: 1.5rem;
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
   color: var(--clr-white);
 }
 
@@ -728,12 +734,16 @@ Hero
     color: transparent;
   }
 }
+.hero-info {
+  transform-style: preserve-3d;
+}
 
 .hero-info h4 {
+  display: flex;
+  flex-wrap: wrap;
   color: var(--clr-white);
   color: red;
   opacity: 0.7 !important;
-  font-style: italic;
   transition: var(--transition);
 }
 .hero-info h1 {
@@ -776,7 +786,19 @@ Hero
 .flash-abtMe {
   background: transparent;
   color: var(--clr-white) !important;
+  -webkit-animation: flashAbtME 3 linear 0.3s;
   animation: flashAbtME 3 linear 0.3s;
+}
+
+@-webkit-keyframes flashAbtME {
+  0% {
+    background: #000000;
+    color: #ffffff !important;
+  }
+  100% {
+    background: #ffffff;
+    color: #000000 !important;
+  }
 }
 
 @keyframes flashAbtME {
@@ -1439,6 +1461,7 @@ Blog
   transform-style: preserve-3d;
   background: transparent;
   overflow: hidden;
+  -webkit-backdrop-filter: blur(100px);
   backdrop-filter: blur(100px);
 }
 
