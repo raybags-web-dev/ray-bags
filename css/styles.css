@@ -1059,6 +1059,66 @@ Projects
   margin-bottom: 2rem;
   box-shadow: -5px 5px 15px 1px #000000;
 }
+.project .box-1,
+.box-2,
+.box-3,
+.box-4 {
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  border: 2px solid var(--clr-white);
+  transition: var(--transition);
+  opacity: 0.7;
+}
+.box-1 {
+  left: 3%;
+  top: 3%;
+  border-right: 0 solid transparent !important;
+  border-bottom: 0 solid transparent !important;
+  border-top-left-radius: 0.3rem;
+  transition: var(--transition);
+}
+.box-2 {
+  right: 3%;
+  top: 3%;
+  border-bottom: 0 solid transparent;
+  border-left: 0 solid transparent;
+  border-top-right-radius: 0.3rem;
+  transition: var(--transition);
+}
+.box-3 {
+  left: 3%;
+  bottom: 3%;
+  border-top: 0 solid transparent;
+  border-right: 0 solid transparent;
+  border-bottom-left-radius: 0.3rem;
+  transition: var(--transition);
+}
+.box-4 {
+  right: 3%;
+  bottom: 3%;
+  border-top: 0 solid transparent;
+  border-left: 0 solid transparent;
+  border-bottom-right-radius: 0.3rem;
+  transition: var(--transition);
+}
+.project:hover .box-1 {
+  left: 20%;
+  top: 20%;
+}
+.project:hover .box-2 {
+  right: 20%;
+  top: 20%;
+}
+.project:hover .box-3 {
+  left: 20%;
+  bottom: 20%;
+}
+.project:hover .box-4 {
+  right: 20%;
+  bottom: 20%;
+}
+
 .project-info {
   text-align: center;
   color: var(--clr-white);
