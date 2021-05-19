@@ -479,7 +479,6 @@ Sidebar
 /* toggle sidebar */
 .show-sidebar {
   transform: translateX(0);
-  /* background: transparent; */
   -webkit-backdrop-filter: var(--backdrop-light);
   backdrop-filter: var(--backdrop-heavy) !important;
   z-index: 999;
@@ -493,10 +492,10 @@ Sidebar
   height: 90vh;
   width: 70vw;
   overflow: hidden;
-  /* padding: 0.8rem;
+  padding: 0.8rem;
   min-width: 270px;
   border-radius: 4rem !important;
-  box-shadow: inset 0 0 14px rgba(179, 117, 117, 0.5); */
+  box-shadow: inset 0 0 14px rgba(179, 117, 117, 0.5);
 }
 .sidebar-links a {
   position: relative;
