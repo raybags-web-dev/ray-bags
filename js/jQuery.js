@@ -39,7 +39,6 @@ function openNavBar(openNavBTN, nav) {
     function () {
       nav.classList.add("show-sidebar");
     },
-    true
   );
 }
 // close navbar handler
