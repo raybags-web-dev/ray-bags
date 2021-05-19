@@ -34,9 +34,13 @@ function handleInnerScroll(targetBTN, targetSection) {
 
 // Open navbar handler
 function openNavBar(openNavBTN, nav) {
-  openNavBTN.addEventListener("click", function () {
-    nav.classList.add("show-sidebar");
-  });
+  openNavBTN.addEventListener(
+    "click",
+    function () {
+      nav.classList.add("show-sidebar");
+    },
+    true
+  );
 }
 // close navbar handler
 function closeNavBar(closeNavBTN, nav) {
