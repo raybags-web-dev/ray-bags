@@ -490,12 +490,11 @@ Sidebar
   justify-content: space-around;
   text-align: center;
   height: 90vh;
-  width: 70vw;
+  width: 80vw;
   overflow: hidden;
-  padding: 0.8rem;
+  margin: auto;
+  padding-top: 1rem;
   min-width: 270px;
-  border-radius: 4rem !important;
-  box-shadow: inset 0 0 14px rgba(179, 117, 117, 0.5);
 }
 .sidebar-links a {
   position: relative;
@@ -508,8 +507,11 @@ Sidebar
   display: inline-block;
   margin-bottom: 1.5rem;
   -webkit-backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
   backdrop-filter: blur(100px);
   color: var(--clr-white);
+  box-shadow: inset 2px 0 14px rgba(0, 0, 0, 0.5);
+  margin: auto;
 }
 
 .sidebar-links a::before {
