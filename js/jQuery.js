@@ -128,6 +128,12 @@ function all_jQuery_functionality() {
           let percentage_value = $(percentile);
           let value = percentile_limit;
 
+          // rotate testimonial background if in viewport
+          // $(".teminalial_image").css({
+          //   "background-image":
+          //     "repeating-conic-gradient(from 45deg, #111 0deg 90deg, #00000080 90deg 180deg)",
+          // });
+
           $({ percentage: 0 })
             .stop(true)
             .animate(
@@ -185,6 +191,11 @@ function all_jQuery_functionality() {
             opacity: "0",
             transition: delay,
           });
+          // rotate testimonial background if in viewport
+          // $(".teminalial_image").css({
+          //   "background-image":
+          //     "repeating-conic-gradient(from 0deg, #111 0deg 90deg, #00000080 90deg 180deg)",
+          // });
         }
       });
     }
