@@ -34,12 +34,9 @@ function handleInnerScroll(targetBTN, targetSection) {
 
 // Open navbar handler
 function openNavBar(openNavBTN, nav) {
-  openNavBTN.addEventListener(
-    "click",
-    function () {
-      nav.classList.add("show-sidebar");
-    },
-  );
+  openNavBTN.addEventListener("click", function () {
+    nav.classList.add("show-sidebar");
+  });
 }
 // close navbar handler
 function closeNavBar(closeNavBTN, nav) {
@@ -129,6 +126,10 @@ function all_jQuery_functionality() {
           // incremenet skill percentage value when in viewport
           let percentage_value = $(percentile);
           let value = percentile_limit;
+
+          $(".testimonial_individual_image").css({
+            "animation-play-state": "running",
+          });
 
           $({ percentage: 0 })
             .stop(true)
