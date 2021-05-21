@@ -1543,9 +1543,9 @@ Blog
   transition: var(--transition);
   background-image: radial-gradient(#0000, #1a1919 70%),
     repeating-conic-gradient(
-      from 0deg,
-      #111 0deg 90deg,
-      #00000080 250deg 180deg
+      from 360deg,
+      rgb(29, 27, 27) 90deg 90deg,
+      #80262680 250deg 180deg
     );
 }
 
