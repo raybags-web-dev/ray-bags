@@ -77,7 +77,7 @@ Global Styles
 }
 body {
   font-family: var(--ff-secondary);
-  background: var(--main-black-bg);
+  background: rgb(34, 33, 33);
   color: var(--clr-white);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -182,7 +182,8 @@ h4 {
 }
 p {
   margin-bottom: 1.25rem;
-  color: var(--clr-grey-5);
+  color: var(--clr-white);
+  opacity: 0.7;
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -404,7 +405,7 @@ Navbar
     transition: var(--transition);
     background-image: linear-gradient(
       to right,
-      var(var(--light-red)) 50%,
+      #da3737 50%,
       var(--clr-red) 100%
     );
     text-shadow: none;
@@ -627,8 +628,8 @@ Hero
   background-image: radial-gradient(#0000, #000 60%),
     repeating-conic-gradient(
       from 45deg,
-      #111 0deg 90deg,
-      #00000080 90deg 180deg
+      rgb(3, 3, 3) 0deg 90deg,
+      #4d1d1d80 90deg 180deg
     );
   z-index: -1;
   background-size: 100%, 1em 1em;
@@ -770,12 +771,14 @@ Hero
   box-shadow: var(--btn-shadow);
   outline: 1px solid var(--clr-white);
   outline-offset: 5px;
+  color: var(--clr-black) !important;
+  background: var(--clr-white);
 }
 .hero-btn:hover {
-  outline: 1px solid var(--clr-white);
+  outline: 1px solid var(--clr-red);
   outline-offset: 10px;
-  background: var(--clr-white);
-  color: var(--main-black-bg) !important;
+  background: var(--light-red);
+  color: var(--clr-white) !important;
 }
 
 .about-info a {
@@ -1293,6 +1296,7 @@ Connect
   color: var(--clr-white);
 }
 .video-banner {
+  position: relative;
   -webkit-backdrop-filter: var(--backdrop-heavy);
   backdrop-filter: var(--backdrop-heavy);
   padding: 3rem 5rem 5rem 5rem;
@@ -1300,15 +1304,16 @@ Connect
   border-radius: 0.5rem;
   transition: var(--transition);
   box-shadow: 5px 5px 20px 1px var(--clr-black);
-  background: var(--main-black-bg);
+  background: inset 0 -1px 10px #ffff;
   outline: 2px solid transparent;
   outline-offset: 0;
 }
 
 .video-banner:hover {
   transition: var(--transition);
-  outline: 2px solid var(--clr-white);
+  outline: 3px solid var(--clr-red);
   outline-offset: -2rem;
+  background: var(--main-black-bg);
 }
 .video-banner a {
   -webkit-backdrop-filter: var(--backdrop-heavy);
@@ -1319,6 +1324,16 @@ Connect
   background: var(--clr-white);
   outline: 1px solid var(--clr-white);
   outline-offset: 6px;
+}
+.video-banner:hover .box-2 {
+  right: 0;
+  top: 0;
+  border-top-right-radius: 0.4rem;
+}
+.video-banner:hover .box-3 {
+  border-bottom-left-radius: 0.4rem;
+  bottom: 0;
+  left: 0;
 }
 .connect {
   -webkit-clip-path: polygon(
@@ -1367,7 +1382,7 @@ Skills
 
 .skills_background {
   background-blend-mode: color;
-  background: var(--main-black-bg);
+  background: rgb(34, 33, 33);
 }
 .skills h3 {
   margin: 1.5rem 0;
@@ -1472,9 +1487,6 @@ Timeline
   color: var(--clr-white);
   opacity: 0.7;
 }
-.timeline h4 {
-  color: var(--clr-red);
-}
 .timeline-item:nth-child(even) {
   border-left: 2px dashed var(--clr-primary-5);
   border-top-left-radius: 2rem;
@@ -1525,7 +1537,7 @@ Blog
 .blog {
   justify-content: center;
   align-items: center;
-  background: var(--clr-grey-6);
+  background: rgb(34, 33, 33);
   transform-style: preserve-3d;
 }
 .teminalial_image {
@@ -1565,7 +1577,7 @@ Blog
 .card-front {
   background: var(--clr-white);
   transform-style: preserve-3d;
-  background: #00000080;
+  background: #2b2a2a80;
 }
 .card-back {
   transform: rotateY(180deg);
@@ -1573,6 +1585,7 @@ Blog
   color: var(--clr-white);
   place-items: center;
   transform-style: preserve-3d;
+  box-shadow: inset 0 -1px 10px #ffff;
 }
 .card-back .card-back-info {
   color: var(--clr-white);
