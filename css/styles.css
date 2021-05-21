@@ -31,10 +31,6 @@ Variables
   --clc-green: hsl(120, 100%, 25%);
   --clr-red: #ff0000;
   /* lighter shades of primary color */
-  --clr-primary-6: hsl(43, 89%, 70%);
-  --clr-primary-7: hsl(43, 90%, 76%);
-  --clr-primary-8: hsl(45, 86%, 81%);
-  --clr-primary-9: hsl(45, 90%, 88%);
   --clr-primary-10: hsl(45, 100%, 96%);
   /* darkest grey - used for headings */
   --clr-grey-1: hsl(209, 61%, 16%);
@@ -1502,7 +1498,7 @@ Timeline
   border-radius: 50%;
   display: grid;
   place-items: center;
-  color: var(--clr-primary-1);
+  color: var(--clr-white);
   font-weight: bold;
 }
 .timeline-item:nth-child(even) .number {
@@ -1917,6 +1913,9 @@ Blog
   text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.63);
   padding-bottom: 1rem;
 }
+.footer-link-header {
+  padding: 1rem;
+}
 
 .footer-name p {
   font-family: var(--ff-primary);
@@ -1929,6 +1928,12 @@ Blog
   text-shadow: 0 0px 2px #474747, 2px 2px 2px rgba(206, 89, 55, 0);
 }
 
+.mail,
+.phone {
+  color: red;
+  display: flex;
+  justify-content: center;
+}
 .footer_link {
   position: relative;
   font-family: Georgia, serif;
