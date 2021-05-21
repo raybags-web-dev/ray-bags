@@ -44,16 +44,20 @@ function all_jQuery_functionality() {
     });
 
     // open navbar close side navbar handlers
-    $("#nav-btn").on("click", function () {
-      $("#sidebar").addClass("show-sidebar");
-      $(this).slideUp();
-      $("#close-btn").slideDown();
-    });
-    $("#close-btn").on("click", function () {
-      $("#sidebar").removeClass("show-sidebar");
+    function sideBarHandler() {
+      // just to make sure the nav button is visible
       $("#nav-btn").slideDown();
-      $(this).slideUp();
-    });
+      $("#nav-btn").on("click", function () {
+        $("#sidebar").addClass("show-sidebar");
+        $(this).slideUp();
+        $("#close-btn").fadeIn();
+      });
+      $("#close-btn").on("click", function () {
+        $("#sidebar").removeClass("show-sidebar");
+        $("#nav-btn").slideDown();
+        $(this).fadeOut();
+      });
+    }
 
     // flash skill button link handler
     $(".hyperMeLink").on("click", function (e) {
@@ -370,15 +374,15 @@ function all_jQuery_functionality() {
     });
     // functions running on window resize
     $(window).on("resize", () => {
-      removeMenu(), showHideTopBtn(), showHideDownArrow();
+      removeMenu(), showHideTopBtn(), showHideDownArrow(), sideBarHandler();
     });
     // functions running on window orientationChange
     $(window).on("orientationChange", () => {
-      removeMenu(), showHideTopBtn(), showHideDownArrow();
+      removeMenu(), showHideTopBtn(), showHideDownArrow(), sideBarHandler();
     });
     // functions running on window load
     $(window).on("load", () => {
-      showHideTopBtn();
+      showHideTopBtn(), sideBarHandler();
     });
   });
 }
