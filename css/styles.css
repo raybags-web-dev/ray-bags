@@ -1,13 +1,9 @@
-/*
-=============== 
-Fonts
-===============
-*/
+/* imported font */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 
 /*
 =============== 
-Variables
+Root Variables
 ===============
 */
 
@@ -184,6 +180,7 @@ p {
   margin-bottom: 1.25rem;
   color: var(--clr-white);
   opacity: 0.7;
+  line-height: 1.8rem;
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -748,6 +745,7 @@ Hero
 .hero-info h4 {
   display: flex;
   flex-wrap: wrap;
+  line-height: 2rem;
   color: var(--clr-white);
   color: var(--clr-red);
   opacity: 0.7 !important;
@@ -784,6 +782,9 @@ Hero
   margin-right: 1rem;
   outline: 1px solid var(--clr-white);
   outline-offset: 1px;
+}
+.about-info p {
+  line-height: 1.8rem;
 }
 .aboutMeBTN {
   margin-right: 1rem;
@@ -1768,10 +1769,10 @@ Blog
   border-radius: 50%;
   cursor: pointer;
   outline: none;
-  color: var(--text-color);
+  color: var(--clr-white);
   letter-spacing: 2px;
   transition: 0.5s;
-  background: var(--clr-white);
+  background: var(--light-red);
   border: 1px solid transparent;
   box-shadow: inset 2px 2px 13px var(--main-black-bg);
 }
@@ -1898,17 +1899,18 @@ Blog
 }
 
 .pulsing:active {
-  transform: scale(0.8);
+  transform: scale(0.99);
   transition: unset;
+}
+.pulsing:active .fas {
+  color: var(--clr-white);
 }
 .pulsing .fas {
   transform: translate(10%, 0%);
-  transition: var(--transition);
   opacity: 1;
 }
 .pulsing:hover .fas {
-  color: var(--main-black-bg);
-  transition: var(--transition);
+  color: var(--clr-red);
 }
 
 /* ================== Footer  ======================== */

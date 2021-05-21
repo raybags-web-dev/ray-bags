@@ -37,6 +37,7 @@ function all_jQuery_functionality() {
   $(document).ready(function () {
     $("#myBtn").removeClass("hide");
 
+    //
     $("#nav").slideDown("1000", function () {
       $(this).addClass("navbar-fixed").css({
         top: "0%",
@@ -45,8 +46,6 @@ function all_jQuery_functionality() {
 
     // open navbar close side navbar handlers
     function sideBarHandler() {
-      // just to make sure the nav button is visible
-      $("#nav-btn").slideDown();
       $("#nav-btn").on("click", function () {
         $("#sidebar").addClass("show-sidebar");
         $(this).slideUp();
@@ -58,6 +57,7 @@ function all_jQuery_functionality() {
         $(this).fadeOut();
       });
     }
+    sideBarHandler();
 
     // flash skill button link handler
     $(".hyperMeLink").on("click", function (e) {
@@ -80,6 +80,8 @@ function all_jQuery_functionality() {
     const removeMenu = () => {
       $(".sidebar-links a").each(function () {
         $(this).on("click", function () {
+          // Also slide down nav button
+          $("#nav-btn").slideDown();
           $("#sidebar").removeClass("show-sidebar");
         });
       });
@@ -374,15 +376,15 @@ function all_jQuery_functionality() {
     });
     // functions running on window resize
     $(window).on("resize", () => {
-      removeMenu(), showHideTopBtn(), showHideDownArrow(), sideBarHandler();
+      removeMenu(), showHideTopBtn(), showHideDownArrow();
     });
     // functions running on window orientationChange
     $(window).on("orientationChange", () => {
-      removeMenu(), showHideTopBtn(), showHideDownArrow(), sideBarHandler();
+      removeMenu(), showHideTopBtn(), showHideDownArrow();
     });
     // functions running on window load
     $(window).on("load", () => {
-      showHideTopBtn(), sideBarHandler();
+      showHideTopBtn();
     });
   });
 }
