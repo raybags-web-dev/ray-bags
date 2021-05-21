@@ -488,8 +488,8 @@ Sidebar
   transform: translateX(0);
   -webkit-backdrop-filter: var(--backdrop-light);
   backdrop-filter: var(--backdrop-heavy) !important;
-  z-index: 999;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  z-index: 999 !important;
+  background: rgb(12, 12, 12);
 }
 .sidebar-links {
   display: flex;
@@ -554,16 +554,17 @@ Sidebar
   color: var(--clc-green);
 }
 .social-icons {
-  display: grid;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   margin-top: 3rem;
   width: 20rem;
   margin: auto;
   grid-template-columns: repeat(5, 1fr);
-  justify-self: center;
   justify-items: center;
 }
 .social-icon {
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   color: var(--clr-white);
   transition: var(--transition);
 }
@@ -756,6 +757,7 @@ Hero
 .hero-info h1 {
   display: flex;
   flex-wrap: wrap;
+  -webkit-backdrop-filter: var(--backdrop-light);
   backdrop-filter: var(--backdrop-light);
   text-shadow: 1px 3px 0 #969696, 1px 10px 5px #aba8a8;
 }
@@ -764,6 +766,7 @@ Hero
   color: var(--clr-white);
 }
 .hero-btn {
+  text-align: center;
   position: relative;
   margin-top: 1.25rem;
   width: 230px;
