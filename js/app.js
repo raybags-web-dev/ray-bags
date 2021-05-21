@@ -4,13 +4,11 @@ import {
   all_jQuery_functionality,
   copyRightYear,
   handleInnerScroll,
-  openNavBar,
-  closeNavBar,
 } from "./jQuery.js";
 
-const navBtn = document.querySelector("#nav-btn");
-const closeBtn = document.querySelector("#close-btn");
-const sidebar = document.querySelector("#sidebar");
+// const navBtn = document.querySelector("#nav-btn");
+// const closeBtn = document.querySelector("#close-btn");
+// const sidebar = document.querySelector("#sidebar");
 const date = document.querySelector(".copyrightYear");
 const topBTN = document.querySelector("#myBtn");
 const navLogo = document.querySelector(".nav-logo");
@@ -32,10 +30,6 @@ export { topBTN, navLogo };
 
 // AOS animation
 AOS.init();
-// show sidebar
-openNavBar(navBtn, sidebar);
-// close sidebar
-closeNavBar(closeBtn, sidebar);
 // smooth scrolling to contact section
 handleInnerScroll(contactBtn, contactSection);
 // smooth scrolling about me

@@ -32,18 +32,6 @@ function handleInnerScroll(targetBTN, targetSection) {
   });
 }
 
-// Open navbar handler
-function openNavBar(openNavBTN, nav) {
-  openNavBTN.addEventListener("click", function () {
-    nav.classList.add("show-sidebar");
-  });
-}
-// close navbar handler
-function closeNavBar(closeNavBTN, nav) {
-  closeNavBTN.addEventListener("click", function () {
-    nav.classList.remove("show-sidebar");
-  });
-}
 // General jQuery handler.
 function all_jQuery_functionality() {
   $(document).ready(function () {
@@ -53,6 +41,18 @@ function all_jQuery_functionality() {
       $(this).addClass("navbar-fixed").css({
         top: "0%",
       });
+    });
+
+    // open navbar close side navbar handlers
+    $("#nav-btn").on("click", function () {
+      $("#sidebar").addClass("show-sidebar");
+      $(this).slideUp();
+      $("#close-btn").slideDown();
+    });
+    $("#close-btn").on("click", function () {
+      $("#sidebar").removeClass("show-sidebar");
+      $("#nav-btn").slideDown();
+      $(this).slideUp();
     });
 
     // flash skill button link handler
@@ -382,10 +382,4 @@ function all_jQuery_functionality() {
     });
   });
 }
-export {
-  all_jQuery_functionality,
-  copyRightYear,
-  handleInnerScroll,
-  openNavBar,
-  closeNavBar,
-};
+export { all_jQuery_functionality, copyRightYear, handleInnerScroll };
