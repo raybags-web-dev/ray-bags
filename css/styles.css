@@ -554,7 +554,6 @@ Sidebar
   align-items: center;
   margin-top: 3rem;
   width: 20rem;
-  margin: auto;
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
 }
