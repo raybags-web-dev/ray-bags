@@ -1541,12 +1541,8 @@ Blog
 }
 .teminalial_image {
   transition: var(--transition);
-  background-image: radial-gradient(#0000, #1a1919 70%),
-    repeating-conic-gradient(
-      from 360deg,
-      rgb(29, 27, 27) 90deg 90deg,
-      #80262680 250deg 180deg
-    );
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
+    url("/images/nature2.jpeg") center/cover no-repeat fixed;
 }
 
 .card {
