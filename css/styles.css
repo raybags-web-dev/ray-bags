@@ -82,6 +82,13 @@ body {
   -ms-user-select: none;
   user-select: none;
   overflow-x: hidden;
+  min-width: 307px !important;
+}
+
+@media screen and (max-width: 307px) {
+  body {
+    filter: blur(100px) !important;
+  }
 }
 .whole_body {
   -webkit-filter: blur(100px);
