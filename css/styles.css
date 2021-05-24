@@ -87,6 +87,7 @@ body {
 
 @media screen and (max-width: 307px) {
   body {
+    -webkit-filter: blur(100px) !important;
     filter: blur(100px) !important;
   }
 }
