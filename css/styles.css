@@ -569,9 +569,13 @@ Sidebar
   font-size: 1.9rem;
   color: var(--clr-white);
   transition: var(--transition);
+  padding: .2rem;
+}
+.social-icons-sidebar i a{
+  font-size: 1.5rem;
 }
 .social-icon:hover {
-  color: var(--clr-white);
+  color: var(--clr-red);
 }
 .close-btn {
   position: absolute;
@@ -1975,12 +1979,15 @@ Blog
   align-items: center;
   text-align: center;
   transition: var(--transition);
-  font-size: 30px;
+  font-size: 1.8rem;
   text-decoration: none;
   margin: 0.5rem auto;
   color: var(--clr-white);
-  padding: 0.6rem;
+  padding: 0.7rem;
   text-shadow: 3px 3px 2px #474747, 0px 9px 2px #b60606;
+}
+.foIcon .fab:hover{
+  filter: grayscale(100%);
 }
 
 .sidebar-inner .social-icons {
