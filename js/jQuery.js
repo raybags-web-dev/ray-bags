@@ -91,7 +91,8 @@ function all_jQuery_functionality() {
     $(window).on("scroll", () => {
       let top_of_element = $(".pilot-hero-photo").offset().top;
       let bottom_of_element =
-        $(".pilot-hero-photo").offset().top + $(".pilot-hero-photo").outerHeight();
+        $(".pilot-hero-photo").offset().top +
+        $(".pilot-hero-photo").outerHeight();
       let bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
       let top_of_screen = $(window).scrollTop();
 
@@ -342,23 +343,9 @@ function all_jQuery_functionality() {
       if ($(window).scrollTop() <= 100) {
         $("#down_arrow").removeClass("hide");
         $("#down_arrow2").removeClass("hide");
-        // move 3D background on scroll
-        $(".floor").css({
-          transform: "rotateY(235deg)",
-          "background-size": "100%, 3em 3em",
-          "animation-play-state": "paused",
-          transition: ".6s",
-        });
-        $(".scene").css({ top: "0%" });
       } else {
         $("#down_arrow").addClass("hide");
         $("#down_arrow2").addClass("hide");
-        // move 3D background on scroll
-        $(".floor").css({
-          "animation-play-state": "running",
-          transition: ".6s",
-        });
-        $(".scene").css({ top: "-9%" });
       }
     }
     // run functions on scroll, resize and screenorientation
