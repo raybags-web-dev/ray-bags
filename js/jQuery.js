@@ -102,6 +102,7 @@ function all_jQuery_functionality() {
     });
 
     // handle skills level animation
+
     function do_stuff_while_in_viewport(
       item,
       width,
@@ -138,6 +139,7 @@ function all_jQuery_functionality() {
             "animation-play-state": "running",
           });
 
+          // animation for skills level
           $({ percentage: 0 })
             .stop(true)
             .animate(
@@ -150,7 +152,7 @@ function all_jQuery_functionality() {
                   percentage_value
                     .text(percentageVal + "%")
                     .addClass("animate-percentage")
-                    .css({ color: "black", opacity: ".5" });
+                    .css({ color: "white", opacity: ".5" });
                 },
               }
             )
@@ -161,11 +163,6 @@ function all_jQuery_functionality() {
               percentage_value
                 .text(Math.floor(value) + "%")
                 .css({ "font-style": "italic" });
-              $(".animate-percentage").css({
-                background: "green",
-                color: "white",
-                opacity: ".7",
-              });
             });
 
           // slidein percentage
@@ -198,14 +195,14 @@ function all_jQuery_functionality() {
         }
       });
     }
-
+    // ==========================================================================
     do_stuff_while_in_viewport(
-      $(".value-50"),
-      "50%",
+      $(".value-70"),
+      "70%",
       "2.5s",
       $(".skill-text-50"),
       "50%",
-      50
+      70
     );
     do_stuff_while_in_viewport(
       $(".value-80"),
