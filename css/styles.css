@@ -796,7 +796,7 @@ Hero
 .hero-info h4 {
   display: flex;
   flex-wrap: wrap;
-  font-size: 1.8em;
+  font-size: 1.3em;
   line-height: 2.5rem;
   color: var(--clr-white);
   color: var(--clr-red);
@@ -2149,9 +2149,9 @@ Blog
 @media screen and (max-width: 574px) {
   .hero-info .hero-btn {
     position: absolute;
-    top: 70% !important;
+    top: 75% !important;
     left: 50%;
-    transform: translate(-50%, 70%);
+    transform: translate(-50%, 75%);
   }
   .nav-btn:active {
     transform: scale(0.99);
