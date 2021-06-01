@@ -90,15 +90,14 @@ function all_jQuery_functionality() {
     // in viewport function for animating hero profile pic
     $(window).on("scroll", () => {
       let top_of_element = $(".pilot-hero-photo").offset().top;
-      let bottom_of_element =
-        $(".pilot-hero-photo").offset().top +
-        $(".pilot-hero-photo").outerHeight();
+      let bottom_of_element = $(".pilot-hero-photo").offset().top;
+      $(".pilot-hero-photo").outerHeight();
       let bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
       let top_of_screen = $(window).scrollTop();
 
       bottom_of_screen > top_of_element && top_of_screen < bottom_of_element
-        ? $(".pilot-hero-photo").addClass("oulineClass")
-        : $(".pilot-hero-photo").removeClass("oulineClass");
+        ? $(".pilot-hero-photo").addClass("clip-hero-image")
+        : $(".pilot-hero-photo").removeClass("clip-hero-image");
     });
 
     // handle skills level animation
@@ -195,7 +194,6 @@ function all_jQuery_functionality() {
         }
       });
     }
-    // ==========================================================================
     do_stuff_while_in_viewport(
       $(".value-70"),
       "70%",

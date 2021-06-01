@@ -632,12 +632,35 @@ Sidebar
     transition: var(--transition);
   }
 }
+.svg-sm-screen {
+  position: absolute;
+  display: none;
+}
 @media screen and (max-width: 564px) {
   .icons-small-screen li {
     margin-right: unset;
   }
+  .hero_background {
+    background-origin: padding-box;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ) !important;
+  }
+  .svg-sm-screen {
+    position: absolute;
+    display: block;
+    top: 10%;
+    height: 80%;
+    transform: rotateY(33deg);
+  }
+  .nav {
+    background: transparent;
+    -webkit-backdrop-filter: blur(100px);
+    backdrop-filter: blur(100px);
+    box-shadow: 5px 6px 15px 0px #000000;
+  }
 }
-/* ============================================================================================================================= */
 
 .close-btn {
   position: absolute;
@@ -678,52 +701,6 @@ Hero
   background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
     url("/images/nature1.jpeg") center/cover no-repeat fixed;
 }
-/* 3D floor */
-/* .scene {
-  position: absolute;
-  transition: var(--transition);
-  min-height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: -2;
-  overflow: hidden;
-  transform-style: preserve-3d;
-  background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.502) 100%);
-}
-
-.floor {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-image: radial-gradient(#0000, #000 60%),
-    repeating-conic-gradient(
-      from 45deg,
-      rgb(3, 3, 3) 0deg 90deg,
-      #4d1d1d80 90deg 180deg
-    );
-  z-index: -1;
-  background-size: 100%, 1em 1em;
-  transform: translate(0%, 0%) rotateX(90deg);
-  transform-style: preserve-3d;
-  transition: var(--transition);
-  transform: rotateY(360deg);
-  -webkit-animation: rotateScene infinite var(--rotateSpeed) alternate paused;
-  animation: rotateScene infinite var(--rotateSpeed) alternate paused;
-}
-@-webkit-keyframes rotateScene {
-  to {
-    transform: rotateY(360deg);
-    border-radius: 50%;
-  }
-}
-@keyframes rotateScene {
-  to {
-    transform: rotateY(360deg);
-    border-radius: 50%;
-  }
-} */
 
 .hero-center {
   min-height: calc(100vh - 5rem);
@@ -819,17 +796,21 @@ Hero
 .hero-info h4 {
   display: flex;
   flex-wrap: wrap;
-  line-height: 2rem;
+  font-size: 1.8em;
+  line-height: 2.5rem;
   color: var(--clr-white);
   color: var(--clr-red);
   opacity: 0.7 !important;
   transition: var(--transition);
 }
+
 .hero-info h1 {
   display: flex;
   flex-wrap: wrap;
+  font-size: 3em;
   text-shadow: 1px 3px 0 #969696, 1px 10px 5px #aba8a8;
 }
+
 .hero-icons {
   justify-items: start;
   color: var(--clr-white);
@@ -987,59 +968,46 @@ Hero
   cursor: pointer;
   outline: 0px solid var(--clr-white);
   transition: var(--transition);
+  border: 3px solid rgb(31, 26, 26);
+  padding: 0.5rem;
+  box-shadow: inset 0px 0px 10px #000000;
 }
 
 .hero-photo:hover {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   transition: var(--transition);
-  outline: 3px solid var(--clr-white);
-  outline-offset: -2rem;
 }
 
 /* dynamic image class */
-.oulineClass {
+.clip-hero-image {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
   transition: var(--transition);
   outline: 0px solid var(--clr-white);
   outline-offset: 0rem;
-  -webkit-animation: outline-effect 4 alternate-reverse backwards 0.5s;
-  animation: outline-effect 4 alternate-reverse backwards 0.5s;
+  -webkit-clip-path: circle(0%);
+  clip-path: circle(0%);
+  -webkit-animation: clip-photo 4 alternate-reverse backwards 0.5s;
+  animation: clip-photo 1 linear forwards 0.7s;
 }
 
-@-webkit-keyframes outline-effect {
-  0% {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    transition: var(--transition);
-    outline: 1px solid var(--clr-white);
-    outline-offset: -1rem;
-  }
-
-  100% {
+@-webkit-keyframes clip-photo {
+  to {
     -webkit-filter: grayscale(100%);
     filter: grayscale(0%);
-    outline: 3px solid transparent;
-    outline-offset: -3rem;
+    -webkit-clip-path: circle(100%);
+    clip-path: circle(100%);
     transition: var(--transition);
   }
 }
 
-@keyframes outline-effect {
-  0% {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    transition: var(--transition);
-    outline: 1px solid var(--clr-white);
-    outline-offset: -1rem;
-  }
-
-  100% {
+@keyframes clip-photo {
+  to {
     -webkit-filter: grayscale(100%);
     filter: grayscale(0%);
-    outline: 3px solid transparent;
-    outline-offset: -3rem;
+    -webkit-clip-path: circle(100%);
+    clip-path: circle(100%);
     transition: var(--transition);
   }
 }
