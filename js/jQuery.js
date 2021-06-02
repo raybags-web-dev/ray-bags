@@ -35,7 +35,7 @@ function handleInnerScroll(targetBTN, targetSection) {
 // General jQuery handler.
 function all_jQuery_functionality() {
   $(document).ready(function () {
-    $("#myBtn").removeClass("hide");
+    setTimeout(() => $("#myBtn").removeClass("hide"), 1000);
 
     //
     $("#nav").slideDown("1000", function () {
@@ -96,8 +96,8 @@ function all_jQuery_functionality() {
       let top_of_screen = $(window).scrollTop();
 
       bottom_of_screen > top_of_element && top_of_screen < bottom_of_element
-        ? $(".pilot-hero-photo").addClass("clip-hero-image")
-        : $(".pilot-hero-photo").removeClass("clip-hero-image");
+        ? $(".pilot-hero-photo").removeClass("fadeoutstyle")
+        : $(".pilot-hero-photo").addClass("fadeoutstyle");
     });
 
     // handle skills level animation
@@ -243,20 +243,10 @@ function all_jQuery_functionality() {
       90
     );
     // parallax effect handler for all background images on site
-    function parallax(image1, image2, image3) {
-      if (
-        !image1 ||
-        image1 == undefined ||
-        !image2 ||
-        image2 == undefined ||
-        !image3 ||
-        image3 == undefined
-      )
+    function parallax(image2, image3) {
+      if (!image2 || image2 == undefined || !image3 || image3 == undefined)
         return;
       let wScroll = $(window).scrollTop();
-      $(image1).css({
-        "background-position": `center ${wScroll * 0.07}px`,
-      });
       $(image2).css({
         "background-position": `center ${wScroll * 0.07}px`,
       });
@@ -350,11 +340,7 @@ function all_jQuery_functionality() {
     });
     // functions running on window scroll
     $(window).on("scroll", () => {
-      parallax(
-        $(".hero_background"),
-        $(".services_background"),
-        $(".teminalial_image")
-      );
+      parallax($(".services_background"), $(".teminalial_image"));
     });
     // functions running on window resize
     $(window).on("resize", () => {

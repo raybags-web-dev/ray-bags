@@ -463,8 +463,10 @@ Navbar
   width: 100%;
   transition: var(--transition);
   z-index: 100;
+  -webkit-backdrop-filter: blur(300px);
+  backdrop-filter: blur(300px);
   box-shadow: var(--dark-shadow);
-  background: var(--main-black-bg);
+  background: linear-gradient(rgb(37, 36, 36) 25%, rgb(20, 18, 18) 50%);
 }
 /*
 =============== 
@@ -660,6 +662,10 @@ Sidebar
     backdrop-filter: blur(100px);
     box-shadow: 5px 6px 15px 0px #000000;
   }
+  /* remove video from small screen */
+  #video-hero {
+    display: none;
+  }
 }
 
 .close-btn {
@@ -692,14 +698,10 @@ Hero
   display: none;
 }
 .hero {
+  position: relative;
   min-height: 100vh;
   perspective: 10em;
   perspective-origin: 50% calc(50% - 2em);
-}
-.hero_background {
-  background-origin: padding-box;
-  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-    url("/images/nature1.jpeg") center/cover no-repeat fixed;
 }
 
 .hero-center {
@@ -821,16 +823,16 @@ Hero
   margin-top: 1.25rem;
   width: 230px;
   box-shadow: var(--btn-shadow);
-  outline: 1px solid var(--clr-red);
-  color: var(--clr-white) !important;
+  outline: 1px solid var(--clr-white);
+  color: var(--clr-black) !important;
   outline-offset: 5px;
-  background: var(--light-red);
+  background: var(--clr-white);
 }
 .hero-btn:hover {
   outline: 1px solid var(--clr-red);
   outline-offset: 10px;
-  background: var(--clr-white);
-  color: var(--clr-black) !important;
+  background: var(--clr-red);
+  color: var(--clr-white) !important;
   outline: 1px solid var(--clr-white);
 }
 
@@ -959,58 +961,33 @@ Hero
 }
 
 .hero-photo {
-  max-width: 25rem;
-  max-height: 30rem;
+  max-width: 30em;
+  max-height: 35em;
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: var(--radius);
   position: relative;
   cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(3rem);
   outline: 0px solid var(--clr-white);
   transition: var(--transition);
   border: 3px solid rgb(31, 26, 26);
   padding: 0.5rem;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
   box-shadow: inset 0px 0px 10px #000000;
 }
 
 .hero-photo:hover {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
   transition: var(--transition);
 }
-
-/* dynamic image class */
-.clip-hero-image {
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
-  transition: var(--transition);
-  outline: 0px solid var(--clr-white);
-  outline-offset: 0rem;
-  -webkit-clip-path: circle(0%);
-  clip-path: circle(0%);
-  -webkit-animation: clip-photo 4 alternate-reverse backwards 0.5s;
-  animation: clip-photo 1 linear forwards 0.7s;
+.fadeoutstyle {
+  position: relative;
+  border-radius: 50%;
+  perspective: 2rem;
 }
 
-@-webkit-keyframes clip-photo {
-  to {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(0%);
-    -webkit-clip-path: circle(100%);
-    clip-path: circle(100%);
-    transition: var(--transition);
-  }
-}
-
-@keyframes clip-photo {
-  to {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(0%);
-    -webkit-clip-path: circle(100%);
-    clip-path: circle(100%);
-    transition: var(--transition);
-  }
-}
 /*
 =============== 
 About
@@ -1330,7 +1307,8 @@ Connect
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  z-index: -2;
+  z-index: -100;
+  transition: var(--transition);
 }
 .connect::after {
   content: "";
@@ -1409,6 +1387,7 @@ Connect
   );
   clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0 90%, 0 10%);
 }
+
 /*
 =============== 
 Skills
