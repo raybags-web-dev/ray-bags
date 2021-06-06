@@ -50,10 +50,14 @@ function all_jQuery_functionality() {
         $("#sidebar").addClass("show-sidebar");
         $(this).slideUp();
         $("#close-btn").fadeIn();
+        $(".sidebar-links").animate({
+          height: "100vh",
+          opacity: 1,
+        });
       });
       $("#close-btn").on("click", function () {
         $("#sidebar").removeClass("show-sidebar");
-        $("#nav-btn").slideDown();
+        $("#nav-btn").slideDown().css({ opacity: 0.5 });
         $(this).fadeOut();
       });
     }
