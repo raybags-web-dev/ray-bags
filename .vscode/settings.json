@@ -14,5 +14,6 @@
         "mind",
         "proj",
         "scrollspy"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }

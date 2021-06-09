@@ -14,6 +14,7 @@ Root Variables
   --main-black-bg: #1d1b1b;
   --light-black: radial-gradient(#807a7a, #000 100%);
   --dark-red-bg: rgba(247, 9, 9, 0.5);
+  --dark-bg-gray: rgb(34, 33, 33);
 
   /* scroll track and thumb colors */
   --shadow: #1f3746;
@@ -73,7 +74,7 @@ Global Styles
 }
 body {
   font-family: var(--ff-secondary);
-  background: rgb(34, 33, 33);
+  background: var(--dark-bg-gray);
   color: var(--clr-white);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -678,10 +679,7 @@ Sidebar
   position: absolute;
   display: none;
 }
-#video-hero {
-  width: 100%;
-  height: 100%;
-}
+
 @media screen and (max-width: 564px) {
   .icons-small-screen li {
     margin-right: unset;
@@ -705,10 +703,6 @@ Sidebar
     -webkit-backdrop-filter: blur(100px);
     backdrop-filter: blur(100px);
     box-shadow: 5px 6px 15px 0px #000000;
-  }
-  /* remove video from small screen */
-  #video-hero {
-    display: none;
   }
 }
 
@@ -1474,7 +1468,7 @@ Skills
 
 .skills_background {
   background-blend-mode: color;
-  background: rgb(34, 33, 33);
+  background: var(--dark-bg-gray);
 }
 .skills h3 {
   margin: 1.5rem 0;
@@ -1629,7 +1623,7 @@ Blog
   align-items: center;
   background: rgb(34, 33, 33);
   transform-style: preserve-3d;
-  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
+  background: radial-gradient(rgb(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.5) 75%),
     url("/images/nature1.jpeg") center/cover no-repeat fixed;
 }
 .teminalial_image {

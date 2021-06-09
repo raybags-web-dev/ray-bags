@@ -341,42 +341,22 @@ function all_jQuery_functionality() {
       }
     }
 
-    // retract hero video on scroll
-
-    function retractHeroVideo() {
-      if ($(window).scrollTop() <= 100) {
-        $("#video-hero").css({
-          width: "100%",
-          height: "8%",
-          background: `radial-gradient(#000000, #ffffff 70%)`,
-        });
-      } else {
-        $("#video-hero").css({
-          width: "100%",
-          height: "100%",
-        });
-      }
-    }
     // run functions on scroll, resize and screenorientation
     // functions running on document scroll
     $(document).on("scroll", () => {
       removeMenu(), showHideTopBtn(), showHideDownArrow();
-      retractHeroVideo();
     });
     // functions running on window scroll
     $(window).on("scroll", () => {
       parallax($(".services_background"), $(".teminalial_image"));
-      retractHeroVideo();
     });
     // functions running on window resize
     $(window).on("resize", () => {
       removeMenu(), showHideTopBtn(), showHideDownArrow();
-      retractHeroVideo();
     });
     // functions running on window orientationChange
     $(window).on("orientationChange", () => {
       removeMenu(), showHideTopBtn(), showHideDownArrow();
-      retractHeroVideo();
     });
     // functions running on window load
     $(window).on("load", () => {
