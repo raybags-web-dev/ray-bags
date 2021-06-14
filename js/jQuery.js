@@ -351,9 +351,9 @@ function all_jQuery_functionality() {
       parallax($(".services_background"), $(".teminalial_image"));
     });
     // functions running on window resize
-    $(window).on("resize", () => {
-      removeMenu(), showHideTopBtn(), showHideDownArrow();
-    });
+    // $(window).on("resize", () => {
+    //   removeMenu(), showHideTopBtn(), showHideDownArrow();
+    // });
     // functions running on window orientationChange
     $(window).on("orientationChange", () => {
       removeMenu(), showHideTopBtn(), showHideDownArrow();

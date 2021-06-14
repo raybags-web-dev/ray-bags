@@ -42,6 +42,7 @@ Root Variables
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
+  --typewriter-speed: 4s;
   --spacing: 0.25rem;
   --radius: 0.5rem;
   /* glassy */
@@ -709,7 +710,7 @@ Sidebar
 .close-btn {
   position: absolute;
   top: 0rem;
-  left: 0.8rem;
+  right: 0.6rem;
   font-size: 2rem;
   background: transparent;
   border: transparent;
@@ -842,17 +843,58 @@ Hero
   line-height: 2.5rem;
   color: var(--clr-white);
   color: var(--clr-red);
-  opacity: 0.7 !important;
+  opacity: 0.7;
   transition: var(--transition);
 }
 
 .hero-info h1 {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   font-size: 3em;
-  text-shadow: 1px 3px 0 #969696, 1px 10px 5px #aba8a8;
+  padding: 0.3rem;
+  font-family: "Times New Roman", Times, serif;
+  text-shadow: 1px 3px 0 #969696, 0px -3px 2px #aba8a8;
+}
+/* =================typewriter effect for hero heading================ */
+
+.hero-info h1::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  transition: var(--transition);
+  background: var(--dark-bg-gray);
+  -webkit-animation: typewriter var(--typewriter-speed) steps(30) 0.5s forwards;
+  animation: typewriter var(--typewriter-speed) steps(30) 0.5s forwards;
 }
 
+@-webkit-keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+@-webkit-keyframes blink_cursor {
+  to {
+    background: transparent;
+    opacity: 0.8;
+  }
+}
+@keyframes blink_cursor {
+  to {
+    background: transparent;
+    opacity: 0.8;
+  }
+}
+/* =================typewriter effect for hero heading================ */
 .hero-icons {
   justify-items: start;
   color: var(--clr-white);
@@ -884,6 +926,7 @@ Hero
 }
 .about-info p {
   line-height: 1.8rem;
+  font-size: 1.18rem;
 }
 
 .aboutMeBTN {
