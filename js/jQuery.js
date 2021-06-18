@@ -46,17 +46,33 @@ function all_jQuery_functionality() {
 
     // open navbar close side navbar handlers
     function sideBarHandler() {
+      // open  side menu
       $("#nav-btn").on("click", function () {
         $("#sidebar").addClass("show-sidebar");
+
         $(this).slideUp();
         $("#close-btn").fadeIn();
         $(".sidebar-links").animate({
-          height: "100vh",
           opacity: 1,
         });
+
+        // animate side bar links
+        $(".sidebar-links a").each(function (index, link) {
+          $(link)
+            .delay(100 * index)
+            .animate({ left: 0 });
+        });
       });
+      // close  side menu
       $("#close-btn").on("click", function () {
         $("#sidebar").removeClass("show-sidebar");
+        // animate side bar links
+        $(".sidebar-links a").each(function (index, link) {
+          $(link)
+            .delay(100 * index)
+            .animate({ left: "-100%" });
+        });
+
         $("#nav-btn").slideDown().css({ opacity: 0.5 });
         $(this).fadeOut();
       });
@@ -360,4 +376,5 @@ function all_jQuery_functionality() {
     });
   });
 }
+
 export { all_jQuery_functionality, copyRightYear, handleInnerScroll };
