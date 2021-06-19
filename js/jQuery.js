@@ -346,6 +346,17 @@ function all_jQuery_functionality() {
       }
     }
 
+    // toggle image logo and logo display on scroll handler
+    function toggleLogoImages() {
+      if ($(window).scrollTop() > 901) {
+        $("#nav_logo_img").css({ opacity: "1", left: "0%" });
+        $(".nav-logo").css({ opacity: "0", left: "-500%" });
+      } else {
+        $("#nav_logo_img").css({ opacity: "0", left: "-500%" });
+        $(".nav-logo").css({ opacity: "1", left: "0%" });
+      }
+    }
+
     // hide show scroll down  arrow on scroll
     function showHideDownArrow() {
       if ($(window).scrollTop() <= 100) {
@@ -360,7 +371,7 @@ function all_jQuery_functionality() {
     // run functions on scroll, resize and screenorientation
     // functions running on document scroll
     $(document).on("scroll", () => {
-      removeMenu(), showHideTopBtn(), showHideDownArrow();
+      removeMenu(), showHideTopBtn(), showHideDownArrow(), toggleLogoImages();
     });
     // functions running on window scroll
     $(window).on("scroll", () => {

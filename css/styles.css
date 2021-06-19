@@ -134,6 +134,47 @@ img:not(.nav-logo) {
   width: 100%;
   display: block;
 }
+/* nav image in logo */
+#nav_logo_img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  background-clip: content-box;
+  transform: scale(1.1);
+  border-radius: 50%;
+  margin: auto;
+  left: -500%;
+  padding: 0.1rem;
+  border: 0.2rem solid var(--light-red);
+  top: 0;
+  bottom: 0;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  transition: var(--transition);
+}
+.nav-logo {
+  position: relative;
+  width: 3.7rem;
+  margin-top: -0.5rem;
+  border: 2px solid var(--clr-primary-1);
+  background: transparent;
+  border-radius: 50%;
+  padding: 1px;
+  left: -500%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: var(--level-one);
+  transition: var(--transition);
+}
+
+.nav-logo:hover {
+  border: 3px solid var(--clr-primary-1);
+  padding: 2px;
+  transition: var(--transition);
+  transform: scale(1.1);
+}
 .nav-header {
   transform-style: preserve-3d;
   padding: 0.5rem;
@@ -146,23 +187,6 @@ img:not(.nav-logo) {
   transition: var(--transition);
   transform-style: preserve-3d;
 }
-.nav-logo {
-  width: 50px;
-  border: 2px solid var(--clr-primary-1);
-  background: transparent;
-  border-radius: 50%;
-  padding: 1px;
-  cursor: pointer;
-  transform-style: preserve-3d;
-  transform: var(--level-one);
-}
-
-.nav-logo:hover {
-  border: 3px solid var(--clr-primary-1);
-  padding: 2px;
-  transition: var(--transition);
-  transform: scale(1.1);
-}
 
 h1,
 h2,
@@ -173,6 +197,14 @@ h4 {
   line-height: 1.25;
   margin-bottom: 0.75rem;
   font-family: var(--ff-primary);
+}
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
 }
 h1::-moz-selection,
 h2::-moz-selection,
@@ -1067,6 +1099,9 @@ Hero
 
 .hero-photo:hover {
   transition: var(--transition);
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+  perspective: 1rem;
 }
 .fadeoutstyle {
   position: relative;
@@ -1369,6 +1404,7 @@ Projects
     overflow: hidden;
   }
 }
+
 .in-line-contact {
   text-decoration: underline;
   letter-spacing: 2px;
