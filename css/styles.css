@@ -137,7 +137,7 @@ img:not(.nav-logo) {
 /* nav image in logo */
 #nav_logo_img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   overflow: hidden;
   background-position: center;
   background-size: cover;
@@ -151,7 +151,7 @@ img:not(.nav-logo) {
   top: 0;
   bottom: 0;
   -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+  filter: grayscale(100%);
   transition: var(--transition);
 }
 .nav-logo {
@@ -197,6 +197,14 @@ h4 {
   line-height: 1.25;
   margin-bottom: 0.75rem;
   font-family: var(--ff-primary);
+}
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
 }
 h1::-moz-selection,
 h2::-moz-selection,
@@ -1100,7 +1108,7 @@ Hero
 .hero-photo:hover {
   transition: var(--transition);
   -webkit-filter: grayscale(0%);
-          filter: grayscale(0%);
+  filter: grayscale(0%);
   perspective: 1rem;
 }
 .fadeoutstyle {
@@ -1745,9 +1753,10 @@ Blog
   color: var(--clr-white);
   place-items: center;
   transform-style: preserve-3d;
-  box-shadow: inset 0 -1px 10px #ffff;
+  box-shadow: inset 0 -1px 10px rgb(8, 0, 0);
 }
 .card-back .card-back-info {
+  position: relative;
   color: var(--clr-white);
   margin: auto;
   padding: 1rem;
@@ -1761,14 +1770,14 @@ Blog
 }
 .card-back-info::first-letter {
   font-size: 1.2rem;
-  background: transparentf;
+  background: transparent;
   text-transform: capitalize;
   -webkit-text-decoration: wavy var(--clr-white) 0.2rem;
   text-decoration: wavy var(--clr-white) 0.2rem;
   font-family: "Courier New", Courier, monospace;
   padding: 0.3rem;
   border-radius: 5%;
-  box-shadow: inset 2px 0px 1px rgb(0, 0, 0, 0.5);
+  box-shadow: inset 2px 0px 1px rgba(212, 211, 211, 0.5);
 }
 .card:hover .card-back-info {
   transform: var(--level-one);
@@ -1812,31 +1821,6 @@ Blog
   -webkit-filter: contrast(100%);
   filter: contrast(100%);
   border-radius: 50%;
-  -webkit-animation: rotateBoxShadow infinite linear alternate paused 1s;
-  animation: rotateBoxShadow infinite linear alternate paused 1s;
-}
-
-@-webkit-keyframes rotateBoxShadow {
-  0% {
-    box-shadow: inset 3px -4px 2px var(--dark-red-bg);
-  }
-  100% {
-    box-shadow: inset 3px 5px 2px var(--dark-red-bg);
-  }
-}
-
-@keyframes rotateBoxShadow {
-  0% {
-    box-shadow: inset 3px -4px 2px var(--dark-red-bg);
-  }
-  100% {
-    box-shadow: inset 3px 5px 2px var(--dark-red-bg);
-  }
-}
-
-.card-front:hover .testimonial_individual_image {
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
 }
 
 .card-info p {
@@ -1858,6 +1842,10 @@ Blog
   align-items: center;
   background: inherit;
   transform-style: preserve-3d;
+  background: var(--main-black-bg);
+  border-radius: var(--radius);
+  padding: 0.8rem;
+  width: 100%;
 }
 .card-footer img {
   width: 2rem;
