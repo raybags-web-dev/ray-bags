@@ -11,10 +11,11 @@ Root Variables
   /* black background */
   --black-bg-image: linear-gradient(to right, #200909 100%, black 100%);
   --colored-bg-image: linear-gradient(to right, #a03737 0%, #2926c7 100%);
+  --abstract-bg: linear-gradient(#680b0b, #000000 10%);
   --main-black-bg: #1d1b1b;
   --light-black: radial-gradient(#807a7a, #000 100%);
-  --dark-red-bg: rgba(247, 9, 9, 0.5);
-  --dark-bg-gray: rgb(34, 33, 33);
+  --dark-red-bg: #f7090980;
+  --dark-bg-gray: #222121;
 
   /* scroll track and thumb colors */
   --shadow: #1f3746;
@@ -42,7 +43,6 @@ Root Variables
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
-  --typewriter-speed: 4s;
   --spacing: 0.25rem;
   --radius: 0.5rem;
   /* glassy */
@@ -230,7 +230,19 @@ p::-moz-selection {
   background: rgb(119, 31, 31);
   color: currentColor;
 }
-h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, p::-moz-selection {
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
   background: rgb(119, 31, 31);
   color: currentColor;
 }
@@ -425,6 +437,7 @@ Navbar
   align-items: center;
   transition: var(--transition);
   z-index: 100;
+  min-height: 5rem;
 }
 .nav-center {
   width: 100%;
@@ -533,6 +546,7 @@ Navbar
   top: 0%;
   left: 0;
   width: 100%;
+  height: 10%;
   transition: var(--transition);
   z-index: 100;
   -webkit-backdrop-filter: blur(300px);
@@ -768,6 +782,7 @@ Sidebar
 Hero
 ===============
 */
+
 /* underline added to globals */
 .hero .underline {
   margin-bottom: 0.5rem;
@@ -894,45 +909,7 @@ Hero
   padding: 0.3rem;
   font-family: "Times New Roman", Times, serif;
 }
-/* =================typewriter effect for hero heading================ */
 
-.hero-info h1::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  right: 0;
-  transition: var(--transition);
-  background: var(--dark-bg-gray);
-  -webkit-animation: typewriter var(--typewriter-speed) steps(30) 0.5s forwards;
-  animation: typewriter var(--typewriter-speed) steps(30) 0.5s forwards;
-}
-
-@-webkit-keyframes typewriter {
-  to {
-    left: 100%;
-  }
-}
-
-@keyframes typewriter {
-  to {
-    left: 100%;
-  }
-}
-@-webkit-keyframes blink_cursor {
-  to {
-    background: transparent;
-    opacity: 0.8;
-  }
-}
-@keyframes blink_cursor {
-  to {
-    background: transparent;
-    opacity: 0.8;
-  }
-}
-/* =================typewriter effect for hero heading================ */
 .hero-icons {
   justify-items: start;
   color: var(--clr-white);
@@ -1123,7 +1100,7 @@ About
 */
 /* section title added to globals */
 .about {
-  background: linear-gradient(#680b0b, #000000 30%);
+  background: var(--abstract-bg);
 }
 .about-title {
   text-align: left;
@@ -1158,6 +1135,7 @@ About
 Services
 ===============
 */
+
 /* bg-grey in globals */
 .services_background {
   background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
@@ -1238,7 +1216,7 @@ Projects
 ===============
 */
 .projects {
-  background: linear-gradient(#680b0b, #000000 30%);
+  background: var(--abstract-bg);
 }
 .projects-text {
   width: 85vw;
@@ -1410,6 +1388,10 @@ Projects
     transition: var(--transition);
     transform: translate(10%, 100%);
     overflow: hidden;
+  }
+  .hero_background {
+    background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
+      url("/images/screper.jpeg") center/cover no-repeat fixed;
   }
 }
 
@@ -1715,7 +1697,7 @@ Blog
 }
 .teminalial_image {
   transition: var(--transition);
-  background: linear-gradient(rgba(160, 10, 10, 0.5), rgb(0, 0, 0, 0.5) 30%);
+  background: var(--abstract-bg);
 }
 
 .card {
@@ -2070,6 +2052,7 @@ Blog
   margin: auto;
   background-blend-mode: multiply;
   background: var(--main-black-bg);
+  background: var(--abstract-bg);
 }
 
 .footer-name h5,

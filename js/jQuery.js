@@ -265,11 +265,21 @@ function all_jQuery_functionality() {
       90
     );
     // parallax effect handler for all background images on site
-    function parallax(image2, image3) {
-      if (!image2 || image2 == undefined || !image3 || image3 == undefined)
+    function parallax(image1, image2, image3) {
+      if (
+        !image1 ||
+        image1 == undefined ||
+        !image2 ||
+        image2 == undefined ||
+        !image3 ||
+        image3 == undefined
+      )
         return;
       let wScroll = $(window).scrollTop();
 
+      $(image1).css({
+        "background-position": `center ${wScroll * 0.07}px`,
+      });
       $(image2).css({
         "background-position": `center ${wScroll * 0.07}px`,
       });
@@ -283,7 +293,8 @@ function all_jQuery_functionality() {
       if ($(window).scrollTop() >= 100) {
         $("#nav").slideDown("1000", function () {
           $(this).addClass("navbar-fixed").css({
-            top: "0%",
+            background: "#200909",
+            top: "2%",
           });
 
           $(".nav-header").css({
@@ -293,7 +304,8 @@ function all_jQuery_functionality() {
       } else {
         $("#nav").fadeIn("1000", function () {
           $(this).css({
-            top: "2%",
+            background: "#000000",
+            top: "0%",
           });
 
           $(".nav-header").css({
@@ -375,7 +387,11 @@ function all_jQuery_functionality() {
     });
     // functions running on window scroll
     $(window).on("scroll", () => {
-      parallax($(".services_background"), $(".teminalial_image"));
+      parallax(
+        $(".hero_background"),
+        $(".services_background"),
+        $(".teminalial_image")
+      );
     });
     // functions running on window orientationChange
     $(window).on("orientationChange", () => {
