@@ -293,23 +293,13 @@ function all_jQuery_functionality() {
       if ($(window).scrollTop() >= 100) {
         $("#nav").slideDown("1000", function () {
           $(this).addClass("navbar-fixed").css({
-            background: "#200909",
-            top: "2%",
-          });
-
-          $(".nav-header").css({
-            "box-shadow": "unset",
+            background: "#110c0c",
           });
         });
       } else {
         $("#nav").fadeIn("1000", function () {
           $(this).css({
-            background: "#000000",
-            top: "0%",
-          });
-
-          $(".nav-header").css({
-            "box-shadow": "inherit",
+            background: "#131a20",
           });
         });
       }
@@ -328,7 +318,7 @@ function all_jQuery_functionality() {
     // handle Smooth scrolling helper
     function handlePageScroll() {
       let target = $(this).attr("href");
-      $("body, html").animate({ scrollTop: $(target).offset().top }, 1500);
+      $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
       return false;
     }
 
@@ -340,13 +330,13 @@ function all_jQuery_functionality() {
     // smooth scrolling with back to top btn handler
     $("#myBtn").on("click", function () {
       let target = $("body, html");
-      $("body, html").animate({ scrollTop: $(target).offset().top }, 1800);
+      $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
     });
 
     // smooth scrolling with logo image handler
     $(".nav-logo").on("click", function () {
       let target = $("body, html");
-      $("body, html").animate({ scrollTop: $(target).offset().top }, 1500);
+      $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
     });
 
     // hide show top button on scroll

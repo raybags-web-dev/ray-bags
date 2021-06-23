@@ -11,7 +11,7 @@ Root Variables
   /* black background */
   --black-bg-image: linear-gradient(to right, #200909 100%, black 100%);
   --colored-bg-image: linear-gradient(to right, #a03737 0%, #2926c7 100%);
-  --abstract-bg: linear-gradient(#680b0b, #000000 10%);
+  --abstract-bg: linear-gradient(#3d0808, #000000 10%);
   --main-black-bg: #1d1b1b;
   --light-black: radial-gradient(#807a7a, #000 100%);
   --dark-red-bg: #f7090980;
@@ -170,7 +170,6 @@ img:not(.nav-logo) {
 }
 
 .nav-logo:hover {
-  border: 3px solid var(--clr-primary-1);
   padding: 2px;
   transition: var(--transition);
   transform: scale(1.1);
@@ -178,12 +177,10 @@ img:not(.nav-logo) {
 .nav-header {
   transform-style: preserve-3d;
   padding: 0.5rem;
-  box-shadow: var(--dark-shadow);
   margin-top: -10%;
   transition: var(--transition);
 }
 .nav-header:hover {
-  box-shadow: 0px 0px 10px 0px rgba(193, 193, 193, 0.69);
   transition: var(--transition);
   transform-style: preserve-3d;
 }
@@ -197,6 +194,14 @@ h4 {
   line-height: 1.25;
   margin-bottom: 0.75rem;
   font-family: var(--ff-primary);
+}
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
 }
 h1::-moz-selection,
 h2::-moz-selection,
@@ -551,8 +556,8 @@ Navbar
   z-index: 100;
   -webkit-backdrop-filter: blur(300px);
   backdrop-filter: blur(300px);
-  box-shadow: var(--dark-shadow);
-  background: linear-gradient(rgb(37, 36, 36) 25%, rgb(20, 18, 18) 50%);
+  box-shadow: 5px 6px 15px 0px #000000;
+  background: #131a20;
 }
 /*
 =============== 
@@ -1012,6 +1017,9 @@ Hero
   .pilot-hero-photo {
     border-radius: 50% !important;
     box-shadow: 0 -4px 20px 4px rgb(0, 0, 0, 0.5) !important;
+    max-width: 25em !important;
+    padding: 1rem !important;
+    background: transparent;
   }
   .hero-center {
     grid-template-columns: 1fr 1fr;
@@ -1064,8 +1072,8 @@ Hero
 }
 
 .hero-photo {
-  max-width: 30em;
-  max-height: 35em;
+  max-width: 25em;
+  max-height: 30em;
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: var(--radius);
