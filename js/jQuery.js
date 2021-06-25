@@ -1,6 +1,5 @@
 "use strict";
 // General jQuery handler.
-
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => $("#myBtn").removeClass("hide"), 1000);
 
@@ -12,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // open navbar close side navbar handlers
-  function sideBarHandler() {
+  (function () {
     // open  side menu
     $("#nav-btn").on("click", function () {
       $("#sidebar").addClass("show-sidebar");
@@ -26,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // animate side bar links
       $(".sidebar-links a").each(function (index, link) {
         $(link)
-          .delay(100 * index)
+          .delay(30 * index)
           .animate({ left: 0 });
       });
     });
@@ -36,15 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
       // animate side bar links
       $(".sidebar-links a").each(function (index, link) {
         $(link)
-          .delay(100 * index)
+          .delay(30 * index)
           .animate({ left: "-100%" });
       });
 
       $("#nav-btn").slideDown().css({ opacity: 0.5 });
       $(this).fadeOut();
     });
-  }
-  sideBarHandler();
+  })();
 
   // flash skill button link handler
   $(".hyperMeLink").on("click", function (e) {
@@ -255,7 +253,8 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       $("#nav").fadeIn("1000", function () {
         $(this).css({
-          background: "#131a20",
+          background: "#110c0c",
+          opacity: ".7"
         });
       });
     }
