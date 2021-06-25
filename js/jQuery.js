@@ -254,7 +254,6 @@ document.addEventListener("DOMContentLoaded", function () {
       $("#nav").fadeIn("1000", function () {
         $(this).css({
           background: "#110c0c",
-          opacity: ".7"
         });
       });
     }
