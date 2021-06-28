@@ -241,6 +241,28 @@ document.addEventListener("DOMContentLoaded", function () {
       "background-position": `center ${wScroll * 0.01}px`,
     });
   }
+  // handle themeSwitcher light theme
+  $(".night").on("click", function () {
+    $(this).css({
+      left: "-100%",
+      transform: "rotate(180deg)",
+    });
+    $(".day").css({
+      left: "0%",
+      transform: "rotate(90deg)",
+    });
+  });
+  // handle themeswitcher dark theme
+  $(".day").on("click", function () {
+    $(this).css({
+      left: "100%",
+      transform: "rotate(-90deg)",
+    });
+    $(".night").css({
+      left: "0%",
+      transform: "rotate(0deg)",
+    });
+  });
 
   // toggle nav slide in out on scroll
   $(window).on("scroll", function () {
