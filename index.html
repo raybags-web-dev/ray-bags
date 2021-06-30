@@ -24,7 +24,8 @@
     <!-- font-awesome -->
     <link
       rel="stylesheet"
-      href="./fontawesome-free-5.12.1-web/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      referrerpolicy="no-referrer"
     />
     <!-- ======Material Design Bootstrap CDN  -->
     <link
@@ -49,18 +50,6 @@
   <body class="whole_body">
     <!-- navbar -->
     <nav class="nav" id="nav">
-         <!-- ====== theme Switcher ======== -->
-    <div id="theme-container" class="theme-small-screen">
-      <!-- dark div -->
-      <div class="night">
-        <i class="fas fa-moon"></i>
-      </div>
-      <!-- light div -->
-      <div class="day">
-        <i class="fas fa-sun"></i>
-      </div>
-    </div>
-    <!-- ====== end of theme Switcher ======== -->
       <div class="nav-center">
         <!-- nav header -->
         <div class="nav-header">
@@ -118,10 +107,10 @@
     <div id="theme-container" class="theme-big-screen">
       <!-- dark div -->
       <div class="night">
-        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
       </div>
       <div class="day">
-        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
       </div>
     </div>
     <!-- ====== end of theme Switcher ======== -->
@@ -187,17 +176,17 @@
           <a id="hireMe" class="btn hero-btn">reachout</a>
           <!-- social icons -->
           <ul class="social-icons icons-small-screen">
-            <li>
+            <li class="hero-box-animate">
               <a href="https://facebook.com" class="social-icon foIcon">
                 <i class="fab fa-facebook"></i>
               </a>
             </li>
-            <li>
+            <li class="hero-box-animate">
               <a href="https://linkedin.com" class="social-icon foIcon">
                 <i class="fab fa-linkedin"></i>
               </a>
             </li>
-            <li>
+            <li class="hero-box-animate">
               <a
                 href="https://github.com/raybags-web-dev"
                 class="social-icon foIcon"
@@ -205,7 +194,7 @@
                 <i class="fab fa-github"></i>
               </a>
             </li>
-            <li>
+            <li class="hero-box-animate">
               <a href="https://instagram.com" class="social-icon foIcon">
                 <i class="fab fa-instagram"></i>
               </a>
@@ -224,7 +213,7 @@
 
           <!-- social icons -->
           <ul class="social-icons hero-social-icon">
-            <li>
+            <li class="hero-box-animate">
               <a
                 href="https://facebook.com"
                 class="social-icon foIcon"
@@ -234,7 +223,7 @@
                 <i class="fab fa-facebook"></i>
               </a>
             </li>
-            <li>
+            <li class="hero-box-animate">
               <a
                 href="https://linkedin.com"
                 class="social-icon foIcon"
@@ -244,7 +233,7 @@
                 <i class="fab fa-linkedin"></i>
               </a>
             </li>
-            <li>
+            <li class="hero-box-animate">
               <a
                 href="https://github.com/raybags-web-dev"
                 class="social-icon foIcon"
@@ -254,7 +243,7 @@
                 <i class="fab fa-github"></i>
               </a>
             </li>
-            <li>
+            <li class="hero-box-animate">
               <a
                 href="https://instagram.com"
                 class="social-icon foIcon"
@@ -581,7 +570,7 @@
     </section>
 
     <!-- skills -->
-    <section id="skills" class="section skills skills_background">
+    <section id="skills" class="section skills">
       <!-- section title -->
       <div class="section-title">
         <h2 data-aos-easing="ease-in-sine">skills</h2>
@@ -660,7 +649,7 @@
     </section>
     <!-- end of skills -->
     <!-- timeline -->
-    <section id="timeline" class="section timeline teminalial_image">
+    <section id="timeline" class="section timeline">
       <!-- section title -->
       <div class="section-title">
         <h2 data-aos="zoom-in-down">timeline</h2>
@@ -1153,18 +1142,21 @@
             <ul class="list-unstyled mb-0">
               <li>
                 <a href="#" target="_blank" rel="noopener" class="footer_link"
-                  ><i class="fab fa-instagram" title="Instagram"></i
+                  ><i
+                    class="fab fa-instagram spin-icon-footer"
+                    title="Instagram"
+                  ></i
                   >instagram</a
                 >
               </li>
               <li>
                 <a href="#" target="_blank" rel="noopener" class="footer_link"
-                  ><i class="fab fa-facebook"></i>facebook</a
+                  ><i class="fab fa-facebook spin-icon-footer"></i>facebook</a
                 >
               </li>
               <li>
                 <a href="#" target="_blank" rel="noopener" class="footer_link"
-                  ><i class="fab fa-twitter"></i>twitter</a
+                  ><i class="fab fa-twitter spin-icon-footer"></i>twitter</a
                 >
               </li>
             </ul>
@@ -1182,7 +1174,8 @@
                   target="_blank"
                   rel="noopener"
                   class="footer_link"
-                  ><i class="fab fa-github" title="Github"></i>github</a
+                  ><i class="fab fa-github spin-icon-footer" title="Github"></i
+                  >github</a
                 >
               </li>
               <li>
@@ -1191,7 +1184,10 @@
                   target="_blank"
                   rel="noopener"
                   class="footer_link"
-                  ><i class="fab fa-hackerrank" title="HackerRank"></i
+                  ><i
+                    class="fab fa-hackerrank spin-icon-footer"
+                    title="HackerRank"
+                  ></i
                   >hackrank</a
                 >
               </li>
@@ -1201,7 +1197,11 @@
                   target="_blank"
                   rel="noopener"
                   class="footer_link"
-                  ><i class="fab fa-linkedin" title="LinkedIn"></i>linkedIn</a
+                  ><i
+                    class="fab fa-linkedin spin-icon-footer"
+                    title="LinkedIn"
+                  ></i
+                  >linkedIn</a
                 >
               </li>
             </ul>

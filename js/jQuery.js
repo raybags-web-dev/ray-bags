@@ -3,6 +3,14 @@
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => $("#myBtn").removeClass("hide"), 1000);
 
+  // Onload clear screen.
+  $(".whole_body").css(
+    {
+      filter: "unset",
+    },
+    6000
+  );
+
   //
   $("#nav").slideDown("1000", function () {
     $(this).addClass("navbar-fixed").css({
@@ -52,14 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
       $("#mySkills").removeClass("flash-abtMe");
     }, 1000);
   });
-
-  // Onload clear screen.
-  $(".whole_body").css(
-    {
-      filter: "unset",
-    },
-    6000
-  );
 
   // handle side nav removal if individual nav links are clicked.
   const removeMenu = () => {
@@ -229,16 +229,26 @@ document.addEventListener("DOMContentLoaded", function () {
     "85%",
     90
   );
+
+  // handle footer icon spin dynamically
+  $("a .spin-icon-footer").each(function (index, icon) {
+    $(icon)
+      .delay(200 * index)
+      .addClass("spinIconDynamically");
+  });
+  // handle hero icon spead on load
+  $(".hero-box-animate").each(function (index, icon) {
+    $(icon)
+      .delay(30 * index)
+      .css({ "margin-right": "0rem" });
+  });
+
   // parallax effect handler for all background images on site
-  function parallax(image2, image3) {
-    if (!image2 || image2 == undefined || !image3 || image3 == undefined)
-      return;
+  function parallax(image2) {
+    if (!image2 || image2 == undefined) return;
     let wScroll = $(window).scrollTop();
     $(image2).css({
       "background-position": `center ${wScroll * 0.07}px`,
-    });
-    $(image3).css({
-      "background-position": `center ${wScroll * 0.01}px`,
     });
   }
   // handle themeSwitcher light theme
@@ -251,32 +261,44 @@ document.addEventListener("DOMContentLoaded", function () {
       left: "0%",
       transform: "rotate(90deg)",
     });
+    // change body background
+    $("body").addClass("classLighTheme");
+    $("body").removeClass("classDarkTheme");
+
+    // change nav background
+    $(".navbar-fixed").removeClass("classDarkTheme");
+    $(".navbar-fixed").addClass("classLightTheme");
   });
+  
   // handle themeswitcher dark theme
   $(".day").on("click", function () {
     $(this).css({
       left: "100%",
       transform: "rotate(-90deg)",
     });
+
     $(".night").css({
       left: "0%",
       transform: "rotate(0deg)",
     });
+    // change body background
+    $("body").removeClass("classLighTheme");
+    $("body").addClass("classDarkTheme");
+
+    // change nav background
+    $(".navbar-fixed").addClass("classDarkTheme");
+    $(".navbar-fixed").removeClass("classLightTheme");
   });
 
   // toggle nav slide in out on scroll
   $(window).on("scroll", function () {
     if ($(window).scrollTop() >= 100) {
       $("#nav").slideDown("1000", function () {
-        $(this).addClass("navbar-fixed").css({
-          background: "#110c0c",
-        });
+        $(this).addClass("navbar-fixed");
       });
     } else {
       $("#nav").fadeIn("1000", function () {
-        $(this).css({
-          background: "#110c0c",
-        });
+        $(this);
       });
     }
     // active class switcher on scroll (Scroll spy)
@@ -354,7 +376,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   // functions running on window scroll
   $(window).on("scroll", () => {
-    parallax($(".services_background"), $(".teminalial_image"));
+    parallax($(".services_background"));
   });
   // functions running on window orientationChange
   $(window).on("orientationChange", () => {
