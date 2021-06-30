@@ -324,7 +324,11 @@ p::-moz-selection {
   background: rgb(119, 31, 31);
   color: currentColor;
 }
-h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, p::-moz-selection {
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
   background: rgb(119, 31, 31);
   color: currentColor;
 }
