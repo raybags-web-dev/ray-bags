@@ -251,25 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "background-position": `center ${wScroll * 0.07}px`,
     });
   }
-  // handle themeSwitcher light theme
-  $(".night").on("click", function () {
-    $(this).css({
-      left: "-100%",
-      transform: "rotate(180deg)",
-    });
-    $(".day").css({
-      left: "0%",
-      transform: "rotate(90deg)",
-    });
-    // change body background
-    $("body").addClass("classLighTheme");
-    $("body").removeClass("classDarkTheme");
 
-    // change nav background
-    $(".navbar-fixed").removeClass("classDarkTheme");
-    $(".navbar-fixed").addClass("classLightTheme");
-  });
-  
   // handle themeswitcher dark theme
   $(".day").on("click", function () {
     $(this).css({
@@ -288,6 +270,57 @@ document.addEventListener("DOMContentLoaded", function () {
     // change nav background
     $(".navbar-fixed").addClass("classDarkTheme");
     $(".navbar-fixed").removeClass("classLightTheme");
+
+    // change service card bg
+    $(".service").each(function (index, card) {
+      $(card)
+        .delay(50 * index)
+        .css({ background: "#110c0c" });
+    });
+
+    // change blog vibe card bg
+    $(".blog-card").each(function (index, card) {
+      $(card)
+        .delay(50 * index)
+        .css({ background: "#110c0c" });
+    });
+    // change hire me button
+    $("#hireMe").css({ background: "#000000", fontColor: "white" });
+  });
+  // handle themeSwitcher light theme
+
+  $(".night").on("click", function () {
+    $(this).css({
+      left: "-100%",
+      transform: "rotate(180deg)",
+    });
+    $(".day").css({
+      left: "0%",
+      transform: "rotate(90deg)",
+    });
+    // change body background
+    $("body").addClass("classLighTheme");
+    $("body").removeClass("classDarkTheme");
+
+    // change nav background
+    $(".navbar-fixed").removeClass("classDarkTheme");
+    $(".navbar-fixed").addClass("classLightTheme");
+
+    // change service card bg
+    $(".service").each(function (index, card) {
+      $(card)
+        .delay(50 * index)
+        .css({ background: "#000000" });
+    });
+
+    // change blog vibe card bg
+    $(".blog-card").each(function (index, card) {
+      $(card)
+        .delay(50 * index)
+        .css({ background: "#000000" });
+    });
+    // change hire me button
+    $("#hireMe").css({ background: "brown", fontColor: "black" });
   });
 
   // toggle nav slide in out on scroll
