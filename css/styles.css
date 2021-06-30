@@ -332,6 +332,14 @@ p::-moz-selection {
   background: rgb(119, 31, 31);
   color: currentColor;
 }
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
 h1::selection,
 h2::selection,
 h3::selection,
@@ -846,6 +854,9 @@ Sidebar
   .timeline p {
     -moz-columns: unset !important;
     columns: unset !important;
+  }
+  .hero-info h1 {
+    box-shadow: unset;
   }
 }
 
@@ -2381,6 +2392,10 @@ Blog
     left: 50%;
     transform: translate(-50%, 68%);
   }
+  .hero-info {
+    margin-bottom: 40%;
+    transition: var(--transition);
+  }
 
   .hero-info h1::before {
     all: unset;
@@ -2429,7 +2444,6 @@ Blog
     font-size: 3em;
     padding: 0.3rem;
     font-family: "Times New Roman", Times, serif;
-    box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.5);
     transition: var(--transition);
   }
 }
