@@ -792,13 +792,13 @@ Sidebar
   font-size: 30px;
   color: var(--clr-white);
   padding: 0.6rem;
-  box-shadow:  var(--deep-shadow-card);
+  box-shadow: var(--deep-shadow-card);
   border-radius: 50%;
   cursor: pointer;
   transition: 4s;
 }
 .hero-social-icon li:hover {
-  box-shadow:  var(--deep-shadow-card);
+  box-shadow: var(--deep-shadow-card);
   transition: var(--transition);
 }
 .foIcon {
@@ -1807,7 +1807,7 @@ Blog
   transform-style: preserve-3d;
   background: #110c0c;
   overflow: hidden;
-  border-radius: .6rem;
+  border-radius: 0.6rem;
   -webkit-backdrop-filter: blur(100px);
   backdrop-filter: blur(100px);
   box-shadow: var(--deep-shadow-card);
@@ -1979,7 +1979,7 @@ Blog
   justify-content: center;
   align-items: center;
   position: fixed;
-  bottom: 1%;
+  bottom: 0%;
   right: 1%;
   text-align: center;
   height: 55px;
