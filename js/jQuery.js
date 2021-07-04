@@ -272,21 +272,20 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".navbar-fixed").removeClass("classLightTheme");
 
     // change service card bg
-    $(".service").each(function (index, card) {
-      $(card)
-        .delay(50 * index)
-        .css({ background: "#110c0c" });
+    $(".service").each(function (index, service_card) {
+      $(service_card).css({ "background-color": "#4b0202" });
     });
 
     // change blog vibe card bg
     $(".blog-card").each(function (index, card) {
       $(card)
         .delay(50 * index)
-        .css({ background: "#110c0c" });
+        .css({ background: "#c34c4c" });
     });
     // change hire me button
-    $("#hireMe").css({ background: "#000000", fontColor: "white" });
+    $("#hireMe").css({ background: "#c34c4c", fontColor: "white" });
   });
+
   // handle themeSwitcher light theme
 
   $(".night").on("click", function () {
@@ -308,16 +307,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // change service card bg
     $(".service").each(function (index, card) {
-      $(card)
-        .delay(50 * index)
-        .css({ background: "#000000" });
+      $(card).addClass({ background: "#c34c4c" });
     });
 
     // change blog vibe card bg
     $(".blog-card").each(function (index, card) {
       $(card)
         .delay(50 * index)
-        .css({ background: "#000000" });
+        .css({ background: "#4b0202" });
     });
     // change hire me button
     $("#hireMe").css({ background: "brown", fontColor: "black" });
