@@ -344,6 +344,14 @@ p::-moz-selection {
   background: rgb(119, 31, 31);
   color: currentColor;
 }
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
 h1::selection,
 h2::selection,
 h3::selection,
@@ -1012,6 +1020,7 @@ Hero
   transition: var(--transition);
   background: rgb(5, 5, 5);
   z-index: -1;
+  -webkit-animation: moverPsudo-left infinite linear 2s;
   animation: moverPsudo-left infinite linear 2s;
 }
 .hero-btn::after {
@@ -1036,6 +1045,7 @@ Hero
   transition: var(--transition);
 }
 .hero-btn:hover {
+  -webkit-backdrop-filter: var(--backdrop-light);
   backdrop-filter: var(--backdrop-light);
   box-shadow: var(--deep-shadow_2);
   color: var(--clr-black);
@@ -1932,7 +1942,7 @@ Blog
   border-radius: var(--radius);
   padding: 0.8rem;
   width: 100%;
-border-radius: .4rem;
+  border-radius: 0.4rem;
 }
 .card-footer img {
   width: 2rem;
@@ -2038,6 +2048,7 @@ border-radius: .4rem;
   left: 0%;
   opacity: 0.8;
   box-shadow: var(--inner-circle-rotate);
+  -webkit-animation: rotateThemeIcon infinite linear 8s;
   animation: rotateThemeIcon infinite linear 8s;
 }
 .theme-big-screen .day {
@@ -2046,6 +2057,7 @@ border-radius: .4rem;
   left: 0%;
   opacity: 0.8;
   box-shadow: var(--inner-circle-rotate);
+  -webkit-animation: rotateThemeIcon infinite linear 8s;
   animation: rotateThemeIcon infinite linear 8s;
 }
 .theme-big-screen .original {
@@ -2054,7 +2066,13 @@ border-radius: .4rem;
   left: 0%;
   opacity: 0.8;
   box-shadow: var(--inner-circle-rotate);
+  -webkit-animation: rotateThemeIcon infinite linear 4s;
   animation: rotateThemeIcon infinite linear 4s;
+}
+@-webkit-keyframes rotateThemeIcon {
+  to {
+    transform: rotate(360deg);
+  }
 }
 @keyframes rotateThemeIcon {
   to {
