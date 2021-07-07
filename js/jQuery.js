@@ -255,14 +255,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // handle themeswitcher dark theme
   $(".day").on("click", function () {
     $(this).css({
-      left: "100%",
-      transform: "rotate(-90deg)",
+      display: "none",
     });
 
     $(".night").css({
-      left: "0%",
-      transform: "rotate(0deg)",
+      display: "block",
     });
+
     // change body background
     $("body").removeClass("classLighTheme");
     $("body").addClass("classDarkTheme");
@@ -276,10 +275,16 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".hero-btn").addClass("classLightTheme");
 
     // change blog vibe card bg
-    $(".blog-card").each(function (index, card) {
-      $(card)
-        .delay(50 * index)
-        .css({ background: "#c34c4c" });
+    $(".card").each((e, element) => {
+      $(element).css({
+        background: "#0d0b1f",
+      });
+    });
+    // change service  card bg
+    $(".s_card").each((e, element) => {
+      $(element).css({
+        background: "#0d0b1f ",
+      });
     });
   });
 
@@ -287,13 +292,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   $(".night").on("click", function () {
     $(this).css({
-      left: "-100%",
-      transform: "rotate(180deg)",
+      display: "none",
     });
     $(".day").css({
-      left: "0%",
-      transform: "rotate(90deg)",
+      display: "none",
     });
+    $(".original").css({
+      display: "block",
+    });
+
     // change body background
     $("body").addClass("classLighTheme");
     $("body").removeClass("classDarkTheme");
@@ -307,10 +314,55 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".hero-btn").removeClass("classLightTheme");
 
     // change blog vibe card bg
-    $(".blog-card").each(function (index, card) {
-      $(card)
-        .delay(50 * index)
-        .css({ background: "#4b0202" });
+    $(".card").each((e, element) => {
+      $(element).css({
+        background: "#4b0202",
+      });
+    });
+    // change service  card bg
+    $(".s_card").each((e, element) => {
+      $(element).css({
+        background: "#4b0202",
+      });
+    });
+  });
+
+  // orignal color theme
+  $(".original").on("click", function () {
+    $(this).css({
+      display: "none",
+    });
+
+    $(".day").css({
+      display: "block",
+    });
+    $(".night").css({
+      display: "none",
+    });
+
+    // change body background
+    $("body").removeClass("classLighTheme");
+    $("body").removeClass("classDarkTheme");
+
+    // change nav background
+    $(".navbar-fixed").removeClass("classDarkTheme");
+    $(".navbar-fixed").removeClass("classLightTheme");
+
+    // change hire me button
+    $(".hero-btn").removeClass("classDarkTheme");
+    $(".hero-btn").removeClass("classLightTheme");
+
+    // change blog vibe card bg
+    $(".card").each((e, element) => {
+      $(element).css({
+        background: "#110c0c",
+      });
+    });
+    // change service  card bg
+    $(".s_card").each((e, element) => {
+      $(element).css({
+        background: "#110c0c ",
+      });
     });
   });
 
