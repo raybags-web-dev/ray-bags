@@ -271,10 +271,9 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".navbar-fixed").addClass("classDarkTheme");
     $(".navbar-fixed").removeClass("classLightTheme");
 
-    // change service card bg
-    $(".service").each(function (index, service_card) {
-      $(service_card).css({ "background-color": "#4b0202" });
-    });
+    // change hire me button
+    $(".hero-btn").removeClass("classDarkTheme");
+    $(".hero-btn").addClass("classLightTheme");
 
     // change blog vibe card bg
     $(".blog-card").each(function (index, card) {
@@ -282,8 +281,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .delay(50 * index)
         .css({ background: "#c34c4c" });
     });
-    // change hire me button
-    $("#hireMe").css({ background: "#c34c4c", fontColor: "white" });
   });
 
   // handle themeSwitcher light theme
@@ -305,10 +302,9 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".navbar-fixed").removeClass("classDarkTheme");
     $(".navbar-fixed").addClass("classLightTheme");
 
-    // change service card bg
-    $(".service").each(function (index, card) {
-      $(card).addClass({ background: "#c34c4c" });
-    });
+    // change hire me button
+    $(".hero-btn").addClass("classDarkTheme");
+    $(".hero-btn").removeClass("classLightTheme");
 
     // change blog vibe card bg
     $(".blog-card").each(function (index, card) {
@@ -316,8 +312,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .delay(50 * index)
         .css({ background: "#4b0202" });
     });
-    // change hire me button
-    $("#hireMe").css({ background: "brown", fontColor: "black" });
   });
 
   // toggle nav slide in out on scroll
