@@ -1667,7 +1667,7 @@ Skills
   width: 100%;
   border-radius: var(--radius);
   position: relative;
-  box-shadow: var(--box-shadow-main);
+  box-shadow: var(--deep-shadow-card);
 }
 
 .skill-value {
@@ -1682,6 +1682,7 @@ Skills
 .value-70 {
   width: 70%;
   top: 0;
+  box-shadow: var(--deep-shadow-card);
 }
 .value-70 {
   width: 70%;
@@ -2515,11 +2516,15 @@ Blog
 .smile_1 {
   position: absolute;
   transform-style: preserve-3d;
-  perspective: 3rem;
-  inset: auto;
+  text-align: center;
   top: 0.2rem;
-  padding-left: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  min-height: 3rem;
+  border-radius: 50%;
+  text-align: center;
   font-size: 3rem;
+  margin-left: 1rem !important;
   color: rgb(163, 33, 33);
   transition: var(--transition);
   box-shadow: var(--deep-shadow-card);
