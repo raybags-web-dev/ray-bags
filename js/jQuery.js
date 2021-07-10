@@ -254,6 +254,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // handle themeswitcher dark theme
   $(".day").on("click", function () {
+    $(".inner-div-typewriter").css({
+      background: "#0d0b1f",
+    });
     $(this).css({
       display: "none",
     });
@@ -283,7 +286,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // change service  card bg
     $(".s_card").each((e, element) => {
       $(element).css({
-        background: "#0d0b1f ",
+        background: "#0d0b1f",
       });
     });
   });
@@ -291,6 +294,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // handle themeSwitcher light theme
 
   $(".night").on("click", function () {
+    $(".inner-div-typewriter").css({
+      background: "#4b0202",
+    });
     $(this).css({
       display: "none",
     });
@@ -329,6 +335,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // orignal color theme
   $(".original").on("click", function () {
+    $(".inner-div-typewriter").css({
+      background: "#110c0c",
+    });
     $(this).css({
       display: "none",
     });

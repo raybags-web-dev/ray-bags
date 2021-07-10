@@ -48,6 +48,8 @@ Root
   --inner-circle-rotate: inset 0px 0px 5px rgba(196, 195, 195, 0.5);
 
   --text-box-shadow: 5px 0px 0px 2px rgba(255, 255, 255, 0.5);
+  /* typewriter transition */
+  --typewriter-speed: 3s;
 
   /* max-width */
   --max-width: 1170px;
@@ -979,10 +981,11 @@ Hero
 .hero-info h4 {
   display: flex;
   flex-wrap: wrap;
-  font-size: 1.3em;
-  line-height: 2.5rem;
+  font-size: 1.2em;
+  line-height: 2rem;
   color: var(--clr-red);
-  opacity: 0.7;
+  opacity: 0.9;
+  font-style: italic;
   transition: var(--transition);
 }
 
@@ -990,10 +993,36 @@ Hero
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  font-size: 3em;
+  font-size: 4em;
   padding: 0.3rem;
+  overflow: hidden;
   font-family: "Times New Roman", Times, serif;
   transition: var(--transition);
+}
+.inner-hero-name {
+  position: relative;
+  margin-left: 0.7rem;
+  color: red;
+  font-weight: 500;
+  overflow: hidden;
+}
+.inner-div-typewriter {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  animation: var(--typewriter-speed);
+  background: var(--dark-bg-gray);
+  animation: typewriter_1 5 var(--typewriter-speed) 20s alternate ease-in-out;
+}
+
+@keyframes typewriter_1 {
+  to {
+    left: 0%;
+  }
 }
 
 .hero-icons {
@@ -2048,22 +2077,23 @@ Blog
   color: var(--clr-white);
   left: 0%;
   opacity: 0.8;
+  color: var(--clr-red);
   box-shadow: var(--inner-circle-rotate);
   -webkit-animation: rotateThemeIcon infinite linear 8s;
   animation: rotateThemeIcon infinite linear 8s;
 }
 .theme-big-screen .day {
   display: none;
-  color: var(--clr-white);
   left: 0%;
   opacity: 0.8;
+  color: blue;
   box-shadow: var(--inner-circle-rotate);
   -webkit-animation: rotateThemeIcon infinite linear 8s;
   animation: rotateThemeIcon infinite linear 8s;
 }
 .theme-big-screen .original {
   display: none;
-  color: var(--clr-white);
+  color: gray;
   left: 0%;
   opacity: 0.8;
   box-shadow: var(--inner-circle-rotate);
