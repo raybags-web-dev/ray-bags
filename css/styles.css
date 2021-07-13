@@ -354,6 +354,22 @@ p::-moz-selection {
   background: rgb(119, 31, 31);
   color: currentColor;
 }
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
 h1::selection,
 h2::selection,
 h3::selection,
@@ -1006,24 +1022,6 @@ Hero
   font-weight: 500;
   overflow: hidden;
 }
-.inner-div-typewriter {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  animation: var(--typewriter-speed);
-  background: var(--dark-bg-gray);
-  animation: typewriter_1 5 var(--typewriter-speed) 20s alternate ease-in-out;
-}
-
-@keyframes typewriter_1 {
-  to {
-    left: 0%;
-  }
-}
 
 .hero-icons {
   justify-items: start;
@@ -1032,53 +1030,72 @@ Hero
 .hero-btn {
   position: relative;
   text-align: center;
-  position: relative;
   margin-top: 1.25rem;
   width: 230px;
+  height: 65px;
+  overflow: hidden;
+  border-radius: 5px;
+  transition: var(--transition);
+  background-color: #1c1b29;
   box-shadow: var(--deep-shadow-card);
 }
 /* hero btn animations */
 .hero-btn::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 0;
+  left: -40%;
+  top: -30%;
   bottom: 0;
-  width: 50%;
-  height: 100%;
+  width: 180%;
+  height: 180%;
   transition: var(--transition);
-  background: rgb(5, 5, 5);
-  z-index: -1;
-  -webkit-animation: moverPsudo-left infinite linear 2s;
-  animation: moverPsudo-left infinite linear 2s;
+  background-image: conic-gradient(#04b0ee 15deg, transparent 120deg);
+  -webkit-animation: rotate-hero-btn infinite ease-in 3s;
+  animation: rotate-hero-btn infinite ease-in 3s;
 }
 .hero-btn::after {
-  content: "";
+  content: "Reachout";
   position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 50%;
-  height: 100%;
+  display: grid;
+  place-content: center;
+  top: 3%;
+  left: 3%;
+  width: 94%;
+  height: 94%;
+  font-size: 1.1rem;
   transition: var(--transition);
-  background: rgb(39, 49, 68);
-  z-index: -1;
-  /* animation: moverPsudo-right infinite linear 2s; */
+  background-color: #1c1b29;
+  border-radius: 5px;
+}
+
+@-webkit-keyframes rotate-hero-btn {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotate-hero-btn {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.hero-btn:hover::after {
+  background-color: #2a293f;
+  box-shadow: var(--deep-shadow_2);
+  color: red;
+  letter-spacing: 0.4rem;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 }
 .hero-btn:hover::before {
-  width: 0%;
-  transition: var(--transition);
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  opacity: 0;
 }
-.hero-btn:hover::after {
-  width: 0%;
-  transition: var(--transition);
-}
-.hero-btn:hover {
-  -webkit-backdrop-filter: var(--backdrop-light);
-  backdrop-filter: var(--backdrop-light);
-  box-shadow: var(--deep-shadow_2);
-  color: var(--clr-black);
-  background: rgb(59, 1, 1);
+.hero-btn:active::after {
+  letter-spacing: 3rem;
+  opacity: 0;
 }
 
 /* hero btn animations */
