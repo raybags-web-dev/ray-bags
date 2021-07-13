@@ -286,6 +286,7 @@ document.addEventListener("DOMContentLoaded", function () {
         background: "#0d0b1f",
       });
     });
+    $(".full-card").$(this).css({ background: "#243261" });
   });
 
   // handle themeSwitcher light theme
@@ -325,6 +326,7 @@ document.addEventListener("DOMContentLoaded", function () {
         background: "#4b0202",
       });
     });
+    $(".full-card").css({ background: "#4b0202" });
   });
 
   // orignal color theme
@@ -364,6 +366,7 @@ document.addEventListener("DOMContentLoaded", function () {
         background: "#110c0c ",
       });
     });
+    $(".full-card").css({ backgroundColor: "#110c0c" });
   });
 
   // toggle nav slide in out on scroll

@@ -370,6 +370,26 @@ p::-moz-selection {
   background: rgb(119, 31, 31);
   color: currentColor;
 }
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
 h1::selection,
 h2::selection,
 h3::selection,
@@ -1097,6 +1117,10 @@ Hero
   letter-spacing: 3rem;
   opacity: 0;
 }
+.hero-btn:hover {
+  box-shadow: var(--deep-shadow-card);
+  transition: var(--transition);
+}
 
 /* hero btn animations */
 
@@ -1192,6 +1216,7 @@ Hero
     backdrop-filter: var(--backdrop-heavy);
     transition: var(--transition);
     border-radius: var(--radius);
+    box-shadow: var(--deep-shadow-card);
   }
   .hero-img:hover:before,
   .about-img:hover::before {
@@ -1394,7 +1419,7 @@ Projects
   background: var(--main-black-bg);
   border-radius: var(--radius);
   margin-bottom: 2rem;
-  box-shadow: -5px 5px 15px 1px var(--clr-black);
+  box-shadow: var(--deep-shadow-card);
 }
 .project .box-1,
 .box-2,
@@ -1603,7 +1628,7 @@ Connect
   color: var(--clr-white);
 }
 .connect-title {
-  color: var(--clr-white) !important;
+  color: var(--clr-white);
 }
 .video-text {
   max-width: 30rem;
@@ -1619,15 +1644,11 @@ Connect
   transition: var(--transition);
   box-shadow: 5px 5px 20px 1px var(--clr-black);
   background: inset 0 -1px 10px #ffff;
-  outline: 2px solid transparent;
-  outline-offset: 0;
 }
 
 .video-banner:hover {
   transition: var(--transition);
-  outline: 3px solid var(--clr-white);
-  outline-offset: -2rem;
-  background: var(--main-black-bg);
+  background: var(rgb(65, 64, 64));
 }
 .video-banner a {
   -webkit-backdrop-filter: var(--backdrop-heavy);
@@ -1639,15 +1660,23 @@ Connect
   outline: 1px solid var(--clr-white);
   outline-offset: 6px;
 }
-.video-banner:hover .box-2 {
-  right: 0;
-  top: 0;
-  border-top-right-radius: 0.4rem;
-}
-.video-banner:hover .box-3 {
-  border-bottom-left-radius: 0.4rem;
+
+.video-banner .box-3 {
+  width: 20%;
+  height: 30%;
   bottom: 0;
   left: 0;
+  opacity: 0.5;
+  border-top-right-radius: 100%;
+  background: var(--dark-bg-gray);
+  border: transparent;
+}
+.video-banner:hover .box-3 {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.7;
+  border-top-right-radius: 0%;
 }
 .connect {
   -webkit-clip-path: polygon(
