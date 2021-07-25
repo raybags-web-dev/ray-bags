@@ -1074,7 +1074,6 @@ Hero
 }
 .inner-hero-name {
   position: relative;
-  margin-left: 0.7rem;
   color: red;
   font-weight: 500;
   overflow: hidden;
