@@ -1,4 +1,6 @@
 "use strict";
+
+import { pageUnavailable } from "./mentainance.js";
 // General jQuery handler.
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => $("#myBtn").removeClass("hide"), 1000);
@@ -465,4 +467,6 @@ document.addEventListener("DOMContentLoaded", function () {
   $(window).on("load", () => {
     showHideTopBtn();
   });
+
+  // pageUnavailable();
 });
