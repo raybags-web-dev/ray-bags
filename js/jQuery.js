@@ -468,5 +468,5 @@ document.addEventListener("DOMContentLoaded", function () {
     showHideTopBtn();
   });
 
-  // pageUnavailable();
+  pageUnavailable();
 });
