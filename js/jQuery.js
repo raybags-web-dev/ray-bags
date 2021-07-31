@@ -260,6 +260,14 @@ document.addEventListener("DOMContentLoaded", function () {
       display: "none",
     });
 
+    // Image catain
+    $(".hero-image-catain")
+      .animate({
+        width: "92%",
+        height: "92%",
+      })
+      .css({ background: "rgba(2, 4, 121, 0.3)" });
+
     $(".night").css({
       display: "block",
     });
@@ -299,6 +307,14 @@ document.addEventListener("DOMContentLoaded", function () {
     $(this).css({
       display: "none",
     });
+
+    $(".hero-image-catain")
+      .animate({
+        width: "92%",
+        height: "92%",
+      })
+      .css({ background: "rgba(121, 29, 29, 0.5)" });
+
     $(".day").css({
       display: "none",
     });
@@ -341,6 +357,14 @@ document.addEventListener("DOMContentLoaded", function () {
       display: "none",
     });
 
+    // Image catain
+    $(".hero-image-catain")
+      .animate({
+        width: "90%",
+        height: "90%",
+      })
+      .css({ background: "rgba(121, 29, 29, 0.2)" });
+
     $(".day").css({
       display: "block",
     });
@@ -372,7 +396,7 @@ document.addEventListener("DOMContentLoaded", function () {
         background: "#110c0c ",
       });
     });
-    $(".full-card").css({ backgroundColor: "#110c0c" });
+    $(".full-card").css({ backgroundColor: "rgba(19, 13, 13, 0.5)" });
     // svg background
     $("#svg-path, #svg-path-skills").attr({ fill: "hsl(240, 100%, 8%)" });
   });

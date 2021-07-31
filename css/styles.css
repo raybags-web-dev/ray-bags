@@ -988,6 +988,7 @@ Hero
 }
 
 .hero-image-wrapper {
+  position: relative;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -1001,6 +1002,20 @@ Hero
   box-shadow: var(--deep-shadow_3);
   -webkit-backdrop-filter: blur(100px);
   backdrop-filter: blur(100px);
+}
+.hero-image-catain {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 0%;
+  transform: translate(-50%, -50%);
+  background: rgba(19, 13, 13, 0.5);
+  z-index: 1;
+  transition: var(--transition);
+  border-radius: 50%;
 }
 
 .hero-image-wrapper:hover .pilot-hero-photo {
