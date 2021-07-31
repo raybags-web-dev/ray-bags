@@ -46,6 +46,7 @@ Root
   --shadow-container: 0px 1px 9px 6px #000000;
   --deep-shadow-card: -20px 20px 20px 1px rgb(0, 0, 0, 0.5);
   --deep-shadow_2: 10px 20px 20px 1px rgb(0, 0, 0, 0.5);
+  --deep-shadow_3: 1px 30px 30px 15px rgb(0, 0, 0, 0.5);
   --inner-circle-rotate: inset 0px 0px 5px rgba(196, 195, 195, 0.5);
 
   --text-box-shadow: 5px 0px 0px 2px rgba(255, 255, 255, 0.5);
@@ -205,6 +206,22 @@ h4 {
   line-height: 1.25;
   margin-bottom: 0.75rem;
   font-family: var(--ff-primary);
+}
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
 }
 h1::-moz-selection,
 h2::-moz-selection,
@@ -762,23 +779,23 @@ Sidebar
 .sidebar::before {
   content: "";
   position: absolute;
-  width: 30%;
+  width: 10%;
   height: 100%;
   top: 0;
-  left: 50%;
+  left: 0%;
   z-index: -1;
-  background: rgb(15, 13, 13);
+  background: rgb(0, 0, 0, 0.8);
   transition: 0.8s;
 }
 .sidebar::after {
   content: "";
   position: absolute;
-  width: 30%;
+  width: 10%;
   height: 100%;
   top: 0;
-  right: 50%;
+  right: 0%;
   z-index: -1;
-  background: rgb(29, 0, 0);
+  background: rgb(29, 0, 0, 0.8);
   transition: 0.8s;
 }
 
@@ -813,7 +830,6 @@ Sidebar
   letter-spacing: var(--spacing);
   display: inline-block;
   margin-bottom: 1.5rem;
-  -webkit-backdrop-filter: blur(100px);
   -webkit-backdrop-filter: blur(100px);
   backdrop-filter: blur(100px);
   color: var(--clr-red);
@@ -982,6 +998,9 @@ Hero
   border-radius: 50%;
   border: 2px solid transparent;
   background: rgba(116, 116, 116, 0.1);
+  box-shadow: var(--deep-shadow_3);
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
 }
 
 .hero-image-wrapper:hover .pilot-hero-photo {
@@ -1120,7 +1139,7 @@ Hero
   overflow: hidden;
   border-radius: 5px;
   transition: var(--transition);
-  background-color: hsl(0, 95%, 22%, 0.8);
+  background: rgba(43, 42, 42, 0.8);
   box-shadow: var(--deep-shadow-card);
 }
 /* hero btn animations */
@@ -1149,7 +1168,7 @@ Hero
   height: 94%;
   font-size: 1.1rem;
   transition: var(--transition);
-  background-color: #1c1b29;
+  background: rgb(0, 0, 0, 1);
   border-radius: 5px;
 }
 
@@ -1166,9 +1185,8 @@ Hero
 }
 
 .hero-btn:hover::after {
-  background-color: #2a293f;
   box-shadow: var(--deep-shadow_2);
-  color: red;
+  color: rgba(255, 255, 255, 0.8);
   letter-spacing: 0.4rem;
   -webkit-animation-play-state: paused;
   animation-play-state: paused;
@@ -1185,6 +1203,7 @@ Hero
 .hero-btn:hover {
   box-shadow: var(--deep-shadow-card);
   transition: var(--transition);
+  background: rgba(107, 106, 106, 0.1);
 }
 
 /* hero btn animations */
@@ -1356,6 +1375,7 @@ About
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  z-index: 1;
 }
 .about-title .underline {
   margin-left: 0;
@@ -1728,8 +1748,8 @@ Connect
 }
 
 .video-banner .box-3 {
-  width: 5%;
-  height: 5%;
+  width: 0%;
+  height: 0%;
   bottom: 0;
   left: 0;
   opacity: 0.5;
@@ -2626,6 +2646,9 @@ Blog
     font-family: "Times New Roman", Times, serif;
     transition: var(--transition);
   }
+  .blob-inner-wrapper {
+    height: 100%;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -2916,3 +2939,17 @@ Blog
   }
 }
 /*************** Mentaines page styles.**********************/
+
+.blob-main-wrapper {
+  top: 0%;
+  left: 0%;
+  width: 50%;
+  height: 100%;
+  background: transparent;
+}
+#svg-path,
+#svg-path-skills {
+  transform: translate(50% -50%);
+  background: rgba(4, 14, 160, 0.5);
+  height: 100;
+}

@@ -1,6 +1,7 @@
 "use strict";
 
 import { pageUnavailable } from "./mentainance.js";
+
 // General jQuery handler.
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => $("#myBtn").removeClass("hide"), 1000);
@@ -13,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
     6000
   );
 
-  //
   $("#nav").slideDown("1000", function () {
     $(this).addClass("navbar-fixed").css({
       top: "0%",
@@ -288,7 +288,9 @@ document.addEventListener("DOMContentLoaded", function () {
         background: "#0d0b1f",
       });
     });
-    $(".full-card").$(this).css({ background: "#243261" });
+    $(".full-card").css({ background: "#243261" });
+    // svg background
+    $("#svg-path, #svg-path-skills").attr({ fill: "hsl(281, 100%, 14%)" });
   });
 
   // handle themeSwitcher light theme
@@ -329,6 +331,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
     $(".full-card").css({ background: "#4b0202" });
+    // svg background
+    $("#svg-path, #svg-path-skills").attr({ fill: "hsl(0, 96%, 11%)" });
   });
 
   // orignal color theme
@@ -369,6 +373,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
     $(".full-card").css({ backgroundColor: "#110c0c" });
+    // svg background
+    $("#svg-path, #svg-path-skills").attr({ fill: "hsl(240, 100%, 8%)" });
   });
 
   // toggle nav slide in out on scroll
@@ -468,5 +474,5 @@ document.addEventListener("DOMContentLoaded", function () {
     showHideTopBtn();
   });
 
-  pageUnavailable();
+  // pageUnavailable();
 });
