@@ -455,6 +455,10 @@ p::-moz-selection {
   background: rgb(119, 31, 31);
   color: currentColor;
 }
+h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
 h1::selection,
 h2::selection,
 h3::selection,
@@ -1012,7 +1016,7 @@ Hero
   width: 0%;
   height: 0%;
   transform: translate(-50%, -50%);
-  background: rgba(19, 13, 13, 0.5);
+  background: rgba(2, 4, 121, 0.5);
   z-index: 1;
   transition: var(--transition);
   border-radius: 50%;
