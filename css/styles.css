@@ -730,6 +730,15 @@ Hero
 */
 
 /* underline added to globals */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  perspective: 10em;
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
+    url("../images/gb_2.png") center/cover no-repeat fixed;
+  perspective-origin: 50% calc(50% - 2em);
+}
 .hero .underline {
   margin-bottom: 0.5rem;
   margin-left: 0;
@@ -738,13 +747,6 @@ Hero
 .hero-img {
   display: none;
 }
-.hero {
-  position: relative;
-  min-height: 100vh;
-  perspective: 10em;
-  perspective-origin: 50% calc(50% - 2em);
-}
-
 .hero-image-wrapper {
   position: relative;
   width: -webkit-max-content;
@@ -1186,7 +1188,7 @@ Services
   overflow: hidden;
   background: var(--dark-bg-gray);
   background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-    url("/images/nature1.jpeg") center/cover no-repeat fixed;
+    url("/images/gb_2.png") center/cover no-repeat fixed;
 }
 .service {
   position: relative;
@@ -1464,6 +1466,7 @@ Connect
   -o-object-fit: cover;
   object-fit: cover;
   z-index: -100;
+  opacity: 0.8;
   transition: var(--transition);
 }
 .connect::after {
@@ -1552,6 +1555,10 @@ Connect
 Skills
 ===============
 */
+.skills {
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
+    url("../images/gb_2.png") center/cover no-repeat fixed;
+}
 @media screen and (min-width: 768px) {
   .skills-center {
     display: grid;
@@ -1740,6 +1747,8 @@ Blog
   justify-content: center;
   align-items: center;
   transform-style: preserve-3d;
+  background: linear-gradient(rgb(0, 0, 0, 0.8), rgb(0, 0, 0, 0.8)),
+    url("../images/bg_1.png") center/cover no-repeat fixed;
 }
 
 .card {
@@ -2712,41 +2721,3 @@ Blog
   }
 }
 /*************** Mentaines page styles.**********************/
-
-/* SVG styles */
-.blob-main-wrapper {
-  top: 0%;
-  left: 0%;
-  width: 50%;
-  height: 100%;
-  z-index: -1;
-  background: transparent;
-}
-/* .blob-inner-wrapper {
-  top: 0%;
-  z-index: -1;
-
-} */
-#svg-path,
-#svg-path-skills {
-  /* transform: translate(50% -50%); */
-  background: rgba(4, 14, 160, 0.5);
-  height: 100;
-}
-@media screen and (max-width: 1183px) {
-  #svg-path{
-    transform: translate(20%, 45%);
-    transition: var(--transition);
-  }
-}
-@media screen and (max-width: 972px) {
-  .hero .blob-inner-wrapper{
-    width: 100%;
-    height: 100%;
-  }
-  #svg-path{
-    transform: translate(40%, 48%);
-    transition: var(--transition);
-  }
-
-}
