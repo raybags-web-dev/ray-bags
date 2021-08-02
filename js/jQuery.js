@@ -240,12 +240,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  // shadow for about text
-  textShadow(".about-info p", "<span>", "</span>");
-  // shadow for section title
-  textShadow(".timeline-item p", "<span>", "</span>");
-  // testimonials
-  textShadow(".card-info p", "<span>", "</span>");
+  // // shadow for about text
+  // textShadow(".about-info p", "<span>", "</span>");
+  // // shadow for section title
+  // textShadow(".timeline-item p", "<span>", "</span>");
+  // // testimonials
+  // textShadow(".card-info p", "<span>", "</span>");
 
   // handle footer icon spin dynamically
   $("a .spin-icon-footer").each(function (index, icon) {
@@ -363,7 +363,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     $(".full-card").css({ background: "#4b0202" });
     // svg background
-    $("#svg-path, #svg-path-skills").attr({ fill: "hsl(0, 96%, 11%)" });
+    $("#svg-path, #svg-path-skills").attr({ fill: "hsl(0, 96%, 10%)" });
   });
 
   // orignal color theme
