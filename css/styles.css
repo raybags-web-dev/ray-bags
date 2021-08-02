@@ -2719,11 +2719,34 @@ Blog
   left: 0%;
   width: 50%;
   height: 100%;
+  z-index: -1;
   background: transparent;
 }
+/* .blob-inner-wrapper {
+  top: 0%;
+  z-index: -1;
+
+} */
 #svg-path,
 #svg-path-skills {
-  transform: translate(50% -50%);
+  /* transform: translate(50% -50%); */
   background: rgba(4, 14, 160, 0.5);
   height: 100;
+}
+@media screen and (max-width: 1183px) {
+  #svg-path{
+    transform: translate(20%, 45%);
+    transition: var(--transition);
+  }
+}
+@media screen and (max-width: 972px) {
+  .hero .blob-inner-wrapper{
+    width: 100%;
+    height: 100%;
+  }
+  #svg-path{
+    transform: translate(40%, 48%);
+    transition: var(--transition);
+  }
+
 }
