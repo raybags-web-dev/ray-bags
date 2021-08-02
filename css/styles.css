@@ -44,7 +44,7 @@ Root
   --btn-shadow: 1px 3px 1px rgb(0, 0, 0, 0.5);
   --box-shadow-main: 5px 5px 5px 1px var(--clr-black);
   --shadow-container: 0px 1px 9px 6px #000000;
-  --deep-shadow-card: -20px 20px 20px 1px rgb(0, 0, 0, 0.5);
+  --deep-shadow-card: -20px 20px 20px 1px hsla(0, 0%, 0%, 0.5);
   --deep-shadow_2: 10px 20px 20px 1px rgb(0, 0, 0, 0.5);
   --deep-shadow_3: 1px 30px 30px 15px rgb(0, 0, 0, 0.5);
   --inner-circle-rotate: inset 0px 0px 5px rgba(196, 195, 195, 0.5);
@@ -935,8 +935,6 @@ Sidebar
     transition: 6s;
   }
 }
-
-/* svg large screen */
 
 @media screen and (max-width: 564px) {
   .icons-small-screen li {
@@ -2959,6 +2957,7 @@ Blog
 }
 /*************** Mentaines page styles.**********************/
 
+/* SVG styles */
 .blob-main-wrapper {
   top: 0%;
   left: 0%;

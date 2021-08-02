@@ -74,23 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
-  // in viewport function for animating hero profile pic
-  $(window).on("scroll", () => {
-    let top_of_element = $(".pilot-hero-photo").offset().top;
-    let bottom_of_element = $(".pilot-hero-photo").offset().top;
-    $(".pilot-hero-photo").outerHeight();
-    let bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
-    let top_of_screen = $(window).scrollTop();
-
-    bottom_of_screen > top_of_element && top_of_screen < bottom_of_element
-      ? $(".pilot-hero-photo").removeClass("fadeoutstyle")
-      : $(".pilot-hero-photo").addClass("fadeoutstyle").css({
-          "box-shadow": "1px 1px 100px #000000",
-        });
-  });
-
   // handle skills level animation
-
   function do_stuff_while_in_viewport(
     item,
     width,
@@ -231,6 +215,37 @@ document.addEventListener("DOMContentLoaded", function () {
     "85%",
     90
   );
+
+  // // about info animation
+  function textShadow(element, openTag, clossingTag) {
+    $(element).each((index, paragraph) => {
+      let header = $(paragraph);
+
+      let chars = header.text().split("");
+
+      let headerSpans = chars.map(function (char) {
+        return $(`${openTag}` + char + `${clossingTag}`);
+      });
+
+      $(header).html(headerSpans);
+
+      for (let i = 0; i <= headerSpans.length; i++) {
+        if (headerSpans[i] != undefined) {
+          $(headerSpans[i])
+            .delay(200 * index)
+            .css({
+              "box-shadow": "-10px 20px 20px 1px hsla(0, 0%, 0%, 0.4)",
+            });
+        }
+      }
+    });
+  }
+  // shadow for about text
+  textShadow(".about-info p", "<span>", "</span>");
+  // shadow for section title
+  textShadow(".timeline-item p", "<span>", "</span>");
+  // testimonials
+  textShadow(".card-info p", "<span>", "</span>");
 
   // handle footer icon spin dynamically
   $("a .spin-icon-footer").each(function (index, icon) {
