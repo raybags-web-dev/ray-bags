@@ -906,7 +906,7 @@ Sidebar
   display: none;
 }
 .icons-small-screen li:hover {
-  box-shadow: inset 0 -20px 10px rgba(180, 12, 12, 0.5);
+  margin-top: .5rem;
   transition: var(--transition);
 }
 @media screen and (max-width: 991px) {
