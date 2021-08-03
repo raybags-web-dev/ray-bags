@@ -243,7 +243,22 @@ document.addEventListener("DOMContentLoaded", function () {
     $(this).css({
       display: "none",
     });
+    $(".inner-hero-name").css({ color: "#5e5ef1" });
+    // animate links
+    $(".achor-link").each((index, link) => {
+      $(link).css({
+        backgroundImage:
+          "linear-gradient(to right, #5e5ef1 50%, #f7090980 100%)",
+      });
+    });
+    // animate logo 
+    $(".nav-logo ").css({ filter: "grayscale(70%)" });
 
+    // animate hero name span
+    $(".inner-hero-name span").css({ "min-width": "100%" });
+    $(".inner-hero-name span").delay(500).animate({ "min-width": "0%" });
+    // animate arrow
+    $("#down_arrow, #down_arrow2").css({ color: "#5e5ef1" });
     // Image catain
     $(".hero-image-catain")
       .animate({
@@ -291,6 +306,22 @@ document.addEventListener("DOMContentLoaded", function () {
     $(this).css({
       display: "none",
     });
+    // animate name color
+    $(".inner-hero-name").css({ color: "#f7090980" });
+    // animate arrow
+    $("#down_arrow, #down_arrow2").css({ color: "#ff0000" });
+
+    // animate name
+    $(".inner-hero-name span").css({ "min-width": "100%" });
+    $(".inner-hero-name span").delay(500).animate({ "min-width": "0%" });
+
+    $(".achor-link").each((index, link) => {
+      $(link).css({
+        backgroundImage:
+          "linear-gradient(to right, #ff0000 50%, #f7090980 100%)",
+      });
+    });
+    $(".nav-logo ").css({ filter: "grayscale(0%)" });
 
     $(".hero-image-catain")
       .animate({
@@ -340,6 +371,22 @@ document.addEventListener("DOMContentLoaded", function () {
     $(this).css({
       display: "none",
     });
+    $(".inner-hero-name").css({ color: "#73dfdf" });
+
+    $(".achor-link").each((index, link) => {
+      $(link).css({
+        backgroundImage:
+          "linear-gradient(to right, #73dfdf 50%, #f7090980 100%)",
+      });
+    });
+
+    $(".nav-logo ").css({ filter: "grayscale(10%)" });
+
+    // animate arrow
+    $("#down_arrow, #down_arrow2").css({ color: "#73dfdf" });
+    // animate hero name span
+    $(".inner-hero-name span").css({ "min-width": "100%" });
+    $(".inner-hero-name span").delay(500).animate({ "min-width": "0%" });
 
     // Image catain
     $(".hero-image-catain")
