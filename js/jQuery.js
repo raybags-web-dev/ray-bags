@@ -1,10 +1,24 @@
 "use strict";
 
 import { pageUnavailable } from "./mentainance.js";
+import { talent } from "./data.js";
 
 // General jQuery handler.
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => $("#myBtn").removeClass("hide"), 1000);
+
+  (function () {
+    let count = 0;
+    setInterval(function () {
+      $(".skill-desc span").animate({ width: "0%" });
+      count++;
+      $(".skill-desc").fadeOut(300, function () {
+        $(this)
+          .text(talent[count % talent.length])
+          .fadeIn(500);
+      });
+    }, 5000);
+  })();
 
   // Onload clear screen.
   $(".whole_body").css(
@@ -247,12 +261,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // animate links
     $(".achor-link").each((index, link) => {
       $(link).css({
-        backgroundImage:
-          "linear-gradient(to right, #5e5ef1 50%, #f7090980 100%)",
+        backgroundImage: "linear-gradient(to top, #5e5ef1 30%, #f7090980 100%)",
       });
     });
-    // animate logo 
-    $(".nav-logo ").css({ filter: "grayscale(70%)" });
+    // animate logo
+    $(".nav-logo").css({ filter: "grayscale(100%)" });
 
     // animate hero name span
     $(".inner-hero-name span").css({ "min-width": "100%" });
@@ -296,8 +309,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
     $(".full-card").css({ background: "#243261" });
-    // svg background
-    $("#svg-path, #svg-path-skills").attr({ fill: "hsl(281, 100%, 14%)" });
   });
 
   // handle themeSwitcher light theme
@@ -317,11 +328,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     $(".achor-link").each((index, link) => {
       $(link).css({
-        backgroundImage:
-          "linear-gradient(to right, #ff0000 50%, #f7090980 100%)",
+        backgroundImage: "linear-gradient(to top, #ff0000 30%, #f7090980 100%)",
       });
     });
-    $(".nav-logo ").css({ filter: "grayscale(0%)" });
+    $(".nav-logo ").css({ filter: "grayscale(90%)" });
 
     $(".hero-image-catain")
       .animate({
@@ -362,8 +372,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
     $(".full-card").css({ background: "#4b0202" });
-    // svg background
-    $("#svg-path, #svg-path-skills").attr({ fill: "hsl(0, 96%, 10%)" });
   });
 
   // orignal color theme
@@ -375,12 +383,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     $(".achor-link").each((index, link) => {
       $(link).css({
-        backgroundImage:
-          "linear-gradient(to right, #73dfdf 50%, #f7090980 100%)",
+        backgroundImage: "linear-gradient(to top, #73dfdf 30%, #f7090980 100%)",
       });
     });
 
-    $(".nav-logo ").css({ filter: "grayscale(10%)" });
+    $(".nav-logo ").css({ filter: "grayscale(100%)" });
 
     // animate arrow
     $("#down_arrow, #down_arrow2").css({ color: "#73dfdf" });
@@ -428,8 +435,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
     $(".full-card").css({ backgroundColor: "rgba(19, 13, 13, 0.5)" });
-    // svg background
-    $("#svg-path, #svg-path-skills").attr({ fill: "hsl(240, 100%, 8%)" });
   });
 
   // toggle nav slide in out on scroll
