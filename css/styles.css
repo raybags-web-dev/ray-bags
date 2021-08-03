@@ -229,6 +229,11 @@ p::-moz-selection {
   color: currentColor;
 }
 
+h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+
 h1::selection,
 h2::selection,
 h3::selection,
@@ -2789,7 +2794,6 @@ Blog
   box-shadow: var(--shadow-dark_2);
 }
 
-
 .login-title {
   position: relative;
   color: var(--white);
@@ -2828,7 +2832,8 @@ Blog
   margin-bottom: 7px;
 }
 
-.input-group input, textarea {
+.input-group input,
+textarea {
   font-size: 1.5em;
   padding: 0.1em 0.25em;
   background-color: hsla(201, 100%, 91%, 0.3);
@@ -2839,8 +2844,8 @@ Blog
   font-weight: lighter;
   box-shadow: var(--deep-shadow_2);
 }
-.input-group textarea{
- text-align: center;
+.input-group textarea {
+  text-align: center;
 }
 
 .input-group input::-moz-selection {
@@ -2969,7 +2974,7 @@ Blog
   font-size: 1.5em;
   font-style: italic;
 }
-@media screen and (max-width: 370px){
+@media screen and (max-width: 370px) {
   .login-wrapper {
     padding: 40px 20px;
     min-width: 335px;
@@ -2984,7 +2989,6 @@ Blog
     font-weight: lighter;
     box-shadow: var(--deep-shadow_2);
   }
-
 }
 
 /* Particles  */
