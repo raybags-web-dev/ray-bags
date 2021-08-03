@@ -176,7 +176,7 @@ img:not(.nav-logo) {
   opacity: 0.7;
   cursor: pointer;
   -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+  filter: grayscale(100%);
   transform-style: preserve-3d;
   transform: var(--level-one);
   transition: var(--transition);
@@ -220,7 +220,11 @@ p::-moz-selection {
   color: currentColor;
 }
 
-h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, p::-moz-selection {
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
   background: rgb(119, 31, 31);
   color: currentColor;
 }
@@ -892,9 +896,8 @@ Hero
   opacity: 0.9;
   font-weight: 600;
   font-style: italic;
-  transition: .3s;
+  transition: 0.3s;
 }
-
 
 .hero-info h1 {
   position: relative;
@@ -926,7 +929,7 @@ Hero
   transition: 0.2s;
   border-radius: 0.5rem;
   -webkit-backdrop-filter: blur(100px);
-          backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
   background: rgba(156, 156, 156, 0.1);
   z-index: 1;
   background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
@@ -959,7 +962,7 @@ Hero
   width: 150%;
   height: 150%;
   transition: var(--transition);
-  opacity: .5;
+  opacity: 0.5;
   background-image: conic-gradient(var(--clr-red) 360deg, transparent -150deg);
   -webkit-animation: rotate-hero-btn infinite linear 10s;
   animation: rotate-hero-btn infinite linear 10s;
@@ -993,7 +996,6 @@ Hero
     transform: rotate(-200deg);
     width: 700%;
     height: 700%;
-
   }
 }
 
@@ -2758,6 +2760,233 @@ Blog
     width: 80%;
   }
 }
+
+/* Login Form styles */
+
+.login-section {
+  position: relative;
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
+    url("../images/bg_1-min.png") center/cover no-repeat fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-wrapper {
+  position: relative;
+  background-color: hsla(0, 2%, 12%, 0.5);
+  padding: 50px 30px;
+  min-width: 370px;
+  width: 700px;
+  max-width: 600px;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-dark_2);
+}
+
+
+.login-title {
+  position: relative;
+  color: var(--white);
+  text-align: center;
+  margin: 0;
+  font-size: 2em;
+  font-weight: normal;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.login-title::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 140%;
+  width: 60%;
+  height: 8%;
+  transform: translate(-50%, -140%);
+  background: var(--red);
+  box-shadow: var(--deep-shadow_2);
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  color: var(--clr-white);
+  font-weight: lighter;
+  font-size: 1.5em;
+  margin-bottom: 7px;
+}
+
+.input-group input, textarea {
+  font-size: 1.5em;
+  padding: 0.1em 0.25em;
+  background-color: hsla(201, 100%, 91%, 0.3);
+  border: 1px solid hsla(200, 100%, 5%, 0.3);
+  outline: none;
+  border-radius: 5px;
+  color: var(--white);
+  font-weight: lighter;
+  box-shadow: var(--deep-shadow_2);
+}
+.input-group textarea{
+ text-align: center;
+}
+
+.input-group input::-moz-selection {
+  background-color: hsla(9, 100%, 54%, 0.3);
+}
+.input-group input::selection {
+  background-color: hsla(9, 100%, 54%, 0.3);
+}
+
+.input-group input:focus {
+  border: 1px solid rgb(4, 39, 58);
+  transition: var(--standard-transition);
+}
+.input-group input::-webkit-input-placeholder {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-align: center;
+}
+.input-group input::-moz-placeholder {
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+  text-align: center;
+}
+.input-group input:-ms-input-placeholder {
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+  text-align: center;
+}
+.input-group input::-ms-input-placeholder {
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+  text-align: center;
+}
+.input-group input::placeholder {
+  transition: 0.5s;
+  text-align: center;
+}
+.input-group input:focus::-webkit-input-placeholder {
+  letter-spacing: 5rem;
+  opacity: 0;
+  color: var(--white);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.input-group input:focus::-moz-placeholder {
+  letter-spacing: 5rem;
+  opacity: 0;
+  color: var(--white);
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+.input-group input:focus:-ms-input-placeholder {
+  letter-spacing: 5rem;
+  opacity: 0;
+  color: var(--white);
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+}
+.input-group input:focus::-ms-input-placeholder {
+  letter-spacing: 5rem;
+  opacity: 0;
+  color: var(--white);
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+}
+.input-group input:focus::placeholder {
+  letter-spacing: 5rem;
+  opacity: 0;
+  color: var(--white);
+  transition: 0.5s;
+}
+
+.login-button {
+  padding: 10px 30px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: hsla(204, 2%, 45%, 0.1);
+  border: 1px solid rgb(167, 167, 167);
+  outline: none;
+  font-size: 1.5em;
+  color: var(--white);
+  font-weight: lighter;
+  box-shadow: var(--deep-shadow_2);
+  margin-top: 20px;
+}
+.login-button:hover {
+  background-color: rgba(69, 69, 70, 0.3);
+}
+.login-button:focus {
+  background-color: rgba(69, 69, 70, 0.5);
+  transform: scale(0.98);
+}
+
+.logout-btn {
+  position: fixed;
+  padding: 10px 30px;
+  width: 200px;
+  bottom: 1%;
+  left: 1%;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: hsla(204, 2%, 45%, 0.1);
+  border: 1px solid rgb(167, 167, 167);
+  outline: none;
+  font-size: 1.3em;
+  color: var(--white);
+  font-style: italic;
+  font-weight: lighter;
+  box-shadow: var(--deep-shadow);
+  margin-top: 20px;
+  z-index: 100;
+}
+.logout-btn:hover {
+  background-color: rgba(42, 42, 42, 0.4);
+  color: var(--red);
+  transition: var(--standard-transition);
+}
+.logout-btn:active {
+  background-color: rgba(69, 69, 70, 0.5);
+  transform: scale(0.98);
+}
+.login-error {
+  position: absolute;
+  color: red;
+  font-size: 1.5em;
+  font-style: italic;
+}
+@media screen and (max-width: 370px){
+  .login-wrapper {
+    padding: 40px 20px;
+    min-width: 335px;
+  }
+  .login-title {
+    margin-bottom: 35px;
+  }
+
+  .input-group textarea {
+    margin: auto;
+    border-radius: 5px;
+    font-weight: lighter;
+    box-shadow: var(--deep-shadow_2);
+  }
+
+}
+
 /* Particles  */
 
 #particles-js {
