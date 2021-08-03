@@ -463,7 +463,7 @@ Navbar
     transition: var(--transition);
     background-image: linear-gradient(
       to right,
-      var(--clc-green) 50%,
+      var(--clr-white) 50%,
       var(--clr-red) 100%
     );
     text-shadow: none;
@@ -898,7 +898,7 @@ Hero
 }
 .inner-hero-name {
   position: relative;
-  color: var(--clc-green);
+  color: #7d7e83;
   font-weight: 500;
   overflow: hidden;
   transition: var(--transition);
@@ -1775,7 +1775,7 @@ Blog
   position: relative;
   perspective: 1500px;
   transform-style: preserve-3d;
-  background: #110c0c;
+  background: hsla(0, 18%, 20%, 0.2);
   overflow: hidden;
   border-radius: 0.6rem;
   -webkit-backdrop-filter: blur(100px);
@@ -2738,5 +2738,18 @@ Blog
     flex-wrap: wrap;
     width: 80%;
   }
+}
+/* Particles  */
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0.4;
 }
 /*************** Mentaines page styles.**********************/
