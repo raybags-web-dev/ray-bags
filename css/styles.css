@@ -2437,8 +2437,11 @@ Blog
     align-items: center;
   }
   .hero-info {
-    margin-bottom: 40%;
+    margin-bottom: 10%;
     transition: var(--transition);
+  }
+  .brand-name{
+    font-size: 2.4rem !important;
   }
 
   .hero-info h1::before {
