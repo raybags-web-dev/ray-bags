@@ -247,6 +247,11 @@ p::-moz-selection {
   color: currentColor;
 }
 
+h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+
 h1::selection,
 h2::selection,
 h3::selection,
@@ -1502,6 +1507,10 @@ Projects
     transform: translate(10%, 100%);
     overflow: hidden;
   }
+  .hero-info {
+    margin-bottom: 10%;
+    transition: var(--transition);
+  }
 }
 
 .in-line-contact {
@@ -2504,6 +2513,10 @@ Blog
     justify-content: center;
     align-items: center;
   }
+  .hero-info {
+    margin-bottom: 10%;
+    transition: var(--transition);
+  }
 }
 
 @media screen and (max-width: 989px) {
@@ -2516,6 +2529,10 @@ Blog
     align-items: center;
     margin: auto;
     transform: translate(-50%, 68%) !important;
+  }
+  .hero-info {
+    margin-bottom: 10%;
+    transition: var(--transition);
   }
 }
 
@@ -3052,7 +3069,8 @@ textarea {
   margin: auto;
   -o-object-fit: cover;
   object-fit: cover;
-  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
