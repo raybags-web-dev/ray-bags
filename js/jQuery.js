@@ -2,11 +2,13 @@
 
 import { pageUnavailable } from "./mentainance.js";
 import { talent } from "./data.js";
+import { imageObject } from "./image_curacel.js";
 
 // General jQuery handler.
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => $("#myBtn").removeClass("hide"), 1000);
 
+  // dynamic hero text handler
   (function () {
     let count = 0;
     setInterval(function () {
@@ -515,6 +517,36 @@ document.addEventListener("DOMContentLoaded", function () {
       $("#down_arrow2").addClass("hide");
     }
   }
+
+  // curacel for changing images dynamically.
+
+  (function () {
+    let i = 0;
+    const myInterval = setInterval( async function () {
+      let imageObj = imageObject[i++];
+
+      if (imageObj === undefined) {
+        return (i = 0);
+      }
+      const { cityName, imgURL, desc } = imageObj;      
+      // inner div and image
+      const cityImage = $(`<img  src="${imgURL}"/>`).attr({class: "destination-image" });
+      const imageContainer =  $("<div></div>").attr({ class: "image-wrapper" }).append(cityImage);
+      // cityname and description
+      const cityHeading =  $(`<h4>${cityName}</h4>`).attr({class: "city-heading"});
+      const cityDescription =  $(`<p>${desc}</p>`).attr({class: "city-description"});
+      // info div
+      
+      const infoContainer = $("<div></div>").attr({class: "city-wrapper"}).append(cityHeading, cityDescription);
+
+      cityImage.delay(9000).fadeOut();
+      cityHeading.delay(9000).fadeOut();
+      cityDescription.delay(9000).fadeOut();
+      // append to div
+      $(".image-curancel").append( imageContainer, infoContainer);
+    }, 10000);
+        
+  }());
 
   // run functions on scroll, resize and screenorientation
   // functions running on document scroll
