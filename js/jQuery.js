@@ -539,14 +539,25 @@ document.addEventListener("DOMContentLoaded", function () {
       
       const infoContainer = $("<div></div>").attr({class: "city-wrapper"}).append(cityHeading, cityDescription);
 
-      cityImage.delay(9000).fadeOut();
-      cityHeading.delay(9000).fadeOut();
-      cityDescription.delay(9000).fadeOut();
+      cityImage.delay(8000).fadeOut();
+      cityHeading.delay(7000).fadeOut();
+      cityDescription.delay(7000).fadeOut();
       // append to div
       $(".image-curancel").append( imageContainer, infoContainer);
+
     }, 10000);
         
+    const removeHeroImage = setInterval(()=>{
+      $(".image-wrapper").remove();
+      $(".city-wrapper").remove();
+    }, 20000);
+
   }());
+  // setTimeout(()=>{
+  //   clearInterval(myInterval);
+  //   clearInterval(removeHeroImage);
+  // }, 15500)
+
 
   // run functions on scroll, resize and screenorientation
   // functions running on document scroll
