@@ -522,42 +522,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
   (function () {
     let i = 0;
-    const myInterval = setInterval( async function () {
+    const myInterval = setInterval(async function () {
       let imageObj = imageObject[i++];
 
       if (imageObj === undefined) {
         return (i = 0);
       }
-      const { cityName, imgURL, desc } = imageObj;      
+      const { cityName, imgURL, desc } = imageObj;
       // inner div and image
-      const cityImage = $(`<img  src="${imgURL}"/>`).attr({class: "destination-image" });
-      const imageContainer =  $("<div></div>").attr({ class: "image-wrapper" }).append(cityImage);
+      $(".destination-image")
+        .attr({ src: `${imgURL}` })
+        .removeClass("hide")
+        .fadeIn();
       // cityname and description
-      const cityHeading =  $(`<h4>${cityName}</h4>`).attr({class: "city-heading"});
-      const cityDescription =  $(`<p>${desc}</p>`).attr({class: "city-description"});
+      const cityHeading = $(`<h4>${cityName}</h4>`).attr({
+        class: "city-heading",
+      });
+      const cityDescription = $(`<p>${desc}</p>`).attr({
+        class: "city-description",
+      });
       // info div
-      
-      const infoContainer = $("<div></div>").attr({class: "city-wrapper"}).append(cityHeading, cityDescription);
 
-      cityImage.delay(8000).fadeOut();
-      cityHeading.delay(7000).fadeOut();
-      cityDescription.delay(7000).fadeOut();
+      const infoContainer = $("<div></div>")
+        .attr({ class: "city-wrapper" })
+        .append(cityHeading, cityDescription);
+
+      // $(".destination-image").delay(10000).fadeOut();
+      cityHeading.delay(10000).slideUp();
+      cityDescription.delay(10000).slideUp();
       // append to div
-      $(".image-curancel").append( imageContainer, infoContainer);
-
+      $(".image-curancel").append(infoContainer);
     }, 10000);
-        
-    const removeHeroImage = setInterval(()=>{
-      $(".image-wrapper").remove();
-      $(".city-wrapper").remove();
-    }, 20000);
+  })();
 
-  }());
-  // setTimeout(()=>{
-  //   clearInterval(myInterval);
-  //   clearInterval(removeHeroImage);
-  // }, 15500)
-
+  const removeHeroImage = setInterval(() => {
+    $(".city-wrapper").remove();
+  }, 25000);
 
   // run functions on scroll, resize and screenorientation
   // functions running on document scroll

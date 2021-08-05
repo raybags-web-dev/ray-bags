@@ -1,5 +1,5 @@
 const talent = [
-  "Experience in:",
+  "Experienced in:",
   " API management",
   "Software testing",
   "Cloud Computing",
@@ -10,7 +10,7 @@ const talent = [
   "State Management",
   "Frontend Development",
   "Bash Scripting",
-  "and many more",
+  "and many more...",
 ];
 
 export { talent };

@@ -3076,13 +3076,14 @@ textarea {
   margin: auto;
   -o-object-fit: cover;
   object-fit: cover;
+  filter: saturate(50%);
   -webkit-backdrop-filter: blur(100px);
   backdrop-filter: blur(100px);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   transition: var(--transition);
-  animation: scaleImage infinite alternate-reverse 10s;
+  animation: scaleImage infinite alternate-reverse 15s;
 }
 @-webkit-keyframes scaleImage {
   to {
@@ -3095,6 +3096,7 @@ textarea {
   }
 }
 .city-wrapper {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3110,9 +3112,9 @@ textarea {
 .city-heading {
   position: relative;
   color: var(--clr-red);
-  font-weight: 600;
+  font-weight: 500;
   margin-top: -3rem;
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   text-transform: uppercase;
   background-image: linear-gradient(
     to top,
@@ -3156,10 +3158,10 @@ textarea {
   .city-heading {
     font-weight: 400;
     margin-top: -1rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   .city-heading::before {
-    background: var(--clr-white);
+    background: var(--clr-red);
   }
   .city-description {
     width: 300px;
