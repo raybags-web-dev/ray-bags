@@ -247,7 +247,11 @@ p::-moz-selection {
   color: currentColor;
 }
 
-h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, p::-moz-selection {
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
   background: rgb(119, 31, 31);
   color: currentColor;
 }
@@ -671,6 +675,11 @@ Sidebar
   max-width: 30rem;
 }
 
+.hero-info {
+  margin-bottom: 10%;
+  transition: var(--transition);
+}
+
 .hero-social-icon li {
   display: flex;
   justify-content: center;
@@ -775,9 +784,6 @@ Hero
     url("../images/gb_2-min.png") center/cover no-repeat fixed;
   perspective-origin: 50% calc(50% - 2em);
 }
-.hero-mid {
-  padding-top: 3rem;
-}
 .hero .underline {
   margin-bottom: 0.5rem;
   margin-left: 0;
@@ -829,6 +835,7 @@ Hero
   position: -webkit-sticky;
   position: sticky;
   top: 5%;
+  padding-top: 10%;
 }
 /* scroll down arrow styles and animation */
 .arrows-container {
@@ -991,8 +998,8 @@ Hero
   transition: var(--transition);
   opacity: 0.5;
   background-image: conic-gradient(var(--clr-red) 360deg, transparent -150deg);
-  -webkit-animation: rotate-hero-btn infinite linear 10s;
-  animation: rotate-hero-btn infinite linear 10s;
+  -webkit-animation: rotate-hero-btn infinite linear 30s;
+  animation: rotate-hero-btn infinite linear 30s;
 }
 .hero-btn::after {
   content: "Reachout";
@@ -2449,7 +2456,7 @@ Blog
     margin-bottom: 10%;
     transition: var(--transition);
   }
-  .brand-name{
+  .brand-name {
     font-size: 2.4rem !important;
   }
 
@@ -3070,7 +3077,7 @@ textarea {
   -o-object-fit: cover;
   object-fit: cover;
   -webkit-backdrop-filter: blur(100px);
-          backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
