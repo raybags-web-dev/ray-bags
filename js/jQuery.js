@@ -253,6 +253,10 @@ document.addEventListener("DOMContentLoaded", function () {
     $(this).css({
       display: "none",
     });
+    // change inset box shadow for social icons on hero page
+    $(".hero-social-icon .hero-box-animate").css({
+      "box-shadow": "inset 0px 0px 10px 5px rgba(2, 86, 126, 0.5)",
+    });
     $(".inner-hero-name").css({ color: "#5e5ef1" });
     // animate links
     $(".achor-link").each((index, link) => {
@@ -312,6 +316,10 @@ document.addEventListener("DOMContentLoaded", function () {
   $(".night").on("click", function () {
     $(this).css({
       display: "none",
+    });
+    // change inset box shadow for social icons on hero page
+    $(".hero-social-icon .hero-box-animate").css({
+      "box-shadow": "inset 0px 0px 10px 5px rgba(85, 1, 1, 0.5)",
     });
     // animate name color
     $(".inner-hero-name").css({ color: "#f7090980" });
@@ -375,6 +383,12 @@ document.addEventListener("DOMContentLoaded", function () {
     $(this).css({
       display: "none",
     });
+
+    // change inset box shadow for social icons on hero page
+    $(".hero-social-icon .hero-box-animate").css({
+      "box-shadow": "inset 0px 0px 10px 5px rgba(83, 82, 82, 0.5)",
+    });
+    
     $(".inner-hero-name").css({ color: "#73dfdf" });
 
     $(".achor-link").each((index, link) => {
@@ -511,70 +525,31 @@ document.addEventListener("DOMContentLoaded", function () {
       $("#down_arrow2").addClass("hide");
     }
   }
-
-  // curacel for changing images dynamically.
-
-  (function () {
-    let i = 0;
-    const myInterval = setInterval(async function () {
-      let imageObj = imageObject[i++];
-
-      if (imageObj === undefined) {
-        return (i = 0);
-      }
-      const { cityName, imgURL, desc } = imageObj;
-      // inner div and image
-      $(".destination-image")
-        .attr({ src: `${imgURL}` })
-        .removeClass("hide")
-        .fadeIn();
-      // cityname and description
-      const cityHeading = $(`<h4>${cityName}</h4>`).attr({
-        class: "city-heading",
-      });
-      const cityDescription = $(`<p>${desc}</p>`).attr({
-        class: "city-description",
-      });
-      // info div
-
-      const infoContainer = $("<div></div>")
-        .attr({ class: "city-wrapper" })
-        .append(cityHeading, cityDescription);
-
-      // $(".destination-image").delay(10000).fadeOut();
-      cityHeading.delay(10000).slideUp();
-      cityDescription.delay(10000).slideUp();
-      // append to div
-      $(".image-curancel").append(infoContainer);
-    }, 10000);
-  })();
-
-  const removeHeroImage = setInterval(() => {
-    $(".city-wrapper").remove();
-  }, 25000);
-
   // flash achieve button on click
-  $(".achi").css({all: "unset"}).on("click", function(e){
-    e.preventDefault()
-    $("#achieve").css({
-      background: "#ffffff",
-      color: "#000000"
+  $(".achi")
+    .css({ all: "unset" })
+    .on("click", function (e) {
+      e.preventDefault();
+      $("#achieve").css({
+        background: "#ffffff",
+        color: "#000000",
+      });
     });
-  })
-    // smooth scrolling to contact form
-    $("#achii").on("click", function () {
-      let target = $("#loginSection");
-      $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
-    });
+  // smooth scrolling to contact form
+  $("#achii").on("click", function () {
+    let target = $("#loginSection");
+    $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
+  });
 
-    // smooth scrolling to contact video section
-    $("#mee").on("click", function () {
-      $("#inVideoBTN_Contact").delay(2300).css({background: "#FFFFFF", color: "#000000", opacity: "0.7"});
-      
-      let target = $("#contact");
-      $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
-    });
+  // smooth scrolling to contact video section
+  $("#mee").on("click", function () {
+    $("#inVideoBTN_Contact")
+      .delay(2300)
+      .css({ background: "#FFFFFF", color: "#000000", opacity: "0.7" });
 
+    let target = $("#contact");
+    $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
+  });
 
   // run functions on scroll, resize and screenorientation
   // functions running on document scroll
