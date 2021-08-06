@@ -561,6 +561,21 @@ document.addEventListener("DOMContentLoaded", function () {
       color: "#000000"
     });
   })
+    // smooth scrolling to contact form
+    $("#achii").on("click", function () {
+      let target = $("#loginSection");
+      $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
+    });
+
+    // smooth scrolling to contact video section
+    $("#mee").on("click", function () {
+      $("#inVideoBTN_Contact").delay(2300).css({background: "#FFFFFF", color: "#000000", opacity: "0.7"});
+      
+      let target = $("#contact");
+      $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
+    });
+
+
   // run functions on scroll, resize and screenorientation
   // functions running on document scroll
   $(document).on("scroll", () => {

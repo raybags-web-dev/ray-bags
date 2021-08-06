@@ -1137,7 +1137,7 @@ Hero
     grid-template-columns: 1fr 1fr;
   }
 
-  .hero-img:hover:before{
+  .hero-img:hover:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -1166,7 +1166,9 @@ Hero
     transition: var(--transition);
   }
 }
-
+.achi:hover {
+  cursor: pointer !important;
+}
 .hero-photo {
   max-width: 25em;
   max-height: 30em;
