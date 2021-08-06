@@ -41,23 +41,8 @@ const imageObject = [
   },
   {
     cityName: "Back-end",
-    imgURL: "../images/cities/8.jpeg",
+    imgURL: "../images/cities/it_7.jpeg",
     desc: "Data-base Intergration",
-  },
-  {
-    cityName: "London",
-    imgURL: "../images/cities/it_7.jpeg",
-    desc: "",
-  },
-  {
-    cityName: "London",
-    imgURL: "../images/cities/it_7.jpeg",
-    desc: "",
-  },
-  {
-    cityName: "London",
-    imgURL: "../images/cities/it_7.jpeg",
-    desc: "",
   },
 ];
 
