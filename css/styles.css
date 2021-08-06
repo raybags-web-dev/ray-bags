@@ -1126,6 +1126,7 @@ Hero
     align-items: center;
   }
   .pilot-hero-photo {
+    position: relative;
     border-radius: 50% !important;
     box-shadow: 0 -4px 20px 4px rgb(0, 0, 0, 0.5) !important;
     max-width: 22em !important;
@@ -1136,23 +1137,7 @@ Hero
     grid-template-columns: 1fr 1fr;
   }
 
-  .about-img::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 2rem;
-    right: -2rem;
-    background-blend-mode: lighten;
-    background: linear-gradient(rgba(134, 133, 133, 0.5), rgba(0, 0, 0, 0.5));
-    -webkit-backdrop-filter: var(--backdrop-heavy);
-    backdrop-filter: var(--backdrop-heavy);
-    transition: var(--transition);
-    border-radius: var(--radius);
-    box-shadow: var(--deep-shadow-card);
-  }
-  .hero-img:hover:before,
-  .about-img:hover::before {
+  .hero-img:hover:before{
     content: "";
     position: absolute;
     width: 100%;

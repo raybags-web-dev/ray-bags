@@ -553,6 +553,14 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".city-wrapper").remove();
   }, 25000);
 
+  // flash achieve button on click
+  $(".achi").css({all: "unset"}).on("click", function(e){
+    e.preventDefault()
+    $("#achieve").css({
+      background: "#ffffff",
+      color: "#000000"
+    });
+  })
   // run functions on scroll, resize and screenorientation
   // functions running on document scroll
   $(document).on("scroll", () => {
