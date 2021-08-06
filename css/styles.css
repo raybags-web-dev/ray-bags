@@ -842,7 +842,7 @@ Hero
   padding-top: 5%;
 }
 .hero-center article:nth-child(2) {
-  margin-bottom: calc(6rem);
+  margin-bottom: calc(5rem);
 }
 /* scroll down arrow styles and animation */
 .arrows-container {
