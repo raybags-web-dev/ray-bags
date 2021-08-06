@@ -2,7 +2,6 @@
 
 import { pageUnavailable } from "./mentainance.js";
 import { talent } from "./data.js";
-import { imageObject } from "./image_curacel.js";
 
 // General jQuery handler.
 document.addEventListener("DOMContentLoaded", function () {
