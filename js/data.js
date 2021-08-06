@@ -1,6 +1,6 @@
 const talent = [
   "Experienced in:",
-  " API management",
+  "API management",
   "Software testing",
   "Cloud Computing",
   "Data base Intergration",

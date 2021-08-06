@@ -232,12 +232,6 @@ document.addEventListener("DOMContentLoaded", function () {
     90
   );
 
-  // handle footer icon spin dynamically
-  $("a .spin-icon-footer").each(function (index, icon) {
-    $(icon)
-      .delay(200 * index)
-      .addClass("spinIconDynamically");
-  });
   // handle hero icon spead on load
   $(".hero-box-animate").each(function (index, icon) {
     $(icon)
