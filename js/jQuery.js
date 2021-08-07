@@ -22,12 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   })();
 
   // Onload clear screen.
-  $(".whole_body").css(
-    {
-      filter: "unset",
-    },
-    6000
-  );
+  $(".skeleton-wrapper").addClass("hide").animate({ opacity: 0 });
 
   $("#nav").slideDown("1000", function () {
     $(this).addClass("navbar-fixed").css({
@@ -387,7 +382,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".hero-social-icon .hero-box-animate").css({
       "box-shadow": "inset 0px 0px 10px 5px rgba(83, 82, 82, 0.5)",
     });
-    
+
     $(".inner-hero-name").css({ color: "#73dfdf" });
 
     $(".achor-link").each((index, link) => {
