@@ -3021,23 +3021,6 @@ textarea {
   border-radius: 50%;
   background: rgba(65, 64, 64, 0.3);
 }
-.skeleton-image::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 350px;
-  height: 350px;
-  opacity: 0.05;
-  border-radius: 50%;
-  transition: var(--transition);
-  background: radial-gradient(
-    circle,
-    rgba(244, 244, 252, 1) 29%,
-    rgb(255, 255, 255) 50%,
-    rgba(255, 255, 255, 0.5) 90%
-  );
-}
 .inner-info {
   position: relative;
   overflow: hidden;
@@ -3087,8 +3070,8 @@ textarea {
     width: 80%;
   }
   .skeleton-image {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
   }
 }
 /* Particles  */
