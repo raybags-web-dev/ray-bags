@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let bottom_of_element =
         $(".skills").offset().top + $(".skills").outerHeight();
       let bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
-      let top_of_screen = $(window).scrollTop(;
+      let top_of_screen = $(window).scrollTop();
 
       // in view port
       if (
