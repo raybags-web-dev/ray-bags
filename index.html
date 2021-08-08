@@ -1134,7 +1134,7 @@
         <!-- Login form  -->
         <div class="login-wrapper">
           <h1 class="login-title">Let's Talk</h1>
-          <form class="login-form">
+          <form name="contact" method="POST" data-netlify="true" class="login-form">
             <div class="input-group">
               <label>Name</label>
               <input
@@ -1175,27 +1175,18 @@
               <label>Your message</label>
               <textarea
                 placeholder="type your message here"
-                name=""
+                name="message"
                 id=""
                 cols="23"
                 rows="5"
               ></textarea>
-            </div>
-            <div class="input-group">
-              <label>Password</label>
-              <input
-                type="password"
-                name="password"
-                placeholder="password"
-                required="true"
-              />
             </div>
             <button
               type="submit"
               title="functionality not ready, sorry"
               class="login-button"
             >
-              Hit send
+              Click to Send
             </button>
           </form>
         </div>
