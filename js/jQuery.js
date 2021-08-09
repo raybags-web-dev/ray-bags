@@ -518,6 +518,7 @@ document.addEventListener("DOMContentLoaded", function () {
       $("#down_arrow").addClass("hide");
       $("#down_arrow2").addClass("hide");
     }
+    return;
   }
   // flash achieve button on click
   $(".achi")
@@ -528,11 +529,13 @@ document.addEventListener("DOMContentLoaded", function () {
         background: "#ffffff",
         color: "#000000",
       });
+      return;
     });
   // smooth scrolling to contact form
   $("#achii").on("click", function () {
-    let target = $("#loginSection");
+    let target = $("#about");
     $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
+    return;
   });
 
   // smooth scrolling to contact video section
