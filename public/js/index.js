@@ -1,5 +1,5 @@
 "use strict";
-
+// import css for compression
 require("../styles/styles.css");
 
 const date = document.querySelector(".copyrightYear");
