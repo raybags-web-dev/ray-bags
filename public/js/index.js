@@ -1,5 +1,7 @@
 "use strict";
 
+require("../styles/styles.css");
+
 const date = document.querySelector(".copyrightYear");
 const topBTN = document.querySelector("#myBtn");
 const navLogo = document.querySelector(".nav-logo");
@@ -66,7 +68,6 @@ function handleInnerScroll(targetBTN, targetSection) {
     prevDirection = 0,
     header = navbar,
     checkScroll = function () {
-
       curScroll = w.scrollY || doc.scrollTop;
       if (curScroll > prevScroll) {
         //scrolled up
@@ -87,10 +88,10 @@ function handleInnerScroll(targetBTN, targetSection) {
     if (direction === 2 && curScroll > 52) {
       //replace 52 with the height of your header in px
 
-      header.style.cssText="top: -50%; transition: .5s;";
+      header.style.cssText = "top: -50%; transition: .5s;";
       prevDirection = direction;
     } else if (direction === 1) {
-      header.style.cssText="top: 0%; transition: .5s;";
+      header.style.cssText = "top: 0%; transition: .5s;";
       prevDirection = direction;
     }
   };

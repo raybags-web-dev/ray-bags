@@ -1,6 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300;1,700;1,900&display=swap);
 /* imported font */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300;1,700;1,900&display=swap");
 
 /*
 =============== 
@@ -254,7 +254,11 @@ p::-moz-selection {
   color: currentColor;
 }
 
-h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, p::-moz-selection {
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
   background: rgb(119, 31, 31);
   color: currentColor;
 }
@@ -775,8 +779,6 @@ Hero
   position: relative;
   min-height: 100vh;
   perspective: 10em;
-  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-    url("../images/gb_2-min.png") center/cover no-repeat fixed;
   perspective-origin: 50% calc(50% - 2em);
 }
 .hero .underline {
@@ -963,8 +965,6 @@ Hero
   backdrop-filter: blur(100px);
   background: rgba(156, 156, 156, 0.1);
   z-index: 1;
-  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-    url("../images/gb_2-min.png") center/cover no-repeat fixed;
 }
 
 .hero-icons {
@@ -1133,17 +1133,6 @@ Hero
   .hero-center {
     grid-template-columns: 1fr 1fr;
   }
-
-  /* .hero-img:hover:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0rem;
-    right: 0rem;
-    left: 0;
-    transition: var(--transition);
-  } */
 }
 
 @media screen and (max-width: 769px) {
@@ -1245,8 +1234,6 @@ Services
   position: relative;
   overflow: hidden;
   background: var(--dark-bg-gray);
-  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-    url("/images/gb_2-min.png") center/cover no-repeat fixed;
 }
 .service {
   position: relative;
@@ -1617,10 +1604,6 @@ Connect
 Skills
 ===============
 */
-.skills {
-  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-    url("../images/gb_2-min.png") center/cover no-repeat fixed;
-}
 @media screen and (min-width: 768px) {
   .skills-center {
     display: grid;
@@ -1809,8 +1792,6 @@ Blog
   justify-content: center;
   align-items: center;
   transform-style: preserve-3d;
-  background: linear-gradient(rgb(0, 0, 0, 0.8), rgb(0, 0, 0, 0.8)),
-    url("../images/bg_1-min.png") center/cover no-repeat fixed;
 }
 
 .card {
@@ -2756,8 +2737,6 @@ Blog
 
 .login-section {
   position: relative;
-  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-    url("../images/bg_1-min.png") center/cover no-repeat fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;

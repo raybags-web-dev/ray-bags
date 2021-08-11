@@ -18,7 +18,7 @@
       type="image/png"
       style="border-radius: 50px"
       sizes="32x32"
-      href="/images/favicon-min.png"
+      href="/public/images/favicon-min.png"
     />
     <title>raybags.com</title>
     <!-- font-awesome -->
@@ -37,15 +37,16 @@
       rel="stylesheet"
     />
 
-    <!-- AOS animation lib cdn -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- cookiealert styles CDN link -->
+    <!-- Cookie alert -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css"
     />
+    <!-- AOS animation lib cdn -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- cookiealert styles CDN link -->
     <!-- css -->
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./dist/compiled.css" />
   </head>
   <body>
     <!-- skeleton. -->
@@ -66,12 +67,16 @@
           <!-- nav image logo -->
           <img
             id="nav_logo_img"
-            src="./images/profile_me-min.jpeg"
+            src="./public/images/profile_me-min.jpeg"
             style="max-width: 3.7rem; max-height: 3.7rem; position: absolute"
             alt="logo image"
           />
           <!-- nav logo -->
-          <img src="./images/favicon-min.png" class="nav-logo" alt="nav logo" />
+          <img
+            src="./public/images/favicon-min.png"
+            class="nav-logo"
+            alt="nav logo"
+          />
           <button class="nav-btn" id="nav-btn">
             <i class="fas fa-bars"></i>
           </button>
@@ -212,7 +217,7 @@
           <div class="hero-image-wrapper">
             <div class="hero-image-catain"></div>
             <img
-              src="./images/profile_me-min.jpeg"
+              src="./public/images/profile_me-min.jpeg"
               class="hero-photo pilot-hero-photo"
               alt="hero image"
             />
@@ -275,7 +280,7 @@
         <!-- about img -->
         <article class="about-img" data-aos="fade-up" data-aos-duration="3000">
           <img
-            src="./images/profile_me-min.jpeg"
+            src="./public/images/profile_me-min.jpeg"
             class="about-hero-photo hero-photo"
             alt="my profile image"
           />
@@ -486,7 +491,7 @@
             <div class="box-4"></div>
             <!-- project image -->
             <img
-              src="./images/need_4_speed-min.png"
+              src="./public/images/need_4_speed-min.png"
               alt="single project"
               class="project-img"
             />
@@ -512,7 +517,7 @@
             <div class="box-4"></div>
             <!-- project image -->
             <img
-              src="./images/project-2-min.jpeg"
+              src="./public/images/project-2-min.jpeg"
               alt="single project"
               class="project-img"
             />
@@ -537,7 +542,7 @@
             <div class="box-4"></div>
             <!-- project image -->
             <img
-              src="./images/project-3-min.jpeg"
+              src="./public/images/project-3-min.jpeg"
               alt="single project"
               class="project-img"
             />
@@ -562,7 +567,7 @@
             <div class="box-4"></div>
             <!-- project image -->
             <img
-              src="./images/businessCard-min.png"
+              src="./public/images/businessCard-min.png"
               alt="single project"
               class="project-img"
             />
@@ -578,14 +583,8 @@
     <!-- end of projects -->
     <!-- connect -->
     <section id="contact" class="connect">
-      <video
-        autoplay
-        muted
-        loop
-        class="video-container"
-        poster="./images/gb_2-min.png"
-      >
-        <source src="./videos/waves.mp4" type="video/mp4" />
+      <video autoplay muted loop class="video-container">
+        <source src="./public/videos/waves.mp4" type="video/mp4" />
         Sorry, your browser does not support embedded videos
       </video>
       <div class="video-banner">
@@ -616,7 +615,7 @@
     <section id="skills" class="section skills">
       <!-- section title -->
       <div class="section-title">
-        <h2 data-aos-easing="ease-in-sine">skills</h2>
+        <h2>skills</h2>
         <div class="underline"></div>
       </div>
       <!--end of section title -->
@@ -844,7 +843,7 @@
           <div class="card-side card-front">
             <img
               class="testimonial_individual_image"
-              src="./images/face-1-min.jpeg"
+              src="./public/images/face-1-min.jpeg"
               alt=""
             />
             <div class="card-info">
@@ -857,7 +856,7 @@
               <div class="card-footer">
                 <img
                   class="testimonial_logo_image"
-                  src="./images/favicon-min.png"
+                  src="./public/images/favicon-min.png"
                   alt="author image"
                 />
                 <p class="individual_name">name</p>
@@ -891,7 +890,7 @@
           <div class="card-side card-front">
             <img
               class="testimonial_individual_image"
-              src="./images/face-2-min.jpeg"
+              src="./public/images/face-2-min.jpeg"
               alt=""
             />
             <div class="card-info">
@@ -904,7 +903,7 @@
               <div class="card-footer">
                 <img
                   class="testimonial_logo_image"
-                  src="./images/favicon-min.png"
+                  src="./public/images/favicon-min.png"
                   alt="author image"
                 />
                 <p class="individual_name">name</p>
@@ -938,7 +937,7 @@
           <div class="card-side card-front">
             <img
               class="testimonial_individual_image"
-              src="./images/face-3-min.jpeg"
+              src="./public/images/face-3-min.jpeg"
               alt=""
             />
             <div class="card-info">
@@ -951,7 +950,7 @@
               <div class="card-footer">
                 <img
                   class="testimonial_logo_image"
-                  src="./images/favicon-min.png"
+                  src="./public/images/favicon-min.png"
                   alt="author image"
                 />
                 <p class="individual_name">name</p>
@@ -985,7 +984,7 @@
           <div class="card-side card-front">
             <img
               class="testimonial_individual_image"
-              src="./images/face-4-min.jpeg"
+              src="./public/images/face-4-min.jpeg"
               alt=""
             />
             <div class="card-info">
@@ -998,7 +997,7 @@
               <div class="card-footer">
                 <img
                   class="testimonial_logo_image"
-                  src="./images/favicon-min.png"
+                  src="./public/images/favicon-min.png"
                   alt="author image"
                 />
                 <p class="individual_name">name</p>
@@ -1032,7 +1031,7 @@
           <div class="card-side card-front">
             <img
               class="testimonial_individual_image"
-              src="./images/face-5-min.jpeg"
+              src="./public/images/face-5-min.jpeg"
               alt=""
             />
             <div class="card-info">
@@ -1045,7 +1044,7 @@
               <div class="card-footer">
                 <img
                   class="testimonial_logo_image"
-                  src="./images/favicon-min.png"
+                  src="./public/images/favicon-min.png"
                   alt="author image"
                 />
                 <p class="individual_name">name</p>
@@ -1078,7 +1077,7 @@
           <div class="card-side card-front">
             <img
               class="testimonial_individual_image"
-              src="./images/face-6-min.jpeg"
+              src="./public/images/face-6-min.jpeg"
               alt=""
             />
             <div class="card-info">
@@ -1091,7 +1090,7 @@
               <div class="card-footer">
                 <img
                   class="testimonial_logo_image"
-                  src="./images/favicon-min.png"
+                  src="./public/images/favicon-min.png"
                   alt="author image"
                 />
                 <p class="individual_name">name</p>
@@ -1339,12 +1338,7 @@
     <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
     <!-- AOS animation -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <!-- custom jQuery -->
-    <script type="module" src="./js/jQuery.js"></script>
-    <!-- custom js -->
-    <script type="module" src="./js/index.js"></script>
-    <!-- Particles -->
-    <script type="text/javascript" src="js/particles/particles.min.js"></script>
-    <script type="text/javascript" src="js/particles/app.js"></script>
+
+    <script src="./dist/compiled.js"></script>
   </body>
 </html>
