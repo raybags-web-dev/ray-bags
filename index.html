@@ -96,7 +96,7 @@
             <a class="achor-link" href="#projects">projects</a>
           </li>
           <li>
-            <a class="achor-link" href="#contact">contact</a>
+            <a class="achor-link" href="#loginSection">contact</a>
           </li>
           <li>
             <a class="achor-link" href="#skills">skills</a>
@@ -154,7 +154,7 @@
             <a class="link" href="#projects">projects</a>
           </li>
           <li>
-            <a class="link" href="#contact">contact</a>
+            <a class="link" href="#loginSection">contact</a>
           </li>
           <li>
             <a class="link" href="#skills">skills</a>
@@ -176,7 +176,7 @@
           <h1 class="brand-name">
             i'm
             <span class="inner-hero-name">
-              <span id="effect_hero_box"></span>
+              <span class="effect_hero_box"></span>
               raymond
             </span>
           </h1>
@@ -581,35 +581,6 @@
       </div>
     </section>
     <!-- end of projects -->
-    <!-- connect -->
-    <section id="contact" class="connect">
-      <video autoplay muted loop class="video-container">
-        <source src="./public/videos/waves.mp4" type="video/mp4" />
-        Sorry, your browser does not support embedded videos
-      </video>
-      <div class="video-banner">
-        <!-- broken line effect -->
-        <div class="box-3 full-card"></div>
-        <!-- project image -->
-        <!-- section title -->
-        <div class="section-title">
-          <h2 class="connect-title">let's get in touch</h2>
-          <div class="underline"></div>
-        </div>
-        <!--end of section title -->
-        <p class="video-text">
-          You've made it this far. Feel free to reach out.
-        </p>
-        <a
-          id="inVideoBTN_Contact"
-          href="mailto:baguma.github@gmail.com"
-          target="_blank"
-          class="btn"
-        >
-          contact me</a
-        >
-      </div>
-    </section>
 
     <!-- skills -->
     <section id="skills" class="section skills">
@@ -820,6 +791,72 @@
       </div>
     </section>
     <!--end of  timeline -->
+    <!-- ========================= Login Form and map ================================================ -->
+    <section id="loginSection" class="section login-section">
+      <!-- section title -->
+      <div class="section-title">
+        <h2>keep in touch</h2>
+        <div class="underline"></div>
+      </div>
+      <!--end of section title -->
+      <div class="services-center section-center login">
+        <!-- Login form  -->
+        <div class="login-wrapper">
+          <h1 class="login-title">Let's Talk</h1>
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            class="login-form"
+          >
+            <div class="input-group">
+              <label>Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="name"
+                required="true"
+              />
+            </div>
+            <div class="input-group">
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="email"
+                required="true"
+              />
+            </div>
+            <div class="input-group">
+              <label>Fan or Employer</label>
+              <input type="text" name="name" placeholder="fan or employer" />
+            </div>
+            <div class="input-group">
+              <label>Starwars Fan</label>
+              <input type="text" name="name" placeholder="Yes or No" />
+            </div>
+            <div class="input-group">
+              <label>Your message</label>
+              <textarea
+                placeholder="type your message here"
+                name="message"
+                required="true"
+                id=""
+                cols="23"
+                rows="5"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              title="functionality not ready, sorry"
+              class="login-button"
+            >
+              Click to Send
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
     <!-- blog -->
     <section id="vibes" class="section blog">
       <!-- section title -->
@@ -1121,81 +1158,7 @@
       </div>
     </section>
     <!--end of  blog -->
-    <!-- ========================= Login Form and map ================================================ -->
-    <section id="loginSection" class="section login-section">
-      <!-- section title -->
-      <div class="section-title">
-        <h2>keep in touch</h2>
-        <div class="underline"></div>
-      </div>
-      <!--end of section title -->
-      <div class="services-center section-center login">
-        <!-- Login form  -->
-        <div class="login-wrapper">
-          <h1 class="login-title">Let's Talk</h1>
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            class="login-form"
-          >
-            <div class="input-group">
-              <label>Name</label>
-              <input
-                type="text"
-                name="name"
-                placeholder="name"
-                required="true"
-              />
-            </div>
-            <div class="input-group">
-              <label>Email</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="email"
-                required="true"
-              />
-            </div>
-            <div class="input-group">
-              <label>Fan or Employer</label>
-              <input
-                type="text"
-                name="name"
-                placeholder="fan or employer"
-                required="true"
-              />
-            </div>
-            <div class="input-group">
-              <label>Starwars Fan</label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Yes or No"
-                required="true"
-              />
-            </div>
-            <div class="input-group">
-              <label>Your message</label>
-              <textarea
-                placeholder="type your message here"
-                name="message"
-                id=""
-                cols="23"
-                rows="5"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              title="functionality not ready, sorry"
-              class="login-button"
-            >
-              Click to Send
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
+
     <!-- ========================= Login form and map ================================================= -->
     <!--Cookie-Alert -->
     <div id="cookie_container" class="alert text-center cookiealert">
@@ -1224,15 +1187,14 @@
 
     <footer class="text-center footer">
       <!-- Grid container -->
-      <div class="container p-5">
+      <div class="container-fluid p-5">
         <!--Grid row-->
         <div class="row content-container">
           <!--Grid column-->
           <div class="col-lg-6 col-md-12 mb-4 mb-md-0 footer-name">
-            <h5 class="text-uppercase">Ray-Bags</h5>
+            <h5 class="text-uppercase">Raymond</h5>
             <p class="footer-details">
-              Interested in frontend responsive client interfaces. Feel to drop
-              me an email or
+              Feel to drop me an email or
               <span
                 ><a href="callto:+31636329324" target="_blank" rel="noopener"
                   >call</a

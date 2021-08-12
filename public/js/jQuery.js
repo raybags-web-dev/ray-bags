@@ -261,9 +261,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // animate logo
     $(".nav-logo").css({ filter: "grayscale(100%)" });
 
-    //
-    $("#effect_hero_box").css({ "min-width": "100%" });
-    $("#effect_hero_box").delay(500).animate({ "min-width": "0%" });
+    //Animate hero name
+    $(".effect_hero_box").css({ "min-width": "100%", background: "#0d0b1f" });
+    $(".effect_hero_box").delay(500).animate({ "min-width": "0%" });
+
     // animate arrow
     $("#down_arrow, #down_arrow2").css({ color: "#5e5ef1" });
     // Image catain
@@ -321,8 +322,8 @@ document.addEventListener("DOMContentLoaded", function () {
     $("#down_arrow, #down_arrow2").css({ color: "#ff0000" });
 
     // animate name
-    $("#effect_hero_box").css({ "min-width": "100%" });
-    $("#effect_hero_box").delay(500).animate({ "min-width": "0%" });
+    $(".effect_hero_box").css({ "min-width": "100%", background: "#4b0202" });
+    $(".effect_hero_box").delay(500).animate({ "min-width": "0%" });
 
     $(".achor-link").each((index, link) => {
       $(link).css({
@@ -396,8 +397,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // animate arrow
     $("#down_arrow, #down_arrow2").css({ color: "#73dfdf" });
     // animate hero name span
-    $("#effect_hero_box").css({ "min-width": "100%" });
-    $("#effect_hero_box").delay(500).animate({ "min-width": "0%" });
+    $(".effect_hero_box").css({ "min-width": "100%", background: "#110c0c" });
+    $(".effect_hero_box").delay(500).animate({ "min-width": "0%" });
 
     // Image catain
     $(".hero-image-catain")
@@ -536,12 +537,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // smooth scrolling to contact video section
-  $("#mee").on("click", function () {
-    $("#inVideoBTN_Contact")
-      .delay(2300)
-      .css({ background: "#FFFFFF", color: "#000000", opacity: "0.7" });
+  $("#mee").on("click", function (e) {
+    e.preventDefault();
 
-    let target = $("#contact");
+    let target = $("#loginSection");
     $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
   });
 
