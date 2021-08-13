@@ -484,6 +484,12 @@ document.addEventListener("DOMContentLoaded", function () {
     $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
   });
 
+  // smooth scrolling with back to top btn handler
+  $("#hireMe").on("click", function () {
+    let target = $("#loginSection");
+    $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
+  });
+
   // smooth scrolling with logo image handler
   $(".nav-logo").on("click", function () {
     let target = $("body, html");
