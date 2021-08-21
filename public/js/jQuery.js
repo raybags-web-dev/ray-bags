@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   // handle skills level animation
-  function do_stuff_while_in_viewport(
+  const do_stuff_while_in_viewport = function (
     item,
     width,
     delay,
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
     });
-  }
+  };
   do_stuff_while_in_viewport(
     $(".value-70"),
     "70%",
@@ -234,13 +234,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // parallax effect handler for all background images on site
-  function parallax(image2) {
+  const parallax = function (image2) {
     if (!image2 || image2 == undefined) return;
     let wScroll = $(window).scrollTop();
     $(image2).css({
       "background-position": `center ${wScroll * 0.07}px`,
     });
-  }
+  };
 
   // handle themeswitcher dark theme
   $(".day").on("click", function () {
@@ -252,12 +252,6 @@ document.addEventListener("DOMContentLoaded", function () {
       "box-shadow": "inset 0px 0px 10px 5px rgba(2, 86, 126, 0.5)",
     });
     $(".inner-hero-name").css({ color: "#5e5ef1" });
-    // animate links
-    $(".achor-link").each((index, link) => {
-      $(link).css({
-        backgroundImage: "linear-gradient(to top, #5e5ef1 30%, #f7090980 100%)",
-      });
-    });
     // animate logo
     $(".nav-logo").css({ filter: "grayscale(100%)" });
 
@@ -325,11 +319,6 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".effect_hero_box").css({ "min-width": "100%", background: "#4b0202" });
     $(".effect_hero_box").delay(500).animate({ "min-width": "0%" });
 
-    $(".achor-link").each((index, link) => {
-      $(link).css({
-        backgroundImage: "linear-gradient(to top, #ff0000 30%, #f7090980 100%)",
-      });
-    });
     $(".nav-logo ").css({ filter: "grayscale(90%)" });
 
     $(".hero-image-catain")
@@ -385,12 +374,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     $(".inner-hero-name").css({ color: "#73dfdf" });
-
-    $(".achor-link").each((index, link) => {
-      $(link).css({
-        backgroundImage: "linear-gradient(to top, #73dfdf 30%, #f7090980 100%)",
-      });
-    });
 
     $(".nav-logo ").css({ filter: "grayscale(100%)" });
 
@@ -467,11 +450,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // handle Smooth scrolling helper
-  function handlePageScroll() {
+  const handlePageScroll = function () {
     let target = $(this).attr("href");
     $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
     return false;
-  }
+  };
 
   // smooth scrolling navigation on big screen
   $(".nav-links a").on("click", handlePageScroll);
@@ -497,16 +480,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // hide show top button on scroll
-  function showHideTopBtn() {
+  const showHideTopBtn = function () {
     if ($(window).scrollTop() > 400) {
       $("#myBtn").css({ right: "0%", transition: "1000ms" });
     } else {
       $("#myBtn").css({ right: "-20%", transition: "1000ms" });
     }
-  }
+  };
 
   // toggle image logo and logo display on scroll handler
-  function toggleLogoImages() {
+  const toggleLogoImages = function () {
     if ($(window).scrollTop() > 901) {
       $("#nav_logo_img").css({ opacity: "1", left: "0%" });
       $(".nav-logo").css({ opacity: "0", left: "-500%" });
@@ -514,10 +497,10 @@ document.addEventListener("DOMContentLoaded", function () {
       $("#nav_logo_img").css({ opacity: "0", left: "-500%" });
       $(".nav-logo").css({ opacity: "1", left: "0%" });
     }
-  }
+  };
 
   // hide show scroll down  arrow on scroll
-  function showHideDownArrow() {
+  const showHideDownArrow = function () {
     if ($(window).scrollTop() <= 100) {
       $("#down_arrow").removeClass("hide");
       $("#down_arrow2").removeClass("hide");
@@ -526,7 +509,7 @@ document.addEventListener("DOMContentLoaded", function () {
       $("#down_arrow2").addClass("hide");
     }
     return;
-  }
+  };
   // flash achieve button on click
   $(".achi")
     .css({ all: "unset" })

@@ -20,7 +20,7 @@ const skillsContainer = document.querySelector("#skills");
 const btnInVideo = document.querySelector("#inVideoBTN_Contact");
 const contactSectionFromVideoSection = document.querySelector(".contact");
 
-export { topBTN, navLogo };
+module.export = { topBTN, navLogo };
 
 // =======vanilla JS ==========
 
