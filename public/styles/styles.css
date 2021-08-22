@@ -86,16 +86,6 @@ body {
   min-width: 307px !important;
 }
 
-/* theme switcher classes */
-.classLighTheme {
-  background: #4b0202;
-  background: linear-gradient(to bottom #4b0202 0%, #4b0202 50%);
-}
-
-.classDarkTheme {
-  background: #4c5ec3;
-  background: linear-gradient(128deg, rgb(76, 104, 195) 0%, #0d0b1f 0%);
-}
 
 html {
   overflow-x: hidden;
@@ -630,7 +620,6 @@ Sidebar
   min-width: 100%;
   left: -100%;
   text-transform: uppercase;
-  transition: var(--transition);
   letter-spacing: var(--spacing);
   display: inline-block;
   margin-bottom: 1rem;
@@ -692,10 +681,11 @@ Sidebar
   padding: 0.6rem;
   border-radius: 50%;
   cursor: pointer;
-  transition: 0.3s;
 }
 .social-icon .fab:hover {
-  margin-bottom: 0.4rem;
+  margin-top: -1rem;
+  color: var(--clr-grey-4);
+  transition: 0.2s;
 }
 .foIcon {
   border-radius: 50%;
@@ -1171,6 +1161,7 @@ Hero
   overflow: hidden;
   max-width: 500px;
   max-height: 500px;
+  opacity: 0.8;
 }
 
 .about-img:hover .hero-photo {
@@ -1931,7 +1922,7 @@ Blog
   color: var(--clr-white);
   left: 0%;
   opacity: 0.8;
-  color: var(--clr-red);
+  color: hsl(209, 28%, 39%);
   box-shadow: var(--inner-circle-rotate);
   -webkit-animation: rotateThemeIcon infinite linear 8s;
   animation: rotateThemeIcon infinite linear 8s;
@@ -2961,6 +2952,22 @@ textarea {
     height: 250px;
   }
 }
+
+/* ========BLOB======= */
+.hero-blob {
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 80%;
+  height: 80%;
+  opacity: 0.1;
+  aspect-ratio: 960/300;
+}
+.blob-motion {
+  position: absolute;
+  transform: rotateY(-20%);
+}
+/* ========BLOG======= */
 /* Particles  */
 #particles-js {
   position: fixed;

@@ -47,6 +47,13 @@
     <!-- cookiealert styles CDN link -->
     <!-- css -->
     <link rel="stylesheet" href="./dist/compiled.css" />
+    <!-- KuteJS blob animation -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/kute.js/2.1.2/kute.min.js"
+      integrity="sha512-uTe+wUbchHcZHwvZwpVt4ve3FdUJPse9iC56mh6pZkxHccXx2vaSYyjlWV/Mv0NTcvGYkGZvCi1D/KZJ7qS2uQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
     <!-- skeleton. -->
@@ -168,6 +175,35 @@
     <!-- end of sidebar -->
     <!-- header -->
     <header id="home" class="hero">
+      <!-- =====BLOB========== -->
+      <svg
+        class="hero-blob"
+        viewBox="0 0 900 600"
+        width="900"
+        height="600"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+      >
+        <g transform="translate(448.61947667654806 295.8054659103763)">
+          <path
+            id="blob1"
+            d="M148.5 -117.6C181.4 -77.3 189.1 -16.2 174.6 36.8C160.1 89.7 123.2 134.5 74.1 160.8C25 187.1 -36.3 194.9 -82.7 172.3C-129.1 149.8 -160.6 96.8 -173 40.1C-185.4 -16.5 -178.7 -76.8 -146.7 -117C-114.7 -157.1 -57.3 -177 0.3 -177.2C57.9 -177.4 115.7 -157.9 148.5 -117.6"
+            fill="#BB004B"
+          ></path>
+        </g>
+        <!-- --------------------------- -->
+        <g transform="translate(451.5127114457946 299.815555106328)">
+          <path
+            class="blob-motion"
+            id="blob2"
+            style="visibility: hidden"
+            d="M140.7 -138.9C175.4 -106.1 191.7 -53 191.2 -0.5C190.8 52.1 173.5 104.2 138.8 137C104.2 169.8 52.1 183.4 1.4 182C-49.3 180.6 -98.5 164.2 -135 131.4C-171.5 98.5 -195.3 49.3 -194.2 1.1C-193.1 -47.1 -167.3 -94.3 -130.8 -127.1C-94.3 -159.9 -47.1 -178.4 2.9 -181.3C53 -184.3 106.1 -171.7 140.7 -138.9"
+            fill="#BB004B"
+          ></path>
+        </g>
+      </svg>
+      <!-- =====BLOB========== -->
       <!-- paritcles -->
       <div id="particles-js"></div>
       <div class="section-center hero-center">
@@ -217,6 +253,7 @@
           <div class="hero-image-wrapper">
             <div class="hero-image-catain"></div>
             <img
+              style="max-width: 400px; max-height: 400px"
               src="./public/images/profile_me-min.jpeg"
               class="hero-photo pilot-hero-photo"
               alt="hero image"
@@ -280,7 +317,8 @@
         <!-- about img -->
         <article class="about-img" data-aos="fade-up" data-aos-duration="2500">
           <img
-            src="./public/images/compressed-min.jpg"
+            style="max-width: 400px; max-height: 600px"
+            src="./public/images/profile_me-min.jpeg"
             class="about-hero-photo hero-photo"
             alt="my profile image"
           />
@@ -345,11 +383,7 @@
       <!--end of section title -->
       <div class="services-center section-center">
         <!-- single service -->
-        <article
-          class="service s_card"
-          data-aos="fade-up"
-          data-aos-duration="2500"
-        >
+        <article class="service s_card">
           <!-- broken line effect -->
           <div class="box-2"></div>
           <div class="box-3"></div>
@@ -365,11 +399,7 @@
         </article>
         <!-- end of single service -->
         <!-- single service -->
-        <article
-          class="service s_card"
-          data-aos="fade-up"
-          data-aos-duration="2500"
-        >
+        <article class="service s_card">
           <!-- broken line effect -->
           <div class="box-2"></div>
           <div class="box-3"></div>
@@ -384,11 +414,7 @@
         </article>
         <!-- end of single service -->
         <!-- single service -->
-        <article
-          class="service s_card"
-          data-aos="fade-up"
-          data-aos-duration="2700"
-        >
+        <article class="service s_card">
           <!-- broken line effect -->
           <div class="box-2"></div>
           <div class="box-3"></div>
@@ -402,11 +428,7 @@
           </p>
         </article>
         <!-- end of single service -->
-        <article
-          class="service s_card"
-          data-aos="fade-up"
-          data-aos-duration="2700"
-        >
+        <article class="service s_card">
           <!-- broken line effect -->
           <div class="box-2"></div>
           <div class="box-3"></div>
@@ -422,11 +444,7 @@
           </p>
         </article>
         <!-- Software testing  -->
-        <article
-          class="service s_card"
-          data-aos="fade-up"
-          data-aos-duration="2700"
-        >
+        <article class="service s_card">
           <!-- broken line effect -->
           <div class="box-2"></div>
           <div class="box-3"></div>
@@ -440,11 +458,7 @@
           </p>
         </article>
 
-        <article
-          class="service s_card"
-          data-aos="fade-up"
-          data-aos-duration="2900"
-        >
+        <article class="service s_card">
           <!-- broken line effect -->
           <div class="box-2"></div>
           <div class="box-3"></div>
@@ -875,10 +889,11 @@
       <!--end of section title -->
       <div class="section-center blog-center">
         <!-- single article -->
-        <div class="card blog-card" data-aos="fade-up" data-aos-duration="3000">
+        <div class="card blog-card">
           <!-- front of the card -->
           <div class="card-side card-front">
             <img
+              style="width: 150px; height: 150px"
               class="testimonial_individual_image"
               src="./public/images/face-1-min.jpeg"
               alt=""
@@ -922,10 +937,11 @@
         </div>
         <!-- end of single article -->
         <!-- single article -->
-        <div class="card blog-card" data-aos="fade-up" data-aos-duration="3000">
+        <div class="card blog-card">
           <!-- front of the card -->
           <div class="card-side card-front">
             <img
+              style="width: 150px; height: 150px"
               class="testimonial_individual_image"
               src="./public/images/face-2-min.jpeg"
               alt=""
@@ -969,10 +985,11 @@
         </div>
         <!-- end of single article -->
         <!-- single article -->
-        <div class="card blog-card" data-aos="fade-up" data-aos-duration="3000">
+        <div class="card blog-card">
           <!-- front of the card -->
           <div class="card-side card-front">
             <img
+              style="width: 150px; height: 150px"
               class="testimonial_individual_image"
               src="./public/images/face-3-min.jpeg"
               alt=""
@@ -1016,10 +1033,11 @@
         </div>
         <!-- end of single article -->
         <!-- single article -->
-        <div class="card blog-card" data-aos="fade-up" data-aos-duration="3000">
+        <div class="card blog-card">
           <!-- front of the card -->
           <div class="card-side card-front">
             <img
+              style="width: 150px; height: 150px"
               class="testimonial_individual_image"
               src="./public/images/face-4-min.jpeg"
               alt=""
@@ -1063,10 +1081,11 @@
         </div>
         <!-- end of single article -->
 
-        <div class="card blog-card" data-aos="fade-up" data-aos-duration="3000">
+        <div class="card blog-card">
           <!-- front of the card -->
           <div class="card-side card-front">
             <img
+              style="width: 150px; height: 150px"
               class="testimonial_individual_image"
               src="./public/images/face-5-min.jpeg"
               alt=""
@@ -1109,10 +1128,11 @@
           </div>
         </div>
         <!-- end of single article -->
-        <div class="card blog-card" data-aos="fade-up" data-aos-duration="3000">
+        <div class="card blog-card">
           <!-- front of the card -->
           <div class="card-side card-front">
             <img
+              style="width: 150px; height: 150px"
               class="testimonial_individual_image"
               src="./public/images/face-6-min.jpeg"
               alt=""
@@ -1300,7 +1320,16 @@
     <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
     <!-- AOS animation -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
+    <!-- KuteJS blob -->
+    <script>
+      const tween = KUTE.fromTo(
+        "#blob1",
+        { path: "#blob1" },
+        { path: "#blob2" },
+        { repeat: 999, duration: 3000, yoyo: true }
+      );
+      tween.start();
+    </script>
     <script src="./dist/compiled.js"></script>
   </body>
 </html>

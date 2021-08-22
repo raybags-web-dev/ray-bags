@@ -256,7 +256,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".nav-logo").css({ filter: "grayscale(100%)" });
 
     //Animate hero name
-    $(".effect_hero_box").css({ "min-width": "100%", background: "#0d0b1f" });
+    $(".effect_hero_box").css({ "min-width": "100%", background: "hsl(246, 48%, 8%)" });
     $(".effect_hero_box").delay(500).animate({ "min-width": "0%" });
 
     // animate arrow
@@ -273,31 +273,22 @@ document.addEventListener("DOMContentLoaded", function () {
       display: "block",
     });
 
-    // change body background
-    $("body").removeClass("classLighTheme");
-    $("body").addClass("classDarkTheme");
-
-    // change nav background
-    $(".navbar-fixed").addClass("classDarkTheme");
-    $(".navbar-fixed").removeClass("classLightTheme");
-
-    // change hire me button
-    $(".hero-btn").removeClass("classDarkTheme");
-    $(".hero-btn").addClass("classLightTheme");
+    // body
+    $("body").css({background: "hsl(246, 48%, 8%)"});
 
     // change blog vibe card bg
     $(".card").each((e, element) => {
       $(element).css({
-        background: "#0d0b1f",
+        background: "hsl(246, 48%, 8%)",
       });
     });
     // change service  card bg
     $(".s_card").each((e, element) => {
       $(element).css({
-        background: "#0d0b1f",
+        background: "hsl(246, 48%, 8%)",
       });
     });
-    $(".full-card").css({ background: "#243261" });
+    $(".full-card").css({ background: "hsl(246, 48%, 8%)" });
   });
 
   // handle themeSwitcher light theme
@@ -316,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $("#down_arrow, #down_arrow2").css({ color: "#ff0000" });
 
     // animate name
-    $(".effect_hero_box").css({ "min-width": "100%", background: "#4b0202" });
+    $(".effect_hero_box").css({ "min-width": "100%", background: "hsl(209, 28%, 39%)" });
     $(".effect_hero_box").delay(500).animate({ "min-width": "0%" });
 
     $(".nav-logo ").css({ filter: "grayscale(90%)" });
@@ -326,7 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
         width: "92%",
         height: "92%",
       })
-      .css({ background: "rgba(121, 29, 29, 0.5)" });
+      .css({ background: "hsl(209, 28%, 39%, 0.3)" });
 
     $(".day").css({
       display: "none",
@@ -335,31 +326,22 @@ document.addEventListener("DOMContentLoaded", function () {
       display: "block",
     });
 
-    // change body background
-    $("body").addClass("classLighTheme");
-    $("body").removeClass("classDarkTheme");
-
-    // change nav background
-    $(".navbar-fixed").removeClass("classDarkTheme");
-    $(".navbar-fixed").addClass("classLightTheme");
-
-    // change hire me button
-    $(".hero-btn").addClass("classDarkTheme");
-    $(".hero-btn").removeClass("classLightTheme");
+    // body
+    $("body").css({background: "hsl(209, 28%, 39%)"});
 
     // change blog vibe card bg
     $(".card").each((e, element) => {
       $(element).css({
-        background: "#4b0202",
+        background: "hsl(209, 28%, 39%)",
       });
     });
     // change service  card bg
     $(".s_card").each((e, element) => {
       $(element).css({
-        background: "#4b0202",
+        background: "hsl(209, 28%, 39%)",
       });
     });
-    $(".full-card").css({ background: "#4b0202" });
+    $(".full-card").css({ background: "hsl(209, 28%, 39%)" });
   });
 
   // orignal color theme
@@ -398,17 +380,8 @@ document.addEventListener("DOMContentLoaded", function () {
       display: "none",
     });
 
-    // change body background
-    $("body").removeClass("classLighTheme");
-    $("body").removeClass("classDarkTheme");
-
-    // change nav background
-    $(".navbar-fixed").removeClass("classDarkTheme");
-    $(".navbar-fixed").removeClass("classLightTheme");
-
-    // change hire me button
-    $(".hero-btn").removeClass("classDarkTheme");
-    $(".hero-btn").removeClass("classLightTheme");
+    // body
+    $("body").css({background: "hsl(0, 17%, 6%)"});
 
     // change blog vibe card bg
     $(".card").each((e, element) => {
@@ -422,7 +395,7 @@ document.addEventListener("DOMContentLoaded", function () {
         background: "#110c0c ",
       });
     });
-    $(".full-card").css({ backgroundColor: "rgba(19, 13, 13, 0.5)" });
+    $(".full-card").css({ backgroundColor: "hsl(0, 17%, 6%)" });
   });
 
   // toggle nav slide in out on scroll
@@ -532,11 +505,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let target = $("#loginSection");
     $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
   });
-
   // run functions on scroll, resize and screenorientation
   // functions running on document scroll
   $(document).on("scroll", () => {
-    removeMenu(), showHideTopBtn(), showHideDownArrow(), toggleLogoImages();
+    removeMenu(),
+      showHideTopBtn(),
+      showHideDownArrow(),
+      toggleLogoImages();
   });
   // functions running on window scroll
   $(window).on("scroll", () => {
