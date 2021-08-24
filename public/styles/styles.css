@@ -86,7 +86,6 @@ body {
   min-width: 307px !important;
 }
 
-
 html {
   overflow-x: hidden;
 }
@@ -1481,6 +1480,13 @@ Projects
     margin-bottom: 40%;
     transition: var(--transition);
   }
+  .about-hero-photo {
+    height: max-content;
+    width: max-content;
+    padding: 1rem;
+    border: 2px solid transparent;
+    box-shadow: inset var(--deep-shadow_2);
+  }
 }
 
 .in-line-contact {
@@ -2229,9 +2235,12 @@ Blog
   height: 60px;
   width: 60px;
   border-radius: 50%;
+  box-shadow: var(--deep-shadow-card);
 }
 .footer_link .fab:hover {
-  box-shadow: inset 0 -20px 10px rgba(133, 9, 9, 0.5);
+  transition: var(--transition);
+  color: var(--clr-red);
+  transform: translateY(-0.5rem);
 }
 
 .footer_link:hover {
@@ -2311,7 +2320,7 @@ Blog
     width: 300px !important;
     padding: 1rem;
     border: 2px solid transparent;
-    box-shadow: inset 0 -1px 10px rgb(155, 17, 17);
+    box-shadow: inset var(--deep-shadow-card);
   }
 
   .about-title {
@@ -2655,7 +2664,7 @@ Blog
   width: 700px;
   max-width: 600px;
   border-radius: 0.5rem;
-  box-shadow: var(--shadow-dark_2);
+  box-shadow: var(--deep-shadow_3);
 }
 
 .login-title {
