@@ -256,6 +256,15 @@ p::-moz-selection {
   color: currentColor;
 }
 
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+
 h1::selection,
 h2::selection,
 h3::selection,
@@ -1481,7 +1490,11 @@ Projects
     transition: var(--transition);
   }
   .about-hero-photo {
+    height: -webkit-max-content;
+    height: -moz-max-content;
     height: max-content;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
     padding: 1rem;
     border: 2px solid transparent;
@@ -2870,10 +2883,46 @@ textarea {
   min-width: 100vw;
   height: 100vh;
   background: rgb(15, 15, 15);
-  z-index: 10000;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.nav-skeleton {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7%;
+  background: rgba(65, 64, 64, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.skeleton-image-nav {
+  min-width: 40px;
+  height: 40px;
+  margin-left: 1rem;
+  border-radius: 50%;
+  background: rgba(65, 64, 64, 0.5);
+  -webkit-animation: skeleton-fade infinite linear alternate 1s;
+  animation: skeleton-fade infinite linear alternate 1s;
+}
+.skeleton-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 70%;
+}
+.skeleton-icon > * {
+  width: 15%;
+  height: 70%;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  background: rgba(65, 64, 64, 0.5);
+  -webkit-animation: skeleton-fade infinite linear alternate 1s;
+  animation: skeleton-fade infinite linear alternate 1s;
 }
 
 .skeleton-wrapper > * {
@@ -2884,7 +2933,7 @@ textarea {
   width: 50%;
   top: 5%;
   left: 0;
-  height: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2893,10 +2942,12 @@ textarea {
 .info-wrapper > * {
   position: relative;
   width: 50%;
-  height: 50px;
+  height: 40px;
   background: rgba(65, 64, 64, 0.3);
   margin: 2rem auto;
   border-radius: 0.5rem;
+  -webkit-animation: skeleton-fade infinite linear alternate 1s;
+  animation: skeleton-fade infinite linear alternate 1s;
 }
 .skeleton-image {
   position: relative;
@@ -2907,39 +2958,46 @@ textarea {
   transition: var(--transition);
   border-radius: 50%;
   background: rgba(65, 64, 64, 0.3);
+  -webkit-animation: skeleton-fade infinite linear alternate 1s;
+  animation: skeleton-fade infinite linear alternate 1s;
+}
+
+@media screen and (max-width: 500px) {
+  .skeleton-image {
+    position: relative;
+    width: 250px !important;
+    height: 250px !important;
+    margin-bottom: 2rem !important;
+  }
+}
+@media screen and (max-width: 360px) {
+  .skeleton-image {
+    position: relative;
+    width: 200px !important;
+    height: 200px !important;
+    margin-bottom: 1.5rem !important;
+  }
 }
 .inner-info {
   position: relative;
   overflow: hidden;
 }
-.inner-info::before {
-  content: "";
-  position: absolute;
-  left: -100%;
-  top: 0;
-  bottom: 0;
-  width: 30%;
-  height: 100%;
-  opacity: 0.01;
-  border: transparent;
-  background: radial-gradient(
-    circle,
-    rgba(244, 244, 252, 1) 29%,
-    rgb(255, 255, 255) 50%,
-    rgba(255, 255, 255, 0.5) 90%
-  );
-  animation: moverSkeleton infinite alternate-reverse 1s;
-}
-@-webkit-keyframes moverSkeleton {
+
+@-webkit-keyframes skeleton-fade {
+  from {
+    background: rgba(65, 64, 64, 0.4);
+  }
   to {
-    left: 120%;
-    opacity: 0.05;
+    background: rgba(85, 84, 84, 0.1);
   }
 }
-@keyframes moverSkeleton {
+
+@keyframes skeleton-fade {
+  from {
+    background: rgba(65, 64, 64, 0.4);
+  }
   to {
-    left: 120%;
-    opacity: 0.05;
+    background: rgba(85, 84, 84, 0.1);
   }
 }
 
