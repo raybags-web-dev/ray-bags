@@ -966,15 +966,18 @@ Hero
 }
 .hero-btn {
   position: relative;
-  text-align: center;
   margin-top: 1.25rem;
   width: 230px;
   height: 65px;
   overflow: hidden;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
   border-radius: 5px;
   transition: var(--transition);
   background: rgba(43, 42, 42, 0.8);
   box-shadow: var(--deep-shadow-card);
+  border-color: transparent red transparent green;
 }
 /* hero btn animations */
 .hero-btn::before {
@@ -986,65 +989,25 @@ Hero
   width: 150%;
   height: 150%;
   transition: var(--transition);
-  opacity: 0.5;
-  background-image: conic-gradient(var(--clr-red) 360deg, transparent -150deg);
-  -webkit-animation: rotate-hero-btn infinite linear 30s;
-  animation: rotate-hero-btn infinite linear 30s;
-}
-.hero-btn::after {
-  content: "Reachout";
-  position: absolute;
-  display: grid;
-  place-content: center;
-  top: 2%;
-  left: 1%;
-  right: 1%;
-  width: 98%;
-  height: 94%;
-  font-size: 1.1rem;
-  transition: var(--transition);
-  background: hsl(0, 0%, 0%);
-  border-radius: 5px;
-}
-
-@-webkit-keyframes rotate-hero-btn {
-  to {
-    transform: rotate(-360deg);
-    width: 700%;
-    height: 700%;
-  }
-}
-
-@keyframes rotate-hero-btn {
-  to {
-    transform: rotate(-200deg);
-    width: 700%;
-    height: 700%;
-  }
-}
-
-.hero-btn:hover::after {
-  box-shadow: var(--deep-shadow_2);
-  color: rgba(255, 255, 255, 0.8);
-  letter-spacing: 0.4rem;
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
-}
-.hero-btn:hover::before {
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
-  opacity: 0;
-}
-.hero-btn:active::after {
-  letter-spacing: 3rem;
-  opacity: 0;
+  opacity: 0.8;
+  text-shadow: 0 0 14px 1px black;
+  background: linear-gradient(
+    180deg,
+    rgba(92, 90, 90, 0.8),
+    rgba(0, 38, 255, 0.5)
+  );
 }
 .hero-btn:hover {
-  box-shadow: var(--deep-shadow-card);
-  transition: var(--transition);
-  background: rgba(107, 106, 106, 0.1);
+  border-color: transparent rgb(224, 34, 0, 0.2) transparent
+    rgb(81, 246, 5, 0.2);
 }
-
+.hero-btn:hover::before {
+  background: linear-gradient(
+    45deg,
+    rgba(255, 252, 252, 0.8),
+    rgba(0, 38, 255, 0.5)
+  );
+}
 /* hero btn animations */
 
 .about-btn-container {
@@ -2941,7 +2904,7 @@ textarea {
 }
 .info-wrapper > * {
   position: relative;
-  width: 50%;
+  width: 55%;
   height: 40px;
   background: rgba(65, 64, 64, 0.3);
   margin: 2rem auto;
@@ -2951,8 +2914,8 @@ textarea {
 }
 .skeleton-image {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 330px;
+  height: 330px;
   margin: auto;
   overflow: hidden;
   transition: var(--transition);
@@ -2961,23 +2924,21 @@ textarea {
   -webkit-animation: skeleton-fade infinite linear alternate 1s;
   animation: skeleton-fade infinite linear alternate 1s;
 }
+@media screen and (max-width: 795px) {
+  .skeleton-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .skeleton-image {
+    border-radius: unset;
+    width: 100%;
+    height: 8%;
+  }
+  .info-wrapper > * {
+    width: 100%;
+  }
+}
 
-@media screen and (max-width: 500px) {
-  .skeleton-image {
-    position: relative;
-    width: 250px !important;
-    height: 250px !important;
-    margin-bottom: 2rem !important;
-  }
-}
-@media screen and (max-width: 360px) {
-  .skeleton-image {
-    position: relative;
-    width: 200px !important;
-    height: 200px !important;
-    margin-bottom: 1.5rem !important;
-  }
-}
 .inner-info {
   position: relative;
   overflow: hidden;
@@ -3000,41 +2961,6 @@ textarea {
     background: rgba(85, 84, 84, 0.1);
   }
 }
-
-@media screen and (max-width: 769px) {
-  .skeleton-wrapper {
-    flex-direction: column-reverse;
-  }
-  .skeleton-wrapper .info-wrapper {
-    flex: 100% auto;
-    width: 100%;
-    height: 50%;
-    position: relative;
-  }
-  .skeleton-wrapper .info-wrapper .inner-info {
-    width: 80%;
-  }
-  .skeleton-image {
-    width: 250px;
-    height: 250px;
-  }
-}
-
-/* ========BLOB======= */
-.hero-blob {
-  position: absolute;
-  top: -30%;
-  left: -30%;
-  width: 80%;
-  height: 80%;
-  opacity: 0.1;
-  aspect-ratio: 960/300;
-}
-.blob-motion {
-  position: absolute;
-  transform: rotateY(-20%);
-}
-/* ========BLOG======= */
 /* Particles  */
 #particles-js {
   position: fixed;
@@ -3045,5 +2971,5 @@ textarea {
   left: 0;
   right: 0;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.1;
 }

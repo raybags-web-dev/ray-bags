@@ -256,7 +256,10 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".nav-logo").css({ filter: "grayscale(100%)" });
 
     //Animate hero name
-    $(".effect_hero_box").css({ "min-width": "100%", background: "hsl(246, 48%, 8%)" });
+    $(".effect_hero_box").css({
+      "min-width": "100%",
+      background: "hsl(246, 48%, 8%)",
+    });
     $(".effect_hero_box").delay(500).animate({ "min-width": "0%" });
 
     // animate arrow
@@ -274,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // body
-    $("body").css({background: "hsl(246, 48%, 8%)"});
+    $("body").css({ background: "hsl(246, 48%, 8%)" });
 
     // change blog vibe card bg
     $(".card").each((e, element) => {
@@ -307,7 +310,10 @@ document.addEventListener("DOMContentLoaded", function () {
     $("#down_arrow, #down_arrow2").css({ color: "#ff0000" });
 
     // animate name
-    $(".effect_hero_box").css({ "min-width": "100%", background: "hsl(209, 28%, 39%)" });
+    $(".effect_hero_box").css({
+      "min-width": "100%",
+      background: "hsl(209, 28%, 39%)",
+    });
     $(".effect_hero_box").delay(500).animate({ "min-width": "0%" });
 
     $(".nav-logo ").css({ filter: "grayscale(90%)" });
@@ -327,7 +333,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // body
-    $("body").css({background: "hsl(209, 28%, 39%)"});
+    $("body").css({ background: "hsl(209, 28%, 39%)" });
 
     // change blog vibe card bg
     $(".card").each((e, element) => {
@@ -381,7 +387,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // body
-    $("body").css({background: "hsl(0, 17%, 6%)"});
+    $("body").css({ background: "hsl(0, 17%, 6%)" });
 
     // change blog vibe card bg
     $(".card").each((e, element) => {
@@ -508,10 +514,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // run functions on scroll, resize and screenorientation
   // functions running on document scroll
   $(document).on("scroll", () => {
-    removeMenu(),
-      showHideTopBtn(),
-      showHideDownArrow(),
-      toggleLogoImages();
+    removeMenu(), showHideTopBtn(), showHideDownArrow(), toggleLogoImages();
   });
   // functions running on window scroll
   $(window).on("scroll", () => {
