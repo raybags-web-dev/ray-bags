@@ -14,6 +14,7 @@ Root
   --main-black-bg: #110c0c;
   --dark-red-bg: #f7090980;
   --dark-bg-gray: #110c0c;
+  --main-text-shadow: 0px 2px 1px black;
 
   /* scroll track and thumb colors */
   --scrollbarBG: rgb(44, 13, 13);
@@ -182,6 +183,16 @@ h4 {
   line-height: 1.25;
   margin-bottom: 0.75rem;
   font-family: var(--ff-primary);
+  text-shadow: var(--main-text-shadow);
+}
+
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
 }
 
 h1::-moz-selection,
@@ -290,6 +301,7 @@ p {
   color: var(--clr-white);
   opacity: 0.7;
   line-height: 1.8rem;
+  text-shadow: var(--main-text-shadow);
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -817,6 +829,7 @@ Hero
 
 .hero-image-wrapper:hover .pilot-hero-photo {
   transform: scale(1.089);
+  cursor: pointer;
 }
 
 .hero-center {
@@ -831,6 +844,7 @@ Hero
 .hero-center article:nth-child(2) {
   margin-bottom: calc(5rem);
 }
+
 /* scroll down arrow styles and animation */
 .arrows-container {
   position: absolute;
@@ -994,19 +1008,21 @@ Hero
   background: linear-gradient(
     180deg,
     rgba(92, 90, 90, 0.8),
-    rgba(0, 38, 255, 0.5)
+    rgba(2, 2, 2, 0.5)
   );
 }
+
 .hero-btn:hover {
-  border-color: transparent rgb(224, 34, 0, 0.2) transparent
-    rgb(81, 246, 5, 0.2);
+  border-color: rgb(224, 34, 0, 0.2) transparent rgb(81, 246, 5, 0.2)
+    transparent;
 }
 .hero-btn:hover::before {
   background: linear-gradient(
     45deg,
     rgba(255, 252, 252, 0.8),
-    rgba(0, 38, 255, 0.5)
+    rgba(2, 14, 83, 0.5)
   );
+  width: 0%;
 }
 /* hero btn animations */
 
@@ -1085,6 +1101,9 @@ Hero
     max-width: 22em;
     padding: 1rem !important;
     background: transparent;
+    border-color: transparent red transparent blue !important;
+    -webkit-animation: changeBorderColor infinite forwards linear 1s;
+    animation: changeBorderColor infinite forwards linear 1s;
   }
   .hero-center {
     grid-template-columns: 1fr 1fr;
