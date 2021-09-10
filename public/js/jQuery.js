@@ -279,12 +279,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // body
     $("body").css({ background: "hsl(246, 48%, 8%)" });
 
-    // change blog vibe card bg
-    $(".card").each((e, element) => {
-      $(element).css({
-        background: "hsl(246, 48%, 8%)",
-      });
-    });
     // change service  card bg
     $(".s_card").each((e, element) => {
       $(element).css({
@@ -335,12 +329,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // body
     $("body").css({ background: "hsl(209, 28%, 39%)" });
 
-    // change blog vibe card bg
-    $(".card").each((e, element) => {
-      $(element).css({
-        background: "hsl(209, 28%, 39%)",
-      });
-    });
     // change service  card bg
     $(".s_card").each((e, element) => {
       $(element).css({
@@ -389,12 +377,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // body
     $("body").css({ background: "hsl(0, 17%, 6%)" });
 
-    // change blog vibe card bg
-    $(".card").each((e, element) => {
-      $(element).css({
-        background: "#110c0c",
-      });
-    });
     // change service  card bg
     $(".s_card").each((e, element) => {
       $(element).css({
