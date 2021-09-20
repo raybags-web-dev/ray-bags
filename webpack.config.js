@@ -11,6 +11,7 @@ module.exports = {
       "/public/js/data.js",
       "/public/js/particles/particles.min.js",
       "/public/js/particles/app.js",
+      "/public/js/utils.js",
     ],
   },
   output: {

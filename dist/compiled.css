@@ -137,6 +137,7 @@ img:not(.nav-logo) {
   left: -500%;
   padding: 0.1rem;
   top: 0;
+  cursor: pointer;
   bottom: 0;
   box-shadow: var(--deep-shadow-card);
   transition: var(--transition);
@@ -1108,9 +1109,8 @@ Hero
     padding: 1rem !important;
     background: transparent;
     border-color: transparent red transparent blue !important;
-    -webkit-animation: changeBorderColor infinite forwards linear 1s;
-    animation: changeBorderColor infinite forwards linear 1s;
   }
+
   .hero-center {
     grid-template-columns: 1fr 1fr;
   }
@@ -2688,13 +2688,14 @@ Blog
 }
 .login-wrapper {
   position: relative;
-  background-color: hsla(0, 2%, 12%, 0.5);
   padding: 50px 30px;
   min-width: 370px;
   width: 700px;
   max-width: 600px;
   border-radius: 0.5rem;
   box-shadow: var(--deep-shadow_3);
+  background: linear-gradient(hsla(0, 2%, 12%, 0.5), hsla(0, 2%, 12%, 0.5)),
+    url(9c1050bb2c2cb936dffb.jpeg) center/cover no-repeat fixed;
 }
 
 .login-title {

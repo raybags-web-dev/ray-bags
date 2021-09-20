@@ -44,7 +44,6 @@
     />
     <!-- AOS animation lib cdn -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- cookiealert styles CDN link -->
     <!-- css -->
     <link rel="stylesheet" href="./dist/compiled.css" />
   </head>
@@ -76,13 +75,14 @@
           <img
             id="nav_logo_img"
             src="./public/images/profile_me-min.jpeg"
-            style="max-width: 3.7rem; max-height: 3.7rem; position: absolute"
+            style="max-width: 4rem; max-height: 4rem; position: absolute"
             alt="logo image"
+            class="logo__1"
           />
           <!-- nav logo -->
           <img
             src="./public/images/new_logoo2.png"
-            class="nav-logo"
+            class="nav-logo logo__1"
             alt="nav logo"
           />
           <button class="nav-btn" id="nav-btn">
@@ -318,13 +318,23 @@
             <a
               id="achii"
               class="achi"
-              style="color: red; font-style: italic"
+              style="
+                color: greenyellow !important;
+                font-style: italic !important;
+              "
               href="#"
               >button</a
             >
-            click the
-            <em><a class="hyperMeLink" href="#">button</a></em> below or scroll
-            down to my projects page.
+            or click the
+            <em
+              ><a
+                class="hyperMeLink"
+                style="color: greenyellow !important"
+                href="#"
+                >button</a
+              ></em
+            >
+            below or scroll down to my projects page.
           </p>
           <div
             class="about-btn-container"
@@ -480,6 +490,7 @@
               src="./public/images/need_4_speed-min.png"
               alt="single project"
               class="project-img"
+              style="max-width: 65rem; max-height: 50rem"
             />
             <div class="project-info">
               <h4>Need 4 Speed</h4>
@@ -506,6 +517,7 @@
               src="./public/images/project-2-min.jpeg"
               alt="single project"
               class="project-img"
+              style="max-width: 65rem; max-height: 50rem"
             />
             <div class="project-info">
               <h4>Office Design 1</h4>
@@ -531,6 +543,7 @@
               src="./public/images/project-3-min.jpeg"
               alt="single project"
               class="project-img"
+              style="max-width: 65rem; max-height: 50rem"
             />
             <div class="project-info">
               <h4>Business design Apparel</h4>
@@ -556,6 +569,7 @@
               src="./public/images/businessCard-min.png"
               alt="single project"
               class="project-img"
+              style="max-width: 65rem; max-height: 50rem"
             />
             <div class="project-info">
               <h4>Business Card design</h4>

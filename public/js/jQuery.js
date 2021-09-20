@@ -1,6 +1,7 @@
 "use strict";
 
 import { pageUnavailable } from "./mentainance.js";
+import { animateSkills } from "./utils.js";
 import { talent } from "./data.js";
 
 // General jQuery handler.
@@ -85,146 +86,12 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   // handle skills level animation
-  const do_stuff_while_in_viewport = function (
-    item,
-    width,
-    delay,
-    percentile,
-    left,
-    percentile_limit
-  ) {
-    if (
-      width == undefined ||
-      delay == undefined ||
-      percentile == undefined ||
-      (left == undefined) | (percentile_limit == undefined)
-    )
-      return;
-
-    $(window).on("scroll", function () {
-      let top_of_element = $(".skills").offset().top;
-      let bottom_of_element =
-        $(".skills").offset().top + $(".skills").outerHeight();
-      let bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
-      let top_of_screen = $(window).scrollTop();
-
-      // in view port
-      if (
-        bottom_of_screen > top_of_element &&
-        top_of_screen < bottom_of_element
-      ) {
-        // incremenet skill percentage value when in viewport
-        let percentage_value = $(percentile);
-        let value = percentile_limit;
-
-        $(".testimonial_individual_image").css({
-          "animation-play-state": "running",
-        });
-
-        // animation for skills level
-        $({ percentage: 0 })
-          .stop(true)
-          .animate(
-            { percentage: value },
-            {
-              duration: 2000,
-              easing: "easeOutExpo",
-              step: function () {
-                let percentageVal = Math.round(this.percentage * 10) / 10;
-                percentage_value
-                  .text(percentageVal + "%")
-                  .addClass("animate-percentage")
-                  .css({ color: "white", opacity: ".5" });
-              },
-            }
-          )
-          .promise()
-          .done(() => {
-            // hard set the value after animation is done to be
-            // sure the value is correct
-            percentage_value
-              .text(Math.floor(value) + "%")
-              .css({ "font-style": "italic" });
-          });
-
-        // slidein percentage
-        $(percentile).css({
-          left: left,
-          opacity: "1",
-          transition: "1s",
-          color: "#FFFFFF",
-        });
-        // animate skill bar
-        $(item).css({
-          width: width,
-          opacity: "1",
-          transition: delay,
-        });
-      } else {
-        // slideout percentage
-        $(percentile).css({
-          left: "1%",
-          opacity: "0",
-          transition: "1s",
-          color: "red",
-        });
-        // remove skill bar
-        $(item).css({
-          width: "0",
-          opacity: "0",
-          transition: delay,
-        });
-      }
-    });
-  };
-  do_stuff_while_in_viewport(
-    $(".value-70"),
-    "70%",
-    "2.5s",
-    $(".skill-text-50"),
-    "50%",
-    70
-  );
-  do_stuff_while_in_viewport(
-    $(".value-80"),
-    "80%",
-    "3s",
-    $(".skill-text-80"),
-    "80%",
-    80
-  );
-  do_stuff_while_in_viewport(
-    $(".value-85"),
-    "85%",
-    "3.8s",
-    $(".skill-text-85"),
-    "85%",
-    85
-  );
-  do_stuff_while_in_viewport(
-    $(".value-70"),
-    "70%",
-    "2.5s",
-    $(".skill-text-70"),
-    "70%",
-    70
-  );
-  do_stuff_while_in_viewport(
-    $(".value-75"),
-    "75%",
-    "2.8s",
-    $(".skill-text-75"),
-    "75%",
-    75
-  );
-  do_stuff_while_in_viewport(
-    $(".value-90"),
-    "90%",
-    "4s",
-    $(".skill-text-90"),
-    "85%",
-    90
-  );
+  animateSkills($(".value-70"), "70%", "2.5s", $(".skill-text-50"), "50%", 70);
+  animateSkills($(".value-80"), "80%", "3s", $(".skill-text-80"), "80%", 80);
+  animateSkills($(".value-85"), "85%", "3.8s", $(".skill-text-85"), "85%", 85);
+  animateSkills($(".value-70"), "70%", "2.5s", $(".skill-text-70"), "70%", 70);
+  animateSkills($(".value-75"), "75%", "2.8s", $(".skill-text-75"), "75%", 75);
+  animateSkills($(".value-90"), "90%", "4s", $(".skill-text-90"), "85%", 90);
 
   // handle hero icon spead on load
   $(".hero-box-animate").each(function (index, icon) {
@@ -252,8 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
       "box-shadow": "inset 0px 0px 10px 5px rgba(2, 86, 126, 0.5)",
     });
     $(".inner-hero-name").css({ color: "#5e5ef1" });
-    // animate logo
-    $(".nav-logo").css({ filter: "grayscale(100%)" });
 
     //Animate hero name
     $(".effect_hero_box").css({
@@ -310,8 +175,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     $(".effect_hero_box").delay(500).animate({ "min-width": "0%" });
 
-    $(".nav-logo ").css({ filter: "grayscale(90%)" });
-
     $(".hero-image-catain")
       .animate({
         width: "92%",
@@ -350,9 +213,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     $(".inner-hero-name").css({ color: "#73dfdf" });
-
-    $(".nav-logo ").css({ filter: "grayscale(100%)" });
-
     // animate arrow
     $("#down_arrow, #down_arrow2").css({ color: "#73dfdf" });
     // animate hero name span
@@ -435,9 +295,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // smooth scrolling with logo image handler
-  $(".nav-logo").on("click", function () {
-    let target = $("body, html");
-    $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
+  $(".logo__1").each((index, logo) => {
+    $(logo).on("click", function () {
+      let target = $("body, html");
+      $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
+    });
   });
 
   // hide show top button on scroll
