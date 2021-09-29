@@ -277,6 +277,11 @@ p::-moz-selection {
   color: currentColor;
 }
 
+h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+
 h1::selection,
 h2::selection,
 h3::selection,
@@ -810,6 +815,7 @@ Hero
 .hero-img {
   display: none;
 }
+
 .hero-image-wrapper {
   position: relative;
   width: -webkit-max-content;
@@ -822,7 +828,15 @@ Hero
   border-radius: 50%;
   border: 2px solid transparent;
   box-shadow: var(--deep-shadow_3);
+  outline: 1rem solid rgba(206, 61, 61, 0.1);
+  outline-offset: -3rem;
+  transition: 0.3s;
 }
+.hero-image-wrapper:hover {
+  outline: 1000rem solid rgba(206, 61, 61, 0.1);
+  outline-offset: 100rem;
+}
+
 .hero-image-catain {
   position: absolute;
   top: 50%;
@@ -1168,7 +1182,8 @@ Hero
   width: 100%;
   height: 20%;
   background: linear-gradient(45deg, red, blue);
-  filter: blur(2rem);
+  -webkit-filter: blur(2rem);
+          filter: blur(2rem);
   z-index: 1;
   bottom: -10%;
   transform: perspective(10rem) rotateX(80deg);

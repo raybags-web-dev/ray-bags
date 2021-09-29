@@ -7,17 +7,16 @@ import { talent } from "./data.js";
 // General jQuery handler.
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => $("#myBtn").removeClass("hide"), 1000);
-
   // dynamic hero text handler
   (function () {
     let count = 0;
     setInterval(function () {
       $(".skill-desc span").animate({ width: "0%" });
       count++;
-      $(".skill-desc").fadeOut(300, function () {
+      $(".skill-desc").slideUp(300, function () {
         $(this)
           .text(talent[count % talent.length])
-          .fadeIn(500);
+          .slideDown(500);
       });
     }, 5000);
   })();
