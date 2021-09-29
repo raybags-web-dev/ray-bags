@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(function () {
       $(".skill-desc span").animate({ width: "0%" });
       count++;
-      $(".skill-desc").slideUp(300, function () {
+      $(".skill-desc").fadeOut(300, function () {
         $(this)
           .text(talent[count % talent.length])
-          .slideDown(500);
+          .fadeIn(500);
       });
     }, 5000);
   })();
