@@ -7,6 +7,27 @@ import { talent } from "./data.js";
 // General jQuery handler.
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => $("#myBtn").removeClass("hide"), 1000);
+
+  // handle contact form submision handler
+  const form = document.getElementById("contact_me_form");
+
+  $("#contact_me_form").on("submit", function (e) {
+    e.preventDefault();
+
+    const _formData = new FormData(form);
+    const name = _formData.get("name");
+
+    $(".input-group").remove();
+    $(".login-button").remove();
+
+    $(".login-title").text(`Hi ${name}.`);
+
+    const details = $("<p></p>")
+      .attr({ class: "message-details" })
+      .text("I'll get back to you as soon as possible");
+    $("#contact_me_form").append(details);
+  });
+
   // dynamic hero text handler
   (function () {
     let count = 0;

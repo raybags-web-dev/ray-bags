@@ -1,7 +1,6 @@
 /* imported font */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300;1,700;1,900&display=swap");
-
 /*
 =============== 
 Root
@@ -277,7 +276,11 @@ p::-moz-selection {
   color: currentColor;
 }
 
-h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, p::-moz-selection {
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
   background: rgb(119, 31, 31);
   color: currentColor;
 }
@@ -1183,7 +1186,7 @@ Hero
   height: 20%;
   background: linear-gradient(45deg, red, blue);
   -webkit-filter: blur(2rem);
-          filter: blur(2rem);
+  filter: blur(2rem);
   z-index: 1;
   bottom: -10%;
   transform: perspective(10rem) rotateX(80deg);
@@ -2695,6 +2698,7 @@ Blog
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
+  overflow: hidden;
 }
 .login {
   display: flex;
@@ -2703,6 +2707,7 @@ Blog
 }
 .login-wrapper {
   position: relative;
+  overflow: hidden;
   padding: 50px 30px;
   min-width: 370px;
   width: 700px;
@@ -2725,18 +2730,36 @@ Blog
   width: max-content;
   margin: auto;
   margin-bottom: 40px;
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
-
-.login-title::before {
+.message-details {
+  position: relative;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1.3em;
+  margin: 0 auto;
+  display: flex;
+  display: grid;
+  place-self: center;
+  width: var(--main-text-shadow);
+}
+.message-details::before {
   content: "";
   position: absolute;
-  left: 50%;
-  top: 140%;
-  width: 60%;
-  height: 8%;
-  transform: translate(-50%, -140%);
-  background: var(--red);
-  box-shadow: var(--deep-shadow_2);
+  left: 0;
+  bottom: -40%;
+  height: 10%;
+  right: 0;
+  box-shadow: var(--deep-shadow-card);
+  background: linear-gradient(
+    90deg,
+    rgba(246, 246, 252, 0.5),
+    rgba(34, 22, 22, 0.5)
+  );
 }
 .input-group {
   display: flex;
