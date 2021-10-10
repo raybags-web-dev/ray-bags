@@ -5,8 +5,8 @@ const talent = [
   "Micro-service management",
   "Database Intergration",
   "server-side Scripting",
-  "API development-nodejs",
-  "UI architecture",
+  "API development-nodeJS",
+  "UI architecture-reactJS",
   "and much more...",
 ];
 
