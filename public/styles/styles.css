@@ -1172,7 +1172,6 @@ Hero
 
 .about-img {
   position: relative;
-  /* overflow: hidden; */
   max-width: 500px;
   max-height: 500px;
   opacity: 0.8;
@@ -1525,7 +1524,8 @@ Projects
     height: max-content;
     width: -webkit-max-content;
     width: -moz-max-content;
-    width: max-content;
+    width: 600px;
+    height: 450px;
     padding: 1rem;
     border: 2px solid transparent;
     box-shadow: inset var(--deep-shadow_2);
