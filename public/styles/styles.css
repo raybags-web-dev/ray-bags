@@ -1601,7 +1601,8 @@ Projects
     height: 100%;
     width: -webkit-max-content;
     width: -moz-max-content;
-    width: max-content;
+    width: 600px;
+    height: 450px;
     padding: 1rem;
     border: 2px solid transparent;
     box-shadow: inset var(--deep-shadow_2);

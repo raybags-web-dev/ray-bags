@@ -285,6 +285,15 @@ p::-moz-selection {
   color: currentColor;
 }
 
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+
 h1::selection,
 h2::selection,
 h3::selection,
@@ -1214,6 +1223,11 @@ Hero
   top: 0%;
   animation: text_up_effect infinite linear alternate-reverse 30s;
 }
+@-webkit-keyframes text_up_effect {
+  to {
+    top: -570%;
+  }
+}
 @keyframes text_up_effect {
   to {
     top: -570%;
@@ -1221,6 +1235,7 @@ Hero
 }
 @media screen and (max-width: 786px) {
   .intro-about > * {
+    -webkit-animation: unset;
     animation: unset;
     top: 0;
   }
@@ -1246,6 +1261,7 @@ Hero
   border-top-right-radius: 0.5rem;
 }
 .intro-about:hover > * {
+  -webkit-animation: unset;
   animation: unset;
   top: 0 !important;
 }
@@ -1285,6 +1301,7 @@ About
 .about-img {
   justify-self: center;
   min-height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .about-img img {
@@ -1582,7 +1599,10 @@ Projects
   }
   .about-hero-photo {
     height: 100%;
-    width: max-content;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: 600px;
+    height: 450px;
     padding: 1rem;
     border: 2px solid transparent;
     box-shadow: inset var(--deep-shadow_2);
@@ -1801,6 +1821,7 @@ Blog
 
 .card-side {
   transition: all 0.3s linear;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   position: absolute;
   top: 0;
@@ -2014,12 +2035,22 @@ Blog
   right: 0px;
   z-index: -1;
   border-radius: 50%;
-  animation: theme_pulse 1 linear forwards .6s;
+  -webkit-animation: theme_pulse 1 linear forwards 0.6s;
+  animation: theme_pulse 1 linear forwards 0.6s;
   background: linear-gradient(
     90deg,
     rgba(129, 78, 78, 0.8),
     rgb(255, 255, 255, 0.8)
   );
+}
+@-webkit-keyframes theme_pulse {
+  to {
+    bottom: -10px;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    opacity: 0;
+  }
 }
 @keyframes theme_pulse {
   to {
