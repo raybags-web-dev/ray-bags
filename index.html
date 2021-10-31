@@ -21,7 +21,6 @@
       href="/public/images/new_logoo2.png"
     />
     <title>raybags.com</title>
-
     <!-- preloads -->
     <link rel="preload" href="./public/images/profile_me-min.jpeg" as="image" />
     <link rel="preload" href="./public/images/face-1-min.jpeg" as="image" />
@@ -66,7 +65,8 @@
     <!-- AOS animation lib cdn -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- css -->
-    <link rel="stylesheet" href="./dist/compiled.css" />
+    <!-- <link rel="stylesheet" href="./dist/compiled.css" /> -->
+    <link rel="stylesheet" href="/public/styles/styles.css" />
   </head>
   <body>
     <!-- skeleton. -->
@@ -148,17 +148,11 @@
     </div>
     <!-- ===top button=== -->
     <!-- ====== theme Switcher ======== -->
-    <div id="theme-container" title="change themes" class="theme-big-screen">
+    <div id="theme-container" title="themes" class="theme-big-screen">
       <!-- dark div -->
-      <div class="night">
-        <i class="fas fa-cog"></i>
-      </div>
-      <div class="day">
-        <i class="fas fa-globe-asia"></i>
-      </div>
-      <div class="original">
-        <i class="fas fa-clock"></i>
-      </div>
+      <div class="night"></div>
+      <div class="day"></div>
+      <div class="original"></div>
     </div>
     <!-- ====== end of theme Switcher ======== -->
     <!-- end of navbar -->
@@ -211,7 +205,13 @@
           </h1>
 
           <h4 class="skill-desc">Frontend Developer</h4>
-          <a id="hireMe" class="btn hero-btn" data-aos="fade-up">Reach out</a>
+          <a
+            href="#loginSection"
+            id="hireMe"
+            class="btn hero-btn"
+            data-aos="fade-up"
+            >Reach out</a
+          >
           <!-- social icons -->
           <ul class="social-icons icons-small-screen">
             <li class="hero-box-animate">
@@ -310,11 +310,52 @@
         <!-- about img -->
         <article class="about-img" data-aos="fade-up" data-aos-duration="2500">
           <img
-            style="max-width: 400px; max-height: 600px"
-            src="./public/images/profile_me-min.jpeg"
+            src="./public/images/another3.jpg"
             class="about-hero-photo hero-photo"
             alt="my profile image"
           />
+          <div class="intro-about">
+            <h4>My story</h4>
+            <p>
+              Hi there, thanks for checkingout my portfolio website. Incase this
+              is important, here we go:
+            </p>
+            <ol>
+              <li><strong>Name:</strong> Raymond</li>
+              <li>
+                <strong>Passion:</strong> Frontend development, data analytics
+                and visualization, API and database intergrations etc ...
+              </li>
+              <li><strong>Self-taught:</strong> Yes</li>
+              <li><strong>Projects:</strong> Many Including this website</li>
+              <li><strong>Self-driven:</strong> Very true</li>
+              <li>
+                <strong>Hobbies:</strong> Movies, Driving, Hiking, Fun-projects
+              </li>
+            </ol>
+            <p>My strength</p>
+            <ol>
+              <li>
+                <strong>Music:</strong> I've enjoy, recorded, live and palyed
+                music throughout my life. I'm proud to be a musician too. I play
+                Piano, Bass and Drums. So if you are in my City, you might catch
+                me at a local hungout place rocking the stage.
+              </li>
+              <br />
+              <li>
+                <strong>Trust:</strong> We are all human, if we dont trust each
+                other, what is there to ?. I tend to trust a lot and altimatly
+                I've come to regret it. Not all folks are good people.
+              </li>
+              <br />
+              <li>
+                <strong>Climate Change:</strong> I'm all for a healthy planet
+                and all life on here. Live and let live, be mindful of your
+                environment and imagine you'd live on this rock in the next 200
+                years.
+              </li>
+            </ol>
+          </div>
         </article>
         <!-- about info -->
         <article class="about-info">
@@ -488,7 +529,7 @@
         <p class="projects-text" data-aos="zoom-in">
           These are some of my projects. You'll be redirected to my projects
           page. Feel free to explore or you can send me a quick
-          <a href="#" id="mee" target="" rel="noopener">email</a>
+          <a href="#loginSection" id="mee" target="" rel="noopener">email</a>
         </p>
       </div>
       <!--end of section title -->
@@ -921,7 +962,7 @@
               <div class="card-footer">
                 <img
                   class="testimonial_logo_image"
-                  src="./public/images/favicon-min.png"
+                  src="./public/images/face-1-min.jpeg"
                   alt="author image"
                 />
                 <p class="individual_name">name</p>
@@ -969,7 +1010,7 @@
               <div class="card-footer">
                 <img
                   class="testimonial_logo_image"
-                  src="./public/images/favicon-min.png"
+                  src="./public/images/face-2-min.jpeg"
                   alt="author image"
                 />
                 <p class="individual_name">name</p>
@@ -1017,7 +1058,7 @@
               <div class="card-footer">
                 <img
                   class="testimonial_logo_image"
-                  src="./public/images/favicon-min.png"
+                  src="./public/images/face-3-min.jpeg"
                   alt="author image"
                 />
                 <p class="individual_name">name</p>
@@ -1065,7 +1106,7 @@
               <div class="card-footer">
                 <img
                   class="testimonial_logo_image"
-                  src="./public/images/favicon-min.png"
+                  src="./public/images/face-4-min.jpeg"
                   alt="author image"
                 />
                 <p class="individual_name">name</p>
@@ -1113,7 +1154,7 @@
               <div class="card-footer">
                 <img
                   class="testimonial_logo_image"
-                  src="./public/images/favicon-min.png"
+                  src="./public/images/face-5-min.jpeg"
                   alt="author image"
                 />
                 <p class="individual_name">name</p>
@@ -1160,7 +1201,7 @@
               <div class="card-footer">
                 <img
                   class="testimonial_logo_image"
-                  src="./public/images/favicon-min.png"
+                  src="./public/images/face-6-min.jpeg"
                   alt="author image"
                 />
                 <p class="individual_name">name</p>
@@ -1229,11 +1270,11 @@
               <span
                 ><a href="callto:+31636329324" target="_blank" rel="noopener"
                   >call</a
-                >.</span
+                ></span
               >
+              &ThickSpace; &curvearrowright;<br />
               <br />
               Phone: <span class="phone">+31-636-329-324</span><br />Email:
-
               <a
                 href="mailto:baguma.github@gmail.com"
                 target="_blank"

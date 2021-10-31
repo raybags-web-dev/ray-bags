@@ -129,11 +129,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
-  // handle themeswitcher dark theme
+  // // handle themeswitcher dark theme
   $(".day").on("click", function () {
-    $(this).css({
-      display: "none",
-    });
+    // apply ripple effect on theme buttons
+    $(this).addClass("theme_pulse");
+    setTimeout(() => $(this).removeClass("theme_pulse"), 1000);
+
     // change inset box shadow for social icons on hero page
     $(".hero-social-icon .hero-box-animate").css({
       "box-shadow": "inset 0px 0px 10px 5px rgba(2, 86, 126, 0.5)",
@@ -157,12 +158,9 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .css({ background: "rgba(2, 4, 121, 0.3)" });
 
-    $(".night").css({
-      display: "block",
-    });
-
     // body
     $("body").css({ background: "hsl(246, 48%, 8%)" });
+    $("#services").css({ background: "hsl(246, 48%, 8%)" });
 
     // change service  card bg
     $(".s_card").each((e, element) => {
@@ -173,12 +171,11 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".full-card").css({ background: "hsl(246, 48%, 8%)" });
   });
 
-  // handle themeSwitcher light theme
-
+  // // handle themeSwitcher light theme
   $(".night").on("click", function () {
-    $(this).css({
-      display: "none",
-    });
+    // apply ripple effect on theme buttons
+    $(this).addClass("theme_pulse");
+    setTimeout(() => $(this).removeClass("theme_pulse"), 1000);
     // change inset box shadow for social icons on hero page
     $(".hero-social-icon .hero-box-animate").css({
       "box-shadow": "inset 0px 0px 10px 5px rgba(85, 1, 1, 0.5)",
@@ -188,10 +185,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // animate arrow
     $("#down_arrow, #down_arrow2").css({ color: "#ff0000" });
 
+    $("#services").css({
+      background: "linear-gradient(90deg, rgba(120, 2, 2), rgb(0, 0, 250))",
+    });
     // animate name
     $(".effect_hero_box").css({
       "min-width": "100%",
-      background: "hsl(209, 28%, 39%)",
+      background: "transparent",
     });
     $(".effect_hero_box").delay(500).animate({ "min-width": "0%" });
 
@@ -201,17 +201,10 @@ document.addEventListener("DOMContentLoaded", function () {
         height: "92%",
       })
       .css({ background: "hsl(209, 28%, 39%, 0.3)" });
-
-    $(".day").css({
-      display: "none",
-    });
-    $(".original").css({
-      display: "block",
-    });
-
     // body
-    $("body").css({ background: "hsl(209, 28%, 39%)" });
-
+    $("body").css({
+      background: "linear-gradient(90deg, rgba(126, 2, 2), rgb(0, 0, 255))",
+    });
     // change service  card bg
     $(".s_card").each((e, element) => {
       $(element).css({
@@ -223,10 +216,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // orignal color theme
   $(".original").on("click", function () {
-    $(this).css({
-      display: "none",
-    });
-
+    // apply ripple effect on theme buttons
+    $(this).addClass("theme_pulse");
+    setTimeout(() => $(this).removeClass("theme_pulse"), 1000);
     // change inset box shadow for social icons on hero page
     $(".hero-social-icon .hero-box-animate").css({
       "box-shadow": "inset 0px 0px 10px 5px rgba(83, 82, 82, 0.5)",
@@ -247,15 +239,9 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .css({ background: "rgba(121, 29, 29, 0.2)" });
 
-    $(".day").css({
-      display: "block",
-    });
-    $(".night").css({
-      display: "none",
-    });
-
     // body
     $("body").css({ background: "hsl(0, 17%, 6%)" });
+    $("#services").css({ background: "hsl(0, 17%, 6%)" });
 
     // change service  card bg
     $(".s_card").each((e, element) => {
@@ -308,12 +294,6 @@ document.addEventListener("DOMContentLoaded", function () {
     $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
   });
 
-  // smooth scrolling with back to top btn handler
-  $("#hireMe").on("click", function () {
-    let target = $("#loginSection");
-    $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
-  });
-
   // smooth scrolling with logo image handler
   $(".logo__1").each((index, logo) => {
     $(logo).on("click", function () {
@@ -361,20 +341,6 @@ document.addEventListener("DOMContentLoaded", function () {
       $("#achieve").addClass("flash-abtMe");
       setInterval(() => $("#achieve").removeClass("flash-abtMe"), 1000);
     });
-  // smooth scrolling to contact form
-  $("#achii").on("click", function () {
-    let target = $("#about");
-    $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
-    return;
-  });
-
-  // smooth scrolling to contact video section
-  $("#mee").on("click", function (e) {
-    e.preventDefault();
-
-    let target = $("#loginSection");
-    $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
-  });
   // run functions on scroll, resize and screenorientation
   // functions running on document scroll
   $(document).on("scroll", () => {
