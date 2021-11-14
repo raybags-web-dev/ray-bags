@@ -22,7 +22,7 @@
     />
     <title>raybags.com</title>
     <!-- preloads -->
-    <link rel="preload" href="./public/images/profile_me-min.jpeg" as="image" />
+    <!-- <link rel="preload" href="./public/images/profile_me-min.jpeg" as="image" />
     <link rel="preload" href="./public/images/face-1-min.jpeg" as="image" />
     <link rel="preload" href="./public/images/face-2-min.jpeg" as="image" />
     <link rel="preload" href="./public/images/face-3-min.jpeg" as="image" />
@@ -40,7 +40,7 @@
       rel="preload"
       href="./public/images/businessCard-min.png"
       as="image"
-    />
+    /> -->
     <!-- font-awesome -->
     <link
       rel="stylesheet"
@@ -95,12 +95,13 @@
           <img
             id="nav_logo_img"
             src="./public/images/profile_me-min.jpeg"
-            style="max-width: 4rem; max-height: 4rem; position: absolute"
+            style="max-width: 3rem; max-height: 3rem; position: absolute"
             alt="logo image"
             class="logo__1"
           />
           <!-- nav logo -->
           <img
+            style="max-width: 3rem; max-height: 3rem"
             src="./public/images/new_logoo2.png"
             class="nav-logo logo__1"
             alt="nav logo"
@@ -149,9 +150,9 @@
     <!-- ====== theme Switcher ======== -->
     <div id="theme-container" title="themes" class="theme-big-screen">
       <!-- dark div -->
-      <div class="night"></div>
-      <div class="day"></div>
-      <div class="original"></div>
+      <div class="night theme-ball"></div>
+      <div class="day theme-ball"></div>
+      <div class="original theme-ball"></div>
     </div>
     <!-- ====== end of theme Switcher ======== -->
     <!-- end of navbar -->
@@ -214,25 +215,38 @@
           <!-- social icons -->
           <ul class="social-icons icons-small-screen">
             <li class="hero-box-animate">
-              <a href="https://facebook.com" class="social-icon foIcon">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                class="social-icon foIcon"
+              >
                 <i class="fab fa-facebook"></i>
               </a>
             </li>
             <li class="hero-box-animate">
-              <a href="https://linkedin.com" class="social-icon foIcon">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                class="social-icon foIcon"
+              >
                 <i class="fab fa-linkedin"></i>
               </a>
             </li>
             <li class="hero-box-animate">
               <a
                 href="https://github.com/raybags-web-dev"
+                target="_blank"
                 class="social-icon foIcon"
               >
                 <i class="fab fa-github"></i>
               </a>
             </li>
             <li class="hero-box-animate">
-              <a href="https://instagram.com" class="social-icon foIcon">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                class="social-icon foIcon"
+              >
                 <i class="fab fa-instagram"></i>
               </a>
             </li>
@@ -245,8 +259,8 @@
           <div class="hero-image-wrapper">
             <div class="hero-image-catain"></div>
             <img
-              style="max-width: 400px; max-height: 400px"
-              src="./public/images/profile_me-min.jpeg"
+              style="width: 400px; height: 400px"
+              src="./public/images/_2.jpg"
               class="hero-photo pilot-hero-photo"
               alt="hero image"
             />
@@ -322,19 +336,35 @@
             </p>
             <ol>
               <li><strong>Name:</strong> Raymond</li>
+              <br />
               <li>
                 <strong>Passion:</strong> Frontend development, data analytics
                 and visualization, API and database intergrations etc ...
               </li>
+              <br />
               <li><strong>Self-taught:</strong> Yes</li>
+              <br />
               <li><strong>Projects:</strong> Many Including this website</li>
+              <br />
               <li><strong>Self-driven:</strong> Very true</li>
+              <br />
               <li>
                 <strong>Hobbies:</strong> Movies, Driving, Hiking, Fun-projects
               </li>
+              <br />
             </ol>
-            <p>My strength</p>
+            <p>Strength</p>
             <ol>
+              <li>
+                <strong>Analytical mindset:</strong> Recognize, investigate and
+                resolve code anomalies causing bugs in code.
+              </li>
+              <br />
+              <li>
+                <strong>Team player:</strong>I work and integrate very well in a
+                multi-cultural environment
+              </li>
+              <br />
               <li>
                 <strong>Music:</strong> I've enjoy, recorded, live and palyed
                 music throughout my life. I'm proud to be a musician too. I play
@@ -343,9 +373,9 @@
               </li>
               <br />
               <li>
-                <strong>Trust:</strong> We are all human, if we dont trust each
-                other, what is there to ?. I tend to trust a lot and altimatly
-                I've come to regret it. Not all folks are good people.
+                <strong>Trust:</strong> Live has a way of teaching you lessons
+                that matter the most over and over again. live and let live but
+                trust few.
               </li>
               <br />
               <li>
@@ -1364,6 +1394,14 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       referrerpolicy="no-roideferrer"
     ></script>
+    <!-- ===========jQuery UI -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+      integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <!-- ===== Material Bootstrap =========-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>

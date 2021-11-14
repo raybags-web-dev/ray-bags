@@ -156,7 +156,8 @@ document.addEventListener("DOMContentLoaded", function () {
         width: "92%",
         height: "92%",
       })
-      .css({ background: "rgba(2, 4, 121, 0.3)" });
+      .css({ background: "rgba(2, 4, 121, 0.1)" });
+    $(".hero-image-wrapper .pilot-hero-photo").css({ filter: "grayscale(5%)" });
 
     // body
     $("body").css({ background: "hsl(246, 48%, 8%)" });
@@ -164,6 +165,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // change service  card bg
     $(".s_card").each((e, element) => {
+      $(element).css({
+        background: "hsl(246, 48%, 8%)",
+      });
+    });
+    // blog cards
+    $(".blog-card").each((e, element) => {
       $(element).css({
         background: "hsl(246, 48%, 8%)",
       });
@@ -201,6 +208,10 @@ document.addEventListener("DOMContentLoaded", function () {
         height: "92%",
       })
       .css({ background: "hsl(209, 28%, 39%, 0.3)" });
+    $(".hero-image-wrapper .pilot-hero-photo").css({
+      filter: "grayscale(10%)",
+    });
+
     // body
     $("body").css({
       background: "linear-gradient(90deg, rgba(126, 2, 2), rgb(0, 0, 255))",
@@ -208,7 +219,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // change service  card bg
     $(".s_card").each((e, element) => {
       $(element).css({
-        background: "hsl(209, 28%, 39%)",
+        background:
+          "linear-gradient(90deg, rgba(126, 2, 2), rgb(0, 0, 255, .5))",
+      });
+    });
+    // blog cards
+    $(".blog-card").each((e, element) => {
+      $(element).css({
+        background: "linear-gradient(90deg, rgba(126, 2, 2), rgb(0, 0, 255, .5",
       });
     });
     $(".full-card").css({ background: "hsl(209, 28%, 39%)" });
@@ -237,7 +255,10 @@ document.addEventListener("DOMContentLoaded", function () {
         width: "90%",
         height: "90%",
       })
-      .css({ background: "rgba(121, 29, 29, 0.2)" });
+      .css({ background: "rgba(121, 29, 29, 0.1)" });
+    $(".hero-image-wrapper .pilot-hero-photo").css({
+      filter: "grayscale(100%)",
+    });
 
     // body
     $("body").css({ background: "hsl(0, 17%, 6%)" });
@@ -246,7 +267,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // change service  card bg
     $(".s_card").each((e, element) => {
       $(element).css({
-        background: "#110c0c ",
+        background: "#110c0c",
+      });
+    });
+    // blog cards
+    $(".blog-card").each((e, element) => {
+      $(element).css({
+        background: "#110c0c",
       });
     });
     $(".full-card").css({ backgroundColor: "hsl(0, 17%, 6%)" });
@@ -301,6 +328,25 @@ document.addEventListener("DOMContentLoaded", function () {
       $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
     });
   });
+
+  // bounce theme balls effect
+  (() => {
+    const themeBallInterval = setInterval(() => {
+      $(".theme-ball").each((index, themeBall) => {
+        $(themeBall)
+          .delay(200 * index)
+          .queue(function (next) {
+            $(this).effect("bounce", { times: 1 }, 300);
+            next();
+          });
+      });
+    }, 3000);
+
+    $("#theme-container").on("click", () => {
+      jQuery.fx.off = true;
+      clearInterval(themeBallInterval);
+    });
+  })();
 
   // hide show top button on scroll
   const showHideTopBtn = function () {
