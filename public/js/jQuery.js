@@ -343,7 +343,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 3000);
 
     $("#theme-container").on("click", () => {
-      jQuery.fx.off = true;
+      // jQuery.fx.off = true;
+      $(".theme-ball").each((index, themeBall) =>
+        $(themeBall).stop(true, true)
+      );
       clearInterval(themeBallInterval);
     });
   })();
