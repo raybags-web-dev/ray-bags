@@ -24,24 +24,8 @@
     <!-- preloads -->
     <!-- <link rel="preload" href="./public/images/profile_me-min.jpeg" as="image" />
     <link rel="preload" href="./public/images/face-1-min.jpeg" as="image" />
-    <link rel="preload" href="./public/images/face-2-min.jpeg" as="image" />
-    <link rel="preload" href="./public/images/face-3-min.jpeg" as="image" />
-    <link rel="preload" href="./public/images/face-4-min.jpeg" as="image" />
-    <link rel="preload" href="./public/images/face-5-min.jpeg" as="image" />
-    <link rel="preload" href="./public/images/face-6-min.jpeg" as="image" />
-    <link
-      rel="preload"
-      href="./public/images/need_4_speed-min.png"
-      as="image"
-    />
-    <link rel="preload" href="./public/images/project-2-min.jpeg" as="image" />
     <link rel="preload" href="./public/images/project-3-min.jpeg" as="image" />
-    <link
-      rel="preload"
-      href="./public/images/businessCard-min.png"
-      as="image"
-    /> -->
-    <!-- font-awesome -->
+    -->   <!-- font-awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -68,6 +52,10 @@
     <link rel="stylesheet" href="./dist/compiled.css" />
   </head>
   <body>
+    <!-- body background image -->
+    <div class="body-bg-image hide">
+      <img src="/public/images/shower_.jpeg" alt="bg-image">
+    </div>
     <!-- skeleton. -->
     <div class="skeleton-wrapper">
       <div class="nav-skeleton">
@@ -199,7 +187,6 @@
           <h1 class="brand-name">
             i'm
             <span class="inner-hero-name">
-              <span class="effect_hero_box"></span>
               raymond
             </span>
           </h1>
@@ -960,7 +947,7 @@
       <!-- section title -->
       <div class="section-title">
         <h2 data-aos="zoom-in-down vibe-container">
-          vibes
+          temonials
           <span class="smile_1">
             <i class="far fa-smile"></i>
           </span>
@@ -1379,8 +1366,9 @@
         </div>
       </div>
       <!-- Copyright -->
-      <div
-        class="text-center p-3 footer-bottom"
+      <div        
+      id="bot-footer"
+      class="text-center p-3 footer-bottom"
         style="background-color: rgba(0, 0, 0, 0.2)"
       >
         &copy; <strong class="copyrightYear">20__</strong> All rights reserved.

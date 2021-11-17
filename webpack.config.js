@@ -9,8 +9,6 @@ module.exports = {
       "./public/js/jQuery.js",
       "./public/js/mentainance.js",
       "/public/js/data.js",
-      "/public/js/particles/particles.min.js",
-      "/public/js/particles/app.js",
       "/public/js/utils.js",
     ],
   },
