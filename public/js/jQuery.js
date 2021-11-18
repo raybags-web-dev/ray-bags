@@ -8,8 +8,8 @@ import { talent } from "./data.js";
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => $("#myBtn").removeClass("hide"), 1000);
 
-  // apply image background on 
-  $(".body-bg-image").removeClass("hide")
+  // apply image background on
+  $(".body-bg-image").removeClass("hide");
 
   // handle contact form submision handler
   const form = document.getElementById("contact_me_form");
@@ -46,9 +46,11 @@ document.addEventListener("DOMContentLoaded", function () {
   })();
 
   // slide in top nav
-  $(" .nav-links li").each((index, link)=>{
-    $(link).delay(150 * index).animate({"margin-top": "0%"})
-  })
+  $(" .nav-links li").each((index, link) => {
+    $(link)
+      .delay(150 * index)
+      .animate({ "margin-top": "0%" });
+  });
 
   // Onload clear screen.
   $(".skeleton-wrapper").addClass("hide").animate({ opacity: 0 });
@@ -155,20 +157,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // change navbar background
     $(".nav").css({
-      background: "rgba(247, 9, 9, .5)"
-    })
-    // skills container
-    $("#skills").css({ background: "rgba(247, 9, 9, .3)"})
-      // change footer background
-      $("#bot-footer").css({
       background: "rgba(247, 9, 9, .5)",
-    })
+    });
+    // change footer incons background
+    $(".footer_link .fab").each((index, icon) => {
+      $(icon).css({ background: "rgba(247, 9, 9, .3)" });
+    });
+    // skills container
+    $("#skills").css({ background: "rgba(247, 9, 9, .3)" });
+    // change footer background
+    $("#bot-footer").css({
+      background: "rgba(247, 9, 9, .5)",
+    });
     // change hero image frame background
-    $(".hero-image-wrapper").css({background: "rgba(247, 9, 9, .3)"});
-       // login form
-       $(".login-wrapper").css({
-        background: "rgba(247, 9, 9, .5)"
-      })
+    $(".hero-image-wrapper").css({ background: "rgba(247, 9, 9, .3)" });
+    // login form
+    $(".login-wrapper").css({
+      background: "rgba(247, 9, 9, .5)",
+    });
     $(".hero-image-catain")
       .animate({
         width: "92%",
@@ -185,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
         background: "rgba(247, 9, 9, .3)",
       });
     });
-    
+
     // blog cards
     $(".blog-card").each((e, element) => {
       $(element).css({
@@ -194,7 +200,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     $(".full-card").css({ background: "rgba(247, 9, 9, .5)" });
   });
-
 
   // // handle themeswitcher dark theme
   $(".day").on("click", function () {
@@ -220,25 +225,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     $("#services").css({ background: "hsl(246, 48%, 8%, .3)" });
 
-        // change navbar background
-        $(".nav").css({
-          background: "rgb(22, 84, 126, .6)",
-        })
-      // skills container
-    $("#skills").css({ background: "hsl(246, 48%, 8%, .3)"})
+    // change navbar background
+    $(".nav").css({
+      background: "rgb(22, 84, 126, .6)",
+    });
+    // change footer incons background
+    $(".footer_link .fab").each((index, icon) => {
+      $(icon).css({ background: "rgb(22, 84, 126, .3)" });
+    });
+    // skills container
+    $("#skills").css({ background: "hsl(246, 48%, 8%, .3)" });
 
-        // change hero image frame background
-        $(".hero-image-wrapper").css({background: "rgb(22, 84, 126, .6)"});
+    // change hero image frame background
+    $(".hero-image-wrapper").css({ background: "rgb(22, 84, 126, .6)" });
 
-        // change footer background
-       $("#bot-footer").css({
-        background: "rgb(22, 84, 126, .6)",
-      })
+    // change footer background
+    $("#bot-footer").css({
+      background: "rgb(22, 84, 126, .6)",
+    });
 
     // login form
     $(".login-wrapper").css({
-      background: "rgb(22, 84, 126, .5)"
-    })
+      background: "rgb(22, 84, 126, .5)",
+    });
     // change service  card bg
     $(".s_card").each((e, element) => {
       $(element).css({
@@ -281,21 +290,25 @@ document.addEventListener("DOMContentLoaded", function () {
     // change navbar background
     $(".nav").css({
       background: "rgb(1, 94, 94, .6)",
-    })
-     // skills container
-     $("#skills").css({ background: "rgb(1, 94, 94, .3)"})
+    });
+    // change footer incons background
+    $(".footer_link .fab").each((index, icon) => {
+      $(icon).css({ background: "rgb(1, 94, 94, .3)" });
+    });
+    // skills container
+    $("#skills").css({ background: "rgb(1, 94, 94, .3)" });
 
     // change hero image frame background
-    $(".hero-image-wrapper").css({background: "rgb(1, 94, 94, .6)"});
-             
-       // change footer background
-       $("#bot-footer").css({
-        background: "rgb(1, 94, 94, .6)",
-      })
+    $(".hero-image-wrapper").css({ background: "rgb(1, 94, 94, .6)" });
+
+    // change footer background
+    $("#bot-footer").css({
+      background: "rgb(1, 94, 94, .6)",
+    });
     // login form
     $(".login-wrapper").css({
-      background: "rgb(1, 94, 94, .5)"
-    })
+      background: "rgb(1, 94, 94, .5)",
+    });
     // change service  card bg
     $(".s_card").each((e, element) => {
       $(element).css({
@@ -366,7 +379,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const themeBallInterval = setInterval(() => {
       $(".theme-ball").each((index, themeBall) => {
         $(themeBall)
-          .delay(200 * index)
+          .delay(500 * index)
           .queue(function (next) {
             $(this).effect("bounce", { times: 1 }, 300);
             next();
@@ -378,8 +391,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // jQuery.fx.off = true;
       $(".theme-ball").each((index, themeBall) => {
         $(themeBall).stop();
-      }
-      );
+      });
       clearInterval(themeBallInterval);
     });
   })();
