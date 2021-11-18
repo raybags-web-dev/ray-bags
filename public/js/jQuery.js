@@ -1,6 +1,6 @@
 "use strict";
 
-import { pageUnavailable } from "./mentainance.js";
+// import { pageUnavailable } from "./mentainance.js";
 import { animateSkills } from "./utils.js";
 import { talent } from "./data.js";
 
@@ -44,6 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }, 5000);
   })();
+
+  // slide in top nav
+  $(" .nav-links li").each((index, link)=>{
+    $(link).delay(150 * index).animate({"margin-top": "0%"})
+  })
 
   // Onload clear screen.
   $(".skeleton-wrapper").addClass("hide").animate({ opacity: 0 });
@@ -139,19 +144,15 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => $(this).removeClass("theme_pulse"), 1000);
     // change inset box shadow for social icons on hero page
     $(".hero-social-icon .hero-box-animate").css({
-      "box-shadow": "inset 0px 0px 10px 5px rgba(85, 1, 1, 0.5)",
+      "box-shadow": "inset 0px 0px 10px 5px rgba(247, 9, 9, .5)",
     });
     // animate name color
     $(".inner-hero-name").css({ color: "#f7090980" });
-    // animate arrow
-    $("#down_arrow, #down_arrow2").css({ color: "#ff0000" });
-
+    // change srevice container background
     $("#services").css({
       background: "rgba(247, 9, 9, .3)",
     });
 
-    // animate icon color 
-    $(".hero-box-animate").css({"border-color": "rgba(247, 9, 9, .8)"})
     // change navbar background
     $(".nav").css({
       background: "rgba(247, 9, 9, .5)"
@@ -162,7 +163,8 @@ document.addEventListener("DOMContentLoaded", function () {
       $("#bot-footer").css({
       background: "rgba(247, 9, 9, .5)",
     })
-
+    // change hero image frame background
+    $(".hero-image-wrapper").css({background: "rgba(247, 9, 9, .3)"});
        // login form
        $(".login-wrapper").css({
         background: "rgba(247, 9, 9, .5)"
@@ -172,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
         width: "92%",
         height: "92%",
       })
-      .css({ background: "hsl(209, 28%, 39%, 0.3)" });
+      .css({ background: "rgba(247, 9, 9, .)" });
     $(".hero-image-wrapper .pilot-hero-photo").css({
       filter: "grayscale(10%)",
     });
@@ -180,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // change service  card bg
     $(".s_card").each((e, element) => {
       $(element).css({
-        background: "rgba(247, 9, 9, .5)",
+        background: "rgba(247, 9, 9, .3)",
       });
     });
     
@@ -202,19 +204,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // change inset box shadow for social icons on hero page
     $(".hero-social-icon .hero-box-animate").css({
-      "box-shadow": "inset 0px 0px 10px 5px rgba(2, 86, 126)",
+      "box-shadow": "inset 0px 0px 10px 5px rgb(22, 84, 126, .5)",
     });
-    $(".inner-hero-name").css({ color: "#5e5ef1" });
+    // inner name color change
+    $(".inner-hero-name").css({ color: "#0f73b6" });
 
-    // animate arrow
-    $("#down_arrow, #down_arrow2").css({ color: "#5e5ef1" });
     // Image catain
     $(".hero-image-catain")
       .animate({
         width: "92%",
         height: "92%",
       })
-      .css({ background: "rgba(2, 4, 121, 0.1)" });
+      .css({ background: "rgb(22, 84, 126, .1)" });
     $(".hero-image-wrapper .pilot-hero-photo").css({ filter: "grayscale(5%)" });
 
     $("#services").css({ background: "hsl(246, 48%, 8%, .3)" });
@@ -223,10 +224,11 @@ document.addEventListener("DOMContentLoaded", function () {
         $(".nav").css({
           background: "rgb(22, 84, 126, .6)",
         })
-      // animate icon color 
-       $(".hero-box-animate").css({"border-color": "rgb(22, 84, 126)"})
       // skills container
     $("#skills").css({ background: "hsl(246, 48%, 8%, .3)"})
+
+        // change hero image frame background
+        $(".hero-image-wrapper").css({background: "rgb(22, 84, 126, .6)"});
 
         // change footer background
        $("#bot-footer").css({
@@ -259,12 +261,10 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => $(this).removeClass("theme_pulse"), 1000);
     // change inset box shadow for social icons on hero page
     $(".hero-social-icon .hero-box-animate").css({
-      "box-shadow": "inset 0px 0px 10px 5px rgba(83, 82, 82)",
+      "box-shadow": "inset 0px 0px 10px 5px rgb(1, 94, 94, .6)",
     });
-
-    $(".inner-hero-name").css({ color: "#73dfdf" });
-    // animate arrow
-    $("#down_arrow, #down_arrow2").css({ color: "#73dfdf" });
+    // inner name color change
+    $(".inner-hero-name").css({ color: "#015e5e" });
 
     // Image catain
     $(".hero-image-catain")
@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function () {
         width: "90%",
         height: "90%",
       })
-      .css({ background: "rgba(121, 29, 29, 0.1)" });
+      .css({ background: "rgb(1, 94, 94, .1)" });
     $(".hero-image-wrapper .pilot-hero-photo").css({
       filter: "grayscale(100%)",
     });
@@ -282,11 +282,12 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".nav").css({
       background: "rgb(1, 94, 94, .6)",
     })
-        // animate icon color 
-        $(".hero-box-animate").css({"border-color": "rgba(1,94,94, .6)"})
      // skills container
      $("#skills").css({ background: "rgb(1, 94, 94, .3)"})
 
+    // change hero image frame background
+    $(".hero-image-wrapper").css({background: "rgb(1, 94, 94, .6)"});
+             
        // change footer background
        $("#bot-footer").css({
         background: "rgb(1, 94, 94, .6)",

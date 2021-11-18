@@ -27,12 +27,11 @@ module.export = { topBTN, navLogo };
 // ========= AOS animation ==========
 AOS.init();
 // ========= coppyright year ==========handler
-const copyRightYear = function (element) {
-  const current_year = new Date().getFullYear();
-  element.textContent = current_year;
-};
-// set year
-copyRightYear(date);
+(function () {
+  const current_year =  new Date().getFullYear();
+  date.textContent =  current_year;
+})();
+
 
 // inner section smooth scroll
 function handleInnerScroll(targetBTN, targetSection) {
