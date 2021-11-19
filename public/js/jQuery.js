@@ -373,29 +373,6 @@ document.addEventListener("DOMContentLoaded", function () {
       $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
     });
   });
-
-  // bounce theme balls effect
-  (() => {
-    const themeBallInterval = setInterval(() => {
-      $(".theme-ball").each((index, themeBall) => {
-        $(themeBall)
-          .delay(500 * index)
-          .queue(function (next) {
-            $(this).effect("bounce", { times: 1 }, 300);
-            next();
-          });
-      });
-    }, 3000);
-
-    $("#theme-container").on("click", () => {
-      // jQuery.fx.off = true;
-      $(".theme-ball").each((index, themeBall) => {
-        $(themeBall).stop();
-      });
-      clearInterval(themeBallInterval);
-    });
-  })();
-
   // hide show top button on scroll
   const showHideTopBtn = function () {
     if ($(window).scrollTop() > 400) {
