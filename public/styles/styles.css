@@ -337,6 +337,15 @@ p::-moz-selection {
   color: currentColor;
 }
 
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+
 h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, p::-moz-selection {
   background: rgb(119, 31, 31);
   color: currentColor;
@@ -535,6 +544,8 @@ Navbar
   width: 100%;
   max-width: 200em;
   margin: 0 auto;
+  border-radius: 0.7rem;
+  padding: 0.5rem 1rem;
 }
 .nav-header {
   display: grid;
@@ -891,6 +902,7 @@ Hero
   transition: 0.3s;
   transform: rotate(35deg);
   border-radius: 100%;
+  background: rgb(224, 29, 3);
 }
 .hero-image-wrapper .pilot-hero-photo {
   transform: scale(1.089) rotate(-35deg);
