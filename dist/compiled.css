@@ -1294,7 +1294,7 @@ Hero
 }
 .about-img:hover .intro-about {
   height: 100%;
-  background: linear-gradient(45deg, rgba(61, 0, 0, 0.9), rgb(1, 1, 153));
+  background: rgba(2, 134, 2, 0.493, .3);
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }

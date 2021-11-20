@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
       $(icon).css({ background: "rgba(247, 9, 9, .3)" });
     });
     // skills container
-    $("#skills").css({ background: "rgba(247, 9, 9, .3)" });
+    $("#skills").css({ background: "rgba(247, 9, 9, .2)" });
     // change footer background
     $("#bot-footer").css({
       background: "rgba(247, 9, 9, .5)",
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
         width: "92%",
         height: "92%",
       })
-      .css({ background: "rgba(247, 9, 9, .)" });
+      .css({ background: "rgba(247, 9, 9, .1)" });
     $(".hero-image-wrapper .pilot-hero-photo").css({
       filter: "grayscale(10%)",
     });
@@ -191,6 +191,8 @@ document.addEventListener("DOMContentLoaded", function () {
         background: "rgba(247, 9, 9, .3)",
       });
     });
+    // change intro-text background container
+    $(".intro-about").css({ background: "rgba(247, 9, 9, .5)" });
 
     // blog cards
     $(".blog-card").each((e, element) => {
@@ -221,7 +223,9 @@ document.addEventListener("DOMContentLoaded", function () {
         height: "92%",
       })
       .css({ background: "rgb(22, 84, 126, .1)" });
-    $(".hero-image-wrapper .pilot-hero-photo").css({ filter: "grayscale(5%)" });
+    $(".hero-image-wrapper .pilot-hero-photo").css({
+      filter: "grayscale(10%)",
+    });
 
     $("#services").css({ background: "hsl(246, 48%, 8%, .3)" });
 
@@ -234,14 +238,14 @@ document.addEventListener("DOMContentLoaded", function () {
       $(icon).css({ background: "rgb(22, 84, 126, .3)" });
     });
     // skills container
-    $("#skills").css({ background: "hsl(246, 48%, 8%, .3)" });
+    $("#skills").css({ background: "hsl(246, 48%, 8%, .2)" });
 
     // change hero image frame background
     $(".hero-image-wrapper").css({ background: "rgb(22, 84, 126, .6)" });
 
     // change footer background
     $("#bot-footer").css({
-      background: "rgb(22, 84, 126, .6)",
+      background: "rgb(22, 84, 126, .5)",
     });
 
     // login form
@@ -254,6 +258,9 @@ document.addEventListener("DOMContentLoaded", function () {
         background: "rgb(22, 84, 126, .5)",
       });
     });
+
+    // change intro-text background container
+    $(".intro-about").css({ background: "rgb(22, 84, 126, .5)" });
     // blog cards
     $(".blog-card").each((e, element) => {
       $(element).css({
@@ -315,6 +322,8 @@ document.addEventListener("DOMContentLoaded", function () {
         background: "rgb(1, 94, 94, .5)",
       });
     });
+    // change intro-text background container
+    $(".intro-about").css({ background: "rgb(1, 94, 94, .5)" });
     // blog cards
     $(".blog-card").each((e, element) => {
       $(element).css({
