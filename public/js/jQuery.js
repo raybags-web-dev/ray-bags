@@ -191,6 +191,12 @@ document.addEventListener("DOMContentLoaded", function () {
         background: "rgba(247, 9, 9, .3)",
       });
     });
+    // change about me btn background
+    $(".aboutMeBTN").each((index, btn) => {
+      $(btn)
+        .delay(50 * index)
+        .css({ background: "rgba(247, 9, 9, .3)" });
+    });
     // change intro-text background container
     $(".intro-about").css({ background: "rgba(247, 9, 9, .5)" });
 
@@ -258,7 +264,12 @@ document.addEventListener("DOMContentLoaded", function () {
         background: "rgb(22, 84, 126, .5)",
       });
     });
-
+    // change about me btn background
+    $(".aboutMeBTN").each((index, btn) => {
+      $(btn)
+        .delay(50 * index)
+        .css({ background: "rgb(22, 84, 126, .5)" });
+    });
     // change intro-text background container
     $(".intro-about").css({ background: "rgb(22, 84, 126, .5)" });
     // blog cards
@@ -321,6 +332,12 @@ document.addEventListener("DOMContentLoaded", function () {
       $(element).css({
         background: "rgb(1, 94, 94, .5)",
       });
+    });
+    // change about me btn background
+    $(".aboutMeBTN").each((index, btn) => {
+      $(btn)
+        .delay(50 * index)
+        .css({ background: "rgb(1, 94, 94, .5)" });
     });
     // change intro-text background container
     $(".intro-about").css({ background: "rgb(1, 94, 94, .5)" });
