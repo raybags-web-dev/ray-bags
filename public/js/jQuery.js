@@ -13,7 +13,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // all carocel functionality
     // image wrapper container
-    mainCarocelContainer();
+    (()=>{
+      mainCarocelContainer();
+      let inspiration = [
+        "dedication",
+        "resilence",
+        "commitment",
+        "determination",
+        "dreamer",
+        "beleiver",
+        "Confident",
+        "winning",
+        "positive",
+        "Happy",
+        "appreciative",
+        "hopeful",
+      ];
+      console.log("workingggga")
+      $(".card-content-div").each((ind, card)=>{
+//  ================work in progress===============
+      })
+    })();
 
   // handle contact form submision handler
   const form = document.getElementById("contact_me_form");
@@ -181,8 +201,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     $(".hero-image-catain")
       .animate({
-        width: "92%",
-        height: "92%",
+        width: "95%",
+        height: "95%",
       })
       .css({ background: "rgba(247, 9, 9, .1)" });
     $(".hero-image-wrapper .pilot-hero-photo").css({
@@ -192,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // change service  card bg
     $(".s_card").each((e, element) => {
       $(element).css({
-        background: "rgba(247, 9, 9, .3)",
+        background: "rgba(247, 9, 9, .1)",
       });
     });
     // change about me btn background
@@ -229,8 +249,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Image catain
     $(".hero-image-catain")
       .animate({
-        width: "92%",
-        height: "92%",
+        width: "95%",
+        height: "95%",
       })
       .css({ background: "rgb(22, 84, 126, .1)" });
     $(".hero-image-wrapper .pilot-hero-photo").css({
@@ -300,8 +320,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Image catain
     $(".hero-image-catain")
       .animate({
-        width: "90%",
-        height: "90%",
+        width: "95%",
+        height: "95%",
       })
       .css({ background: "rgb(1, 94, 94, .1)" });
     $(".hero-image-wrapper .pilot-hero-photo").css({

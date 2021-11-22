@@ -93,21 +93,35 @@ const animateSkills = function (
 };
 
 // card factory function
-const curacelCard = function (parentContainer, image_link) {
-  const image = $("<img />").attr({class:"card_bg_carocel", src: `${image_link}`})
-  const para1 = $("<p></p>").text(
-    "still work in process, check back later"
-  );
+const curacelCard = function (image_link) {
+  const image = $("<img />").attr({
+    class: "card_bg_carocel",
+    src: `${image_link}`,
+  });
+  const para1 = $("<p></p>").text("Coming Soon");
   const cardDIV = $("<div></div>")
     .attr({ class: "card-content-div" })
     .append($(para1), $(image));
 
-  return $(parentContainer).append($(cardDIV));
+  return $(cardDIV);
 };
 
 // curacel slide animation
 const mainCarocelContainer = function () {
-  const dummyArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const dummyArray = [
+    "card1",
+    "card2",
+    "card3",
+    "card4",
+    "card5",
+    "card6",
+    "card7",
+    "card8",
+    "card9",
+    "card10",
+    "card11",
+    "card12",
+  ];
 
   // close button
   const closeIcon = $("<i></i>").attr({ class: "fas fa-times" });
@@ -123,10 +137,21 @@ const mainCarocelContainer = function () {
     .append($(inner_div), $(closeBtn));
 
   $(".hero-center").append($(main_container));
-  // call card creating function for each array number
-  $(dummyArray).each((index, number) => {
-    curacelCard($(".curacel-inner"), `/public/images/_x.jpg`);
-  });
+
+  // create card creating function for each array number
+
+  (() => {
+    let container = [];
+
+    $(dummyArray).each(() => {
+      let card = curacelCard(`/public/images/_x.jpg`);
+      container.push(card);
+    });
+
+    $(container).each((index, card) => {
+      $(".curacel-inner").append($(card));
+    });
+  })();
 
   // carocel animation
   const myInterval = function () {
@@ -142,27 +167,11 @@ const mainCarocelContainer = function () {
       $(card).on("mouseenter", (e) => {
         clearInterval(refreshInteravl);
       });
-
       // resume animation on mouseleave
       $(card).on("mouseleave", () => {
         return myInterval();
       });
     });
-
-    // ==========remove carocel if viewport is less than 900px=========
-    // Returns width of browser viewport
-
-    $(window).on("resize", () => {
-      let viiewportWidth = $(window).width();
-
-      if (viiewportWidth <= `${991}`) {
-        clearInterval(refreshInteravl);
-        $(".curacel-wrapper").remove();
-      }
-    });
-
-    // Returns width of HTML document
-
     return refreshInteravl;
   };
   myInterval();
