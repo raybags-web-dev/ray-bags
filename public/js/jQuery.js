@@ -1,7 +1,7 @@
 "use strict";
 
 // import { pageUnavailable } from "./mentainance.js";
-import { animateSkills } from "./utils.js";
+import { animateSkills, mainCarocelContainer } from "./utils.js";
 import { talent } from "./data.js";
 
 // General jQuery handler.
@@ -10,6 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // apply image background on
   $(".body-bg-image").removeClass("hide");
+
+  // all carocel functionality
+    // image wrapper container
+    mainCarocelContainer();
 
   // handle contact form submision handler
   const form = document.getElementById("contact_me_form");

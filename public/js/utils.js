@@ -1,3 +1,4 @@
+// skills percentage animation handler
 const animateSkills = function (
   item,
   width,
@@ -91,4 +92,73 @@ const animateSkills = function (
   });
 };
 
-export { animateSkills };
+// card factory function
+const curacelCard = function (parentContainer) {
+  const para2 = $("<p></p>").text(
+    "dummy text to be stiled letter after change"
+  );
+  const para1 = $("<p></p>").text(
+    "dummy text to be stiled letter after change"
+  );
+  const cardDIV = $("<div></div>")
+    .attr({ class: "card-content-div" })
+    .append($(para1), $(para2));
+
+  return $(parentContainer).append($(cardDIV));
+};
+
+// curacel slide animation
+const mainCarocelContainer = function () {
+  const dummyArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+  // close button
+  const closeIcon = $("<i></i>").attr({ class: "fas fa-times" });
+
+  const closeBtn = $("<button></button>")
+    .attr({ class: "close-carosel-container" })
+    .append($(closeIcon));
+
+  const inner_div = $("<div></div>").attr({ class: "curacel-inner" });
+
+  const main_container = $("<div></div>")
+    .attr({ class: "curacel-wrapper" })
+    .append($(inner_div), $(closeBtn));
+
+  $(".hero-center").append($(main_container));
+  // call card creating function for each array number
+  $(dummyArray).each((index, number) => {
+    curacelCard($(".curacel-inner"));
+  });
+
+  // carocel animation
+  const myInterval = function () {
+    let offset = 500;
+    const refreshInteravl = setInterval(() => {
+      let x = (offset -= 100);
+      if (x === 100) offset = 500;
+      $(".curacel-inner").css({ width: `${x}%` });
+    }, 3000);
+
+    // pause animation on hover
+    $(".card-content-div").each((index, card) => {
+      $(card).on("mouseenter", (e) => {
+        clearInterval(refreshInteravl);
+      });
+
+      // resume animation on mouseleave
+      $(card).on("mouseleave", () => {
+        return myInterval();
+      });
+    });
+    return refreshInteravl;
+  };
+  myInterval();
+
+  // remove carocel on click
+  $(".close-carosel-container").on("click", () => {
+    clearInterval(myInterval().refreshInteravl);
+    $(".curacel-wrapper").fadeOut().remove();
+  });
+};
+
+export { animateSkills, mainCarocelContainer };
