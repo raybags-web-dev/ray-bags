@@ -7,7 +7,7 @@ module.exports = {
     build_1: [
       "./public/js/index.js",
       "./public/js/jQuery.js",
-      "./public/js/mentainance.js",
+      // "./public/js/mentainance.js",
       "/public/js/data.js",
       "/public/js/utils.js",
     ],

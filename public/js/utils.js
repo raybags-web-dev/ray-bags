@@ -93,16 +93,14 @@ const animateSkills = function (
 };
 
 // card factory function
-const curacelCard = function (parentContainer) {
-  const para2 = $("<p></p>").text(
-    "dummy text to be stiled letter after change"
-  );
+const curacelCard = function (parentContainer, image_link) {
+  const image = $("<img />").attr({class:"card_bg_carocel", src: `${image_link}`})
   const para1 = $("<p></p>").text(
-    "dummy text to be stiled letter after change"
+    "still work in process, check back later"
   );
   const cardDIV = $("<div></div>")
     .attr({ class: "card-content-div" })
-    .append($(para1), $(para2));
+    .append($(para1), $(image));
 
   return $(parentContainer).append($(cardDIV));
 };
@@ -127,7 +125,7 @@ const mainCarocelContainer = function () {
   $(".hero-center").append($(main_container));
   // call card creating function for each array number
   $(dummyArray).each((index, number) => {
-    curacelCard($(".curacel-inner"));
+    curacelCard($(".curacel-inner"), `/public/images/_x.jpg`);
   });
 
   // carocel animation
@@ -154,28 +152,20 @@ const mainCarocelContainer = function () {
     // ==========remove carocel if viewport is less than 900px=========
     // Returns width of browser viewport
 
-    // let viiewportWidth = $(window).width();
-    // let viewportWidth2 = $(document).width();
+    $(window).on("resize", () => {
+      let viiewportWidth = $(window).width();
 
-    // $(document).on("scroll", () => {
-    //   if (viiewportWidth <= `${900}px` || viewportWidth2 <= `${900}px`) {
-    //     clearInterval(refreshInteravl);
-    //     $(".curacel-wrapper").remove();
-    //   }
-    // });
-    // $(window).on("resize", () => {
-    //   if (viiewportWidth <= `${900}px` || viewportWidth2 <= `${900}px`) {
-    //     clearInterval(refreshInteravl);
-    //     $(".curacel-wrapper").remove();
-    //   }
-    // });
+      if (viiewportWidth <= `${991}`) {
+        clearInterval(refreshInteravl);
+        $(".curacel-wrapper").remove();
+      }
+    });
 
     // Returns width of HTML document
 
     return refreshInteravl;
   };
   myInterval();
-
   // remove carocel on click
   $(".close-carosel-container").on("click", () => {
     clearInterval(myInterval().refreshInteravl);

@@ -1,6 +1,6 @@
 "use strict";
 
-import { pageUnavailable } from "./mentainance.js";
+// import { pageUnavailable } from "./mentainance.js";
 import { animateSkills, mainCarocelContainer } from "./utils.js";
 import { talent } from "./data.js";
 
@@ -460,5 +460,5 @@ document.addEventListener("DOMContentLoaded", function () {
     showHideTopBtn();
   });
 
-  pageUnavailable();
+  // pageUnavailable();
 });
