@@ -150,6 +150,28 @@ const mainCarocelContainer = function () {
         return myInterval();
       });
     });
+
+    // ==========remove carocel if viewport is less than 900px=========
+    // Returns width of browser viewport
+
+    // let viiewportWidth = $(window).width();
+    // let viewportWidth2 = $(document).width();
+
+    // $(document).on("scroll", () => {
+    //   if (viiewportWidth <= `${900}px` || viewportWidth2 <= `${900}px`) {
+    //     clearInterval(refreshInteravl);
+    //     $(".curacel-wrapper").remove();
+    //   }
+    // });
+    // $(window).on("resize", () => {
+    //   if (viiewportWidth <= `${900}px` || viewportWidth2 <= `${900}px`) {
+    //     clearInterval(refreshInteravl);
+    //     $(".curacel-wrapper").remove();
+    //   }
+    // });
+
+    // Returns width of HTML document
+
     return refreshInteravl;
   };
   myInterval();

@@ -3185,6 +3185,7 @@ textarea {
   box-shadow: var(--deep-shadow-card);
   animation: slideInContainer_main 1 forwards ease-in 2s 2s;
 }
+
 @keyframes slideInContainer_main {
   to {
     margin-left: 0%;
