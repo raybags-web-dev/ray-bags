@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   $(".body-bg-image").removeClass("hide");
 
   // all carocel functionality
-    mainCarocelContainer();
+  mainCarocelContainer();
 
   // handle contact form submision handler
   const form = document.getElementById("contact_me_form");
@@ -162,6 +162,12 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".nav").css({
       background: "rgba(247, 9, 9, .5)",
     });
+
+    // change carocel bg
+    $(".card-content-div").css({
+      "background-image":
+        "linear-gradient(to right, rgba(247, 9, 9, .2) 10%, black 100%)",
+    });
     // change footer incons background
     $(".footer_link .fab").each((index, icon) => {
       $(icon).css({ background: "rgba(247, 9, 9, .3)" });
@@ -198,7 +204,14 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".aboutMeBTN").each((index, btn) => {
       $(btn)
         .delay(50 * index)
-        .css({ background: "rgba(247, 9, 9, .3)" });
+        .css({
+          background: "rgba(247, 9, 9, .1)",
+          color: "rgb(250, 248, 248)",
+        });
+    });
+    // about info container background change
+    $(".about-info").css({
+      background: "rgba(247, 9, 9, .1)",
     });
     // change intro-text background container
     $(".intro-about").css({ background: "rgba(247, 9, 9, .5)" });
@@ -242,6 +255,11 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".nav").css({
       background: "rgb(22, 84, 126, .6)",
     });
+    // change carocel bg
+    $(".card-content-div").css({
+      "background-image":
+        "linear-gradient(to right, rgb(22, 84, 126, .3) 10%, black 100%)",
+    });
     // change footer incons background
     $(".footer_link .fab").each((index, icon) => {
       $(icon).css({ background: "rgb(22, 84, 126, .3)" });
@@ -271,7 +289,11 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".aboutMeBTN").each((index, btn) => {
       $(btn)
         .delay(50 * index)
-        .css({ background: "rgb(22, 84, 126, .5)" });
+        .css({ background: "rgb(22, 84, 126, .3)" });
+    });
+    // about info container background change
+    $(".about-info").css({
+      background: "rgb(22, 84, 126, .1)",
     });
     // change intro-text background container
     $(".intro-about").css({ background: "rgb(22, 84, 126, .5)" });
@@ -312,6 +334,11 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".nav").css({
       background: "rgb(1, 94, 94, .6)",
     });
+    // change carocel bg
+    $(".card-content-div").css({
+      "background-image":
+        "linear-gradient(to right, rgb(1, 94, 94, .3) 10%, black 100%)",
+    });
     // change footer incons background
     $(".footer_link .fab").each((index, icon) => {
       $(icon).css({ background: "rgb(1, 94, 94, .3)" });
@@ -340,7 +367,11 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".aboutMeBTN").each((index, btn) => {
       $(btn)
         .delay(50 * index)
-        .css({ background: "rgb(1, 94, 94, .5)" });
+        .css({ background: "rgb(1, 94, 94, .3)" });
+    });
+    // about info container background change
+    $(".about-info").css({
+      background: "rgb(1, 94, 94, .1)",
     });
     // change intro-text background container
     $(".intro-about").css({ background: "rgb(1, 94, 94, .5)" });

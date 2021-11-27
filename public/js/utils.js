@@ -93,15 +93,11 @@ const animateSkills = function (
 };
 
 // card factory function
-const curacelCard = function (image_link) {
-  const image = $("<img />").attr({
-    class: "card_bg_carocel",
-    src: `${image_link}`,
-  });
+const curacelCard = function () {
   const para1 = $("<p></p>").text("Coming Soon");
   const cardDIV = $("<div></div>")
     .attr({ class: "card-content-div" })
-    .append($(para1), $(image));
+    .append($(para1));
 
   return $(cardDIV);
 };
@@ -160,21 +156,25 @@ const mainCarocelContainer = function () {
       $(".curacel-inner").append($(card));
     });
 
+    let cardsArray = [];
     $(".card-content-div").each((ind, card) => {
-      let cardsArray = [];
       cardsArray.push($(card));
-      $($(cardsArray[0]).children()[0]).text("dedication");
-      $($(cardsArray[1]).children()[0]).text("resilence");
-      $($(cardsArray[2]).children()[0]).text("commitment");
-      $($(cardsArray[3]).children()[0]).text("determination");
-      $($(cardsArray[4]).children()[0]).text("dreamer");
-      $($(cardsArray[5]).children()[0]).text("beleiver");
-      $($(cardsArray[6]).children()[0]).text("Confident");
-      $($(cardsArray[7]).children()[0]).text("winning");
-      $($(cardsArray[8]).children()[0]).text("positive");
-      $($(cardsArray[9]).children()[0]).text("Happy");
-      $($(cardsArray[10]).children()[0]).text("appreciative");
-      $($(cardsArray[11]).children()[0]).text("hopeful");
+      $($(cardsArray[0]).children()[0]).text("Data Models");
+      $($(cardsArray[1]).children()[0]).text("Relational databases");
+      $($(cardsArray[2]).children()[0]).text("Non relational databases");
+      $($(cardsArray[3]).children()[0]).text("Information flow");
+      $($(cardsArray[4]).children()[0]).text(
+        "Query execution and optimization"
+      );
+      $($(cardsArray[5]).children()[0]).text("Data stores");
+      $($(cardsArray[6]).children()[0]).text("Logical Operations");
+      $($(cardsArray[7]).children()[0]).text(
+        "Comparative analysis of data stores"
+      );
+      $($(cardsArray[8]).children()[0]).text("Database setup and Management");
+      $($(cardsArray[9]).children()[0]).text("Data Modeling techniques");
+      $($(cardsArray[10]).children()[0]).text("ETL design");
+      $($(cardsArray[11]).children()[0]).text("Architectural projections");
     });
 
     setTimeout(() => {
