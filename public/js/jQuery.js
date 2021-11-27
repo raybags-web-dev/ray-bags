@@ -12,28 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   $(".body-bg-image").removeClass("hide");
 
   // all carocel functionality
-    // image wrapper container
-    (()=>{
-      mainCarocelContainer();
-      let inspiration = [
-        "dedication",
-        "resilence",
-        "commitment",
-        "determination",
-        "dreamer",
-        "beleiver",
-        "Confident",
-        "winning",
-        "positive",
-        "Happy",
-        "appreciative",
-        "hopeful",
-      ];
-      console.log("workingggga")
-      $(".card-content-div").each((ind, card)=>{
-//  ================work in progress===============
-      })
-    })();
+    mainCarocelContainer();
 
   // handle contact form submision handler
   const form = document.getElementById("contact_me_form");
