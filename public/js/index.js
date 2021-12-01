@@ -58,45 +58,45 @@ function handleInnerScroll(targetBTN, targetSection) {
 }
 
 // hide show navbar on scroll
-(function () {
-  let doc = document.documentElement,
-    w = window,
-    prevScroll = w.scrollY || doc.scrollTop,
-    curScroll,
-    direction = 0,
-    prevDirection = 0,
-    header = navbar,
-    checkScroll = function () {
-      curScroll = w.scrollY || doc.scrollTop;
-      if (curScroll > prevScroll) {
-        //scrolled up
-        direction = 2;
-      } else if (curScroll < prevScroll) {
-        //scrolled down
-        direction = 1;
-      }
+// (function () {
+//   let doc = document.documentElement,
+//     w = window,
+//     prevScroll = w.scrollY || doc.scrollTop,
+//     curScroll,
+//     direction = 0,
+//     prevDirection = 0,
+//     header = navbar,
+//     checkScroll = function () {
+//       curScroll = w.scrollY || doc.scrollTop;
+//       if (curScroll > prevScroll) {
+//         //scrolled up
+//         direction = 2;
+//       } else if (curScroll < prevScroll) {
+//         //scrolled down
+//         direction = 1;
+//       }
 
-      if (direction !== prevDirection) {
-        toggleHeader(direction, curScroll);
-      }
+//       if (direction !== prevDirection) {
+//         toggleHeader(direction, curScroll);
+//       }
 
-      prevScroll = curScroll;
-    };
+//       prevScroll = curScroll;
+//     };
 
-  let toggleHeader = function (direction, curScroll) {
-    if (direction === 2 && curScroll > 52) {
-      //replace 52 with the height of your header in px
+//   let toggleHeader = function (direction, curScroll) {
+//     if (direction === 2 && curScroll > 52) {
+//       //replace 52 with the height of your header in px
 
-      header.style.cssText = "top: -50%; transition: .5s;";
-      prevDirection = direction;
-    } else if (direction === 1) {
-      header.style.cssText = "top: 0%; transition: .5s;";
-      prevDirection = direction;
-    }
-  };
+//       header.style.cssText = "top: -50%; transition: .5s;";
+//       prevDirection = direction;
+//     } else if (direction === 1) {
+//       header.style.cssText = "top: 0%; transition: .5s;";
+//       prevDirection = direction;
+//     }
+//   };
 
-  window.addEventListener("scroll", checkScroll);
-})();
+//   window.addEventListener("scroll", checkScroll);
+// })();
 
 // smooth scrolling to contact section
 handleInnerScroll(contactBtn, contactSection);

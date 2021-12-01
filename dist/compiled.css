@@ -636,12 +636,19 @@ Navbar
   .active a::before {
     content: "";
     position: absolute;
-    width: 100%;
+    width: 50%;
     left: -1%;
     bottom: -20%;
-    height: 2%;
+    height: 3%;
+    width: 0%;
     background: var(--clr-red);
-    transition: var(--transition);
+    transition: .3s;
+    animation: stretchEffect 1 forwards linear .3s;
+  }
+  @keyframes stretchEffect {
+    to{
+      width: 100%;
+    }
   }
   .nav-center {
     display: grid;
@@ -661,6 +668,7 @@ Navbar
   transition: var(--transition);
   z-index: 100;
   box-shadow: 5px 6px 15px 0px rgba(0, 0, 0, 0.4);
+  background: rgb(128, 128, 128, .4);
 }
 /*
 =============== 
@@ -3082,7 +3090,7 @@ textarea {
   height: 40px;
   margin-left: 1rem;
   border-radius: 50%;
-  background: rgba(65, 64, 64, 0.5);
+  background: rgba(65, 64, 64, 0.7);
   -webkit-animation: skeleton-fade infinite linear alternate 1s;
   animation: skeleton-fade infinite linear alternate 1s;
 }
@@ -3098,7 +3106,7 @@ textarea {
   height: 70%;
   border-radius: 0.5rem;
   margin: 0.5rem;
-  background: rgba(65, 64, 64, 0.5);
+  background: rgba(65, 64, 64, 0.7);
   -webkit-animation: skeleton-fade infinite linear alternate 1s;
   animation: skeleton-fade infinite linear alternate 1s;
 }
@@ -3124,7 +3132,7 @@ textarea {
   height: 40px;
   margin-left: 1rem;
   margin-top: 3rem;
-  background: rgba(65, 64, 64, 0.3);
+  background: rgba(65, 64, 64, 0.1);
   border-radius: 0.5rem;
   -webkit-animation: skeleton-fade infinite linear alternate 1s;
   animation: skeleton-fade infinite linear alternate 1s;
@@ -3137,7 +3145,7 @@ textarea {
   overflow: hidden;
   transition: var(--transition);
   border-radius: 50%;
-  background: rgba(65, 64, 64, 0.3);
+  background: rgba(65, 64, 64, 0.1);
   -webkit-animation: skeleton-fade infinite linear alternate 1s;
   animation: skeleton-fade infinite linear alternate 1s;
 }

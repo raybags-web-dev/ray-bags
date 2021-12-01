@@ -60,7 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   $("#nav").slideDown("1000", function () {
     $(this).addClass("navbar-fixed").css({
-      top: "0%",
+      top: "-1%",
+      height: "2%"
     });
   });
 
@@ -160,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // change navbar background
     $(".nav").css({
-      background: "rgba(247, 9, 9, .5)",
+      background: "rgba(247, 9, 9, .4)",
     });
 
     // change carocel bg
@@ -387,13 +388,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // toggle nav slide in out on scroll
   $(window).on("scroll", function () {
     if ($(window).scrollTop() >= 100) {
-      $("#nav").slideDown("1000", function () {
-        $(this).addClass("navbar-fixed");
-      });
+      $("#nav").css({
+        background: "rgb(128, 128, 128, 0.5)",
+        "box-shadow": "unset"
+      })
     } else {
-      $("#nav").fadeIn("1000", function () {
-        $(this);
-      });
+      $("#nav").css({
+        background: "rgb(128, 128, 128, .089)"
+
+      })
     }
     // active class switcher on scroll (Scroll spy)
     let scrollBarLocation = $(this).scrollTop();
