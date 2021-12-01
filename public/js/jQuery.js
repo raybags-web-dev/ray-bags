@@ -393,10 +393,16 @@ document.addEventListener("DOMContentLoaded", function () {
         background: "rgb(128, 128, 128, 0.5)",
         "box-shadow": "unset"
       })
+      $(".hero-image-bg").css({
+        filter: "grayscale(10%)"
+      })
     } else {
       $("#nav").css({
         background: "rgb(128, 128, 128, .089)"
 
+      })
+      $(".hero-image-bg").css({
+        filter: "grayscale(100%)"
       })
     }
     // active class switcher on scroll (Scroll spy)

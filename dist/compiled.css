@@ -723,7 +723,28 @@ Hero
   perspective: 10em;
   perspective-origin: 50% calc(50% - 2em);
 }
+/* hero background image */
+.hero-image-bg {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 55%;
+  object-fit: cover;
+  z-index: -1;
+  /* filter: grayscale(100%); */
+  transition: 1s;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
+.hero-image-bg img {
+  min-width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
 .hero-mid {
   margin-top: 10rem;
   border-radius: 0.5rem;
@@ -3104,7 +3125,7 @@ textarea {
   -webkit-animation-play-state: running;
   animation-play-state: running;
   transition: 1.2s;
-  animation: moveBox infinite linear alternate-reverse 35s 5s;
+  animation: moveBox infinite linear alternate-reverse 40s 1s;
 }
 
 @-webkit-keyframes moveBox {
