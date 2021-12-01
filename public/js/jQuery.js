@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // handle contact form submision handler
   const form = document.getElementById("contact_me_form");
-
   $("#contact_me_form").on("submit", function (e) {
     e.preventDefault();
 
@@ -40,12 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(function () {
       $(".skill-desc span").animate({ width: "0%" });
       count++;
-      $(".skill-desc").fadeOut(300, function () {
+      $(".skill-desc").animate(300, function () {
         $(this)
           .text(talent[count % talent.length])
-          .fadeIn(500);
+          .animate({
+            "margin": "0 auto"
+          });
       });
-    }, 5000);
+    }, 3000);
   })();
 
   // slide in top nav
