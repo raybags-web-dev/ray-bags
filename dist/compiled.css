@@ -260,7 +260,7 @@ p {
   align-items: center;
   background: transparent;
   color: var(--clr-white);
-  box-shadow: inset 0px 2px 5px 4px rgba(0, 0, 0, 0.48);
+  backdrop-filter: var(--backdrop-light);
 }
 
 /* ==========lean more and accept  cookie button psudo elements  */
@@ -614,7 +614,6 @@ Sidebar
   width: 4.5rem;
   height: 4.5rem;
   border: 2px solid transparent;
-  box-shadow: inset 0px 0px 10px 5px rgba(85, 1, 1, 0.5);
 }
 
 .hero-info {
@@ -671,7 +670,7 @@ Sidebar
     margin-right: 20rem;
     color: var(--clr-white);
     padding: 0.6rem;
-    box-shadow: inset 0 -20px 10px rgba(129, 1, 1, 0.5);
+    /* box-shadow: inset 0 -20px 10px rgba(129, 1, 1, 0.5); */
     border-radius: 50%;
     cursor: pointer;
     transition: 6s;
@@ -689,6 +688,16 @@ Sidebar
   }
   .hero-info h1 {
     box-shadow: unset;
+  }
+  .hero-image-bg {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    min-height: 100%;
+  }
+  .hero-image-bg img {
+    min-height: 100%;
+    filter: blur(10px);
   }
 }
 
@@ -728,10 +737,10 @@ Hero
   position: absolute;
   width: 100%;
   overflow: hidden;
-  height: 55%;
+  height: 100%;
   object-fit: cover;
   z-index: -1;
-  /* filter: grayscale(100%); */
+  filter: grayscale(100%);
   transition: 1s;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -3047,7 +3056,8 @@ textarea {
   height: 20%;
   bottom: 8%;
   padding: 0.5rem 0.5rem 0.5rem 0;
-  border-radius: 0.5rem;
+  border-top-right-radius: 0.5;
+  border-bottom-right-radius: 0.5;
   transition: var(--transition);
   display: flex;
   flex-direction: column;
@@ -3056,6 +3066,12 @@ textarea {
   overflow: hidden;
   opacity: 1;
   cursor: pointer;
+  background: linear-gradient(
+    180deg,
+    rgb(0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.8743872549019608) 50%,
+    rgb(82, 1, 1) 100%
+  );
 }
 
 .minimize_button {
@@ -3075,9 +3091,7 @@ textarea {
   color: rgb(255, 0, 0, 0.3);
   border-top-right-radius: 0.5;
   border-bottom-right-radius: 0.5;
-  -webkit-backdrop-filter: blur(100px);
-  backdrop-filter: blur(100px);
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0);
 }
 .minimize_button:hover .fas {
   color: rgba(194, 192, 192, 0.8);
@@ -3100,9 +3114,7 @@ textarea {
   color: rgb(255, 0, 0, 0.5);
   border-top-right-radius: 0.5;
   border-bottom-right-radius: 0.5;
-  -webkit-backdrop-filter: blur(100px);
-  backdrop-filter: blur(100px);
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .expand_button:hover .fas {
