@@ -3051,7 +3051,7 @@ textarea {
 .curacel-wrapper {
   position: absolute;
   left: 0%;
-  width: 3%;
+  width: 2%;
   max-width: 900px;
   height: 20%;
   bottom: 8%;
@@ -3066,12 +3066,8 @@ textarea {
   overflow: hidden;
   opacity: 1;
   cursor: pointer;
-  background: linear-gradient(
-    180deg,
-    rgb(0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.8743872549019608) 50%,
-    rgb(82, 1, 1) 100%
-  );
+  background: rgba(0, 0, 0);
+
 }
 
 .minimize_button {
@@ -3137,7 +3133,7 @@ textarea {
   -webkit-animation-play-state: running;
   animation-play-state: running;
   transition: 1.2s;
-  animation: moveBox infinite linear alternate-reverse 40s 1s;
+  animation: moveBox infinite linear alternate-reverse 60s 1s;
 }
 
 @-webkit-keyframes moveBox {
