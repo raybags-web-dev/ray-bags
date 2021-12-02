@@ -8,8 +8,16 @@ import { talent } from "./data.js";
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => $("#myBtn").removeClass("hide"), 1000);
 
-  // apply image background on
+// remove 'hide' class from images
   $(".body-bg-image").removeClass("hide");
+  $(".hero-image-bg").removeClass("hide");
+
+  $("img").each((index, image) =>{
+    $(image).attr("src", $(image).attr("data-src"))
+    $(image).removeAttr("data-src")
+    console.log("works")
+  })
+
 
   // all carocel functionality
   mainCarocelContainer();
