@@ -1,6 +1,24 @@
 "use strict";
 // import css for compression
 require("../styles/styles.css");
+require("../images/_x.jpg");
+require("../images/_x2.jpeg");
+require("../images/x2.jpeg");
+require("../images/favicon_min.png");
+require("../images/another3.jpg");
+require("../images/businessCard.png");
+require("../images/face_1_min.jpeg");
+require("../images/face_2_min.jpeg");
+require("../images/face_3_min.jpeg");
+require("../images/face_4_min.jpeg");
+require("../images/face_5_min.jpeg");
+require("../images/face_6_min.jpeg");
+require("../images/meeee.jpeg");
+require("../images/need_4_speed.png");
+require("../images/new_logoo2.png");
+require("../images/profile_me.jpeg");
+require("../images/project_2.jpeg");
+require("../images/project_3.jpeg");
 
 const date = document.querySelector(".copyrightYear");
 const topBTN = document.querySelector("#myBtn");
@@ -21,17 +39,13 @@ const btnInVideo = document.querySelector("#inVideoBTN_Contact");
 const contactSectionFromVideoSection = document.querySelector(".contact");
 
 module.export = { topBTN, navLogo };
-
-// =======vanilla JS ==========
-
 // ========= AOS animation ==========
 AOS.init();
 // ========= coppyright year ==========handler
 (function () {
-  const current_year =  new Date().getFullYear();
-  date.textContent =  current_year;
+  const current_year = new Date().getFullYear();
+  date.textContent = current_year;
 })();
-
 
 // inner section smooth scroll
 function handleInnerScroll(targetBTN, targetSection) {

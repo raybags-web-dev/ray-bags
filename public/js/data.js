@@ -1,13 +1,16 @@
 const talent = [
-  "Experienced in:",
   "API management",
   "Software testing",
-  "Micro-service management",
+  "Micro-services",
   "Database Intergration",
   "server-side Scripting",
-  "API development-nodeJS",
-  "UI architecture-reactJS",
-  "and much more...",
+  "API development-nodejs",
+  "API testing with Postman",
+  "UI architecture",
+  "HTML, CSS, SaaS, JavaScript",
+  "ReactJS",
+  "Python, pyCharm with Jupitor",
+  "and more...",
 ];
 
 export { talent };

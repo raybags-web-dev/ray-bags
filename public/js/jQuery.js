@@ -15,9 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   $("img").each((index, image) =>{
     $(image).attr("src", $(image).attr("data-src"))
     $(image).removeAttr("data-src")
-    console.log("works")
   })
-
 
   // all carocel functionality
   mainCarocelContainer();
@@ -497,7 +495,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   // functions running on window scroll
   $(window).on("scroll", () => {
-    parallax($(".services_background"));
+    parallax($(".pilot-hero-photo"));
   });
   // functions running on window orientationChange
   $(window).on("orientationChange", () => {

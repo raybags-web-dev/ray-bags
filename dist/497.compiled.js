@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkray_bags=self.webpackChunkray_bags||[]).push([[497],{497:(b,a,s)=>{s.r(a),s.d(a,{default:()=>e});const e=s.p+"images/d8bb55bb82684c83badc98b651ffc5b2.jpeg"}}]);

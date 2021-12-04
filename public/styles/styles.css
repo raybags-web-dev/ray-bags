@@ -202,7 +202,20 @@ p::-moz-selection {
   color: currentColor;
 }
 
-h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, p::-moz-selection {
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
   background: rgb(119, 31, 31);
   color: currentColor;
 }
@@ -1180,8 +1193,8 @@ Hero
   line-height: 1rem !important;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
-  -webkit-backdrop-filter: var(--backdrop-light);
-  backdrop-filter: var(--backdrop-light);
+  z-index: 100;
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
 }
 
 .intro-about::-webkit-scrollbar {
@@ -1298,6 +1311,20 @@ About
   .about-img::before {
     left: -2rem;
   }
+  .about-img::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: grayscale(100%);
+    backdrop-filter: grayscale(100%);
+    animation: moveCircle infinite alternate-reverse ease-in-out 50s;
+  }
+  .about-img:hover::after {
+    backdrop-filter: sepia(100%);
+  }
   .about-info {
     align-self: center;
     -webkit-backdrop-filter: var(--backdrop-light);
@@ -1316,7 +1343,7 @@ Services
 */
 
 /* bg-grey in globals */
-.services_background {
+#services{
   position: relative;
   overflow: hidden;
   -webkit-backdrop-filter: var(--backdrop-light);
@@ -1586,8 +1613,8 @@ Projects
     transition: var(--transition);
   }
   .about-hero-photo {
-    height: 100%;
-    width: 500px;
+    min-height: 100%;
+    min-width: 500px;
     height: 450px;
   }
 }
