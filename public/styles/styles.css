@@ -220,6 +220,15 @@ p::-moz-selection {
   color: currentColor;
 }
 
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+
 h1::selection,
 h2::selection,
 h3::selection,
@@ -827,33 +836,23 @@ Hero
 
 .hero-image-wrapper {
   position: relative;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+  min-width: 430px;
+  height: 430px;
   overflow: hidden;
   border: 2px solid transparent;
   box-shadow: var(--deep-shadow_3);
   outline: 1rem solid rgba(206, 61, 61, 0.1);
   outline-offset: -3rem;
   transition: 0.3s;
-  transform: rotate(35deg);
-  border-bottom-right-radius: 50%;
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 5%;
-  border-top-right-radius: 5%;
+  border-radius: 50%;
   -webkit-backdrop-filter: var(--backdrop-light);
   backdrop-filter: var(--backdrop-light);
 }
 .hero-image-wrapper .pilot-hero-photo {
-  transform: scale(1.089) rotate(-35deg);
-}
-
-.hero-image-wrapper:hover {
-  transform: rotate(-35deg);
-  border-radius: 100%;
+  transform: scale(1);
+  border-radius: 50%;
+  min-width: inherit;
+  height: inherit;
 }
 .hero-image-catain {
   position: absolute;
@@ -863,7 +862,7 @@ Hero
   bottom: 0;
   width: 0%;
   height: 0%;
-  border-radius: 100%;
+  border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
   opacity: 1;
@@ -871,7 +870,7 @@ Hero
 }
 
 .hero-image-wrapper:hover .pilot-hero-photo {
-  transform: scale(1.089) rotate(35deg);
+  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -1172,6 +1171,7 @@ Hero
   max-height: -moz-max-content;
   max-height: max-content;
   opacity: 0.8;
+  background: rgba(99, 97, 97, 0.3);
   border-radius: 0.5rem;
   transition: var(--transition);
   box-shadow: var(--deep-shadow-card);
@@ -1194,6 +1194,8 @@ Hero
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   z-index: 100;
+  -webkit-backdrop-filter: var(--backdrop-light);
+  backdrop-filter: var(--backdrop-light);
   background-image: linear-gradient(to right, #434343 0%, black 100%);
 }
 
@@ -1206,21 +1208,7 @@ Hero
 .intro-about::-webkit-scrollbar-thumb {
   background: transparent;
 }
-.intro-about > * {
-  top: 0%;
-  -webkit-animation: text_up_effect infinite linear alternate 30s;
-  animation: text_up_effect infinite linear alternate 30s;
-}
-@-webkit-keyframes text_up_effect {
-  to {
-    top: -570%;
-  }
-}
-@keyframes text_up_effect {
-  to {
-    top: -570%;
-  }
-}
+
 @media screen and (max-width: 1154.55px) {
   .intro-about {
     -webkit-backdrop-filter: blur(100px);
@@ -1240,7 +1228,6 @@ Hero
   padding-left: 1rem;
   list-style-type: square;
   list-style-image: linear-gradient(45deg, red, blue);
-  transition: 5s;
 }
 
 @media screen and (max-width: 1173px) {
@@ -1257,9 +1244,8 @@ Hero
 .intro-about:hover > * {
   -webkit-animation: unset;
   animation: unset;
-  top: 0 !important;
+  top: 2% !important;
 }
-
 .intro-about p:nth-child(1) {
   background: red;
   padding: 3rem;
@@ -1322,9 +1308,7 @@ About
     backdrop-filter: grayscale(100%);
     animation: moveCircle infinite alternate-reverse ease-in-out 50s;
   }
-  .about-img:hover::after {
-    backdrop-filter: sepia(100%);
-  }
+
   .about-info {
     align-self: center;
     -webkit-backdrop-filter: var(--backdrop-light);
@@ -1343,7 +1327,7 @@ Services
 */
 
 /* bg-grey in globals */
-#services{
+#services {
   position: relative;
   overflow: hidden;
   -webkit-backdrop-filter: var(--backdrop-light);
@@ -1858,8 +1842,8 @@ Blog
   top: 100%;
   overflow: hidden;
   display: grid;
-  color: var(--clr-white);
   place-items: center;
+  color: var(--clr-white);
   box-shadow: var(--deep-shadow-card);
   background: rgb(24, 24, 24, 0.5);
 }
@@ -1917,6 +1901,10 @@ Blog
   box-shadow: var(--deep-shadow-card);
 }
 .card-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 13%;
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
@@ -3096,7 +3084,7 @@ textarea {
   left: 0%;
   width: 2%;
   max-width: 900px;
-  height: 20%;
+  height: 17%;
   bottom: 8%;
   padding: 0.5rem 0.5rem 0.5rem 0;
   border-top-right-radius: 0.5;

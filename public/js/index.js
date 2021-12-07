@@ -13,7 +13,7 @@ require("../images/face_3_min.jpeg");
 require("../images/face_4_min.jpeg");
 require("../images/face_5_min.jpeg");
 require("../images/face_6_min.jpeg");
-require("../images/meeee.jpeg");
+require("../images/meeee.jpg");
 require("../images/need_4_speed.png");
 require("../images/new_logoo2.png");
 require("../images/profile_me.jpeg");
@@ -39,8 +39,6 @@ const btnInVideo = document.querySelector("#inVideoBTN_Contact");
 const contactSectionFromVideoSection = document.querySelector(".contact");
 
 module.export = { topBTN, navLogo };
-// ========= AOS animation ==========
-AOS.init();
 // ========= coppyright year ==========handler
 (function () {
   const current_year = new Date().getFullYear();

@@ -8,14 +8,14 @@ import { talent } from "./data.js";
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => $("#myBtn").removeClass("hide"), 1000);
 
-// remove 'hide' class from images
+  // remove 'hide' class from images
   $(".body-bg-image").removeClass("hide");
   $(".hero-image-bg").removeClass("hide");
 
-  $("img").each((index, image) =>{
-    $(image).attr("src", $(image).attr("data-src"))
-    $(image).removeAttr("data-src")
-  })
+  $("img").each((index, image) => {
+    $(image).attr("src", $(image).attr("data-src"));
+    $(image).removeAttr("data-src");
+  });
 
   // all carocel functionality
   mainCarocelContainer();
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         $(this)
           .text(talent[count % talent.length])
           .animate({
-            "margin": "0 auto"
+            margin: "0 auto",
           });
       });
     }, 3000);
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
   $("#nav").slideDown("1000", function () {
     $(this).addClass("navbar-fixed").css({
       top: "-1%",
-      height: "2%"
+      height: "2%",
     });
   });
 
@@ -222,8 +222,11 @@ document.addEventListener("DOMContentLoaded", function () {
       background: "rgba(247, 9, 9, .1)",
     });
     // change intro-text background container
-    $(".intro-about").css({ background: "rgba(247, 9, 9, .5)" });
-
+    $(".intro-about").css({ background: "rgba(247, 9, 9, .3)" });
+    // change about me image backdground
+    $(".about-img").css({
+      background: "rgba(247, 9, 9, .3)",
+    });
     // blog cards
     $(".blog-card").each((e, element) => {
       $(element).css({
@@ -305,6 +308,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     // change intro-text background container
     $(".intro-about").css({ background: "rgb(22, 84, 126, .5)" });
+
+    // change about me image backdground
+    $(".about-img").css({
+      background: "rgb(22, 84, 126, .5)",
+    });
     // blog cards
     $(".blog-card").each((e, element) => {
       $(element).css({
@@ -381,6 +389,10 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".about-info").css({
       background: "rgb(1, 94, 94, .1)",
     });
+    // change about me image backdground
+    $(".about-img").css({
+      background: "rgb(1, 94, 94, .3)",
+    });
     // change intro-text background container
     $(".intro-about").css({ background: "rgb(1, 94, 94, .5)" });
     // blog cards
@@ -397,19 +409,18 @@ document.addEventListener("DOMContentLoaded", function () {
     if ($(window).scrollTop() >= 100) {
       $("#nav").css({
         background: "rgb(128, 128, 128, 0.5)",
-        "box-shadow": "unset"
-      })
+        "box-shadow": "unset",
+      });
       $(".hero-image-bg").css({
-        filter: "grayscale(10%)"
-      })
+        filter: "grayscale(10%)",
+      });
     } else {
       $("#nav").css({
-        background: "rgb(128, 128, 128, .089)"
-
-      })
+        background: "rgb(128, 128, 128, .089)",
+      });
       $(".hero-image-bg").css({
-        filter: "grayscale(100%)"
-      })
+        filter: "grayscale(100%)",
+      });
     }
     // active class switcher on scroll (Scroll spy)
     let scrollBarLocation = $(this).scrollTop();
