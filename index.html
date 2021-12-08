@@ -909,12 +909,7 @@
           >
             <div class="input-group">
               <label>Name</label>
-              <input
-                type="text"
-                name="name"
-                placeholder="name"
-                required="true"
-              />
+              <input type="text" name="name" placeholder="name" />
             </div>
             <div class="input-group email_input">
               <label>Email</label>
@@ -925,21 +920,32 @@
                 required="true"
               />
             </div>
-            <div class="input-group fan_input">
-              <label>Fan or Employer</label>
-              <input type="text" name="name" placeholder="fan or employer" />
+            <div class="input-group radios">
+              <div class="fan_input">
+                <label for="employer">
+                  <input
+                    type="radio"
+                    id="employer"
+                    name="radio"
+                    value="Employer"
+                  />
+                  Employer
+                </label>
+              </div>
+              <div class="starwars_input">
+                <label for="fan">
+                  <input type="radio" id="fan" name="radio" value="Fan" />
+                  Fan
+                </label>
+              </div>
             </div>
-            <div class="input-group starwars_input">
-              <label>Starwars Fan</label>
-              <input type="text" name="name" placeholder="Yes or No" />
-            </div>
+
             <div class="input-group text_input">
               <label>Your message</label>
               <textarea
                 placeholder="type your message here"
                 name="message"
                 required="true"
-                id=""
                 cols="23"
                 rows="5"
               ></textarea>
