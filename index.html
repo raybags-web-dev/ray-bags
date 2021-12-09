@@ -920,25 +920,6 @@
                 required="true"
               />
             </div>
-            <div class="input-group radios">
-              <div class="fan_input">
-                <label for="employer">
-                  <input
-                    type="radio"
-                    id="employer"
-                    name="radio"
-                    value="Employer"
-                  />
-                  Employer
-                </label>
-              </div>
-              <div class="starwars_input">
-                <label for="fan">
-                  <input type="radio" id="fan" name="radio" value="Fan" />
-                  Fan
-                </label>
-              </div>
-            </div>
 
             <div class="input-group text_input">
               <label>Your message</label>
@@ -950,9 +931,35 @@
                 rows="5"
               ></textarea>
             </div>
+            <div class="input-group radios">
+              <div class="fan_input">
+                <label for="employer">
+                  <input
+                    type="radio"
+                    id="employer"
+                    name="radio"
+                    value="Employer"
+                    required="true"
+                  />
+                  Employer
+                </label>
+              </div>
+              <div class="starwars_input">
+                <label for="fan">
+                  <input
+                    type="radio"
+                    id="fan"
+                    name="radio"
+                    required="true"
+                    value="Fan"
+                  />
+                  Fan
+                </label>
+              </div>
+            </div>
             <button
               type="submit"
-              title="I'm looking forward to hearing from you."
+              title="Looking forward to hearing from you."
               class="login-button"
             >
               Click to Send

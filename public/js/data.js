@@ -1,16 +1,17 @@
 const talent = [
   "API management",
+  "API development",
   "Software testing",
-  "Micro-services",
-  "Database Intergration",
+  "Data Integration",
   "server-side Scripting",
-  "API development-nodejs",
-  "API testing with Postman",
-  "UI architecture",
-  "HTML, CSS, SaaS, JavaScript",
+  "Nodejs - Express",
+  "API testing",
+  "Postman",
+  "HTML, CSS, SaaS",
+  "JavaScript",
   "ReactJS",
-  "Python, pyCharm with Jupitor",
-  "and more...",
+  "Python",
+  "pyCharm & Jupitor",
 ];
 
 export { talent };
