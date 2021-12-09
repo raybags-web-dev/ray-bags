@@ -35,7 +35,6 @@ const aboutMeSection = document.querySelector("#about");
 const skillsBTN = document.querySelector("#mySkills");
 const skillsContainer = document.querySelector("#skills");
 // video contact section
-const btnInVideo = document.querySelector("#inVideoBTN_Contact");
 const contactSectionFromVideoSection = document.querySelector(".contact");
 
 module.export = { topBTN, navLogo };
@@ -117,4 +116,4 @@ handleInnerScroll(aboutMeBTN, aboutMeSection);
 // smooth scrolling skills section
 handleInnerScroll(skillsBTN, skillsContainer);
 // smooth scrolling to contact section from video section
-handleInnerScroll(btnInVideo, contactSectionFromVideoSection);
+handleInnerScroll(contactSectionFromVideoSection);
