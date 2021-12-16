@@ -7,6 +7,7 @@ const talent = [
   "Nodejs - Express",
   "API testing",
   "Postman",
+  "Data Visualization",
   "HTML, CSS, SaaS",
   "JavaScript",
   "ReactJS",

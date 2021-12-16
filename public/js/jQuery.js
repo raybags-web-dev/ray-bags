@@ -27,20 +27,22 @@ document.addEventListener("DOMContentLoaded", function () {
   themes_functionality();
 
   // dynamic hero text handler
-  (function () {
-    let count = 0;
-    setInterval(function () {
-      $(".skill-desc span").animate({ width: "0%" });
-      count++;
-      $(".skill-desc").animate(300, function () {
-        $(this)
-          .text(talent[count % talent.length])
-          .animate({
-            margin: "0 auto",
-          });
-      });
-    }, 3000);
-  })();
+  setTimeout(() => {
+    {
+      let count = 0;
+      setInterval(function () {
+        $(".skill-desc span").animate({ width: "0%" });
+        count++;
+        $(".skill-desc").animate(300, function () {
+          $(this)
+            .text(talent[count % talent.length])
+            .animate({
+              margin: "0 auto",
+            });
+        });
+      }, 3000);
+    }
+  }, 5000);
 
   // slide in top nav
   $(" .nav-links li").each((index, link) => {

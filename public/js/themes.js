@@ -9,7 +9,7 @@ const themes_functionality = function () {
       "box-shadow": "inset 0px 0px 10px 5px rgba(247, 9, 9, .5)",
     });
     // animate name color
-    $(".inner-hero-name").css({ color: "#f7090980" });
+    $(".hero-info h1").css({ color: "rgba(247, 9, 9, .3)" });
     // change srevice container background
     $("#services").css({
       background: "rgba(247, 9, 9, .3)",
@@ -96,7 +96,7 @@ const themes_functionality = function () {
       "box-shadow": "inset 0px 0px 10px 5px rgb(22, 84, 126, .5)",
     });
     // inner name color change
-    $(".inner-hero-name").css({ color: "#0f73b6" });
+    $(".hero-info h1").css({ color: "rgb(22, 84, 126, .3)" });
 
     // Image catain
     $(".hero-image-catain")
@@ -181,7 +181,7 @@ const themes_functionality = function () {
       "box-shadow": "inset 0px 0px 10px 5px rgb(1, 94, 94, .6)",
     });
     // inner name color change
-    $(".inner-hero-name").css({ color: "#015e5e" });
+    $(".hero-info h1").css({ color: "rgb(1, 94, 94, .3)" });
 
     // Image catain
     $(".hero-image-catain")
