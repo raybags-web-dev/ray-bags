@@ -704,8 +704,8 @@ Sidebar
   height: 4.5rem;
   padding: 1rem;
   transition: var(--transition);
-  border: 5px solid rgb(255, 255, 255, 0.5);
-  border-color: rgba(107, 106, 106, 0.5);
+  border: 5px solid rgb(255, 255, 255, 0.7);
+  border-color: rgba(107, 106, 106, 0.7);
 }
 
 .hero-social-icon .hero-box-animate:hover {

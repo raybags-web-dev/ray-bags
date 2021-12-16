@@ -7,6 +7,7 @@ const themes_functionality = function () {
     // change inset box shadow for social icons on hero page
     $(".hero-social-icon .hero-box-animate").css({
       "box-shadow": "inset 0px 0px 10px 5px rgba(247, 9, 9, .2)",
+      "border-color": "rgba(247, 9, 9, .8)",
     });
     // animate name color
     $(".hero-info h1").css({ color: "rgba(247, 9, 9, .3)" });
@@ -95,6 +96,7 @@ const themes_functionality = function () {
     // change inset box shadow for social icons on hero page
     $(".hero-social-icon .hero-box-animate").css({
       "box-shadow": "inset 0px 0px 10px 5px rgb(22, 84, 126, .2)",
+      "border-color": "rgb(22, 84, 126, .8)",
     });
     // inner name color change
     $(".hero-info h1").css({ color: "rgb(22, 84, 126, .3)" });
@@ -180,6 +182,7 @@ const themes_functionality = function () {
     // change inset box shadow for social icons on hero page
     $(".hero-social-icon .hero-box-animate").css({
       "box-shadow": "inset 0px 0px 10px 5px rgb(1, 94, 94, .2)",
+      "border-color": "rgb(1, 94, 94, .8)",
     });
     // inner name color change
     $(".hero-info h1").css({ color: "rgb(1, 94, 94, .3)" });
