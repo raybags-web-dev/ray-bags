@@ -1,7 +1,6 @@
 "use strict";
 // import css for compression
 require("../styles/styles.css");
-require("../images/_x.jpg");
 require("../images/_x2.jpeg");
 require("../images/x2.jpeg");
 require("../images/favicon_min.png");

@@ -6,7 +6,7 @@ const themes_functionality = function () {
     setTimeout(() => $(this).removeClass("theme_pulse"), 1000);
     // change inset box shadow for social icons on hero page
     $(".hero-social-icon .hero-box-animate").css({
-      "box-shadow": "inset 0px 0px 10px 5px rgba(247, 9, 9, .5)",
+      "box-shadow": "inset 0px 0px 10px 5px rgba(247, 9, 9, .2)",
     });
     // animate name color
     $(".hero-info h1").css({ color: "rgba(247, 9, 9, .3)" });
@@ -33,14 +33,15 @@ const themes_functionality = function () {
     $("#skills").css({ background: "rgba(247, 9, 9, .2)" });
     // change footer background
     $("#bot-footer").css({
-      background: "rgba(247, 9, 9, .5)",
+      background: "rgba(247, 9, 9, .3)",
     });
     // change hero image frame background
-    $(".hero-image-wrapper").css({ background: "rgba(247, 9, 9, .3)" });
+    $(".hero-image-wrapper").css({ background: "rgba(247, 9, 9, .2)" });
     // login form
     $(".login-wrapper").css({
-      background: "rgba(247, 9, 9, .5)",
+      background: "rgba(247, 9, 9, .3)",
     });
+    //hero image catain
     $(".hero-image-catain")
       .animate({
         width: "95%",
@@ -71,7 +72,7 @@ const themes_functionality = function () {
       background: "rgba(247, 9, 9, .1)",
     });
     // change intro-text background container
-    $(".intro-about").css({ background: "rgba(247, 9, 9, .3)" });
+    $(".intro-about").css({ background: "rgba(247, 9, 9, .4)" });
     // change about me image backdground
     $(".about-img").css({
       background: "rgba(247, 9, 9, .3)",
@@ -79,7 +80,7 @@ const themes_functionality = function () {
     // blog cards
     $(".blog-card").each((e, element) => {
       $(element).css({
-        background: "rgba(247, 9, 9, .5)",
+        background: "rgba(247, 9, 9, .4)",
       });
     });
     $(".full-card").css({ background: "rgba(247, 9, 9, .5)" });
@@ -93,7 +94,7 @@ const themes_functionality = function () {
 
     // change inset box shadow for social icons on hero page
     $(".hero-social-icon .hero-box-animate").css({
-      "box-shadow": "inset 0px 0px 10px 5px rgb(22, 84, 126, .5)",
+      "box-shadow": "inset 0px 0px 10px 5px rgb(22, 84, 126, .2)",
     });
     // inner name color change
     $(".hero-info h1").css({ color: "rgb(22, 84, 126, .3)" });
@@ -128,7 +129,7 @@ const themes_functionality = function () {
     $("#skills").css({ background: "hsl(246, 48%, 8%, .2)" });
 
     // change hero image frame background
-    $(".hero-image-wrapper").css({ background: "rgb(22, 84, 126, .6)" });
+    $(".hero-image-wrapper").css({ background: "rgb(22, 84, 126, .2)" });
 
     // change footer background
     $("#bot-footer").css({
@@ -137,7 +138,7 @@ const themes_functionality = function () {
 
     // login form
     $(".login-wrapper").css({
-      background: "rgb(22, 84, 126, .5)",
+      background: "rgb(22, 84, 126, .3)",
     });
     // change service  card bg
     $(".s_card").each((e, element) => {
@@ -156,7 +157,7 @@ const themes_functionality = function () {
       background: "rgb(22, 84, 126, .1)",
     });
     // change intro-text background container
-    $(".intro-about").css({ background: "rgb(22, 84, 126, .5)" });
+    $(".intro-about").css({ background: "rgb(22, 84, 126, .4)" });
 
     // change about me image backdground
     $(".about-img").css({
@@ -165,7 +166,7 @@ const themes_functionality = function () {
     // blog cards
     $(".blog-card").each((e, element) => {
       $(element).css({
-        background: "rgb(22, 84, 126, .5)",
+        background: "rgb(22, 84, 126, .4)",
       });
     });
     $(".full-card").css({ background: "rgb(22, 84, 126, .5)" });
@@ -178,7 +179,7 @@ const themes_functionality = function () {
     setTimeout(() => $(this).removeClass("theme_pulse"), 1000);
     // change inset box shadow for social icons on hero page
     $(".hero-social-icon .hero-box-animate").css({
-      "box-shadow": "inset 0px 0px 10px 5px rgb(1, 94, 94, .6)",
+      "box-shadow": "inset 0px 0px 10px 5px rgb(1, 94, 94, .2)",
     });
     // inner name color change
     $(".hero-info h1").css({ color: "rgb(1, 94, 94, .3)" });
@@ -212,7 +213,7 @@ const themes_functionality = function () {
     $("#skills").css({ background: "rgb(1, 94, 94, .3)" });
 
     // change hero image frame background
-    $(".hero-image-wrapper").css({ background: "rgb(1, 94, 94, .6)" });
+    $(".hero-image-wrapper").css({ background: "rgb(1, 94, 94, .2)" });
 
     // change footer background
     $("#bot-footer").css({
@@ -220,7 +221,7 @@ const themes_functionality = function () {
     });
     // login form
     $(".login-wrapper").css({
-      background: "rgb(1, 94, 94, .5)",
+      background: "rgb(1, 94, 94, .3)",
     });
     // change service  card bg
     $(".s_card").each((e, element) => {
@@ -243,11 +244,11 @@ const themes_functionality = function () {
       background: "rgb(1, 94, 94, .3)",
     });
     // change intro-text background container
-    $(".intro-about").css({ background: "rgb(1, 94, 94, .5)" });
+    $(".intro-about").css({ background: "rgb(1, 94, 94, .4)" });
     // blog cards
     $(".blog-card").each((e, element) => {
       $(element).css({
-        background: "rgb(1, 94, 94, .5)",
+        background: "rgb(1, 94, 94, .3)",
       });
     });
     $(".full-card").css({ backgroundColor: "rgb(1, 94, 94, .5)" });

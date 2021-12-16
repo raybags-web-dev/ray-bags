@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => $("#myBtn").removeClass("hide"), 1000);
 
   // remove 'hide' class from images
-  $(".body-bg-image").removeClass("hide");
   $(".hero-image-bg").removeClass("hide");
 
   $("img").each((index, image) => {
