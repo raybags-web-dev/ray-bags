@@ -7,7 +7,7 @@ const themes_functionality = function () {
     // change inset box shadow for social icons on hero page
     $(".hero-social-icon .hero-box-animate").css({
       "box-shadow": "inset 0px 0px 10px 5px rgba(247, 9, 9, .2)",
-      "border-color": "rgba(247, 9, 9, .8)",
+      "border-color": "rgba(247, 9, 9, .6)",
     });
     // animate name color
     $(".hero-info h1").css({ color: "rgba(247, 9, 9, .3)" });
@@ -17,9 +17,7 @@ const themes_functionality = function () {
     });
 
     // change navbar background
-    $(".nav").css({
-      background: "rgba(247, 9, 9, .4)",
-    });
+    $(".nav").addClass("red-color").removeClass("blue-color green-color");
 
     // change carocel bg
     $(".card-content-div").css({
@@ -56,7 +54,7 @@ const themes_functionality = function () {
     // change service  card bg
     $(".s_card").each((e, element) => {
       $(element).css({
-        background: "rgba(247, 9, 9, .1)",
+        background: "",
       });
     });
     // change about me btn background
@@ -115,9 +113,7 @@ const themes_functionality = function () {
     $("#services").css({ background: "hsl(246, 48%, 8%, .3)" });
 
     // change navbar background
-    $(".nav").css({
-      background: "rgb(22, 84, 126, .6)",
-    });
+    $(".nav").addClass("blue-color").removeClass("red-color green-color");
     // change carocel bg
     $(".card-content-div").css({
       "background-image":
@@ -182,7 +178,7 @@ const themes_functionality = function () {
     // change inset box shadow for social icons on hero page
     $(".hero-social-icon .hero-box-animate").css({
       "box-shadow": "inset 0px 0px 10px 5px rgb(1, 94, 94, .2)",
-      "border-color": "rgb(1, 94, 94, .8)",
+      "border-color": "rgb(1, 94, 94, .9)",
     });
     // inner name color change
     $(".hero-info h1").css({ color: "rgb(1, 94, 94, .3)" });
@@ -200,9 +196,7 @@ const themes_functionality = function () {
     // services container
     $("#services").css({ background: "rgb(1, 94, 94, .3)" });
     // change navbar background
-    $(".nav").css({
-      background: "rgb(1, 94, 94, .6)",
-    });
+    $(".nav").addClass("green-color").removeClass("blue-color red-color");
     // change carocel bg
     $(".card-content-div").css({
       "background-image":

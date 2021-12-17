@@ -94,10 +94,14 @@ const animateSkills = function (
 
 // card factory function
 const curacelCard = function () {
+  const playIcon = $("<i /> ").attr({ class: "fas fa-play", id: "play-icon" });
+  const innerDivv = $("<div />")
+    .attr({ class: "icon-div" })
+    .append($(playIcon));
   const para1 = $("<p></p>").text("Coming Soon");
   const cardDIV = $("<div></div>")
     .attr({ class: "card-content-div" })
-    .append($(para1));
+    .append($(para1), $(innerDivv));
 
   return $(cardDIV);
 };

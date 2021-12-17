@@ -256,6 +256,15 @@ p::-moz-selection {
   color: currentColor;
 }
 
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+
 h1::selection,
 h2::selection,
 h3::selection,
@@ -847,26 +856,26 @@ Hero
   height: auto;
   -o-object-fit: cover;
   object-fit: cover;
+  transform: scale(1.3);
   background-repeat: no-repeat;
-  transform: scale(1);
-  transition: 1s;
-  -webkit-animation: zoomIneffect infinite alternate linear 32s 2s;
-  animation: zoomIneffect infinite alternate linear 32s 2s;
+  transition: transform 1s;
+  -webkit-animation: zoomIneffect infinite alternate linear 50s 8s;
+  animation: zoomIneffect infinite alternate linear 50s 8s;
 }
 @-webkit-keyframes zoomIneffect {
   from {
-    transform: scale(1);
+    transform: scale(1.3) rotate(0deg);
   }
   to {
-    transform: scale(1.3);
+    transform: scale(1.7) rotate(20deg);
   }
 }
 @keyframes zoomIneffect {
   from {
-    transform: scale(1);
+    transform: scale(1.3) rotate(0deg);
   }
   to {
-    transform: scale(1.3);
+    transform: scale(1.7) rotate(20deg);
   }
 }
 .hero-mid {
@@ -3379,6 +3388,7 @@ input[type="radio"]:checked::after {
   text-transform: uppercase;
   margin: 0 auto;
   display: grid;
+  opacity: 1;
   color: rgb(255, 255, 255);
   place-content: center;
   border-radius: 0.5rem;
@@ -3434,4 +3444,62 @@ input[type="radio"]:checked::after {
   .curacel-wrapper {
     display: none;
   }
+}
+
+/* color classes */
+.red-color {
+  background: rgba(219, 3, 3, 0.2) !important ;
+}
+.blue-color {
+  background: rgb(22, 84, 126, 0.6) !important;
+}
+.green-color {
+  background: rgb(1, 94, 94, 0.6) !important;
+}
+.icon-div {
+  background: rgb(77, 78, 77, 0.5);
+  position: absolute;
+  border-radius: 0.5rem;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.3;
+}
+#play-icon {
+  color: rgb(151, 5, 5);
+  font-size: 4em;
+  padding: 0.8rem;
+  min-width: 6rem;
+  height: 6rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid rgb(153, 152, 152);
+  background: rgb(80, 80, 80);
+  box-shadow: var(--deep-shadow_2);
+}
+.card-content-div:hover #play-icon {
+  color: rgb(170, 171, 172);
+  border-color: gray;
+  transition: var(--transition);
+}
+.card-content-div:hover .icon-div {
+  opacity: 1;
+  z-index: 10;
+}
+
+.card-content-div:hover p {
+  opacity: 0 !important;
+  transition: var(--transition);
+}
+#play-icon:active {
+  transition: unset !important;
+  transform: scale(1.099);
+  color: green !important;
 }
