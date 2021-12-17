@@ -919,8 +919,6 @@ Hero
   overflow: hidden;
   border: 2px solid transparent;
   box-shadow: var(--deep-shadow_3);
-  outline: 1rem solid rgba(206, 61, 61, 0.1);
-  outline-offset: -3rem;
   transition: 0.3s;
   border-radius: 50%;
   -webkit-backdrop-filter: var(--backdrop-light);
@@ -3383,7 +3381,7 @@ input[type="radio"]:checked::after {
   display: flex;
   justify-self: center;
   align-self: center;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   padding: 0.3rem 4rem;
   text-transform: uppercase;
   margin: 0 auto;
@@ -3489,6 +3487,7 @@ input[type="radio"]:checked::after {
   color: rgb(170, 171, 172);
   border-color: gray;
   transition: var(--transition);
+  border: 2px solid transparent;
 }
 .card-content-div:hover .icon-div {
   opacity: 1;
@@ -3497,7 +3496,6 @@ input[type="radio"]:checked::after {
 
 .card-content-div:hover p {
   opacity: 0 !important;
-  transition: var(--transition);
 }
 #play-icon:active {
   transition: unset !important;
@@ -3516,12 +3514,9 @@ input[type="radio"]:checked::after {
   z-index: 500;
   padding-left: 2rem;
   padding-right: 2rem;
-  background-image: linear-gradient(
-    -225deg,
-    #000000 0%,
-    rgb(86, 43, 124, 1) 52%,
-    rgb(43, 134, 197, 0.8) 100%
-  );
+  background: rgb(55, 55, 55);
+  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgb(0, 0, 0), rgba(0, 0, 66, 0.8))
 }
 
 .video-frame {
@@ -3544,11 +3539,14 @@ input[type="radio"]:checked::after {
   display: grid;
   place-content: center;
   cursor: pointer;
-  border: 2px solid rgb(128, 128, 128, 0.5);
+  border: 2px solid transparent;
   transform: translate(-50%, 5%);
   font-size: 2rem;
   width: 2rem;
   height: 2rem;
+  opacity: 0.3;
+  transition: 0.3s;
+  transform: rotate(90deg);
   color: rgb(255, 255, 255, 0.5);
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.1);
@@ -3557,18 +3555,20 @@ input[type="radio"]:checked::after {
 }
 @-webkit-keyframes slideinbtn {
   to {
-    top: 5%;
+    top: 3%;
   }
 }
 @keyframes slideinbtn {
   to {
-    top: 5%;
+    top: 3%;
   }
 }
 #video_closeBTN:active {
   background: rgb(138, 2, 2, 0.8);
 }
 #video_closeBTN:hover {
-  border: 2px solid rgb(128, 128, 128, 1);
   background: rgba(77, 76, 76, 0.3);
+  opacity: 1;
+  transition: 0.3s;
+  transform: rotate(0deg);
 }

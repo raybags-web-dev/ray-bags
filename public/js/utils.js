@@ -175,12 +175,6 @@ const mainCarocelContainer = function () {
         });
       });
 
-      // $($(".video-wrapper").children()[1]).on("click", console.log("clicked"));
-      // $("#video_closeBTN").on("click", () => {
-      //
-      //   console.log("works");
-      // });
-
       cardsArray.push($(card));
       $($(cardsArray[0]).children()[0]).text("Data Models");
       $($(cardsArray[1]).children()[0]).text("Relational databases");
