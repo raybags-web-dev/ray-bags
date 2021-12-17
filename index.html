@@ -668,6 +668,87 @@
     </section>
     <!-- end of projects -->
 
+    <!-- ========================= Login Form and map ================================================ -->
+    <section id="loginSection" class="section login-section">
+      <!-- section title -->
+      <div class="section-title">
+        <h2>keep in touch</h2>
+        <div class="underline"></div>
+      </div>
+      <!--end of section title -->
+      <div class="services-center section-center login">
+        <!-- Login form  -->
+        <div class="login-wrapper">
+          <h1 class="login-title">Let's Talk</h1>
+          <form
+            name="contact"
+            method="POST"
+            class="login-form"
+            action="#"
+            id="contact_me_form"
+          >
+            <div class="input-group">
+              <label>Name</label>
+              <input type="text" name="name" placeholder="name" />
+            </div>
+            <div class="input-group email_input">
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="email"
+                required="true"
+              />
+            </div>
+
+            <div class="input-group text_input">
+              <label>Your message</label>
+              <textarea
+                placeholder="type your message here"
+                name="message"
+                required="true"
+                cols="23"
+                rows="5"
+              ></textarea>
+            </div>
+            <div class="input-group radios">
+              <div class="fan_input">
+                <label for="employer">
+                  <input
+                    type="radio"
+                    id="employer"
+                    name="radio"
+                    value="Employer"
+                    required="true"
+                  />
+                  Employer
+                </label>
+              </div>
+              <div class="starwars_input">
+                <label for="fan">
+                  <input
+                    type="radio"
+                    id="fan"
+                    name="radio"
+                    required="true"
+                    value="Fan"
+                  />
+                  Fan
+                </label>
+              </div>
+            </div>
+            <button
+              type="submit"
+              title="Looking forward to hearing from you."
+              class="login-button"
+            >
+              Click to Send
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <!-- skills -->
     <section id="skills" class="section skills">
       <!-- section title -->
@@ -881,96 +962,11 @@
       </div>
     </section>
     <!--end of  timeline -->
-    <!-- ========================= Login Form and map ================================================ -->
-    <section id="loginSection" class="section login-section">
-      <!-- section title -->
-      <div class="section-title">
-        <h2>keep in touch</h2>
-        <div class="underline"></div>
-      </div>
-      <!--end of section title -->
-      <div class="services-center section-center login">
-        <!-- Login form  -->
-        <div class="login-wrapper">
-          <h1 class="login-title">Let's Talk</h1>
-          <form
-            name="contact"
-            method="POST"
-            class="login-form"
-            action="#"
-            id="contact_me_form"
-          >
-            <div class="input-group">
-              <label>Name</label>
-              <input type="text" name="name" placeholder="name" />
-            </div>
-            <div class="input-group email_input">
-              <label>Email</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="email"
-                required="true"
-              />
-            </div>
-
-            <div class="input-group text_input">
-              <label>Your message</label>
-              <textarea
-                placeholder="type your message here"
-                name="message"
-                required="true"
-                cols="23"
-                rows="5"
-              ></textarea>
-            </div>
-            <div class="input-group radios">
-              <div class="fan_input">
-                <label for="employer">
-                  <input
-                    type="radio"
-                    id="employer"
-                    name="radio"
-                    value="Employer"
-                    required="true"
-                  />
-                  Employer
-                </label>
-              </div>
-              <div class="starwars_input">
-                <label for="fan">
-                  <input
-                    type="radio"
-                    id="fan"
-                    name="radio"
-                    required="true"
-                    value="Fan"
-                  />
-                  Fan
-                </label>
-              </div>
-            </div>
-            <button
-              type="submit"
-              title="Looking forward to hearing from you."
-              class="login-button"
-            >
-              Click to Send
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
     <!-- Testimonials-->
     <section id="vibes" class="section blog">
       <!-- section title -->
       <div class="section-title">
-        <h2 data-aos="zoom-in-down vibe-container">
-          temonials
-          <span class="smile_1">
-            <i class="far fa-smile"></i>
-          </span>
-        </h2>
+        <h2 data-aos="zoom-in-down vibe-container">temonials</h2>
         <div class="underline testimonial_underline"></div>
       </div>
       <!--end of section title -->
@@ -1284,7 +1280,7 @@
                   >call</a
                 ></span
               >
-              &ThickSpace; &curvearrowright;<br />
+              &ThickSpace;<br />
               <br />
               Phone: <span class="phone">+31-636-329-324</span><br />Email:
               <a

@@ -1,3 +1,5 @@
+import { video_component } from "./video.js";
+
 // skills percentage animation handler
 const animateSkills = function (
   item,
@@ -162,6 +164,23 @@ const mainCarocelContainer = function () {
 
     let cardsArray = [];
     $(".card-content-div").each((ind, card) => {
+      // video testing
+      $(card).on("click", function () {
+        let video_componett = video_component();
+        // create component
+        $(video_componett).insertBefore("body");
+        // remove component
+        $($(video_componett).children()[1]).on("click", () => {
+          $($(video_componett)).remove();
+        });
+      });
+
+      // $($(".video-wrapper").children()[1]).on("click", console.log("clicked"));
+      // $("#video_closeBTN").on("click", () => {
+      //
+      //   console.log("works");
+      // });
+
       cardsArray.push($(card));
       $($(cardsArray[0]).children()[0]).text("Data Models");
       $($(cardsArray[1]).children()[0]).text("Relational databases");

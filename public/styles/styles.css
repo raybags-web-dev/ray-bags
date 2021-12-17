@@ -265,6 +265,24 @@ p::-moz-selection {
   color: currentColor;
 }
 
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+
 h1::selection,
 h2::selection,
 h3::selection,
@@ -438,19 +456,19 @@ p {
   margin-left: auto;
   margin-right: auto;
   opacity: 0;
-  -webkit-animation: slide-in-line 1 forwards ease-in 2s 5s;
-  animation: slide-in-line 1 forwards ease-in 2s 5s;
+  -webkit-animation: slide-in-line 1 forwards ease-in 1s 5s;
+  animation: slide-in-line 1 forwards ease-in 1s 5s;
 }
 @-webkit-keyframes slide-in-line {
   to {
     opacity: 1;
-    width: 5rem;
+    width: 20%;
   }
 }
 @keyframes slide-in-line {
   to {
     opacity: 1;
-    width: 5rem;
+    width: 20%;
   }
 }
 .section-title {
@@ -859,8 +877,8 @@ Hero
   transform: scale(1.3);
   background-repeat: no-repeat;
   transition: transform 1s;
-  -webkit-animation: zoomIneffect infinite alternate linear 50s 8s;
-  animation: zoomIneffect infinite alternate linear 50s 8s;
+  -webkit-animation: zoomIneffect infinite alternate linear 58s 8s;
+  animation: zoomIneffect infinite alternate linear 58s 8s;
 }
 @-webkit-keyframes zoomIneffect {
   from {
@@ -1039,11 +1057,6 @@ Hero
   font-family: "Times New Roman", Times, serif;
   transform: perspective(100rem);
   transform-style: preserve-3d;
-  margin-top: -50%;
-  opacity: 0;
-  transform: skewX(50deg) scale(0.5) rotateX(80deg);
-  -webkit-animation: bring-in-text 1 forwards ease-in 2s 3s;
-  animation: bring-in-text 1 forwards ease-in 1s 3s;
   font-size: 85px;
   color: rgb(255, 255, 255, 0.6);
   font-family: Lucida Console;
@@ -1070,20 +1083,6 @@ Hero
     0px 0px 43px rgba(0, 0, 0, 0.2);
   transition: var(--transition);
 }
-@-webkit-keyframes bring-in-text {
-  to {
-    margin-top: 0;
-    opacity: 1;
-    transform: skewX(0deg) scale(1) rotateX(0deg);
-  }
-}
-@keyframes bring-in-text {
-  to {
-    margin-top: 0;
-    opacity: 1;
-    transform: skewX(0deg) scale(1) rotateX(0deg);
-  }
-}
 
 .hero-info:hover h1 {
   color: red;
@@ -1109,9 +1108,12 @@ Hero
 }
 .hero-btn {
   position: relative;
-  margin-top: 1.25rem;
+  margin-top: 7%;
   width: 230px;
-  height: 65px;
+  /* height: 65px; */
+  height: 0px;
+  opacity: 0;
+
   overflow: hidden;
   display: flex !important;
   justify-content: center !important;
@@ -1121,6 +1123,20 @@ Hero
   background: transparent;
   box-shadow: var(--deep-shadow-card);
   border-color: transparent blue transparent red;
+  -webkit-animation: show-contact-btn 1 ease-in forwards 1s 5s;
+  animation: show-contact-btn 1 ease-in forwards 1s 5s;
+}
+@-webkit-keyframes show-contact-btn {
+  to {
+    height: 65px;
+    opacity: 1;
+  }
+}
+@keyframes show-contact-btn {
+  to {
+    height: 65px;
+    opacity: 1;
+  }
 }
 /* hero btn animations */
 .hero-btn::before {
@@ -2584,22 +2600,6 @@ Blog
 .vibe-container {
   position: relative;
 }
-.smile_1 {
-  position: absolute;
-  transform-style: preserve-3d;
-  text-align: center;
-  top: 0.2rem;
-  width: 3rem;
-  height: 3rem;
-  min-height: 3rem;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 3rem;
-  margin-left: 1rem !important;
-  color: rgba(250, 246, 246, 0.7);
-  transition: var(--transition);
-  box-shadow: var(--deep-shadow-card);
-}
 
 /*************** Mentaines page styles.**********************/
 
@@ -3389,10 +3389,11 @@ input[type="radio"]:checked::after {
   margin: 0 auto;
   display: grid;
   opacity: 1;
-  color: rgb(255, 255, 255);
   place-content: center;
   border-radius: 0.5rem;
   z-index: 10;
+  color: #616161;
+  text-shadow: #e0e0e0 1px 1px 0;
 }
 
 .card-content-div:hover {
@@ -3502,4 +3503,72 @@ input[type="radio"]:checked::after {
   transition: unset !important;
   transform: scale(1.099);
   color: green !important;
+}
+
+/* video styles */
+.video-wrapper {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  height: 100%;
+  z-index: 500;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-image: linear-gradient(
+    -225deg,
+    #000000 0%,
+    rgb(86, 43, 124, 1) 52%,
+    rgb(43, 134, 197, 0.8) 100%
+  );
+}
+
+.video-frame {
+  margin: 0 auto;
+  width: 70%;
+  height: 70%;
+  border-radius: 0.7%;
+}
+@media screen and (max-width: 690px) {
+  .video-frame {
+    width: 90%;
+  }
+}
+#video_closeBTN {
+  z-index: 600;
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  padding: 2rem;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  border: 2px solid rgb(128, 128, 128, 0.5);
+  transform: translate(-50%, 5%);
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+  color: rgb(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-animation: slideinbtn 1 ease-in forwards 0.3s 0.5s;
+  animation: slideinbtn 1 ease-in forwards 0.3s 0.5s;
+}
+@-webkit-keyframes slideinbtn {
+  to {
+    top: 5%;
+  }
+}
+@keyframes slideinbtn {
+  to {
+    top: 5%;
+  }
+}
+#video_closeBTN:active {
+  background: rgb(138, 2, 2, 0.8);
+}
+#video_closeBTN:hover {
+  border: 2px solid rgb(128, 128, 128, 1);
+  background: rgba(77, 76, 76, 0.3);
 }
