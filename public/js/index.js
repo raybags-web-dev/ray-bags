@@ -1,8 +1,7 @@
 "use strict";
 // import css for compression
 require("../styles/styles.css");
-require("../images/_x2.jpeg");
-require("../images/x2.jpeg");
+require("../images/_x22.jpg");
 require("../images/favicon_min.png");
 require("../images/another3.jpg");
 require("../images/businessCard.png");
@@ -26,7 +25,7 @@ const navbar = document.getElementById("nav");
 // ==== section combination ====
 // contact me section
 const contactBtn = document.querySelector("#hireMe");
-const contactSection = document.querySelector("#contact");
+const contactSection = document.querySelector(".login-section");
 // about me section
 const aboutMeBTN = document.querySelector(".aboutMeBTN");
 const aboutMeSection = document.querySelector("#about");
@@ -37,6 +36,7 @@ const skillsContainer = document.querySelector("#skills");
 const contactSectionFromVideoSection = document.querySelector(".contact");
 
 module.export = { topBTN, navLogo };
+
 // ========= coppyright year ==========handler
 (function () {
   const current_year = new Date().getFullYear();

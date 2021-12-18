@@ -135,18 +135,10 @@ const mainCarocelContainer = function () {
     .attr({ class: "minimize_button" })
     .append($(rightButton));
 
-  // close button
-  const closeIcon = $("<i></i>").attr({ class: "fas fa-times" });
-
-  const closeBtn = $("<button></button>")
-    .attr({ class: "close-carosel-container" })
-    .append($(closeIcon));
-
   const inner_div = $("<div></div>").attr({ class: "curacel-inner" });
-
   const main_container = $("<div></div>")
     .attr({ class: "curacel-wrapper" })
-    .append($(inner_div), $(closeBtn), $(div_left), $(div_right));
+    .append($(inner_div), $(div_left), $(div_right));
 
   $("body").append($(main_container));
 
@@ -205,7 +197,7 @@ const mainCarocelContainer = function () {
   // minimize width for carocel and hide minimize button but show expand button
   $(".minimize_button").on("click", function () {
     $(".curacel-wrapper").css({
-      width: "3%",
+      width: "2%",
     });
     $(".curacel-inner").css({
       width: "0%",
@@ -220,7 +212,6 @@ const mainCarocelContainer = function () {
     });
   });
   // expand width for carocel and show minimize bitton but hide expand button
-
   $(".expand_button").on("click", function () {
     $(".curacel-wrapper").css({
       width: "50%",

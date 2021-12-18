@@ -140,17 +140,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // toggle nav slide in out on scroll
   $(window).on("scroll", function () {
-    if ($(window).scrollTop() >= 100) {
+    if ($(window).scrollTop() >= 130) {
       $("#nav").css({
-        background: "rgb(128, 128, 128, 0.5)",
+        background: "rgb(0,0,0, 0.3)",
         "box-shadow": "unset",
+        "backdrop-filter": "blur(30px)",
+        "box-shadow": "5px 6px 15px 0px rgba(0, 0, 0, 0.4)",
       });
       $(".hero-image-bg").css({
         filter: "grayscale(10%)",
       });
     } else {
       $("#nav").css({
-        background: "rgb(128, 128, 128, .089)",
+        background: "unset",
+        "backdrop-filter": "unset",
+        "box-shadow": "unset",
       });
       $(".hero-image-bg").css({
         filter: "grayscale(100%)",
