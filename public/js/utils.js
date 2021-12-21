@@ -1,5 +1,34 @@
 import { video_component } from "./video.js";
 
+const createSideApps = function () {
+  const icon1 = $("<i />").attr({ class: "fas fa-phone" });
+  const icon2 = $("<i />").attr({ class: "far fa-comment-dots" });
+  const icon3 = $("<i />").attr({ class: "far fa-envelope" });
+  const icon4 = $("<i />").attr({ class: "fab fa-whatsapp" });
+  const icon5 = $("<i />").attr({ class: "fab fa-facebook-messenger" });
+
+  const inner_side_bar = $("<div></div>")
+    .attr({ class: "sidebars-inner" })
+    .append($(icon1), $(icon2), $(icon3), $(icon4), $(icon5));
+
+  const sidebar = $("<div></div>")
+    .attr({ class: "sidebar-wrapper" })
+    .append($(inner_side_bar));
+  $("body").append($(sidebar));
+};
+// show sidebar apps container on scroll to middle of page
+const sidebarsAppController = function (offset) {
+  if (!offset) return;
+  if ($(window).scrollTop() >= offset) {
+    console.log("middle of page");
+    $(".sidebar-wrapper").addClass("show_sideapp");
+    // $(".sidebars-wrapper").
+  } else {
+    console.log("top of page");
+    $(".sidebar-wrapper").removeClass("show_sideapp");
+  }
+};
+
 // skills percentage animation handler
 const animateSkills = function (
   item,
@@ -160,7 +189,7 @@ const mainCarocelContainer = function () {
       $(card).on("click", function () {
         let video_componett = video_component();
         // create component
-        $(video_componett).insertBefore("body");
+        $("body").prepend($(video_componett));
         // remove component
         $($(video_componett).children()[1]).on("click", () => {
           $($(video_componett)).remove();
@@ -235,4 +264,9 @@ const mainCarocelContainer = function () {
   });
 };
 
-export { animateSkills, mainCarocelContainer };
+export {
+  animateSkills,
+  mainCarocelContainer,
+  sidebarsAppController,
+  createSideApps,
+};

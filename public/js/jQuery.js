@@ -1,15 +1,23 @@
 "use strict";
 
 // import { pageUnavailable } from "./mentainance.js";
-import { animateSkills, mainCarocelContainer } from "./utils.js";
+import {
+  animateSkills,
+  mainCarocelContainer,
+  sidebarsAppController,
+  createSideApps,
+} from "./utils.js";
+
 import { talent } from "./data.js";
 import { themes_functionality } from "./themes.js";
 import { contact_form_functionality } from "./contactForm.js";
 
 // General jQuery handler.
 document.addEventListener("DOMContentLoaded", function () {
-  setTimeout(() => $("#myBtn").removeClass("hide"), 1000);
-
+  setTimeout(() => {
+    // unhide back to top button on load
+    $("#myBtn").removeClass("hide");
+  }, 1000);
   // remove 'hide' class from images
   $(".hero-image-bg").removeClass("hide");
 
@@ -24,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
   mainCarocelContainer();
   // themes functionality
   themes_functionality();
+  // create side app handler
+  createSideApps(1500);
 
   // dynamic hero text handler
   setTimeout(() => {
@@ -122,25 +132,9 @@ document.addEventListener("DOMContentLoaded", function () {
   animateSkills($(".value-75"), "75%", "2.8s", $(".skill-text-75"), "75%", 75);
   animateSkills($(".value-90"), "90%", "4s", $(".skill-text-90"), "85%", 90);
 
-  // handle hero icon spead on load
-  $(".hero-box-animate").each(function (index, icon) {
-    $(icon)
-      .delay(30 * index)
-      .css({ "margin-right": "0rem" });
-  });
-
-  // parallax effect handler for all background images on site
-  const parallax = function (image2) {
-    if (!image2 || image2 == undefined) return;
-    let wScroll = $(window).scrollTop();
-    $(image2).css({
-      "background-position": `center ${wScroll * 0.07}px`,
-    });
-  };
-
-  // toggle nav slide in out on scroll
+  // scroll function and active class switcher for navbar
   $(window).on("scroll", function () {
-    if ($(window).scrollTop() >= 130) {
+    if ($(window).scrollTop() >= 120) {
       $("#nav").css({
         background: "rgb(0,0,0, 0.3)",
         "box-shadow": "unset",
@@ -172,6 +166,22 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // handle hero icon spead on load
+  $(".hero-box-animate").each(function (index, icon) {
+    $(icon)
+      .delay(30 * index)
+      .css({ "margin-right": "0rem" });
+  });
+
+  // parallax effect handler for all background images on site
+  const parallax = function (image2) {
+    if (!image2 || image2 == undefined) return;
+    let wScroll = $(window).scrollTop();
+    $(image2).css({
+      "background-position": `center ${wScroll * 0.07}px`,
+    });
+  };
 
   // handle Smooth scrolling helper
   const handlePageScroll = function () {
@@ -244,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   // functions running on window scroll
   $(window).on("scroll", () => {
-    parallax($(".pilot-hero-photo"));
+    parallax($(".pilot-hero-photo")), sidebarsAppController(1500), true;
   });
   // functions running on window orientationChange
   $(window).on("orientationChange", () => {
