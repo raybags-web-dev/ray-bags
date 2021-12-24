@@ -21,18 +21,24 @@ require("../images/project_3.jpeg");
 const date = document.querySelector(".copyrightYear");
 const topBTN = document.querySelector("#myBtn");
 const navLogo = document.querySelector(".nav-logo");
-const allCards = document.querySelectorAll(".service");
+const serviceCard = document.querySelectorAll(".service");
 const allProjects = document.querySelectorAll(".project");
+const blogCards = document.querySelectorAll(".blog-card");
+const timelineItems = document.querySelectorAll(".timeline-item");
+const aboutInfo = document.querySelector(".about-info");
 // ==== section combination ====
 // contact me section
 const contactBtn = document.querySelector("#hireMe");
 const contactSection = document.querySelector(".login-section");
+const loginForm = document.querySelector(".login-wrapper");
 // about me section
 const aboutMeBTN = document.querySelector(".aboutMeBTN");
 const aboutMeSection = document.querySelector("#about");
+const aboutImage = document.querySelector(".about-img");
 // skills section
 const skillsBTN = document.querySelector("#mySkills");
 const skillsContainer = document.querySelector("#skills");
+const skills = document.querySelectorAll(".skill");
 // video contact section
 const contactSectionFromVideoSection = document.querySelector(".contact");
 
@@ -74,6 +80,35 @@ const observer = new IntersectionObserver(
     entries.forEach((entry) => {
       entry.target.classList.toggle("show_service_card", entry.isIntersecting);
       // if elemnet is on screen, stop observing it
+      if (entry.isIntersecting) observer.unobserve(entry.target);
+    });
+  },
+  {
+    threshold: 0.5,
+    rootMargin: "-1px",
+  }
+);
+// fadein observer
+const observer_projects = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle("fadeIn-effect", entry.isIntersecting);
+      // if elemnet is on screen, stop observing it
+      if (entry.isIntersecting) observer.unobserve(entry.target);
+    });
+  },
+  {
+    threshold: 0.5,
+    rootMargin: "-1px",
+  }
+);
+
+// slideup-observer
+const observer_rotateItem = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle("slide-left-effect", entry.isIntersecting);
+      // if elemnet is on screen, stop observing it
       // if (entry.isIntersecting) observer.unobserve(entry.target);
     });
   },
@@ -84,9 +119,34 @@ const observer = new IntersectionObserver(
 );
 
 // animate service cards
-allCards.forEach((card) => {
+serviceCard.forEach((card) => {
+  observer_rotateItem.observe(card);
+});
+// animate service cards
+allProjects.forEach((card) => {
+  observer_projects.observe(card);
+});
+
+// animate login section cards
+observer_projects.observe(loginForm);
+
+// animate skill cards
+skills.forEach((card) => {
   observer.observe(card);
 });
+
+// animate testimonial cards
+blogCards.forEach((card) => {
+  observer_rotateItem.observe(card);
+});
+
+// animate testimonial cards
+timelineItems.forEach((card) => {
+  observer_rotateItem.observe(card);
+});
+
+observer_rotateItem.observe(aboutInfo);
+observer_rotateItem.observe(aboutImage);
 
 // smooth scrolling to contact section
 handleInnerScroll(contactBtn, contactSection);
