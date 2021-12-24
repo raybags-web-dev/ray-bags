@@ -2,14 +2,15 @@ import { video_component } from "./video.js";
 
 const createSideApps = function () {
   const icon1 = $("<i />").attr({ class: "fas fa-phone" });
-  const icon2 = $("<i />").attr({ class: "far fa-comment-dots" });
+  const icon2 = $("<i />").attr({ class: "fas fa-bullseye" });
   const icon3 = $("<i />").attr({ class: "far fa-envelope" });
   const icon4 = $("<i />").attr({ class: "fab fa-whatsapp" });
   const icon5 = $("<i />").attr({ class: "fab fa-facebook-messenger" });
+  const icon6 = $("<i />").attr({ class: "far fa-comment-dots" });
 
   const inner_side_bar = $("<div></div>")
     .attr({ class: "sidebars-inner" })
-    .append($(icon1), $(icon2), $(icon3), $(icon4), $(icon5));
+    .append($(icon1), $(icon2), $(icon3), $(icon4), $(icon5), $(icon6));
 
   const sidebar = $("<div></div>")
     .attr({ class: "sidebar-wrapper" })
@@ -18,13 +19,25 @@ const createSideApps = function () {
 };
 // show sidebar apps container on scroll to middle of page
 const sidebarsAppController = function (offset) {
+  $(window).on("scroll load", function (e) {
+    // get width of screen
+    let width = $(this).width();
+    // conditional operation
+    if (width <= 667) {
+      $(".sidebar-wrapper").addClass("sideba_dot_class");
+    }
+
+    $($($(".sidebar-wrapper").children()[0]).children()[5]).on("click", () => {
+      // show icons in a square box
+      $(".sidebar-wrapper").addClass("sidebar-wrapper-box");
+      $(".sidebar-wrapper").removeClass("sideba_dot_class");
+    });
+  });
+
   if (!offset) return;
   if ($(window).scrollTop() >= offset) {
-    console.log("middle of page");
     $(".sidebar-wrapper").addClass("show_sideapp");
-    // $(".sidebars-wrapper").
   } else {
-    console.log("top of page");
     $(".sidebar-wrapper").removeClass("show_sideapp");
   }
 };

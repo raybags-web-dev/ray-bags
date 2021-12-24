@@ -14,6 +14,7 @@ import { contact_form_functionality } from "./contactForm.js";
 
 // General jQuery handler.
 document.addEventListener("DOMContentLoaded", function () {
+  // const { sideConainer_is_visible } = sidebarsAppController();
   setTimeout(() => {
     // unhide back to top button on load
     $("#myBtn").removeClass("hide");
@@ -254,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   // functions running on window scroll
   $(window).on("scroll", () => {
-    parallax($(".pilot-hero-photo")), sidebarsAppController(1500), true;
+    parallax($(".pilot-hero-photo")), sidebarsAppController(1500);
   });
   // functions running on window orientationChange
   $(window).on("orientationChange", () => {

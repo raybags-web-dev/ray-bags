@@ -21,7 +21,8 @@ require("../images/project_3.jpeg");
 const date = document.querySelector(".copyrightYear");
 const topBTN = document.querySelector("#myBtn");
 const navLogo = document.querySelector(".nav-logo");
-const navbar = document.getElementById("nav");
+const allCards = document.querySelectorAll(".service");
+const allProjects = document.querySelectorAll(".project");
 // ==== section combination ====
 // contact me section
 const contactBtn = document.querySelector("#hireMe");
@@ -67,46 +68,25 @@ function handleInnerScroll(targetBTN, targetSection) {
   });
 }
 
-// hide show navbar on scroll
-// (function () {
-//   let doc = document.documentElement,
-//     w = window,
-//     prevScroll = w.scrollY || doc.scrollTop,
-//     curScroll,
-//     direction = 0,
-//     prevDirection = 0,
-//     header = navbar,
-//     checkScroll = function () {
-//       curScroll = w.scrollY || doc.scrollTop;
-//       if (curScroll > prevScroll) {
-//         //scrolled up
-//         direction = 2;
-//       } else if (curScroll < prevScroll) {
-//         //scrolled down
-//         direction = 1;
-//       }
+// card animations.
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle("show_service_card", entry.isIntersecting);
+      // if elemnet is on screen, stop observing it
+      // if (entry.isIntersecting) observer.unobserve(entry.target);
+    });
+  },
+  {
+    threshold: 0.5,
+    rootMargin: "-1px",
+  }
+);
 
-//       if (direction !== prevDirection) {
-//         toggleHeader(direction, curScroll);
-//       }
-
-//       prevScroll = curScroll;
-//     };
-
-//   let toggleHeader = function (direction, curScroll) {
-//     if (direction === 2 && curScroll > 52) {
-//       //replace 52 with the height of your header in px
-
-//       header.style.cssText = "top: -50%; transition: .5s;";
-//       prevDirection = direction;
-//     } else if (direction === 1) {
-//       header.style.cssText = "top: 0%; transition: .5s;";
-//       prevDirection = direction;
-//     }
-//   };
-
-//   window.addEventListener("scroll", checkScroll);
-// })();
+// animate service cards
+allCards.forEach((card) => {
+  observer.observe(card);
+});
 
 // smooth scrolling to contact section
 handleInnerScroll(contactBtn, contactSection);
