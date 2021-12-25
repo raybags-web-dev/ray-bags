@@ -6,8 +6,8 @@ import {
   mainCarocelContainer,
   sidebarsAppController,
   createSideApps,
+  change_page_background,
 } from "./utils.js";
-import { links } from "./limageLinks";
 import { talent } from "./data.js";
 import { themes_functionality } from "./themes.js";
 import { contact_form_functionality } from "./contactForm.js";
@@ -36,6 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
   themes_functionality();
   // create side app handler
   createSideApps(1500);
+  // change page background automatically after 24hrs
+  change_page_background();
 
   // dynamic hero text handler
   setTimeout(() => {
@@ -249,14 +251,6 @@ document.addEventListener("DOMContentLoaded", function () {
       $("#achieve").addClass("flash-abtMe");
       setInterval(() => $("#achieve").removeClass("flash-abtMe"), 1000);
     });
-
-  // change background images every 24 hours.
-  const background_IMG_interval = setInterval(function () {
-    let index = parseInt(Math.random() * $(links).length);
-    let link = $(links)[index];
-
-    $(".hero-image-bg img").attr({ src: link });
-  }, 86400);
 
   // run functions on scroll, resize and screenorientation
   // functions running on document scroll

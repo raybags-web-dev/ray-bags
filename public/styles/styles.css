@@ -943,16 +943,7 @@ Hero
     -22px 22px 0 rgb(99, 98, 98), -23px 23px 0 rgb(99, 98, 98),
     -24px 24px 0 rgb(99, 98, 98), -25px 25px 0 rgb(99, 98, 98),
     -26px 26px 0 rgb(99, 98, 98), -27px 27px 0 rgb(99, 98, 98),
-    -28px 28px 0 rgb(99, 98, 98), -29px 29px 0 rgb(99, 98, 98),
-    -30px 30px 0 rgb(99, 98, 98), -31px 31px 0 rgb(99, 98, 98),
-    -32px 32px 0 rgb(99, 98, 98), -33px 33px 0 rgb(99, 98, 98),
-    -34px 34px 0 rgb(99, 98, 98), -35px 35px 0 rgb(99, 98, 98),
-    -36px 36px 0 rgb(99, 98, 98), -37px 37px 0 rgb(99, 98, 98),
-    -38px 38px 0 rgb(99, 98, 98), -39px 39px 0 rgb(99, 98, 98),
-    -40px 40px 0 rgb(99, 98, 98), -41px 41px 0 rgb(99, 98, 98),
-    -42px 42px 0 rgb(99, 98, 98), -43px 43px 0 rgb(99, 98, 98),
-    -44px 44px 43px rgba(0, 0, 0, 0.6), -44px 44px 1px rgba(0, 0, 0, 0.5),
-    0px 0px 43px rgba(0, 0, 0, 0.2);
+    -44px 44px 43px rgba(0, 0, 0, 0.6);
   transition: var(--transition);
 }
 
@@ -971,7 +962,16 @@ Hero
     -22px 22px 0 rgb(99, 98, 98), -23px 23px 0 rgb(99, 98, 98),
     -24px 24px 0 rgb(99, 98, 98), -25px 25px 0 rgb(99, 98, 98),
     -26px 26px 0 rgb(99, 98, 98), -27px 27px 0 rgb(99, 98, 98),
-    -44px 44px 43px rgba(0, 0, 0, 0.6);
+    -28px 28px 0 rgb(99, 98, 98), -29px 29px 0 rgb(99, 98, 98),
+    -30px 30px 0 rgb(99, 98, 98), -31px 31px 0 rgb(99, 98, 98),
+    -32px 32px 0 rgb(99, 98, 98), -33px 33px 0 rgb(99, 98, 98),
+    -34px 34px 0 rgb(99, 98, 98), -35px 35px 0 rgb(99, 98, 98),
+    -36px 36px 0 rgb(99, 98, 98), -37px 37px 0 rgb(99, 98, 98),
+    -38px 38px 0 rgb(99, 98, 98), -39px 39px 0 rgb(99, 98, 98),
+    -40px 40px 0 rgb(99, 98, 98), -41px 41px 0 rgb(99, 98, 98),
+    -42px 42px 0 rgb(99, 98, 98), -43px 43px 0 rgb(99, 98, 98),
+    -44px 44px 43px rgba(0, 0, 0, 0.6), -44px 44px 1px rgba(0, 0, 0, 0.5),
+    0px 0px 43px rgba(0, 0, 0, 0.2);
   transition: var(--transition);
 }
 .hero-icons {
@@ -3416,7 +3416,6 @@ input[type="radio"]:checked::after {
   border-bottom-left-radius: 0.6rem;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-  background: linear-gradient(45deg, rgba(95, 1, 1, 0.3), rgba(1, 20, 83, 0.3));
   z-index: 10;
   display: flex;
   justify-content: center;
@@ -3439,6 +3438,7 @@ input[type="radio"]:checked::after {
   overflow: hidden;
   border-radius: 0.5rem;
   transition: var(--transition);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(95, 1, 1, 0.5));
 }
 @media screen and (max-width: 1068px) {
   .sidebar-wrapper {
@@ -3460,7 +3460,7 @@ input[type="radio"]:checked::after {
   -webkit-backdrop-filter: var(--backdrop-light);
   backdrop-filter: var(--backdrop-light);
   text-shadow: var(--main-text-shadow);
-  opacity: 0.5;
+  opacity: 0.8;
 }
 .sidebars-inner > *:hover {
   opacity: 1;
@@ -3541,4 +3541,86 @@ input[type="radio"]:checked::after {
 .slide-left-effect {
   margin-top: 0%;
   transform: rotate(0deg);
+}
+/* change background image button styles */
+.change_bg_btn {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  height: 3rem;
+  min-width: 190.19px;
+  display: flex;
+  gap: 0.2rem;
+  z-index: 1;
+  margin-left: -125px;
+  transition: var(--transition);
+  border-radius: 0.2rem;
+  padding-right: 0.2rem;
+  cursor: pointer;
+  border: 3px solid rgb(128, 128, 128, 0.5);
+  border-left-color: transparent;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+  background: rgba(46, 45, 45, 0.5);
+}
+@media screen and (max-width: 600px) {
+  .change_bg_btn {
+    display: none;
+  }
+}
+.change_bg_btn:active p {
+  color: red;
+}
+.change_bg_btn::before {
+  content: "";
+  position: absolute;
+  top: 9%;
+  left: 0;
+  bottom: 9%;
+  width: 0;
+  transition: 0.7s;
+  background: rgba(104, 102, 102, 0.3);
+}
+.change_bg_btn:hover::before {
+  width: 100%;
+}
+.change_bg_btn:hover {
+  margin-left: 0;
+  opacity: 1;
+}
+
+.bg-icon-div {
+  background: rgba(65, 65, 65, 0.8);
+  text-align: center;
+  display: grid;
+  height: 85%;
+  min-width: 30%;
+  place-content: center;
+  border-top-right-radius: 0.1rem;
+  border-bottom-right-radius: 0.1rem;
+}
+.bg-icon-div .fas {
+  transform: rotate(-180deg);
+  font-size: 1.2rem;
+}
+.bg-icon-div .fas:hover {
+  color: rgb(190, 189, 189);
+}
+.change_bg_btn p {
+  margin: 0 auto;
+  height: 85%;
+  width: 70%;
+  display: grid;
+  place-content: center;
+}
+
+.change_bg_btn:hover .bg-icon-div {
+  height: 85%;
+  min-width: 0%;
+  display: none;
+}
+
+.change_bg_btn:hover .change_bg_btn p {
+  width: 100% !important;
 }
