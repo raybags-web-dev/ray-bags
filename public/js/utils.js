@@ -19,21 +19,6 @@ const createSideApps = function () {
 };
 // show sidebar apps container on scroll to middle of page
 const sidebarsAppController = function (offset) {
-  $(window).on("scroll load", function (e) {
-    // get width of screen
-    let width = $(this).width();
-    // conditional operation
-    if (width <= 667) {
-      $(".sidebar-wrapper").addClass("sideba_dot_class");
-    }
-
-    $($($(".sidebar-wrapper").children()[0]).children()[5]).on("click", () => {
-      // show icons in a square box
-      $(".sidebar-wrapper").addClass("sidebar-wrapper-box");
-      $(".sidebar-wrapper").removeClass("sideba_dot_class");
-    });
-  });
-
   if (!offset) return;
   if ($(window).scrollTop() >= offset) {
     $(".sidebar-wrapper").addClass("show_sideapp");
@@ -51,13 +36,7 @@ const animateSkills = function (
   left,
   percentile_limit
 ) {
-  if (
-    width == undefined ||
-    delay == undefined ||
-    percentile == undefined ||
-    (left == undefined) | (percentile_limit == undefined)
-  )
-    return;
+  if (arguments.length != 6) return;
 
   $(window).on("scroll", function () {
     let top_of_element = $(".skills").offset().top;

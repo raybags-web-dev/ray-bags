@@ -7,7 +7,7 @@ import {
   sidebarsAppController,
   createSideApps,
 } from "./utils.js";
-
+import { links } from "./limageLinks";
 import { talent } from "./data.js";
 import { themes_functionality } from "./themes.js";
 import { contact_form_functionality } from "./contactForm.js";
@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // remove 'hide' class from images
   $(".hero-image-bg").removeClass("hide");
 
+  // remove data-src attribute to show images after page loads
   $("img").each((index, image) => {
     $(image).attr("src", $(image).attr("data-src"));
     $(image).removeAttr("data-src");
@@ -248,6 +249,15 @@ document.addEventListener("DOMContentLoaded", function () {
       $("#achieve").addClass("flash-abtMe");
       setInterval(() => $("#achieve").removeClass("flash-abtMe"), 1000);
     });
+
+  // change background images every 24 hours.
+  const background_IMG_interval = setInterval(function () {
+    let index = parseInt(Math.random() * $(links).length);
+    let link = $(links)[index];
+
+    $(".hero-image-bg img").attr({ src: link });
+  }, 86400);
+
   // run functions on scroll, resize and screenorientation
   // functions running on document scroll
   $(document).on("scroll", () => {
