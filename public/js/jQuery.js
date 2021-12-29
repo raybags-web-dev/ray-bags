@@ -7,6 +7,7 @@ import {
   sidebarsAppController,
   createSideApps,
   change_page_background,
+  side_app_remove,
 } from "./utils.js";
 import { talent } from "./data.js";
 import { themes_functionality } from "./themes.js";
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
   createSideApps(1500);
   // change page background automatically after 24hrs
   change_page_background();
+  side_app_remove();
 
   // dynamic hero text handler
   setTimeout(() => {
@@ -145,17 +147,11 @@ document.addEventListener("DOMContentLoaded", function () {
         "backdrop-filter": "blur(30px)",
         "box-shadow": "5px 6px 15px 0px rgba(0, 0, 0, 0.4)",
       });
-      $(".hero-image-bg").css({
-        filter: "grayscale(10%)",
-      });
     } else {
       $("#nav").css({
         background: "unset",
         "backdrop-filter": "unset",
         "box-shadow": "unset",
-      });
-      $(".hero-image-bg").css({
-        filter: "grayscale(100%)",
       });
     }
     // active class switcher on scroll (Scroll spy)

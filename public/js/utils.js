@@ -5,13 +5,14 @@ import { links } from "./limageLinks";
 const BG = () => {
   let index = parseInt(Math.random() * $(links).length),
     link = $(links)[index];
+  console.log(link);
   $(".hero-image-bg img").attr({ src: link });
 };
 
 // change background images every 24 hours.
 const background_IMG_interval = setInterval(() => {
   BG();
-}, 1000 * 60 * 60 * 24);
+}, 86400);
 
 const change_page_background = function () {
   const p_text = $("<p></p>").text("change image");
@@ -32,12 +33,12 @@ const change_page_background = function () {
 
 // side apps handler
 const createSideApps = function () {
-  const icon1 = $("<i />").attr({ class: "fas fa-phone" });
-  const icon2 = $("<i />").attr({ class: "fas fa-bullseye" });
-  const icon3 = $("<i />").attr({ class: "far fa-envelope" });
-  const icon4 = $("<i />").attr({ class: "fab fa-whatsapp" });
-  const icon5 = $("<i />").attr({ class: "fab fa-facebook-messenger" });
-  const icon6 = $("<i />").attr({ class: "far fa-comment-dots" });
+  const icon1 = $("<i />").attr({ class: "fas fa-phone app" });
+  const icon2 = $("<i />").attr({ class: "fas fa-bullseye app" });
+  const icon3 = $("<i />").attr({ class: "far fa-envelope app" });
+  const icon4 = $("<i />").attr({ class: "fab fa-whatsapp app" });
+  const icon5 = $("<i />").attr({ class: "fab fa-facebook-messenger app" });
+  const icon6 = $("<i />").attr({ class: "far fa-comment-dots app" });
 
   const inner_side_bar = $("<div></div>")
     .attr({ class: "sidebars-inner" })
@@ -56,6 +57,15 @@ const sidebarsAppController = function (offset) {
   } else {
     $(".sidebar-wrapper").removeClass("show_sideapp");
   }
+};
+
+// remove sidebar apps container on if icons are clicked
+const side_app_remove = function () {
+  $(".app").each((ind, icon) => {
+    $(icon).on("click", function () {
+      $(".sidebar-wrapper").removeClass("show_sideapp");
+    });
+  });
 };
 
 // skills percentage animation handler
@@ -293,4 +303,5 @@ export {
   sidebarsAppController,
   createSideApps,
   change_page_background,
+  side_app_remove,
 };

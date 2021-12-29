@@ -689,7 +689,7 @@ Sidebar
   }
   .hero-image-bg img {
     min-height: 100%;
-    opacity: 0.5;
+    opacity: 0.7;
   }
 }
 
@@ -733,9 +733,6 @@ Hero
   -o-object-fit: cover;
   object-fit: cover;
   z-index: -1;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  transition: 1s;
   background-size: cover;
 }
 
@@ -744,32 +741,9 @@ Hero
   height: auto;
   -o-object-fit: cover;
   object-fit: cover;
-  transform: scale(1.1);
   background-repeat: no-repeat;
-  transition: transform 1s;
-  -webkit-animation: zoomIneffect infinite alternate linear 75s 8s;
-  animation: zoomIneffect infinite alternate linear 75s 8s;
 }
-@-webkit-keyframes zoomIneffect {
-  from {
-    transform: scale(1.1) rotate(0deg);
-    opacity: 1;
-  }
-  to {
-    transform: scale(1.5) rotate(20deg);
-    opacity: 0.3;
-  }
-}
-@keyframes zoomIneffect {
-  from {
-    transform: scale(1.1) rotate(0deg);
-    opacity: 1;
-  }
-  to {
-    transform: scale(1.5) rotate(20deg);
-    opacity: 0.3;
-  }
-}
+
 .hero-mid {
   margin-top: 10rem;
   border-radius: 0.5rem;
@@ -1026,9 +1000,10 @@ Hero
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-width: 100%;
 }
 .about-btn-container a {
-  min-width: 9rem;
+  min-width: 45%;
   height: 3.5rem;
   transition: var(--transition);
 }
@@ -1270,6 +1245,7 @@ About
   transform: rotateY(-180deg);
   opacity: 0;
   transition: 0.3;
+  backdrop-filter: blur(10px);
 }
 .about-img img {
   min-width: 100%;
@@ -1286,11 +1262,9 @@ About
     align-self: center;
     -webkit-backdrop-filter: var(--backdrop-light);
     backdrop-filter: var(--backdrop-light);
-    padding-left: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
     border-radius: 0.5rem;
-    background: rgb(12, 12, 12, 0.5);
+    background: rgb(12, 12, 12, 0.4);
   }
 }
 /*
@@ -3096,7 +3070,7 @@ input[type="radio"]:checked::after {
   overflow: hidden;
   opacity: 1;
   cursor: pointer;
-  background: rgba(0, 0, 0);
+  background: rgb(29, 29, 29, 0.5);
 }
 
 .minimize_button {
@@ -3116,7 +3090,8 @@ input[type="radio"]:checked::after {
   color: rgb(255, 0, 0, 0.3);
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
-  background: rgb(32, 32, 32);
+  background: rgb(32, 32, 32, 0.5);
+  backdrop-filter: var(--backdrop-light);
   box-shadow: inset 9px 1px 28px 3px rgba(0, 0, 0, 0.63);
 }
 .minimize_button:hover .fas {
@@ -3193,7 +3168,7 @@ input[type="radio"]:checked::after {
   min-height: 100%;
   font-size: 15px;
   padding: 0.2rem;
-  border: 2px solid rgb(128, 128, 128, 0.3);
+  border: 2px solid rgb(128, 128, 128, 0.1);
   overflow-x: hidden;
   margin: 0.5rem;
   border-radius: 0.5rem;
@@ -3203,7 +3178,7 @@ input[type="radio"]:checked::after {
   object-fit: cover;
   transition: 0.3s;
   box-shadow: var(--deep-shadow-card);
-  background-image: linear-gradient(to right, #434343 10%, black 100%);
+  background-image: rgb(128, 128, 128 0.5);
 }
 
 .card-content-div p {
@@ -3414,8 +3389,8 @@ input[type="radio"]:checked::after {
   max-width: 95px;
   border-top-left-radius: 0.6rem;
   border-bottom-left-radius: 0.6rem;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
   z-index: 10;
   display: flex;
   justify-content: center;
@@ -3438,7 +3413,6 @@ input[type="radio"]:checked::after {
   overflow: hidden;
   border-radius: 0.5rem;
   transition: var(--transition);
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(95, 1, 1, 0.5));
 }
 @media screen and (max-width: 1068px) {
   .sidebar-wrapper {
@@ -3457,6 +3431,7 @@ input[type="radio"]:checked::after {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  border: 3px solid rgb(128, 128, 128, 0.5);
   -webkit-backdrop-filter: var(--backdrop-light);
   backdrop-filter: var(--backdrop-light);
   text-shadow: var(--main-text-shadow);
@@ -3465,12 +3440,12 @@ input[type="radio"]:checked::after {
 .sidebars-inner > *:hover {
   opacity: 1;
   font-weight: bold;
-  transition: 0.2s;
   background: linear-gradient(
     45deg,
     rgba(82, 81, 81, 0.7),
     rgba(1, 20, 83, 0.3)
   );
+  border-color: rgb(85, 84, 84);
 }
 .active_icon {
   background: linear-gradient(
