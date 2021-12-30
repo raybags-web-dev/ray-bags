@@ -2,7 +2,6 @@
 // import css for compression
 require("../styles/styles.css");
 require("../images/_x22.jpg");
-require("../images/favicon_min.png");
 require("../images/another3.jpg");
 require("../images/businessCard.png");
 require("../images/face_1_min.jpeg");
@@ -37,6 +36,7 @@ const aboutMeSection = document.querySelector("#about");
 const aboutImage = document.querySelector(".about-img");
 // skills section
 const skillsBTN = document.querySelector("#mySkills");
+const all_skills = document.querySelectorAll(".skill-container");
 const skillsContainer = document.querySelector("#skills");
 const skills = document.querySelectorAll(".skill");
 // video contact section
@@ -103,6 +103,21 @@ const observer_projects = new IntersectionObserver(
   }
 );
 
+// Observer skills container
+const observer_skills = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle("skills_show", entry.isIntersecting);
+      // if elemnet is on screen, stop observing it
+      // if (entry.isIntersecting) observer.unobserve(entry.target);
+    });
+  },
+  {
+    threshold: 0.5,
+    rootMargin: "-1px",
+  }
+);
+
 // slideup-observer
 const observer_rotateItem = new IntersectionObserver(
   (entries) => {
@@ -143,6 +158,11 @@ blogCards.forEach((card) => {
 // animate testimonial cards
 timelineItems.forEach((card) => {
   observer_rotateItem.observe(card);
+});
+
+// animate skills when in viewport
+all_skills.forEach((card) => {
+  observer_skills.observe(card);
 });
 
 observer_rotateItem.observe(aboutInfo);

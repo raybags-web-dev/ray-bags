@@ -741,6 +741,7 @@ Hero
   height: auto;
   -o-object-fit: cover;
   object-fit: cover;
+  background-position: bottom;
   background-repeat: no-repeat;
 }
 
@@ -1569,8 +1570,9 @@ Skills
   -webkit-backdrop-filter: var(--backdrop-light);
   backdrop-filter: var(--backdrop-light);
 }
-.skill {
-  opacity: 0;
+.skills_show {
+  opacity: 1 !important;
+  width: 100% !important;
 }
 
 @media screen and (min-width: 768px) {
@@ -1617,9 +1619,12 @@ Skills
 .skill-container {
   background: var(--clr-white);
   height: 1rem;
-  width: 100%;
+  width: 0%;
+  opacity: 0;
   border-radius: var(--radius);
+  border-left: var(--radius);
   position: relative;
+  transition: 1s;
   box-shadow: var(--deep-shadow-card);
 }
 
@@ -1630,6 +1635,7 @@ Skills
   background: var(--clc-green);
   height: 100%;
   width: 2%;
+  border-radius: var(--radius);
 }
 /* skill values */
 .value-70 {
@@ -1729,6 +1735,8 @@ Timeline
   margin-left: 0rem;
   padding-right: 2rem;
   border-radius: 1rem;
+  box-shadow: var(--deep-shadow-card);
+
   -webkit-backdrop-filter: var(--backdrop-light);
   backdrop-filter: var(--backdrop-light);
 }
@@ -2662,6 +2670,7 @@ Blog
   display: flex;
   justify-content: center;
   align-items: center;
+  transform-style: preserve-3d;
 }
 .login-wrapper {
   position: relative;

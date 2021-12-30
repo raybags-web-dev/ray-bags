@@ -2,7 +2,6 @@
 
 // import { pageUnavailable } from "./mentainance.js";
 import {
-  animateSkills,
   mainCarocelContainer,
   sidebarsAppController,
   createSideApps,
@@ -39,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
   createSideApps(1500);
   // change page background automatically after 24hrs
   change_page_background();
+  // side app remove handler
   side_app_remove();
 
   // dynamic hero text handler
@@ -129,14 +129,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   };
-
-  // handle skills level animation
-  animateSkills($(".value-70"), "70%", "2.5s", $(".skill-text-50"), "50%", 70);
-  animateSkills($(".value-80"), "80%", "3s", $(".skill-text-80"), "80%", 80);
-  animateSkills($(".value-85"), "85%", "3.8s", $(".skill-text-85"), "85%", 85);
-  animateSkills($(".value-70"), "70%", "2.5s", $(".skill-text-70"), "70%", 70);
-  animateSkills($(".value-75"), "75%", "2.8s", $(".skill-text-75"), "75%", 75);
-  animateSkills($(".value-90"), "90%", "4s", $(".skill-text-90"), "85%", 90);
 
   // scroll function and active class switcher for navbar
   $(window).on("scroll", function () {
