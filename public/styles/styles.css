@@ -723,7 +723,13 @@ Hero
   min-height: 100vh;
   perspective: 10em;
   perspective-origin: 50% calc(50% - 2em);
+  background: linear-gradient(
+    180deg,
+    rgb(51, 51, 51, .4),
+    rgb(0, 0, 0) 100%
+  ) !important;
 }
+
 /* hero background image */
 .hero-image-bg {
   position: fixed;
@@ -1777,6 +1783,11 @@ Blog
 .blog {
   justify-content: center;
   align-items: center;
+  background: linear-gradient(
+    40deg,
+    rgba(53, 53, 53, 0.1),
+    rgb(0, 0, 0) 90%
+  ) !important;
 }
 
 .blog-card {
@@ -2197,8 +2208,8 @@ Blog
   flex-direction: column;
   justify-content: space-between;
   margin: auto;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   background: rgb(12, 12, 12, 0.5);
 }
 
@@ -3308,10 +3319,10 @@ input[type="radio"]:checked::after {
   z-index: 500;
   padding-left: 2rem;
   padding-right: 2rem;
-  background: rgb(55, 55, 55);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  background: linear-gradient(180deg, rgb(0, 0, 0), rgba(0, 0, 66, 0.8));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgb(0, 0, 0) 90%),
+    url("../images/_x22.jpg") center/cover no-repeat fixed;
 }
 
 .video-frame {
@@ -3525,86 +3536,4 @@ input[type="radio"]:checked::after {
 .slide-left-effect {
   margin-top: 0%;
   transform: rotate(0deg);
-}
-/* change background image button styles */
-.change_bg_btn {
-  position: absolute;
-  top: 10%;
-  left: 0;
-  height: 3rem;
-  min-width: 190.19px;
-  display: flex;
-  gap: 0.2rem;
-  z-index: 1;
-  margin-left: -125px;
-  transition: var(--transition);
-  border-radius: 0.2rem;
-  padding-right: 0.2rem;
-  cursor: pointer;
-  border: 3px solid rgb(128, 128, 128, 0.5);
-  border-left-color: transparent;
-  justify-content: center;
-  align-items: center;
-  opacity: 0.5;
-  background: rgba(46, 45, 45, 0.5);
-}
-@media screen and (max-width: 600px) {
-  .change_bg_btn {
-    display: none;
-  }
-}
-.change_bg_btn:active p {
-  color: red;
-}
-.change_bg_btn::before {
-  content: "";
-  position: absolute;
-  top: 9%;
-  left: 0;
-  bottom: 9%;
-  width: 0;
-  transition: 0.7s;
-  background: rgba(104, 102, 102, 0.3);
-}
-.change_bg_btn:hover::before {
-  width: 100%;
-}
-.change_bg_btn:hover {
-  margin-left: 0;
-  opacity: 1;
-}
-
-.bg-icon-div {
-  background: rgba(65, 65, 65, 0.8);
-  text-align: center;
-  display: grid;
-  height: 85%;
-  min-width: 30%;
-  place-content: center;
-  border-top-right-radius: 0.1rem;
-  border-bottom-right-radius: 0.1rem;
-}
-.bg-icon-div .fas {
-  transform: rotate(-180deg);
-  font-size: 1.2rem;
-}
-.bg-icon-div .fas:hover {
-  color: rgb(190, 189, 189);
-}
-.change_bg_btn p {
-  margin: 0 auto;
-  height: 85%;
-  width: 70%;
-  display: grid;
-  place-content: center;
-}
-
-.change_bg_btn:hover .bg-icon-div {
-  height: 85%;
-  min-width: 0%;
-  display: none;
-}
-
-.change_bg_btn:hover .change_bg_btn p {
-  width: 100% !important;
 }

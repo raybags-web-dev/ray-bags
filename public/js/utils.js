@@ -1,35 +1,4 @@
 import { video_component } from "./video.js";
-import { links } from "./limageLinks";
-
-//change main page background handler
-const BG = () => {
-  let index = parseInt(Math.random() * $(links).length),
-    link = $(links)[index];
-  console.log(link);
-  $(".hero-image-bg img").attr({ src: link });
-};
-
-// change background images every 24 hours.
-const background_IMG_interval = setInterval(() => {
-  BG();
-}, 86400);
-
-const change_page_background = function () {
-  const p_text = $("<p></p>").text("change image");
-
-  const icon = $("<i />").attr({ class: "fas fa-fast-backward" });
-  const div = $("<div />").attr({ class: "bg-icon-div" }).append($(icon));
-
-  const main_btn_Div = $("<div />")
-    .attr({ class: "change_bg_btn" })
-    .append($(p_text), $(div));
-  $("body").prepend($(main_btn_Div));
-
-  $(".change_bg_btn").on("click", function () {
-    clearInterval(background_IMG_interval);
-    BG();
-  });
-};
 
 // side apps handler
 const createSideApps = function () {
@@ -213,6 +182,5 @@ export {
   mainCarocelContainer,
   sidebarsAppController,
   createSideApps,
-  change_page_background,
   side_app_remove,
 };

@@ -164,8 +164,9 @@ timelineItems.forEach((card) => {
 all_skills.forEach((card) => {
   observer_skills.observe(card);
 });
-
+// animate about info card 
 observer_rotateItem.observe(aboutInfo);
+// animate about image 
 observer_rotateItem.observe(aboutImage);
 
 // smooth scrolling to contact section

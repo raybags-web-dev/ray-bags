@@ -5,7 +5,6 @@ import {
   mainCarocelContainer,
   sidebarsAppController,
   createSideApps,
-  change_page_background,
   side_app_remove,
 } from "./utils.js";
 import { talent } from "./data.js";
@@ -36,8 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
   themes_functionality();
   // create side app handler
   createSideApps(1500);
-  // change page background automatically after 24hrs
-  change_page_background();
   // side app remove handler
   side_app_remove();
 
@@ -134,10 +131,10 @@ document.addEventListener("DOMContentLoaded", function () {
   $(window).on("scroll", function () {
     if ($(window).scrollTop() >= 120) {
       $("#nav").css({
-        background: "rgb(0,0,0, 0.3)",
+        background:
+          "linear-gradient(45deg, rgb(0,0,0,.5), rgb(0, 0, 255, .5d), rgba(0, 238, 255, 0.3) 50%, rgb(119, 31, 31, .5))",
+        "backdrop-filter": "blur(10px)",
         "box-shadow": "unset",
-        "backdrop-filter": "blur(30px)",
-        "box-shadow": "5px 6px 15px 0px rgba(0, 0, 0, 0.4)",
       });
     } else {
       $("#nav").css({
