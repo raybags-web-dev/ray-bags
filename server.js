@@ -1,12 +1,25 @@
 const express = require("express");
 const app = express();
 const connectDB = require("./src/connection");
+const cors = require("cors");
 // database uri
 require("dotenv").config();
 const { MONGO_URI } = process.env;
 
 app.use(express.static("dist"));
 app.use(express.json());
+// set origins
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT"],
+    credentials: true,
+  })
+);
+
+app.get("/projects", (req, res) => {
+  res.status(200).send("projects coming soon");
+});
 
 // handle db connection
 const start = async () => {

@@ -6,11 +6,12 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack serve",
-    "node_serve": "nodemon main.js",
+    "node_serve": "nodemon server.js",
+    "start": "node server.js",
     "test": "jest --coverage"
   },
   "engines": {
-    "node": "v15.14.0"
+    "node": "16.2.0"
   },
   "repository": {
     "type": "git",
@@ -44,6 +45,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "latest": "^0.2.0",
