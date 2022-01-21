@@ -1,5 +1,3 @@
 node_modules/
-# Local Netlify folder
-.netlify
-dist/
-aws/
+.netlify/
+.env/
