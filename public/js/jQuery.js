@@ -162,20 +162,10 @@ document.addEventListener("DOMContentLoaded", function () {
       .delay(30 * index)
       .css({ "margin-right": "0rem" });
   });
-
-  // parallax effect handler for all background images on site
-  const parallax = function (image2) {
-    if (!image2 || image2 == undefined) return;
-    let wScroll = $(window).scrollTop();
-    $(image2).css({
-      "background-position": `center ${wScroll * 0.07}px`,
-    });
-  };
-
   // handle Smooth scrolling helper
   const handlePageScroll = function () {
     let target = $(this).attr("href");
-    $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
+    $("body, html").animate({ scrollTop: $(target).offset().top }, 500);
     return false;
   };
 
@@ -187,22 +177,22 @@ document.addEventListener("DOMContentLoaded", function () {
   // smooth scrolling with back to top btn handler
   $("#myBtn").on("click", function () {
     let target = $("body, html");
-    $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
+    $("body, html").animate({ scrollTop: $(target).offset().top }, 500);
   });
 
   // smooth scrolling with logo image handler
   $(".logo__1").each((index, logo) => {
     $(logo).on("click", function () {
       let target = $("body, html");
-      $("body, html").animate({ scrollTop: $(target).offset().top }, 1900);
+      $("body, html").animate({ scrollTop: $(target).offset().top }, 500);
     });
   });
   // hide show top button on scroll
   const showHideTopBtn = function () {
     if ($(window).scrollTop() > 400) {
-      $("#myBtn").css({ right: "0%", transition: "1000ms" });
+      $("#myBtn").css({ right: "0%", transition: "800ms" });
     } else {
-      $("#myBtn").css({ right: "-20%", transition: "1000ms" });
+      $("#myBtn").css({ right: "-20%", transition: "800ms" });
     }
   };
 
@@ -217,17 +207,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // hide show scroll down  arrow on scroll
-  const showHideDownArrow = function () {
-    if ($(window).scrollTop() <= 100) {
-      $("#down_arrow").removeClass("hide");
-      $("#down_arrow2").removeClass("hide");
-    } else {
-      $("#down_arrow").addClass("hide");
-      $("#down_arrow2").addClass("hide");
-    }
-    return;
-  };
   // flash achieve button on click
   $(".achi")
     .css({ all: "unset" })
@@ -240,15 +219,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // run functions on scroll, resize and screenorientation
   // functions running on document scroll
   $(document).on("scroll", () => {
-    removeMenu(), showHideTopBtn(), showHideDownArrow(), toggleLogoImages();
+    removeMenu(), showHideTopBtn(), toggleLogoImages();
   });
   // functions running on window scroll
-  $(window).on("scroll", () => {
-    parallax($(".pilot-hero-photo")), sidebarsAppController(1500);
-  });
+  $(window).on("scroll", () => sidebarsAppController(1200));
   // functions running on window orientationChange
   $(window).on("orientationChange", () => {
-    removeMenu(), showHideDownArrow();
+    removeMenu();
   });
   // functions running on window load
   $(window).on("load", () => {

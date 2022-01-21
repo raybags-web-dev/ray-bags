@@ -97,17 +97,30 @@ const mainCarocelContainer = function () {
       $(".curacel-inner").append($(card));
     });
 
+    // creating video component when card is clicked
     let cardsArray = [];
     $(".card-content-div").each((ind, card) => {
+      let my_numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
       // video testing
       $(card).on("click", function () {
-        let video_componett = video_component();
-        // create component
-        $("body").prepend($(video_componett));
-        // remove component
-        $($(video_componett).children()[1]).on("click", () => {
-          $($(video_componett)).remove();
+        $(my_numbers).each((n_ind, number) => {
+          if (ind == number) {
+            console.log(number)
+            let video_componett = video_component(number);
+            $("body").prepend($(video_componett));
+            // remove component
+            $($(video_componett).children()[1]).on("click", () => {
+              $($(video_componett)).animate({
+                top: "-1000%",
+                transition: ".4s",
+              });
+              setTimeout(() => {
+                $(video_componett).remove();
+              }, 1500);
+            });
+          }
         });
+        // create component
       });
 
       cardsArray.push($(card));

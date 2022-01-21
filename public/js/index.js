@@ -1,21 +1,18 @@
 "use strict";
 // import css for compression
 require("../styles/styles.css");
-require("../images/_x22.jpg");
-require("../images/another3.jpg");
 require("../images/businessCard.png");
 require("../images/face_1_min.jpeg");
 require("../images/face_2_min.jpeg");
 require("../images/face_3_min.jpeg");
-require("../images/face_4_min.jpeg");
-require("../images/face_5_min.jpeg");
-require("../images/face_6_min.jpeg");
+require("../images/face_4_min.jpg");
+require("../images/face_5_min.jpg");
+require("../images/face_6_min.jpg");
 require("../images/meeee.jpg");
 require("../images/need_4_speed.png");
 require("../images/new_logoo2.png");
-require("../images/profile_me.jpeg");
-require("../images/project_2.jpeg");
-require("../images/project_3.jpeg");
+require("../images/project_2.jpg");
+require("../images/project_3.jpg");
 
 const date = document.querySelector(".copyrightYear");
 const topBTN = document.querySelector("#myBtn");
