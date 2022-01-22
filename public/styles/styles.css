@@ -56,7 +56,7 @@ body {
   font-size: 0.875rem;
   overflow-x: hidden;
   min-width: 307px !important;
-  background: var(--main-gradient-black);
+  background-image: linear-gradient(45deg, #2b5876 50%, #000000 100%);
 }
 
 html {
@@ -162,6 +162,11 @@ h2::-moz-selection,
 h3::-moz-selection,
 h4::-moz-selection,
 p::-moz-selection {
+  background: rgb(119, 31, 31);
+  color: currentColor;
+}
+
+h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, p::-moz-selection {
   background: rgb(119, 31, 31);
   color: currentColor;
 }
@@ -627,7 +632,7 @@ Sidebar
   cursor: pointer;
 }
 .social-icon .fab:hover {
-  margin-top: -1rem;
+  margin-top: -.4rem;
   color: var(--clr-grey-4);
   transition: 0.2s;
 }
@@ -640,7 +645,7 @@ Sidebar
   display: none;
 }
 .icons-small-screen li:hover {
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
   transition: var(--transition);
 }
 @media screen and (max-width: 991px) {
@@ -742,21 +747,6 @@ Hero
   z-index: -1;
   background-size: cover;
 }
-.hero-image-bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  min-width: 100vw;
-  transition: 0.3s;
-  backdrop-filter: blur(1px);
-  background-image: linear-gradient(
-    to bottom,
-    rgba(143, 142, 142, 0.1) 70%,
-    rgba(0, 0, 0, 1) 100%
-  );
-}
 
 .hero-image-bg img {
   min-width: 100%;
@@ -765,7 +755,22 @@ Hero
   object-fit: cover;
   background-position: bottom;
   background-repeat: no-repeat;
+  transition: 0.5s;
+  opacity: 1;
+  /* clip-path: inset(51% 0 49% 0); */
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0);
+
+  -webkit-animation: slide-in-image 1 ease-in forwards 2s 1s;
+
+          animation: slide-in-image 1 ease-in forwards 2s 1s;
 }
+/* @keyframes slide-in-image {
+  to {
+    clip-path: inset(10% 0 8% 0);
+    opacity: 1;
+  }
+} */
 
 .hero-mid {
   margin-top: 10rem;
@@ -812,7 +817,7 @@ Hero
   border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  opacity: 1;
+  opacity: .8;
   transition: 0.1s;
 }
 
@@ -862,10 +867,24 @@ Hero
   font-family: Lucida Console;
   text-shadow: 0px 0px 0 rgb(241, 241, 241), -1px 1px 0 rgb(239, 239, 239),
     -2px 2px 0 rgb(238, 238, 238), -3px 3px 0 rgb(236, 236, 236),
-    -4px 4px 0 rgb(234, 234, 234), -5px 5px 0 rgb(232, 232, 232),
-    -6px 6px 0 rgb(231, 231, 231), -7px 7px 0 rgb(229, 229, 229),
-    -8px 8px 0 rgb(227, 227, 227), -9px 9px 0 rgb(225, 225, 225);
+    -4px 4px 0 rgb(234, 234, 234), -5px 5px 0 rgb(232, 232, 232);
   transition: var(--transition);
+  -webkit-clip-path: inset(0% 100% 0 0);
+          clip-path: inset(0% 100% 0 0);
+  -webkit-animation: fade-in-text 1 forwards ease-in 1s 0.5s;
+          animation: fade-in-text 1 forwards ease-in 1s 0.5s;
+}
+@-webkit-keyframes fade-in-text {
+  to {
+    -webkit-clip-path: inset(0% 0 0 0);
+            clip-path: inset(0% 0 0 0);
+  }
+}
+@keyframes fade-in-text {
+  to {
+    -webkit-clip-path: inset(0% 0 0 0);
+            clip-path: inset(0% 0 0 0);
+  }
 }
 .hero-icons {
   justify-items: start;
@@ -1043,7 +1062,11 @@ Hero
   max-height: -moz-max-content;
   max-height: max-content;
   opacity: 0.8;
-  background: linear-gradient(to right, rgb(66, 65, 65, .2) 0, rgb(0, 0, 0, .5) 100%);
+  background: linear-gradient(
+    to right,
+    rgb(66, 65, 65, 0.2) 0,
+    rgb(0, 0, 0, 0.5) 100%
+  );
   border-radius: 0.5rem;
   transition: var(--transition);
   box-shadow: var(--deep-shadow-card);
@@ -1164,7 +1187,8 @@ About
   transform: rotateY(-180deg);
   opacity: 0;
   transition: 0.3;
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 .about-img img {
   min-width: 100%;
@@ -1196,8 +1220,8 @@ Services
 #services {
   position: relative;
   overflow: hidden;
-  -webkit-backdrop-filter: var(--backdrop-light);
-  backdrop-filter: var(--backdrop-light);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
 }
 .service {
   position: relative;
@@ -1206,12 +1230,9 @@ Services
   border-radius: var(--radius);
   text-align: center;
   color: var(--clr-white);
-  transition: var(--transition);
   overflow: hidden;
   -webkit-backdrop-filter: var(--backdrop-light);
   backdrop-filter: var(--backdrop-light);
-  transition: var(--transition);
-  transition: var(--transition);
   box-shadow: var(--deep-shadow-card);
   background: rgb(12, 12, 12, 0.5);
   transform: rotateY(-180deg);
@@ -1465,8 +1486,8 @@ Skills
 ===============
 */
 #skills {
-  -webkit-backdrop-filter: var(--backdrop-light);
-  backdrop-filter: var(--backdrop-light);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
 }
 .skills_show {
   opacity: 1 !important;
@@ -1591,6 +1612,7 @@ Timeline
   transform: rotateY(-180deg);
   opacity: 0;
   transition: 0.3;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
 }
 .timeline p {
   margin-bottom: 0;
@@ -1658,7 +1680,8 @@ Blog
 .blog {
   justify-content: center;
   align-items: center;
-  backdrop-filter: var(--backdrop-light);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
 }
 
 .blog-card {
@@ -1704,7 +1727,7 @@ Blog
   color: var(--clr-white);
   box-shadow: var(--deep-shadow-card);
   background: rgb(24, 24, 24, 0.5);
-  border: 2px solid rgb(128, 128, 128, .4);
+  border: 2px solid rgb(128, 128, 128, 0.4);
 }
 .card-back .card-back-info {
   position: relative;
@@ -2166,7 +2189,6 @@ Blog
   color: var(--clr-white);
   padding: 0.7rem;
   cursor: pointer;
-  text-shadow: 3px 3px 2px #474747, 0px 9px 2px #b60606;
 }
 
 .sidebar-inner .social-icons {
@@ -2985,7 +3007,8 @@ input[type="radio"]:checked::after {
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   background: rgb(32, 32, 32, 0.5);
-  backdrop-filter: var(--backdrop-light);
+  -webkit-backdrop-filter: var(--backdrop-light);
+          backdrop-filter: var(--backdrop-light);
   box-shadow: inset 9px 1px 28px 3px rgba(0, 0, 0, 0.63);
 }
 .minimize_button:hover .fas {
@@ -3195,7 +3218,7 @@ input[type="radio"]:checked::after {
   padding-right: 2rem;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
 .video-frame {
@@ -3203,23 +3226,30 @@ input[type="radio"]:checked::after {
   margin: 0 auto;
   width: 70%;
   height: 70%;
-  margin-top: -100%;
   max-width: 1500px;
   border-radius: 0.7%;
-  border: 10px solid rgb(126, 125, 125, 0.3);
-  -webkit-animation: slideinVideo 1 forwards ease-in 0.2s;
-  animation: slideinVideo 1 forwards ease-in 0.2s;
+  opacity: 0;
+  -webkit-clip-path: inset(46% 0 55% 0);
+          clip-path: inset(46% 0 55% 0);
+  border: 10px solid rgba(102, 102, 102, 0.3);
+  -webkit-animation: slideinVideo 1 forwards ease-in 0.4s;
+  animation: slideinVideo 1 forwards ease-in 0.4s;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
 @-webkit-keyframes slideinVideo {
   to {
-    margin-top: unset;
+    opacity: 1;
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
   }
 }
 
 @keyframes slideinVideo {
   to {
-    margin-top: unset;
+    opacity: 1;
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
   }
 }
 
@@ -3231,42 +3261,31 @@ input[type="radio"]:checked::after {
 #video_closeBTN {
   z-index: 600;
   position: absolute;
-  top: -10%;
+  top: 3%;
   left: 50%;
-  padding: 2rem;
+  padding: 1.7rem;
   display: grid;
   place-content: center;
   cursor: pointer;
   border: 2px solid rgb(255, 255, 255, 0.3);
   transform: translate(-50%, 5%);
   font-size: 2rem;
-  width: 2rem;
-  height: 2rem;
-  opacity: 0.5;
+  width: 1.8rem;
+  height: 1.8rem;
+  opacity: 0.8;
   transition: 0.3s;
   transform: rotate(90deg);
   color: rgb(255, 255, 255, 0.5);
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.1);
-  -webkit-animation: slideinbtn 1 ease-in forwards 0.3s 0.5s;
-  animation: slideinbtn 1 ease-in forwards 0.3s 0.5s;
+  background: linear-gradient(#000000 0%, #1c1c1c 150%);
 }
-@-webkit-keyframes slideinbtn {
-  to {
-    top: 3%;
-  }
-}
-@keyframes slideinbtn {
-  to {
-    top: 3%;
-  }
-}
+
 #video_closeBTN:active {
   background: rgb(138, 2, 2, 0.8);
 }
 #video_closeBTN:hover {
   background: rgba(77, 76, 76, 0.3);
-  border-color: rgb(255, 255, 255, 0.6);
+  border-color: rgba(141, 0, 0, 0.6);
   opacity: 1;
   transition: 0.3s;
   transform: rotate(0deg);

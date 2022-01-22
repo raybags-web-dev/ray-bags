@@ -104,20 +104,14 @@ const mainCarocelContainer = function () {
       // video testing
       $(card).on("click", function () {
         $(my_numbers).each((n_ind, number) => {
+          // map videos and video links to individual card components
           if (ind == number) {
-            console.log(number)
             let video_componett = video_component(number);
             $("body").prepend($(video_componett));
             // remove component
-            $($(video_componett).children()[1]).on("click", () => {
-              $($(video_componett)).animate({
-                top: "-1000%",
-                transition: ".4s",
-              });
-              setTimeout(() => {
-                $(video_componett).remove();
-              }, 1500);
-            });
+            $($(video_componett).children()[1]).on("click", () =>
+              $(video_componett).remove()
+            );
           }
         });
         // create component

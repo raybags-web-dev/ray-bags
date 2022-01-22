@@ -38,8 +38,8 @@ const themes_functionality = function () {
     //hero image catain
     $(".hero-image-catain")
       .animate({
-        width: "95%",
-        height: "95%",
+        width: "100%",
+        height: "100%",
       })
       .css({ background: "rgba(247, 9, 9, .1)" });
     $(".hero-image-wrapper .pilot-hero-photo").css({
@@ -95,8 +95,8 @@ const themes_functionality = function () {
     // Image catain
     $(".hero-image-catain")
       .animate({
-        width: "95%",
-        height: "95%",
+        width: "100%",
+        height: "100%",
       })
       .css({ background: "rgb(22, 84, 126, .1)" });
     $(".hero-image-wrapper .pilot-hero-photo").css({
@@ -175,8 +175,8 @@ const themes_functionality = function () {
     // Image catain
     $(".hero-image-catain")
       .animate({
-        width: "95%",
-        height: "95%",
+        width: "100%",
+        height: "100%",
       })
       .css({ background: "rgb(1, 94, 94, .1)" });
     $(".hero-image-wrapper .pilot-hero-photo").css({

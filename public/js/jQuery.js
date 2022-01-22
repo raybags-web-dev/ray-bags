@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Onload clear screen.
   $(".skeleton-wrapper").addClass("hide").animate({ opacity: 0 });
 
+  // keep navbar fixied on scroll
   $("#nav").slideDown("1000", function () {
     $(this).addClass("navbar-fixed").css({
       top: "-1%",
@@ -190,9 +191,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // hide show top button on scroll
   const showHideTopBtn = function () {
     if ($(window).scrollTop() > 400) {
+      // scrolling to bottom
       $("#myBtn").css({ right: "0%", transition: "800ms" });
+      $("#bg_image_main").css({ "clip-path": "inset(7% 0 7% 0)"});
+
     } else {
+      // top of the page
       $("#myBtn").css({ right: "-20%", transition: "800ms" });
+      $("#bg_image_main").css({ "clip-path": `inset(0 0 80% 0)` });
+
     }
   };
 
@@ -201,6 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if ($(window).scrollTop() > 901) {
       $("#nav_logo_img").css({ opacity: "1", left: "0%" });
       $(".nav-logo").css({ opacity: "0", left: "-500%" });
+
     } else {
       $("#nav_logo_img").css({ opacity: "0", left: "-500%" });
       $(".nav-logo").css({ opacity: "1", left: "0%" });
