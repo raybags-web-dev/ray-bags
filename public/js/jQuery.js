@@ -131,18 +131,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // scroll function and active class switcher for navbar
   $(window).on("scroll", function () {
     if ($(window).scrollTop() >= 120) {
-      $("#nav").css({
-        background:
-          "linear-gradient(45deg, rgb(0,0,0,.5), rgb(0, 0, 255, .5d), rgba(0, 238, 255, 0.3) 50%, rgb(119, 31, 31, .5))",
-        "backdrop-filter": "blur(10px)",
-        "box-shadow": "unset",
-      });
+      $("#nav").addClass(".body-color");
     } else {
-      $("#nav").css({
-        background: "unset",
-        "backdrop-filter": "unset",
-        "box-shadow": "unset",
-      });
+      $("#nav").removeClass(".body-color");
     }
     // active class switcher on scroll (Scroll spy)
     let scrollBarLocation = $(this).scrollTop();
@@ -193,13 +184,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if ($(window).scrollTop() > 400) {
       // scrolling to bottom
       $("#myBtn").css({ right: "0%", transition: "800ms" });
-      $("#bg_image_main").css({ "clip-path": "inset(7% 0 7% 0)"});
-
+      $("#bg_image_main").css({ "clip-path": "inset(7% 0 7% 0)" });
     } else {
       // top of the page
       $("#myBtn").css({ right: "-20%", transition: "800ms" });
       $("#bg_image_main").css({ "clip-path": `inset(0 0 80% 0)` });
-
     }
   };
 
@@ -208,7 +197,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if ($(window).scrollTop() > 901) {
       $("#nav_logo_img").css({ opacity: "1", left: "0%" });
       $(".nav-logo").css({ opacity: "0", left: "-500%" });
-
     } else {
       $("#nav_logo_img").css({ opacity: "0", left: "-500%" });
       $(".nav-logo").css({ opacity: "1", left: "0%" });
