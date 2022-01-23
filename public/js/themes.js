@@ -1,17 +1,17 @@
 const themes_functionality = function () {
   // // handle themeSwitcher light theme
   $(".night").on("click", function () {
+    // change body background
+    $("body").css({
+      "background-image": "linear-gradient(45deg, #762b2b 0%, #000000 100%)",
+    });
     // apply ripple effect on theme buttons
     $(this).addClass("theme_pulse");
     setTimeout(() => $(this).removeClass("theme_pulse"), 1000);
     // change inset box shadow for social icons on hero page
     $(".hero-social-icon .hero-box-animate").css({
       "box-shadow": "inset 0px 0px 10px 5px rgba(247, 9, 9, .2)",
-      "border-color": "rgba(247, 9, 9, .6)",
-    });
-    // change srevice container background
-    $("#services").css({
-      background: "rgba(247, 9, 9, .3)",
+      "border-color": "rgba(247, 9, 9, .4)",
     });
 
     // change carocel bg
@@ -30,7 +30,7 @@ const themes_functionality = function () {
       background: "rgba(247, 9, 9, .3)",
     });
     // change hero image frame background
-    $(".hero-image-wrapper").css({ background: "rgba(247, 9, 9, .2)" });
+    $(".hero-image-wrapper").css({ background: "rgba(247, 9, 9, .1.5)" });
     // login form
     $(".login-wrapper").css({
       background: "rgba(247, 9, 9, .3)",
@@ -49,7 +49,7 @@ const themes_functionality = function () {
     // change service  card bg
     $(".s_card").each((e, element) => {
       $(element).css({
-        background: "",
+        background: "rgb(118, 43, 43, 1)",
       });
     });
     // change about me btn background
@@ -63,10 +63,10 @@ const themes_functionality = function () {
     });
     // about info container background change
     $(".about-info").css({
-      background: "rgba(247, 9, 9, .1)",
+      background: "rgb(118, 43, 43, .5)",
     });
     // change intro-text background container
-    $(".intro-about").css({ background: "rgba(247, 9, 9, .4)" });
+    $(".intro-about").css({ background: "rgb(118, 43, 43, 1)" });
     // change about me image backdground
     $(".about-img").css({
       background: "rgba(247, 9, 9, .3)",
@@ -74,14 +74,18 @@ const themes_functionality = function () {
     // blog cards
     $(".blog-card").each((e, element) => {
       $(element).css({
-        background: "rgba(247, 9, 9, .4)",
+        background: "rgb(118, 43, 43, 1)",
       });
     });
-    $(".full-card").css({ background: "rgba(247, 9, 9, .5)" });
+    $(".full-card").css({ background: "rgb(118, 43, 43, .5)" });
   });
 
   // // handle themeswitcher dark theme
   $(".day").on("click", function () {
+    // change body background
+    $("body").css({
+      "background-image": "linear-gradient(45deg, #2b3976 0%, #000000 100%)",
+    });
     // apply ripple effect on theme buttons
     $(this).addClass("theme_pulse");
     setTimeout(() => $(this).removeClass("theme_pulse"), 1000);
@@ -102,8 +106,6 @@ const themes_functionality = function () {
     $(".hero-image-wrapper .pilot-hero-photo").css({
       filter: "grayscale(10%)",
     });
-
-    $("#services").css({ background: "hsl(246, 48%, 8%, .3)" });
 
     // change carocel bg
     $(".card-content-div").css({
@@ -163,6 +165,10 @@ const themes_functionality = function () {
 
   // orignal color theme
   $(".original").on("click", function () {
+    // change body background
+    $("body").css({
+      "background-image": "linear-gradient(45deg, #205f25 0%, #000000 100%)",
+    });
     // apply ripple effect on theme buttons
     $(this).addClass("theme_pulse");
     setTimeout(() => $(this).removeClass("theme_pulse"), 1000);
@@ -182,8 +188,6 @@ const themes_functionality = function () {
     $(".hero-image-wrapper .pilot-hero-photo").css({
       filter: "grayscale(100%)",
     });
-    // services container
-    $("#services").css({ background: "rgb(1, 94, 94, .3)" });
     // change carocel bg
     $(".card-content-div").css({
       "background-image":

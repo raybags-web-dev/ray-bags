@@ -130,11 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // scroll function and active class switcher for navbar
   $(window).on("scroll", function () {
-    if ($(window).scrollTop() >= 120) {
-      $("#nav").addClass(".body-color");
-    } else {
-      $("#nav").removeClass(".body-color");
-    }
     // active class switcher on scroll (Scroll spy)
     let scrollBarLocation = $(this).scrollTop();
     let scrollLinks = $(".achor-link");
@@ -184,11 +179,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if ($(window).scrollTop() > 400) {
       // scrolling to bottom
       $("#myBtn").css({ right: "0%", transition: "800ms" });
-      $("#bg_image_main").css({ "clip-path": "inset(7% 0 7% 0)" });
+      $("#bg_image_main")
+        .css({ "clip-path": "inset(9% 0 7% 0)" })
+        .removeClass("scalein-bg");
     } else {
       // top of the page
       $("#myBtn").css({ right: "-20%", transition: "800ms" });
-      $("#bg_image_main").css({ "clip-path": `inset(0 0 80% 0)` });
+      $("#bg_image_main")
+        .css({ "clip-path": `inset(0 0 50% 0)` })
+        .addClass("scalein-bg");
     }
   };
 

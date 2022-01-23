@@ -12,7 +12,7 @@ const talent = [
   "JavaScript",
   "ReactJS",
   "Python",
-  "pyCharm & Jupitor",
+  "pyCharm  Jupitor",
 ];
 
 export { talent };

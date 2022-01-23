@@ -4,7 +4,7 @@
 :root {
   /* black background */
   --dark-red-bg: hsla(0, 94%, 50%, 0.502);
-  --main-gradient-image: linear-gradient(45deg, #2b5876 50%, #000000 100%);
+  --main-gradient-image: linear-gradient(-45deg, #6b6a6a 0%, #000000 100%);
   --main-text-shadow: 0px 2px 1px black;
 
   /* scroll track and thumb colors */
@@ -76,9 +76,7 @@ html {
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
-.body-color {
-  background-image: linear-gradient(45deg, #2b5876 50%, #000000 100%);
-}
+
 ul {
   list-style-type: none;
 }
@@ -697,17 +695,6 @@ Sidebar
     overflow: hidden;
     min-height: 100vh;
   }
-  .hero-image-bg img {
-    min-height: 100%;
-    opacity: 0.7;
-  }
-
-  .hero-image-bg::before {
-    display: none;
-  }
-  .hero-image-bg::after {
-    display: none;
-  }
 }
 
 .close-btn {
@@ -766,7 +753,10 @@ Hero
   -webkit-clip-path: inset(0 0 0 0);
   clip-path: inset(0 0 0 0);
 }
-
+/* dynamic class */
+.scalein-bg {
+  transform: scale(1.05);
+}
 .hero-mid {
   margin-top: 10rem;
   border-radius: 0.5rem;
@@ -3237,11 +3227,11 @@ input[type="radio"]:checked::after {
   max-width: 1500px;
   border-radius: 0.7%;
   opacity: 0;
-  -webkit-clip-path: inset(46% 0 55% 0);
-  clip-path: inset(46% 0 55% 0);
+  -webkit-clip-path: inset(0 50% 0 50%);
+  clip-path: inset(0 50% 0 50%);
   border: 10px solid rgba(102, 102, 102, 0.3);
   -webkit-animation: slideinVideo 1 forwards ease-in 0.4s;
-  animation: slideinVideo 1 forwards ease-in 0.4s;
+  animation: slideinVideo 1 forwards ease-in 0.8s;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 

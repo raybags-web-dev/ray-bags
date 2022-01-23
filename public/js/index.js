@@ -38,6 +38,8 @@ const skillsContainer = document.querySelector("#skills");
 const skills = document.querySelectorAll(".skill");
 // video contact section
 const contactSectionFromVideoSection = document.querySelector(".contact");
+// background image
+const BG = document.querySelector(".hero-image-bg img");
 
 module.export = { topBTN, navLogo };
 
@@ -161,9 +163,9 @@ timelineItems.forEach((card) => {
 all_skills.forEach((card) => {
   observer_skills.observe(card);
 });
-// animate about info card 
+// animate about info card
 observer_rotateItem.observe(aboutInfo);
-// animate about image 
+// animate about image
 observer_rotateItem.observe(aboutImage);
 
 // smooth scrolling to contact section
