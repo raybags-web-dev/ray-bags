@@ -47,12 +47,12 @@
       href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css"
     />
   </head>
-  <body>
+  <body id="main-body">
     <!-- Main background image -->
     <div class="hero-image-bg hide">
       <img
         id="bg_image_main"
-        data-src="https://github.com/raybags-web-dev/image_base/blob/master/images/nature1.jpeg?raw=true"
+        data-src="https://github.com/raybags-web-dev/image_base/blob/master/images/background/uu1.jpeg?raw=true"
         alt="hero-img"
       />
     </div>
@@ -123,9 +123,9 @@
     <div id="myBtn" title="to top page" class="hide">
       <div class="inner-container">
         <div class="btn-container">
-          <button class="btnn pulsing">
+          <a class="btnn pulsing" href="#main-body">
             <i id="top_button" class="fas fa-chevron-up"></i>
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -138,6 +138,24 @@
       <div class="original theme-ball"></div>
     </div>
     <!-- ====== end of theme Switcher ======== -->
+
+    <!-- Weather update container -->
+    <div class="time-container">
+      <div class="current-info">
+        <div class="date-container">
+          <div class="time time_Date" id="time">
+            00:00 <span id="am-pm">PM</span>
+          </div>
+          <div class="date time_Date" id="date">day, date month</div>
+          <div class="others time_Date" id="current-weather-items"></div>
+        </div>
+
+        <div class="place-container">
+          <div class="time-zone" id="time-zone">--|--</div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Weather update container -->
     <!-- end of navbar -->
     <!-- sidebar -->
     <aside class="sidebar" id="sidebar">
@@ -286,10 +304,10 @@
         <!-- about img -->
         <article class="about-img">
           <img
-            style="max-width: 500px; max-height: 500px"
-            data-src="meeee.jpg"
+            style=""
+            data-src="https://github.com/raybags-web-dev/image_base/blob/master/images/background/meme.jpg?raw=true"
             class="about-hero-photo hero-photo"
-            alt="my profile image"
+            alt=""
           />
           <div class="intro-about">
             <h4>My story</h4>
@@ -1403,6 +1421,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <!-- Moment JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- cookie alert CDN script-->
     <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
   </body>

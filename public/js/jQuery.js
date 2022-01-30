@@ -149,31 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .delay(30 * index)
       .css({ "margin-right": "0rem" });
   });
-  // handle Smooth scrolling helper
-  const handlePageScroll = function () {
-    let target = $(this).attr("href");
-    $("body, html").animate({ scrollTop: $(target).offset().top }, 500);
-    return false;
-  };
 
-  // smooth scrolling navigation on big screen
-  $(".nav-links a").on("click", handlePageScroll);
-  // smooth scrolling navigation on small screen
-  $(".sidebar-links a").on("click", handlePageScroll);
-
-  // smooth scrolling with back to top btn handler
-  $("#myBtn").on("click", function () {
-    let target = $("body, html");
-    $("body, html").animate({ scrollTop: $(target).offset().top }, 500);
-  });
-
-  // smooth scrolling with logo image handler
-  $(".logo__1").each((index, logo) => {
-    $(logo).on("click", function () {
-      let target = $("body, html");
-      $("body, html").animate({ scrollTop: $(target).offset().top }, 500);
-    });
-  });
   // hide show top button on scroll
   const showHideTopBtn = function () {
     if ($(window).scrollTop() > 400) {
@@ -186,10 +162,18 @@ document.addEventListener("DOMContentLoaded", function () {
       // top of the page
       $("#myBtn").css({ right: "-20%", transition: "800ms" });
       $("#bg_image_main")
-        .css({ "clip-path": `inset(0 0 50% 0)` })
+        .css({ "clip-path": `inset(0 0 72% 0)` })
         .addClass("scalein-bg");
     }
   };
+
+  // animate time elemnets
+
+  $(".time_Date").each((index, ele) => {
+    $(ele)
+      .delay(100 * index)
+      .addClass("dynamically-show");
+  });
 
   // toggle image logo and logo display on scroll handler
   const toggleLogoImages = function () {

@@ -1,5 +1,6 @@
 "use strict";
 // import css for compression
+require("../styles/modular.css");
 require("../styles/styles.css");
 require("../images/businessCard.png");
 require("../images/face_1_min.jpeg");
@@ -13,6 +14,14 @@ require("../images/need_4_speed.png");
 require("../images/new_logoo2.png");
 require("../images/project_2.jpg");
 require("../images/project_3.jpg");
+
+// temperature anchers
+const timeEl = document.getElementById("time");
+const dateEl = document.getElementById("date");
+const currentWeatherItemsEl = document.getElementById("current-weather-items");
+const timezone = document.getElementById("time-zone");
+const weatherForecastEl = document.getElementById("weather-forecast");
+const currentTempEl = document.getElementById("current-temp");
 
 const date = document.querySelector(".copyrightYear");
 const topBTN = document.querySelector("#myBtn");
@@ -38,8 +47,6 @@ const skillsContainer = document.querySelector("#skills");
 const skills = document.querySelectorAll(".skill");
 // video contact section
 const contactSectionFromVideoSection = document.querySelector(".contact");
-// background image
-const BG = document.querySelector(".hero-image-bg img");
 
 module.export = { topBTN, navLogo };
 
@@ -48,6 +55,117 @@ module.export = { topBTN, navLogo };
   const current_year = new Date().getFullYear();
   date.textContent = current_year;
 })();
+
+// temperature functionality
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+const months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+// api key not a secret. Feel free to use it.
+const API_KEY = "02152931152b50aa268c6b67f2ff76c7";
+
+// set interval to call and set date and time resources
+setInterval(() => {
+  const time = new Date();
+  const month = time.getMonth();
+  const date = time.getDate();
+  const day = time.getDay();
+  const hour = time.getHours();
+  const hoursIn12HrFormat = hour >= 13 ? hour % 12 : hour;
+  const minutes = time.getMinutes();
+  const ampm = hour >= 12 ? "PM" : "AM";
+
+  timeEl.innerHTML =
+    (hoursIn12HrFormat < 10 ? "0" + hoursIn12HrFormat : hoursIn12HrFormat) +
+    ":" +
+    (minutes < 10 ? "0" + minutes : minutes) +
+    " " +
+    `<span id="am-pm">${ampm}</span>`;
+
+  dateEl.innerHTML = days[day] + ", " + date + " " + months[month];
+}, 1000);
+
+// get weather handler.
+getWeatherData();
+
+// get weather handler logic
+function getWeatherData() {
+  navigator.geolocation.getCurrentPosition((success) => {
+    let { latitude, longitude } = success.coords;
+
+    fetch(
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        showWeatherData(data);
+      });
+  });
+}
+
+// weather data handler
+function showWeatherData(data) {
+  let { humidity, pressure, sunrise, sunset, wind_speed, temp, feels_like } =
+      data.current,
+    { description } = data.current.weather[0];
+
+  timezone.innerHTML = data.timezone;
+
+  currentWeatherItemsEl.innerHTML = `<div class="weather-item">
+        <div>Humidity</div>
+        <div>${humidity}%</div>
+    </div>
+    <div class="weather-item">
+        <div>Pressure</div>
+        <div>${pressure}</div>
+    </div>
+    <div class="weather-item">
+      <div>Temperature</div>
+      <div>${temp}</div>
+    </div>
+    <div class="weather-item">
+      <div>feels like</div>
+      <div>${feels_like}</div>
+    </div>
+    <div class="weather-item">
+      <div>I'd say</div>
+      <div>${description}</div>
+    </div>
+    <div class="weather-item">
+        <div>Wind Speed</div>
+        <div>${wind_speed}</div>
+    </div>
+    
+    <div class="weather-item">
+        <div>Sunrise</div>
+        <div>${window.moment(sunrise * 1000).format("HH:mm a")}</div>
+    </div>
+    <div class="weather-item">
+        <div>Sunset</div>
+        <div>${window.moment(sunset * 1000).format("HH:mm a")}</div>
+    </div> `;
+}
+
+/* ========================================================*/
 
 // inner section smooth scroll
 function handleInnerScroll(targetBTN, targetSection) {
@@ -131,7 +249,6 @@ const observer_rotateItem = new IntersectionObserver(
     rootMargin: "-1px",
   }
 );
-
 // animate service cards
 serviceCard.forEach((card) => {
   observer_rotateItem.observe(card);
@@ -158,7 +275,6 @@ blogCards.forEach((card) => {
 timelineItems.forEach((card) => {
   observer_rotateItem.observe(card);
 });
-
 // animate skills when in viewport
 all_skills.forEach((card) => {
   observer_skills.observe(card);
