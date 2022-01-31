@@ -23,6 +23,10 @@ const themes_functionality = function () {
     $(".footer_link .fab").each((index, icon) => {
       $(icon).css({ background: "rgba(247, 9, 9, .3)" });
     });
+    // change timeline background
+    $(".timeline-item").each((index, card) => {
+      $(card).css({ background: "rgba(247, 9, 9, 0.1)" });
+    });
     // skills container
     $("#skills").css({ background: "rgba(247, 9, 9, .2)" });
     // change footer background
@@ -122,6 +126,11 @@ const themes_functionality = function () {
     // change hero image frame background
     $(".hero-image-wrapper").css({ background: "rgb(22, 84, 126, .2)" });
 
+    // change timeline background
+    $(".timeline-item").each((index, card) => {
+      $(card).css({ background: "rgb(22, 84, 126, 0.1)" });
+    });
+
     // change footer background
     $("#bot-footer").css({
       background: "rgb(22, 84, 126, .5)",
@@ -217,6 +226,11 @@ const themes_functionality = function () {
         background: "rgb(1, 94, 94, .5)",
       });
     });
+    // change timeline background
+    $(".timeline-item").each((index, card) => {
+      $(card).css({ background: "rgb(1, 94, 94, .2)" });
+    });
+
     // change about me btn background
     $(".aboutMeBTN").each((index, btn) => {
       $(btn)

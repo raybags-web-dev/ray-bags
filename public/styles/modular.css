@@ -22,7 +22,8 @@
 /* ==================== */
 .date-container .time {
   font-size: 70px;
-  opacity: 0.7;
+  opacity: 0.8;
+  color: red;
 }
 .date-container #am-pm {
   font-size: 30px;
@@ -49,12 +50,14 @@
 .current-info .others {
   display: flex;
   flex-direction: column;
-  background: rgba(48, 48, 53, 0.6);
   padding: 20px;
   border-radius: 10px;
   margin: 10px 0;
   border: 1px solid rgb(238, 238, 238, 0.3);
   transition: var(--transition);
+  -webkit-box-shadow: inset 1px -2px 32px -8px #3b3a3a;
+  box-shadow: inset 1px -2px 32px -8px #444343;
+  backdrop-filter: blur(5px);
 }
 
 #current-weather-items {
@@ -80,7 +83,7 @@
   justify-content: space-between;
 }
 .weather-item {
-  opacity: 0.3;
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 1556px) {
@@ -103,11 +106,12 @@
     overflow: hidden;
     min-width: 100vw;
     bottom: 0;
-    left: -170%;
+    left: -175%;
     opacity: 1;
     background: unset;
     z-index: 10;
     font-size: 15px;
+    box-shadow: unset;
     -webkit-animation: slideInTime infinite linear forwards 45s 3s;
     animation: slideInTime infinite linear forwards 45s 3s;
   }
