@@ -1,5 +1,4 @@
 "use strict";
-
 // import { pageUnavailable } from "./mentainance.js";
 import {
   mainCarocelContainer,
@@ -39,22 +38,35 @@ document.addEventListener("DOMContentLoaded", function () {
   side_app_remove();
 
   // dynamic hero text handler
-  setTimeout(() => {
-    {
-      let count = 0;
-      setInterval(function () {
-        $(".skill-desc span").animate({ width: "0%" });
-        count++;
-        $(".skill-desc").animate(300, function () {
-          $(this)
-            .text(talent[count % talent.length])
-            .animate({
-              margin: "0 auto",
-            });
-        });
-      }, 3000);
-    }
-  }, 5000);
+  // setTimeout(() => {
+  //   {
+  //     let count = 0;
+  //     setInterval(function () {
+  //       $(".skill-desc span").animate({ width: "0%" });
+
+  //       count++;
+  //       $(".skill-desc").animate(300, function () {
+  //         $(this)
+  //           .text(talent[count % talent.length])
+  //           .animate({
+  //             margin: "0 auto",
+  //           });
+  //       });
+  //     }, 3000);
+  //   }
+  // }, 5000);
+
+  setInterval(() => {
+    let random_ind = Math.floor(Math.random() * talent.length);
+    $(".skill-desc")
+      .text(talent[random_ind])
+      .addClass("bread_crumb")
+      .delay(2000)
+      .queue(function () {
+        $(this).removeClass("bread_crumb");
+        $(this).dequeue();
+      });
+  }, 6000);
 
   // slide in top nav
   $(" .nav-links li").each((index, link) => {
@@ -185,7 +197,6 @@ document.addEventListener("DOMContentLoaded", function () {
       $(".nav-logo").css({ opacity: "1", left: "0%" });
     }
   };
-
   // flash achieve button on click
   $(".achi")
     .css({ all: "unset" })

@@ -1,11 +1,16 @@
 /* imported font */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
 :root {
   /* black background */
   --dark-red-bg: hsla(0, 94%, 50%, 0.502);
   --main-gradient-image: linear-gradient(-45deg, #1b1b1b 0%, #000000 100%);
   --main-text-shadow: 0px 2px 1px black;
+
+  /* font-family */
+  --italic-font: "Satisfy", cursive;
 
   /* scroll track and thumb colors */
   --scrollbarBG: rgb(44, 13, 13);
@@ -331,6 +336,16 @@ p {
     top: 50%;
   }
 }
+.bread_crumb {
+  clip-path: inset(0 100% 0 0);
+  animation: typeWrite 1 alternate linear 2s;
+}
+
+@keyframes typeWrite {
+  to {
+    clip-path: inset(0 0% 0 0);
+  }
+}
 /* added during recording */
 .underline {
   width: 100%rem;
@@ -433,6 +448,7 @@ Navbar
     text-shadow: none;
     transition: unset;
     text-transform: uppercase;
+    font-family: "Satisfy", cursive;
   }
 
   .nav-links a:hover {
@@ -774,12 +790,14 @@ Hero
 
 .hero-image-wrapper {
   position: relative;
-  min-width: 400px;
-  height: 400px;
+  min-width: 370px;
+  height: 370px;
   overflow: hidden;
   box-shadow: var(--deep-shadow_3);
   transition: 0.3s;
   border-radius: 50%;
+  border: 1px solid hsl(0, 0%, 50%, 0.2);
+  background: rgb(128, 128, 128, 0.05);
 }
 .hero-image-wrapper .pilot-hero-photo {
   border-radius: 50%;
@@ -817,14 +835,32 @@ Hero
   position: relative;
   display: flex;
   padding-top: 2rem;
+  width: max-content;
+  height: max-content;
   flex-wrap: wrap;
-  font-size: 1.2em;
-  line-height: 2rem;
+  font-size: clamp(0.85rem, 5vw, 1.1em);
   color: var(--clr-red);
   opacity: 0.9;
   font-weight: 600;
   font-style: italic;
   transition: 0.3s;
+}
+.hero-info h4::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  right: -2%;
+  bottom: 5%;
+  width: 5px;
+  opacity: 0;
+  z-index: 100;
+  background: red;
+  animation: flash-cursor infinite linear alternate 0.3s;
+}
+@keyframes flash-cursor {
+  to {
+    opacity: 1;
+  }
 }
 
 .hero-info h1 {
@@ -1748,21 +1784,23 @@ Blog
 .card-info h4 {
   color: var(--clr-red);
 }
-.card-front .testimonial_individual_image {
+
+.profile-icon {
+  width: 100%;
   height: 10rem;
-  width: 10rem;
-  margin: auto;
-  -o-object-fit: cover;
-  object-fit: cover;
-  padding: 0.5rem;
-  margin-top: 0.6rem;
-  margin-bottom: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(63, 63, 63, 0.5);
+}
+.profile-icon .icon_prof {
+  font-size: 5rem;
+  opacity: 0.5;
+  border-radius: 50%;
+  padding: 1rem;
   border: 0.1rem solid transparent;
   background: linear-gradient(rgba(51, 51, 51, 0.5), rgba(65, 59, 59, 0.5));
   box-shadow: inset 3px -4px 1px var(--dark-red-bg);
-  -webkit-filter: contrast(100%);
-  filter: contrast(100%);
-  border-radius: 50%;
 }
 
 .card-info p {
@@ -2601,7 +2639,7 @@ Blog
   -webkit-backdrop-filter: var(--backdrop-light);
   backdrop-filter: var(--backdrop-light);
   background: rgb(12, 12, 12, 0.5);
-  opacity: 0;
+  opacity: 1;
 }
 
 .login-title {

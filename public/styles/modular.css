@@ -84,6 +84,11 @@
 }
 .weather-item {
   opacity: 0.6;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.weather-item:nth-of-type(odd) {
+  color: red;
+  background: rgb(128, 128, 128, 0.2);
 }
 
 @media screen and (max-width: 1556px) {
@@ -141,6 +146,11 @@
   }
   #current-weather-items > * {
     padding-right: 0.5rem;
+  }
+
+  .weather-item:nth-of-type(odd) {
+    color: initial;
+    background: unset;
   }
 
   #time,

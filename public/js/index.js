@@ -3,12 +3,6 @@
 require("../styles/modular.css");
 require("../styles/styles.css");
 require("../images/businessCard.png");
-require("../images/face_1_min.jpeg");
-require("../images/face_2_min.jpeg");
-require("../images/face_3_min.jpeg");
-require("../images/face_4_min.jpg");
-require("../images/face_5_min.jpg");
-require("../images/face_6_min.jpg");
 require("../images/meeee.jpg");
 require("../images/need_4_speed.png");
 require("../images/new_logoo2.png");
@@ -20,9 +14,8 @@ const timeEl = document.getElementById("time");
 const dateEl = document.getElementById("date");
 const currentWeatherItemsEl = document.getElementById("current-weather-items");
 const timezone = document.getElementById("time-zone");
-const weatherForecastEl = document.getElementById("weather-forecast");
-const currentTempEl = document.getElementById("current-temp");
 
+const navIcons = Array.from(document.querySelectorAll(".logo__1"));
 const date = document.querySelector(".copyrightYear");
 const topBTN = document.querySelector("#myBtn");
 const navLogo = document.querySelector(".nav-logo");
@@ -140,14 +133,14 @@ function showWeatherData(data) {
     </div>
     <div class="weather-item">
       <div>Temperature</div>
-      <div>${temp}</div>
+      <div>${temp}&deg;</div>
     </div>
     <div class="weather-item">
       <div>feels like</div>
-      <div>${feels_like}</div>
+      <div>${feels_like}&deg;</div>
     </div>
     <div class="weather-item">
-      <div>I'd say</div>
+      <div>--</div>
       <div>${description}</div>
     </div>
     <div class="weather-item">
@@ -165,20 +158,15 @@ function showWeatherData(data) {
     </div> `;
 }
 
-/* ========================================================*/
-
 // inner section smooth scroll
 function handleInnerScroll(targetBTN, targetSection) {
   if (!targetBTN || !targetSection) return;
-  // scroll to contact section
   targetBTN.addEventListener("click", function () {
     window.scroll({
       top: 2500,
       left: 0,
       behavior: "smooth",
     });
-
-    // Scroll certain amounts from current position
     window.scrollBy({
       top: 100,
       left: 0,
@@ -241,7 +229,7 @@ const observer_rotateItem = new IntersectionObserver(
     entries.forEach((entry) => {
       entry.target.classList.toggle("slide-left-effect", entry.isIntersecting);
       // if elemnet is on screen, stop observing it
-      // if (entry.isIntersecting) observer.unobserve(entry.target);
+      if (entry.isIntersecting) observer.unobserve(entry.target);
     });
   },
   {
@@ -257,9 +245,6 @@ serviceCard.forEach((card) => {
 allProjects.forEach((card) => {
   observer_projects.observe(card);
 });
-
-// animate login section cards
-observer_projects.observe(loginForm);
 
 // animate skill cards
 skills.forEach((card) => {
@@ -292,3 +277,11 @@ handleInnerScroll(aboutMeBTN, aboutMeSection);
 handleInnerScroll(skillsBTN, skillsContainer);
 // smooth scrolling to contact section from video section
 handleInnerScroll(contactSectionFromVideoSection);
+// smooth scrolling icon logos
+navIcons.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    document.getElementById("home").scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
