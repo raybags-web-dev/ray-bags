@@ -847,10 +847,10 @@ Hero
 .hero-info h4::before {
   content: "";
   position: absolute;
-  top: 40%;
+  top: 60%;
   right: -2%;
   bottom: 5%;
-  width: 5px;
+  width: 3px;
   opacity: 0;
   z-index: 100;
   background: red;

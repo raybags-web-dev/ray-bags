@@ -156,73 +156,47 @@
         <div class="content">
           <!-- chat -->
           <div class="chat">
+            <!-- ================ messages =========== -->
             <div class="message operator">
-              <p class="name">Operator</p>
+              <p class="name">My name</p>
               <p class="msg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
-                cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. In, cupiditate. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. In, cupiditate. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. In, cupiditate. Lorem ipsum dolor
-                sit amet consectetur adipisicing elit. In, cupiditate.
+                Hi there. Thanks for checking me out. Unfortunately this live
+                chat app is still in development. Nonetheless I'm working on it.
+                Feel free to check back later. Awesome!! Thanks. Catch up later.
+              </p>
+              <!-- delete link-->
+              <a id="del-msg-admin" class="delete-msg-btn-admin" href="/">
+                <i class="far fa-trash-alt"></i>
+              </a>
+            </div>
+            <!-- no message heading -->
+            <div style="display: none" class="no_message">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Tempore, recusandae.
               </p>
             </div>
             <!-- User -->
             <div class="message user">
-              <p class="name">Raymond bags</p>
+              <p class="name">Your name</p>
               <p class="msg">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
                 cupiditate.
               </p>
+              <!-- delete link-->
+              <a id="del-msg-user" class="delete-msg-btn-user" href="/">
+                <i class="far fa-trash-alt"></i>
+              </a>
             </div>
-            <div class="message operator">
-              <p class="name">Operator</p>
-              <p class="msg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
-                cupiditate.
-              </p>
-            </div>
-            <!-- User -->
-            <div class="message user">
-              <p class="name">Raymond bags</p>
-              <p class="msg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
-                cupiditate.
-              </p>
-            </div>
-            <div class="message operator">
-              <p class="name">Operator</p>
-              <p class="msg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
-                cupiditate.
-              </p>
-            </div>
-            <!-- User -->
-            <div class="message user">
-              <p class="name">Raymond bags</p>
-              <p class="msg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
-                cupiditate.
-              </p>
-            </div>
-            <div class="message operator">
-              <p class="name">Operator</p>
-              <p class="msg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
-                cupiditate.
-              </p>
-            </div>
-            <!-- User -->
-            <div class="message user">
-              <p class="name">Raymond bags</p>
-              <p class="msg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
-                cupiditate.
-              </p>
-            </div>
+            <!-- ================ messages =========== -->
           </div>
           <div class="send-container">
-            <input id="msg-input" type="text" placeholder="your message" />
+            <input
+              autocomplete="off"
+              id="msg-input"
+              type="text"
+              placeholder="your message"
+            />
             <input id="msg-btn" type="submit" value="send" />
           </div>
         </div>
