@@ -1,7 +1,9 @@
 "use strict";
-// import css for compression
+// import css
 require("../styles/modular.css");
 require("../styles/styles.css");
+require("../styles/livechat.css");
+// import images
 require("../images/businessCard.png");
 require("../images/meeee.jpg");
 require("../images/need_4_speed.png");

@@ -37,8 +37,11 @@
       rel="stylesheet"
     />
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.css"
+      integrity="sha512-ZR5Qvbu1SKVAaw/pYzfZXgxopkeMIfZT9VP420W9mfRVUpQnS8WRP75AT3wBoB4toBiaAx7ZsgFOeImr9t9VFQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
 
     <!-- Cookie alert -->
@@ -84,7 +87,7 @@
           />
           <!-- nav logo -->
           <img
-            style="max-width: 3rem; max-height: 3rem; opacity: .5"
+            style="max-width: 3rem; max-height: 3rem"
             data-src="new_logoo2.png"
             class="nav-logo logo__1"
             alt="&deg;"
@@ -138,6 +141,94 @@
       <div class="original theme-ball"></div>
     </div>
     <!-- ====== end of theme Switcher ======== -->
+
+    <!-- ========= chat app html========== -->
+    <div class="chat-wrapper hide_chat">
+      <!-- chat container -->
+      <div class="livechat">
+        <div class="header">
+          <!-- heading -->
+          <h4>Let's chat...</h4>
+          <!-- close button -->
+          <i id="rm_chat" class="fas fa-times"></i>
+        </div>
+        <!--  content-->
+        <div class="content">
+          <!-- chat -->
+          <div class="chat">
+            <div class="message operator">
+              <p class="name">Operator</p>
+              <p class="msg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
+                cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. In, cupiditate. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. In, cupiditate. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. In, cupiditate. Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. In, cupiditate.
+              </p>
+            </div>
+            <!-- User -->
+            <div class="message user">
+              <p class="name">Raymond bags</p>
+              <p class="msg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
+                cupiditate.
+              </p>
+            </div>
+            <div class="message operator">
+              <p class="name">Operator</p>
+              <p class="msg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
+                cupiditate.
+              </p>
+            </div>
+            <!-- User -->
+            <div class="message user">
+              <p class="name">Raymond bags</p>
+              <p class="msg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
+                cupiditate.
+              </p>
+            </div>
+            <div class="message operator">
+              <p class="name">Operator</p>
+              <p class="msg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
+                cupiditate.
+              </p>
+            </div>
+            <!-- User -->
+            <div class="message user">
+              <p class="name">Raymond bags</p>
+              <p class="msg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
+                cupiditate.
+              </p>
+            </div>
+            <div class="message operator">
+              <p class="name">Operator</p>
+              <p class="msg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
+                cupiditate.
+              </p>
+            </div>
+            <!-- User -->
+            <div class="message user">
+              <p class="name">Raymond bags</p>
+              <p class="msg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
+                cupiditate.
+              </p>
+            </div>
+          </div>
+          <div class="send-container">
+            <input id="msg-input" type="text" placeholder="your message" />
+            <input id="msg-btn" type="submit" value="send" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========= chat app html========== -->
 
     <!-- Weather update container -->
     <div class="time-container">
@@ -250,7 +341,6 @@
               alt="&deg;"
             />
           </div>
-
           <!-- social icons -->
           <ul class="social-icons hero-social-icon">
             <li class="hero-box-animate">
@@ -302,7 +392,7 @@
     <section id="about" class="section about">
       <div class="section-center about-center">
         <!-- about img -->
-        <article class="about-img" style="width: 300px;">
+        <article class="about-img" style="width: 300px">
           <img
             data-src="https://github.com/raybags-web-dev/image_base/blob/master/images/background/meme.jpg?raw=true"
             class="about-hero-photo hero-photo"

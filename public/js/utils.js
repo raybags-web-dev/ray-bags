@@ -22,6 +22,7 @@ const createSideApps = function () {
 const sidebarsAppController = function (offset) {
   if (!offset) return;
   if ($(window).scrollTop() >= offset) {
+    if ($(".chat-wrapper").is(":visible")) return;
     $(".sidebar-wrapper").addClass("show_sideapp");
   } else {
     $(".sidebar-wrapper").removeClass("show_sideapp");
@@ -33,9 +34,14 @@ const side_app_remove = function () {
   $(".app").each((ind, icon) => {
     $(icon).on("click", function () {
       $(".sidebar-wrapper").removeClass("show_sideapp");
+      $(".chat-wrapper").slideDown();
     });
   });
 };
+// remove chat
+$("#rm_chat").on("click", () => {
+  $(".chat-wrapper").slideUp();
+});
 
 // card factory function
 const curacelCard = function () {

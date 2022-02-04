@@ -448,7 +448,6 @@ Navbar
     text-shadow: none;
     transition: unset;
     text-transform: uppercase;
-    font-family: "Satisfy", cursive;
   }
 
   .nav-links a:hover {
@@ -2125,7 +2124,7 @@ Blog
 /* ================== Footer  ======================== */
 
 .footer {
-  height: 100%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
