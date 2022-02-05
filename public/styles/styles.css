@@ -748,13 +748,6 @@ Hero
   background-size: cover;
 }
 
-/* 
-  perspective: 10px;
-  transform-style: preserve-3d;
-    transform: translateZ(-10px) scale(2);
-
-  */
-
 .hero-image-bg img {
   min-width: 100%;
   height: 100%;

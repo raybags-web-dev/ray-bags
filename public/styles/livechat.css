@@ -87,6 +87,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
+  transition: .5s;
 }
 
 .message {
@@ -99,6 +100,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   border-radius: 0.5rem;
+  transition: .5s;
 }
 
 .no_message {

@@ -37,29 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // side app remove handler
   side_app_remove();
 
-  // dynamic hero text handler
-  // setTimeout(() => {
-  //   {
-  //     let count = 0;
-  //     setInterval(function () {
-  //       $(".skill-desc span").animate({ width: "0%" });
-
-  //       count++;
-  //       $(".skill-desc").animate(300, function () {
-  //         $(this)
-  //           .text(talent[count % talent.length])
-  //           .animate({
-  //             margin: "0 auto",
-  //           });
-  //       });
-  //     }, 3000);
-  //   }
-  // }, 5000);
-
-  setInterval(() => {
+  let talet_overview = setInterval(() => {
     let random_ind = Math.floor(Math.random() * talent.length);
     $(".skill-desc")
-      .text(talent[random_ind])
+      .text(`I work with: ${talent[random_ind]}`)
       .addClass("bread_crumb")
       .delay(2000)
       .queue(function () {
@@ -164,15 +145,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // hide show top button on scroll
   const showHideTopBtn = function () {
-    if ($(window).scrollTop() > 400) {
+    if ($(window).scrollTop() > 300) {
       // scrolling to bottom
       $("#myBtn").css({ right: "0%", transition: "800ms" });
+      // main page background image animation
       $("#bg_image_main")
         .css({ "clip-path": "inset(9% 0 7% 0)" })
         .removeClass("scalein-bg");
     } else {
       // top of the page
       $("#myBtn").css({ right: "-20%", transition: "800ms" });
+      // main page background image animation
       $("#bg_image_main")
         .css({ "clip-path": `inset(0 0 72% 0)` })
         .addClass("scalein-bg");
