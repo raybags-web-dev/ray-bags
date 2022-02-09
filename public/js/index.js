@@ -41,65 +41,62 @@ const skillsContainer = document.querySelector("#skills");
 const skills = document.querySelectorAll(".skill");
 // video contact section
 const contactSectionFromVideoSection = document.querySelector(".contact");
-
-// require("dotenv").config();
-// const { API_KEY } = process.env;
 const API_KEY = "4ccb6af86e070324f47859ab51e50bb9";
 
 module.export = { topBTN, navLogo };
 
 // ========= coppyright year ==========handler
-(function () {
-  const current_year = new Date().getFullYear();
-  date.textContent = current_year;
+(function() {
+    const current_year = new Date().getFullYear();
+    date.textContent = current_year;
 })();
 
 // temperature functionality
 const days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
 ];
 const months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
 ];
 // api key not a secret. Feel free to use it.
 // const API_KEY = "4ccb6af86e070324f47859ab51e50bb9";
 
 // set interval to call and set date and time resources
 setInterval(() => {
-  const time = new Date();
-  const month = time.getMonth();
-  const date = time.getDate();
-  const day = time.getDay();
-  const hour = time.getHours();
-  const hoursIn12HrFormat = hour >= 13 ? hour % 12 : hour;
-  const minutes = time.getMinutes();
-  const ampm = hour >= 12 ? "PM" : "AM";
+    const time = new Date();
+    const month = time.getMonth();
+    const date = time.getDate();
+    const day = time.getDay();
+    const hour = time.getHours();
+    const hoursIn12HrFormat = hour >= 13 ? hour % 12 : hour;
+    const minutes = time.getMinutes();
+    const ampm = hour >= 12 ? "PM" : "AM";
 
-  timeEl.innerHTML =
-    (hoursIn12HrFormat < 10 ? "0" + hoursIn12HrFormat : hoursIn12HrFormat) +
-    ":" +
-    (minutes < 10 ? "0" + minutes : minutes) +
-    " " +
-    `<span id="am-pm">${ampm}</span>`;
+    timeEl.innerHTML =
+        (hoursIn12HrFormat < 10 ? "0" + hoursIn12HrFormat : hoursIn12HrFormat) +
+        ":" +
+        (minutes < 10 ? "0" + minutes : minutes) +
+        " " +
+        `<span id="am-pm">${ampm}</span>`;
 
-  dateEl.innerHTML = days[day] + ", " + date + " " + months[month];
+    dateEl.innerHTML = days[day] + ", " + date + " " + months[month];
 }, 1000);
 
 // get weather handler.
@@ -107,30 +104,29 @@ getWeatherData();
 
 // get weather handler logic
 function getWeatherData() {
-  navigator.geolocation.getCurrentPosition((success) => {
-    let { latitude, longitude } = success.coords;
+    navigator.geolocation.getCurrentPosition((success) => {
+        let { latitude, longitude } = success.coords;
 
-    fetch(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        showWeatherData(data);
-      })
-      .catch((error) => alert(error.message));
-  });
+        fetch(
+                `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`
+            )
+            .then((res) => res.json())
+            .then((data) => {
+                showWeatherData(data);
+            })
+            .catch((error) => alert(error.message));
+    });
 }
 
 // weather data handler
 function showWeatherData(data) {
-  if (data.current == undefined) return;
-  let { humidity, pressure, sunrise, sunset, wind_speed, temp, feels_like } =
-      data.current,
-    { description } = data.current.weather[0];
+    if (data.current == undefined) return;
+    let { humidity, pressure, sunrise, sunset, wind_speed, temp, feels_like } =
+    data.current, { description } = data.current.weather[0];
 
-  timezone.innerHTML = data.timezone;
+    timezone.innerHTML = data.timezone;
 
-  currentWeatherItemsEl.innerHTML = `<div class="weather-item">
+    currentWeatherItemsEl.innerHTML = `<div class="weather-item">
         <div>Humidity</div>
         <div>${humidity}%</div>
     </div>
@@ -167,109 +163,105 @@ function showWeatherData(data) {
 
 // inner section smooth scroll
 function handleInnerScroll(targetBTN, targetSection) {
-  if (!targetBTN || !targetSection) return;
-  targetBTN.addEventListener("click", function () {
-    window.scroll({
-      top: 2500,
-      left: 0,
-      behavior: "smooth",
+    if (!targetBTN || !targetSection) return;
+    targetBTN.addEventListener("click", function() {
+        window.scroll({
+            top: 2500,
+            left: 0,
+            behavior: "smooth",
+        });
+        window.scrollBy({
+            top: 100,
+            left: 0,
+            behavior: "smooth",
+        });
+        // Scroll to a certain element
+        targetSection.scrollIntoView({
+            behavior: "smooth",
+        });
     });
-    window.scrollBy({
-      top: 100,
-      left: 0,
-      behavior: "smooth",
-    });
-    // Scroll to a certain element
-    targetSection.scrollIntoView({
-      behavior: "smooth",
-    });
-  });
 }
 
 // card animations.
 const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      entry.target.classList.toggle("show_service_card", entry.isIntersecting);
-      // if elemnet is on screen, stop observing it
-      if (entry.isIntersecting) observer.unobserve(entry.target);
-    });
-  },
-  {
-    threshold: 0.5,
-    rootMargin: "-1px",
-  }
+    (entries) => {
+        entries.forEach((entry) => {
+            entry.target.classList.toggle("show_service_card", entry.isIntersecting);
+            // if elemnet is on screen, stop observing it
+            if (entry.isIntersecting) observer.unobserve(entry.target);
+        });
+    }, {
+        threshold: 0.5,
+        rootMargin: "-1px",
+    }
 );
 // fadein observer
 const observer_projects = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      entry.target.classList.toggle("fadeIn-effect", entry.isIntersecting);
-      // if elemnet is on screen, stop observing it
-      if (entry.isIntersecting) observer.unobserve(entry.target);
-    });
-  },
-  {
-    threshold: 0.5,
-    rootMargin: "-1px",
-  }
+    (entries) => {
+        entries.forEach((entry) => {
+            entry.target.classList.toggle("fadeIn-effect", entry.isIntersecting);
+            // if elemnet is on screen, stop observing it
+            if (entry.isIntersecting) observer.unobserve(entry.target);
+        });
+    }, {
+        threshold: 0.5,
+        rootMargin: "-1px",
+    }
 );
 
 // Observer skills container
 const observer_skills = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      entry.target.classList.toggle("skills_show", entry.isIntersecting);
-      // if elemnet is on screen, stop observing it
-      // if (entry.isIntersecting) observer.unobserve(entry.target);
-    });
-  },
-  {
-    threshold: 0.5,
-    rootMargin: "-1px",
-  }
+    (entries) => {
+        entries.forEach((entry) => {
+            entry.target.classList.toggle("skills_show", entry.isIntersecting);
+            // if elemnet is on screen, stop observing it
+            // if (entry.isIntersecting) observer.unobserve(entry.target);
+        });
+    }, {
+        threshold: 0.5,
+        rootMargin: "-1px",
+    }
 );
 
 // slideup-observer
 const observer_rotateItem = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      entry.target.classList.toggle("slide-left-effect", entry.isIntersecting);
-      // if elemnet is on screen, stop observing it
-      if (entry.isIntersecting) observer.unobserve(entry.target);
-    });
-  },
-  {
-    threshold: 0.5,
-    rootMargin: "-1px",
-  }
+    (entries) => {
+        entries.forEach((entry) => {
+            entry.target.classList.toggle("slide-left-effect", entry.isIntersecting);
+            // if elemnet is on screen, stop observing it
+            if (entry.isIntersecting) observer.unobserve(entry.target);
+        });
+    }, {
+        threshold: 0.5,
+        rootMargin: "-1px",
+    }
 );
 // animate service cards
 serviceCard.forEach((card) => {
-  observer_rotateItem.observe(card);
+    observer_rotateItem.observe(card);
 });
 // animate service cards
 allProjects.forEach((card) => {
-  observer_projects.observe(card);
+    observer_projects.observe(card);
 });
 
 // animate skill cards
 skills.forEach((card) => {
-  observer.observe(card);
+    observer.observe(card);
 });
 
 // animate testimonial cards
 blogCards.forEach((card) => {
-  observer_rotateItem.observe(card);
+    observer_rotateItem.observe(card);
 });
 
 // animate testimonial cards
 timelineItems.forEach((card) => {
-  observer_rotateItem.observe(card);
+    observer_rotateItem.observe(card);
 });
 // animate skills when in viewport
 all_skills.forEach((card) => {
-  observer_skills.observe(card);
+    observer_skills.observe(card);
 });
 // animate about info card
 observer_rotateItem.observe(aboutInfo);
@@ -286,9 +278,9 @@ handleInnerScroll(skillsBTN, skillsContainer);
 handleInnerScroll(contactSectionFromVideoSection);
 // smooth scrolling icon logos
 navIcons.forEach((icon) => {
-  icon.addEventListener("click", () => {
-    document.getElementById("home").scrollIntoView({
-      behavior: "smooth",
+    icon.addEventListener("click", () => {
+        document.getElementById("home").scrollIntoView({
+            behavior: "smooth",
+        });
     });
-  });
 });
