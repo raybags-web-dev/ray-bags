@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let talet_overview = setInterval(() => {
     let random_ind = Math.floor(Math.random() * talent.length);
     $(".skill-desc")
-      .text(`I work with: ${talent[random_ind]}`)
+      .text(`${talent[random_ind]}`)
       .addClass("bread_crumb")
       .delay(2000)
       .queue(function () {

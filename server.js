@@ -1,33 +1,36 @@
-const express = require("express");
-const app = express();
-const cors = require("cors");
-// database uri
-require("dotenv").config();
+// const express = require("express");
+// const app = express();
+// const cors = require("cors");
+// // database uri
+// require("dotenv").config();
 
-app.use(express.static("dist"));
-app.use(express.json());
-// set origins
-app.use(
-  cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT"],
-    credentials: true,
-  })
-);
+// app.use(express.static("dist"));
+// app.use(express.json());
+// // set origins
+// app.use(
+//   cors({
+//     origin: "*",
+//     methods: ["GET", "POST", "PUT"],
+//     credentials: true,
+//   })
+// );
 
-app.get("/", (req, res) => {
-  res.status(200).send("connected...");
-});
+// app.get("/", (req, res) => {
+//   res.status(200).send("connected...");
+// });
 
-// handle db connection
-const start = async () => {
-  try {
-    console.log("initializing connection  to server...");
-    // Port set-up and start server
-    const PORT = process.env.PORT || 3000;
-    app.listen(PORT, () => console.log(`app is listening on port ${PORT}`));
-  } catch (e) {
-    console.error(e.message);
-  }
-};
-start();
+// // handle db connection
+// const start = async () => {
+//   try {
+//     console.log("initializing connection  to server...");
+//     // Port set-up and start server
+//     const PORT = process.env.PORT || 3000;
+//     app.listen(PORT, () => console.log(`app is listening on port ${PORT}`));
+//   } catch (e) {
+//     console.error(e.message);
+//   }
+// };
+// start();
+
+// /* MONGO URL: MONGO_URI=mongodb+srv://raybags:Quinten2013@cluster0.npph5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority*/
+

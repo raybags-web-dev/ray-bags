@@ -131,6 +131,7 @@
     width: max-content;
     padding-left: 0.1rem;
     padding-right: 0.1rem;
+    color: white;
   }
 
   @-webkit-keyframes slideInTime {

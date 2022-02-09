@@ -10,7 +10,6 @@ require("../images/need_4_speed.png");
 require("../images/new_logoo2.png");
 require("../images/project_2.jpg");
 require("../images/project_3.jpg");
-
 // temperature anchers
 const timeEl = document.getElementById("time");
 const dateEl = document.getElementById("date");
@@ -42,6 +41,10 @@ const skillsContainer = document.querySelector("#skills");
 const skills = document.querySelectorAll(".skill");
 // video contact section
 const contactSectionFromVideoSection = document.querySelector(".contact");
+
+// require("dotenv").config();
+// const { API_KEY } = process.env;
+const API_KEY = "4ccb6af86e070324f47859ab51e50bb9";
 
 module.export = { topBTN, navLogo };
 
@@ -76,7 +79,7 @@ const months = [
   "Dec",
 ];
 // api key not a secret. Feel free to use it.
-const API_KEY = "02152931152b50aa268c6b67f2ff76c7";
+// const API_KEY = "4ccb6af86e070324f47859ab51e50bb9";
 
 // set interval to call and set date and time resources
 setInterval(() => {
@@ -113,12 +116,14 @@ function getWeatherData() {
       .then((res) => res.json())
       .then((data) => {
         showWeatherData(data);
-      });
+      })
+      .catch((error) => alert(error.message));
   });
 }
 
 // weather data handler
 function showWeatherData(data) {
+  if (data.current == undefined) return;
   let { humidity, pressure, sunrise, sunset, wind_speed, temp, feels_like } =
       data.current,
     { description } = data.current.weather[0];
@@ -142,7 +147,7 @@ function showWeatherData(data) {
       <div>${feels_like}&deg;</div>
     </div>
     <div class="weather-item">
-      <div>--</div>
+      <div>-- </div>
       <div>${description}</div>
     </div>
     <div class="weather-item">

@@ -12,7 +12,7 @@
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0px 0px 50px 3px rgba(138, 29, 8, 0.22);
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.9), rgba(1, 1, 44, 0.3));
+  background: linear-gradient(45deg, rgba(0, 0, 0), rgba(1, 71, 83, 0.7));
 }
 .hide_chat {
   display: none;

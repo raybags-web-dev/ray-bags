@@ -468,12 +468,10 @@ Navbar
     left: -2%;
     bottom: -2%;
     right: -2%;
-    padding: 0.3rem;
     z-index: -1;
     border-radius: 0.2rem;
     border: 2px solid transparent;
-    border-color: transparent transparent red transparent;
-    background: rgba(49, 49, 49, 0.5);
+    border-color: rgb(255, 0, 0, .5) transparent rgb(255, 0, 0, .5) transparent;
     transition: 1s;
     backdrop-filter: blur(10px);
   }
@@ -521,7 +519,7 @@ Sidebar
   left: 0%;
   z-index: -1;
   transition: 0.8s;
-  background: linear-gradient(rgb(0, 0, 0), black);
+  /* background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)); */
 }
 .sidebar::after {
   content: "";
@@ -532,7 +530,7 @@ Sidebar
   right: 0%;
   z-index: -1;
   transition: 0.8s;
-  background: linear-gradient(rgb(0, 0, 0), black);
+  background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
 }
 
 /* toggle sidebar */
@@ -546,7 +544,7 @@ Sidebar
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  text-align: left;
+  text-align: center;
   padding-left: 15%;
   height: 100vh;
   opacity: 0;
@@ -2610,7 +2608,6 @@ Blog
   flex-wrap: wrap;
   align-items: center;
   overflow: hidden;
-  scroll-behavior: smooth;
 }
 .login {
   display: flex;
@@ -2625,7 +2622,7 @@ Blog
   min-width: 370px;
   width: 700px;
   transition: var(--transition);
-  max-width: 600px;
+  max-width: 800px;
   border-radius: 0.5rem;
   box-shadow: var(--deep-shadow_3);
   -webkit-backdrop-filter: var(--backdrop-light);
