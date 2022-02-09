@@ -75,9 +75,6 @@ const months = [
     "Nov",
     "Dec",
 ];
-// api key not a secret. Feel free to use it.
-// const API_KEY = "4ccb6af86e070324f47859ab51e50bb9";
-
 // set interval to call and set date and time resources
 setInterval(() => {
     const time = new Date();
