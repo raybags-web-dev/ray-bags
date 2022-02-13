@@ -11,11 +11,14 @@
   background: rgba(0, 0, 0, 0.8);
   border-radius: 0.5rem;
   overflow: hidden;
+  clip-path: inset(0 0 0 0);
+  transition: .4s;
   box-shadow: 0px 0px 50px 3px rgba(138, 29, 8, 0.22);
   background: linear-gradient(45deg, rgba(0, 0, 0), rgba(1, 71, 83, 0.7));
 }
-.hide_chat {
-  display: none;
+
+.anime-chat{
+  clip-path: inset(0 50% 0 50%);
 }
 @media screen and (max-width: 973px) {
   .chat-wrapper {

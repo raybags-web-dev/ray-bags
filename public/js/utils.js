@@ -34,23 +34,23 @@ const side_app_remove = function () {
   $(".app").each((ind, icon) => {
     $(icon).on("click", function () {
       $(".sidebar-wrapper").removeClass("show_sideapp");
-      $(".chat-wrapper").fadeIn();
+      $(".chat-wrapper").fadeIn().removeClass("anime-chat");
     });
   });
 };
 // remove chat
 $("#rm_chat").on("click", () => {
-  $(".chat-wrapper").fadeOut();
+  $(".chat-wrapper").addClass("anime-chat").fadeOut();
 });
 // delete chart message for user
 $("#del-msg-user").on("click", function (e) {
   e.preventDefault();
-  $(this).closest("div").fadeOut();
+  $(this).closest("div").addClass("anime-chat").fadeOut();
 });
 // delete chart message for user
 $("#del-msg-admin").on("click", function (e) {
   e.preventDefault();
-  $(this).closest("div").fadeOut();
+  $(this).closest("div").addClass("anime-chat").fadeOut();
 });
 
 // card factory function
