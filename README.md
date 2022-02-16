@@ -205,7 +205,7 @@ https://raybags.herokuapp.com/scrapper/v1/sky-news/sky-news2
 
 - SWAGGER DOCUMENTATION:
 
-```json
+```bash
 https://app.swaggerhub.com/apis-docs/raybags-web-dev/scrapper-api/0.1#/default/get_scrapper_v1_sky_breaking_news
 ```
 
