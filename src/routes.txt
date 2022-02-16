@@ -1,0 +1,21 @@
+DELETE COLLECTIONS:
+raybags.com/scrapper/v1/sky-news/:collection
+
+GET SKY BREAKING NEWS:
+/raybags.com/scrapper/v1/sky-breaking-news
+
+GET SKY TYRAVEL NEWS:
+/raybags.com/scrapper/v1/sky-travel-news
+
+GENERATE-POST [skynews breaking] 
+/raybags.com/scrapper/v1/savenews
+
+GENERATE-POST [skynews travel]
+/raybags.com/scrapper/v1/save-travelnews
+
+COLLECTION NAMES:
+sky-news1
+sky-news2
+travel-sky1
+travel-sky2
+travel-sky3
