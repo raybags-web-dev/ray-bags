@@ -187,16 +187,16 @@ success
 HEROKU-LINKS:
 
 ```json
-1. get breaking news:
+get breaking news:
    https://raybags.herokuapp.com/scrapper/v1/sky-breaking-news
 
-2. get sky travel news:
+get sky travel news:
    https://raybags.herokuapp.com/scrapper/v1/sky-travel-news
 
-3. generate breaking news:
+generate breaking news:
    https://raybags.herokuapp.com/scrapper/v1/savenews
 
-4. generate travel news:
+generate travel news:
    https://raybags.herokuapp.com/scrapper/v1/save-travelnews
 ```
 
