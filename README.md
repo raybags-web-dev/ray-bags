@@ -186,18 +186,21 @@ success
 
 HEROKU-LINKS:
 
-```json
+```
 get breaking news:
-   https://raybags.herokuapp.com/scrapper/v1/sky-breaking-news
+https://raybags.herokuapp.com/scrapper/v1/sky-breaking-news
 
 get sky travel news:
-   https://raybags.herokuapp.com/scrapper/v1/sky-travel-news
+https://raybags.herokuapp.com/scrapper/v1/sky-travel-news
 
 generate breaking news:
-   https://raybags.herokuapp.com/scrapper/v1/savenews
+https://raybags.herokuapp.com/scrapper/v1/savenews
 
 generate travel news:
-   https://raybags.herokuapp.com/scrapper/v1/save-travelnews
+https://raybags.herokuapp.com/scrapper/v1/save-travelnews
+
+delete data collections:
+https://raybags.herokuapp.com/scrapper/v1/sky-news/sky-news2
 ```
 
 - SWAGGER DOCUMENTATION:
