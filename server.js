@@ -37,20 +37,20 @@ app.use(
 );
 
 // DROP COLLECTIONS
-app.delete(`/raybags.com/scrapper/v1/sky-news/:collection`, asyncMiddleware(async(req, res) => {
+app.delete(`/scrapper/v1/sky-news/:collection`, asyncMiddleware(async(req, res) => {
     const { collection } = req.params;
     await dropCollections(collection);
     res.status(200).send("success");
 }));
 // skynew breaking news
-app.get("/raybags.com/scrapper/v1/sky-breaking-news", asyncMiddleware(async(req, res) => {
+app.get("/scrapper/v1/sky-breaking-news", asyncMiddleware(async(req, res) => {
     const newsBreaking1 = await skynews1.find({}),
         newsBreaking2 = await skynews2.find({});
 
     res.status(200).json({ newsBreaking1, newsBreaking2 });
 }));
 // skynew travel news
-app.get("/raybags.com/scrapper/v1/sky-travel-news", asyncMiddleware(async(req, res) => {
+app.get("/scrapper/v1/sky-travel-news", asyncMiddleware(async(req, res) => {
     const newsTravelOne = await travel_1news.find({}),
         newsTravelTwo = await travel_2news.find({}),
         newsTravelThree = await travel_3news.find({});
@@ -59,7 +59,7 @@ app.get("/raybags.com/scrapper/v1/sky-travel-news", asyncMiddleware(async(req, r
 
 
 // ======== SAVE BREAKING SKY-NEWS ============= //
-app.post("/raybags.com/scrapper/v1/savenews", asyncMiddleware(async(req, res) => {
+app.post("/scrapper/v1/savenews", asyncMiddleware(async(req, res) => {
     const data = await SKY_NEWS_1('https://news.sky.com');
     const data_2 = await SKY_NEWS_2("https://news.sky.com");
 
@@ -84,7 +84,7 @@ app.post("/raybags.com/scrapper/v1/savenews", asyncMiddleware(async(req, res) =>
 
 
 // ======== SAVE FINANCIAL SKY-NEWS ============= //
-app.post("/raybags.com/scrapper/v1/save-travelnews", asyncMiddleware(async(req, res) => {
+app.post("/scrapper/v1/save-travelnews", asyncMiddleware(async(req, res) => {
     const travel_1 = await SKY_1_NEWS_TRAVEL("https://news.sky.com/travel");
     const travel_2 = await SKY_2_NEWS_TRAVEL("https://news.sky.com/travel");
     const travel_3 = await SKY_3_NEWS_TRAVEL("https://news.sky.com/travel");
