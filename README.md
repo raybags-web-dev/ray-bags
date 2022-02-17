@@ -2,68 +2,126 @@
 
 # Scrapper-api-0.1
 
-This is a simple scrapper api that scapes, generates and save data into a data-base(mongodb).
+This is a simple web-scrapper api that scrapes, generates and save data into a data-base(mongodb).
 
 ## Base url:
 
-The base url => [base_url](https://raybags.herokuapp.com/) .
-
-```python
-https://raybags.herokuapp.com/
+```
+### https://raybags.herokuapp.com/
 ```
 
-This web scrapper bot is built on top of my Portfolio website. I intend to integrate couple more apis fpr different projects.
+This web scrapper bot is built on top of my Portfolio website. More scrapper bots will be integrate here.
 
 ## Four endpoints are exposed here:
 
 ```bash
- POST [skynews BREAKING]:
-https://raybags.herokuapp.com/scrapper/v1/savenews
+#creates an account for you, saves it to the database and returns an auth token you can use
+POST [Authenticates user]
+https://raybags.herokuapp.com/authenticate
+
+Note: You must provide your namme, email and password as a request body as shown below:
+{
+    "name": "test  user",
+    "email": "testuser@gmail.com",
+    "password": "x25s45d6wsd1"
+}
+
+Response should look like this:
+{
+    "body": {
+      "name": "test  user",
+      "email": "testuser@gmail.com",
+      "password": "x25s45d6wsd1"
+    },
+    "your-token": "3ee84211cd484b2eaff80e734070237115149b0c80d7dec50c1fe03a3f64d485a356e9fa475b20e14e26a3afb55be397c36eb348dff511e41fea3ccc4fe8eefa"
+}
+```
+
+```bash
 #scrapes the site, generates breaking-news data, and saves to the database
+POST [skynews BREAKING]:
+https://raybags.herokuapp.com/scrapper/v1/savenews
+```
 
- POST [skynews TRAVEL]
-https://raybags.herokuapp.com/scrapper/v1/save-travelnews
+### Request body should contain your token as shown below:
+
+```bash
+{
+    "token": "186229f622632dd3975a5e50bafcac65d9bb6306ad744b35e4877d2c694d3f0e2badbd14004931fc0873e0cf4ecf0e202df5cb7b01b378ecd6260a0f4a184b65"
+}
+```
+
+### Response should look like this:
+
+```bash
+  {
+    "skynews_content": [
+      {
+            "title": "'Very likely there will be risk to life': Red weather warning issued as 90mph Storm Eunice nears",
+            "url": "https://news.sky.com/story/storm-eunice-red-dangerous-weather-warning-issued-as-uk-hit-with-gusts-up-to-100mph-12544051"
+        },
+        {
+            "title": "Army on standby, all trains cancelled in Wales, London closures - Storm Eunice set to be among worst in decades | Weather live",
+            "url": "https://news.sky.com/story/storm-eunice-live-news-met-office-weather-warnings-uk-forecast-dudley-12543511"
+        },
+        {
+            "title": "Transport, schools and tourist attractions - a list of the main closures due to Storm Eunice",
+            "url": "https://news.sky.com/story/storm-eunice-transport-schools-and-tourist-attractions-a-list-of-the-main-closures-12544459"
+        },
+    ]
+  }
+```
+
+```bash
 #scrapes the site, generates travel-data, and saves to the database
+POST [skynews TRAVEL]
+https://raybags.herokuapp.com/scrapper/v1/save-travelnews
+```
 
+### Request body should contain your token as shown below:
+
+```bash
+{
+    "token": "186229f622632dd3975a5e50bafcac65d9bb6306ad744b35e4877d2c694d3f0e2badbd14004931fc0873e0cf4ecf0e202df5cb7b01b378ecd6260a0f4a184b65"
+}
+```
+
+### Response should look like this:
+
+```bash
+  {
+    "travel__a": [
+      {
+            "title": "'Very likely there will be risk to life': Red weather warning issued as 90mph Storm Eunice nears",
+            "url": "https://news.sky.com/story/storm-eunice-red-dangerous-weather-warning-issued-as-uk-hit-with-gusts-up-to-100mph-12544051"
+        },
+        {
+            "title": "Army on standby, all trains cancelled in Wales, London closures - Storm Eunice set to be among worst in decades | Weather live",
+            "url": "https://news.sky.com/story/storm-eunice-live-news-met-office-weather-warnings-uk-forecast-dudley-12543511"
+        },
+        {
+            "title": "Transport, schools and tourist attractions - a list of the main closures due to Storm Eunice",
+            "url": "https://news.sky.com/story/storm-eunice-transport-schools-and-tourist-attractions-a-list-of-the-main-closures-12544459"
+        },
+    ]
+  }
+```
+
+```bash
+#fetches all breaking news data from the database.
 GET [Fetches saved data from the database]:
 https://raybags.herokuapp.com/scrapper/v1/sky-breaking-news
-#gets breaking-data.
+```
 
+```bash
 GET [Fetches saved travel-data from the database]:
 https://raybags.herokuapp.com/scrapper/v1/sky-travel-news
-#gets travel-data from the database
-
-DELETE [Deletes saved collections from the database by name]:
-https://raybags.herokuapp.com/scrapper/v1/sky-news/sky-news2
 #gets travel-data from the database
 ```
 
 ### RESPONSES-EXAMPLES:
 
 - Breaking news:
-
-```json
-{
-  "skynews_content": [
-    {
-      "title": "All children aged 5-11 in the UK to be offered COVID jab",
-      "url": "https://news.sky.com/story/covid-19-all-children-aged-5-11-in-uk-will-be-offered-coronavirus-vaccine-as-england-and-northern-ireland-become-latest-nations-to-confirm-plan-12539154"
-    },
-    {
-      "title": "Why have cautious government advisers changed their minds on vaccines for young children?",
-      "url": "https://news.sky.com/story/covid-19-why-have-cautious-government-advisers-now-changed-their-minds-on-vaccines-for-5-to-11-year-olds-12543635"
-    },
-    {
-      "title": "'Delay your journey': Trains cancelled and bridges closed to some traffic | Storm Dudley live",
-      "url": "https://news.sky.com/story/storm-dudley-live-news-met-office-weather-warnings-uk-forecast-12543511"
-    },
-    {
-      "title": "NATO warns Russian troops 'moving into position' – as the Kremlin issues energy supply warning to Europe",
-      "url": "https://news.sky.com/story/ukraine-live-updates-satellite-images-show-russia-not-withdrawing-as-kremlin-issues-energy-supply-warning-to-europe-12541713"
-    }
-  ]
-}
-```
 
 - Travel news:
 
@@ -172,35 +230,34 @@ https://raybags.herokuapp.com/scrapper/v1/sky-news/sky-news2
 }
 ```
 
-- Deleted Collection:
+## HEROKU-LINKS:
 
-```json
-success
+```bash
+authentication
+https://raybags.herokuapp.com/authenticate
 ```
 
-### COLLECTION NAMES:
-
-- sky-news1
-- sky-news2
-- travel-sky1
-- travel-sky2
-- travel-sky3
-
-HEROKU-LINKS:
-
-```
+```bash
 get breaking news:
 https://raybags.herokuapp.com/scrapper/v1/sky-breaking-news
+```
 
+```bash
 get sky travel news:
 https://raybags.herokuapp.com/scrapper/v1/sky-travel-news
+```
 
+```bash
 generate breaking news:
 https://raybags.herokuapp.com/scrapper/v1/savenews
+```
 
+```bash
 generate travel news:
 https://raybags.herokuapp.com/scrapper/v1/save-travelnews
+```
 
+```bash
 delete data collections:
 https://raybags.herokuapp.com/scrapper/v1/sky-news/sky-news2
 ```
@@ -208,7 +265,7 @@ https://raybags.herokuapp.com/scrapper/v1/sky-news/sky-news2
 - SWAGGER DOCUMENTATION:
 
 ```bash
-https://app.swaggerhub.com/apis-docs/raybags-web-dev/scrapper-api/0.1#/default/get_scrapper_v1_sky_breaking_news
+https://app.swaggerhub.com/apis-docs/raybags-web-dev/web-scrapper1.0/1.0
 ```
 
 ## Contributions:
