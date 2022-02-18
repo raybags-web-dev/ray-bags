@@ -23,6 +23,7 @@ const Authenticate_user = function(app) {
             let user = await User.findOne({
                 email: req.body.email
             });
+            if (req.body.email == "raybags@github.com" || req.body.name == "Raymond Baguma") return res.status(500).send("this is a demo account. use your email address please")
 
             if (user) return res.status(400).json({ message: "User already exists! This is your token", token: user.token });
 
@@ -32,7 +33,7 @@ const Authenticate_user = function(app) {
                 password: req.body.password,
                 token: secretToken
             });
-            res.status(201).json({ body: req.body, "your-token": secretToken });
+            res.status(201).json({ body: req.email, "your-token": secretToken });
         }));
 
     }
