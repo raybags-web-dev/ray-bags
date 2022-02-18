@@ -55,7 +55,7 @@ const DeleteUser = function(app) {
                 email: requestBody.email,
                 password: requestBody.password
             });
-            res.status(200).json({ message: { account: req.body, details: "Your account details have been deleted!!" } });
+            res.status(200).json({ message: { account: req.body, details: `All done "${user.name}!!" Your account has been deleted.` } });
         }))
     }
     //Delete collection
@@ -71,7 +71,9 @@ const DeleteCollection = function(app) {
             if (!user)
                 return res.status(404).json("you are not authorized to delete this resource");
 
-            if (user.token == 'null' || requestBody.token != user.token)
+            if (user.token == 'null') return res.status(500).json("Token can't be an empty string!");
+
+            if (requestBody.token != user.token)
                 return res.status(401).json("This token is invalid or expired");
 
             const { collection } = req.params;
