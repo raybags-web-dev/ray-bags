@@ -6,9 +6,6 @@ This is a simple web-scrapper api that scrapes, generates and save data into a d
 
 ## Base url:
 
-```
-### https://raybags.herokuapp.com/
-```
 
 This web scrapper bot is built on top of my Portfolio website. More scrapper bots will be integrate here.
 
