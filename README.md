@@ -4,14 +4,6 @@
 
 This is a simple web-scrapper api that scrapes, generates and save data into a data-base(mongodb).
 
-## Base url:
-
-```
-### https://raybags.herokuapp.com/
-```
-
-This web scrapper bot is built on top of my Portfolio website. More scrapper bots will be integrate here.
-
 ## Four endpoints are exposed here:
 
 ```bash
