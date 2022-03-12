@@ -1,4 +1,6 @@
 import "regenerator-runtime/runtime.js";
+const bitcoin = require("./collector.js");
+// bitcoin();
 // side apps handler
 const createSideApps = function() {
     const cv_link = $("<a />").attr({ class: "cv_button", href: "https://ray-cv.netlify.app", target: "_blank", disabled: "true" }).text("CARRICULUM VITAE");
