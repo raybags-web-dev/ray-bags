@@ -1,6 +1,8 @@
 import "regenerator-runtime/runtime.js";
-const bitcoin = require("./collector.js");
-// bitcoin();
+const {
+    createEmptyDataWrapper,
+    createNewsDataWrapper,
+} = require("./helperFuncs");
 // side apps handler
 const createSideApps = function() {
     const cv_link = $("<a />").attr({ class: "cv_button", href: "https://ray-cv.netlify.app", target: "_blank", disabled: "true" }).text("CARRICULUM VITAE");
@@ -92,50 +94,9 @@ const mainCarocelContainer = function() {
         $(".card-content-div").each((ind, card) => {
             $(card).on("click", async function() {
                 try {
-                    // make ============== data component ============== 
-                    const close_button = $("<i />").attr({
-                        class: "fas fa-times",
-                        id: "video_closeBTN",
-                    });
+                    // Show news data ============== 
+                    return ($(this).index() == 0) ? createNewsDataWrapper("https://raybags.herokuapp.com/scrapper/v1/sky-breaking-news") : createEmptyDataWrapper();
 
-                    let dataURL = "https://raybags.herokuapp.com/scrapper/v1/sky-breaking-news";
-                    let dataheading, data_url, span;
-                    const wrapperDiv = $("<div></div>").attr({ class: "_innerDiv" });
-
-
-                    fetch(dataURL)
-                        .then(response => response.json())
-                        .then(data => {
-                            const { newsBreaking1, newsBreaking2 } = data;
-
-                            const outcome = newsBreaking1.map((item) => {
-                                const { title, url, createdAt } = item;
-
-                                return `<div class="_innerDiv">
-                                           HEADING:<p class="data_para">${title}</p>
-                                           READ MORE:<a class="data_url" href="${url}" target="_blank">visit website</a>
-                                           DATE:<span class="data_time">${createdAt}</span>
-                                        </div> `
-                            }).join(" ");
-
-                            wrapperDiv.append(outcome);
-                        })
-
-                    const video = $("<div></div>")
-                        .attr({
-                            class: "video-frame",
-                        }).append(wrapperDiv);
-
-                    const dataaDIV = $("<div></div>")
-                        .attr({ class: "video-wrapper" })
-                        .append($(video), $(close_button));
-
-
-                    $("body").prepend($(dataaDIV));
-                    // remove component
-                    $($(dataaDIV).children()[1]).on("click", () =>
-                        $(dataaDIV).remove()
-                    ); // create component
 
                 } catch (e) {
                     console.log(e.message);
