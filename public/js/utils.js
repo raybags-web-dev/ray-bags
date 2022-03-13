@@ -4,6 +4,7 @@ const {
     createNewsDataWrapper,
     bitcoin,
 } = require("./helperFuncs");
+
 // side apps handler
 const createSideApps = function() {
     const cv_link = $("<a />").attr({ class: "cv_button", href: "https://ray-cv.netlify.app", target: "_blank", disabled: "true" }).text("CARRICULUM VITAE");
@@ -110,17 +111,17 @@ const mainCarocelContainer = function() {
 
             cardsArray.push($(card));
             $($(cardsArray[0]).children()[0]).text("Sky news data");
-            $($(cardsArray[1]).children()[0]).text("Amazon data");
-            $($(cardsArray[2]).children()[0]).text("Cheap Hotels data");
+            $($(cardsArray[1]).children()[0]).text("Retail Data");
+            $($(cardsArray[2]).children()[0]).text("Hotels data");
             $($(cardsArray[3]).children()[0]).text("Crypto Data");
-            $($(cardsArray[4]).children()[0]).text("Cheap flights data");
-            $($(cardsArray[5]).children()[0]).text("Movie history data");
-            $($(cardsArray[6]).children()[0]).text("Logical Ops data");
-            $($(cardsArray[7]).children()[0]).text("Trending tech data");
+            $($(cardsArray[4]).children()[0]).text("Flights data");
+            $($(cardsArray[5]).children()[0]).text("Movies data");
+            $($(cardsArray[6]).children()[0]).text("Stocks Data");
+            $($(cardsArray[7]).children()[0]).text("Tech data");
             $($(cardsArray[8]).children()[0]).text("Fashion data");
             $($(cardsArray[9]).children()[0]).text("Business data");
-            $($(cardsArray[10]).children()[0]).text("ETL/ELT designs");
-            $($(cardsArray[11]).children()[0]).text("");
+            $($(cardsArray[10]).children()[0]).text("Travel Data");
+            $($(cardsArray[11]).children()[0]).text("Space Data");
         });
 
         setTimeout(() => {

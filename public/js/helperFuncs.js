@@ -1,9 +1,23 @@
 // spinner
 const spinner = function() {
-    return ` <button class="btn loading_spinner" type="button" disabled>
+        return ` <button class="btn loading_spinner" type="button" disabled>
                <span class="spinner-grow spinner-grow-lg" role="status" aria-hidden="true"></span>
                Loading...
              </button>`
+    }
+    // remove container when clicked outside handler
+const purgeContainer = function(element) {
+    // remove component
+    $($(element).children()[1]).on("click", () =>
+        $(element).remove()
+    );
+    // remove component when clicked outside of element
+    document.addEventListener("click", function(event) {
+        let clickTarget = $(event.target);
+        if (!clickTarget.is("i") && clickTarget.hasClass("video-wrapper")) {
+            $(element).remove();
+        }
+    });
 }
 
 // Empty wrapper place holder
@@ -23,10 +37,8 @@ const createEmptyDataWrapper = function() {
             .append($(emptyContainer), $(close_button));
 
         $("body").prepend($(dataaDIV));
-        // remove component
-        $($(dataaDIV).children()[1]).on("click", () =>
-            $(dataaDIV).remove()
-        );
+        // remove menu if click is outside element
+        purgeContainer($(dataaDIV));
     }
     // ====================================================
     // =============News helper function=================
@@ -48,12 +60,16 @@ const createNewsDataWrapper = function(dataURL) {
         .then(data => {
             const { newsBreaking1, newsBreaking2 } = data;
             const outcome = newsBreaking1.map((item) => {
+
                 const { title, url, createdAt } = item;
+                const [...all] = newsBreaking2;
+                const { video_url } = all;
 
                 return `<div class="_innerDiv" draggable="true">
-                                 <span><p class="data_para">HEADING:&emsp;${title}</p></span> 
-                                 <span>READ MORE: &emsp; <a class="data_url" href="${url}" target="_blank">visit website</a></span> 
-                                 <p><span class="data_time">DATE:&emsp;${createdAt}</span></p> 
+                                 <span><p class="data_para">Heading:&emsp;${title}</p></span> 
+                                 <span class="text-muted">Read more: &emsp; <a class="data_url" href="${url}" target="_blank">visit website</a></span> 
+                                 <span class="text-muted">Video-url: &emsp; <a class="data_url" href="${video_url}" target="_blank">visit website</a></span> 
+                                 <p><span class="data_time">Date:&emsp;${createdAt}</span></p> 
                                 </div> `
             }).join(" ");
             wrapperDiv.append($(outcome));
@@ -63,10 +79,8 @@ const createNewsDataWrapper = function(dataURL) {
         .attr({ class: "video-wrapper" })
         .append($(wrapperDiv), $(close_button));
     $("body").prepend($(dataaDIV));
-    // remove component
-    $($(dataaDIV).children()[1]).on("click", () =>
-        $(dataaDIV).remove()
-    );
+    // remove menu if click is outside element
+    purgeContainer($(dataaDIV));
 
 }
 
@@ -130,11 +144,8 @@ const bitcoin = function(dataURL) {
         .attr({ class: "video-wrapper" })
         .append($(wrapperDiv), $(close_button));
     $("body").prepend($(dataaDIV));
-    // remove component
-    $($(dataaDIV).children()[1]).on("click", () =>
-        $(dataaDIV).remove()
-    );
-
+    // remove menu if click is outside element
+    purgeContainer($(dataaDIV));
 }
 
 module.exports = {
