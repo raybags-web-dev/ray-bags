@@ -6,7 +6,6 @@ import {
     side_app_remove,
 } from "./utils.js";
 import { talent } from "./data.js";
-import { themes_functionality } from "./themes.js";
 import { contact_form_functionality } from "./contactForm.js";
 
 // General jQuery handler.
@@ -29,8 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
     contact_form_functionality("#contact_me_form");
     // all carocel functionality
     mainCarocelContainer();
-    // themes functionality
-    themes_functionality();
     // create side app handler
     createSideApps(1500);
     // side app remove handler

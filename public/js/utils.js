@@ -2,6 +2,7 @@ import "regenerator-runtime/runtime.js";
 const {
     createEmptyDataWrapper,
     createNewsDataWrapper,
+    bitcoin,
 } = require("./helperFuncs");
 // side apps handler
 const createSideApps = function() {
@@ -95,7 +96,9 @@ const mainCarocelContainer = function() {
             $(card).on("click", async function() {
                 try {
                     // Show news data ============== 
-                    return ($(this).index() == 0) ? createNewsDataWrapper("https://raybags.herokuapp.com/scrapper/v1/sky-breaking-news") : createEmptyDataWrapper();
+                    if ($(this).index() == 0) return createNewsDataWrapper("https://raybags.herokuapp.com/scrapper/v1/sky-breaking-news");
+                    if ($(this).index() == 3) return bitcoin("https://rest.coinapi.io/v1/exchanges");
+                    return createEmptyDataWrapper();
 
 
                 } catch (e) {
