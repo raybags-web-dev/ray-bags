@@ -198,4 +198,4 @@ module.exports = {
     GetTravelNews,
     CreateAndSaveBreakingNews,
     CreateAndSaveTravelNews,
-}
+};

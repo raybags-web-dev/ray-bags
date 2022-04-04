@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function() {
             $("#myBtn").css({ right: "0%", transition: "800ms" });
             // main page background image animation
             $("#bg_image_main")
-                .css({ "clip-path": "inset(9% 0 7% 0)" })
+                .css({ "clip-path": "inset(9% 0 0% 0)" })
                 .removeClass("scalein-bg");
         } else {
             // top of the page
