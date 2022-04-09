@@ -88,9 +88,6 @@ const createNewsDataWrapper = function(dataURL) {
 // =============Crypto updates api=================
 // ====================================================
 const bitcoin = function(dataURL) {
-    // API key is for demonstration purposes. Feel free to use it.
-    const api_key = "3648FCB1-27EC-418C-84B7-A5DFB454D0D7";
-
     const close_button = $("<i />").attr({
         class: "fas fa-times",
         id: "video_closeBTN",
@@ -98,7 +95,7 @@ const bitcoin = function(dataURL) {
 
     const wrapperDiv = $("<div></div>").attr({ class: "video-frame" }).append(spinner());
 
-    fetch(dataURL, { "headers": { 'X-CoinAPI-Key': api_key } })
+    fetch(dataURL, { "headers": { 'X-CoinAPI-Key': "3648FCB1-27EC-418C-84B7-A5DFB454D0D7" } })
         .then(response => {
             const { status, ok } = response;
             if (status == 200 && ok == true) $(".loading_spinner").remove();

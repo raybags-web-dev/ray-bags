@@ -40,8 +40,6 @@ const skillsContainer = document.querySelector("#skills");
 const skills = document.querySelectorAll(".skill");
 // video contact section
 const contactSectionFromVideoSection = document.querySelector(".contact");
-const API_KEY = "4ccb6af86e070324f47859ab51e50bb9";
-
 module.export = { topBTN, navLogo };
 
 // ========= coppyright year ==========handler
@@ -104,7 +102,7 @@ function getWeatherData() {
         let { latitude, longitude } = success.coords;
 
         fetch(
-                `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`
+                `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=4ccb6af86e070324f47859ab51e50bb9`
             )
             .then((res) => res.json())
             .then((data) => {
