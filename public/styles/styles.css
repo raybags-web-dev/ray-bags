@@ -1,15 +1,12 @@
 /* imported font */
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 :root {
     /* black background */
-    --main-bg: linear-gradient(to right, rgb(14, 13, 13) 80%, rgb(105, 2, 2) 100%);
-    --dark-red-bg: hsla(0, 94%, 50%, 0.502);
     --main-text-shadow: 0px 2px 1px black;
     /* font-family */
     --italic-font: "Satisfy", cursive;
+    --ff-primary: 'Roboto', sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
     /* scroll track and thumb colors */
     --scrollbarBG: rgb(44, 13, 13);
     --thumb-bg: rgb(71, 2, 2);
@@ -23,8 +20,6 @@
     --clr-grey-4: hsl(209, 28%, 39%);
     /* grey used for paragraphs */
     --clr-white: #fff;
-    --ff-primary: "Roboto", sans-serif;
-    --ff-secondary: "Open Sans", sans-serif;
     --transition: all 0.1s linear;
     --spacing: 0.25rem;
     --radius: 0.5rem;
@@ -36,8 +31,6 @@
     --deep-shadow_3: 1px 30px 30px 15px rgb(0, 0, 0, 0.5);
     /* max-width */
     --max-width: 1170px;
-    /* menteinance fonts  with 400, 700, 900*/
-    --roboto: "Roboto", sans-serif;
 }
 
 
@@ -62,12 +55,18 @@ body {
     font-size: 0.875rem;
     overflow-x: hidden;
     min-width: 307px !important;
-    background-image: var(--main-bg);
 }
 
 html {
     overflow-x: hidden;
     scroll-behavior: smooth;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgb(0, 0, 0, .9);
+        color: white;
+    }
 }
 
 
@@ -1687,6 +1686,294 @@ Skills
 @media screen and (max-width: 768px) {
     .about-info p {
         font-size: 1.4em;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
     }
     input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
         font-size: 1em !important;
