@@ -1975,6 +1975,166 @@ Skills
     textarea::-ms-input-placeholder {
         font-size: 1em !important;
     }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        font-size: 1em !important;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-size: 1em !important;
+    }
+    input::-ms-input-placeholder,
+    textarea::-ms-input-placeholder {
+        font-size: 1em !important;
+    }
     input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
         font-size: 1em !important;
     }
@@ -2757,6 +2917,8 @@ Blog
     .about-hero-photo {
         height: 400px;
         width: 300px;
+        -o-object-fit: cover;
+        object-fit: cover;
     }
     .about-title {
         display: flex;
