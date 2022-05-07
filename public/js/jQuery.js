@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // side app remove handler
     side_app_remove();
 
-    let talet_overview = setInterval(() => {
+    function handleOverviewChange() {
         let random_ind = Math.floor(Math.random() * talent.length);
         $(".skill-desc")
             .text(`${talent[random_ind]}`)
@@ -43,7 +43,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 $(this).removeClass("bread_crumb");
                 $(this).dequeue();
             });
-    }, 6000);
+    };
+
+    let talet_overview = setInterval(handleOverviewChange, 6000);
 
     // slide in top nav
     $(" .nav-links li").each((index, link) => {
