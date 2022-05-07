@@ -7,7 +7,7 @@ const {
 
 // side apps handler
 const createSideApps = function() {
-    const cv_link = $("<a />").attr({ class: "cv_button", href: "https://ray-cv.netlify.app", target: "_blank", disabled: "true" }).text("CARRICULUM VITAE");
+    const cv_link = $("<a />").attr({ class: "cv_button", href: "javascript: void(0)", target: "_blank" }).text("CARRICULUM VITAE");
 
     const inner_side_bar = $("<div></div>").attr({ class: "sidebars-inner" }).append($(cv_link));
     const sidebar = $("<div></div>").attr({ class: "sidebar-wrapper" }).append($(inner_side_bar));
