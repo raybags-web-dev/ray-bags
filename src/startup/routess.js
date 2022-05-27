@@ -83,15 +83,14 @@ const DeleteCollection = function(app) {
     }
     // Get breaking news
 const GetBreakingNews = function(app) {
-    // skynew breaking news
-    app.get("/scrapper/v1/sky-breaking-news", asyncMiddleware(async(req, res) => {
-        const newsBreaking1 = await skynews1.find({}),
-            newsBreaking2 = await skynews2.find({});
-        res.status(200).json({ newsBreaking1, newsBreaking2 });
-    }));
-}
-const GetTravelNews = function(app) {
+        app.get("/scrapper/v1/sky-breaking-news", asyncMiddleware(async(req, res) => {
+            const newsBreaking1 = await skynews1.find({}),
+                newsBreaking2 = await skynews2.find({});
+            res.status(200).json({ newsBreaking1, newsBreaking2 });
+        }));
+    }
     // skynew travel news
+const GetTravelNews = function(app) {
     app.get("/scrapper/v1/sky-travel-news", asyncMiddleware(async(req, res) => {
         const newsTravelOne = await travel_1news.find({}),
             newsTravelTwo = await travel_2news.find({}),
@@ -100,8 +99,8 @@ const GetTravelNews = function(app) {
     }));
 }
 
+// ======== SAVE BREAKING SKY-NEWS ============= //
 const CreateAndSaveBreakingNews = function(app) {
-    // ======== SAVE BREAKING SKY-NEWS ============= //
     app.post("/scrapper/v1/savenews", asyncMiddleware(async(req, res) => {
         let requestBody = req.body;
         if (requestBody.token == "")
