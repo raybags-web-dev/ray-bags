@@ -25,7 +25,7 @@ const Authenticate_user = function(app) {
             });
             if (req.body.email == "raybags@github.com" || req.body.name == "Raymond Baguma") return res.status(500).send("this is a demo account. use your email address please")
 
-            if (user) return res.status(400).json({ message: "User already exists! This is your token", token: user.token });
+            if (user) return res.status(400).json({ message: "User already exists! Contact admin for your token" });
 
             await User.create({
                 name: req.body.name,

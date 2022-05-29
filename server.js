@@ -36,6 +36,8 @@ require("./src/startup/routess").CreateAndSaveTravelNews(app);
 
 // RUN CRON JOBS TOP CRAWL NEWS DAILY EVERY 24 HOURS.
 cron.schedule(cronJobs.daily, async function() {
+    console.log("Running Crawlers...");
+
     try {
         await auto_gen_news();
         await auto_gen_travel_news();
@@ -43,6 +45,7 @@ cron.schedule(cronJobs.daily, async function() {
         console.log(e.message)
     }
 });
+
 
 
 // Not found route

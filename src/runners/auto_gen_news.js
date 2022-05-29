@@ -1,7 +1,7 @@
 const axios = require('axios');
 //env variables
 require("dotenv").config();
-const { MY_TOKEN } = process.env;
+const { MY_TOKEN, NAME, EMAIL, PASSWORD } = process.env;
 //create news runner every 24 hours.
 const auto_gen_news = async() => {
     const options = {
@@ -13,16 +13,17 @@ const auto_gen_news = async() => {
             'token': `${MY_TOKEN}`
         },
         data: {
-            "name": "Big man Ray",
-            "email": "bigmanray@gmail.com",
-            "password": "12354900000",
+            "name": NAME,
+            "email": EMAIL,
+            "password": PASSWORD
         }
     };
 
     const response = await axios(options);
     const { status, statusText } = await response;
     console.log(`Status: ${status} => ${statusText}`);
-    console.log(`Message: ${response.data.skynews_content.length} stories has been generated and saved \n =============`)
+    console.log(`Message: ${response.data.skynews_content.length} stories has been generated and saved \n =============`);
+    console.log(response.data.skynews_content);
 }
 
 // create and save travel news every 24 hours
@@ -36,9 +37,9 @@ const auto_gen_travel_news = async() => {
             'token': `${MY_TOKEN}`
         },
         data: {
-            "name": "Big man Ray",
-            "email": "bigmanray@gmail.com",
-            "password": "12354900000"
+            "name": NAME,
+            "email": EMAIL,
+            "password": PASSWORD
         }
     };
 
@@ -46,6 +47,8 @@ const auto_gen_travel_news = async() => {
     const { status, statusText } = await response;
     console.log(`Status: ${status} => ${statusText}`);
     console.log(`Message: ${response.data.travel__a.length} has been generated and saved \n =============`);
+    console.log(response.data.travel__a);
+
 }
 
 
