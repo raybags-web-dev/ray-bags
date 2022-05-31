@@ -35,7 +35,7 @@ require("./src/startup/routess").CreateAndSaveBreakingNews(app);
 require("./src/startup/routess").CreateAndSaveTravelNews(app);
 
 // RUN CRON JOBS TOP CRAWL NEWS DAILY EVERY 24 HOURS.
-cron.schedule(cronJobs.daily, async function() {
+cron.schedule(cronJobs.minutely, async function() {
     console.log("Running Crawlers...");
 
     try {
