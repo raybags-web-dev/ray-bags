@@ -7,13 +7,13 @@ const cronJobs = require("./src/cronjobs/cron_jobs");
 require("./src/cors/handleCors")(app);
 // DB handler.
 const connectDB = require("./src/DB/connect");
+// job runner
+const job_runner = require("./src/job_runner/job_runner");
 
 //env variables
 require("dotenv").config();
 const { API_KEY, MONGO_URI, } = process.env;
 
-//auto gen runners.
-const { auto_gen_news, auto_gen_travel_news } = require("./src/runners/auto_gen_news");
 // server static resources 
 app.use(express.static("dist"));
 
@@ -33,31 +33,16 @@ require("./src/startup/routess").GetTravelNews(app);
 require("./src/startup/routess").CreateAndSaveBreakingNews(app);
 //create and save travel news route
 require("./src/startup/routess").CreateAndSaveTravelNews(app);
-
 // RUN CRON JOBS TOP CRAWL NEWS DAILY EVERY 24 HOURS.
-cron.schedule(cronJobs.minutely, async function() {
-    console.log("Running Crawlers...");
-
-    try {
-        await auto_gen_news();
-        await auto_gen_travel_news();
-    } catch (e) {
-        console.log(e.message)
-    }
-});
-
-
-
+cron.schedule(cronJobs.daily, job_runner);
 // Not found route
-app.all('*', (req, res) => {
-    res.status(404).sendFile(__dirname + "/notfound/_404_.html");
-});
+app.all('*', (req, res) => res.status(404).sendFile(__dirname + "/notfound/_404_.html"));
 // handle db connection
 (asyncMiddleware(async() => {
-    console.log("initializing connection  to server...")
+    console.log("initializing connection  to server...");
     connectDB(MONGO_URI);
-    console.log("======= CONNECTED TO DB ========")
-        // Port set-up and start server
+    console.log("======= CONNECTED TO DB ========");
+    // Port set-up and start server
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => console.log(`app is listening on port ${ PORT }`));
 }))();
