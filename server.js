@@ -34,7 +34,7 @@ require("./src/startup/routess").CreateAndSaveBreakingNews(app);
 //create and save travel news route
 require("./src/startup/routess").CreateAndSaveTravelNews(app);
 // RUN CRON JOBS TOP CRAWL NEWS DAILY EVERY 24 HOURS.
-cron.schedule(cronJobs.daily, job_runner);
+cron.schedule(cronJobs.minutely, job_runner);
 // Not found route
 app.all('*', (req, res) => res.status(404).sendFile(__dirname + "/notfound/_404_.html"));
 // handle db connection
