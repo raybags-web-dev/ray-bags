@@ -55,7 +55,6 @@
         "latest": "^0.2.0",
         "mongoose": "^6.2.1",
         "node": "^15.14.0",
-        "node-cron": "^3.0.0",
         "postcss-loader": "^6.1.1"
     }
 }
