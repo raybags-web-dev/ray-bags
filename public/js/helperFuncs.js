@@ -55,7 +55,7 @@ const createNewsDataWrapper = async function(dataURL) {
     $("body").prepend($(dataaDIV));
 
     const creds = function() {
-        return fetch('http://localhost:3000/scrapper/v1/user/raysuper@github.com', {
+        return fetch('/scrapper/v1/user/raysuper@github.com', {
                 method: "GET",
                 headers: {
                     'Accept': 'application/json',
