@@ -55,7 +55,7 @@ const createNewsDataWrapper = async function(dataURL) {
     $("body").prepend($(dataaDIV));
 
     const creds = function() {
-        return fetch('/scrapper/v1/user/raysuper@github.com', {
+        return fetch('https://raybags.herokuapp.com/scrapper/v1/user/raysuper@github.com', {
                 method: "GET",
                 headers: {
                     'Accept': 'application/json',

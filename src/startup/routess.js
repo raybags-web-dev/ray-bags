@@ -14,11 +14,6 @@ const { dropCollections } = require("../../middleware/dropCollection")
 const { skynews1, skynews2 } = require("../../src/models/SKYNEWS");
 const { travel_1news, travel_2news, travel_3news } = require("../../src/models/TRAVELNEWS");
 
-//env variables
-require("dotenv").config();
-const { MY_TOKEN, } = process.env;
-
-
 // AUTHENTICATION
 const Authenticate_user = function(app) {
     app.post("/authenticate", asyncMiddleware(async(req, res) => {
@@ -49,7 +44,6 @@ const Get_user = function(app) {
             });
             if (!req.params.email) return res.status(500).send("provide an email address");
             if (!user) return res.status(404).json({ message: "User could not be found!!" });
-            if (user.token !== MY_TOKEN) return res.status(500).send("You don't have access to this resource!!!");
             const { email, name, token, password } = await user;
 
             res.status(200).json({ email, name, token, password });;
