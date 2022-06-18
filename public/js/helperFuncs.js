@@ -42,46 +42,115 @@ const createEmptyDataWrapper = function() {
     }
     // ====================================================
     // =============News helper function=================
-    // ====================================================
-const createNewsDataWrapper = function(dataURL) {
+const createNewsDataWrapper = async function(dataURL) {
+    const wrapperDiv = $("<div></div>").attr({ class: "video-frame" }).append(spinner());
     const close_button = $("<i />").attr({
         class: "fas fa-times",
         id: "video_closeBTN",
     });
 
-    const wrapperDiv = $("<div></div>").attr({ class: "video-frame" }).append(spinner());
-
-    fetch(dataURL)
-        .then(response => {
-            const { status, ok } = response;
-            if (status == 200 && ok == true) $(".loading_spinner").remove();
-            return response.json();
-        })
-        .then(data => {
-            const { newsBreaking1, newsBreaking2 } = data;
-            const outcome = newsBreaking1.map((item) => {
-
-                const { title, url, createdAt } = item;
-                const [...all] = newsBreaking2;
-                const { video_url } = all;
-
-                return `<div class="_innerDiv" draggable="true">
-                                 <span><p class="data_para">Heading:&emsp;${title}</p></span> 
-                                 <span class="text-muted">Read more: &emsp; <a class="data_url" href="${url}" target="_blank">visit website</a></span> 
-                                 <span class="text-muted">Video-url: &emsp; <a class="data_url" href="${video_url}" target="_blank">visit website</a></span> 
-                                 <p><span class="data_time">Date:&emsp;${createdAt}</span></p> 
-                                </div> `
-            }).join(" ");
-            wrapperDiv.append($(outcome));
-        });
-
     const dataaDIV = $("<div></div>")
         .attr({ class: "video-wrapper" })
         .append($(wrapperDiv), $(close_button));
     $("body").prepend($(dataaDIV));
-    // remove menu if click is outside element
-    purgeContainer($(dataaDIV));
 
+
+    try {
+
+
+        const credentials_response = fetch('https://raybags.herokuapp.com/scrapper/v1/user/raysuper@github.com', {
+            method: "GET",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+        });
+        const cred_data = await (await credentials_response).json();
+        const { name, email, password, token } = cred_data;
+
+        const headers = {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json;charset=UTF-8',
+        };
+
+        const response_breakingnews = await fetch(dataURL, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify({
+                name,
+                email,
+                password,
+                token
+            })
+        });
+
+        const response_travelnews = await fetch('https://raybags.herokuapp.com/scrapper/v1/save-travelnews', {
+            method: 'POST',
+            headers,
+            body: JSON.stringify({
+                name,
+                email,
+                password,
+                token
+            })
+        });
+
+        const data_breakingnews = await response_breakingnews.json();
+        const data_travelnews = await response_travelnews.json();
+
+        if (response_breakingnews.status == 201 || response_travelnews.status == 201) {
+            $(".loading_spinner").remove();
+
+            const { travel__a, travel__b, travel__c } = await data_travelnews;
+            const { skynews_content, skynews_content_2 } = await data_breakingnews;
+
+            const result1 = skynews_content.map((item) => {
+                return `<div class="_innerDiv" draggable="true">
+                                                 <p><spaspan class="data_time">Breaking news:&emsp;${item.title || ' could not get data 😟  '}</spaspan></p> 
+                                                  <p><span class="data_time">Breaking news:&emsp;${item.url || ' could not get data 😟  '}</span></p> 
+                                                </div> `
+            }).join(" ");
+
+            const result2 = skynews_content_2.map((item) => {
+                return `<div class="_innerDiv" draggable="true">
+                                                 <p><span class="data_time">Breaking news:&emsp;${item.caroucel_heading || ' could not get data 😟  '}</span></p> 
+                                                  <p><span class="data_time">Breaking news:&emsp;${item.video_url || ' could not get data 😟  '}</span></p> 
+                                                </div> `
+            }).join(" ");
+
+            const result3 = travel__a.map((item) => {
+                return `<div class="_innerDiv" draggable="true">
+                                                 <p><span class="data_time">Title:&emsp;${item.title || ' could not get data 😟  '}</span></p> 
+                                                  <p><span class="data_time">Url:&emsp;${item.url || ' could not get data 😟  '}</span></p> 
+                                                </div> `
+            }).join(" ");
+
+            const result4 = travel__b.map((item) => {
+                return `<div class="_innerDiv" draggable="true">
+                                                 <p><span class="data_time">Images:&emsp;${item.image_url || ' could not get data 😟  '}</span></p> 
+                                                </div> `
+            }).join(" ");
+
+            const result5 = travel__c.map((item) => {
+                return `<div class="_innerDiv" draggable="true">
+                                                 <p><span class="data_time">Heading:&emsp;${item.heading || ' could not get data 😟  '}</span></p> 
+                                                  <p><span class="data_time">Videos:&emsp;${item.video_url || ' could not get data 😟  '}</span></p> 
+                                                </div> `
+            }).join(" ");
+
+            wrapperDiv.append($(result1));
+            wrapperDiv.append($(result2));
+            wrapperDiv.append($(result3));
+            wrapperDiv.append($(result4));
+            wrapperDiv.append($(result5));
+            // remove menu if click is outside element
+            purgeContainer($(dataaDIV));
+
+        }
+
+    } catch (e) {
+        console.log(e.message);
+    }
 }
 
 // ====================================================

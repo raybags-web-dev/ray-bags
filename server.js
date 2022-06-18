@@ -15,6 +15,8 @@ app.use(express.json());
 
 //authentication route
 require("./src/startup/routess").Authenticate_user(app);
+// get user
+require("./src/startup/routess").Get_user(app);
 //delete route
 require("./src/startup/routess").DeleteUser(app);
 //delete entire collection route

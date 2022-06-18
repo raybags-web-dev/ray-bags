@@ -14,30 +14,50 @@ const { dropCollections } = require("../../middleware/dropCollection")
 const { skynews1, skynews2 } = require("../../src/models/SKYNEWS");
 const { travel_1news, travel_2news, travel_3news } = require("../../src/models/TRAVELNEWS");
 
+//env variables
+require("dotenv").config();
+const { MY_TOKEN, } = process.env;
+
 
 // AUTHENTICATION
 const Authenticate_user = function(app) {
-        app.post("/authenticate", asyncMiddleware(async(req, res) => {
-            const secretToken = await GenToken();
+    app.post("/authenticate", asyncMiddleware(async(req, res) => {
+        const secretToken = await GenToken();
 
-            let user = await User.findOne({
-                email: req.body.email
-            });
-            if (req.body.email == "raybags@github.com" || req.body.name == "Raymond Baguma") return res.status(500).send("this is a demo account. use your email address please")
+        let user = await User.findOne({
+            email: req.body.email
+        });
+        if (req.body.email == "raybags@github.com" || req.body.name == "Raymond Baguma") return res.status(500).send("this is a demo account. use your email address please")
 
-            if (user) return res.status(400).json({ message: "User already exists! Contact admin for your token" });
+        if (user) return res.status(400).json({ message: "User already exists! Contact admin for your token" });
 
-            await User.create({
-                name: req.body.name,
-                email: req.body.email,
-                password: req.body.password,
-                token: secretToken
-            });
-            res.status(201).json({ body: req.email, "your-token": secretToken });
-        }));
+        await User.create({
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password,
+            token: secretToken
+        });
+        res.status(201).json({ body: req.email, "your-token": secretToken });
+    }));
+}
 
-    }
-    // Delete user
+// AUTHENTICATION
+const Get_user = function(app) {
+    app.get("/scrapper/v1/user/:email", asyncMiddleware(async(req, res) => {
+        let user = await User.findOne({
+            email: req.params.email
+        });
+        if (!req.params.email) return res.status(500).send("provide an email address");
+        if (!user) return res.status(404).json({ message: "User could not be found!!" });
+        if (user.token !== MY_TOKEN) return res.status(500).send("You don't have access to this resource!!!");
+        const { email, name, token, password } = await user;
+
+        res.status(200).json({ email, name, token, password });;
+    }));
+
+}
+
+// Delete user
 const DeleteUser = function(app) {
         app.delete("/delete-your-user-account", asyncMiddleware(async(req, res) => {
             let requestBody = req.body;
@@ -191,6 +211,7 @@ const CreateAndSaveTravelNews = function(app) {
 
 module.exports = {
     Authenticate_user,
+    Get_user,
     DeleteUser,
     DeleteCollection,
     GetBreakingNews,
