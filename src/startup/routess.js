@@ -43,21 +43,19 @@ const Authenticate_user = function(app) {
 
 // AUTHENTICATION
 const Get_user = function(app) {
-    app.get("/scrapper/v1/user/:email", asyncMiddleware(async(req, res) => {
-        let user = await User.findOne({
-            email: req.params.email
-        });
-        if (!req.params.email) return res.status(500).send("provide an email address");
-        if (!user) return res.status(404).json({ message: "User could not be found!!" });
-        if (user.token !== MY_TOKEN) return res.status(500).send("You don't have access to this resource!!!");
-        const { email, name, token, password } = await user;
+        app.get("/scrapper/v1/user/:email", asyncMiddleware(async(req, res) => {
+            let user = await User.findOne({
+                email: req.params.email
+            });
+            if (!req.params.email) return res.status(500).send("provide an email address");
+            if (!user) return res.status(404).json({ message: "User could not be found!!" });
+            if (user.token !== MY_TOKEN) return res.status(500).send("You don't have access to this resource!!!");
+            const { email, name, token, password } = await user;
 
-        res.status(200).json({ email, name, token, password });;
-    }));
-
-}
-
-// Delete user
+            res.status(200).json({ email, name, token, password });;
+        }));
+    }
+    // Delete user
 const DeleteUser = function(app) {
         app.delete("/delete-your-user-account", asyncMiddleware(async(req, res) => {
             let requestBody = req.body;

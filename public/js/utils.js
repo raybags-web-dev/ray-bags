@@ -101,7 +101,6 @@ const mainCarocelContainer = function() {
                     if ($(this).index() == 3) return bitcoin("https://rest.coinapi.io/v1/exchanges");
                     return createEmptyDataWrapper();
 
-
                 } catch (e) {
                     console.log(e.message);
                 }
