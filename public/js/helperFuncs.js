@@ -108,36 +108,36 @@ const createNewsDataWrapper = async function(dataURL) {
             const { skynews_content, skynews_content_2 } = await data_breakingnews;
 
             const result1 = skynews_content.map((item) => {
-                return `<div class="_innerDiv" draggable="true">
+                return `<div class="_innerDiv">
                                                  <p><spaspan class="data_time">Breaking news:&emsp;${item.title || ' could not get data 😟  '}</spaspan></p> 
-                                                  <p><span class="data_time">Breaking news:&emsp;${item.url || ' could not get data 😟  '}</span></p> 
+                                                  <p><a class="data_url">Url:&emsp;${item.url || ' could not get data 😟  '}</a></p> 
                                                 </div> `
             }).join(" ");
 
             const result2 = skynews_content_2.map((item) => {
-                return `<div class="_innerDiv" draggable="true">
+                return `<div class="_innerDiv">
                                                  <p><span class="data_time">Breaking news:&emsp;${item.caroucel_heading || ' could not get data 😟  '}</span></p> 
-                                                  <p><span class="data_time">Breaking news:&emsp;${item.video_url || ' could not get data 😟  '}</span></p> 
+                                                  <p><a class="data_url">Url:&emsp;${item.video_url || ' could not get data 😟  '}</a></p> 
                                                 </div> `
             }).join(" ");
 
             const result3 = travel__a.map((item) => {
-                return `<div class="_innerDiv" draggable="true">
+                return `<div class="_innerDiv">
                                                  <p><span class="data_time">Title:&emsp;${item.title || ' could not get data 😟  '}</span></p> 
-                                                  <p><span class="data_time">Url:&emsp;${item.url || ' could not get data 😟  '}</span></p> 
+                                                  <p><a class="data_url">Url:&emsp;${item.url || ' could not get data 😟  '}</a></p> 
                                                 </div> `
             }).join(" ");
 
             const result4 = travel__b.map((item) => {
-                return `<div class="_innerDiv" draggable="true">
-                                                 <p><span class="data_time">Images:&emsp;${item.image_url || ' could not get data 😟  '}</span></p> 
+                return `<div class="_innerDiv">
+                                                 <p><a class="data_url">Image url:&emsp;${item.image_url || ' could not get data 😟  '}</a></p> 
                                                 </div> `
             }).join(" ");
 
             const result5 = travel__c.map((item) => {
-                return `<div class="_innerDiv" draggable="true">
+                return `<div class="_innerDiv">
                                                  <p><span class="data_time">Heading:&emsp;${item.heading || ' could not get data 😟  '}</span></p> 
-                                                  <p><span class="data_time">Videos:&emsp;${item.video_url || ' could not get data 😟  '}</span></p> 
+                                                  <p><a class="data_url">Video url:&emsp;${item.video_url || ' could not get data 😟  '}</a></p> 
                                                 </div> `
             }).join(" ");
 
