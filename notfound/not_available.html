@@ -13,23 +13,55 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <style>
+         :root {
+            --transition: all .3s ease;
+        }
+        
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Courier New', Courier, monospace;
         }
         
-        @media screen and (max-width: 766px) {
+        body,
+        html {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        @media screen and (max-width: 769px) {
             body {
                 overflow: hidden;
             }
             .details {
-                background: rgb(225, 206, 206);
+                background: rgb(247, 91, 91);
+                transition: var(--transition);
             }
             .message {
                 text-align: left;
+                min-width: 100%;
+                min-height: 100%;
+                transition: var(--transition);
             }
             .message h1 {
                 text-transform: uppercase;
                 font-size: .79rem;
+            }
+        }
+        
+        @media(max-width: 682px) {
+            .details {
+                width: 90%;
+                min-height: 90%;
+                border: 10px solid rgba(13, 0, 255, 0.2) !important;
+                transition: var(--transition);
             }
         }
         
@@ -38,26 +70,34 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            border: 2px solid red;
+            border: 10px solid rgba(53, 43, 245, 0.2);
             border-radius: .2rem;
             min-width: 75%;
             height: 70%;
-            backdrop-filter: blur(2px);
-            background: rgba(3, 91, 132, 0.2);
+            -webkit-backdrop-filter: blur(10px);
+            -moz-backdrop-filter: blur(10px);
+            -ms-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            background: rgba(3, 12, 132, 0.1);
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: .5rem;
             overflow: hidden;
+            transition: var(--transition);
         }
         
         .message {
             margin: auto;
-            max-width: 60vw;
+            max-width: 70vw;
+            width: 70vw;
             height: 60vh;
-            background: rgb(255, 0, 0, .2);
+            background: rgba(1, 16, 78, 0.1);
             border-radius: .3rem;
+            -webkit-backdrop-filter: blur(2px);
+            -moz-backdrop-filter: blur(2px);
+            -ms-backdrop-filter: blur(2px);
             backdrop-filter: blur(2px);
             display: flex;
             padding: 1rem;
@@ -65,6 +105,7 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            transition: var(--transition);
         }
         
         .message h1 {
@@ -76,6 +117,12 @@
         
         .message p {
             min-width: 10rem;
+            font-size: 1.2rem;
+        }
+        
+        .text_heading,
+        .text_details {
+            transition: var(--transition);
         }
     </style>
 </head>
@@ -85,18 +132,42 @@
     <div class="carousel slide carousel-fade" style="position: fixed; object-fit: cover; min-width: 100%; top: 0; bottom: 0;  height: 100vh; left: 0;  right: 0;">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <video class="img-fluid" autoplay loop muted style="min-width: 100vw; height: 100vh;">
-                    <source src="https://player.vimeo.com/external/438835400.sd.mp4?s=85c87e77815f34ff3be7bb0e321d48cfcb6eada3&profile_id=165&oauth2_token_id=57447761" type="video/mp4" />
+                <video class="img-fluid" autoplay loop muted style="min-width:100vw; min-height:100vh; object-fit: cover;">
+                    <source src="https://player.vimeo.com/external/422333391.sd.mp4?s=01c7f546cce9c6d6943ae6293ec109ecd532af40&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
                 </video>
             </div>
         </div>
     </div>
     <section class="details">
         <div class="message">
-            <h1>Hi there. thanks for visiting.</h1>
-            <p>For the time being, my site is not ready for viewing. Still working on a few a few updates. Try me later. Thanks for your patience!</p>
+            <h1 class="text_heading">Loading...</h1>
+            <p class="text_details">Loading...</p>
         </div>
     </section>
+    <!-- type.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
+    <script>
+        const configs = [{
+            strings: [" ", "Hi there. thanks for visiting."],
+            typeSpeed: 0,
+            BackSpeed: 0,
+            backDelay: 20000,
+            cursorChar: ' ',
+            loop: true
+        }, {
+            strings: [" ", "For the time being, my site is not ready for viewing. Still working on a few updates. Try me later. Thanks for your time!", ],
+            typeSpeed: 30,
+            backSpeed: 0,
+            cursorChar: '{...}',
+            backDelay: 5000,
+            smartBackspace: true, // this is a default
+            loop: true
+
+        }]
+
+        let typed1 = new Typed(".text_heading", configs[0]),
+            typed2 = new Typed(".text_details", configs[1]);
+    </script>
 </body>
 
 </html>
