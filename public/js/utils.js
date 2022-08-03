@@ -1,37 +1,10 @@
-import "regenerator-runtime/runtime.js";
-const {
+// import "regenerator-runtime/runtime.js";
+import {
     createEmptyDataWrapper,
     createNewsDataWrapper,
     bitcoin,
-} = require("./helperFuncs");
+} from "./helperFuncs.js";
 
-// side apps handler
-const createSideApps = function() {
-    const cv_link = $("<a />").attr({ class: "cv_button", href: "javascript: void(0)", target: "_blank" }).text("CARRICULUM VITAE");
-
-    const inner_side_bar = $("<div></div>").attr({ class: "sidebars-inner" }).append($(cv_link));
-    const sidebar = $("<div></div>").attr({ class: "sidebar-wrapper" }).append($(inner_side_bar));
-    $("body").append($(sidebar));
-};
-// show sidebar apps container on scroll to middle of page
-const sidebarsAppController = function(offset) {
-    if (!offset) return;
-    if ($(window).scrollTop() >= offset) {
-        if ($(".chat-wrapper").is(":visible")) return;
-        $(".sidebar-wrapper").addClass("show_sideapp");
-    } else {
-        $(".sidebar-wrapper").removeClass("show_sideapp");
-    }
-};
-
-// remove sidebar apps container on if icons are clicked
-const side_app_remove = function() {
-    $(".app").each((ind, icon) => {
-        $(icon).on("click", function() {
-            $(".sidebar-wrapper").removeClass("show_sideapp");
-        });
-    });
-};
 // card factory function
 const curacelCard = function() {
     const playIcon = $("<i /> ").attr({ class: "fas fa-play", id: "play-icon" });
@@ -174,7 +147,4 @@ const mainCarocelContainer = function() {
 
 export {
     mainCarocelContainer,
-    sidebarsAppController,
-    createSideApps,
-    side_app_remove,
 };

@@ -2,1150 +2,768 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="Raymond | UI designs, data management and transformation with python, visualization process management" />
-    <meta name="keywords" content=" web design affordable web design professional web design" />
-    <meta name="author" content=" Raymond Baguma" />
-    <link rel="icon" type="image/png" style="border-radius: 50px" sizes="32x32" href="https://github.com/raybags-web-dev/image_base/blob/master/images/logo/logo9_5_21257.jpeg?raw=true" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Raymond | data-egineering | data management, backend development" />
+    <meta name="keywords" content="data data-management backend-developer" />
+    <meta name="author" content="Raymond Baguma" />
     <title>raybags.com</title>
-
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300;1,700;1,900&display=swap" rel="stylesheet">
-
-
-    <!-- font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
-    <!-- ================= Bootstrap CSS CDN  ===========-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.css" integrity="sha512-ZR5Qvbu1SKVAaw/pYzfZXgxopkeMIfZT9VP420W9mfRVUpQnS8WRP75AT3wBoB4toBiaAx7ZsgFOeImr9t9VFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    <!-- favicon -->
+    <link rel="icon" type="image/png" style="border-radius: 50px" sizes="32x32" href="https://github.com/raybags-web-dev/image_base/blob/master/images/logo/logo9_5_21257.jpeg?raw=true" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
-    <!-- ================= Bootstrap CSS CDN  ===========-->
-
-    <!-- Cookie alert -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css" />
+    <!-- scroll reveral animation library  -->
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
-    <!-- Main background image -->
-    <div class="hero-image-bg hide">
-        <img id="bg_image_main" data-src="https://github.com/raybags-web-dev/image_base/blob/master/images/background/bgg5.jpeg?raw=true" alt="hero-img" />
-    </div>
-    <!-- skeleton. -->
-    <div class="skeleton-wrapper">
-        <div class="nav-skeleton">
-            <div class="skeleton-image-nav"></div>
-            <div class="skeleton-icon">
-                <span class="icons"></span>
-                <span class="icons"></span>
-                <span class="icons last-span"></span>
+    <!-- ===== main container start ===== -->
+    <div class="main-container">
+        <!-- === aside start -->
+        <div class="aside">
+            <div id="nav-logo" class="logo">
+                <a href="#"><span>Ray</span>mond</a>
             </div>
-        </div>
-        <div class="skeleton-footer"></div>
-    </div>
-    <!-- skeleton. -->
-    <!-- navbar -->
-    <nav class="nav" id="nav">
-        <div class="nav-center">
-            <!-- nav header -->
-            <div class="nav-header">
+            <!-- nav image -->
+            <div class="nav-image">
                 <!-- nav image logo -->
-                <img id="nav_logo_img" data-src="meeee.jpg" style="max-width: 2.5rem; max-height: 2.5rem; position: absolute" alt="&deg;" class="logo__1" />
-                <!-- nav logo -->
-                <img style="max-width: 2.5rem; max-height: 2.5rem" data-src="new_logoo2.png" class="nav-logo logo__1" alt="&deg;" />
-                <button class="nav-btn" id="nav-btn">
-            <i class="fas fa-bars"></i>
-          </button>
+                <img src="./meeee.jpg" style="border: 6px solid rgba(80, 78, 78, 0.4);padding: .5rem; width:7rem;object-fit:cover;max-width:7rem;border-radius: 50%;height:7rem;max-height:7rem;position:absolute" alt="" />
             </div>
-            <!-- nav-links -->
-            <ul class="nav-links">
-                <li class="active">
-                    <a class="achor-link" href="#home">home</a>
+
+
+            <div class="nav-toggler">
+                <span></span>
+            </div>
+            <!-- nav -->
+            <ul class="nav">
+                <li>
+                    <a href="#home" class="active achor-link"> <i class="fa fa-home"></i>Home</a>
                 </li>
                 <li>
-                    <a class="achor-link" href="#about">about</a>
+                    <a href="#about" class="achor-link"> <i class="fa fa-user "></i>About</a>
                 </li>
                 <li>
-                    <a class="achor-link" href="#services">services</a>
+                    <a href="#services" class="achor-link"> <i class="fa fa-list"></i>Services</a>
                 </li>
                 <li>
-                    <a class="achor-link" href="#projects">projects</a>
+                    <a href="#portfolio" class="achor-link"> <i class="fa fa-briefcase"></i>Projects</a>
                 </li>
                 <li>
-                    <a class="achor-link" href="#loginSection">contact</a>
+                    <a href="#contact" class="achor-link"> <i class="fa fa-comments"></i>Contact</a>
                 </li>
                 <li>
-                    <a class="achor-link" href="#skills">skills</a>
-                </li>
-                <li>
-                    <a class="achor-link" href="#vibes">vibes</a>
+                    <a href="#vibes" class="achor-link"> <i class="fa fa-user-group"></i>Vibes</a>
                 </li>
             </ul>
         </div>
-    </nav>
-    <!-- ===top button=== -->
-    <div id="myBtn" title="to top page" class="hide">
-        <div class="inner-container">
-            <div class="btn-container">
-                <a class="btnn pulsing" href="#home">
-                    <i id="top_button" class="fas fa-chevron-up"></i>
-                </a>
+        <!-- === aside end -->
+        <!-- main content start -->
+        <div class="main-content">
+            <!-- home section start -->
+            <section class="home section" id="home">
+                <div class="container">
+                    <div class="row">
+                        <div class="home-info padd-15">
+                            <h3 class="hello">Hi there, It's <span class="name">Raymond Baguma</span></h3>
+                            <h3 class="my-profession">What I do:&emsp; <span class="typing">Software Engineer</span></h3>
+                            <p>I have experience in data engineering, ETL-ELT development, integration, software and cloud development (aws), database engineering and much more... </p>
+                            <a href="#contact" class="btn hire-me">Hire Me</a>
+                        </div>
+                        <div class="home-img padd-15">
+                            <img src="./meeee.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- home section end  -->
+            <!-- about section start -->
+            <section class="about section" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>About Me</h2>
+                        </div>
+                    </div>
+
+                    <!-- row -->
+                    <div class="row">
+                        <!-- about -->
+                        <div class="about-content padd-15">
+                            <!-- about-text -->
+                            <div class="row">
+                                <div class="about-text padd-15">
+                                    <h3>Short story <span>professionally</span>.</h3>
+                                    <p>
+                                        I work with javaScript, Nodejs, Bootstrap, ReactJS, HTML5, CSS, Scss, Big-Data, Docker, Kubernettes, Databases like Mongodb, Firebase, MySQL andpostgreSQL, aws-cloud solution,
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- row about personal info-->
+                            <div class="row">
+                                <div class="personal-info padd-15">
+                                    <div class="row">
+                                        <div class="info-item padd-15">
+                                            <p>Name: <span>Raymond Baguma</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>City: <span>Amsterdam</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Email: <span>baguma.github@gmail.com</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Speciality: <span>Computer Science</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Website: <span>www.raybags.com</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Phone: <span>0636329324</span></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="buttons padd-15">
+                                            <a href="#" class="btn  hire-me">Download CV</a>
+                                            <a href="#contact" class="btn hire-me">Contact Me</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skills padd-15">
+                                    <div class="skills-item padd-15">
+                                        <h5>JavaScript</h5>
+                                        <div class="progress">
+                                            <div class="progress-in" style="width: 76%;"></div>
+                                            <div class="skill-percent">76%</div>
+                                        </div>
+                                    </div>
+                                    <div class="skills-item padd-15">
+                                        <h5>NodeJs</h5>
+                                        <div class="progress">
+                                            <div class="progress-in" style="width: 80%;"></div>
+                                            <div class="skill-percent">80%</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="skills-item padd-15">
+                                        <h5>HTML</h5>
+                                        <div class="progress">
+                                            <div class="progress-in" style="width: 92%;"></div>
+                                            <div class="skill-percent">92%</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="skills-item padd-15">
+                                        <h5>CSS/SCSS</h5>
+                                        <div class="progress">
+                                            <div class="progress-in" style="width: 80%;"></div>
+                                            <div class="skill-percent">80%</div>
+                                        </div>
+                                    </div>
+                                    <div class="skills-item padd-15">
+                                        <h5>Docker - Kubernettes</h5>
+                                        <div class="progress">
+                                            <div class="progress-in" style="width: 65%;"></div>
+                                            <div class="skill-percent">65%</div>
+                                        </div>
+                                    </div>
+                                    <div class="skills-item padd-15">
+                                        <h5>Python</h5>
+                                        <div class="progress">
+                                            <div class="progress-in" style="width: 50%;"></div>
+                                            <div class="skill-percent">50%</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- row  education-->
+                            <div class="row">
+                                <div class="education padd-15">
+                                    <h3 class="title">Education</h3>
+                                    <div class="row">
+                                        <div class="timeline-box padd-15">
+                                            <div class="timeline shadow-dark">
+                                                <!-- ====== timeline item === -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2016
+                                                    </h3>
+                                                    <h4 class="timeline-title">
+                                                        HTML, CSS, and Libraries
+                                                    </h4>
+                                                    <p class="timeline-text">
+                                                        Best practice core principles, responsive designs, cemantic layout and compatibility.
+                                                    </p>
+                                                </div>
+                                                <!-- end of timeline item -->
+                                                <!-- ====== timeline item === -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2017
+                                                    </h3>
+                                                    <h4 class="timeline-title">
+                                                        JavaScript/jQuery/React
+                                                    </h4>
+                                                    <p class="timeline-text">
+                                                        Best practices, core development principles, state management and code reusability.
+                                                    </p>
+                                                </div>
+                                                <!-- end of timeline item -->
+                                                <!-- ====== timeline item === -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2018
+                                                    </h3>
+                                                    <h4 class="timeline-title">
+                                                        HTML, CSS, and Libraries
+                                                    </h4>
+                                                    <p class="timeline-text">
+                                                        Best practice core principles, responsive designs, cemantic layout and compatibility.
+                                                    </p>
+                                                </div>
+                                                <!-- end of timeline item -->
+                                                <!-- ====== timeline item === -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2019
+                                                    </h3>
+                                                    <h4 class="timeline-title">
+                                                        NodeJs - Api Development
+                                                    </h4>
+                                                    <p class="timeline-text">
+                                                        Data transfer protocols, Api API life cycle, throughout design, development, testing, deployment, mentainance and retirement. Practiced core principles like backwards compatibility.
+                                                    </p>
+                                                </div>
+                                                <!-- end of timeline item -->
+                                                <!-- ====== timeline item === -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2020
+                                                    </h3>
+                                                    <h4 class="timeline-title">
+                                                        Data Engineering.
+                                                    </h4>
+                                                    <p class="timeline-text">
+                                                        Data Modeling, Database designs, ETLs-ELTs Implimentation, DBt tooling, Python and Data-visualization with kibana.
+                                                    </p>
+                                                </div>
+                                                <!-- end of timeline item -->
+                                                <!-- ====== timeline item === -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2021
+                                                    </h3>
+                                                    <h4 class="timeline-title">
+                                                        Cloud computing.
+                                                    </h4>
+                                                    <p class="timeline-text">
+                                                        AWS achitecture, MongoDB, mySQL, postreSQL, and general cloud development.
+                                                    </p>
+                                                </div>
+                                                <!-- end of timeline item -->
+                                                <!-- ====== timeline item === -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2022
+                                                    </h3>
+                                                    <h4 class="timeline-title">
+                                                        Data Engineering.
+                                                    </h4>
+                                                    <p class="timeline-text">
+                                                        Data Modeling, Database designs, ETLs-ELTs Implimentation, DBt tooling, Python and Data-visualization with kibana.
+                                                    </p>
+                                                </div>
+                                                <!-- end of timeline item -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="experience padd-15">
+                                    <h3 class="title">Experience</h3>
+                                    <div class="row">
+                                        <div class="timeline-box padd-15">
+                                            <div class="timeline shadow-dark">
+                                                <!-- ====== timeline item === -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2016
+                                                    </h3>
+                                                    <h4 class="timeline-title">
+                                                        HTML, CSS, and Libraries
+                                                    </h4>
+                                                    <p class="timeline-text">
+                                                        Best practice core principles, responsive designs, cemantic layout and compatibility.
+                                                    </p>
+                                                </div>
+                                                <!-- end of timeline item -->
+                                                <!-- ====== timeline item === -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2017
+                                                    </h3>
+                                                    <h4 class="timeline-title">
+                                                        JavaScript/jQuery/React
+                                                    </h4>
+                                                    <p class="timeline-text">
+                                                        Best practices, core development principles, state management and code reusability.
+                                                    </p>
+                                                </div>
+                                                <!-- end of timeline item -->
+                                                <!-- ====== timeline item === -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2018
+                                                    </h3>
+                                                    <h4 class="timeline-title">
+                                                        HTML, CSS, and Libraries
+                                                    </h4>
+                                                    <p class="timeline-text">
+                                                        Best practice core principles, responsive designs, cemantic layout and compatibility.
+                                                    </p>
+                                                </div>
+                                                <!-- end of timeline item -->
+                                                <!-- ====== timeline item === -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2019
+                                                    </h3>
+                                                    <h4 class="timeline-title">
+                                                        NodeJs - Api Development
+                                                    </h4>
+                                                    <p class="timeline-text">
+                                                        Data transfer protocols, Api API life cycle, throughout design, development, testing, deployment, mentainance and retirement. Practiced core principles like backwards compatibility.
+                                                    </p>
+                                                </div>
+                                                <!-- end of timeline item -->
+                                                <!-- ====== timeline item === -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2020
+                                                    </h3>
+                                                    <h4 class="timeline-title">
+                                                        Data Engineering.
+                                                    </h4>
+                                                    <p class="timeline-text">
+                                                        Data Modeling, Database designs, ETLs-ELTs Implimentation, DBt tooling, Python and Data-visualization with kibana.
+                                                    </p>
+                                                </div>
+                                                <!-- end of timeline item -->
+                                                <!-- ====== timeline item === -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2021
+                                                    </h3>
+                                                    <h4 class="timeline-title">
+                                                        Cloud computing.
+                                                    </h4>
+                                                    <p class="timeline-text">
+                                                        AWS achitecture, MongoDB, mySQL, postreSQL, and general cloud development.
+                                                    </p>
+                                                </div>
+                                                <!-- end of timeline item -->
+                                                <!-- ====== timeline item === -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> 2022
+                                                    </h3>
+                                                    <h4 class="timeline-title">
+                                                        Data Engineering.
+                                                    </h4>
+                                                    <p class="timeline-text">
+                                                        Data Modeling, Database designs, ETLs-ELTs Implimentation, DBt tooling, Python and Data-visualization with kibana.
+                                                    </p>
+                                                </div>
+                                                <!-- end of timeline item -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- about section end -->
+            <!-- Services section start -->
+            <section class="service section" id="services">
+                <div class="container">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>Services</h2>
+                        </div>
+                    </div>
+                    <!-- item -->
+                    <div class="row">
+                        <!-- service item  start-->
+                        <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon"><i class="fa fa-code"></i></div>
+                                <h4>Web Development</h4>
+                                <p>Web development principles, user interractions, client feedback and continous adaptation to the industry standards. </p>
+                            </div>
+                        </div>
+                        <!-- service item  ends-->
+                        <!-- service item  start-->
+                        <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon"><i class="fa fa-database"></i></div>
+                                <h4>Database Management </h4>
+                                <p>Work with relational and Non-relational databases like MongoDB, mySQL, Cassandra, firebase cloud data management </p>
+                            </div>
+                        </div>
+                        <!-- service item  ends-->
+                        <!-- service item  start-->
+                        <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon"><i class="fa fa-chart-bar"></i></div>
+                                <h4>Data Visualization </h4>
+                                <p>Data exploration, visualisation, segmentation, indexing for business decission.</p>
+                            </div>
+                        </div>
+                        <!-- service item  ends-->
+                        <!-- service item  start-->
+                        <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon"><i class="fa fa-robot"></i></div>
+                                <h4> API Management </h4>
+                                <p>Api development with javascript, NodeJs, DBT and data warehouse modeling, Python and data integration.</p>
+                            </div>
+                        </div>
+                        <!-- service item  ends-->
+                        <!-- service item  start-->
+                        <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon"><i class="fa  fa-cloud"></i></div>
+                                <h4>Cloud Computing (AWS) </h4>
+                                <p>Support for Software as a Product, fundamentals of cloud computing specifically with AWS achitecture</p>
+                            </div>
+                        </div>
+                        <!-- service item  ends-->
+                        <!-- service item  start-->
+                        <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon"><i class="fa fa-random"></i></div>
+                                <h4>Saas business awareness</h4>
+                                <p>Well aware of the core principle of a Saas oriented company busniss knowledge and balance between technical and operational knowledge.</p>
+                            </div>
+                        </div>
+                        <!-- service item  ends-->
+                    </div>
+                </div>
+            </section>
+            <!-- Services section end -->
+            <!-- Portfolio section Start -->
+            <section class="portfolio section" id="portfolio">
+                <div class="container">
+                    <!-- portfolio heading -->
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>Projects</h2>
+                        </div>
+                    </div>
+                    <!-- sub-heading -->
+                    <div class="row">
+                        <div class="portfolio-heading padd-15">
+                            <h2>Latest Works</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- portfolio item -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="./need_4_speed.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of portfolio item -->
+                        <!-- portfolio item -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="./businessCard.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of portfolio item -->
+                        <!-- portfolio item -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="./project_2.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of portfolio item -->
+                        <!-- portfolio item -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="./project_3.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of portfolio item -->
+                        <!-- portfolio item -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="./project_3.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of portfolio item -->
+                        <!-- portfolio item -->
+                        <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="./project_3.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of portfolio item -->
+                    </div>
+                </div>
+            </section>
+            <!-- Portfolio section Ends -->
+            <!-- Contact section start -->
+            <section class="contact section" id="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>Contact Me</h2>
+                        </div>
+                    </div>
+                    <h3 class="contact-title padd-15">Do you have any questions ? </h3>
+                    <h4 class="contact-sub-title padd-15">Feel free to reachout</h4>
+                    <div class="row">
+                        <!-- contact info item start -->
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-phone"></i></div>
+                            <h4>Call on</h4>
+                            <p>+31 63 6329 324</p>
+                        </div>
+                        <!-- contact info item ends -->
+                        <!-- contact info item start -->
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-map-location"></i></div>
+                            <h4>Address</h4>
+                            <p>Amsterdam Netherlands</p>
+                        </div>
+                        <!-- contact info item ends -->
+                        <!-- contact info item start -->
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-address-card"></i></div>
+                            <h4>Email</h4>
+                            <p>tonnybags@gmail.com</p>
+                        </div>
+                        <!-- contact info item ends -->
+                        <!-- contact info item start -->
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-globe-europe"></i></div>
+                            <h4>Website</h4>
+                            <p>www.raybags.com</p>
+                        </div>
+                        <!-- contact info item ends -->
+                    </div>
+                    <h3 class="contact-title padd-15" id="proptive">SEND ME AN EMAIL </h3>
+                    <h4 class="contact-sub-title padd-15">I'll get right back to you in no time</h4>
+
+                    <!-- Contact form -->
+                    <div class="row">
+                        <div class="contact-form padd-15">
+                            <div class="row">
+                                <!-- form item -->
+                                <div class="form-item col-6 padd-15">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Name">
+                                    </div>
+                                </div>
+                                <!-- end of form item -->
+                                <!-- form item -->
+                                <div class="form-item col-6 padd-15">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email">
+                                    </div>
+                                </div>
+                                <!-- end of form item -->
+                            </div>
+                            <!-- form row -->
+                            <div class="row">
+                                <div class="form-item col-12 padd-15">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Subject">
+                                    </div>
+                                </div>
+                                <!-- end of form item -->
+                            </div>
+                            <!-- form row -->
+                            <!-- form row -->
+                            <div class="row">
+                                <div class="form-item col-12 padd-15">
+                                    <div class="form-group">
+                                        <textarea name="_message" class="form-control" id="message_area" placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+                                <!-- end of form item -->
+                            </div>
+                            <!-- form row -->
+                            <!-- form row -->
+                            <div class="row">
+                                <div class="form-item col-12 padd-15">
+                                    <button type="submit" class="btn">Send Message</button>
+                                </div>
+                                <!-- end of form item -->
+                            </div>
+                            <!-- form row -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact section start -->
+            <!-- Services section start -->
+            <section class="vibes section" id="vibes">
+                <div class="container">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>Testimonials</h2>
+                        </div>
+                    </div>
+                    <!-- item -->
+                    <div class="row">
+                        <!-- service item  start-->
+                        <div class="vibe-item padd-15">
+                            <div class="vibe-item-inner">
+                                <div class="icon"><i class="fa fa-user-circle"></i></div>
+                                <h4>Jean-Jacques Djonga</h4>
+                                <p>Over the last 3 years I have worked with Raymond and what has been clear in that time frame is even within a company that is proclaimed to be data driven, Raymond clearl lives this.</p>
+                            </div>
+                        </div>
+                        <!-- vibe item  ends-->
+                        <!-- vibe item  start-->
+                        <div class="vibe-item padd-15">
+                            <div class="vibe-item-inner">
+                                <div class="icon"><i class="fa fa-user-circle"></i></div>
+                                <h4>João Romana</h4>
+                                <p>I worked with Raymond in Booking.com, he was in one of my team, and from the beginning I was impressed with his dedication, professionalism and intelligence, besides being a great person. He was continually a great performer.</p>
+                            </div>
+                        </div>
+                        <!-- vibe item  ends-->
+                        <!-- vibe item  start-->
+                        <div class="vibe-item padd-15">
+                            <div class="vibe-item-inner">
+                                <div class="icon"><i class="fa fa-user-circle"></i></div>
+                                <h4>Ivan Cazzamali</h4>
+                                <p>I worked with Raymond at Booking.com. While maintaining great working performance, as well as a friendly attitude during stressful situations, he continuously fed his curiosity towards programming and web development.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- vibe item  ends-->
+                        <!-- vibe item  start-->
+                        <div class="vibe-item padd-15">
+                            <div class="vibe-item-inner">
+                                <div class="icon"><i class="fa fa-user-circle"></i></div>
+                                <h4>Max Yama</h4>
+                                <p>I met Raymond in 2018, and there is nothing I have but respect for this guy. I'm in management but this guy made feel like crossing over to software development. I'd recommend Raymond for any development role in any company.</p>
+                            </div>
+                        </div>
+                        <!-- vibe item  ends-->
+                        <!-- vibe item  start-->
+                        <div class="vibe-item padd-15">
+                            <div class="vibe-item-inner">
+                                <div class="icon"><i class="fa fa-user-circle"></i></div>
+                                <h4>Lorem ipsum</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi voluptas ipsam expedita maiores et, aliquid cum iusto voluptatibus illum velit?</p>
+                            </div>
+                        </div>
+                        <!-- vibe item  ends-->
+                        <!-- vibe item  start-->
+                        <div class="vibe-item padd-15">
+                            <div class="vibe-item-inner">
+                                <div class="icon"><i class="fa fa-user-circle"></i></div>
+                                <h4>Lorem ipsum</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, enim! At rem dicta consequuntur temporibus, fugiat labore repellendus fugit dolorem.</p>
+                            </div>
+                        </div>
+                        <!-- vibe item  ends-->
+                    </div>
+
+                </div>
+            </section>
+            <!-- Services section end -->
+            <!-- main content end  -->
+            <!-- ===== main container end ===== -->
+            <!-- ======= style switcher ======-->
+            <div class="style-switcher">
+                <div class="style-switcher-toggler s-icon">
+                    <i class="fas fa-cog fa-spin"></i>
+                </div>
+                <div class="day-night s-icon">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <h4>Theme Colors</h4>
+                <div class="colors">
+                    <span class="color-1 anch"></span>
+                    <span class="color-2 anch"></span>
+                    <span class="color-3 anch"></span>
+                    <span class="color-4 anch"></span>
+                    <span class="color-5 anch"></span>
+                </div>
+            </div>
+        </div>
+        <footer class="footer-main">
+            <section class="f-main-container padd-15">
+                <div class="inner-footer padd-15">
+                    <span class="icon"><a href="https://github.com/raybags-web-dev" target="_blank" title="Github"><i class="fa-brands fa-github-alt"></i></a></span>
+                    <span class="icon"><a href="#" title="Portfolio"><i class="fa-solid fa-graduation-cap"></i></a></span>
+                    <span class="icon"><a href="https://www.linkedin.com/in/ray-bags/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></span>
+                    <span class="icon"><a href="https://projects-page.netlify.app/" target="_blank" title="projects"><i class="fa-brands fa-staylinked"></i></a></span>
+
+                </div>
+                <div class="outer-footer">
+                    <span class="copyright"><span style="margin-right: .5rem;"><i style="font-size: 13px;" class="fa fa-copyright"></i><span id="current_date" style="margin-right: .5rem;">__</span>copyright</span> raybags.com</span>
+                </div>
+            </section>
+        </footer>
+        <!-- =====spinner====== -->
+        <div id="spinner-container">
+            <div class="loader">Loading...</div>
+        </div>
+        <!-- ===top button=== -->
+        <div id="myBtn" title="to top page" class="hide">
+            <div class="inner-container">
+                <div class="btn-container">
+                    <a class="btnn pulsing" href="#">
+                        <i id="top_button" class="fa-solid fa-chevron-circle-up"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-    <!-- ===top button=== -->
-    <!-- Weather update container -->
-    <div class="time-container">
-        <div class="current-info">
-            <div class="date-container">
-                <div class="time time_Date" id="time">
-                    00:00 <span id="am-pm">PM</span>
-                </div>
-                <div class="date time_Date" id="date">day, date month</div>
-                <div class="others time_Date" id="current-weather-items"></div>
-            </div>
+    <!-- type.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+</body>
 
-            <div class="place-container">
-                <div class="time-zone" id="time-zone">--|--</div>
-            </div>
-        </div>
-    </div>
-    <!-- End of Weather update container -->
-    <!-- end of navbar -->
-    <!-- sidebar -->
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar-inner">
-            <button class="close-btn" id="close-btn">
-          <i class="fas fa-times"></i>
-        </button>
-            <!-- nav-links -->
-            <ul class="sidebar-links">
-                <li>
-                    <a class="link" href="#home">home</a>
-                </li>
-                <li>
-                    <a class="link" href="#about">about</a>
-                </li>
-                <li>
-                    <a class="achor-link" href="#services">services</a>
-                </li>
-                <li>
-                    <a class="link" href="#projects">projects</a>
-                </li>
-                <li>
-                    <a class="link" href="#loginSection">contact</a>
-                </li>
-                <li>
-                    <a class="link" href="#skills">skills</a>
-                </li>
-                <li>
-                    <a class="link" href="#vibes">vibes</a>
-                </li>
-            </ul>
-        </div>
-    </aside>
-    <!-- end of sidebar -->
-    <!-- header -->
-    <header id="home" class="hero">
-        <div class="section-center hero-center">
-            <article class="hero-info">
-                <h1 class="brand-name">i'm raymond</h1>
-
-                <h4 class="skill-desc">
-                    <button class="btn mt-5 shadow-none" disabled>
-                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                          Loading...
-                    </button>
-                </h4>
-                <a id="hireMe" class="btn hero-btn">Reach out</a>
-
-                <!-- social icons -->
-                <ul class="social-icons icons-small-screen">
-                    <li class="hero-box-animate">
-                        <a href="https://facebook.com" target="_blank" class="social-icon foIcon">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="hero-box-animate">
-                        <a href="https://linkedin.com" target="_blank" class="social-icon foIcon">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </li>
-                    <li class="hero-box-animate">
-                        <a href="https://github.com/raybags-web-dev" target="_blank" class="social-icon foIcon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </li>
-                    <li class="hero-box-animate">
-                        <a href="https://instagram.com" target="_blank" class="social-icon foIcon">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                </ul>
-            </article>
-
-            <!-- hero image -->
-            <article class="hero-img hero-mid">
-                <!-- hero image -->
-                <div class="hero-image-wrapper">
-                    <div class="hero-image-catain"></div>
-                    <img style="min-width: 400px; max-height: 400px;" data-src="meeee.jpg" class="hero-photo pilot-hero-photo" alt="&deg;" />
-                </div>
-                <!-- social icons -->
-                <ul class="social-icons hero-social-icon">
-                    <li class="hero-box-animate">
-                        <a href="https://facebook.com" class="social-icon foIcon" target="_blank" rel="noopener">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="hero-box-animate">
-                        <a href="https://linkedin.com" class="social-icon foIcon" target="_blank" rel="noopener">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </li>
-                    <li class="hero-box-animate">
-                        <a href="https://github.com/raybags-web-dev" class="social-icon foIcon" target="_blank" rel="noopener">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </li>
-                    <li class="hero-box-animate">
-                        <a href="https://instagram.com" class="social-icon foIcon" target="_blank" rel="noopener">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                </ul>
-            </article>
-        </div>
-    </header>
-    <!-- end of header -->
-    <!-- about -->
-    <section id="about" class="section about">
-        <div class="section-center about-center">
-            <!-- about img -->
-            <article class="about-img" style="min-width: 300px">
-                <img style=" max-height: max-content; border-top-left-radius: 1rem; border-top-right-radius: 1rem;" data-src="https://github.com/raybags-web-dev/image_base/blob/master/images/background/meme.jpg?raw=true" class="about-hero-photo hero-photo" alt="" />
-                <div class="intro-about">
-                    <h4>My story</h4>
-                    <p>
-                        Hi there, thanks for checkingout my portfolio website. Incase you are a bit curious about me, Here's a little bit more about me.
-                    </p>
-                    <ol>
-                        <li><strong>Name: </strong> Raymond</li>
-                        <br />
-                        <li><strong>Last name: </strong> Baguma</li>
-                        <br />
-                        <li><strong>Human:</strong> True</li>
-                        <br />
-                        <li><strong>Starwars fun: </strong>True</li>
-                        <br />
-                        <li><strong>Fevorite Movie: </strong>Puppet Masters</li>
-                        <br />
-                        <li>
-                            <strong>Interested in:</strong>Frontend development, UI designs with HTML CSS Javascript jQUery and ReactJS, Data managemnet throughout the entire
-                            <q>Data Pipeline including legacy systems such as mainframes</q> [
-                            <strong>Ingestion</strong>,
-                            <strong>Procession</strong>, <strong>Storage</strong>,
-                            <strong>Access</strong>] API development with nodejs and testing. I'm familiar with data-lakes achitecture and data-warehouses and application usecase in a business enterprise.
-                        </li>
-                        <br />
-                        <li><strong>Self-taught:</strong> True</li>
-                        <br />
-                        <li><strong>Projects:</strong> Many Including this website</li>
-                        <br />
-                        <li><strong>Self-driven:</strong> True</li>
-                        <br />
-                        <li><strong>Learning culture:</strong> My thing</li>
-                        <br />
-                        <li>
-                            <strong>Hobbies:</strong> Movies, Driving, Hiking, Gym ...
-                        </li>
-                        <br />
-                    </ol>
-                    <p>Strength</p>
-                    <ol>
-                        <li>
-                            <strong>Analytical mindset:</strong> Recognize, investigate and resolve code anomalies and troubleshooting.
-                        </li>
-                        <br />
-                        <li>
-                            <strong>Team player:</strong> I work and integrate well in a multi-cultural environment
-                        </li>
-                        <li>
-                            <strong>Resilience:</strong> I Intend to succeed against all odds.
-                        </li>
-                        <br />
-                        <li>
-                            <strong>Music:</strong> I'm proud to be a musician. I play Piano, Bass and Drums. So if you are in my City, you might catch me at a local hungout place rocking the stage.
-                        </li>
-                        <br />
-                        <li>
-                            <strong>Life tip:</strong> Life has a way of teaching you lessons that matter the most over and over again. live, let live and stay true to your self.
-                        </li>
-                        <br />
-                        <li>
-                            <strong>Climate Change:</strong> I'm all for a healthy planet and all life on here. Live and let live, be mindful of your environment and imagine you'd live on this rock in the next 200 years.
-                        </li>
-                    </ol>
-                </div>
-            </article>
-            <!-- about info -->
-            <article class="about-info">
-                <!-- section title -->
-                <div class="section-title about-title">
-                    <h2>what I'm all about</h2>
-                    <!-- <div class="underline about_underline"></div> -->
-                </div>
-                <!--end of section title -->
-                <p>
-                    <strong>Framewoks:</strong><br />&dash;&emsp;Nodejs, Bootstrap 4, ReactJS and Django <br /><br />
-                    <strong>Languagues:</strong><br />&dash;&emsp;Javascript, Python, HTML5, CSS, Scss, Auth(Google, Github),XML XSLT, X-PATH (x-query), Elastic-search and KIBANA<br /><br />
-                    <strong>Database Software:</strong><br />&dash;&emsp;MongoDB, Firebase auth, and firestore, MySQL, postgreSQL, aws-cloud solutions among others.<br /><br />
-                    <strong>Tools:</strong><br />&dash;&emsp;Github, Git, Heroku, Oxygen XML Editor, POSTMAN, Visual Studio<br /><br />
-                </p>
-                <p id="achiev-docs">
-                    You can access my academic achievemets through this
-                    <a id="achii" class="achi" style="
-                color: greenyellow !important;
-                font-style: italic !important;
-              " href="#">button</a
-            >
-            or click the
-            <em
-              ><a
-                class="hyperMeLink"
-                style="color: greenyellow !important"
-                href="#"
-                >button</a
-              ></em
-            >
-            below or scroll down to my projects page.
-          </p>
-          <div class="about-btn-container">
-            <a
-              id="achieve"
-              class="btn aboutMeBTN"
-              href="https://achievements.netlify.app/login"
-              target="_blank"
-              rel="noopener"
-              title="email: request.access@raybags.com && password: granted@2021"
-              >Achieved</a
-            >
-            <a id="mySkills" class="btn aboutMeBTN">skills</a>
-        </div>
-        </article>
-        </div>
-    </section>
-    <!-- end of about -->
-    <!-- services -->
-    <section id="services" class="section bg-grey">
-        <!-- section title -->
-        <div class="section-title">
-            <h2>services</h2>
-            <p class="projects-text">
-                Alright let's talk business. The cards below represent a concise summery of some of the core technological paradigms or fields I fancy
-            </p>
-        </div>
-        <!--end of section title -->
-        <div class="services-center section-center">
-            <!-- single service -->
-            <article class="service s_card">
-                <!-- broken line effect -->
-                <div class="box-2"></div>
-                <div class="box-3"></div>
-                <!-- project image -->
-                <i class="fas fa-code service-icon"></i>
-                <h4>web development</h4>
-                <div class="underline"></div>
-                <p>
-                    Web Development specifications on user interractions with a given application. Concentrate on tasks users – both visitors and administrators – need to achieve, going a long way to creating specification that can be benefit both.
-                </p>
-            </article>
-            <!-- end of single service -->
-            <!-- single service -->
-            <article class="service s_card">
-                <!-- broken line effect -->
-                <div class="box-2"></div>
-                <div class="box-3"></div>
-                <!-- project image -->
-                <i class="fab fa-sketch service-icon"></i>
-                <h4>Database Management</h4>
-                <div class="underline"></div>
-                <p>
-                    I'm work confortably with both relational and non-relational databases like <code>MongoDB</code>, <code>mySQL</code>
-                    <code>postgreSQL</code>, i have familiarity with firebase cloud data management, and aws-RDS database entreprise database solution(Aurora)
-                </p>
-            </article>
-            <!-- end of single service -->
-            <!-- single service -->
-            <article class="service s_card">
-                <!-- broken line effect -->
-                <div class="box-2"></div>
-                <div class="box-3"></div>
-                <!-- project image -->
-                <i class="fas fa-chart-bar service-icon"></i>
-                <h4>Data VIsualization</h4>
-                <div class="underline"></div>
-                <p>
-                    Data exploration and or explanations are crusial for decisions that affect business revenue and growth. Tool selection is paramount for data procession, segmentation, market and visualization, as it could mean the difference between the right and or wrong
-                    business choices.
-                </p>
-            </article>
-            <!-- end of single service -->
-            <article class="service s_card">
-                <!-- broken line effect -->
-                <div class="box-2"></div>
-                <div class="box-3"></div>
-                <!-- project image -->
-                <i class="fas fa-robot service-icon"></i>
-                <h4>API Management</h4>
-                <div class="underline"></div>
-                <p>
-                    APIs are vital tools for businesses growth. If scalled well, APIs can allow for faster innovation, easier monetization of company products, and better products while standing out from the competition. I understand ho wimportant a concept APIs are and
-                    how t interract with them.
-                </p>
-            </article>
-            <!-- Software testing  -->
-            <article class="service s_card">
-                <!-- broken line effect -->
-                <div class="box-2"></div>
-                <div class="box-3"></div>
-                <!-- project image -->
-                <i class="fas fa-random service-icon"></i>
-                <h4>aws-cloud achitecture</h4>
-                <div class="underline"></div>
-                <p>
-                    I'm currently working on my aws-developer associate certificationm, and familier with almost all aws-cloud computing, virtual services, monitoring solutions among others like RDS, EC2, VPC ROUTE-53 EFS, S3 and many more.
-                </p>
-            </article>
-
-            <article class="service s_card">
-                <!-- broken line effect -->
-                <div class="box-2"></div>
-                <div class="box-3"></div>
-                <!-- project image -->
-                <i class="fas fa-database service-icon"></i>
-                <h4>Cloud Computing [Azure]</h4>
-                <div class="underline"></div>
-                <p>
-                    Paas, Saas and Iaas are all core services fundamental to business growth specialization. Though in my opinion, choopsing the correct provider for a company micorservice platform for development, production, mentenance and scalability is the greatest challenge.
-                </p>
-            </article>
-            <!-- API managemeneg -->
-        </div>
-    </section>
-    <!-- end of services -->
-    <!-- projects -->
-    <section id="projects" class="section projects">
-        <!-- section title -->
-        <div class="section-title">
-            <h2>latest works</h2>
-            <p class="projects-text">
-                These are some of my projects. You'll be redirected to my projects page. Feel free to explore or you can send me a quick
-                <a href="#loginSection" id="mee" target="" rel="noopener">email</a>
-            </p>
-        </div>
-        <!--end of section title -->
-        <div class="section-center projects-center">
-            <!-- single project -->
-            <a href="https://projects-page.netlify.app/" target="_blank" rel="noopener" class="project-1">
-                <article class="project">
-                    <!-- broken line effect -->
-                    <div class="box-1"></div>
-                    <div class="box-2"></div>
-                    <div class="box-3"></div>
-                    <div class="box-4"></div>
-                    <!-- project image -->
-                    <img data-src="need_4_speed.png" alt="single project" class="project-img" style="max-width: 65rem; max-height: 50rem" />
-                    <div class="project-info">
-                        <h4>Need 4 Speed</h4>
-                        <p>A social app for fast cars build with react, nodejs</p>
-                    </div>
-                </article>
-            </a>
-            <!-- end of single project -->
-            <!-- single project -->
-            <a href="https://projects-page.netlify.app/" target="_blank" rel="noopener" class="project-2">
-                <article class="project">
-                    <!-- broken line effect -->
-                    <div class="box-1"></div>
-                    <div class="box-2"></div>
-                    <div class="box-3"></div>
-                    <div class="box-4"></div>
-                    <!-- project image -->
-                    <img data-src="project_2.jpg" alt="single project" class="project-img" style="max-width: 65rem; max-height: 50rem" />
-                    <div class="project-info">
-                        <h4>Office Design 1</h4>
-                        <p>HTML and CSS design pattern</p>
-                    </div>
-                </article>
-            </a>
-            <!-- end of single project -->
-            <!-- single project -->
-            <a href="https://projects-page.netlify.app/" target="_blank" rel="noopener" class="project-3">
-                <article class="project">
-                    <!-- broken line effect -->
-                    <div class="box-1"></div>
-                    <div class="box-2"></div>
-                    <div class="box-3"></div>
-                    <div class="box-4"></div>
-                    <!-- project image -->
-                    <img data-src="project_3.jpg" alt="single project" class="project-img" style="max-width: 65rem; max-height: 50rem" />
-                    <div class="project-info">
-                        <h4>Business design Apparel</h4>
-                        <p>HTML and CSS design pattern</p>
-                    </div>
-                </article>
-            </a>
-            <!-- end of single project -->
-            <!-- single project -->
-            <a href="https://projects-page.netlify.app/" target="_blank" rel="noopener" class="project-4">
-                <article class="project">
-                    <!-- broken line effect -->
-                    <div class="box-1"></div>
-                    <div class="box-2"></div>
-                    <div class="box-3"></div>
-                    <div class="box-4"></div>
-                    <!-- project image -->
-                    <img data-src="businessCard.png" alt="single project" class="project-img" style="max-width: 65rem; max-height: 50rem" />
-                    <div class="project-info">
-                        <h4>Business Card design</h4>
-                        <p>HTML and CSS design pattern</p>
-                    </div>
-                </article>
-            </a>
-            <!-- end of single project -->
-        </div>
-    </section>
-    <!-- end of projects -->
-
-    <!-- ========================= Login Form and map ================================================ -->
-    <section id="loginSection" class="section login-section">
-        <!-- section title -->
-        <div class="section-title">
-            <h2>keep in touch</h2>
-        </div>
-        <!--end of section title -->
-        <div class="services-center section-center login">
-            <!-- contact form  -->
-            <div class="login-wrapper">
-                <h1 class="login-title">Let's Talk</h1>
-                <form name="contact" method="POST" class="login-form" action="#" id="contact_me_form">
-                    <div class="input-group">
-                        <label>Name</label>
-                        <input type="text" name="name" placeholder="name" autocomplete="off" />
-                    </div>
-                    <div class="input-group email_input">
-                        <label>Email</label>
-                        <input type="email" name="email" placeholder="email" required="true" autocomplete="off" />
-                    </div>
-
-                    <div class="input-group text_input">
-                        <label>Your message</label>
-                        <textarea placeholder="type your message here" name="message" required="true" cols="23" rows="5" autocomplete="off"></textarea>
-                    </div>
-                    <div class="input-group radios">
-                        <div class="fan_input">
-                            <label for="employer">
-                  <input
-                    type="radio"
-                    id="employer"
-                    name="radio"
-                    value="Employer"
-                    required="true"
-                  />
-                  Employer
-                </label>
-                        </div>
-                        <div class="starwars_input">
-                            <label for="fan">
-                  <input
-                    type="radio"
-                    id="fan"
-                    name="radio"
-                    required="true"
-                    value="Fan"
-                  />
-                  Fan
-                </label>
-                        </div>
-                    </div>
-                    <button type="submit" title="Looking forward to hearing from you." class="login-button">
-              Click to Send
-            </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- skills -->
-    <section id="skills" class="section skills">
-        <!-- section title -->
-        <div class="section-title">
-            <h2>skills</h2>
-        </div>
-        <!--end of section title -->
-        <div class="section-center skills-center">
-            <article>
-                <h3>front end</h3>
-                <!-- single skill -->
-                <div class="skill">
-                    <p>HTML/CSS/SASS</p>
-                    <div class="skill-container">
-                        <div class="skill-value value-90">
-                            <p class="skill-text skill-text-90">90%</p>
-                        </div>
-                    </div>
-                </div>
-                <!--end of  single skill -->
-                <!-- single skill -->
-                <div class="skill">
-                    <p>Javascript | jQuery</p>
-                    <div class="skill-container">
-                        <div class="skill-value value-80">
-                            <p class="skill-text skill-text-85">80%</p>
-                        </div>
-                    </div>
-                </div>
-                <!--end of  single skill -->
-                <!-- single skill -->
-                <div class="skill">
-                    <p>React</p>
-                    <div class="skill-container">
-                        <div class="skill-value value-70">
-                            <p class="skill-text skill-text-85">70%</p>
-                        </div>
-                    </div>
-                </div>
-                <!--end of  single skill -->
-            </article>
-            <article>
-                <h3>back end</h3>
-                <!-- single skill -->
-                <div class="skill">
-                    <p>NodeJS-Express</p>
-                    <div class="skill-container">
-                        <div class="skill-value value-80">
-                            <p class="skill-text skill-text-85">75%</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- single skill -->
-                <div class="skill">
-                    <p>API Management| testing</p>
-                    <div class="skill-container">
-                        <div class="skill-value value-80">
-                            <p class="skill-text skill-text-80">80%</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- single skill -->
-                <div class="skill">
-                    <p>Python (jupyter | pyCharm)</p>
-                    <div class="skill-container">
-                        <div class="skill-value value-90">
-                            <p class="skill-text skill-text-90">80%</p>
-                        </div>
-                    </div>
-                </div>
-                <!--end of  single skill -->
-                <!-- single skill -->
-            </article>
-
-            <article>
-                <h3>Data Engineering(Data Streaming)</h3>
-                <!-- single skill -->
-                <div class="skill">
-                    <p>Data pub/sub streaming (Kafka)</p>
-                    <div class="skill-container">
-                        <div class="skill-value value-75">
-                            <p class="skill-text skill-text-75">75%</p>
-                        </div>
-                    </div>
-                </div>
-                <!--end of  single skill -->
-                <!-- single skill -->
-                <div class="skill">
-                    <p>ETL/ELT workflow(Apache Spark framework)</p>
-                    <div class="skill-container">
-                        <div class="skill-value value-75">
-                            <p class="skill-text skill-text-75">75%</p>
-                        </div>
-                    </div>
-                </div>
-                <!--end of  single skill -->
-                <!-- single skill -->
-                <div class="skill">
-                    <p>Data storage (Hadoop cluster management)</p>
-                    <div class="skill-container">
-                        <div class="skill-value value-75">
-                            <p class="skill-text skill-text-75">75%</p>
-                        </div>
-                    </div>
-                </div>
-                <!--end of  single skill -->
-            </article>
-
-            <article>
-                <h3>Database Technologies</h3>
-                <!-- single skill -->
-                <div class="skill">
-                    <p>SQL(mySQL)</p>
-                    <div class="skill-container">
-                        <div class="skill-value value-75">
-                            <p class="skill-text skill-text-75">75%</p>
-                        </div>
-                    </div>
-                </div>
-                <!--end of  single skill -->
-                <!-- single skill -->
-                <div class="skill">
-                    <p>postgrSQL</p>
-                    <div class="skill-container">
-                        <div class="skill-value value-75">
-                            <p class="skill-text skill-text-75">75%</p>
-                        </div>
-                    </div>
-                </div>
-                <!--end of  single skill -->
-                <!-- single skill -->
-                <div class="skill">
-                    <p>MongoDB (Mongoose)</p>
-                    <div class="skill-container">
-                        <div class="skill-value value-75">
-                            <p class="skill-text skill-text-75">75%</p>
-                        </div>
-                    </div>
-                </div>
-                <!--end of  single skill -->
-            </article>
-        </div>
-    </section>
-    <!-- end of skills -->
-    <!-- timeline -->
-    <section id="timeline" class="section timeline">
-        <!-- section title -->
-        <div class="section-title">
-            <h2>timeline</h2>
-        </div>
-        <!--end of section title -->
-        <div class="section-center timeline-center">
-            <!-- single timeline item -->
-            <article class="timeline-item">
-                <h4>2021</h4>
-                <p>
-                    Case Study: Data Engineering (Async Big-Data streaming) from injention, streaming with
-                    <a href="https://kafka.apache.org/">Apache Kafka</a> pub/sub archtecture, ETL, custom-ETLs && ELT development procedures with Apache-Spark for Business-Intelligence and data-analytics.
-                </p>
-                <span class="number"> 4 </span>
-            </article>
-            <!-- end of  single timeline item -->
-            <!-- single timeline item -->
-            <article class="timeline-item">
-                <h4>2020</h4>
-                <p>
-                    Case Study: source collaborations with colleagues and mentors,
-                    <code><a
-                href="https://developer.mozilla.org/en-US/docs/Web/API"
-                target="_blank"
-                rel="noopener"
-                >API</a
-              ></code
-            >
-            management, relational and non-relational database-integration and
-            procedures with
-            <q
-              ><a href="https://www.mongodb.com/" target="_blank" rel="noopener"
-                >MongoDB</a
-              ></q
-            >,
-            <q
-              ><a href="https://www.mongodb.com/" target="_blank" rel="noopener"
-                >SQL</a
-              ></q
-            >,
-            <q
-              ><a
-                href="https://firebase.google.com/?gclid=CjwKCAiAzrWOBhBjEiwAq85QZ0HERhExpEPavSBdF8lZP5KmDcY42UTGuv2VnYRluJ4zP82BIQDnjBoCGCsQAvD_BwE&gclsrc=aw.ds"
-                target="_blank"
-                rel="noopener"
-                >firebase</a
-              ></q
-            >,
-            <q
-              ><a href="https://www.elastic.co/" target="_blank" rel="noopener"
-                >elastic-search/indexing</a
-              ></q
-            >, state management, and overall product life-cicle
-          </p>
-          <span class="number"> 3 </span>
-        </article>
-        <!-- end of  single timeline item -->
-        <!-- single timeline item -->
-        <article class="timeline-item">
-          <h4>2019</h4>
-          <p>
-            Case Study:
-            <q
-              ><a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-                target="_blank"
-                rel="noopener"
-                >JavaScript</a
-              ></q
-            >, and it's libraries like
-            <q
-              ><a
-                href="https://developer.mozilla.org/en-US/docs/Glossary/jQuery"
-                target="_blank"
-                rel="noopener"
-                >jQuery</a
-              ></q
-            >, and
-            <q
-              ><a href="https://reactjs.org/" target="_blank" rel="noopener"
-                >ReactJS</a
-              ></q
-            >, best practives, and core principles like single-responsibility
-            module-based development, backwards-compatibility, run-time
-            environment [ NodeJs ], front-end tooling and interractivity.
-          </p>
-          <span class="number"> 2 </span>
-        </article>
-        <!-- end of  single timeline item -->
-        <!-- single timeline item -->
-        <article class="timeline-item">
-          <h4>2018</h4>
-          <p>
-            Case study:
-            <code
-              ><a
-                href="https://developer.mozilla.org/en-US/docs/Web/HTML"
-                target="_blank"
-                rel="noopener"
-                >HTML</a
-              ></code
-            >,
-            <code
-              ><a
-                href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction"
-                target="_blank"
-                rel="noopener"
-                >CSS/SASS</a
-              ></code
-            >, the
-            <q
-              ><a
-                href="https://developer.mozilla.org/en-US/docs/Web/CSS"
-                target="_blank"
-                rel="noopener"
-                >DOM</a
-              ></q
-            >
-            and its libraries like
-            <q
-              ><a
-                href="https://getbootstrap.com/docs/4.5/getting-started/introduction/"
-                target="_blank"
-                rel="noopener"
-                >Bootstrap</a
-              ></q
-            >, best practices, responsive designs, cemantic html and
-            compatibility.
-          </p>
-          <span class="number"> 1 </span>
-        </article>
-        <!-- end of  single timeline item -->
-      </div>
-    </section>
-    <!--end of  timeline -->
-    <!-- Testimonials-->
-    <section id="vibes" class="section blog">
-      <!-- section title -->
-      <div class="section-title">
-        <h2 data-aos="zoom-in-down vibe-container">testimonials</h2>
-      </div>
-      <!--end of section title -->
-      <div class="section-center blog-center">
-        <!-- single article -->
-        <div class="card blog-card">
-          <!-- front of the card -->
-          <div class="card-side card-front">
-            <!-- font-for face -->
-            <div class="profile-icon">
-              <i class="far fa-user-circle icon_prof"></i>
-            </div>
-            <div class="card-info">
-              <h4>Jean-Jacques Djonga</h4>
-              <p>
-                Over the last 3 years I have worked with Raymond and what has
-                been clear in that time frame is even within a company that is
-                proclaimed to be data driven, Raymond clearlyepitomises and
-                lives ...
-              </p>
-              <div class="card-footer">
-                <p class="individual_name">linkedIn</p>
-              </div>
-            </div>
-          </div>
-          <!-- card back  -->
-          <div class="card-side card-back">
-            <p class="card-back-info">
-              Over the last 3 years I have worked with Raymond and what has been
-              clear in that time frame is even within a company that is
-              proclaimed to be data driven, Raymond clearlyepitomises and lives
-              this. Having been privy to many of his API projects, I have been
-              impressed by his knowledge of data integration.__2021
-            </p>
-          </div>
-        </div>
-        <!-- end of single article -->
-        <!-- single article -->
-        <div class="card blog-card">
-          <!-- front of the card -->
-          <div class="card-side card-front">
-            <!-- font-for face -->
-            <div class="profile-icon">
-              <i class="far fa-user-circle icon_prof"></i>
-            </div>
-            <div class="card-info">
-              <h4>João Romana</h4>
-              <p>
-                I worked with Raymond in Booking.com, he was in one of my team,
-                and from the beginning I was impressed with his dedication,
-                professionalism and ...
-              </p>
-              <div class="card-footer">
-                <p class="individual_name">linkedIn</p>
-              </div>
-            </div>
-          </div>
-          <!-- card back  -->
-          <div class="card-side card-back">
-            <p class="card-back-info">
-              I worked with Raymond in Booking.com, he was in one of my team,
-              and from the beginning I was impressed with his dedication,
-              professionalism and intelligence, besides being a great person. He
-              was continually a great performer, a curious fellow and had a keen
-              eye for detail, not only in is work but also in his questions. I’m
-              happy to recommend Raymond to any position. __2021
-            </p>
-          </div>
-        </div>
-        <!-- end of single article -->
-        <!-- single article -->
-        <div class="card blog-card">
-          <!-- front of the card -->
-          <div class="card-side card-front">
-            <!-- font-for face -->
-            <div class="profile-icon">
-              <i class="far fa-user-circle icon_prof"></i>
-            </div>
-            <div class="card-info">
-              <h4>Ivan Cazzamali</h4>
-              <p>
-                I worked with Raymond at Booking.com. While maintaining great
-                working performance, as well as a friendly attitude during
-                stressful situations ...
-              </p>
-              <div class="card-footer">
-                <p class="individual_name">linkedIn</p>
-              </div>
-            </div>
-          </div>
-          <!-- card back  -->
-          <div class="card-side card-back">
-            <p class="card-back-info">
-              I worked with Raymond at Booking.com. While maintaining great
-              working performance, as well as a friendly attitude during
-              stressful situations, he continuously fed his curiosity towards
-              programming and web development. Keeping an eye towards the
-              future, combined with the energy to follow through commitments is
-              only one of the traits that I admire in Raymond. He always takes
-              feedback as an opportunity to become better, which is a great way
-              to learn fast.I was delighted to work with him and am sure he'll
-              do great things in the future.__2021
-            </p>
-          </div>
-        </div>
-        <!-- end of single article -->
-        <!-- single article -->
-        <div class="card blog-card">
-          <!-- front of the card -->
-          <div class="card-side card-front">
-            <!-- font-for face -->
-            <div class="profile-icon">
-              <i class="far fa-user-circle icon_prof"></i>
-            </div>
-            <div class="card-info">
-              <h4>Max Yama</h4>
-              <p>
-                 I met Raymond in 2018, and there is nothing I have but respect fo this guy. He is a proffessional
-              and dedicated to his craft in software development. I'm in...
-              </p>
-              <div class="card-footer">
-                <p class="individual_name">linkedin</p>
-              </div>
-            </div>
-          </div>
-          <!-- card back  -->
-          <div class="card-side card-back">
-            <p class="card-back-info">
-              I met Raymond in 2018, and there is nothing I have but respect fo this guy. He is a proffessional
-              and dedicated to his craft in software development. I'm in management but this guy almost 
-              made feel like crossing over to software development.
-              He has showed resilience in self study, learning new tools, and solving problems as a part of a team.
-              I'd recommend Raymond for any role in any company 👍🏾 👍🏾 👍🏾 
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ========================= Login form and map ================================================= -->
-    <!--Cookie-Alert -->
-    <div id="cookie_container" class="alert text-center cookiealert">
-      <div class="cookie_para">
-        <p>
-          My site uses cookies to ensure you get the best experience on your
-          visit.
-        </p>
-      </div>
-      <div class="cookie_buttons">
-        <a
-          id="cookie_link_more"
-          class="btn-sm"
-          href="https://cookiesandyou.com/"
-          target="_blank"
-          rel="noopener"
-          >Learn more</a
-        >
-        <button id="cookie_btnn" type="button" class="btn-sm acceptcookies">
-          I accept
-        </button>
-      </div>
-    </div>
-
-    <!-- ===================cookie==================== -->
-
-    <footer class="text-center footer">
-      <!-- Grid container -->
-      <div class="container-fluid p-5">
-        <!--Grid row-->
-        <div class="row content-container">
-          <!--Grid column-->
-          <div class="col-lg-6 col-md-12 mb-4 mb-md-0 footer-name">
-            <h5 class="text-uppercase">Raymond</h5>
-            <p class="footer-details">
-              Feel to drop me an email or
-              <span
-                ><a href="callto:+31636329324" target="_blank" rel="noopener"
-                  >call</a
-                ></span
-              >
-              &ThickSpace;<br />
-              <br />
-              Phone: <span class="phone">+31-636-329-324</span><br />Email:
-              <a
-                href="mailto:baguma.github@gmail.com"
-                target="_blank"
-                rel="noopener"
-                class="mail"
-                >baguma.github@gmail.com
-              </a>
-            </p>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-0 mb-1 mb-md-0 footer-link-header">
-            <h5 class="text-uppercase">social links</h5>
-
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#" target="_blank" rel="noopener" class="footer_link"
-                  ><i class="fab fa-instagram" title="Instagram"></i
-                  >instagram</a
-                >
-              </li>
-              <li>
-                <a href="#" target="_blank" rel="noopener" class="footer_link"
-                  ><i class="fab fa-facebook"></i>facebook</a
-                >
-              </li>
-              <li>
-                <a href="#" target="_blank" rel="noopener" class="footer_link"
-                  ><i class="fab fa-twitter"></i>twitter</a
-                >
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-0 mb-1 mb-md-0 footer-link-header">
-            <h5 class="text-uppercase mb-0">professional links</h5>
-
-            <ul class="list-unstyled">
-              <li>
-                <a
-                  href="https://github.com/raybags-web-dev"
-                  target="_blank"
-                  rel="noopener"
-                  class="footer_link"
-                  ><i class="fab fa-github" title="Github"></i>github</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.hackerrank.com/baguma_github"
-                  target="_blank"
-                  rel="noopener"
-                  class="footer_link"
-                  ><i class="fab fa-hackerrank" title="HackerRank"></i
-                  >hackrank</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/ray-baguma/"
-                  target="_blank"
-                  rel="noopener"
-                  class="footer_link"
-                  ><i class="fab fa-linkedin" title="LinkedIn"></i>linkedIn</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Copyright -->
-      <div
-        id="bot-footer"
-        class="text-center p-3 footer-bottom"
-        style="background: rgb(20,20,20)"
-      >
-        &copy; <strong class="copyrightYear">20__</strong> All rights reserved.
-        <a class="text-white" href="https://www.raybags.com"></a>
-      </div>
-      <!-- Copyright -->
-    </footer>
-
-    <!-- ===== jQuery =========-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- ===== Material Bootstrap =========-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-    <!-- Moment JS -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
-      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <!-- cookie alert CDN script-->
-    <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
-  </body>
 </html>
