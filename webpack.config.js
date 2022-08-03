@@ -6,11 +6,8 @@ module.exports = {
     mode: (process.env.NODE_ENV = "production"),
     entry: {
         build_1: [
-            "./public/js/style-switcher.js",
             "./public/js/typying.js",
             "./public/js/index.js",
-            "./public/js/animations.js",
-            "./public/js/jquery.js",
         ],
     },
     output: {
