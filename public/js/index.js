@@ -1,11 +1,4 @@
 "use strict"
-import { JQUERY } from "./jquery.js";
-import { MY_ANIMATIONS } from "./animations";
-import { STYLE_SWITCHER } from "./style-switcher";
-
-JQUERY();
-MY_ANIMATIONS();
-STYLE_SWITCHER();
 
 const menuButton = document.querySelector('.nav-toggler');
 const sideMenu = document.querySelector('.aside');

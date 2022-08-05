@@ -1,19 +1,19 @@
 {
-    "workbench.sideBar.location": "left",
-    "workbench.tree.indent": 9,
-    "workbench.editor.closeOnFileDelete": true,
-    "workbench.editor.labelFormat": "long",
-    "screencastMode.fontSize": 60,
-    "cSpell.ignoreWords": [
-        "blassy",
-        "impliment",
-        "in",
-        "javascripts",
-        "jquery",
-        "mainpage",
-        "mind",
-        "proj",
-        "scrollspy"
-    ],
-    "liveServer.settings.port": 5501
+  "workbench.sideBar.location": "left",
+  "workbench.tree.indent": 9,
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.editor.labelFormat": "long",
+  "screencastMode.fontSize": 60,
+  "cSpell.ignoreWords": [
+    "blassy",
+    "impliment",
+    "in",
+    "javascripts",
+    "jquery",
+    "mainpage",
+    "mind",
+    "proj",
+    "scrollspy"
+  ],
+  "liveServer.settings.port": 5502
 }

@@ -14,8 +14,27 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
+    <!-- styles -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- style switcher -->
+    <link rel="stylesheet" href="./css/skins/color-1.css" class="alternate-style" title="color-1" disabled>
+    <link rel="stylesheet" href="./css/skins/color-2.css" class="alternate-style" title="color-2" disabled>
+    <link rel="stylesheet" href="./css/skins/color-3.css" class="alternate-style" title="color-3" disabled>
+    <link rel="stylesheet" href="./css/skins/color-4.css" class="alternate-style" title="color-4" disabled>
+    <link rel="stylesheet" href="./css/skins/color-5.css" class="alternate-style" title="color-5" disabled>
+
+    <link rel="stylesheet" href="./css/style-switcher.css">
+    <link rel="stylesheet" href="./css/caroucel.css">
+    <link rel="stylesheet" href="./css/spinner.css">
     <!-- scroll reveral animation library  -->
     <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- js files -->
+    <script src="./js/typying.js" defer></script>
+    <script src="./js/style-switcher.js" defer></script>
+    <script src="./js/index.js" defer></script>
+    <script src="./js/animations.js" defer></script>
+    <script type="module" src="./js/jquery.js" defer></script>
+
 </head>
 
 <body>
@@ -29,7 +48,7 @@
             <!-- nav image -->
             <div class="nav-image">
                 <!-- nav image logo -->
-                <img src="./meeee.jpg" style="border: 6px solid rgba(80, 78, 78, 0.4);padding: .5rem; width:7rem;object-fit:cover;max-width:7rem;border-radius: 50%;height:7rem;max-height:7rem;position:absolute" alt="" />
+                <img src="./images/meeee.jpg" style="border: 6px solid rgba(80, 78, 78, 0.4);padding: .5rem; width:7rem;object-fit:cover;max-width:7rem;border-radius: 50%;height:7rem;max-height:7rem;position:absolute" alt="" />
             </div>
 
 
@@ -72,7 +91,7 @@
                             <a href="#contact" class="btn hire-me">Hire Me</a>
                         </div>
                         <div class="home-img padd-15">
-                            <img src="./meeee.jpg" alt="">
+                            <img src="./images/meeee.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -491,7 +510,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="./need_4_speed.png" alt="">
+                                    <img src="./images/need_4_speed.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -500,7 +519,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="./businessCard.png" alt="">
+                                    <img src="./images/businessCard.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -509,7 +528,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="./project_2.jpg" alt="">
+                                    <img src="./images/project_2.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -518,7 +537,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="./project_3.jpg" alt="">
+                                    <img src="./images/project_3.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -527,7 +546,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="./project_3.jpg" alt="">
+                                    <img src="./images/project_3.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -536,7 +555,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="./project_3.jpg" alt="">
+                                    <img src="./images/project_3.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -723,11 +742,11 @@
                 </div>
                 <h4>Theme Colors</h4>
                 <div class="colors">
-                    <span class="color-1 anch"></span>
-                    <span class="color-2 anch"></span>
-                    <span class="color-3 anch"></span>
-                    <span class="color-4 anch"></span>
-                    <span class="color-5 anch"></span>
+                    <span class="color-1 anch" onclick="setActiveStyle('color-1')"></span>
+                    <span class="color-2 anch" onclick="setActiveStyle('color-2')"></span>
+                    <span class="color-3 anch" onclick="setActiveStyle('color-3')"></span>
+                    <span class="color-4 anch" onclick="setActiveStyle('color-4')"></span>
+                    <span class="color-5 anch" onclick="setActiveStyle('color-5')"></span>
                 </div>
             </div>
         </div>
