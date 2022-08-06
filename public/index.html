@@ -33,8 +33,7 @@
     <script src="./js/style-switcher.js" defer></script>
     <script src="./js/index.js" defer></script>
     <script src="./js/animations.js" defer></script>
-    <!-- <script src="./js/utils.js"></script> -->
-
+    <script type="module" src="./js/utils.js" defer></script>
 </head>
 
 <body>
@@ -783,7 +782,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
     <!-- jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
-    <script type="module" src="./js/jquery.js"></script>
+
+    <script type="module">
+        import { mainCarocelContainer } from "./js/utils.js"; document.addEventListener('DOMContentLoaded', function() { $('#spinner-container').addClass('hidden'); showHideTopBtn(); handleNavANimation(); mainCarocelContainer(), setTimeout(() => { $("#myBtn").removeClass("hide");
+        }, 1000); function showHideTopBtn() { if ($(window).scrollTop() > 400) { $("#myBtn").css({ right: "0%", transition: "800ms" })} else { $("#myBtn").css({ right: "-20%", transition: "800ms" }); } }; $('.style-switcher-toggler').on('click', () =>
+        { if (!$('.style-switcher').hasClass('open')) { return $('.anch').removeClass('clr-animate'); } $('.anch').each((index, ele) => { $(ele).delay(80 * index).queue(function() { $(this).addClass("clr-animate").dequeue(); }) }) }); function handleNavANimation()
+        { if ($(window).scrollTop() > 901) { $(".nav-image").addClass('slideInNavImg'); $("#nav-logo").addClass('slideInNavText'); } else { $(".nav-image").removeClass('slideInNavImg'); $("#nav-logo").removeClass('slideInNavText')}}; $(window).on("scroll",
+        () => { showHideTopBtn(); handleNavANimation(); }); });
+    </script>
 </body>
 
 </html>
