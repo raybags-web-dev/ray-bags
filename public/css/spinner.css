@@ -6,11 +6,11 @@
     height: 100vh;
     display: grid;
     z-index: 1000;
-    background-image: linear-gradient(to top, rgb(2, 34, 72) 0%, rgb(72, 85, 99, .6) 100%);
     background-blend-mode: multiply;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     place-content: center;
+    background: linear-gradient(to top, rgba(0, 26, 122, 0.5)0%, rgba(0, 0, 0, 0.5)100%);
     transform: translate(-50%, -50%);
 }
 
@@ -103,7 +103,7 @@
 }
 
 .loader_6 {
-    color: #ffffff;
+    color: #a30000;
     font-size: 90px;
     text-indent: -9999em;
     overflow: hidden;

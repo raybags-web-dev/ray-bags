@@ -24,7 +24,8 @@ const all_anchors = Array.from(document.querySelectorAll('.anch')).forEach((span
             (e.target.classList.contains('color-2')) ? setActiveStyle('color-2') :
             (e.target.classList.contains('color-3')) ? setActiveStyle('color-3') :
             (e.target.classList.contains('color-4')) ? setActiveStyle('color-4') :
-            setActiveStyle('color-5')
+            (e.target.classList.contains('color-5')) ? setActiveStyle('color-5') :
+            setActiveStyle('color-default')
     })
 })
 

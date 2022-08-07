@@ -1,0 +1,43 @@
+          :root {
+             --skin-color: #1e1e1e;
+             /* text-shadow: 1px 1px #212121; */
+         }
+         
+          ::-webkit-scrollbar-thumb {
+             background-color: #ff0000;
+         }
+         
+         .h2::before,
+         .h2::before {
+             background-color: red !important;
+         }
+         
+         .aside .nav-toggler span,
+         .aside .nav-toggler span:before,
+         .aside .nav-toggler span:after,
+         .menu_effect.nav-toggler span,
+         .menu_effect.nav-toggler span:before,
+         .menu_effect.nav-toggler span:after {
+             background: red;
+         }
+         
+         section {
+             background: #787777;
+         }
+         
+         .btn:hover {
+             color: #898989;
+             border: 2px solid #ffffff;
+         }
+         
+         .about .about-content .skills .skills-item .progress .progress-in {
+             background-color: rgb(79, 80, 79);
+         }
+         
+         .aside .nav li a.active {
+             color: #ff0000;
+         }
+         
+         .white_text {
+             color: #a6a3a3 !important;
+         }
