@@ -787,12 +787,12 @@
 
     <script type="module">
         import { mainCarocelContainer } from "./js/utils.js"; document.addEventListener('DOMContentLoaded', function() { /*$('#spinner-container').addClass('hidden');*/ console.log(`Hi! This website is still under massive content update. Come visit latter. You
-        can call me on 031636329324.`); return $('html, body').css({overflow: 'hidden'}); (() => {$('.day-night').on('click', () => { $(`p, a, i, h1, h2, h3 span, h4, h5, div, section, h3.contact-title`).each((index, ele) => { $(ele).removeClass('white_text');
-        let isColorThemeApplied = localStorage.getItem('color'); let isDarkThemeApplied = localStorage.getItem('dark-theme'); if (isColorThemeApplied) return; if(!$(ele).hasClass('white_text') && isDarkThemeApplied) { $(ele).toggleClass('white_text')};
-        }) }) })(); showHideTopBtn(); handleNavANimation(); mainCarocelContainer(), setTimeout(()=> { $("#myBtn").removeClass("hide"); }, 1000); function showHideTopBtn() { if ($(window).scrollTop() > 400) { $("#myBtn").css({ right: "0%", transition:
-        "800ms" })} else { $("#myBtn").css({ right: "-20%", transition: "800ms" }); } }; $('.style-switcher-toggler').on('click', () => { if (!$('.style-switcher').hasClass('open')) { return $('.anch').removeClass('clr-animate'); } $('.anch').each((index,
-        ele) => { $(ele).delay(80 * index).queue(function() { $(this).addClass("clr-animate").dequeue(); }) }) }); function handleNavANimation() { if ($(window).scrollTop() > 901) { $(".nav-image").addClass('slideInNavImg'); $("#nav-logo").addClass('slideInNavText');
-        } else { $(".nav-image").removeClass('slideInNavImg'); $("#nav-logo").removeClass('slideInNavText')}}; $(window).on("scroll", () => { showHideTopBtn(); handleNavANimation(); }); });
+        can call me on 031636329324.`); $(".nav li a").unbind("click"); return $('html, body').css({overflow: 'hidden'}); (() => {$('.day-night').on('click', () => { $(`p, a, i, h1, h2, h3 span, h4, h5, div, section, h3.contact-title`).each((index, ele)=>
+        { $(ele).removeClass('white_text'); let isColorThemeApplied = localStorage.getItem('color'); let isDarkThemeApplied = localStorage.getItem('dark-theme'); if (isColorThemeApplied) return; if(!$(ele).hasClass('white_text') && isDarkThemeApplied)
+        { $(ele).toggleClass('white_text')}; }) }) })(); showHideTopBtn(); handleNavANimation(); mainCarocelContainer(), setTimeout(()=> { $("#myBtn").removeClass("hide"); }, 1000); function showHideTopBtn() { if ($(window).scrollTop() > 400) { $("#myBtn").css({
+        right: "0%", transition: "800ms" })} else { $("#myBtn").css({ right: "-20%", transition: "800ms" }); } }; $('.style-switcher-toggler').on('click', () => { if (!$('.style-switcher').hasClass('open')) { return $('.anch').removeClass('clr-animate');
+        } $('.anch').each((index, ele) => { $(ele).delay(80 * index).queue(function() { $(this).addClass("clr-animate").dequeue(); }) }) }); function handleNavANimation() { if ($(window).scrollTop() > 901) { $(".nav-image").addClass('slideInNavImg');
+        $("#nav-logo").addClass('slideInNavText'); } else { $(".nav-image").removeClass('slideInNavImg'); $("#nav-logo").removeClass('slideInNavText')}}; $(window).on("scroll", () => { showHideTopBtn(); handleNavANimation(); }); });
     </script>
 </body>
 
