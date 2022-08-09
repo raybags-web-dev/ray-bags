@@ -4,6 +4,9 @@ const menuButton = document.querySelector('.nav-toggler');
 const sideMenu = document.querySelector('.aside');
 const date = document.querySelector("#current_date");
 
+const pageTop = document.querySelector('.main-content');
+const BG_IMAGE = document.getElementById('BG_IMAGE');
+
 // ========= coppyright year ==========handler
 (() => date.textContent = new Date().getFullYear())();
 // toggle sidebar
@@ -31,5 +34,4 @@ document.body.addEventListener('click', function(e) {
         removeMenuEffect();
         removeSideBar();
     }
-
 });
