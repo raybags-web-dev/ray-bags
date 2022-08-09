@@ -60,32 +60,17 @@
         background-color: var(--skin-color);
     }
     
-    .bg-image-container {
-        position: absolute;
+    #canvas1 {
+        position: fixed;
         top: 0%;
         left: 0%;
         right: 0%;
-        height: 15rem;
+        height: 100vh;
+        min-width: 100vw;
         display: grid;
         place-content: center;
         z-index: 1;
-        border-bottom: 10px solid var(--bg-black-50);
-        overflow: hidden;
-        transition: var(--main-transition);
-        box-shadow: var(--shadow-4);
-    }
-    
-    .bg-image-container .b_g_img {
-        min-width: 100vw;
-        height: 100%;
-        -o-object-fit: cover;
-        object-fit: cover;
-        opacity: .5;
-        transition: var(--main-transition);
-    }
-    
-    .slidein-bg-img {
-        margin-left: 100%;
+        opacity: .2;
     }
     /* Top button */
     
@@ -1370,9 +1355,6 @@
         .btn {
             min-width: 100%;
         }
-        .bg-image-container {
-            height: 15rem;
-        }
     }
     
     @media screen and (max-width: 438px) {
@@ -1380,15 +1362,6 @@
             display: none;
         }
         .aside .logo a::after {
-            display: none;
-        }
-        .bg-image-container {
-            border: unset;
-        }
-    }
-    
-    @media screen and (max-width: 394px) {
-        .bg-image-container {
             display: none;
         }
     }
