@@ -15,7 +15,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
     <!-- styles -->
+    <link rel="stylesheet" href="./css/style-switcher.css">
+    <link rel="stylesheet" href="./css/caroucel.css">
+    <link rel="stylesheet" href="./css/spinner.css">
     <link rel="stylesheet" href="./css/styles.css">
+
     <!-- style switcher -->
     <link rel="stylesheet" href="./css/skins/color-1.css" class="alternate-style" title="color-1" disabled>
     <link rel="stylesheet" href="./css/skins/color-2.css" class="alternate-style" title="color-2" disabled>
@@ -25,9 +29,6 @@
     <link rel="stylesheet" href="./css/skins/color-default.css" class="alternate-style" title="color-default">
 
 
-    <link rel="stylesheet" href="./css/style-switcher.css">
-    <link rel="stylesheet" href="./css/caroucel.css">
-    <link rel="stylesheet" href="./css/spinner.css">
     <!-- scroll reveral animation library  -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <!-- js files -->
@@ -90,7 +91,7 @@
                         <div class="home-info padd-15">
                             <h3 class="hello">Hi there, It's <span class="name">Raymond Baguma</span></h3>
                             <h3 class="my-profession">What I do:&emsp; <span class="typing">Software Engineer</span></h3>
-                            <p>I have experience in data engineering, ETL-ELT development, integration, software and cloud development (aws), database engineering and much more... </p>
+                            <p>I love working with data, ETL-ELT implimentation, data integration, cloud development (aws), database management and much more... </p>
                             <a href="#contact" class="btn hire-me">Hire Me</a>
                         </div>
                         <div class="home-img padd-15">
@@ -118,7 +119,7 @@
                                 <div class="about-text padd-15">
                                     <h3>Short story <span>professionally</span>.</h3>
                                     <p>
-                                        I work with javaScript, Nodejs, Bootstrap, ReactJS, HTML5, CSS, Scss, Big-Data, Docker, Kubernettes, Databases like Mongodb, Firebase, MySQL andpostgreSQL, aws-cloud solution,
+                                        I work with Python, javaScript, Nodejs, Bootstrap, ReactJS, HTML5-CSS, Docker, Kubernettes, Databases like Mongodb, Firebase, MySQL and postgreSQL, aws-cloud and much more...
                                     </p>
                                 </div>
                             </div>
@@ -136,7 +137,7 @@
                                             <p>Email: <span>baguma.github@gmail.com</span></p>
                                         </div>
                                         <div class="info-item padd-15">
-                                            <p>Speciality: <span>Computer Science</span></p>
+                                            <p>Speciality: <span>Backend-Data Engineering</span></p>
                                         </div>
                                         <div class="info-item padd-15">
                                             <p>Website: <span>www.raybags.com</span></p>
@@ -788,8 +789,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
 
     <script type="module">
-        import { mainCarocelContainer } from "./js/utils.js"; document.addEventListener('DOMContentLoaded', function() { /*$('#spinner-container').addClass('hidden');*/console.log(`Hi! This website is still under massive content update. Come visit latter. You
-        can call me on 031636329324.`); $(".nav li a").unbind("click"); return $('html, body').css({overflow: 'hidden'});(() => {$('.day-night').on('click', () => { $(`p, a, i, h1, h2, h3 span, h4, h5, div, section, h3.contact-title`).each((index, ele)=>
+        import { mainCarocelContainer } from "./js/utils.js"; document.addEventListener('DOMContentLoaded', function() { /*$('#spinner-container').addClass('hidden');*/ console.log(`Hi! This website is still under massive content update. Come visit latter. You
+        can call me on 031636329324.`); $(".nav li a").unbind("click"); return $('html, body').css({overflow: 'hidden'}); (() => {$('.day-night').on('click', () => { $(`p, a, i, h1, h2, h3 span, h4, h5, div, section, h3.contact-title`).each((index, ele)=>
         { $(ele).removeClass('white_text'); let isColorThemeApplied = localStorage.getItem('color'); let isDarkThemeApplied = localStorage.getItem('dark-theme'); if (isColorThemeApplied) return; if(!$(ele).hasClass('white_text') && isDarkThemeApplied)
         { $(ele).toggleClass('white_text')}; }) }) })(); showHideTopBtn(); handleNavANimation(); mainCarocelContainer(), setTimeout(()=> { $("#myBtn").removeClass("hide"); }, 1000); function showHideTopBtn() { if ($(window).scrollTop() > 400) { $("#myBtn").css({
         right: "0%", transition: "800ms" })} else { $("#myBtn").css({ right: "-20%", transition: "800ms" }); } }; $('.style-switcher-toggler').on('click', () => { if (!$('.style-switcher').hasClass('open')) { return $('.anch').removeClass('clr-animate');

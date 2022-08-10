@@ -138,7 +138,6 @@
     min-height: 100%;
     font-size: 15px;
     padding: 0.2rem;
-    border: 2px solid var(--skin-color);
     overflow-x: hidden;
     margin: 0.5rem;
     border-radius: 0.5rem;
@@ -147,7 +146,7 @@
     -o-object-fit: cover;
     object-fit: cover;
     transition: 0.3s;
-    box-shadow: var(--shadow-4);
+    box-shadow: inset 4px 4px 14px rgb(82, 81, 81);
     background: var(--bg-black-900);
 }
 
@@ -173,9 +172,7 @@
 }
 
 .card-content-div:hover {
-    border: 5px solid var(--skin-color);
     transition: 0.3s;
-    background: var(--bg-black-100);
     transform: scale(1.069);
     -webkit-transform: scale(1.069);
     -moz-transform: scale(1.069);
@@ -236,6 +233,7 @@
 
 .card-content-div:hover #play-icon {
     opacity: .4;
+    color: var(--skin-color);
 }
 
 .card-content-div:hover .icon-div {
@@ -273,11 +271,11 @@
     max-width: 1500px;
     border-radius: 0.7%;
     opacity: 0;
+    overflow-x: hidden;
     padding: .5rem;
     overflow-y: auto;
     -webkit-clip-path: inset(0 50% 0 50%);
     clip-path: inset(0 50% 0 50%);
-    border: 10px solid rgba(102, 102, 102, 0.3);
     -webkit-animation: slideinVideo 1 forwards ease-in 0.1s;
     animation: slideinVideo 1 forwards ease-in 0.1s;
     background: var(--bg-black-900)
@@ -315,12 +313,11 @@
     place-content: center;
     cursor: pointer;
     border: 2px solid var(--skin-color);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%), rotate(90deg);
     font-size: 2rem;
     width: 1.8rem;
     height: 1.8rem;
     opacity: 0.8;
-    transform: rotate(90deg);
     color: var(--skin-color);
     border-radius: 50%;
     background: var(--bg-black-50);
@@ -357,11 +354,12 @@
     overflow: auto;
     margin-bottom: 1rem;
     opacity: 0;
+    cursor: pointer;
     transition: .3s;
     margin-top: 1.5rem;
     animation: bringin_data_item 1 ease-in forwards .3s;
     -webkit-animation: bringin_data_item 1 ease-in forwards .3s;
-    background: rgba(0, 0, 0);
+    background: rgb(72, 71, 71);
     box-shadow: 0px 2px 1px 0px rgb(0, 0, 0, .1);
 }
 
@@ -380,22 +378,20 @@
 }
 
 ._innerDiv:hover {
-    opacity: 1;
-    background: rgb(36, 36, 36, .6);
+    margin-left: .2rem;
 }
 
 ._innerDiv>* {
     opacity: .8;
     padding: 0;
+    color: white;
     font-family: 'Courier New', Courier, monospace;
-    color: red;
 }
 
 ._innerDiv .data_para {
     font-size: 1rem;
-    opacity: .9;
     text-transform: uppercase;
-    color: rgb(191, 194, 189);
+    color: white
 }
 
 ._innerDiv .data_url {

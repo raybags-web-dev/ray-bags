@@ -45,3 +45,7 @@ section {
 .white_text {
     color: #a6a3a3 !important;
 }
+
+.card-content-div {
+    box-shadow: inset 0px -15px 10px rgb(63, 63, 63);
+}

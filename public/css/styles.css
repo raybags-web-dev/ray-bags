@@ -1,15 +1,18 @@
     @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
      :root {
-        --bg-black-900: rgb(242, 242, 252);
-        --bg-black-100: rgb(253, 249, 255);
-        --bg-black-50: rgb(232, 223, 236);
+        --bg-black-900: rgb(242, 242, 252, .6);
+        --bg-black-100: rgb(253, 249, 255, .6);
+        --bg-black-50: rgb(232, 223, 236, .6);
         --text-black-900: #302e4d;
         --text-black-700: #504e70;
+        --text-shadow-headers: 4px 4px 5px rgb(0, 0, 0);
+        --text-shadow-headers-2: 4px 2px 2px rgb(52, 51, 51, .5);
         --main-transition: all .2s ease;
         --shadow-3: 0 0 20px rgba(48, 46, 77, 0.15);
         --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         --shadow-5: 0px 2px 1px 0px rgb(0, 0, 0, .1);
         --glassy: blur(10px);
+        --glassy2: blur(5px);
     }
     
     body.dark {
@@ -317,6 +320,7 @@
         color: var(--text-black-900);
         font-weight: 700;
         position: relative;
+        text-shadow: var(--text-shadow-headers-2);
     }
     
     .section-title h2::before {
@@ -371,7 +375,11 @@
     }
     
     .btn:hover {
-        transform: scale(1.05);
+        transform: scale(1.03);
+        /* text-shadow: 1px 1px 1px gray; */
+        color: var(--text-black-900);
+        background: transparent;
+        border: 2px solid var(--skin-color)
     }
     
     .shadow-dark {
@@ -433,9 +441,10 @@
         color: var(--text-black-900);
         font-weight: 700;
         padding: 15px 20px;
-        font-size: 30px;
+        font-size: 32px;
         letter-spacing: 5px;
         position: relative;
+        text-shadow: var(--text-shadow-headers)
     }
     
     .aside .logo a span {
@@ -549,6 +558,7 @@
         border-bottom: 1px solid var(--bg-black-50);
         color: var(--text-black-900);
         padding: 5px 15px;
+        text-shadow: var(--text-shadow-headers-2);
     }
     
     .aside .nav li a.active {
@@ -578,8 +588,9 @@
     }
     
     h3.hello {
-        font-size: 28px;
+        font-size: 30px;
         margin: 15px 0;
+        text-shadow: var(--text-shadow-headers-2);
     }
     
     h3.hello span {
@@ -590,7 +601,7 @@
     }
     
     h3.my-profession {
-        font-size: 30px;
+        font-size: 32px;
         margin: 15px 0;
     }
     
