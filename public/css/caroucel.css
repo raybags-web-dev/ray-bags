@@ -3,6 +3,7 @@
  :root {
     --cool-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     --glassy: blur(10px);
+    --main-transition: all .1s ease;
 }
 
 .curacel-wrapper {
@@ -328,9 +329,9 @@
 }
 
 #video_closeBTN:hover {
-    background: var(--bg-black-900);
     color: var(--skin-color);
     opacity: 1;
+    transition: var(--main-transition);
 }
 
 

@@ -1,8 +1,9 @@
     @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
      :root {
-        --bg-black-900: rgb(242, 242, 252, .6);
-        --bg-black-100: rgb(253, 249, 255, .6);
-        --bg-black-50: rgb(232, 223, 236, .6);
+        --bg-black-900: rgb(242, 242, 252, .4);
+        --bg-black-100: rgb(253, 249, 255, .4);
+        --bg-black-20: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
+        --bg-black-50: rgb(232, 223, 236, .4);
         --text-black-900: #302e4d;
         --text-black-700: #504e70;
         --text-shadow-headers: 4px 4px 5px rgb(0, 0, 0);
@@ -11,16 +12,19 @@
         --shadow-3: 0 0 20px rgba(48, 46, 77, 0.15);
         --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         --shadow-5: 0px 2px 1px 0px rgb(0, 0, 0, .1);
+        --logo-shadow: inset 1rem -1rem 1rem -1rem var(--skin-color);
         --glassy: blur(10px);
         --glassy2: blur(5px);
     }
     
     body.dark {
-        --bg-black-900: #151515;
-        --bg-black-100: #222222;
-        --bg-black-50: #393939;
+        --bg-black-900: rgb(21, 21, 21);
+        --bg-black-100: rgb(34, 34, 34);
+        --bg-black-20: linear-gradient(to left, #292929 0%, #090909 100%);
+        --bg-black-50: rgb(57, 57, 57, .5);
         --text-black-900: rgb(255, 255, 255, .6);
         --text-black-700: rgb(233, 233, 233, .45);
+        --logo-shadow: inset 1rem -1rem 1rem -1rem var(--skin-color);
     }
     
     body {
@@ -73,7 +77,7 @@
         display: grid;
         place-content: center;
         z-index: 1;
-        opacity: .2;
+        opacity: .13;
     }
     /* Top button */
     
@@ -389,7 +393,7 @@
     
     .aside {
         width: 270px;
-        background: var(--bg-black-100);
+        background-image: var(--bg-black-20);
         position: fixed;
         left: 0;
         top: 0;
@@ -400,6 +404,8 @@
         justify-content: center;
         align-items: center;
         z-index: 200;
+        /* -webkit-backdrop-filter: blur(40px);
+        backdrop-filter: blur(40px); */
         box-shadow: var(--shadow-4);
         transition: var(--main-transition);
     }
@@ -425,6 +431,7 @@
         -o-object-fit: cover;
         object-fit: cover;
         transition: var(--main-transition);
+        box-shadow: var(--logo-shadow);
     }
     /* dynamic nav classes */
     
@@ -454,23 +461,39 @@
     .aside .logo a::before {
         content: '';
         position: absolute;
-        width: 20px;
+        width: 70px;
         height: 20px;
         border-bottom: 5px solid var(--skin-color);
-        border-left: 5px solid var(--skin-color);
         bottom: 0;
-        left: 0;
+        left: -100%;
+        transition: var(--main-transition);
+        -webkit-animation: slideIn_eff 1 forwards ease-in 1s;
+        animation: slideIn_eff 1 forwards ease-in 1s;
     }
     
     .aside .logo a::after {
         content: '';
         position: absolute;
-        width: 20px;
+        width: 40px;
         height: 20px;
-        border-top: 5px solid var(--skin-color);
-        border-right: 5px solid var(--skin-color);
-        top: 0;
-        right: 0;
+        border-bottom: 5px solid var(--skin-color);
+        bottom: -10%;
+        left: -100%;
+        transition: var(--main-transition);
+        -webkit-animation: slideIn_eff 1 forwards ease-in 1.2s;
+        animation: slideIn_eff 1 forwards ease-in 1.2s;
+    }
+    
+    @-webkit-keyframes slideIn_eff {
+        to {
+            left: 8%;
+        }
+    }
+    
+    @keyframes slideIn_eff {
+        to {
+            left: 8%;
+        }
     }
     
     .aside .nav-toggler {
@@ -618,28 +641,37 @@
     .home .home-img {
         flex: 0 0 40%;
         max-width: 40%;
+        height: 400px;
         text-align: center;
         position: relative;
+        margin-bottom: 2rem;
+        border-radius: 50%;
+        display: grid;
+        place-content: center;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
     }
     
     .home .home-img img {
         height: 400px;
+        min-width: 400px;
         margin: auto;
-        border-radius: 5px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        border-radius: 50%;
         box-shadow: inset var(--shadow-3);
         padding: .5rem;
         cursor: pointer;
-        outline: 3px solid rgba(98, 98, 98, 0.3);
-        outline-offset: -1.8rem;
         z-index: 10;
-        transition: all .1s ease;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        transition: all .2s ease;
+        opacity: .8;
     }
     
     .home .home-img:hover img {
-        transform: scale(1.02);
-        outline: 10px solid rgb(128, 128, 128, .3);
-        outline-offset: -2.6rem;
-        transition: all .1s ease;
+        transform: scale(1.01);
+        box-shadow: inset var(--shadow-4);
     }
     
     .about .about-content {
@@ -1291,6 +1323,12 @@
             left: 0%;
             width: 25%;
         }
+        .slideInNavImg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(0%, 0%);
+        }
     }
     
     @media screen and (max-width: 1199px) {
@@ -1321,6 +1359,9 @@
         .footer-main .f-main-container>* {
             margin-left: 0rem;
         }
+        .slideInNavImg {
+            transform: translate(50%, 0%);
+        }
     }
     
     @media (max-width:991px) {
@@ -1336,6 +1377,9 @@
         }
         .home .home-img {
             display: none;
+        }
+        .slideInNavImg {
+            transform: translate(0%, 0%);
         }
     }
     
@@ -1356,6 +1400,9 @@
             position: absolute;
             min-width: 100vw;
         }
+        .slideInNavImg {
+            transform: translate(0%, 0%);
+        }
     }
     
     @media screen and (max-width: 670px) {
@@ -1366,13 +1413,16 @@
         .btn {
             min-width: 100%;
         }
+        .slideInNavImg {
+            transform: translate(0%, 0%);
+        }
     }
     
-    @media screen and (max-width: 438px) {
-        .aside .logo a::before {
-            display: none;
+    @media screen and (max-width: 550px) {
+        .slideInNavImg {
+            transform: translate(15%, 0%);
         }
-        .aside .logo a::after {
-            display: none;
+        .aside .nav-toggler {
+            margin-right: .7rem;
         }
     }

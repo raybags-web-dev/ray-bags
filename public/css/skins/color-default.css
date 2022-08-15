@@ -1,6 +1,6 @@
 :root {
     --skin-color: #1e1e1e;
-    /* text-shadow: 1px 1px #212121; */
+    --logo-shadow: inset 1rem -1rem 1rem -1rem rgb(28, 28, 28);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -31,7 +31,7 @@ section {
 
 .btn:hover {
     color: #898989;
-    border: 2px solid #ffffff;
+    border: 2px solid rgb(255, 255, 255, .7);
 }
 
 .about .about-content .skills .skills-item .progress .progress-in {
@@ -48,4 +48,8 @@ section {
 
 .card-content-div {
     box-shadow: inset 0px -15px 10px rgb(63, 63, 63);
+}
+
+.outer-footer>* {
+    color: #a6a3a3 !important;
 }

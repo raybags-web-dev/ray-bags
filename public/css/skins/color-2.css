@@ -18,11 +18,9 @@
 #video_closeBTN {
     border: 2px solid rgba(249, 95, 24, 0.5);
     color: var(--skin-color);
-    background: black;
 }
 
 #video_closeBTN:hover {
-    background: black;
     color: white;
 }
 
