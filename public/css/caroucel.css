@@ -8,25 +8,46 @@
 
 .curacel-wrapper {
     position: absolute;
-    top: 90%;
-    left: 55%;
+    top: 100%;
+    left: 50%;
+    right: 0;
     transform: translate(-50%, -50%);
-    width: 95vw!important;
-    max-width: 950px;
+    min-width: 50vw;
+    max-width: 80%;
     height: 14%;
     padding: 0.5rem 0.5rem 0.5rem 0;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
-    transition: var(--main-transition);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     overflow: hidden;
-    z-index: 1;
-    opacity: 1;
+    z-index: 10;
+    opacity: 0;
     cursor: pointer;
-    background: var(--bg-black-900);
+    background: transparent;
+    transition: var(--main-transition);
+    -webkit-animation: slideUpcarocel 1 forwards ease-in .2s 3s;
+    animation: slideUpcarocel 1 forwards ease-in .2s 3s;
+}
+
+@-webkit-keyframes slideUpcarocel {
+    to {
+        top: 93%;
+        opacity: 1;
+    }
+}
+
+@keyframes slideUpcarocel {
+    to {
+        top: 93%;
+        opacity: 1;
+    }
+}
+
+.curacel-wrapper .minimize_button {
+    margin-left: 100%;
 }
 
 .minimize_button {
@@ -46,18 +67,12 @@
     color: var(--skin-color);
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
-    -webkit-backdrop-filter: var(--backdrop-light);
-    backdrop-filter: var(--backdrop-light);
-    background-color: var(--bg-black-100);
     box-shadow: var(--cool-shadow);
 }
 
 .minimize_button .fas {
-    opacity: .5;
-}
-
-.minimize_button:hover .fas {
     opacity: 1;
+    font-size: 2.5rem;
 }
 
 .expand_button {
@@ -73,58 +88,33 @@
     align-items: center;
     font-size: 3em;
     opacity: 0;
-    transition: 0.3;
     font-weight: 700;
     color: var(--skin-color);
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
-    background-color: var(--bg-black-900);
     box-shadow: var(--cool-shadow);
 }
 
 .expand_button .fas {
-    opacity: .5;
-}
-
-.expand_button:hover .fas {
     opacity: 1;
+    font-size: 2.5rem;
 }
 
 .curacel-inner {
     position: absolute;
-    width: 400%;
+    min-width: 50%;
     height: 100%;
+    left: 0%;
     transition: var(--transition);
     border-radius: 0.5rem;
     display: flex;
-    justify-content: flex-start;
+    justify-content: end;
     align-items: center;
     overflow: hidden;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     padding: 0.4rem;
     scrollbar-width: thin;
-    opacity: 1;
-    -webkit-animation-play-state: running;
-    animation-play-state: running;
-    transition: 1.2s;
-    animation: moveBox infinite linear alternate-reverse 65s 1s;
-}
-
-@-webkit-keyframes moveBox {
-    to {
-        margin-left: -300%;
-    }
-}
-
-@keyframes moveBox {
-    to {
-        margin-left: -300%;
-    }
-}
-
-.curacel-wrapper:hover .curacel-inner {
-    -webkit-animation-play-state: paused;
-    animation-play-state: paused;
+    transition: 0.4s;
 }
 
 
@@ -144,8 +134,6 @@
     border-radius: 0.5rem;
     overflow: hidden;
     cursor: pointer;
-    -o-object-fit: cover;
-    object-fit: cover;
     transition: 0.3s;
     box-shadow: inset 4px 4px 14px rgb(82, 81, 81);
     background: var(--bg-black-900);
@@ -159,7 +147,7 @@
     display: flex;
     justify-self: center;
     align-self: center;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: bold;
     padding: 0.3rem 4rem;
     text-transform: uppercase;
@@ -174,14 +162,10 @@
 
 .card-content-div:hover {
     transition: 0.3s;
-    transform: scale(1.069);
-    -webkit-transform: scale(1.069);
-    -moz-transform: scale(1.069);
-    -ms-transform: scale(1.069);
-    -o-transform: scale(1.069);
+    transform: scale(1.039);
 }
 
-.curacel-inner:hover .card-content-div:not(:hover) {
+.curacel-inner .card-content-div:hover:not(:hover) {
     opacity: 0.5;
     transition: 0.3s;
     transform: scale(0.97);
@@ -217,7 +201,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: .6;
+    opacity: .3;
 }
 
 #play-icon {

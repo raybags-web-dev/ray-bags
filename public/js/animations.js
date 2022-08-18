@@ -10,7 +10,7 @@ reset: true
 // animate all buttons
 animateHandler('.btn', { distance: '100%', origin: 'bottom', opacity: 0, reset: true, delay: 100 });
 //animate main image
-animateHandler('.home-img', { distance: '300%', origin: 'right', opacity: 0, delay: 600 });
+animateHandler('.home-img', { distance: '300%', origin: 'right', reset: true, opacity: 0, delay: 300 });
 // animate sub hello text
 animateHandler('.hello', { distance: '100%', origin: 'bottom', reset: true, opacity: 0, delay: 150 });
 //animate professional intro text

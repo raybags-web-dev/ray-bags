@@ -7,7 +7,7 @@ import {
 
 // card factory function
 const curacelCard = function() {
-    const playIcon = $("<i /> ").attr({ class: "fas fa-play", id: "play-icon" });
+    const playIcon = $("<i /> ").attr({ class: "fa-solid fa-expand", id: "play-icon" });
     const innerDivv = $("<div />")
         .attr({ class: "icon-div" })
         .append($(playIcon));
@@ -36,8 +36,8 @@ const mainCarocelContainer = function() {
         "card12",
     ];
 
-    const leftButton = $("<i></i>").attr({ class: "fas fa-caret-right" });
-    const rightButton = $("<i></i>").attr({ class: "fas fa-caret-left" });
+    const leftButton = $("<i></i>").attr({ class: "fas fa-chevron-left" });
+    const rightButton = $("<i></i>").attr({ class: "fas fa-chevron-right" });
 
     const div_left = $("<div></div>")
         .attr({ class: "expand_button" })
@@ -104,35 +104,57 @@ const mainCarocelContainer = function() {
     };
     curacelRunnerFunc();
 
-    // minimize width for carocel and hide minimize button but show expand button
-    $(".minimize_button").on("click", function() {
-        $(".curacel-wrapper").css({
-            width: "2%",
-        });
-        $(".curacel-inner").css({
-            width: "0%",
-        });
+    // value for sliding left `${-initial_width * 0.1}%`
+    //handle sliding left §
 
-        $(this).css({
-            display: "none",
-        });
+    let initial_width = 0;
+
+    function isInViewPort(card) {
+        if (card === undefined) return;
+        let card_top = $(card).offset().left;
+        let card_bottom = card_top + $(card).outerWidth();
+        let viewportTop = $(window).scrollLeft();
+        let viewportBottom = viewportTop + $(window).width();
+        return card_bottom > viewportTop && card_top < viewportBottom;
+    };
+
+
+    $(".minimize_button").on("mousedown ,scroll resize", function() {
+        const card_conotainer = $('div .curacel-inner'),
+            card_width = Math.floor($('div .card-content-div').width());
+
+        let card_visible = $('.card-content-div').last();
+
+        if (isInViewPort(card_visible)) {
+            $(".minimize_button").css({
+                display: "none",
+            });
+            return;
+        }
+        initial_width += card_width;
+        $(card_conotainer).css({ left: `${-initial_width * 0.2}%` });
         $(".expand_button").css({
             opacity: 1,
             display: "flex",
         });
     });
-    // expand width for carocel and show minimize bitton but hide expand button
-    $(".expand_button").on("click", function() {
-        $(".curacel-wrapper").css({
-            width: "50%",
-        });
-        $(this).css({
-            opacity: 0,
-            display: "none",
-        });
-        $(".curacel-inner").css({
-            width: "400%",
-        });
+
+    // ================================
+    $(".expand_button").on("mousedown ,scroll resize", function() {
+        const card_conotainer = $('div .curacel-inner'),
+            card_width = Math.floor($('div .card-content-div').width());
+
+        let card_visible = $('.card-content-div').first();
+
+        if (isInViewPort(card_visible)) {
+            $(".expand_button").css({
+                display: "none",
+            });
+            return;
+        }
+        initial_width -= card_width;
+        $(card_conotainer).css({ left: `${-initial_width * 0.2}%` });
+
         $(".minimize_button").css({
             opacity: 1,
             display: "flex",
