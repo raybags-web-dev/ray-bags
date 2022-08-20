@@ -82,7 +82,7 @@ const mainCarocelContainer = function() {
             // make ============== data component ============== 
 
             cardsArray.push($(card));
-            $($(cardsArray[0]).children()[0]).text("Daily News");
+            $($(cardsArray[0]).children()[0]).text("News data");
             $($(cardsArray[1]).children()[0]).text("Retail Data");
             $($(cardsArray[2]).children()[0]).text("Hotels data");
             $($(cardsArray[3]).children()[0]).text("Crypto Data");
@@ -95,17 +95,8 @@ const mainCarocelContainer = function() {
             $($(cardsArray[10]).children()[0]).text("Travel Data");
             $($(cardsArray[11]).children()[0]).text("Space Data");
         });
-
-        setTimeout(() => {
-            $(".curacel-wrapper").css({
-                width: "40%",
-            });
-        }, 4000);
     };
     curacelRunnerFunc();
-
-    // value for sliding left `${-initial_width * 0.1}%`
-    //handle sliding left §
 
     let initial_width = 0;
 

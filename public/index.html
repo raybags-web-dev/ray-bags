@@ -46,13 +46,14 @@
         <canvas id="canvas1"></canvas>
         <!-- === aside start -->
         <div class="aside">
+            <img loading="lazy" class="aside-image" src="https://github.com/raybags-web-dev/image_base/blob/master/images/void.jpeg?raw=true" alt="">
             <div id="nav-logo" class="logo">
                 <a href="#"><span>Ray</span>mond</a>
             </div>
             <!-- nav image -->
             <div style="display: grid; place-content: center; height: 7rem; width: 7rem;" class="nav-image">
                 <!-- nav image logo -->
-                <img src="./images/hero-image.png" style="border:6px solid rgba(80, 78, 78, 0.1); padding:.6rem; width:10rem;object-fit:cover;max-width:7rem; border-radius:50%; height:10rem; max-height:7rem; position:absolute" alt="" />
+                <img loading="lazy" src="./images/hero-image.png" style="border:6px solid rgba(80, 78, 78, 0.1); padding:.6rem; width:10rem;object-fit:cover;max-width:7rem; border-radius:50%; height:10rem; max-height:7rem; position:absolute" alt="" />
             </div>
 
 
@@ -96,7 +97,7 @@
                             <a href="#contact" class="btn hire-me">Hire Me</a>
                         </div>
                         <div class="home-img padd-15">
-                            <img src="./images/hero-image.png" alt="">
+                            <img loading="lazy" src="./images/hero-image.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -150,7 +151,7 @@
 
                                     <div class="row">
                                         <div class="buttons padd-15">
-                                            <a href="#" class="btn  hire-me">Download CV</a>
+                                            <a href="https://raymond-cv.netlify.app/" target="_blank" class="btn  hire-me">Curriculum vitae</a>
                                             <a href="#contact" class="btn hire-me">Contact Me</a>
 
                                         </div>
@@ -515,7 +516,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="./images/work-in-progress.jpeg" alt="">
+                                    <img loading="lazy" src="./images/work-in-progress.jpeg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -524,7 +525,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="./images/work-in-progress.jpeg" alt="">
+                                    <img loading="lazy" src="./images/work-in-progress.jpeg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -533,7 +534,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="./images/work-in-progress.jpeg" alt="">
+                                    <img loading="lazy" src="./images/work-in-progress.jpeg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -542,7 +543,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="./images/work-in-progress.jpeg" alt="">
+                                    <img loading="lazy" src="./images/work-in-progress.jpeg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -551,7 +552,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="./images/work-in-progress.jpeg" alt="">
+                                    <img loading="lazy" src="./images/work-in-progress.jpeg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -560,7 +561,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="./images/work-in-progress.jpeg" alt="">
+                                    <img loading="lazy" src="./images/work-in-progress.jpeg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -790,12 +791,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
 
     <script type="module">
-        import { mainCarocelContainer } from "./js/utils.js"; document.addEventListener('DOMContentLoaded', function() { $('#spinner-container').addClass('hidden'); (() => {$('.day-night').on('click', () => { $(`p, a, i, h1, h2, h3 span, h4, h5, div, section,
-        h3.contact-title`).each((index, ele)=> { $(ele).removeClass('white_text'); let isColorThemeApplied = localStorage.getItem('color'); let isDarkThemeApplied = localStorage.getItem('dark-theme'); if (isColorThemeApplied) return; if(!$(ele).hasClass('white_text')
-        && isDarkThemeApplied) { $(ele).toggleClass('white_text')}; }) }) })(); showHideTopBtn(); handleNavANimation(); mainCarocelContainer(), setTimeout(()=> { $("#myBtn").removeClass("hide"); }, 1000); function showHideTopBtn() { if ($(window).scrollTop()
-        > 400) { $("#myBtn").css({ right: "0%", transition: "800ms" })} else { $("#myBtn").css({ right: "-20%", transition: "800ms" }); } }; $('.style-switcher-toggler').on('click', () => { if (!$('.style-switcher').hasClass('open')) { return $('.anch').removeClass('clr-animate');
-        } $('.anch').each((index, ele) => { $(ele).delay(80 * index).queue(function() { $(this).addClass("clr-animate").dequeue(); }) }) }); function handleNavANimation() { if ($(window).scrollTop() > 901) { $(".nav-image").addClass('slideInNavImg');
-        $("#nav-logo").addClass('slideInNavText'); } else { $(".nav-image").removeClass('slideInNavImg'); $("#nav-logo").removeClass('slideInNavText')}}; $(window).on( "scroll", ()=> { showHideTopBtn(); handleNavANimation();}); });
+        import { mainCarocelContainer } from "./js/utils.js"; document.addEventListener('DOMContentLoaded', function() {$('.nav li').each(function(index) {let link = $(this);setTimeout(function() {link.addClass('side_links_slidein').css({ transition: '0.9s' })},100
+        * index)}); setTimeout(() => {let first_interaction = localStorage.getItem('dark-theme'),first_interaction_color = localStorage.getItem('color'); if(first_interaction || first_interaction_color) return; ;$('html, body').animate({scrollTop: 120},
+        1000)}, 3000); $('#spinner-container').addClass('hidden'); (() => {$('.day-night').on('click', () => { $(`p, a, i, h1, h2, h3 span, h4, h5, div, section, h3.contact-title`).each((index, ele)=> { $(ele).removeClass('white_text'); let isColorThemeApplied
+        = localStorage.getItem('color'); let isDarkThemeApplied = localStorage.getItem('dark-theme'); if (isColorThemeApplied) return; if(!$(ele).hasClass('white_text') && isDarkThemeApplied) { $(ele).toggleClass('white_text')}; }) }) })(); showHideTopBtn();
+        handleNavANimation(); mainCarocelContainer(), setTimeout(()=> { $("#myBtn").removeClass("hide"); }, 1000); function showHideTopBtn() { if ($(window).scrollTop() > 400) { $("#myBtn").css({ right: "0%", transition: "800ms" })} else { $("#myBtn").css({
+        right: "-20%", transition: "800ms" }); } }; $('.style-switcher-toggler').on('click', () => { if (!$('.style-switcher').hasClass('open')) { return $('.anch').removeClass('clr-animate'); } $('.anch').each((index, ele) => { $(ele).delay(80 * index).queue(function()
+        { $(this).addClass("clr-animate").dequeue(); }) }) }); function handleNavANimation() { if ($(window).scrollTop() > 901) { $(".nav-image").addClass('slideInNavImg'); $("#nav-logo").addClass('slideInNavText'); } else { $(".nav-image").removeClass('slideInNavImg');
+        $("#nav-logo").removeClass('slideInNavText')}}; $(window).on( "scroll", ()=> { showHideTopBtn(); handleNavANimation();}); });
     </script>
 </body>
 

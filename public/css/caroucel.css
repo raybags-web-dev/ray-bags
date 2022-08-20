@@ -8,7 +8,7 @@
 
 .curacel-wrapper {
     position: absolute;
-    top: 100%;
+    top: 93%;
     left: 50%;
     right: 0;
     transform: translate(-50%, -50%);
@@ -24,26 +24,8 @@
     align-items: center;
     overflow: hidden;
     z-index: 10;
-    opacity: 0;
-    cursor: pointer;
     background: transparent;
     transition: var(--main-transition);
-    -webkit-animation: slideUpcarocel 1 forwards ease-in .2s 3s;
-    animation: slideUpcarocel 1 forwards ease-in .2s 3s;
-}
-
-@-webkit-keyframes slideUpcarocel {
-    to {
-        top: 93%;
-        opacity: 1;
-    }
-}
-
-@keyframes slideUpcarocel {
-    to {
-        top: 93%;
-        opacity: 1;
-    }
 }
 
 .curacel-wrapper .minimize_button {
@@ -65,9 +47,6 @@
     transition: 0.3;
     font-weight: 700;
     color: var(--skin-color);
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    box-shadow: var(--cool-shadow);
 }
 
 .minimize_button .fas {
@@ -90,9 +69,6 @@
     opacity: 0;
     font-weight: 700;
     color: var(--skin-color);
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    box-shadow: var(--cool-shadow);
 }
 
 .expand_button .fas {
@@ -108,10 +84,9 @@
     transition: var(--transition);
     border-radius: 0.5rem;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     overflow: hidden;
-    /* overflow-x: hidden; */
     padding: 0.4rem;
     scrollbar-width: thin;
     transition: 0.4s;
@@ -125,6 +100,7 @@
     text-align: center;
     display: grid;
     place-content: center;
+    align-items: center;
     min-width: 300px;
     min-height: 100%;
     font-size: 15px;
@@ -173,21 +149,6 @@
     -moz-transform: scale(0.97);
     -ms-transform: scale(0.97);
     -o-transform: scale(0.97);
-}
-
-
-/* color classes */
-
-.red-color {
-    background: rgba(219, 3, 3, 0.2) !important;
-}
-
-.blue-color {
-    background: rgb(22, 84, 126, 0.6) !important;
-}
-
-.green-color {
-    background: rgb(1, 94, 94, 0.6) !important;
 }
 
 .icon-div {
@@ -399,13 +360,33 @@
     overflow-wrap: break-word;
 }
 
+@media screen and (min-width: 1600px) {
+    .curacel-wrapper {
+        top: 95%;
+        right: 0%;
+        transform: translate(-40%, -50%) !important;
+        height: 10%;
+        width: 80vw !important;
+    }
+}
+
+@media screen and (min-width: 1198px) {
+    .curacel-wrapper {
+        top: 95%;
+        right: 0%;
+        transform: translate(-35%, -50%);
+        height: 10%;
+        min-width: 75vw !important;
+    }
+}
+
 @media screen and (max-width: 1199px) {
     .curacel-wrapper {
         top: 95%;
-        left: 50%;
+        right: 0%;
         transform: translate(-50%, -50%);
         height: 10%;
-        min-width: 100vw !important;
+        min-width: 95vw !important;
     }
     #video_closeBTN {
         top: 6%;
@@ -435,12 +416,6 @@
     }
     .card-content-div p {
         font-size: 10px;
-    }
-    .expand_button,
-    .minimize_button {
-        background-color: rgb(89, 87, 87, .3);
-        -webkit-backdrop-filter: blur(20px);
-        backdrop-filter: blur(20px);
     }
     .expand_button {
         left: -3.5%;

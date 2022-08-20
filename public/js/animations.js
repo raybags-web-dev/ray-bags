@@ -10,7 +10,7 @@ reset: true
 // animate all buttons
 animateHandler('.btn', { distance: '100%', origin: 'bottom', opacity: 0, reset: true, delay: 100 });
 //animate main image
-animateHandler('.home-img', { distance: '300%', origin: 'right', reset: true, opacity: 0, delay: 300 });
+animateHandler('.home-img', { distance: '300%', origin: 'right', reset: false, opacity: 0, delay: 300 });
 // animate sub hello text
 animateHandler('.hello', { distance: '100%', origin: 'bottom', reset: true, opacity: 0, delay: 150 });
 //animate professional intro text
@@ -42,15 +42,19 @@ Array.from(document.querySelectorAll('.btn')).forEach((ele, index) => {
 Array.from(document.querySelectorAll('.timeline-item h3')).forEach((ele, index) => {
     animateHandler(ele, { distance: '100%', origin: 'left', opacity: 0, delay: 10 * index })
 });
+// animate timeline items
 Array.from(document.querySelectorAll('.timeline-item h4')).forEach((ele, index) => {
     animateHandler(ele, { distance: '100%', origin: 'top', opacity: 0, delay: 10 * index })
 });
+// animate timeline items
 Array.from(document.querySelectorAll('.timeline-item p')).forEach((ele, index) => {
     animateHandler(ele, { distance: '100%', origin: 'top', reset: true, opacity: 0, delay: 10 * index })
 });
+// animate timeline items
 Array.from(document.querySelectorAll('.circle-dot')).forEach((ele, index) => {
     animateHandler(ele, { distance: '100%', origin: 'top', opacity: 0, reset: true, delay: 10 * index })
 });
+// animate timeline items
 Array.from(document.querySelectorAll('.timeline-date')).forEach((ele, index) => {
     animateHandler(ele, { distance: '100%', origin: 'top', opacity: 0, reset: true, delay: 10 * index })
 });
@@ -58,7 +62,7 @@ Array.from(document.querySelectorAll('.timeline-date')).forEach((ele, index) => 
 
 // animate portfolio items 
 Array.from(document.querySelectorAll('.portfolio-item')).forEach((ele, index) => {
-    animateHandler(ele, { distance: '120%', origin: 'bottom', opacity: 0, delay: 100 * index })
+    animateHandler(ele, { distance: '120%', origin: 'bottom', opacity: 0, reset: true, delay: 100 * index })
 });
 
 // animate contact info items
@@ -72,7 +76,7 @@ Array.from(document.querySelectorAll('.progress')).forEach((ele, index) => {
 
 // animate vibe items items vibe-item 
 Array.from(document.querySelectorAll('.vibe-item')).forEach((ele, index) => {
-    animateHandler(ele, { distance: '50%', origin: 'bottom', opacity: 0, delay: 100 * index })
+    animateHandler(ele, { distance: '50%', origin: 'bottom', reset: true, opacity: 0, delay: 100 * index })
 });
 Array.from(document.querySelectorAll('.vibe-item-inner p')).forEach((ele, index) => {
     animateHandler(ele, { distance: '50%', origin: 'bottom', reset: true, opacity: 0, delay: 100 * index })
@@ -82,7 +86,7 @@ Array.from(document.querySelectorAll('.vibe-item-inner h4')).forEach((ele, index
 });
 // animate services items
 Array.from(document.querySelectorAll('.service-item')).forEach((ele, index) => {
-    animateHandler(ele, { distance: '100%', origin: 'bottom', opacity: 0, delay: 100 * index })
+    animateHandler(ele, { distance: '100%', origin: 'bottom', opacity: 0, reset: true, delay: 100 * index })
 });
 Array.from(document.querySelectorAll('.service-item-inner h4')).forEach((ele, index) => {
     animateHandler(ele, { distance: '50%', origin: 'bottom', reset: true, opacity: 0, delay: 100 * index })

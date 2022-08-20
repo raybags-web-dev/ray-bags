@@ -391,6 +391,7 @@
     /* aside */
     
     .aside {
+        position: relative;
         min-width: 300px;
         background-image: var(--bg-black-20) !important;
         background: var(--bg-black-900);
@@ -404,6 +405,22 @@
         align-items: center;
         z-index: 200;
         transition: var(--main-transition);
+    }
+    
+    .aside-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: -1;
+        opacity: .5;
+        -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     }
     
     .aside .logo {
@@ -568,6 +585,12 @@
     .aside .nav li {
         margin-bottom: 20px;
         display: block;
+        transition: .2s;
+        margin-left: -1000%;
+    }
+    
+    .side_links_slidein {
+        margin-left: 0% !important;
     }
     
     .aside .nav li a {
@@ -582,6 +605,11 @@
     
     .aside .nav li a.active {
         color: var(--skin-color);
+    }
+    
+    .aside .nav li:hover {
+        transform: scale(1.089);
+        transition: .2s;
     }
     
     .aside .nav li a i {
@@ -639,11 +667,12 @@
         flex: 0 0 40%;
         max-width: 40%;
         height: 550px;
+        /* margin-top: -5% !important; */
         text-align: center;
         position: relative;
         margin-bottom: 2rem;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
@@ -652,15 +681,12 @@
     .home .home-img img {
         height: 500px;
         min-width: 500px;
-        /* margin: auto; */
+        /* margin-top: -20%; */
         -o-object-fit: cover;
         object-fit: cover;
         border-radius: 50%;
-        box-shadow: inset var(--shadow-3);
         padding: .5rem;
         z-index: 10;
-        outline: .2rem solid rgb(128, 128, 128, .2);
-        outline-offset: -.5rem;
         -webkit-filter: grayscale(100%);
         filter: grayscale(100%);
         transition: all .1s ease;
@@ -668,9 +694,6 @@
     }
     
     .home .home-img img:hover {
-        box-shadow: inset var(--shadow-4);
-        outline: .8rem solid rgb(128, 128, 128, .1);
-        outline-offset: -2rem;
         -webkit-filter: grayscale(100%);
         filter: grayscale(0%);
     }
@@ -1353,6 +1376,9 @@
         }
         .home-img {
             margin-left: 10%;
+        }
+        .home .home-img {
+            justify-content: flex-end;
         }
     }
     
