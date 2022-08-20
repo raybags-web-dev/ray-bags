@@ -418,9 +418,15 @@
         width: 100% !important;
         height: 100% !important;
         z-index: -1;
-        opacity: .5;
-        -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        opacity: .2;
+        -webkit-clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%);
+        clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%);
+        transition: all .3s ease-in;
+    }
+    
+    .decorate_asideImage {
+        -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+                clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
     }
     
     .aside .logo {
@@ -609,7 +615,6 @@
     
     .aside .nav li:hover {
         transform: scale(1.089);
-        transition: .2s;
     }
     
     .aside .nav li a i {
@@ -694,8 +699,13 @@
     }
     
     .home .home-img img:hover {
-        -webkit-filter: grayscale(100%);
+        -webkit-filter: grayscale(0%);
         filter: grayscale(0%);
+    }
+    
+    .give_color {
+        -webkit-filter: grayscale(0%) !important;
+        filter: grayscale(0%) !important;
     }
     
     .about .about-content {
@@ -1493,5 +1503,15 @@
         }
         .home-info p {
             font-size: 10px;
+        }
+        .footer-main .f-main-container .inner-footer .icon {
+            font-size: 1.5rem;
+            width: 3rem;
+            height: 3rem;
+            display: grid;
+        }
+        #myBtn {
+            bottom: 16%;
+            right: 20%;
         }
     }

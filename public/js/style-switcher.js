@@ -63,11 +63,14 @@ function changeColor() {
 
 
 // theme light and dark
+const heroImage = document.getElementById("hero__image")
 const dayNight = document.querySelector('.day-night');
 let bodyWorkBench = document.body.classList;
 dayNight.addEventListener('click', () => {
     dayNight.querySelector('i').classList.toggle('fa-sun');
     dayNight.querySelector('i').classList.toggle('fa-moon');
+    heroImage.classList.toggle("give_color")
+
     bodyWorkBench.toggle('dark');
     if (bodyWorkBench.contains('dark')) return localStorage.setItem('dark-theme', 'dark');
     localStorage.removeItem('dark-theme');
@@ -79,6 +82,7 @@ dayNight.addEventListener('click', () => {
 })();
 
 window.addEventListener('load', () => {
+    dayNight.querySelector('i').classList.add('fa-moon');
     if (document.body.classList.contains('dark')) {
         dayNight.querySelector('i').classList.add('fa-sun');
     } else {
