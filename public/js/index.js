@@ -2,13 +2,10 @@
 
 const menuButton = document.querySelector('.nav-toggler');
 const sideMenu = document.querySelector('.aside');
-const date = document.querySelector("#current_date");
-
 const pageTop = document.querySelector('.main-content');
 const BG_IMAGE = document.getElementById('BG_IMAGE');
 
-// ========= coppyright year ==========handler
-(() => date.textContent = new Date().getFullYear())();
+
 // toggle sidebar
 const handleSideBar = () => sideMenu.classList.toggle('dynamic_sidebar');
 // remove sidebar
@@ -38,23 +35,6 @@ function handle_animation_when_clicked_outside(e) {
 // remove animation on menu btn if click outside menu btn
 document.body.addEventListener('click', handle_animation_when_clicked_outside);
 
-// scroll section active link switcher
-// const senctions = document.querySelectorAll("section[id]");
-// function scrollActive() {
-//     const scrollY = window.pageYOffset;
-//     senctions.forEach(current => {
-//         const senctionHeight = current.offsetHeight;
-//         const sectionTop = current.offsetTop - 50;
-//         const senctionId = current.getAttribute("id");
-
-//         if (scrollY > sectionTop && scrollY <= sectionTop + senctionHeight) {
-//             document.querySelector('.nav a[href*=' + senctionId + ']').classList.add("active");
-//         } else {
-//             document.querySelector('.nav a[href*=' + senctionId + ']').classList.remove("active");
-
-//         }
-//     })
-// }
 
 // Handle active class switch on scroll.
 function scrollActive(all_section_ids, anchor_links_parent_div,  active_class_name) {
