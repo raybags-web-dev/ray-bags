@@ -1163,18 +1163,19 @@ h3.my-profession {
 #msg_sent_container {
     transition: var(--main-transition);
     background-color: #d4dbdc;
-    background-image: linear-gradient( to bottom, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), radial-gradient( at 50% 0%, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.5) 50%);
+    background: var(--bg-black-900);
+    color: var(--bg-black-900);
     background-blend-mode: soft-light, screen;
 }
 
 #msg_sent_container p {
-    color: var(--skin-color);
+    color: var(--text-black-900);
     font-size: 1.6rem;
     margin: 1.8rem;
 }
 
 .contact-title {
-    color: var(--skin-color);
+    color: var(--text-black-900);
     text-align: center;
     font-size: 25px;
     margin-bottom: 20px;

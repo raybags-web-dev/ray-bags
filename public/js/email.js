@@ -32,7 +32,7 @@ function messageSentContainer() {
     div.style.cssText = `position:fixed;z-index:2000;top:50%;left:50%;width:50vw;overflow:hidden;
           height:0; transform:translate(-50%,-50%);size:2rem; color: var(--text-black-900); 
           border-radius:1.5rem;display:flex;justify-content:center;align-items:center;color: var(--text-black-900);
-          backdrop-filter:blur(40px);`;
+          backdrop-filter:blur(40px); box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);`;
 
     document.body.appendChild(div);
     div.classList.add("ctn_msg");
@@ -56,7 +56,7 @@ function messageSentContainer() {
     div.style.cssText = `position:fixed;z-index:2000;top:50%;left:50%;width:50vw;overflow:hidden;
           height:0vh;transform:translate(-50%,-50%);transition:1s; border-radius:1.5rem;
           display:flex;justify-content:center;align-items:center;color: var(--text-black-900); 
-          backdrop-filter:blur(40px); box-shadow: inset 1px 1px 14px #000000`;
+          backdrop-filter:blur(40px); box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);`;
 
     document.body.appendChild(div);
     div.classList.add("ctn_msg");
