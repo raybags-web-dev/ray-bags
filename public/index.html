@@ -35,6 +35,7 @@
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 
     <!-- js files -->
+    <script src="./js/notifications.js" defer></script>
     <script src="./js/effects.js" defer></script>
     <script src="./js/typying.js" defer></script>
     <script src="./js/style-switcher.js" defer></script>
@@ -794,7 +795,7 @@
     <script type="module">
         import { mainCarocelContainer } from "./js/utils.js"; document.addEventListener('DOMContentLoaded', function() {setTimeout(()=>{$(".aside-image").addClass("decorate_asideImage")}, 3000);$('.nav li').each(function(index) {let link = $(this);setTimeout(function()
         {link.addClass('side_links_slidein').css({ transition: '0.9s' })},100 * index)}); setTimeout(() => {let first_interaction = localStorage.getItem('dark-theme'),first_interaction_color = localStorage.getItem('color'); if(first_interaction || first_interaction_color)
-        return; ;$('html, body').animate({scrollTop: 120}, 1000)}, 3000); $('#spinner-container').addClass('hidden'); (() => {$('.day-night').on('click', () => { $(`p, a, i, h1, h2, h3 span, h4, h5, div, section, h3.contact-title`).each((index, ele)=>
+        return; ;$('html, body').animate({scrollTop: 120}, 1000)}, 3000); /*$('#spinner-container').addClass('hidden');*/ (() => {$('.day-night').on('click', () => { $(`p, a, i, h1, h2, h3 span, h4, h5, div, section, h3.contact-title`).each((index, ele)=>
         { $(ele).removeClass('white_text'); let isColorThemeApplied = localStorage.getItem('color'); let isDarkThemeApplied = localStorage.getItem('dark-theme'); if (isColorThemeApplied) return; if(!$(ele).hasClass('white_text') && isDarkThemeApplied)
         { $(ele).toggleClass('white_text')}; }) }) })(); showHideTopBtn(); handleNavANimation(); mainCarocelContainer(), setTimeout(()=> { $("#myBtn").removeClass("hide"); }, 1000); function showHideTopBtn() { if ($(window).scrollTop() > 400) { $("#myBtn").css({
         right: "0%", transition: "800ms" })} else { $("#myBtn").css({ right: "-20%", transition: "800ms" }); } }; $('.style-switcher-toggler').on('click', () => { if (!$('.style-switcher').hasClass('open')) { return $('.anch').removeClass('clr-animate');

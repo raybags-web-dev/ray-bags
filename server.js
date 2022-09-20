@@ -10,7 +10,7 @@ require("dotenv").config();
 const { API_KEY, MONGO_URI, } = process.env;
 
 // Not available for now
-app.all('*', (req, res) => res.status(202).sendFile(__dirname + "/notfound/not_available.html"));
+//app.all('*', (req, res) => res.status(202).sendFile(__dirname + "/notfound/not_available.html"));
 // server static resources 
 app.use(express.static("public"));
 app.use(express.json());
