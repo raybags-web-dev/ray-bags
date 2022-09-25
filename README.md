@@ -1,6 +1,6 @@
 ![portfolio!](https://github.com/raybags-web-dev/image_base/blob/master/images/new_look.png?raw=true)
 
-# Scrapper-api-0.1
+# Scrapper-api/ news-data pipeline
 
 This is a simple web-scrapper api that scrapes, generates and save data into a data-base(mongodb).
 
@@ -19,14 +19,9 @@ Note: You must provide your namme, email and password as a request body as shown
 }
 
 Response should look like this:
-{
-    "body": {
-      "name": "test  user",
-      "email": "testuser@gmail.com",
-      "password": "x25s45d6wsd1"
-    },
-    "your-token": "3ee84211cd484b2eaff80e734070237115149b0c80d7dec50c1fe03a3f64d485a356e9fa475b20e14e26a3afb55be397c36eb348dff511e41fea3ccc4fe8eefa"
-}
+
+"your-token": "3ee84211cd484b2eaff80e734070237115149b0c80d7dec50c1fe03a3f64d485a356e9fa475b20e14e26a3afb55be397c36eb348dff511e41fea3ccc4fe8eefa"
+
 ```
 
 ```bash
@@ -111,7 +106,7 @@ https://raybags.herokuapp.com/scrapper/v1/sky-travel-news
 #gets travel-data from the database
 ```
 
-### RESPONSES-EXAMPLES:
+### RESPONSE-EXAMPLES:
 
 - Breaking news:
 
