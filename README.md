@@ -222,7 +222,7 @@ https://raybags.herokuapp.com/scrapper/v1/sky-travel-news
 }
 ```
 
-## HEROKU-LINKS:
+## ENDPOINTS:
 
 ```bash
 authentication
