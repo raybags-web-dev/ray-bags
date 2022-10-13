@@ -28,14 +28,31 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh 'test -f middleware'
-                sh 'test -f notfound'
-                sh 'test -f  public'
-                sh 'test -f src'
-                sh 'test -f server.js'
-                sh 'test -f middleware/async.js'
-                sh 'test -f middleware/dropCollection.js'
-                sh 'test -f middleware/generateToken.js'
+                sh(script: "test -d ${middleware}", returnStatus: true) == 0
+                sh(script: "test -d ${notfound}", returnStatus: true) == 0
+                sh(script: "test -d ${public}", returnStatus: true) == 0
+                sh(script: "test -d ${src}", returnStatus: true) == 0
+
+                script {
+                    if (fileExists('server.js')) {
+                        echo "File server.js found!"
+                    }
+                }
+                script {
+                    if (fileExists('middleware/async.js')) {
+                        echo "File middleware/async.js found!"
+                    }
+                }
+                script {
+                    if (fileExists('middleware/dropCollection.js')) {
+                        echo "File middleware/dropCollection.js found!"
+                    }
+                }
+                script {
+                    if (fileExists('middleware/generateToken.js')) {
+                        echo "File middleware/generateToken.js found!"
+                    }
+                }
             }
         }
         stage('deploy') {
