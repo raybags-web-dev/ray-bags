@@ -28,7 +28,10 @@ pipeline {
         }
         stage('test') {
             steps {
-                echo 'testing...'
+                sh 'test -f middleware notfound public src'
+                sh 'test -f .gitignore Procfile README.md server.js'
+                sh 'test -f middleware/async.js middleware/dropCollection.js middleware/generateToken.js'
+    
             }
         }
         stage('deploy') {
