@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const asyncMiddleware = require("./middleware/async");
+const ratelimit = require('express-rate-limit');
 
 require("./src/cors/handleCors")(app);
 // DB handler.
@@ -14,6 +15,14 @@ const { API_KEY, MONGO_URI, } = process.env;
 // server static resources 
 app.use(express.static("public"));
 app.use(express.json());
+
+// limiter
+const limiter = ratelimit({
+    windowMs: 10 * 90 * 1000,
+    max: 10
+});
+app.use(limiter)
+app.set('trust proxy', 1);
 
 //authentication route
 require("./src/startup/routess").Authenticate_user(app);

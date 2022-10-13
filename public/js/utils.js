@@ -70,7 +70,7 @@ const mainCarocelContainer = function() {
             $(card).on("click", async function() {
                 try {
                     // Show news data ============== 
-                    if ($(this).index() == 0) return createNewsDataWrapper("https://raybags.herokuapp.com/scrapper/v1/savenews");
+                    if ($(this).index() == 0) return createNewsDataWrapper("/scrapper/v1/savenews");
                     if ($(this).index() == 3) return bitcoin("https://rest.coinapi.io/v1/exchanges");
                     return createEmptyDataWrapper();
 
@@ -80,7 +80,6 @@ const mainCarocelContainer = function() {
 
             });
             // make ============== data component ============== 
-
             cardsArray.push($(card));
             $($(cardsArray[0]).children()[0]).text("News data");
             $($(cardsArray[1]).children()[0]).text("Retail Data");

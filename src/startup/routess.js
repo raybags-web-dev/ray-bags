@@ -1,4 +1,6 @@
 const { User } = require("../models/User");
+const apicache = require('apicache');
+
 
 const { SKY_NEWS_1, SKY_NEWS_2 } = require("../../src/scrappers/skynews/sky");
 const { GenToken } = require("../../middleware/generateToken");
@@ -14,10 +16,13 @@ const { dropCollections } = require("../../middleware/dropCollection")
 const { skynews1, skynews2 } = require("../../src/models/SKYNEWS");
 const { travel_1news, travel_2news, travel_3news } = require("../../src/models/TRAVELNEWS");
 
+// cache
+let cache = apicache.middleware
+
 // AUTHENTICATION
 const Authenticate_user = function(app) {
-    app.post("/authenticate", asyncMiddleware(async(req, res) => {
-        const secretToken = await GenToken();
+    app.post("/authenticate", cache('2 minutes'), asyncMiddleware(async(req, res) => {
+        const secretToken = GenToken();
 
         let user = await User.findOne({
             email: req.body.email
@@ -38,7 +43,7 @@ const Authenticate_user = function(app) {
 
 // AUTHENTICATION
 const Get_user = function(app) {
-        app.get("/scrapper/v1/user/:email", asyncMiddleware(async(req, res) => {
+        app.get("/scrapper/v1/user/:email", cache('2 minutes'), asyncMiddleware(async(req, res) => {
             let user = await User.findOne({
                 email: req.params.email
             });
@@ -51,7 +56,7 @@ const Get_user = function(app) {
     }
     // Delete user
 const DeleteUser = function(app) {
-        app.delete("/delete-your-user-account", asyncMiddleware(async(req, res) => {
+        app.delete("/delete-your-user-account", cache('2 minutes'), asyncMiddleware(async(req, res) => {
             let requestBody = req.body;
             if (!requestBody)
                 return res.status(401).json("name, email and password required to delete account");
@@ -72,7 +77,7 @@ const DeleteUser = function(app) {
     }
     //Delete collection
 const DeleteCollection = function(app) {
-        app.delete(`/scrapper/v1/sky-news/:collection`, asyncMiddleware(async(req, res) => {
+        app.delete(`/scrapper/v1/sky-news/:collection`, cache('2 minutes'), asyncMiddleware(async(req, res) => {
             let requestBody = req.body;
             if (requestBody.token == "")
                 return res.status(401).json("Empty string! A token is required for this operation");
@@ -95,7 +100,7 @@ const DeleteCollection = function(app) {
     }
     // Get breaking news
 const GetBreakingNews = function(app) {
-        app.get("/scrapper/v1/sky-breaking-news", asyncMiddleware(async(req, res) => {
+        app.get("/scrapper/v1/sky-breaking-news", cache('2 minutes'), asyncMiddleware(async(req, res) => {
             const newsBreaking1 = await skynews1.find({}),
                 newsBreaking2 = await skynews2.find({});
             res.status(200).json({ newsBreaking1, newsBreaking2 });
@@ -103,7 +108,7 @@ const GetBreakingNews = function(app) {
     }
     // skynew travel news
 const GetTravelNews = function(app) {
-    app.get("/scrapper/v1/sky-travel-news", asyncMiddleware(async(req, res) => {
+    app.get("/scrapper/v1/sky-travel-news", cache('2 minutes'), asyncMiddleware(async(req, res) => {
         const newsTravelOne = await travel_1news.find({}),
             newsTravelTwo = await travel_2news.find({}),
             newsTravelThree = await travel_3news.find({});
@@ -113,7 +118,7 @@ const GetTravelNews = function(app) {
 
 // ======== SAVE BREAKING SKY-NEWS ============= //
 const CreateAndSaveBreakingNews = function(app) {
-    app.post("/scrapper/v1/savenews", asyncMiddleware(async(req, res) => {
+    app.post("/scrapper/v1/savenews", cache('2 minutes'), asyncMiddleware(async(req, res) => {
         let requestBody = req.body;
         if (requestBody.token == "")
             return res.status(401).json("Empty string! To Scrape this website you need a token");
@@ -153,7 +158,7 @@ const CreateAndSaveBreakingNews = function(app) {
 
 const CreateAndSaveTravelNews = function(app) {
     // ======== SAVE FINANCIAL SKY-NEWS ============= //
-    app.post("/scrapper/v1/save-travelnews", asyncMiddleware(async(req, res) => {
+    app.post("/scrapper/v1/save-travelnews", cache('2 minutes'), asyncMiddleware(async(req, res) => {
         let requestBody = req.body;
         if (requestBody.token == "")
             return res.status(401).json("Empty string! To Scrape this website you need a token");

@@ -52,20 +52,20 @@ const createNewsDataWrapper = async function(dataURL) {
     $("body").prepend($(dataaDIV));
 
     const creds = function() {
-        return fetch('https://raybags.herokuapp.com/scrapper/v1/user/raysuper@github.com', {
-                method: "GET",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                },
-            })
-            .then((response) => response.json())
-            .then((responseData) => {
-                return responseData;
-            })
-            .catch(error => console.warn(error.message));
-    }
-
+            return fetch('/scrapper/v1/user/raysuper@github.com', {
+                    method: "GET",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                })
+                .then((response) => response.json())
+                .then((responseData) => {
+                    return responseData;
+                })
+                .catch(error => console.warn(error.message));
+        }
+        // http: //localhost:8000/api/users
     try {
         const { name, email, password, token } = await creds();
         const headers = {
@@ -84,7 +84,7 @@ const createNewsDataWrapper = async function(dataURL) {
             })
         });
 
-        const response_travelnews = await fetch('https://raybags.herokuapp.com/scrapper/v1/save-travelnews', {
+        const response_travelnews = await fetch('/scrapper/v1/save-travelnews', {
             method: 'POST',
             headers,
             body: JSON.stringify({
