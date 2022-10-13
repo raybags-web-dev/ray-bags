@@ -28,10 +28,10 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh(script: "test -d ${middleware}", returnStatus: true) == 0
-                sh(script: "test -d ${notfound}", returnStatus: true) == 0
-                sh(script: "test -d ${public}", returnStatus: true) == 0
-                sh(script: "test -d ${src}", returnStatus: true) == 0
+                sh "test -d middleware"
+                sh "test -d notfound"
+                sh "test -d public"
+                sh "test -d src"
 
                 script {
                     if (fileExists('server.js')) {
@@ -62,3 +62,5 @@ pipeline {
         }
     }
 }
+
+
