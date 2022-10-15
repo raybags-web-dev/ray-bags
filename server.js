@@ -8,11 +8,10 @@ require("./src/cors/handleCors")(app);
 const connectDB = require("./src/DB/connect");
 //env variables
 require("dotenv").config();
-const { API_KEY, MONGO_URI, } = process.env;
+const { MONGO_URI, } = process.env;
 
 // Not available for now
 //app.all('*', (req, res) => res.status(202).sendFile(__dirname + "/notfound/not_available.html"));
-// server static resources 
 app.use(express.static("public"));
 app.use(express.json());
 
