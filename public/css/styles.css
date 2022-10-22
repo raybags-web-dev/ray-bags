@@ -367,11 +367,11 @@ ul {
     color: white;
     display: inline-block;
     white-space: nowrap;
-    border: none;
     border-radius: 40px;
     background: var(--skin-color);
     transition: var(--main-transition);
     box-shadow: var(--shadow-4);
+    border: 1px solid transparent;
 }
 
 .hire-me {
@@ -385,7 +385,7 @@ ul {
     transform: scale(1.03);
     color: var(--text-black-900);
     background: transparent;
-    border: 2px solid var(--skin-color);
+    border: 1px solid var(--skin-color);
 }
 
 .shadow-dark {
@@ -599,6 +599,8 @@ ul {
 
 .aside .nav {
     margin-top: 50px;
+    border-style: solid;
+    border-color: transparent transparent var(--skin-color) transparent;
 }
 
 .aside .nav li {
