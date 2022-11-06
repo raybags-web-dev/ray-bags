@@ -1,33 +1,28 @@
-requesat_permision = async() => await Notification.requestPermission().then(perm => (perm === 'granted') ? true : false);
-
-console.log(requesat_permision())
-
-function handleNotifications() {
-    if (!requesat_permision()) return { permision: 'denied' };
-
-    let notification, interval;
-    document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'hidden') {
-            const leaveDate = new Date();
-            interval = setInterval(() => {
-                notification = new Notification("Leaving so soon... Are you coming back ?? ", {
-                    body: `You've been gone for ${Math.round((new Date() - leaveDate ) / 1000)} seconds`,
-                    tag: "Come back",
-                });
-            }, 100)
-        } else {
-            if (interval) clearInterval(interval);
-            if (notification) notification.close();
-        }
-    });
-}
-
-handleNotifications();
-
-// ========================================
-/*
-requesat_permision = async() => await Notification.requestPermission().then(perm => (perm === 'granted') ? true : false);
-(function() {if (!requesat_permision()) return { noti_permision: 'denied' };let notification,interval;
-document.addEventListener('visibilitychange', () => {if (document.visibilityState === 'hidden') {const leaveDate = new Date();
-options = {body: `You've been gone for ${Math.round((new Date() - leaveDate ) / 1000)} seconds`, tag: "Come back"};
-interval = setInterval(() =>{notification = new Notification("Leaving so soon... Are you coming back ?? ", options)}, 100)} else {if (interval) clearInt(interval);if (notification) notification.close()}})})();*/
+const statusDisplay = document.getElementById("ONLINE_OFFLINE");
+window.addEventListener("offline", (event) => {
+    if (event.type === "offline") {
+        statusDisplay.style.cssText = `position:fixed;width:100vw;height:100vh;position:fixed;z-index:3000;background-color:#151719; text-align:center;display:flex;justify-content:center;align-items:center;`
+        statusDisplay.innerHTML = `
+            <span style="--i:1">O</span>
+            <span style="--i:2">F</span>
+            <span style="--i:4">F</span>
+            <span style="--i:5">L</span>
+            <span style="--i:6">I</span>
+            <span style="--i:7">N</span>
+            <span style="--i:7">E</span>`;
+        return;
+    }
+});
+window.addEventListener("online", (event) => {
+    if (event.type === "online") {
+        statusDisplay.innerHTML = `
+            <span style="--i:1">O</span>
+            <span style="--i:2">N</span>
+            <span style="--i:4">L</span>
+            <span style="--i:5">I</span>
+            <span style="--i:6">N</span>
+            <span style="--i:7">E</span>`;
+        setTimeout(() => statusDisplay.style = "display:none", 2000);
+        return;
+    }
+});

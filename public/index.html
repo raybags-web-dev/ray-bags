@@ -14,6 +14,45 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        #ONLINE_OFFLINE {
+            position: relative;
+            -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, .2));
+            font-size: 60px;
+            -webkit-box-shadow: inset -2px 0px 47px 0px rgba(255, 255, 255, 0.75);
+            box-shadow: inset -2px 0px 47px 0px rgba(255, 255, 255, 0.75);
+        }
+        
+        #ONLINE_OFFLINE span {
+            font-family: 'Alfa Slab One', cursive;
+            position: relative;
+            display: inline-block;
+            color: #fff;
+            text-transform: uppercase;
+            animation: waviy 1s infinite;
+            animation-delay: calc(.1s * var(--i));
+            text-shadow: 100px 100px 5px rgba(146, 146, 146, 0.18);
+        }
+        
+        @keyframes waviy {
+            0%,
+            40%,
+            100% {
+                transform: translateY(0)
+            }
+            20% {
+                transform: translateY(-40px)
+            }
+        }
+    </style>
     <!-- styles -->
     <link rel="stylesheet" href="./css/side_image_carocel.css">
     <link rel="stylesheet" href="./css/style-switcher.css">
@@ -51,6 +90,17 @@
 <body>
     <!-- ===== main container start ===== -->
     <div class="main-container">
+        <!-- online monitor anchor -->
+        <div id="ONLINE_OFFLINE" style="display:none;position:fixed;">
+            <span style="--i:1">O</span>
+            <span style="--i:2">F</span>
+            <span style="--i:3">F</span>
+            <span style="--i:4">L</span>
+            <span style="--i:5">I</span>
+            <span style="--i:6">N</span>
+            <span style="--i:7">E</span>
+        </div>
+        <!-- convas illusions -->
         <canvas id="canvas1"></canvas>
         <!-- === aside start -->
         <div class="aside">
@@ -112,7 +162,7 @@
                             <h3 class="my-profession">What I do:&emsp; <span class="typing">Software Engineer</span></h3>
                             <p>Scripting (Linux Bash, PowerShell), data Integration, cloud development (aws-cloud) with JavaScript and Python, API and software-development life-cycle, continuous integration/development, SQL-NoSQL, data-pipelines, visualization,
                                 database management and much more... </p>
-                            <a href="#contact" class="btn hire-me">Hire Me</a>
+                            <a href="#contact" class="btn hire-me">LETS TALK</a>
                         </div>
                         <div class="home-img padd-15">
                             <img id="hero__image" loading="lazy" src="./images/hero-image.png" alt="">
@@ -624,7 +674,9 @@
                         <div class="contact-info-item padd-15">
                             <div class="icon"><i class="fa fa-globe-europe"></i></div>
                             <h4>Website</h4>
-                            <p>www.raybags.com</p>
+                            <a href="#">
+                                <p>raybags.herokuapp.com</p>
+                            </a>
                         </div>
                         <!-- contact info item ends -->
                     </div>
@@ -806,7 +858,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
 
     <script type="module">
-        import { mainCarocelContainer } from "./js/utils.js"; document.addEventListener('DOMContentLoaded', function() {setTimeout(()=>{$(".aside-image").addClass("decorate_asideImage")}, 3000); /*setTimeout(()=> $('#spinner-container').addClass('hidden'),2000);*/
+        import { mainCarocelContainer } from "./js/utils.js"; document.addEventListener('DOMContentLoaded', function() {setTimeout(()=>{$(".aside-image").addClass("decorate_asideImage")}, 3000); /*setTimeout(()=> $('#spinner-container').addClass('hidden'),10);*/
         setTimeout(()=> $('.loaderCarocell').addClass('hideSPinner'), 5000); $('.nav li').each(function(index) {let link = $(this);setTimeout(function() {link.addClass('side_links_slidein').css({ transition: '0.9s' })},100 * index)}); setTimeout(() =>
         {let first_interaction = localStorage.getItem('dark-theme'),first_interaction_color = localStorage.getItem('color');if(first_interaction || first_interaction_color) return;$('html, body').animate({scrollTop: 120}, 1000)}, 3000); (() => {$('.day-night').on('click',()=>
         { $(`p, a, i, h1, h2, h3 span, h4, h5, div, section, h3.contact-title`).each((index, ele)=> { $(ele).removeClass('white_text'); let isColorThemeApplied = localStorage.getItem('color'); let isDarkThemeApplied = localStorage.getItem('dark-theme');

@@ -37,8 +37,8 @@ document.body.addEventListener('click', handle_animation_when_clicked_outside);
 
 
 // Handle active class switch on scroll.
-function scrollActive(all_section_ids, anchor_links_parent_div,  active_class_name) {
-    if(!all_section_ids || all_section_ids == undefined) return;
+function scrollActive(all_section_ids, anchor_links_parent_div, active_class_name) {
+    if (!all_section_ids || all_section_ids == undefined) return;
 
     const senctions = document.querySelectorAll(all_section_ids);
     const scrollY = window.pageYOffset;
@@ -55,4 +55,5 @@ function scrollActive(all_section_ids, anchor_links_parent_div,  active_class_na
         }
     })
 }
-window.addEventListener("scroll", ()=> scrollActive("section[id]",".nav","active" ));
+
+window.addEventListener("scroll", () => scrollActive("section[id]", ".nav", "active"));
