@@ -958,9 +958,8 @@ h3.my-profession {
     box-shadow: var(--shadow-3);
     transition: var(--main-transition);
     overflow: hidden;
-    /* ==== experimental ===== */
     height: 22rem;
-    /* ==== experimental ===== */
+    overflow-y: auto;
 }
 
 .service .service-item .service-item-inner:hover,
