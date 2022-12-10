@@ -1,7 +1,6 @@
 const { User } = require("../models/User");
 const apicache = require('apicache');
 
-
 const { SKY_NEWS_1, SKY_NEWS_2 } = require("../../src/scrappers/skynews/sky");
 const { GenToken } = require("../../middleware/generateToken");
 // scrapper handlers.
@@ -16,6 +15,7 @@ const { dropCollections } = require("../../middleware/dropCollection")
 const { skynews1, skynews2 } = require("../../src/models/SKYNEWS");
 const { travel_1news, travel_2news, travel_3news } = require("../../src/models/TRAVELNEWS");
 
+const paginatedResult = require('../../middleware/pagination');
 // cache
 let cache = apicache.middleware
 
@@ -43,7 +43,7 @@ const Authenticate_user = function(app) {
 
 // AUTHENTICATION
 const Get_user = function(app) {
-        app.get("/scrapper/v1/user/:email", cache('2 minutes'), asyncMiddleware(async(req, res) => {
+        app.get("/scrapper/v1/user/:email", cache('1 minutes'), asyncMiddleware(async(req, res) => {
             let user = await User.findOne({
                 email: req.params.email
             });
@@ -100,19 +100,132 @@ const DeleteCollection = function(app) {
     }
     // Get breaking news
 const GetBreakingNews = function(app) {
-        app.get("/scrapper/v1/sky-breaking-news", cache('2 minutes'), asyncMiddleware(async(req, res) => {
-            const newsBreaking1 = await skynews1.find({}),
-                newsBreaking2 = await skynews2.find({});
-            res.status(200).json({ newsBreaking1, newsBreaking2 });
-        }));
-    }
-    // skynew travel news
+    app.get("/scrapper/v1/sky-breaking-news", asyncMiddleware(async(req, res) => {
+
+        // pagination
+        const page = parseInt(req.query.page);
+        const limit = parseInt(req.query.limit);
+
+        const startIndex = (page - 1) * limit;
+        const endIndex = page * limit;
+
+        const result1 = {};
+        const result2 = {};
+
+        const resultBNEWS1 = await skynews1.find({}),
+            resultBNEWS2 = await skynews2.find({});
+
+        result1.newsBreaking1 = resultBNEWS1.slice(startIndex, endIndex);
+        result2.newsBreaking2 = resultBNEWS2.slice(startIndex, endIndex);
+
+        // next page
+        if (endIndex < await skynews1.countDocuments().exec()) {
+            result1.next = {
+                page: page + 1,
+                limit
+            }
+        }
+
+        if (startIndex > 0) {
+            result1.previous = {
+                page: page - 1,
+                limit
+            }
+        }
+
+        // previous page
+        if (endIndex < await skynews2.countDocuments().exec()) {
+            result2.next = {
+                page: page + 1,
+                limit
+            }
+        }
+
+        if (startIndex > 0) {
+            result2.previous = {
+                page: page - 1,
+                limit
+            }
+        }
+        // total count
+        result1.total_count = await skynews1.countDocuments().exec();
+        result2.total_count = await skynews2.countDocuments().exec();
+
+        res.status(200).json({ result1, result2 });
+    }));
+}
+
+// skynew travel news
 const GetTravelNews = function(app) {
-    app.get("/scrapper/v1/sky-travel-news", cache('2 minutes'), asyncMiddleware(async(req, res) => {
-        const newsTravelOne = await travel_1news.find({}),
-            newsTravelTwo = await travel_2news.find({}),
-            newsTravelThree = await travel_3news.find({});
-        res.status(200).json({ newsTravelOne, newsTravelTwo, newsTravelThree });
+    app.get("/scrapper/v1/sky-travel-news", asyncMiddleware(async(req, res) => {
+
+        const page = parseInt(req.query.page);
+        const limit = parseInt(req.query.limit);
+
+        const startIndex = (page - 1) * limit;
+        const endIndex = page * limit;
+
+        const result1 = {};
+        const result2 = {};
+        const result3 = {};
+
+        const travelOne = await travel_1news.find({}),
+            travelTwo = await travel_2news.find({}),
+            travelThree = await travel_3news.find({});
+
+        result1.newsTravelOne = travelOne.slice(startIndex, endIndex);
+        result2.newsTravelTwo = travelTwo.slice(startIndex, endIndex);
+        result3.newsTravelThree = travelThree.slice(startIndex, endIndex);
+        // next page
+        if (endIndex < await travel_1news.countDocuments().exec()) {
+            result1.next = {
+                page: page + 1,
+                limit
+            }
+        }
+
+        if (startIndex > 0) {
+            result1.previous = {
+                page: page - 1,
+                limit
+            }
+        }
+
+        // next page
+        if (endIndex < await travel_2news.countDocuments().exec()) {
+            result2.next = {
+                page: page + 1,
+                limit
+            }
+        }
+
+        if (startIndex > 0) {
+            result2.previous = {
+                page: page - 1,
+                limit
+            }
+        }
+
+        // next page
+        if (endIndex < await travel_3news.countDocuments().exec()) {
+            result3.next = {
+                page: page + 1,
+                limit
+            }
+        }
+
+        if (startIndex > 0) {
+            result3.previous = {
+                page: page - 1,
+                limit
+            }
+        }
+        // total count
+        result1.total_count = await travel_1news.countDocuments().exec();
+        result2.total_count = await travel_2news.countDocuments().exec();
+        result3.total_count = await travel_3news.countDocuments().exec();
+
+        res.status(200).json({ result1, result2, result3 });
     }));
 }
 
