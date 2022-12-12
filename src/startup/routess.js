@@ -1,5 +1,6 @@
 const { User } = require("../models/User");
 const apicache = require('apicache');
+const { OperationsLogger } = require('../../middleware/logger');
 
 const { SKY_NEWS_1, SKY_NEWS_2 } = require("../../src/scrappers/skynews/sky");
 const { GenToken } = require("../../middleware/generateToken");
@@ -16,12 +17,13 @@ const { skynews1, skynews2 } = require("../../src/models/SKYNEWS");
 const { travel_1news, travel_2news, travel_3news } = require("../../src/models/TRAVELNEWS");
 
 const paginatedResult = require('../../middleware/pagination');
+const { catch_errors } = require('../../middleware/catch_err');
 // cache
 let cache = apicache.middleware
 
 // AUTHENTICATION
 const Authenticate_user = function(app) {
-    app.post("/authenticate", cache('2 minutes'), asyncMiddleware(async(req, res) => {
+    app.post("/authenticate", asyncMiddleware(async(req, res) => {
         const secretToken = GenToken();
 
         let user = await User.findOne({
@@ -37,6 +39,7 @@ const Authenticate_user = function(app) {
             password: req.body.password,
             token: secretToken
         });
+        OperationsLogger.info('user created:', { name: `${req.body.name}` }, { email: `${req.body.email}` }, { token: `${req.body.password}` })
         res.status(201).json({ body: req.email, "your-token": secretToken });
     }));
 }
@@ -77,7 +80,7 @@ const DeleteUser = function(app) {
     }
     //Delete collection
 const DeleteCollection = function(app) {
-        app.delete(`/scrapper/v1/sky-news/:collection`, cache('2 minutes'), asyncMiddleware(async(req, res) => {
+        app.delete(`/scrapper/v1/sky-news/:collection`, asyncMiddleware(async(req, res) => {
             let requestBody = req.body;
             if (requestBody.token == "")
                 return res.status(401).json("Empty string! A token is required for this operation");
@@ -94,6 +97,7 @@ const DeleteCollection = function(app) {
                 return res.status(401).json("This token is invalid or expired");
 
             const { collection } = req.params;
+            OperationsLogger.info('Collection name: ' + collection + ', Operation: deleted!')
             await dropCollections(collection);
             res.status(200).send("success");
         }));
@@ -231,7 +235,7 @@ const GetTravelNews = function(app) {
 
 // ======== SAVE BREAKING SKY-NEWS ============= //
 const CreateAndSaveBreakingNews = function(app) {
-    app.post("/scrapper/v1/savenews", cache('2 minutes'), asyncMiddleware(async(req, res) => {
+    app.post("/scrapper/v1/savenews", asyncMiddleware(async(req, res) => {
         let requestBody = req.body;
         if (requestBody.token == "")
             return res.status(401).json("Empty string! To Scrape this website you need a token");
@@ -252,18 +256,19 @@ const CreateAndSaveBreakingNews = function(app) {
         const { skynews_content_2 } = data_2;
         // breaking news
         skynews_content.forEach(async(obj) => {
-            await skynews1.create({
+            catch_errors(skynews1.create({
                 title: obj.title,
                 url: obj.url
-            });
+            }));
         });
         // news
         skynews_content_2.forEach(async(obj) => {
-            await skynews2.create({
+            catch_errors(skynews2.create({
                 caroucel_heading: obj.caroucel_heading,
                 video_url: obj.video_url
-            });
+            }));
         });
+        OperationsLogger.info(`Operation name: 'create data', statusode: ${res.statusCode}`)
         res.status(201).json({ skynews_content, skynews_content_2 });
     }));
 
@@ -271,7 +276,7 @@ const CreateAndSaveBreakingNews = function(app) {
 
 const CreateAndSaveTravelNews = function(app) {
     // ======== SAVE FINANCIAL SKY-NEWS ============= //
-    app.post("/scrapper/v1/save-travelnews", cache('2 minutes'), asyncMiddleware(async(req, res) => {
+    app.post("/scrapper/v1/save-travelnews", asyncMiddleware(async(req, res) => {
         let requestBody = req.body;
         if (requestBody.token == "")
             return res.status(401).json("Empty string! To Scrape this website you need a token");
@@ -291,30 +296,23 @@ const CreateAndSaveTravelNews = function(app) {
         const { travel__a } = travel_1;
         const { travel__b } = travel_2;
         const { travel__c } = travel_3;
-
         // breaking travel news
         travel__a.forEach(async(obj) => {
             const { title, url } = obj;
-            await travel_1news.create({
-                title,
-                url
-            });
+            catch_errors(travel_1news.create({ title, url }));
         });
         // get and save image urls
         travel__b.forEach(async(obj) => {
             const { image_url } = obj;
-            await travel_2news.create({
-                image_url
-            });
+            catch_errors(travel_2news.create({ image_url }));
         });
         // get and save carocel videos and subtitles
         travel__c.forEach(async(obj) => {
             const { heading, video_url } = obj;
-            await travel_3news.create({
-                heading,
-                video_url
-            });
+
+            catch_errors(travel_3news.create({ heading, video_url }));
         });
+        OperationsLogger.info(`Operation name: 'create travel news', statusode: ${res.statusCode}`)
         res.status(201).json({ travel__a, travel__b, travel__c });
     }));
 }

@@ -5,13 +5,15 @@ const TRAV_1 = {
         type: String,
         trim: true,
         maxlength: 500,
-        minlength: 1
+        minlength: 1,
+        unique: true
     },
     url: {
         type: String,
         trim: true,
         maxlength: 200,
-        minlength: 3
+        minlength: 3,
+        unique: true
     },
 
 }
@@ -21,7 +23,8 @@ const TRAV_2 = {
         type: String,
         trim: true,
         maxlength: 200,
-        minlength: 3
+        minlength: 3,
+        unique: true
     },
 
 }
@@ -31,19 +34,22 @@ const TRAV_3 = {
         type: String,
         trim: true,
         maxlength: 500,
-        minlength: 1
+        minlength: 1,
+        unique: true
+
     },
     video_url: {
         type: String,
         trim: true,
         maxlength: 200,
-        minlength: 3
+        minlength: 3,
+        unique: true
     },
 }
 
-const TRAV_1_SCHEMA = new mongoose.Schema(TRAV_1, { timestamps: true });
-const TRAV_2_SCHEMA = new mongoose.Schema(TRAV_2, { timestamps: true });
-const TRAV_3_SCHEMA = new mongoose.Schema(TRAV_3, { timestamps: true });
+const TRAV_1_SCHEMA = new mongoose.Schema(TRAV_1, { timestamps: true, unique: true, dropDupes: true });
+const TRAV_2_SCHEMA = new mongoose.Schema(TRAV_2, { timestamps: true, unique: true, dropDupes: true });
+const TRAV_3_SCHEMA = new mongoose.Schema(TRAV_3, { timestamps: true, unique: true, dropDupes: true });
 
 
 module.exports = {
