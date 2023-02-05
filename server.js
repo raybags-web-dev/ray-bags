@@ -21,7 +21,9 @@ const connectDB = require('./src/DB/connect')
 require('dotenv').config()
 const { MONGO_URI } = process.env
 // Not available for now
-//app.all('*', (req, res) => res.status(202).sendFile(__dirname + "/notfound/not_available.html"));
+app.all('*', (req, res) =>
+  res.status(202).sendFile(__dirname + '/notfound/not_available.html')
+)
 const accessLogStream = fs.createWriteStream(
   path.join(__dirname, 'Logs/access.log'),
   { flags: 'a' }
