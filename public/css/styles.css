@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
 :root {
     --bg-black-900: rgb(242, 242, 252, 0.4);
     --bg-black-100: rgb(253, 249, 255, 0.4);
@@ -65,6 +66,15 @@ ul {
     background-color: var(--skin-color);
 }
 
+.home-info p::-webkit-scrollbar {
+    width: 1px;
+}
+
+.home-info p::-webkit-scrollbar-track {
+    background: rgb(233, 233, 233, 0.45);
+}
+
+
 #canvas1 {
     position: fixed;
     top: 0%;
@@ -75,7 +85,7 @@ ul {
     display: grid;
     place-content: center;
     z-index: 1;
-    opacity: 0.13;
+    opacity: 0.1;
 }
 
 
@@ -174,10 +184,12 @@ ul {
         transform: scale(0.3);
         opacity: 0.4;
     }
+
     50% {
         transform: scale(0.3);
         opacity: 0;
     }
+
     100% {
         transform: scale(1.5);
         opacity: 0;
@@ -189,10 +201,12 @@ ul {
         transform: scale(0.3);
         opacity: 2;
     }
+
     50% {
         transform: scale(0.3);
         opacity: 0;
     }
+
     100% {
         transform: scale(1.5);
         opacity: 0;
@@ -204,10 +218,12 @@ ul {
         transform: scale(0.0);
         opacity: 0.4;
     }
+
     50% {
         transform: scale(0.0);
         opacity: 0;
     }
+
     100% {
         transform: scale(1.5);
         opacity: 0;
@@ -223,10 +239,12 @@ ul {
         transform: scale(0.0);
         opacity: 0.8;
     }
+
     50% {
         transform: scale(0.0);
         opacity: 0.8;
     }
+
     100% {
         transform: scale(1.5);
         opacity: 0;
@@ -265,6 +283,9 @@ ul {
     opacity: 0.8;
 }
 
+i .fas {
+    text-shadow: 1px 1px 1px black;
+}
 
 /* section */
 
@@ -368,10 +389,12 @@ ul {
     display: inline-block;
     white-space: nowrap;
     border-radius: 40px;
-    background: var(--skin-color);
+    background: transparent;
     transition: var(--main-transition);
     box-shadow: var(--shadow-4);
-    border: 1px solid transparent;
+    border: 1px solid var(--skin-color);
+    text-shadow: 1px 1px 1px black;
+
 }
 
 .hire-me {
@@ -383,7 +406,7 @@ ul {
 
 .btn:hover {
     transform: scale(1.03);
-    color: var(--text-black-900);
+    color: var(--skin-color);
     background: transparent;
     border: 1px solid var(--skin-color);
 }
@@ -799,6 +822,20 @@ h3.my-profession {
     flex: 0 0 40%;
     max-width: 40%;
     margin-top: 40px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 400px;
+    min-height: 400px;
+    position: relative;
+}
+
+
+.about .about-content .skills::-webkit-scrollbar {
+    width: 3px;
+}
+
+.about .about-content .skills::-webkit-scrollbar-track {
+    background: rgb(233, 233, 233, 0.45);
 }
 
 .about .about-content .skills .skills-item {
@@ -874,6 +911,8 @@ h3.my-profession {
     border-radius: 10px;
     width: 100%;
     position: relative;
+    height: 800px;
+    overflow-y: auto;
 }
 
 .about .about-content .timeline .timeline-item {
@@ -1412,10 +1451,12 @@ h3.my-profession {
         height: 550px;
         margin-top: -5%;
     }
+
     .home .home-img img {
         height: 400px;
         min-width: 400px;
     }
+
     .home-info p {
         max-width: 600px;
     }
@@ -1426,21 +1467,26 @@ h3.my-profession {
         left: 0%;
         width: 25%;
     }
+
     .slideInNavImg {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(0%, 0%);
     }
+
     .main-content {
         margin-left: 0px;
     }
+
     .home-info p {
         max-width: 500px;
     }
+
     .home-img {
         margin-left: 10%;
     }
+
     .home .home-img {
         justify-content: flex-end;
     }
@@ -1456,18 +1502,22 @@ h3.my-profession {
     #msg_sent_container {
         transform: translate(-50%, -50%) !important;
     }
+
     .aside {
         left: -100%;
         transition: var(--main-transition);
     }
+
     .main-content {
         padding-left: 0;
         transition: var(--main-transition);
     }
+
     .about .about-content .personal-info .info-item p span {
         display: block;
         margin-left: 0;
     }
+
     .aside .nav-toggler {
         display: flex;
         justify-content: center;
@@ -1476,20 +1526,25 @@ h3.my-profession {
         z-index: 110;
         box-shadow: var(--shadow-5);
     }
+
     .dynamic_sidebar {
         left: 0%;
         min-width: 40%;
     }
+
     .footer-main .f-main-container>* {
         margin-left: 0rem;
     }
+
     .slideInNavImg {
         transform: translate(50%, 0%);
     }
+
     .footer-main .f-main-container {
         height: 5rem;
         align-items: baseline;
     }
+
     .footer-main .f-main-container .inner-footer .icon {
         font-size: 1.5rem;
         width: 3rem;
@@ -1498,28 +1553,34 @@ h3.my-profession {
 }
 
 @media (max-width: 991px) {
+
     .contact .contact-info-item,
     .portfolio .portfolio-item,
     .service .service-item {
         flex: 0 0 50%;
         max-width: 50%;
     }
+
     .home .home-info {
         flex: 0 0 100%;
         max-width: 100%;
     }
+
     .home .home-img {
         display: none;
     }
+
     .slideInNavImg {
         transform: translate(0%, 0%);
     }
+
     .home-info p {
         max-width: 100%;
     }
 }
 
 @media (max-width: 767px) {
+
     .contact .contact-form .col-6,
     .contact .contact-info-item,
     .portfolio .portfolio-item,
@@ -1532,10 +1593,12 @@ h3.my-profession {
         flex: 0 0 100%;
         max-width: 100%;
     }
+
     .footer-main .f-main-container .inner-footer {
         position: absolute;
         min-width: 100vw;
     }
+
     .slideInNavImg {
         transform: translate(0%, 0%);
     }
@@ -1545,22 +1608,28 @@ h3.my-profession {
     #msg_sent_container {
         height: 30vh !important;
     }
+
     #msg_sent_container p {
         font-size: 1.2rem;
     }
+
     .dynamic_sidebar {
         left: 0%;
         min-width: 100%;
     }
+
     .btn {
         min-width: 100%;
     }
+
     .slideInNavImg {
         transform: translate(0%, 0%);
     }
+
     h3.my-profession {
         font-size: 25px;
     }
+
     .home-info p {
         font-size: 15px;
     }
@@ -1570,16 +1639,20 @@ h3.my-profession {
     .slideInNavImg {
         transform: translate(15%, 0%);
     }
+
     .aside .nav-toggler {
         margin-right: 0.7rem;
     }
+
     #msg_sent_container {
         width: 100vw !important;
         height: 20vh !important;
     }
+
     #msg_sent_container p {
         font-size: 1rem;
     }
+
     .btn.hire-me {
         padding: 0.89rem;
         font-size: 1rem;
@@ -1590,19 +1663,23 @@ h3.my-profession {
     h3.my-profession {
         font-size: 17px;
     }
+
     .home-info p {
         font-size: 10px;
     }
+
     .footer-main .f-main-container .inner-footer .icon {
         font-size: 1.5rem;
         width: 3rem;
         height: 3rem;
         display: grid;
     }
+
     #myBtn {
         bottom: 16%;
         right: 20%;
     }
+
     .btn,
     .btn.hire-me {
         padding: 0.60rem !important;
