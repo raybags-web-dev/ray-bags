@@ -2,10 +2,8 @@ const express = require('express')
 const app = express()
 const morgan = require('morgan')
 const cron = require('node-cron')
-
 const fs = require('fs')
 const path = require('path')
-
 const asyncMiddleware = require('./middleware/async')
 const {
   collectDailyNews,
@@ -20,10 +18,15 @@ const connectDB = require('./src/DB/connect')
 //env variables
 require('dotenv').config()
 const { MONGO_URI } = process.env
-// Not available for now
+
+/* Not available for now */
+/* ======================= */
+/* ======================= */
 app.all('*', (req, res) =>
   res.status(202).sendFile(__dirname + '/notfound/not_available.html')
 )
+/* ======================= */
+/* ======================= */
 const accessLogStream = fs.createWriteStream(
   path.join(__dirname, 'Logs/access.log'),
   { flags: 'a' }
@@ -31,16 +34,12 @@ const accessLogStream = fs.createWriteStream(
 
 app.use(express.static('public'))
 app.use(express.json())
-// save access logs
 app.use(morgan('combined', { stream: accessLogStream }))
 
 // limiter
-// const limiter = ratelimit({
-//     windowMs: 10 * 90 * 1000,
-//     max: 10
-// });
-// app.use(limiter)
-// app.set('trust proxy', 1);
+const limiter = ratelimit({ windowMs: 10 * 90 * 1000, max: 10 })
+app.use(limiter)
+app.set('trust proxy', 1)
 
 cron
   .schedule(
@@ -69,11 +68,10 @@ require('./src/startup/routess').CreateAndSaveBreakingNews(app)
 //create and save travel news route
 require('./src/startup/routess').CreateAndSaveTravelNews(app)
 
-// Not found route
 app.all('*', (req, res) =>
   res.status(404).sendFile(__dirname + '/notfound/_404_.html')
 )
-// handle db connection
+
 asyncMiddleware(async () => {
   console.log('initializing connection  to server...')
   connectDB(MONGO_URI)
