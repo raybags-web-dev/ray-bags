@@ -22,9 +22,10 @@ const { MONGO_URI } = process.env
 /* Not available for now */
 /* ======================= */
 /* ======================= */
-app.all('*', (req, res) =>
-  res.status(202).sendFile(__dirname + '/notfound/not_available.html')
-)
+// app.all('*', (req, res) =>
+//   res.status(202).sendFile(__dirname + '/notfound/not_available.html')
+// )
+
 /* ======================= */
 /* ======================= */
 const accessLogStream = fs.createWriteStream(
@@ -77,6 +78,6 @@ asyncMiddleware(async () => {
   connectDB(MONGO_URI)
   console.log('======= CONNECTED TO DB ========')
   // Port set-up and start server
-  const PORT = process.env.PORT || 3000
+  const PORT = process.env.PORT || 3100
   app.listen(PORT, () => console.log('server running on port: ' + PORT))
 })()

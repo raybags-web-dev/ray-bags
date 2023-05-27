@@ -22,20 +22,7 @@ const curacelCard = function () {
 
 // curacel slide animation
 const mainCarocelContainer = function () {
-  const dummyArray = [
-    'card1',
-    'card2',
-    'card3',
-    'card4',
-    'card5',
-    'card6',
-    'card7',
-    'card8',
-    'card9',
-    'card10',
-    'card11',
-    'card12'
-  ]
+  const dummyArray = ['card1', 'card2', 'card3', 'card4', 'card5']
 
   const leftButton = $('<i></i>').attr({ class: 'fas fa-chevron-left' })
   const rightButton = $('<i></i>').attr({ class: 'fas fa-chevron-right' })
@@ -82,18 +69,11 @@ const mainCarocelContainer = function () {
       })
       // make ============== data component ==============
       cardsArray.push($(card))
-      $($(cardsArray[0]).children()[0]).text('news-data pipeline')
+      $($(cardsArray[0]).children()[0]).text('news-data-pipeline')
       $($(cardsArray[1]).children()[0]).text('crypto-data pipeline')
-      $($(cardsArray[2]).children()[0]).text('hotel-data pipeline')
-      $($(cardsArray[3]).children()[0]).text('forex-data pipeline')
-      $($(cardsArray[4]).children()[0]).text('flights-data pipeline')
-      $($(cardsArray[5]).children()[0]).text('movies-data pipeline')
-      $($(cardsArray[6]).children()[0]).text('stocks-data pipeline')
-      $($(cardsArray[7]).children()[0]).text('tech-data pipeline')
-      $($(cardsArray[8]).children()[0]).text('fashion-data pipeline')
-      $($(cardsArray[9]).children()[0]).text('business-data pipeline')
-      $($(cardsArray[10]).children()[0]).text('travel-data pipeline')
-      $($(cardsArray[11]).children()[0]).text('space-data pipeline')
+      $($(cardsArray[2]).children()[0]).text('comming-data pipeline')
+      $($(cardsArray[3]).children()[0]).text('comming-data pipeline')
+      $($(cardsArray[3]).children()[0]).text('comming-data pipeline')
     })
   }
   curacelRunnerFunc()

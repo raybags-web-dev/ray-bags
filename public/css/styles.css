@@ -55,7 +55,7 @@ ul {
 /* scroll track and bar styles */
 
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 3px;
 }
 
 ::-webkit-scrollbar-track {
@@ -497,6 +497,7 @@ i .fas {
 
 .aside .logo a {
     color: var(--text-black-900);
+    text-transform: uppercase;
     font-weight: 700;
     padding: 15px 20px;
     font-size: 32px;
@@ -641,6 +642,7 @@ i .fas {
     font-size: 16px;
     font-weight: 600;
     display: block;
+    text-transform: uppercase;
     border-bottom: 1px solid var(--bg-black-50);
     color: var(--text-black-900);
     padding: 5px 15px;
@@ -687,14 +689,17 @@ h3.hello {
 }
 
 h3.hello span {
-    font-family: "Clicker Script", cursive;
-    font-size: 30px;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-transform: uppercase;
     font-weight: 700;
     color: var(--skin-color);
 }
 
 h3.my-profession {
     font-size: 32px;
+    text-transform: uppercase;
     margin: 15px 0;
 }
 
@@ -993,7 +998,7 @@ h3.my-profession {
     border: 1px solid var(--bg-black-50);
     border-radius: 10px;
     padding: 30px 15px;
-    text-align: center;
+    text-align: left;
     box-shadow: var(--shadow-3);
     transition: var(--main-transition);
     overflow: hidden;
@@ -1347,6 +1352,7 @@ h3.my-profession {
     bottom: 0%;
     min-height: 20%;
     background: var(--bg-black-100);
+    background: transparent !important;
     overflow: hidden;
     display: grid;
     z-index: 20;
