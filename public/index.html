@@ -687,7 +687,10 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img loading="lazy" src="./images/work-in-progress.jpeg" alt="">
+                                    <img loading="lazy" src="./images/work-in-progress.png" alt="">
+                                </div>
+                                <div class="project-btn-container">
+                                    <a href="#" class="btn">See Project</a>
                                 </div>
                             </div>
                         </div>
@@ -696,7 +699,10 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img loading="lazy" src="./images/work-in-progress.jpeg" alt="">
+                                    <img loading="lazy" src="./images/work-in-progress.png" alt="">
+                                </div>
+                                <div class="project-btn-container">
+                                    <a href="#" class="btn">See Project</a>
                                 </div>
                             </div>
                         </div>
@@ -705,7 +711,10 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img loading="lazy" src="./images/work-in-progress.jpeg" alt="">
+                                    <img loading="lazy" src="./images/work-in-progress.png" alt="">
+                                </div>
+                                <div class="project-btn-container">
+                                    <a href="#" class="btn">See Project</a>
                                 </div>
                             </div>
                         </div>
@@ -714,7 +723,10 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img loading="lazy" src="./images/work-in-progress.jpeg" alt="">
+                                    <img loading="lazy" src="./images/work-in-progress.png" alt="">
+                                </div>
+                                <div class="project-btn-container">
+                                    <a href="#" class="btn">See Project</a>
                                 </div>
                             </div>
                         </div>
@@ -723,7 +735,10 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img loading="lazy" src="./images/work-in-progress.jpeg" alt="">
+                                    <img loading="lazy" src="./images/work-in-progress.png" alt="">
+                                </div>
+                                <div class="project-btn-container">
+                                    <a href="#" class="btn">See Project</a>
                                 </div>
                             </div>
                         </div>
@@ -732,7 +747,10 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img loading="lazy" src="./images/work-in-progress.jpeg" alt="">
+                                    <img loading="lazy" src="./images/work-in-progress.png" alt="">
+                                </div>
+                                <div class="project-btn-container">
+                                    <a href="#" class="btn">See Project</a>
                                 </div>
                             </div>
                         </div>
@@ -937,6 +955,10 @@
                                 class="fa-brands fa-staylinked"></i></a></span>
 
                 </div>
+                <div class="copyright">
+                    <p>&copy; <span id="current-year"></span> Ray Bags. All rights reserved - Designed and implemented
+                        by Raymond</p>
+                </div>
             </section>
         </footer>
         <!-- =====spinner====== -->
@@ -963,7 +985,7 @@
 
     <script type="module">
         import { mainCarocelContainer } from "./js/utils.js"; document.addEventListener('DOMContentLoaded', function () {
-            setTimeout(() => { $(".aside-image").addClass("decorate_asideImage") }, 3000); setTimeout(() => $('#spinner-container').addClass('hidden'), 100);
+            setTimeout(() => { $(".aside-image").addClass("decorate_asideImage") }, 3000); setTimeout(() => $('#spinner-container').addClass('hidden'), 100); let currentYear = new Date().getFullYear(); document.getElementById("current-year").textContent = currentYear;
             setTimeout(() => $('.loaderCarocell').addClass('hideSPinner'), 5000); $('.nav li').each(function (index) { let link = $(this); setTimeout(function () { link.addClass('side_links_slidein').css({ transition: '0.9s' }) }, 100 * index) }); setTimeout(() => { let first_interaction = localStorage.getItem('dark-theme'), first_interaction_color = localStorage.getItem('color'); if (first_interaction || first_interaction_color) return; $('html, body').animate({ scrollTop: 120 }, 1000) }, 3000); (() => {
                 $('.day-night').on('click', () => {
                     $(`p, a, i, h1, h2, h3 span, h4, h5, div, section, h3.contact-title`).each((index, ele) => {
