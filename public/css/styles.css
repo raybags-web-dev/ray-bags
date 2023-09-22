@@ -335,7 +335,6 @@ i .fas {
 
 .section .container {
     padding-top: 60px;
-    padding-bottom: 70px;
 }
 
 .section-title {
@@ -690,7 +689,6 @@ h3.hello {
 }
 
 h3.hello span {
-    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 40px;
     text-transform: uppercase;
@@ -719,7 +717,6 @@ h3.my-profession {
     flex: 0 0 40%;
     max-width: 40%;
     height: 550px;
-    /* margin-top: -5% !important; */
     text-align: center;
     position: relative;
     margin-bottom: 2rem;
@@ -1329,9 +1326,7 @@ h3.my-profession {
     background: var(--bg-black-50);
 }
 
-
 /* footer */
-
 .footer-main {
     position: -webkit-sticky;
     position: sticky;
