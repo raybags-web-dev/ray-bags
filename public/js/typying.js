@@ -12,8 +12,7 @@ let typed = new Typed('.typing', {
     'Docker',
     'Kubernetes | EKS',
     'Terraform',
-    'Git-Actions',
-    'Rest API development'
+    'Rest API management'
   ],
   typeSpeed: 50,
   BackSpeed: 60,

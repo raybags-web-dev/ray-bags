@@ -58,7 +58,6 @@
     <!-- styles -->
     <link rel="stylesheet" href="./css/side_image_carocel.css">
     <link rel="stylesheet" href="./css/style-switcher.css">
-    <link rel="stylesheet" href="./css/caroucel.css">
     <link rel="stylesheet" href="./css/spinner.css">
     <link rel="stylesheet" href="./css/styles.css">
 
@@ -83,9 +82,7 @@
     <script src="./js/style-switcher.js" defer></script>
     <script src="./js/index.js" defer></script>
     <script src="./js/animations.js" defer></script>
-    <script type="module" src="./js/utils.js" defer></script>
     <script src="./js/side_image_carocel.js" defer></script>
-    <!-- email script -->
     <script src="./js/email.js" defer></script>
 </head>
 
@@ -168,14 +165,10 @@
                             <h3 class="my-profession">What I do:&emsp; <span class="typing">Software Engineer</span>
                             </h3>
                             <p style="scroll-behavior:smooth;padding:.5rem;max-height:250px;overflow-y:auto">
-                                Experienced in daata Engineering with Integration expertise, skilled in DevOps and
-                                NodeJS
-                                development. Passionate about transforming data into actionable insights. Proficient in
-                                DevOps practices, leveraging automation with Docker, Kubernetes, Jenkins, GitLab,
-                                Bash-scripting, and
-                                API-management. Experienced in building high-performance web applications using NodeJS
-                                and Express.js. Collaborative and adaptable, delivering data-driven solutions for
-                                business success.
+                                I'm into data-engineering, integration, devOps practices, api-management (nodeJs),
+                                automation (bash), docker, kubernetes, gitLab,
+                                bash-scripting. I have experience in building high-performance ETLs/ELTs pipelines,
+                                collaborative and adaptable.
                             </p>
                             <a href="#contact" class="btn hire-me">LETS TALK</a>
                         </div>
@@ -984,8 +977,8 @@
         referrerpolicy="no-referrer"></script>
 
     <script type="module">
-        import { mainCarocelContainer } from "./js/utils.js"; document.addEventListener('DOMContentLoaded', function () {
-            setTimeout(() => { $(".aside-image").addClass("decorate_asideImage") }, 3000); setTimeout(() => $('#spinner-container').addClass('hidden'), 100); let currentYear = new Date().getFullYear(); document.getElementById("current-year").textContent = currentYear;
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(() => { $(".aside-image").addClass("decorate_asideImage") }, 3000); /* setTimeout(() => $('#spinner-container').addClass('hidden'), 100); */ let currentYear = new Date().getFullYear(); document.getElementById("current-year").textContent = currentYear;
             setTimeout(() => $('.loaderCarocell').addClass('hideSPinner'), 5000); $('.nav li').each(function (index) { let link = $(this); setTimeout(function () { link.addClass('side_links_slidein').css({ transition: '0.9s' }) }, 100 * index) }); setTimeout(() => { let first_interaction = localStorage.getItem('dark-theme'), first_interaction_color = localStorage.getItem('color'); if (first_interaction || first_interaction_color) return; $('html, body').animate({ scrollTop: 120 }, 1000) }, 3000); (() => {
                 $('.day-night').on('click', () => {
                     $(`p, a, i, h1, h2, h3 span, h4, h5, div, section, h3.contact-title`).each((index, ele) => {
@@ -993,7 +986,7 @@
                         if (isColorThemeApplied) return; if (!$(ele).hasClass('white_text') && isDarkThemeApplied) { $(ele).toggleClass('white_text') };
                     })
                 })
-            })(); showHideTopBtn(); handleNavANimation(); mainCarocelContainer(), setTimeout(() => {
+            })(); showHideTopBtn(); handleNavANimation(); setTimeout(() => {
                 $("#myBtn").removeClass("hide");
             }, 1000); function showHideTopBtn() { if ($(window).scrollTop() > 400) { $("#myBtn").css({ right: "0%", transition: "800ms" }) } else { $("#myBtn").css({ right: "-20%", transition: "800ms" }); } }; $('.style-switcher-toggler').on('click', () => { if (!$('.style-switcher').hasClass('open')) { return $('.anch').removeClass('clr-animate'); } $('.anch').each((index, ele) => { $(ele).delay(80 * index).queue(function () { $(this).addClass("clr-animate").dequeue(); }) }) }); function handleNavANimation() { if ($(window).scrollTop() > 901) { $(".nav-image").addClass('slideInNavImg'); $("#nav-logo").addClass('slideInNavText'); } else { $(".nav-image").removeClass('slideInNavImg'); $("#nav-logo").removeClass('slideInNavText') } }; $(window).on("scroll",
                 () => { showHideTopBtn(); handleNavANimation(); });

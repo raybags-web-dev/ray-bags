@@ -22,10 +22,9 @@ const { MONGO_URI } = process.env
 /* Not available for now */
 /* ======================= */
 /* ======================= */
-// app.all('*', (req, res) =>
-//   res.status(202).sendFile(__dirname + '/notfound/not_available.html')
-// )
-
+app.all('*', (req, res) =>
+  res.status(202).sendFile(__dirname + '/notfound/not_available.html')
+)
 /* ======================= */
 /* ======================= */
 const accessLogStream = fs.createWriteStream(
